@@ -10,7 +10,6 @@ login(token=os.environ["HF_TOKEN"])
 class LLM:
     def __init__(
             self,
-            model_name: str,
             model_id: str,
             top_p: float = None,
             temperature: float = None,
@@ -18,7 +17,6 @@ class LLM:
             num_return_sequences: int = None,
     ):
 
-        self.name = model_name
         self.model_id = model_id
         self.top_p = top_p
         self.temperature = temperature
@@ -79,3 +77,4 @@ class LLM:
             all_responses.append(texts)
 
         return all_responses
+
