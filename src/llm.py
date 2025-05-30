@@ -31,7 +31,7 @@ class LLM:
         self.model = AutoModelForCausalLM.from_pretrained(
             model_id,
             token=os.getenv("HF_TOKEN"),
-            device_map="auto",
+            # device_map="auto",
             trust_remote_code=True
         )
 
@@ -50,7 +50,7 @@ class LLM:
             model=self.model,
             tokenizer=self.tokenizer,
             return_full_text=False,
-            device="auto",
+            # device="auto",
             **generation_kwargs
         )
 
