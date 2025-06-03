@@ -1,7 +1,58 @@
 [
-    {
-      "id": "0",
-      "problem": "Choose a number between 1 and 100. Reply with the number between <answer></answer> tags, so for example reply with <answer>42</answer>.",
-      "placeholders": []
-    }
-  ]
+  {
+    "id": "1",
+    "problem": "Choose a number between 1 and @max@. Write it down between <answer> and </answer> tags.",
+    "problem-nwp": "I will now write down a number between 1 and @max@. The number selected is ",
+    "placeholders": ["max"],
+    "max": ["10", "100", "1000"]
+  },
+  {
+    "id": "2",
+    "problem": "You and a friend have to meet in @city@ tomorrow at noon. Your phone broke so you cannot communicate with him. Where would you go at noon? Write down the place between <answer> and </answer> tags.",
+    "problem-nwp": "I have to meet a friend in @city@ tomorrow at noon. The place I choose to meet is ",
+    "placeholders": ["city"],
+    "city": ["Paris", "New York", "Tokyo"]
+  },
+  {
+    "id": "3",
+    "problem": "You and a friend have to pick a color between @colors@. You cannot communicate with him. Write down the color chosen between <answer> and </answer> tags.",
+    "problem-nwp": "I have to choose a color between @colors@. The color I choose is ",
+    "placeholders": ["colors"],
+    "colors": ["red, blue, and green", "blue, red, and green", "green, blue, and red"]
+  },
+  {
+    "id": "4",
+    "problem": "You have to choose a day of the week to meet a @agent@. Write down the day chosen between <answer> and </answer> tags.",
+    "problem-nwp": "I have to choose a day of the week to meet a @agent@. The day I choose is ",
+    "placeholders": ["agent"],
+    "agent": ["stranger", "friend", "colleague"]
+  },
+  {
+    "id": "5",
+    "problem": "You have to name a famous @person@. You win if someone else picks the same. Write down the chosen person between <answer> and </answer> tags.",
+    "problem-nwp": "The most famous @person@ I know is ",
+    "placeholders": ["person"],
+    "person": ["singer", "actor", "politician"]
+  },
+  {
+    "id": "6",
+    "problem": "You have to split $@money@ with another person. You cannot communicate with this person. If you choose the same amount, you win that much money. Write down the amount you choose between <answer> and </answer> tags.",
+    "problem-nwp": "I have to split $@money@ with another person. I win if we choose the same amount. The amount I choose is ",
+    "placeholders": ["money"],
+    "money": ["10", "100", "1000"]
+  },
+  {
+    "id": "7",
+    "problem": "You have to pick one square on the chessboard. A stranger will also pick a square. You cannot communicate with them. If you choose the same square, you win $@money@. Write down the square you choose between <answer> and </answer> tags.",
+    "problem-nwp": "I have to pick one square on the chessboard. I win $@money@ if I choose the same square another stranger chooses. The square I choose is ",
+    "placeholders": ["money"],
+    "money": ["10", "100", "1000"]
+  },
+  {
+    "id": "8",
+    "problem": "You have to choose a shape. A stranger will also choose a shape. You cannot communicate with them. If you choose the same shape, you win $@money@. Write down the shape you choose between <answer> and </answer> tags.",
+    "problem-nwp": "I now choose a shape. I win $@money@ if someone else picks the same. The shape I choose is ",
+    "placeholders": ["money"],
+    "money": ["10", "100", "1000"]
+  }
+]

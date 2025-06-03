@@ -1,12 +1,12 @@
 import itertools
 from collections import Counter
 
-def iterate_schelling_data(data):
+def iterate_schelling_data(data:dict, problem_tag:str):
     problems = {}
     for d in data:
         idx = d["id"]
         problems[idx] = []
-        text = d["problem"]
+        text = d[problem_tag]
         placeholders = [d[p] for p in d["placeholders"]]
         if not placeholders:
             problems[idx].append(text)
@@ -28,6 +28,3 @@ def coordination_index(items:dict):
     
     return coordination_index, coordination_index * len(freq_counter)
     
-    
-    
-                
