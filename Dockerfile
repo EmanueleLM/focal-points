@@ -32,4 +32,12 @@ COPY . .
 RUN chmod -R a+rw /workspace
 
 # Launch the script
-ENTRYPOINT ["python main.py --model meta-llama/Llama-3-70B-Instruct --dataset schelling --trials 10 --quantization 8bit --problem-tag problem"]
+ENTRYPOINT [ \
+  "python", \
+  "main.py", \
+  "--model", \
+  "meta-llama/Llama-3-70B-Instruct", \
+  "--quantization", \
+  "8bit" \
+]
+

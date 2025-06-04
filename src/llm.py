@@ -32,7 +32,7 @@ class LLM:
         # 1) Load the tokenizer (same for all cases)
         self.tokenizer = AutoTokenizer.from_pretrained(
             model_id,
-            use_auth_token=os.getenv("HF_TOKEN"),
+            token=os.getenv("HF_TOKEN"),
         )
 
         # 2) Build a BitsAndBytesConfig only if quantization is requested
@@ -113,3 +113,6 @@ class LLM:
             all_responses.append(texts)
 
         return all_responses
+
+    def generate(self, prompt: str) -> str:
+        return generate_batch([prompt])[0][0]
