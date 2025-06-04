@@ -1,8 +1,15 @@
 [
   {
-    "id": "1",
+    "id": "0",
     "problem": "Choose a number between 1 and @max@. Write it down between <answer> and </answer> tags.",
     "problem-nwp": "I will now write down a number between 1 and @max@. The number selected is ",
+    "placeholders": ["max"],
+    "max": ["10", "100", "1000"]
+  },
+  {
+    "id": "1",
+    "problem": "You have to choose a number between 1 and @max@. If you choose the same number as another agent would, you both win. Write the number down between <answer> and </answer> tags.",
+    "problem-nwp": "I will now write down a number between 1 and @max@. I will pick a number that another agent will most likely choose. The number selected is ",
     "placeholders": ["max"],
     "max": ["10", "100", "1000"]
   },
@@ -28,7 +35,7 @@
     "agent": ["stranger", "friend", "colleague"]
   },
   {
-    "id": "6",
+    "id": "5",
     "problem": "You have to split $@money@ with another person. You cannot communicate with this person. If you choose the same amount, you win that much money. Write down the amount you choose between <answer> and </answer> tags.",
     "problem-nwp": "I have to split $@money@ with another person. I win if we choose the same amount. The amount I choose is ",
     "placeholders": ["money"],
