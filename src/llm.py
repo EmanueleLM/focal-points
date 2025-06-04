@@ -115,4 +115,4 @@ class LLM:
         return all_responses
 
     def generate(self, prompt: str) -> str:
-        return generate_batch([prompt])[0][0]
+        return self.generate_batch([prompt])[0][0]
