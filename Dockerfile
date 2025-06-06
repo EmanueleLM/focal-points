@@ -49,7 +49,7 @@ ENTRYPOINT [ \
   "python", \
   "main.py", \
   "--model", \
-  "meta-llama/Llama-3.3-70B-Instruct", \
+  "meta-llama/Llama-2-70b-chat-hf", \
   "--quantization", \
   "8bit" \
 ]
