@@ -29,13 +29,13 @@ class LLM:
         self.num_return_sequences = num_return_sequences
         self.quantization = quantization
 
-        # 1) Load the tokenizer (same for all cases)
+        # Load the tokenizer (same for all cases)
         self.tokenizer = AutoTokenizer.from_pretrained(
             model_id,
             token=os.getenv("HF_TOKEN"),
         )
 
-        # 2) Build a BitsAndBytesConfig only if quantization is requested
+        # Build a BitsAndBytesConfig only if quantization is requested
         bnb_config = None
 
         if quantization == "8bit":
@@ -49,7 +49,7 @@ class LLM:
                 bnb_4bit_compute_dtype="float16",
             )
 
-        # 3) Prepare kwargs for from_pretrained()
+        # Prepare kwargs for from_pretrained()
         model_kwargs: dict = {
             "use_auth_token": os.getenv("HF_TOKEN"),
             "trust_remote_code": True,
@@ -62,13 +62,13 @@ class LLM:
             # No quantization scenario
             model_kwargs["torch_dtype"] = "auto"
 
-        # 4) Load the model once
+        # Load the model once
         self.model = AutoModelForCausalLM.from_pretrained(
             model_id,
             **model_kwargs,
         )
 
-        # 5) Build the generation kwargs dictionary
+        # Build the generation kwargs dictionary
         generation_kwargs: dict = {
             "do_sample": True,
         }
@@ -81,7 +81,7 @@ class LLM:
         if self.num_return_sequences is not None:
             generation_kwargs["num_return_sequences"] = self.num_return_sequences
 
-        # 6) Create a text-generation pipeline that accepts a batch of prompts
+        # Create a text-generation pipeline that accepts a batch of prompts
         self.generator = pipeline(
             "text-generation",
             model=self.model,
@@ -91,16 +91,11 @@ class LLM:
         )
 
     def generate_batch(self, prompts: list[str]) -> list[list[str]]:
-        """
-        Generate responses for each prompt in one call.
-        Returns a list (length = len(prompts)) of lists of strings.
-        """
         results = self.generator(prompts)
         all_responses: list[list[str]] = []
 
         for out in results:
             if isinstance(out, list):
-                # multiple sequences returned for this prompt
                 texts = [entry["generated_text"] for entry in out]
             else:
                 texts = [out["generated_text"]]
