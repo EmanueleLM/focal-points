@@ -37,22 +37,17 @@ class LLM:
 
         # 2) Build a BitsAndBytesConfig only if quantization is requested
         bnb_config = None
-        load_in_8bit = False
-        load_in_4bit = False
 
         if quantization == "8bit":
             bnb_config = BitsAndBytesConfig(
                 load_in_8bit=True,
             )
-            load_in_8bit = True
-
         elif quantization == "4bit":
             bnb_config = BitsAndBytesConfig(
                 load_in_4bit=True,
                 bnb_4bit_quant_type="nf4",
                 bnb_4bit_compute_dtype="float16",
             )
-            load_in_4bit = True
 
         # 3) Prepare kwargs for from_pretrained()
         model_kwargs: dict = {
@@ -61,13 +56,10 @@ class LLM:
             "device_map": "auto",
         }
 
-        # If we have a quantization config, inject it
         if bnb_config is not None:
             model_kwargs["quantization_config"] = bnb_config
-            model_kwargs["load_in_8bit"] = load_in_8bit
-            model_kwargs["load_in_4bit"] = load_in_4bit
         else:
-            # No quantization → let HF pick an appropriate dtype (e.g. float16 on A100/H200)
+            # No quantization scenario
             model_kwargs["torch_dtype"] = "auto"
 
         # 4) Load the model once
@@ -77,7 +69,9 @@ class LLM:
         )
 
         # 5) Build the generation kwargs dictionary
-        generation_kwargs: dict = {}
+        generation_kwargs: dict = {
+            "do_sample": True,
+        }
         if self.top_p is not None:
             generation_kwargs["top_p"] = self.top_p
         if self.temperature is not None:

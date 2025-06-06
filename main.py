@@ -1,16 +1,21 @@
 import argparse
 import json
 import os
+import time
 
 from src.llm import LLM
 from src.prompt import *
-from src.utils import iterate_schelling_data, coordination_index
+from src.utils import iterate_schelling_data
+
+start_time = time.time()
 
 parser = argparse.ArgumentParser()
 parser.add_argument("-m", "--model", dest="model_name", type=str, default='meta-llama/Llama-3.2-1B-Instruct',
                     help="HuggingFace Model.")
-parser.add_argument("-t", "--trials", dest="trials", type=int, default=30,
+parser.add_argument("-t", "--trials", dest="trials", type=int, default=1,
                     help="Number of trials per experiment in dataset.")
+parser.add_argument("-s", "--return-sequences", dest="sequences", type=int, default=30,
+                    help="Number of responses per input.")
 parser.add_argument("-d", "--dataset", dest="dataset", type=str, default='schelling',
                     help="Jsonl dataset. Options are 'schelling'.")
 parser.add_argument("-q", "--quantization", dest="quantization", type=str, default=None,
@@ -19,25 +24,26 @@ parser.add_argument("-p", "--problem-tag", dest="problem_tag", type=str, default
                     help="Key of the problem in the json data. Options are 'problem', 'problem-nwp'.")
 
 args = parser.parse_args()
-model_name = str(args.model_name)
-trials = int(args.trials)
-dataset = str(args.dataset)
-quantization = str(args.quantization)
-problem_tag = str(args.problem_tag)
+model_name = args.model_name
+trials = args.trials
+dataset = args.dataset
+quantization = args.quantization
+problem_tag = args.problem_tag
+num_return_sequences = args.sequences
 
 # Global variables
-logs_dir = './logs/'
 dataset_dir = './data/'
-results_dir = './results/'
+logs_dir = f'./logs/{model_name}/'
+results_dir = f'./results/{model_name}/'  # just used to create the folder; analysis of the results is done in a separate script
 
 # Create the directories if they do not exist
 for dir in [logs_dir, dataset_dir, results_dir]:
-    if not os.path.exists(dir):
-        os.makedirs(dir)
+    os.makedirs(dir, exist_ok=True)
 
 # Load the model
 model = LLM(
     model_id=model_name,
+    num_return_sequences=num_return_sequences,
     quantization=quantization
 )
 
@@ -61,8 +67,9 @@ all_outputs = []
 for idx, problem in enumerate(all_prompts):
     outs = []
     for t in range(trials):
-        print(f"Trial {t + 1}/{trials} for question {idx}/{len(all_prompts)}")
-        outs.append(model.generate(problem))
+        print(f"Trial {t + 1}/{trials} for question number {idx + 1}/{len(all_prompts)},", 
+              f"generating {num_return_sequences} responses for question: \n{problem}\n")
+        outs = outs + model.generate_batch(problem)[0]
     all_outputs.append(outs)
 
 # Reconstruct the original nested-dict format
@@ -75,14 +82,21 @@ for (idx, problem), prompt_outputs in zip(keys, all_outputs):
 # Save the responses in a structured format  
 logs = []
 for idx in responses:
-    for problem in responses[idx]:
+    for variation_idx,problem in enumerate(responses[idx]):
         log = {
             'idx': idx,
+            'variation-idx': str(variation_idx), 
             'prompt': problem,
             "responses": responses[idx][problem]
         }
 
         logs.append(log)
 
-with open(f'{logs_dir}{dataset}_responses.jsonl', 'w') as f:
+output_path = f'{logs_dir}{dataset}_responses.jsonl'
+with open(output_path, 'w') as f:
     json.dump(logs, f, indent=2)
+
+print(f"Responses saved to: {output_path}")
+
+elapsed = int(time.time() - start_time)
+print(f"Total time taken: {elapsed // 3600:02d}:{(elapsed % 3600) // 60:02d} hours")
