@@ -7,8 +7,17 @@ RUN mkdir -p /workspace && chmod -R 777 /workspace
 # Switch into /workspace
 WORKDIR /workspace
 
+# Insert the huggingface-cli token
+ARG HF_TOKEN
+ENV HF_TOKEN=${HF_TOKEN}
+
 # Point all relevant env‐vars to that folder
 RUN mkdir -p /models /logs /results && chmod -R 777 /models /logs /results
+
+# Build essential tools for compiling
+RUN apt-get update && \
+    apt-get install -y --no-install-recommends build-essential && \
+    rm -rf /var/lib/apt/lists/*
 
 ENV AUDIOCRAFT_CACHE_DIR=/models \
     TORCH_HOME=/models \
@@ -17,6 +26,9 @@ ENV AUDIOCRAFT_CACHE_DIR=/models \
     HF_METRICS_CACHE=/models/metrics \
     HF_MODULES_CACHE=/models/modules \
     HUGGINGFACE_HUB_CACHE=/models/huggingface \
+    TRITON_CACHE_DIR=/models/triton_cache \
+    XDG_CACHE_HOME=/models/.cache \
+    TORCHINDUCTOR_CACHE_DIR=/models/torch_inductor_cache \
     PYTHONUNBUFFERED=1 \
     NCCL_SHM_DISABLE=1 \
     OMP_NUM_THREADS=1
@@ -36,8 +48,7 @@ ENTRYPOINT [ \
   "python", \
   "main.py", \
   "--model", \
-  "meta-llama/Llama-3-70B-Instruct", \
+  "meta-llama/Llama-3.3-70B-Instruct", \
   "--quantization", \
   "8bit" \
 ]
-

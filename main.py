@@ -2,7 +2,6 @@ import argparse
 import json
 import os
 import time
-
 from src.llm import LLM
 from src.prompt import *
 from src.utils import iterate_schelling_data
@@ -34,11 +33,8 @@ num_return_sequences = args.sequences
 # Global variables
 dataset_dir = './data/'
 logs_dir = f'./logs/{model_name}/'
-results_dir = f'./results/{model_name}/'  # just used to create the folder; analysis of the results is done in a separate script
-
-# Create the directories if they do not exist
-for dir in [logs_dir, dataset_dir, results_dir]:
-    os.makedirs(dir, exist_ok=True)
+for le_dir in [logs_dir, dataset_dir]:
+    os.makedirs(le_dir, exist_ok=True)
 
 # Load the model
 model = LLM(
@@ -69,7 +65,7 @@ for idx, problem in enumerate(all_prompts):
     for t in range(trials):
         print(f"Trial {t + 1}/{trials} for question number {idx + 1}/{len(all_prompts)},", 
               f"generating {num_return_sequences} responses for question: \n{problem}\n")
-        outs = outs + model.generate_batch(problem)[0]
+        outs = outs + model.generate_batch([problem])[0]
     all_outputs.append(outs)
 
 # Reconstruct the original nested-dict format
