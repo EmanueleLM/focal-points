@@ -89,7 +89,7 @@ class LLM:
 
         # Create a text-generation pipeline that accepts a batch of prompts
         self.generator = pipeline(
-            "chat-completion",
+            "text-generation",
             model=self.model,
             tokenizer=self.tokenizer,
             **generation_kwargs,

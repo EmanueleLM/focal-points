@@ -12,7 +12,7 @@ def extract_clean_answer(answer):
     return None
 
 # Plot function
-def plot_block_frequencies(data, dataset, model_name):
+def plot_block_frequencies(data, dataset, model_name, problem_tag):
     for block in data:
         responses = []
         for r in block["responses"]:
@@ -41,9 +41,9 @@ def plot_block_frequencies(data, dataset, model_name):
             plt.xticks(rotation=45, ha="right")
             plt.tight_layout()
             print(int(block['idx']))
-            plt.savefig(f"./images/{model_name}/{dataset}/idx_{block['idx']}.{block['variation-idx']}_frequencies.png")
+            plt.savefig(f"./images/{model_name}/{dataset}/{problem_tag}/idx_{block['idx']}.{block['variation-idx']}_frequencies.png")
             
-            with open(f"./results/{model_name}/{dataset}.jsonl", "a") as f:
+            with open(f"./results/{model_name}/{dataset}_{problem_tag}.jsonl", "a") as f:
                 f.write(json.dumps({
                     "idx": block["idx"],
                     "variation-idx": block['variation-idx'],

@@ -88,7 +88,7 @@ for idx in responses:
 
         logs.append(log)
 
-output_path = f'{logs_dir}{dataset}_responses.jsonl'
+output_path = f'{logs_dir}{dataset}_responses_{problem_tag}.jsonl'
 with open(output_path, 'w') as f:
     json.dump(logs, f, indent=2)
 
