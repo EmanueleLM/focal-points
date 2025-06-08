@@ -1,6 +1,7 @@
 import os
 from dotenv import load_dotenv
 from huggingface_hub import login
+import torch
 from transformers import (
     AutoModelForCausalLM,
     AutoTokenizer,
@@ -30,13 +31,11 @@ class LLM:
         self.quantization = quantization
 
         # Load the tokenizer (same for all cases)
-        # Load the tokenizer (same for all cases)
         self.tokenizer = AutoTokenizer.from_pretrained(
             model_id,
             token=os.getenv("HF_TOKEN"),
         )
 
-        # Build a BitsAndBytesConfig only if quantization is requested
         # Build a BitsAndBytesConfig only if quantization is requested
         bnb_config = None
 
@@ -48,13 +47,12 @@ class LLM:
             bnb_config = BitsAndBytesConfig(
                 load_in_4bit=True,
                 bnb_4bit_quant_type="nf4",
-                bnb_4bit_compute_dtype="float16",
+                bnb_4bit_compute_dtype=torch.bfloat16,
             )
 
         # Prepare kwargs for from_pretrained()
-        # Prepare kwargs for from_pretrained()
         model_kwargs: dict = {
-            "use_auth_token": os.getenv("HF_TOKEN"),
+            "token": os.getenv("HF_TOKEN"),
             "trust_remote_code": True,
             "device_map": "auto",
         }
@@ -62,10 +60,8 @@ class LLM:
         if bnb_config is not None:
             model_kwargs["quantization_config"] = bnb_config
         else:
-            # No quantization scenario
-            model_kwargs["torch_dtype"] = "auto"
+            model_kwargs["torch_dtype"] = torch.bfloat16
 
-        # Load the model once
         # Load the model once
         self.model = AutoModelForCausalLM.from_pretrained(
             model_id,
@@ -73,10 +69,10 @@ class LLM:
         )
 
         # Build the generation kwargs dictionary
-        # Build the generation kwargs dictionary
         generation_kwargs: dict = {
             "do_sample": True,
             "return_full_text": False,
+            "torch_dtype": torch.bfloat16,
         }
         if self.top_p is not None:
             generation_kwargs["top_p"] = self.top_p
@@ -95,26 +91,24 @@ class LLM:
             **generation_kwargs,
         )
 
-        # Fixed system instruction
-        self.system_message = (
-            "You are an assistant that only replies with a single answer "
-            "wrapped in <answer> tags, and nothing else."
-        )
+        self.chat_template = [
+            {"role": "system",
+             "content": "You are a helpful assistant that only replies with a single answer between the <answer></answer> tags."},
+            {"role": "user", "content": None}
+        ]
 
     def generate_batch(self, prompts: list[str]) -> list[list[str]]:
-        results = self.generator(prompts)
+        formatted_chats = []
+        for prompt in prompts:
+            chat = [
+                {"role": "system", "content": self.chat_template[0]["content"]},
+                {"role": "user", "content": prompt}
+            ]
+            formatted_chats.append(chat)
+
+        results = self.generator(formatted_chats)
         all_responses: list[list[str]] = []
 
-        batch_inputs = []
-        for user_prompt in prompts:
-            batch_inputs.append([
-                {"role": "system", "content": self.system_message},
-                {"role": "user", "content": user_prompt}
-            ])
-
-        results = self.generator(batch_inputs)
-
-        # Extract the "generated_text" for each completion
         for out in results:
             if isinstance(out, list):
                 texts = [entry["generated_text"] for entry in out]

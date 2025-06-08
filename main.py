@@ -63,9 +63,11 @@ all_outputs = []
 for idx, problem in enumerate(all_prompts):
     outs = []
     for t in range(trials):
-        print(f"Trial {t + 1}/{trials} for question number {idx + 1}/{len(all_prompts)},", 
+        print(f"Trial {t + 1}/{trials} for question number {idx + 1}/{len(all_prompts)},",
               f"generating {num_return_sequences} responses for question: \n{problem}\n")
-        outs = outs + model.generate_batch([problem])[0]
+        texts = model.generate_batch([problem])[0]
+        outs = outs + texts
+        print("\n".join(texts))
     all_outputs.append(outs)
 
 # Reconstruct the original nested-dict format
@@ -78,10 +80,10 @@ for (idx, problem), prompt_outputs in zip(keys, all_outputs):
 # Save the responses in a structured format  
 logs = []
 for idx in responses:
-    for variation_idx,problem in enumerate(responses[idx]):
+    for variation_idx, problem in enumerate(responses[idx]):
         log = {
             'idx': idx,
-            'variation-idx': str(variation_idx), 
+            'variation-idx': str(variation_idx),
             'prompt': problem,
             "responses": responses[idx][problem]
         }
