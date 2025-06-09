@@ -8,11 +8,11 @@ from collections import Counter
 from src.utils import plot_block_frequencies
 
 parser = argparse.ArgumentParser()
-parser.add_argument("-m", "--model", dest="model_name", type=str, default='meta-llama/Llama-3.2-1B-Instruct',
+parser.add_argument("-m", "--model", dest="model_name", type=str, default='meta-llama/Llama-3.2-3B-Instruct',
                     help="HuggingFace Model.")
 parser.add_argument("-d", "--dataset", dest="dataset", type=str, default='schelling',
                     help="Jsonl dataset. Options are 'schelling'.")
-parser.add_argument("-p", "--problem-tag", dest="problem_tag", type=str, default='problem',
+parser.add_argument("-p", "--problem-tag", dest="problem_tag", type=str, default='problem-nwp',
                     help="Key of the problem in the json data. Options are 'problem', 'problem-nwp'.")
 
 args = parser.parse_args()

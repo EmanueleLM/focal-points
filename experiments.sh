@@ -1,7 +1,7 @@
 #!/bin/bash
 
 model="meta-llama/Llama-3.2-3B-Instruct"
-num_experiments=30
+num_experiments=100
 quantization="None"
 
 # Parse command-line arguments
@@ -32,7 +32,7 @@ problemtags=("problem-nwp" "problem")
 for data in "${datasets[@]}"; do
   for ptag in "${problemtags[@]}"; do
     echo "Running main.py with $data and $ptag"
-    python main.py --model "$model" --dataset "$data" --problem-tag "$ptag" --return-sequences "$num_experiments" --quantization "$quantization"
+    # python main.py --model "$model" --dataset "$data" --problem-tag "$ptag" --return-sequences "$num_experiments" --quantization "$quantization"
 
     echo "Running metrics.py with $data and $ptag"
     python metrics.py --model "$model" --dataset "$data" --problem-tag "$ptag"
@@ -46,7 +46,7 @@ problemtags=("problem-pick" "problem-guess" "problem-coordinate")
 for data in "${datasets[@]}"; do
   for ptag in "${problemtags[@]}"; do
     echo "Running main.py with $data and $ptag"
-    python main.py --model "$model" --dataset "$data" --problem-tag "$ptag" --return-sequences "$num_experiments" --quantization "$quantization"
+    # python main.py --model "$model" --dataset "$data" --problem-tag "$ptag" --return-sequences "$num_experiments" --quantization "$quantization"
 
     echo "Running metrics.py with $data and $ptag"
     python metrics.py --model "$model" --dataset "$data" --problem-tag "$ptag"

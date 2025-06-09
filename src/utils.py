@@ -22,8 +22,9 @@ def plot_block_frequencies(data, dataset, model_name, problem_tag):
             total = sum(count.values())
             if total > 1:
                 coordination_index = sum([v * (v - 1) for v in dict(count).values()]) / (total * (total - 1))
-                print(f"Coordination Index: {coordination_index:.4f}")
-                print(f"Normalised Coordination Index: {coordination_index * len(count):.4f}")
+                normalised_coordination_index = coordination_index * total / len(count)
+                print(f"Coordination Index: {coordination_index}")
+                print(f"Normalised Coordination Index: {normalised_coordination_index}")
             else:
                 coordination_index = 0
 
@@ -59,7 +60,7 @@ def plot_block_frequencies(data, dataset, model_name, problem_tag):
                 "prompt": block["prompt"],
                 "responses": dict(count),
                 "coordination_index": coordination_index,
-                "normalised_coordination_index": coordination_index * len(count)
+                "normalised_coordination_index": normalised_coordination_index
             })
 
         else:
@@ -67,7 +68,7 @@ def plot_block_frequencies(data, dataset, model_name, problem_tag):
 
         print("=" * 80)
         
-    with open(f"./results/{model_name}/{dataset}_{problem_tag}.jsonl", "a") as f:
+    with open(f"./results/{model_name}/{dataset}_{problem_tag}.jsonl", "w") as f:
         json.dump(jsonl_results, f, indent=2)
 
 
@@ -92,9 +93,11 @@ def iterate_data(data: dict, problem_tag: str):
     return problems
 
 
-def coordination_index(items: dict):
-    freq = freq_counter = Counter(items)
-    total = sum(freq_counter.values())
-    coordination_index = sum([v * (v - 1) for v in dict(freq).values()]) / (total * (total - 1))
-
-    return coordination_index, coordination_index * len(freq_counter)
+# def coordination_index(items: dict):
+# TODO: Integrate this function with metrics.py
+#     freq_counter = Counter(items)
+#     total = sum(freq_counter.values())
+#     coordination_index = sum([v * (v - 1) for v in dict(freq_counter).values()]) / (total * (total - 1))
+#     normalised_coordination_index = coordination_index * total / len(freq_counter)
+    
+#     return coordination_index, normalised_coordination_index
