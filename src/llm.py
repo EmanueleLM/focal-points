@@ -93,7 +93,7 @@ class LLM:
 
         self.chat_template = [
             {"role": "system",
-             "content": "You are a helpful assistant that only replies with a single answer between the <answer></answer> tags."},
+             "content": "You are a helpful assistant that only replies with a single answer, with no additional text."},
             {"role": "user", "content": None}
         ]
 
@@ -111,9 +111,9 @@ class LLM:
 
         for out in results:
             if isinstance(out, list):
-                texts = [entry["generated_text"] for entry in out]
+                texts = [entry["generated_text"].strip().lower() for entry in out]
             else:
-                texts = [out["generated_text"]]
+                texts = [out["generated_text"].strip().lower()]
             all_responses.append(texts)
 
         return all_responses
