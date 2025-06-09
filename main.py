@@ -4,7 +4,7 @@ import os
 import time
 from src.llm import LLM
 from src.prompt import *
-from src.utils import iterate_schelling_data
+from src.utils import iterate_data
 
 start_time = time.time()
 
@@ -47,7 +47,7 @@ model = LLM(
 with open(f"{dataset_dir}{dataset}.jsonl", 'r') as file:
     data = json.load(file)
 
-problems = iterate_schelling_data(data, problem_tag)
+problems = iterate_data(data, problem_tag)
 
 # Build a flat list of all (idx, problem) prompts
 all_prompts = []

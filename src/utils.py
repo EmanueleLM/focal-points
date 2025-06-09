@@ -40,7 +40,7 @@ def plot_block_frequencies(data, dataset, model_name, problem_tag):
             plt.ylabel("Frequency")
             plt.xticks(rotation=45, ha="right")
             plt.tight_layout()
-            print(int(block['idx']))
+            print(block['idx'])
             plt.savefig(f"./images/{model_name}/{dataset}/{problem_tag}/idx_{block['idx']}.{block['variation-idx']}_frequencies.png")
             
             with open(f"./results/{model_name}/{dataset}_{problem_tag}.jsonl", "a") as f:
@@ -58,7 +58,7 @@ def plot_block_frequencies(data, dataset, model_name, problem_tag):
             
         print("=" * 80)
 
-def iterate_schelling_data(data:dict, problem_tag:str):
+def iterate_data(data:dict, problem_tag:str):
     problems = {}
     for d in data:
         idx = d["id"]
