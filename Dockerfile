@@ -45,4 +45,5 @@ COPY . .
 RUN chmod -R a+rw /workspace
 
 # Launch the script
-ENTRYPOINT [ "bash", "experiments.sh" ]
+ENTRYPOINT [ "bash", "experiments.sh"]
+CMD [ "-m", "meta-llama/Llama-3.3-70B-Instruct", "-n", "100", "-q", "8bit" ]

@@ -8,6 +8,7 @@ from collections import Counter
 
 # Plot function
 def plot_block_frequencies(data, dataset, model_name, problem_tag):
+    jsonl_results = []
     for block in data:
         responses = []
         for r in block["responses"]:
@@ -26,42 +27,48 @@ def plot_block_frequencies(data, dataset, model_name, problem_tag):
             else:
                 coordination_index = 0
 
-            # Plotting
-            plt.figure(figsize=(10, 5))
-            plt.bar(count.keys(), count.values())
-            plt.title(f"Frequencies for prompt with idx {block['idx']}.{block['variation-idx']}")
-            plt.xlabel("Answer")
-            plt.ylabel("Frequency")
-            plt.xticks(rotation=45, ha="right")
+            # Create the figure with two subplots side by side
+            fig, (ax_bar, ax_text) = plt.subplots(1, 2, figsize=(14, 6), gridspec_kw={'width_ratios': [2, 1]})
 
-            # Add the prompt text as a text box
+            # Plot the bar chart on the left
+            ax_bar.bar(count.keys(), count.values())
+            ax_bar.set_title(f"Frequencies for prompt with idx {block['idx']}.{block['variation-idx']}")
+            ax_bar.set_xlabel("Answer")
+            ax_bar.set_ylabel("Frequency")
+            ax_bar.tick_params(axis='x', rotation=45)
+
+            # Add the wrapped prompt text on the right
             max_line_width = 45  # characters
             wrapped_text = "\n".join(textwrap.wrap(block['prompt'], width=max_line_width))
-            plt.text(0.5, 0.5, wrapped_text,
-                     fontsize=12,
-                     bbox=dict(facecolor='lightblue', edgecolor='black', boxstyle='round,pad=0.5'))
+            ax_text.text(0, 1, wrapped_text, fontsize=12, va='top',
+                        bbox=dict(facecolor='lightblue', edgecolor='black', boxstyle='round,pad=0.5'))
+            ax_text.axis('off')  # Hide axis for the text box
 
             plt.tight_layout()
             print(block['idx'])
+
+            # Save the figure
             plt.savefig(
                 f"./images/{model_name}/{dataset}/{problem_tag}/idx_{block['idx']}.{block['variation-idx']}_frequencies.png",
                 bbox_inches='tight',
                 dpi=150)
 
-            with open(f"./results/{model_name}/{dataset}_{problem_tag}.jsonl", "a") as f:
-                f.write(json.dumps({
-                    "idx": block["idx"],
-                    "variation-idx": block['variation-idx'],
-                    "prompt": block["prompt"],
-                    "responses": dict(count),
-                    "coordination_index": coordination_index,
-                    "normalised_coordination_index": coordination_index * len(count)
-                }, indent=2) + "\n")
+            jsonl_results.append({
+                "idx": block["idx"],
+                "variation-idx": block['variation-idx'],
+                "prompt": block["prompt"],
+                "responses": dict(count),
+                "coordination_index": coordination_index,
+                "normalised_coordination_index": coordination_index * len(count)
+            })
 
         else:
             print(f"No valid responses found for block with idx {block['idx']} and prompt `{block['prompt']}'.")
 
         print("=" * 80)
+        
+    with open(f"./results/{model_name}/{dataset}_{problem_tag}.jsonl", "a") as f:
+        json.dump(jsonl_results, f, indent=2)
 
 
 def iterate_data(data: dict, problem_tag: str):
