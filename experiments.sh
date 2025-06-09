@@ -1,5 +1,5 @@
 #!/bin/bash
-models=("meta-llama/Llama-3.2-3B-Instruct")
+models=("meta-llama/Llama-3.3-70B-Instruct")
 num_experiments=100
 
 for model in "${models[@]}"; do
@@ -13,7 +13,7 @@ for model in "${models[@]}"; do
   for data in "${datasets[@]}"; do
     for ptag in "${problemtags[@]}"; do
       echo "Running main.py with $data and $ptag"
-      python main.py --model "$model" --dataset "$data" --problem-tag "$ptag" --return-sequences "$num_experiments"
+      python main.py --model "$model" --dataset "$data" --problem-tag "$ptag" --return-sequences "$num_experiments" --quantization "8bit"
 
       echo "Running metrics.py with $data and $ptag"
       python metrics.py --model "$model" --dataset "$data" --problem-tag "$ptag"
@@ -27,7 +27,7 @@ for model in "${models[@]}"; do
   for data in "${datasets[@]}"; do
     for ptag in "${problemtags[@]}"; do
       echo "Running main.py with $data and $ptag"
-      python main.py --model "$model" --dataset "$data" --problem-tag "$ptag" --return-sequences "$num_experiments"
+      python main.py --model "$model" --dataset "$data" --problem-tag "$ptag" --return-sequences "$num_experiments" --quantization "8bit"
 
       echo "Running metrics.py with $data and $ptag"
       python metrics.py --model "$model" --dataset "$data" --problem-tag "$ptag"

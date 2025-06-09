@@ -45,11 +45,4 @@ COPY . .
 RUN chmod -R a+rw /workspace
 
 # Launch the script
-ENTRYPOINT [ \
-  "python", \
-  "main.py", \
-  "--model", \
-  "meta-llama/Llama-3.3-70B-Instruct", \
-  "--quantization", \
-  "8bit" \
-]
+ENTRYPOINT [ "bash", "experiments.sh" ]
