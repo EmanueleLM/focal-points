@@ -1,5 +1,5 @@
 #!/bin/bash
-models=("meta-llama/Llama-3.2-1B-Instruct" "meta-llama/Llama-3.2-3B-Instruct")
+models=("meta-llama/Llama-3.2-3B-Instruct")
 num_experiments=50
 
 for model in "${models[@]}"; do

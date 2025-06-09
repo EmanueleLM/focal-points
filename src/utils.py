@@ -2,6 +2,7 @@ import json
 import itertools
 import matplotlib.pyplot as plt
 import re
+import textwrap
 from collections import Counter
 
 # Helper to extract clean value from <answer>...</answer>
@@ -35,13 +36,23 @@ def plot_block_frequencies(data, dataset, model_name, problem_tag):
             # Plotting
             plt.figure(figsize=(10, 5))
             plt.bar(count.keys(), count.values())
-            plt.title(f"Frequencies for prompt:\n{block['prompt']}")
+            plt.title(f"Frequencies for prompt with idx {block['idx']}.{block['variation-idx']}")
             plt.xlabel("Answer")
             plt.ylabel("Frequency")
             plt.xticks(rotation=45, ha="right")
+            
+            # Add the prompt text as a text box
+            max_line_width = 45  # characters
+            wrapped_text = "\n".join(textwrap.wrap(block['prompt'], width=max_line_width))
+            plt.text(0.5, 0.5, wrapped_text,
+                    fontsize=12,
+                    bbox=dict(facecolor='lightblue', edgecolor='black', boxstyle='round,pad=0.5'))
+            
             plt.tight_layout()
             print(block['idx'])
-            plt.savefig(f"./images/{model_name}/{dataset}/{problem_tag}/idx_{block['idx']}.{block['variation-idx']}_frequencies.png")
+            plt.savefig(f"./images/{model_name}/{dataset}/{problem_tag}/idx_{block['idx']}.{block['variation-idx']}_frequencies.png",
+                        bbox_inches='tight',
+                        dpi=150)
             
             with open(f"./results/{model_name}/{dataset}_{problem_tag}.jsonl", "a") as f:
                 f.write(json.dumps({
