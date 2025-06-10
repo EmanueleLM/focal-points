@@ -5,7 +5,7 @@
     "problem-nwp": "I will now write down a number between 1 and @max@. The number selected is ",
     "placeholders": ["max"],
     "max": ["10", "100", "1000"],
-    "normalization_factor": ["10", "100", "1000"]
+    "normalization_factor": [10, 100, 1000]
   },
   {
     "id": "1",
@@ -13,7 +13,7 @@
     "problem-nwp": "I will now write down a number between 1 and @max@. I will pick a number that another agent will most likely choose. The number selected is ",
     "placeholders": ["max"],
     "max": ["10", "100", "1000"],
-    "normalization_factor": ["10", "100", "1000"]
+    "normalization_factor": [10, 100, 1000]
   },
   {
     "id": "2",
@@ -45,6 +45,6 @@
     "problem-nwp": "I have to split $@money@ with another person. I win if we choose the same amount. The amount I choose is ",
     "placeholders": ["money"],
     "money": ["10", "100", "1000"],
-    "normalization_factor": ["10", "100", "1000"]
+    "normalization_factor": [10, 100, 1000]
   }
 ]

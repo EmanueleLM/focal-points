@@ -47,7 +47,7 @@ model = LLM(
 with open(f"{dataset_dir}{dataset}.jsonl", 'r') as file:
     data = json.load(file)
 
-problems = iterate_data(data, problem_tag)
+problems, normalization_factors = iterate_data(data, problem_tag)
 
 # Build a flat list of all (idx, problem) prompts
 all_prompts = []
@@ -80,14 +80,14 @@ for (idx, problem), prompt_outputs in zip(keys, all_outputs):
 # Save the responses in a structured format  
 logs = []
 for idx in responses:
-    for variation_idx, problem in enumerate(responses[idx]):
+    for (variation_idx, problem), normalization_factor in zip(enumerate(responses[idx]), normalization_factors[idx]):
         log = {
             'idx': idx,
             'variation-idx': str(variation_idx),
             'prompt': problem,
-            "responses": responses[idx][problem]
+            "responses": responses[idx][problem],
+            'normalization_factor': normalization_factor
         }
-
         logs.append(log)
 
 output_path = f'{logs_dir}{dataset}_responses_{problem_tag}.jsonl'

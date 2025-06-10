@@ -10,8 +10,7 @@ from collections import Counter
 def plot_block_frequencies(data,
                            dataset,
                            model_name,
-                           problem_tag,
-                           normalization_factor=1.0):
+                           problem_tag):
     jsonl_results = []
     for block in data:
         responses = []
@@ -25,9 +24,8 @@ def plot_block_frequencies(data,
             # Coordination Index
             total = sum(count.values())
             if total > 1:
-                coordination_index, normalised_coordination_index = coordination_index(count, 
-                                                                                       normalization_factor,
-                                                                                       normalization_factor)
+                coordination_index, normalised_coordination_index = compute_coordination_index(count, 
+                                                                                                block["normalization_factor"])
                 print(f"Coordination Index: {coordination_index}")
                 print(f"Normalised Coordination Index: {normalised_coordination_index}")
             else:
@@ -78,7 +76,7 @@ def plot_block_frequencies(data,
 
 
 def iterate_data(data: dict, problem_tag: str):
-    problems = {}
+    problems, normalization_factors = {}, {}
     for d in data:
         idx = d["id"]
         problems[idx] = []
@@ -94,11 +92,21 @@ def iterate_data(data: dict, problem_tag: str):
             for el, p in zip(elements, d["placeholders"]):
                 new_text = new_text.replace(f"@{p}@", el)
             problems[idx].append(new_text)
+        
+        if d["normalization_factor"]:
+            if isinstance(d["normalization_factor"], int):
+                normalization_factors[idx] = [d["normalization_factor"]]*len(problems[idx])
+            elif isinstance(d["normalization_factor"], list):
+                normalization_factors[idx] = d["normalization_factor"]
+            else:
+                raise ValueError(f"Unexpected normalization factor type: {type(d['normalization_factor'])}")
+        else:
+            normalization_factors[idx] = [-1]*len(problems[idx])
 
-    return problems
+    return problems, normalization_factors
 
 
-def coordination_index(items: dict, normalization_factor: float = 1.0):
+def compute_coordination_index(items: dict, normalization_factor: float = 1.0):
     freq_counter = Counter(items)
     total = sum(freq_counter.values())
     coordination_index = sum([v * (v - 1) for v in dict(freq_counter).values()]) / (total * (total - 1))
