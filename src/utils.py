@@ -86,7 +86,7 @@ def iterate_data(data: dict, problem_tag: str):
         placeholders = [d[p] for p in d["placeholders"]]
         if not placeholders:
             problems[idx].append(text)
-            continue
+            continue 
 
         for elements in itertools.product(*placeholders):
             new_text = text
