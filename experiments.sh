@@ -1,6 +1,6 @@
 #!/bin/bash
 
-model="meta-llama/Llama-3.3-70B-Instruct"
+model="Qwen/Qwen2.5-1.5B-Instruct"
 num_experiments=100
 quantization="None"
 
@@ -31,8 +31,8 @@ problemtags=("problem-nwp" "problem")
 
 for data in "${datasets[@]}"; do
   for ptag in "${problemtags[@]}"; do
-    # echo "Running main.py with $data and $ptag"
-    # python main.py --model "$model" --dataset "$data" --problem-tag "$ptag" --return-sequences "$num_experiments" --quantization "$quantization"
+    echo "Running main.py with $data and $ptag"
+    python main.py --model "$model" --dataset "$data" --problem-tag "$ptag" --return-sequences "$num_experiments" --quantization "$quantization"
 
     echo "Running metrics.py with $data and $ptag"
     python metrics.py --model "$model" --dataset "$data" --problem-tag "$ptag"
@@ -45,8 +45,8 @@ problemtags=("problem-pick" "problem-guess" "problem-coordinate")
 
 for data in "${datasets[@]}"; do
   for ptag in "${problemtags[@]}"; do
-    # echo "Running main.py with $data and $ptag"
-    # python main.py --model "$model" --dataset "$data" --problem-tag "$ptag" --return-sequences "$num_experiments" --quantization "$quantization"
+    echo "Running main.py with $data and $ptag"
+    python main.py --model "$model" --dataset "$data" --problem-tag "$ptag" --return-sequences "$num_experiments" --quantization "$quantization"
 
     echo "Running metrics.py with $data and $ptag"
     python metrics.py --model "$model" --dataset "$data" --problem-tag "$ptag"
