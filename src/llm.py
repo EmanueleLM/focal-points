@@ -111,9 +111,12 @@ class LLM:
 
         for out in results:
             if isinstance(out, list):
-                texts = [entry["generated_text"].strip().lower() for entry in out]
+                texts = [
+                    ''.join(c for c in entry["generated_text"].strip().lower() if c.isalnum())
+                    for entry in out
+                ]
             else:
-                texts = [out["generated_text"].strip().lower()]
+                texts = [''.join(c for c in out["generated_text"].strip().lower() if c.isalnum())]
             all_responses.append(texts)
 
         return all_responses
