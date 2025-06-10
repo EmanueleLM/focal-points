@@ -7,7 +7,11 @@ from collections import Counter
 
 
 # Plot function
-def plot_block_frequencies(data, dataset, model_name, problem_tag):
+def plot_block_frequencies(data,
+                           dataset,
+                           model_name,
+                           problem_tag,
+                           normalization_factor=1.0):
     jsonl_results = []
     for block in data:
         responses = []
@@ -21,12 +25,13 @@ def plot_block_frequencies(data, dataset, model_name, problem_tag):
             # Coordination Index
             total = sum(count.values())
             if total > 1:
-                coordination_index = sum([v * (v - 1) for v in dict(count).values()]) / (total * (total - 1))
-                normalised_coordination_index = coordination_index * total / len(count)
+                coordination_index, normalised_coordination_index = coordination_index(count, 
+                                                                                       normalization_factor,
+                                                                                       normalization_factor)
                 print(f"Coordination Index: {coordination_index}")
                 print(f"Normalised Coordination Index: {normalised_coordination_index}")
             else:
-                coordination_index = 0
+                coordination_index = 0.
 
             # Create the figure with two subplots side by side
             fig, (ax_bar, ax_text) = plt.subplots(1, 2, figsize=(14, 6), gridspec_kw={'width_ratios': [2, 1]})
@@ -93,11 +98,10 @@ def iterate_data(data: dict, problem_tag: str):
     return problems
 
 
-# def coordination_index(items: dict):
-# TODO: Integrate this function with metrics.py
-#     freq_counter = Counter(items)
-#     total = sum(freq_counter.values())
-#     coordination_index = sum([v * (v - 1) for v in dict(freq_counter).values()]) / (total * (total - 1))
-#     normalised_coordination_index = coordination_index * total / len(freq_counter)
+def coordination_index(items: dict, normalization_factor: float = 1.0):
+    freq_counter = Counter(items)
+    total = sum(freq_counter.values())
+    coordination_index = sum([v * (v - 1) for v in dict(freq_counter).values()]) / (total * (total - 1))
+    normalised_coordination_index = coordination_index * normalization_factor
     
-#     return coordination_index, normalised_coordination_index
+    return coordination_index, normalised_coordination_index
