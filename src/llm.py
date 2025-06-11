@@ -88,6 +88,7 @@ class LLM:
             "text-generation",
             model=self.model,
             tokenizer=self.tokenizer,
+            disable_compile=(True if self.model_id=="google/gemma-3-4b-it" else None),  # this fixes this bug with Gemma: https://github.com/huggingface/transformers/issues/38333
             **generation_kwargs,
         )
 

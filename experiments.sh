@@ -1,6 +1,6 @@
 #!/bin/bash
 
-model="Qwen/Qwen2.5-1.5B-Instruct"
+model="google/gemma-3-4b-it"
 num_experiments=100
 quantization="None"
 
