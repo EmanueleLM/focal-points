@@ -1,6 +1,6 @@
 #!/bin/bash
 
-model="google/gemma-3-4b-it"
+models=("microsoft/Phi-4-mini-instruct")
 num_experiments=100
 quantization="None"
 
@@ -23,32 +23,57 @@ while getopts "m:n:q:" opt; do
   esac
 done
 
-echo "Running experiments with model: $model, quantization: $quantization, number of experiments: $num_experiments"
+# Handle "all-models" option
+if [[ "$models" == "all-models" ]]; then
+  models=(""meta-llama/Llama-3.2-3B-Instruct" "Qwen/Qwen2.5-1.5B-Instruct" "microsoft/Phi-4-mini-instruct" "google/gemma-3-4b-it"")
+else
+  models=("$models")
+fi
 
-# le Schelling
-datasets=("schelling")
-problemtags=("problem-nwp" "problem")
+echo "Running experiments with model: $models, quantization: $quantization, number of experiments: $num_experiments"
 
-for data in "${datasets[@]}"; do
-  for ptag in "${problemtags[@]}"; do
-    echo "Running main.py with $data and $ptag"
-    python main.py --model "$model" --dataset "$data" --problem-tag "$ptag" --return-sequences "$num_experiments" --quantization "$quantization"
+for model in "${models[@]}"; do
+  echo "Using model: $model"
+  
+  # le Schelling
+  datasets=("schelling")
+  problemtags=("problem-nwp" "problem")
 
-    echo "Running metrics.py with $data and $ptag"
-    python metrics.py --model "$model" --dataset "$data" --problem-tag "$ptag"
+  for data in "${datasets[@]}"; do
+    for ptag in "${problemtags[@]}"; do
+      echo "Running main.py with $data and $ptag"
+      python main.py --model "$model" --dataset "$data" --problem-tag "$ptag" --return-sequences "$num_experiments" --quantization "$quantization"
+
+      echo "Running metrics.py with $data and $ptag"
+      python metrics.py --model "$model" --dataset "$data" --problem-tag "$ptag"
+    done
   done
-done
 
-# le Amsterdam and Nottingham
-datasets=("amsterdam" "nottingham")
-problemtags=("problem-pick" "problem-guess" "problem-coordinate")
+  # le Amsterdam and Nottingham
+  datasets=("amsterdam" "nottingham")
+  problemtags=("problem-pick" "problem-guess" "problem-coordinate")
 
-for data in "${datasets[@]}"; do
-  for ptag in "${problemtags[@]}"; do
-    echo "Running main.py with $data and $ptag"
-    python main.py --model "$model" --dataset "$data" --problem-tag "$ptag" --return-sequences "$num_experiments" --quantization "$quantization"
+  for data in "${datasets[@]}"; do
+    for ptag in "${problemtags[@]}"; do
+      echo "Running main.py with $data and $ptag"
+      python main.py --model "$model" --dataset "$data" --problem-tag "$ptag" --return-sequences "$num_experiments" --quantization "$quantization"
 
-    echo "Running metrics.py with $data and $ptag"
-    python metrics.py --model "$model" --dataset "$data" --problem-tag "$ptag"
+      echo "Running metrics.py with $data and $ptag"
+      python metrics.py --model "$model" --dataset "$data" --problem-tag "$ptag"
+    done
+  done
+
+  # le Asymmetric Payoff
+  datasets=("asymmetric_payoff")
+  problemtags=("problem-pick" "problem-guess" "problem-coordinate")
+
+  for data in "${datasets[@]}"; do
+    for ptag in "${problemtags[@]}"; do
+      echo "Running main.py with $data and $ptag"
+      python main.py --model "$model" --dataset "$data" --problem-tag "$ptag" --return-sequences "$num_experiments" --quantization "$quantization"
+
+      echo "Running metrics.py with $data and $ptag"
+      python metrics.py --model "$model" --dataset "$data" --problem-tag "$ptag"
+    done
   done
 done
