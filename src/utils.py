@@ -18,7 +18,7 @@ def plot_block_frequencies(data,
             if r is not None:
                 responses.append(r)
         count = Counter(responses)
-        print(count)
+        print("\n".join(f"{k}: {v}" for k, v in count.items()))
 
         if count:
             # Coordination Index

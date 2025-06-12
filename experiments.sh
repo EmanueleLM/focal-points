@@ -8,7 +8,7 @@ quantization="None"
 while getopts "m:n:q:" opt; do
   case $opt in
     m)
-      model=$OPTARG
+      models=("$OPTARG")
       ;;
     n)
       num_experiments=$OPTARG
