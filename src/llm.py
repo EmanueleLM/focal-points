@@ -2,6 +2,7 @@ import os
 from dotenv import load_dotenv
 from huggingface_hub import login
 import torch
+import gc, shutil
 from transformers import (
     AutoModelForCausalLM,
     AutoTokenizer,
@@ -88,7 +89,8 @@ class LLM:
             "text-generation",
             model=self.model,
             tokenizer=self.tokenizer,
-            disable_compile=(True if self.model_id=="google/gemma-3-4b-it" else None),  # this fixes this bug with Gemma: https://github.com/huggingface/transformers/issues/38333
+            disable_compile=(True if self.model_id == "google/gemma-3-4b-it" else None),
+            # this fixes this bug with Gemma: https://github.com/huggingface/transformers/issues/38333
             **generation_kwargs,
         )
 
@@ -97,6 +99,21 @@ class LLM:
              "content": "You are a helpful assistant that only replies with a single answer, with no additional text."},
             {"role": "user", "content": None}
         ]
+
+    def clear_cache(self) -> None:
+        # free VRAM / system RAM
+        if torch.cuda.is_available():
+            torch.cuda.empty_cache()
+        del self.generator, self.model
+        gc.collect()
+
+        # remove the weight files from disk
+        cache_root = os.getenv("HF_HOME", os.path.expanduser("~/.cache/huggingface"))
+        model_cache = os.path.join(
+            cache_root, "huggingface"
+        )
+        shutil.rmtree(model_cache, ignore_errors=True)
+        print(f"[INFO] Deleted on-disk cache for {self.model_id}")
 
     def generate_batch(self, prompts: list[str]) -> list[list[str]]:
         formatted_chats = []
