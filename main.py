@@ -22,7 +22,7 @@ def parse_arguments() -> argparse.Namespace:
     parser.add_argument("-s", "--return-sequences", dest="sequences", type=int,
                         default=30, help="Responses per single prompt.")
     parser.add_argument("-q", "--quantization", dest="quantization",
-                        default="8bit", help="None, 8bit or 4bit.")
+                        default=None, help="None, 8bit or 4bit.")
     return parser.parse_args()
 
 
