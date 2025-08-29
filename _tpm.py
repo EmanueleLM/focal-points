@@ -150,5 +150,5 @@ for d_name in dataset_names:
         plt.ylabel("Inter-Models Normalised Coordination Index")
         plt.legend(bbox_to_anchor=(1, 0.5))
         plt.grid()
-        plt.savefig(f"./tmp/{d_name}{l}.png")
+        plt.savefig(f"./tmp/{d_name}-{l}.png")
     
