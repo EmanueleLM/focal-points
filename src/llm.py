@@ -96,7 +96,7 @@ class LLM:
 
         self.chat_template = [
             {"role": "system",
-             "content": "You are a helpful assistant that only replies with a single answer, with no additional text."},
+             "content": "You are a helpful assistant."},
             {"role": "user", "content": None}
         ]
 

@@ -2,7 +2,7 @@
 
 # Default arguments
 models=("meta-llama/Llama-3.3-70B-Instruct")
-num_experiments=100
+num_experiments=30
 quantization="None"
 
 # Parse command-line arguments
@@ -25,7 +25,7 @@ while getopts "m:n:q:" opt; do
 done
 
 # Handle "all-models" option
-if [[ "$models" == "all-models" ]]; then
+if [[ "$models" == "all" ]]; then
   models=(
   "meta-llama/Llama-3.3-70B-Instruct"
   "meta-llama/Llama-3.2-1B-Instruct"
