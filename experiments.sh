@@ -70,19 +70,19 @@ echo "Running experiments with model: $models, quantization: $quantization, numb
 for model in "${models[@]}"; do
   echo "Using model: $model"
 
-  # le Schelling
-  datasets=("schelling")
-  problemtags=("problem-nwp" "problem")
+  # # le Schelling
+  # datasets=("schelling")
+  # problemtags=("problem-nwp" "problem")
 
-  for data in "${datasets[@]}"; do
-    for ptag in "${problemtags[@]}"; do
-      echo "Running main.py with $data and $ptag"
-      python main.py --model "$model" --dataset "$data" --problem-tag "$ptag" --return-sequences "$num_experiments" --quantization "$quantization"
+  # for data in "${datasets[@]}"; do
+  #   for ptag in "${problemtags[@]}"; do
+  #     echo "Running main.py with $data and $ptag"
+  #     python main.py --model "$model" --dataset "$data" --problem-tag "$ptag" --return-sequences "$num_experiments" --quantization "$quantization"
 
-      echo "Running metrics.py with $data and $ptag"
-      python metrics.py --model "$model" --dataset "$data" --problem-tag "$ptag"
-    done
-  done
+  #     echo "Running metrics.py with $data and $ptag"
+  #     python metrics.py --model "$model" --dataset "$data" --problem-tag "$ptag"
+  #   done
+  # done
 
   # le Amsterdam and Nottingham
   datasets=("amsterdam" "nottingham")
@@ -98,31 +98,31 @@ for model in "${models[@]}"; do
     done
   done
 
-  # le Amsterdam and Nottingham numeric
-  datasets=("amsterdam_numeric" "nottingham_numeric")
-  problemtags=("problem-pick" "problem-guess" "problem-coordinate")
+  # # le Amsterdam and Nottingham numeric
+  # datasets=("amsterdam_numeric" "nottingham_numeric")
+  # problemtags=("problem-pick" "problem-guess" "problem-coordinate")
 
-  for data in "${datasets[@]}"; do
-    for ptag in "${problemtags[@]}"; do
-      echo "Running main.py with $data and $ptag"
-      python main.py --model "$model" --dataset "$data" --problem-tag "$ptag" --return-sequences "$num_experiments" --quantization "$quantization"
+  # for data in "${datasets[@]}"; do
+  #   for ptag in "${problemtags[@]}"; do
+  #     echo "Running main.py with $data and $ptag"
+  #     python main.py --model "$model" --dataset "$data" --problem-tag "$ptag" --return-sequences "$num_experiments" --quantization "$quantization"
 
-      echo "Running metrics.py with $data and $ptag"
-      python metrics.py --model "$model" --dataset "$data" --problem-tag "$ptag"
-    done
-  done
+  #     echo "Running metrics.py with $data and $ptag"
+  #     python metrics.py --model "$model" --dataset "$data" --problem-tag "$ptag"
+  #   done
+  # done
 
-  # le Asymmetric Payoff
-  datasets=("asymmetric_payoff")
-  problemtags=("problem-pick" "problem-guess" "problem-coordinate")
+  # # le Asymmetric Payoff
+  # datasets=("asymmetric_payoff")
+  # problemtags=("problem-pick" "problem-guess" "problem-coordinate")
 
-  for data in "${datasets[@]}"; do
-    for ptag in "${problemtags[@]}"; do
-      echo "Running main.py with $data and $ptag"
-      python main.py --model "$model" --dataset "$data" --problem-tag "$ptag" --return-sequences "$num_experiments" --quantization "$quantization"
+  # for data in "${datasets[@]}"; do
+  #   for ptag in "${problemtags[@]}"; do
+  #     echo "Running main.py with $data and $ptag"
+  #     python main.py --model "$model" --dataset "$data" --problem-tag "$ptag" --return-sequences "$num_experiments" --quantization "$quantization"
 
-      echo "Running metrics.py with $data and $ptag"
-      python metrics.py --model "$model" --dataset "$data" --problem-tag "$ptag"
-    done
-  done
+  #     echo "Running metrics.py with $data and $ptag"
+  #     python metrics.py --model "$model" --dataset "$data" --problem-tag "$ptag"
+  #   done
+  # done
 done
