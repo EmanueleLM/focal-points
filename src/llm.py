@@ -130,11 +130,11 @@ class LLM:
         for out in results:
             if isinstance(out, list):
                 texts = [
-                    ''.join(c for c in entry["generated_text"].strip().lower() if c.isalnum() or c.isspace() or c is in "<>/")
+                    ''.join(c for c in entry["generated_text"].strip().lower() if c.isalnum() or c.isspace() or c in "<>/")
                     for entry in out
                 ]
             else:
-                texts = [''.join(c for c in out["generated_text"].strip().lower() if c.isalnum() or c.isspace() or c is in "<>/")]
+                texts = [''.join(c for c in out["generated_text"].strip().lower() if c.isalnum() or c.isspace() or c in "<>/")]
             all_responses.append(texts)
 
         return all_responses
