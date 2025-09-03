@@ -81,7 +81,7 @@ for model in "${models[@]}"; do
   # for data in "${datasets[@]}"; do
   #   for ptag in "${problemtags[@]}"; do
   #     echo "Running main.py with $data and $ptag"
-  #     python main.py --model "$model" --dataset "$data" --problem-tag "$ptag" --plot-graphs "$plot_graphs" --return-sequences "$num_experiments" --quantization "$quantization"
+  #     python main.py --model "$model" --dataset "$data" --problem-tag "$ptag"  --return-sequences "$num_experiments" --quantization "$quantization"
 
   #     echo "Running metrics.py with $data and $ptag"
   #     python metrics.py --model "$model" --dataset "$data" --problem-tag "$ptag" --plot-graphs "$plot_graphs"
@@ -95,7 +95,7 @@ for model in "${models[@]}"; do
   for data in "${datasets[@]}"; do
     for ptag in "${problemtags[@]}"; do
       echo "Running main.py with $data and $ptag"
-      python main.py --model "$model" --dataset "$data" --problem-tag "$ptag" --plot-graphs "$plot_graphs" --return-sequences "$num_experiments" --quantization "$quantization"
+      python main.py --model "$model" --dataset "$data" --problem-tag "$ptag" --return-sequences "$num_experiments" --quantization "$quantization"
 
       echo "Running metrics.py with $data and $ptag"
       python metrics.py --model "$model" --dataset "$data" --problem-tag "$ptag" --plot-graphs "$plot_graphs"
@@ -109,7 +109,7 @@ for model in "${models[@]}"; do
   # for data in "${datasets[@]}"; do
   #   for ptag in "${problemtags[@]}"; do
   #     echo "Running main.py with $data and $ptag"
-  #     python main.py --model "$model" --dataset "$data" --problem-tag "$ptag" --plot-graphs "$plot_graphs" --return-sequences "$num_experiments" --quantization "$quantization"
+  #     python main.py --model "$model" --dataset "$data" --problem-tag "$ptag"  --return-sequences "$num_experiments" --quantization "$quantization"
 
   #     echo "Running metrics.py with $data and $ptag"
   #     python metrics.py --model "$model" --dataset "$data" --problem-tag "$ptag" --plot-graphs "$plot_graphs"
@@ -123,7 +123,7 @@ for model in "${models[@]}"; do
   # for data in "${datasets[@]}"; do
   #   for ptag in "${problemtags[@]}"; do
   #     echo "Running main.py with $data and $ptag"
-  #     python main.py --model "$model" --dataset "$data" --problem-tag "$ptag" --plot-graphs "$plot_graphs" --return-sequences "$num_experiments" --quantization "$quantization"
+  #     python main.py --model "$model" --dataset "$data" --problem-tag "$ptag" --return-sequences "$num_experiments" --quantization "$quantization"
 
   #     echo "Running metrics.py with $data and $ptag"
   #     python metrics.py --model "$model" --dataset "$data" --problem-tag "$ptag" --plot-graphs "$plot_graphs"
