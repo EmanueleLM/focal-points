@@ -4,6 +4,7 @@
 models=("meta-llama/Llama-3.3-70B-Instruct")
 num_experiments=30
 quantization="None"
+plot_graphs="False"
 
 # Parse command-line arguments
 while getopts "m:n:q:" opt; do
@@ -16,6 +17,9 @@ while getopts "m:n:q:" opt; do
       ;;
     q)
       quantization=$OPTARG
+      ;;
+    pg)
+      plot_graphs=$OPTARG
       ;;
     \?)
       echo "Invalid option: -$OPTARG" >&2
@@ -77,10 +81,10 @@ for model in "${models[@]}"; do
   # for data in "${datasets[@]}"; do
   #   for ptag in "${problemtags[@]}"; do
   #     echo "Running main.py with $data and $ptag"
-  #     python main.py --model "$model" --dataset "$data" --problem-tag "$ptag" --return-sequences "$num_experiments" --quantization "$quantization"
+  #     python main.py --model "$model" --dataset "$data" --problem-tag "$ptag" --plot-graphs "$plot_graphs" --return-sequences "$num_experiments" --quantization "$quantization"
 
   #     echo "Running metrics.py with $data and $ptag"
-  #     python metrics.py --model "$model" --dataset "$data" --problem-tag "$ptag"
+  #     python metrics.py --model "$model" --dataset "$data" --problem-tag "$ptag" --plot-graphs "$plot_graphs"
   #   done
   # done
 
@@ -91,10 +95,10 @@ for model in "${models[@]}"; do
   for data in "${datasets[@]}"; do
     for ptag in "${problemtags[@]}"; do
       echo "Running main.py with $data and $ptag"
-      python main.py --model "$model" --dataset "$data" --problem-tag "$ptag" --return-sequences "$num_experiments" --quantization "$quantization"
+      python main.py --model "$model" --dataset "$data" --problem-tag "$ptag" --plot-graphs "$plot_graphs" --return-sequences "$num_experiments" --quantization "$quantization"
 
       echo "Running metrics.py with $data and $ptag"
-      python metrics.py --model "$model" --dataset "$data" --problem-tag "$ptag"
+      python metrics.py --model "$model" --dataset "$data" --problem-tag "$ptag" --plot-graphs "$plot_graphs"
     done
   done
 
@@ -105,10 +109,10 @@ for model in "${models[@]}"; do
   # for data in "${datasets[@]}"; do
   #   for ptag in "${problemtags[@]}"; do
   #     echo "Running main.py with $data and $ptag"
-  #     python main.py --model "$model" --dataset "$data" --problem-tag "$ptag" --return-sequences "$num_experiments" --quantization "$quantization"
+  #     python main.py --model "$model" --dataset "$data" --problem-tag "$ptag" --plot-graphs "$plot_graphs" --return-sequences "$num_experiments" --quantization "$quantization"
 
   #     echo "Running metrics.py with $data and $ptag"
-  #     python metrics.py --model "$model" --dataset "$data" --problem-tag "$ptag"
+  #     python metrics.py --model "$model" --dataset "$data" --problem-tag "$ptag" --plot-graphs "$plot_graphs"
   #   done
   # done
 
@@ -119,10 +123,10 @@ for model in "${models[@]}"; do
   # for data in "${datasets[@]}"; do
   #   for ptag in "${problemtags[@]}"; do
   #     echo "Running main.py with $data and $ptag"
-  #     python main.py --model "$model" --dataset "$data" --problem-tag "$ptag" --return-sequences "$num_experiments" --quantization "$quantization"
+  #     python main.py --model "$model" --dataset "$data" --problem-tag "$ptag" --plot-graphs "$plot_graphs" --return-sequences "$num_experiments" --quantization "$quantization"
 
   #     echo "Running metrics.py with $data and $ptag"
-  #     python metrics.py --model "$model" --dataset "$data" --problem-tag "$ptag"
+  #     python metrics.py --model "$model" --dataset "$data" --problem-tag "$ptag" --plot-graphs "$plot_graphs"
   #   done
   # done
 done

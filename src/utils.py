@@ -56,6 +56,7 @@ def plot_block_frequencies(data,
                 f"./images/{model_name}/{dataset}/{problem_tag}/idx_{block['idx']}.{block['variation-idx']}_frequencies.png",
                 bbox_inches='tight',
                 dpi=150)
+            plt.cla()
 
             jsonl_results.append({
                 "idx": block["idx"],
