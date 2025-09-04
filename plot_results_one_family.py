@@ -73,7 +73,7 @@ required_files = [
 
 # Families of models we test: each corresponds to a folder in ./results
 models = ["meta-llama"]
-
+num_samples = 64
 
 # Datasets and tasks (we name them labels)
 dataset_names = ["amsterdam", "nottingham"]
@@ -86,8 +86,8 @@ plt.rcParams['font.family'] = 'Times New Roman'
 # Savedir (creation)
 SAVEDIR = "./plots"
 COORDINATION_INDEX_FOLDER = "/coordination-index/llama"
-BEST_MODELS_COORDINATION_INDEX_FOLDER = "/best-models-coordination-index/llama"
-BEST_MODELS_COORDINATION_INDEX_SAMPLING_FOLDER = "/best-models-coordination-index-sampling/llama"
+BEST_MODELS_COORDINATION_INDEX_FOLDER = "/coordination-index-best/llama"
+BEST_MODELS_COORDINATION_INDEX_SAMPLING_FOLDER = "/coordination-index-best-merge/llama"
 
 for folder in [COORDINATION_INDEX_FOLDER, 
                BEST_MODELS_COORDINATION_INDEX_FOLDER,
@@ -153,6 +153,7 @@ if __name__ == "__main__":
                                 pass
                     
                     # Normalised coordination index
+                    current_responses = sample(current_responses, n=num_samples)
                     nci = 0.
                     N = sum(list(current_responses.values()))
                     n = len(current_responses.keys())
@@ -234,6 +235,7 @@ if __name__ == "__main__":
                                 pass
                     
                     # Normalised coordination index
+                    current_responses = sample(current_responses, n=num_samples)
                     nci = 0.
                     N = sum(list(current_responses.values()))
                     n = len(current_responses.keys())
@@ -270,7 +272,7 @@ if __name__ == "__main__":
             plt.grid()
             plt.savefig(SAVEDIR + BEST_MODELS_COORDINATION_INDEX_FOLDER + f"/{d_name}-{l}.png")
             
-    # 3. Coordination Index -- Best llamas but this time we merge and then sample
+    # 3. Coordination Index -- Merge best llamas
     model_names = ["/meta-llama/Llama-3.1-70B-Instruct",
                    "/meta-llama/Llama-3.3-70B-Instruct",
                    "/meta-llama/Llama-3.3-70B-Instruct",
@@ -315,7 +317,7 @@ if __name__ == "__main__":
                                 pass
                     
                     # Normalised coordination index
-                    current_responses = sample(current_responses, n=64)
+                    current_responses = sample(current_responses, n=num_samples)
                     nci = 0.
                     N = sum(list(current_responses.values()))
                     n = len(current_responses.keys())
