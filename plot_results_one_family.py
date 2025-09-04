@@ -174,21 +174,29 @@ if __name__ == "__main__":
 
             # ---- Plot ----
             plt.figure(figsize=(12, 5))
-            plt.plot(current_data_humans, label="Humans", marker="o", color="black")
 
-            for model_name in model_names:
+            tasks = [f"T{d_name[0].upper()}{i+1}" for i in range(14)]
+            x = np.arange(len(tasks))  # label locations
+            width = 0.1  # width of each bar
+
+            # Plot human data
+            plt.bar(x - width, current_data_humans, width, label="Humans", color="black")
+
+            # Plot LLM data
+            for idx, model_name in enumerate(model_names):
                 current_data_llm = data_llms[model_name]
                 family = get_family(model_name)
                 color = get_color(model_name, family_models[family])
-                plt.plot(current_data_llm, label=model_name, marker="x", color=color)
+                plt.bar(x + width*(idx), current_data_llm, width, label=model_name, color=color, edgecolor="black")
 
-            plt.xticks([i for i in range(14)], [f"T{d_name[0].upper()}{i+1}" for i in range(14)])
+            plt.xticks(x, tasks)
             plt.title(f"Coordination Index Comparison: {d_name.capitalize()}-{l}")
             plt.ylabel("Normalised Coordination Index")
             plt.legend(bbox_to_anchor=(1., 1.))
             plt.tight_layout()
-            plt.grid()
+            plt.grid(axis='y', alpha=0.3)
             plt.savefig(SAVEDIR + COORDINATION_INDEX_FOLDER + f"/{d_name}-{l}.png")
+            plt.show()
             
     # 2. Coordination Index -- Best llamas
     model_names = ["/meta-llama/Llama-3.1-70B-Instruct",
@@ -256,21 +264,29 @@ if __name__ == "__main__":
 
             # ---- Plot ----
             plt.figure(figsize=(12, 5))
-            plt.plot(current_data_humans, label="Humans", marker="o", color="black")
 
-            for model_name in model_names:
+            tasks = [f"T{d_name[0].upper()}{i+1}" for i in range(14)]
+            x = np.arange(len(tasks))  # label locations
+            width = 0.1  # width of each bar
+
+            # Plot human data
+            plt.bar(x - width, current_data_humans, width, label="Humans", color="black")
+
+            # Plot LLM data
+            for idx, model_name in enumerate(model_names):
                 current_data_llm = data_llms[model_name]
                 family = get_family(model_name)
                 color = get_color(model_name, family_models[family])
-                plt.plot(current_data_llm, label=model_name, marker="x", color=color)
+                plt.bar(x + width*(idx), current_data_llm, width, label=model_name, color=color, edgecolor="black")
 
-            plt.xticks([i for i in range(14)], [f"T{d_name[0].upper()}{i+1}" for i in range(14)])
+            plt.xticks(x, tasks)
             plt.title(f"Coordination Index Comparison: {d_name.capitalize()}-{l}")
             plt.ylabel("Normalised Coordination Index")
             plt.legend(bbox_to_anchor=(1., 1.))
             plt.tight_layout()
-            plt.grid()
+            plt.grid(axis='y', alpha=0.3)
             plt.savefig(SAVEDIR + BEST_MODELS_COORDINATION_INDEX_FOLDER + f"/{d_name}-{l}.png")
+            plt.show()
             
     # 3. Coordination Index -- Merge best llamas
     model_names = ["/meta-llama/Llama-3.1-70B-Instruct",
@@ -338,17 +354,23 @@ if __name__ == "__main__":
 
             # ---- Plot ----
             plt.figure(figsize=(12, 5))
-            plt.plot(current_data_humans, label="Humans", marker="o", color="black")
 
+            tasks = [f"T{d_name[0].upper()}{i+1}" for i in range(14)]
+            x = np.arange(len(tasks))  # label locations
+            width = 0.3  # width of each bar
+
+            # Plot human data (shifted left)
+            plt.bar(x - width/2, current_data_humans, width, label="Humans", color="black")
+
+            # Plot meta-llama data (shifted right)
             current_data_llm = data_llms["meta-llama"]
-            family = get_family("meta-llama")
-            color = "blue"
-            plt.plot(current_data_llm, label="meta-llama", marker="x", color=color)
+            plt.bar(x + width/2, current_data_llm, width, label="meta-llama", color="blue", edgecolor="black")
 
-            plt.xticks([i for i in range(14)], [f"T{d_name[0].upper()}{i+1}" for i in range(14)])
+            plt.xticks(x, tasks)
             plt.title(f"Coordination Index Comparison: {d_name.capitalize()}-{l}")
             plt.ylabel("Normalised Coordination Index")
             plt.legend(bbox_to_anchor=(1., 1.))
             plt.tight_layout()
-            plt.grid()
+            plt.grid(axis='y', alpha=0.3)
             plt.savefig(SAVEDIR + BEST_MODELS_COORDINATION_INDEX_SAMPLING_FOLDER + f"/{d_name}-{l}.png")
+            plt.show()
