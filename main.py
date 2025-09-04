@@ -7,6 +7,8 @@ from typing import Dict, List, Tuple
 from src.llm import LLM
 from src.prompt import Level0
 from src.utils import iterate_data
+import torch
+import os
 
 
 def parse_arguments() -> argparse.Namespace:
@@ -126,7 +128,33 @@ def run_job(args: argparse.Namespace) -> None:
     model.clear_cache()
 
 
+def print_gpu_info() -> None:
+    try:
+        if torch.cuda.is_available():
+            visible_devices = os.environ.get("CUDA_VISIBLE_DEVICES", "")
+            if visible_devices:
+                ids = visible_devices.split(",")
+                num_gpus = len(ids)
+                print(f"[INFO] {num_gpus} GPU(s) allocated to this process:")
+                for idx, dev_id in enumerate(ids):
+                    name = torch.cuda.get_device_name(idx)
+                    print(f"- CUDA:{idx} (physical GPU {dev_id.strip()}): {name}")
+            else:
+                num_gpus = torch.cuda.device_count()
+                print(f"[INFO] {num_gpus} GPU(s) detected (no restriction):")
+                for i in range(num_gpus):
+                    print(f"- CUDA:{i}: {torch.cuda.get_device_name(i)}")
+        else:
+            print("[INFO] No GPUs detected, running on CPU.")
+    except ImportError:
+        print("[WARNING] PyTorch not installed, cannot check GPU status.")
+
+
 if __name__ == "__main__":
+    # Print GPU info
+    print_gpu_info()
+
+    # Parse CLI args and run the job
     cli_args = parse_arguments()
 
     try:

@@ -56,14 +56,6 @@ if [[ "$models" == "all" ]]; then
   "google/gemma-3-12b-it"
   "google/gemma-3-27b-it"
   "microsoft/Phi-4-mini-instruct"
-  "deepseek-ai/deepseek-llm-67b-chat"
-  "deepseek-ai/deepseek-llm-7b-chat"
-  "deepseek-ai/DeepSeek-R1-Distill-Llama-70B"
-  "deepseek-ai/DeepSeek-R1-Distill-Qwen-32B"
-  "deepseek-ai/DeepSeek-R1-Distill-Qwen-14B"
-  "deepseek-ai/DeepSeek-R1-Distill-Llama-8B"
-  "deepseek-ai/DeepSeek-R1-Distill-Qwen-7B"
-  "deepseek-ai/DeepSeek-R1-Distill-Qwen-1.5B"
   )
 else
   models=("$models")
