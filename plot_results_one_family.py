@@ -10,6 +10,9 @@ from pathlib import Path
 
 
 def sample(dict: dict, n: int) -> dict:
+    if not dict:
+        return dict
+    
     # Keys and weights
     elements = np.array(list(dict.keys()))
     weights = np.array(list(dict.values()), dtype=float)
@@ -85,9 +88,9 @@ plt.rcParams['font.family'] = 'Times New Roman'
 
 # Savedir (creation)
 SAVEDIR = "./plots"
-COORDINATION_INDEX_FOLDER = "/coordination-index/llama"
-BEST_MODELS_COORDINATION_INDEX_FOLDER = "/coordination-index-best/llama"
-BEST_MODELS_COORDINATION_INDEX_SAMPLING_FOLDER = "/coordination-index-best-merge/llama"
+COORDINATION_INDEX_FOLDER = "/coordination-index/sample/llama"
+BEST_MODELS_COORDINATION_INDEX_FOLDER = "/coordination-index-best/sample/llama"
+BEST_MODELS_COORDINATION_INDEX_SAMPLING_FOLDER = "/coordination-index-best-merge/sample/llama"
 
 for folder in [COORDINATION_INDEX_FOLDER, 
                BEST_MODELS_COORDINATION_INDEX_FOLDER,
@@ -113,6 +116,16 @@ if __name__ == "__main__":
         
     model_names = get_available_models(model_names, required_files)
     
+    # Sort by model-size
+    model_by_size = {}
+    for m in model_names:
+        match = re.search(r"-([0-9]+)([B])(?:-|$)", m, re.DOTALL)
+        size = int(match.group(1).strip())
+        model_by_size[m] = size
+    
+    model_by_size = {k: v for k, v in sorted(model_by_size.items(), key=lambda item: item[1])}
+    model_names = list(model_by_size.keys())
+    
     # 1. Coordination Index -- All Llamas
     family_models = defaultdict(list)
     for m in model_names:
@@ -129,23 +142,17 @@ if __name__ == "__main__":
                 print(model_name)
                 with open(f"./results{model_name}/{d_name}_problem-{l}.jsonl", "r") as f:
                     data_llm = json.load(f)
-                    
-                    
-                data_llms[model_name] = [
-                    sum([d["normalised_coordination_index"] for d in data_llm[i:i+3]])/3
-                    for i in range(0, len(data_llm), 3)
-                ]
                 
                 data_llms[model_name] = []
                 for i in range(0, len(data_llm), 3):
                     current_responses = {}
-                    for d in data_llm[i:i+3]:
+                    for d in data_llm[i:i+1]:
                         # For each task, put together the tasks and then average
                         for response in d["responses"].keys():
                             match = re.search(r"<answer>(.*?)</answer>", response, re.DOTALL)
 
                             if match:
-                                re_response = match.group(1).strip()
+                                re_response = match.group(1).strip().lower()
                                 if re_response not in current_responses:
                                     current_responses[re_response] = 0
                                 current_responses[re_response] += d["responses"][response]
@@ -154,13 +161,12 @@ if __name__ == "__main__":
                     
                     # Normalised coordination index
                     current_responses = sample(current_responses, n=num_samples)
-                    nci = 0.
                     N = sum(list(current_responses.values()))
                     n = len(current_responses.keys())
-                    for _,v in current_responses.items():
-                        nci += v*(v-1)
-                    
+                    nci = 0.
                     if N > 1:
+                        for _,v in current_responses.items():
+                            nci += v*(v-1)
                         data_llms[model_name].append(nci*n/(N*(N-1)))
                     else:
                         data_llms[model_name].append(0.)
@@ -199,9 +205,10 @@ if __name__ == "__main__":
             plt.show()
             
     # 2. Coordination Index -- Best llamas
-    model_names = ["/meta-llama/Llama-3.1-70B-Instruct",
-                   "/meta-llama/Llama-3.3-70B-Instruct",
-                   "/meta-llama/Llama-3.3-70B-Instruct",
+    model_names = [
+        "/meta-llama/Meta-Llama-3-70B-Instruct"
+        "/meta-llama/Llama-3.1-70B-Instruct",
+        "/meta-llama/Llama-3.3-70B-Instruct",
                    ]
     
     family_models = defaultdict(list)
@@ -219,23 +226,17 @@ if __name__ == "__main__":
                 print(model_name)
                 with open(f"./results{model_name}/{d_name}_problem-{l}.jsonl", "r") as f:
                     data_llm = json.load(f)
-                    
-                    
-                data_llms[model_name] = [
-                    sum([d["normalised_coordination_index"] for d in data_llm[i:i+3]])/3
-                    for i in range(0, len(data_llm), 3)
-                ]
                 
                 data_llms[model_name] = []
                 for i in range(0, len(data_llm), 3):
                     current_responses = {}
-                    for d in data_llm[i:i+3]:
+                    for d in data_llm[i:i+1]:
                         # For each task, put together the tasks and then average
                         for response in d["responses"].keys():
                             match = re.search(r"<answer>(.*?)</answer>", response, re.DOTALL)
 
                             if match:
-                                re_response = match.group(1).strip()
+                                re_response = match.group(1).strip().lower()
                                 if re_response not in current_responses:
                                     current_responses[re_response] = 0
                                 current_responses[re_response] += d["responses"][response]
@@ -244,13 +245,12 @@ if __name__ == "__main__":
                     
                     # Normalised coordination index
                     current_responses = sample(current_responses, n=num_samples)
-                    nci = 0.
                     N = sum(list(current_responses.values()))
                     n = len(current_responses.keys())
-                    for _,v in current_responses.items():
-                        nci += v*(v-1)
-                    
+                    nci = 0.
                     if N > 1:
+                        for _,v in current_responses.items():
+                            nci += v*(v-1)
                         data_llms[model_name].append(nci*n/(N*(N-1)))
                     else:
                         data_llms[model_name].append(0.)
@@ -289,9 +289,10 @@ if __name__ == "__main__":
             plt.show()
             
     # 3. Coordination Index -- Merge best llamas
-    model_names = ["/meta-llama/Llama-3.1-70B-Instruct",
-                   "/meta-llama/Llama-3.3-70B-Instruct",
-                   "/meta-llama/Llama-3.3-70B-Instruct",
+    model_names = [
+        "/meta-llama/Meta-Llama-3-70B-Instruct"
+        "/meta-llama/Llama-3.1-70B-Instruct",
+        "/meta-llama/Llama-3.3-70B-Instruct",
                    ]
     
     family_models = defaultdict(list)
@@ -309,23 +310,17 @@ if __name__ == "__main__":
                 print(model_name)
                 with open(f"./results{model_name}/{d_name}_problem-{l}.jsonl", "r") as f:
                     data_llm = json.load(f)
-                    
-                    
-                data_llms["meta-llama"] = [
-                    sum([d["normalised_coordination_index"] for d in data_llm[i:i+3]])/3
-                    for i in range(0, len(data_llm), 3)
-                ]
                 
                 data_llms["meta-llama"] = []
                 for i in range(0, len(data_llm), 3):
                     current_responses = {}
-                    for d in data_llm[i:i+3]:
+                    for d in data_llm[i:i+1]:
                         # For each task, put together the tasks and then average
                         for response in d["responses"].keys():
                             match = re.search(r"<answer>(.*?)</answer>", response, re.DOTALL)
 
                             if match:
-                                re_response = match.group(1).strip()
+                                re_response = match.group(1).strip().lower()
                                 if re_response not in current_responses:
                                     current_responses[re_response] = 0
                                 current_responses[re_response] += d["responses"][response]
@@ -334,13 +329,12 @@ if __name__ == "__main__":
                     
                     # Normalised coordination index
                     current_responses = sample(current_responses, n=num_samples)
-                    nci = 0.
                     N = sum(list(current_responses.values()))
                     n = len(current_responses.keys())
-                    for _,v in current_responses.items():
-                        nci += v*(v-1)
-                    
+                    nci = 0.
                     if N > 1:
+                        for _,v in current_responses.items():
+                            nci += v*(v-1)
                         data_llms["meta-llama"].append(nci*n/(N*(N-1)))
                     else:
                         data_llms["meta-llama"].append(0.)

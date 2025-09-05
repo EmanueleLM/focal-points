@@ -81,7 +81,7 @@ for model in "${models[@]}"; do
   # done
 
   # le Amsterdam and Nottingham
-  datasets=("amsterdam" "nottingham")
+  datasets=("nottingham")
   problemtags=("problem-pick" "problem-guess" "problem-coordinate")
 
   for data in "${datasets[@]}"; do
