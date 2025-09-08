@@ -31,31 +31,31 @@ done
 # Handle "all-models" option
 if [[ "$models" == "all" ]]; then
   models=(
-  "meta-llama/Llama-3.3-70B-Instruct"
-  "meta-llama/Llama-3.2-1B-Instruct"
-  "meta-llama/Llama-3.2-3B-Instruct"
-  "meta-llama/Llama-3.1-8B-Instruct"
-  "meta-llama/Llama-3.1-70B-Instruct"
-  "meta-llama/Meta-Llama-3-8B-Instruct"
-  "meta-llama/Meta-Llama-3-70B-Instruct"
-  "Qwen/Qwen2.5-7B-Instruct-1M"
-  "Qwen/Qwen2.5-14B-Instruct-1M"
+  # "meta-llama/Llama-3.3-70B-Instruct"
+  # "meta-llama/Llama-3.2-1B-Instruct"
+  # "meta-llama/Llama-3.2-3B-Instruct"
+  # "meta-llama/Llama-3.1-8B-Instruct"
+  # "meta-llama/Llama-3.1-70B-Instruct"
+  # "meta-llama/Meta-Llama-3-8B-Instruct"
+  # "meta-llama/Meta-Llama-3-70B-Instruct"
+  # "Qwen/Qwen2.5-7B-Instruct-1M"
+  # "Qwen/Qwen2.5-14B-Instruct-1M"
   "Qwen/Qwen2.5-0.5B-Instruct"
   "Qwen/Qwen2.5-1.5B-Instruct"
-  "Qwen/Qwen2.5-3B-Instruct"
-  "Qwen/Qwen2.5-7B-Instruct"
-  "Qwen/Qwen2.5-14B-Instruct"
-  "Qwen/Qwen2.5-32B-Instruct"
-  "Qwen/Qwen2.5-72B-Instruct"
-  "Qwen/Qwen2-72B-Instruct"
-  "Qwen/Qwen2-7B-Instruct"
-  "Qwen/Qwen2-1.5B-Instruct"
-  "Qwen/Qwen2-0.5B-Instruct"
-  "google/gemma-3-1b-it"
-  "google/gemma-3-4b-it"
-  "google/gemma-3-12b-it"
-  "google/gemma-3-27b-it"
-  "microsoft/Phi-4-mini-instruct"
+  # "Qwen/Qwen2.5-3B-Instruct"
+  # "Qwen/Qwen2.5-7B-Instruct"
+  # "Qwen/Qwen2.5-14B-Instruct"
+  # "Qwen/Qwen2.5-32B-Instruct"
+  # "Qwen/Qwen2.5-72B-Instruct"
+  # "Qwen/Qwen2-72B-Instruct"
+  # "Qwen/Qwen2-7B-Instruct"
+  # "Qwen/Qwen2-1.5B-Instruct"
+  # "Qwen/Qwen2-0.5B-Instruct"
+  # "google/gemma-3-1b-it"
+  # "google/gemma-3-4b-it"
+  # "google/gemma-3-12b-it"
+  # "google/gemma-3-27b-it"
+  # "microsoft/Phi-4-mini-instruct"
   )
 else
   models=("$models")
@@ -84,6 +84,7 @@ for model in "${models[@]}"; do
   datasets=("nottingham")
   problemtags=("problem-pick" "problem-guess" "problem-coordinate")
 
+  H="levar"
   for data in "${datasets[@]}"; do
     for ptag in "${problemtags[@]}"; do
       echo "Running main.py with $data and $ptag"
