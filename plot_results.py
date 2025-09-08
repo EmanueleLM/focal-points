@@ -357,11 +357,21 @@ if __name__ == "__main__":
             width = 0.3  # width of each bar
 
             # Plot human data (shifted left)
-            plt.bar(x - width/2, current_data_humans, width, label="Humans", color="black")
+            human_bars = plt.bar(x - width/2, current_data_humans, width, label="Humans", color="black")
 
             # Plot meta-llama data (shifted right)
             current_data_llm = data_llms["meta-llama"]
-            plt.bar(x + width/2, current_data_llm, width, label="meta-llama", color="blue", edgecolor="black")
+            llm_bars = plt.bar(x + width/2, current_data_llm, width, label="meta-llama", color="blue", edgecolor="black")
+
+            # Add values on top of human bars
+            for bar in human_bars:
+                height = bar.get_height()
+                plt.text(bar.get_x() + bar.get_width()/2, height + 0.02, f'{height:.2f}', ha='center', va='bottom', fontsize=8)
+
+            # Add values on top of LLM bars
+            for bar in llm_bars:
+                height = bar.get_height()
+                plt.text(bar.get_x() + bar.get_width()/2, height + 0.02, f'{height:.2f}', ha='center', va='bottom', fontsize=8)
 
             plt.xticks(x, tasks)
             plt.title(f"Coordination Index Comparison: {d_name.capitalize()}-{l}")
@@ -392,20 +402,20 @@ if __name__ == "__main__":
                 'TA14': {'pick': 1.104, 'guess': 1.148, 'coordinate': 2.072}}
 
     # LLM data
-    llm_data = {'TA1': {'pick': 1.0, 'guess': 1.8229, 'coordinate': 0.9931},
+    llm_data = {'TA1': {'pick': 1.0, 'guess': 1.64, 'coordinate': 0.9931},
                 'TA2': {'pick': 1.0, 'guess': 1.0, 'coordinate': 1.0},
-                'TA3': {'pick': 1.4643, 'guess': 1.7073, 'coordinate': 1.0198},
-                'TA4': {'pick': 1.0, 'guess': 1.0833, 'coordinate': 1.0},
-                'TA5': {'pick': 1.0, 'guess': 1.0833, 'coordinate': 1.0},
-                'TA6': {'pick': 1.2381, 'guess': 1.7619, 'coordinate': 1.0833},
-                'TA7': {'pick': 0.9851, 'guess': 2.3155, 'coordinate': 1.9375},
-                'TA8': {'pick': 1.1518, 'guess': 1.8353, 'coordinate': 0.9841},
-                'TA9': {'pick': 1.0, 'guess': 1.2753, 'coordinate': 1.1518},
-                'TA10': {'pick': 1.0, 'guess': 1.0, 'coordinate': 1.5223},
-                'TA11': {'pick': 1.38095, 'guess': 1.3056, 'coordinate': 1.0},
-                'TA12': {'pick': 1.0, 'guess': 1.8854, 'coordinate': 1.0},
-                'TA13': {'pick': 1.0, 'guess': 1.7619, 'coordinate': 1.0},
-                'TA14': {'pick': 0.9881, 'guess': 1.0645, 'coordinate': 1.0645}}
+                'TA3': {'pick': 1.6, 'guess': 1.38, 'coordinate': 1.0198},
+                'TA4': {'pick': 1.0, 'guess': 1.13, 'coordinate': 1.0},
+                'TA5': {'pick': 1.0, 'guess': 1.08, 'coordinate': 1.0},
+                'TA6': {'pick': 1.27, 'guess': 1.82, 'coordinate': 1.24},
+                'TA7': {'pick': 1.02, 'guess': 1.6, 'coordinate': 1.88},
+                'TA8': {'pick': 1.06, 'guess': 2.12, 'coordinate': 0.9841},
+                'TA9': {'pick': 1.0, 'guess': 1.32, 'coordinate': 1.05},
+                'TA10': {'pick': 1.0, 'guess': 0.98, 'coordinate': 1.48},
+                'TA11': {'pick': 1.31, 'guess': 1.31, 'coordinate': 1.0},
+                'TA12': {'pick': 1.0, 'guess': 2.02, 'coordinate': 1.0},
+                'TA13': {'pick': 1.0, 'guess': 2.09, 'coordinate': 1.0},
+                'TA14': {'pick': 1.1, 'guess': 1.02, 'coordinate': 1.08}}
 
     TAs = list(human_data.keys())
     tasks = ['pick', 'guess', 'coordinate']
@@ -417,15 +427,15 @@ if __name__ == "__main__":
 
     # Human bars (black)
     human_vals = np.array([[human_data[ta][task] for task in tasks] for ta in TAs])
-    ax.bar(x - width/2, human_vals[:,0], width/3, color='black', label='Human Pick')
-    ax.bar(x - width/2 + width/3, human_vals[:,1], width/3, color='black', alpha=0.7, label='Human Guess')
-    ax.bar(x - width/2 + 2*width/3, human_vals[:,2], width/3, color='black', alpha=0.4, label='Human Coordinate')
+    ax.bar(x - width/2, human_vals[:,0], width/3, color='black',edgecolor='black', label='Human Pick')
+    ax.bar(x - width/2 + width/3, human_vals[:,1], width/3, color='black', edgecolor='black', alpha=0.7, label='Human Guess')
+    ax.bar(x - width/2 + 2*width/3, human_vals[:,2], width/3, color='black',edgecolor='black', alpha=0.4, label='Human Coordinate')
 
     # LLM bars (blue)
     llm_vals = np.array([[llm_data[ta][task] for task in tasks] for ta in TAs])
-    ax.bar(x + width/2, llm_vals[:,0], width/3, color='blue', label='LLM Pick')
-    ax.bar(x + width/2 + width/3, llm_vals[:,1], width/3, color='blue', alpha=0.7, label='LLM Guess')
-    ax.bar(x + width/2 + 2*width/3, llm_vals[:,2], width/3, color='blue', alpha=0.4, label='LLM Coordinate')
+    ax.bar(x + width/2, llm_vals[:,0], width/3, color='blue',edgecolor='black', label='Llama Pick')
+    ax.bar(x + width/2 + width/3, llm_vals[:,1], width/3, color='blue', edgecolor='black', alpha=0.7, label='Llama Guess')
+    ax.bar(x + width/2 + 2*width/3, llm_vals[:,2], width/3, color='blue',edgecolor='black', alpha=0.4, label='Llama Coordinate')
 
     # Labels and formatting
     ax.set_ylabel('Normalised Coordination Index')
@@ -436,6 +446,7 @@ if __name__ == "__main__":
     ax.legend(ncol=2, fontsize=9)
     plt.xticks(rotation=45)
     plt.tight_layout()
+    plt.grid(axis='y', alpha=0.3)
     plt.savefig(SAVEDIR + BEST_MODELS_COORDINATION_INDEX_SAMPLING_FOLDER_SIDE + f"/amsterdam.png")
     plt.show()
     
@@ -458,19 +469,19 @@ if __name__ == "__main__":
                 'TN14': {'pick': 1.385, 'guess': 1.675, 'coordinate': 2.13}}
 
     # LLM data for Nottingham
-    llm_data = {'TN1': {'pick': 1.144841, 'guess': 1.136905, 'coordinate': 1.662698},
-                'TN2': {'pick': 1.232143, 'guess': 1.032738, 'coordinate': 1.008929},
-                'TN3': {'pick': 1.555556, 'guess': 1.178571, 'coordinate': 1.064484},
-                'TN4': {'pick': 2.087798, 'guess': 1.0, 'coordinate': 1.0},
-                'TN5': {'pick': 1.508929, 'guess': 1.761905, 'coordinate': 1.0},
+    llm_data = {'TN1': {'pick': 1.144841, 'guess': 1.07, 'coordinate': 1.49},
+                'TN2': {'pick': 1.77, 'guess': 0.98, 'coordinate': 1.01},
+                'TN3': {'pick': 1.555556, 'guess': 1.34, 'coordinate': 1.01},
+                'TN4': {'pick': 2.31, 'guess': 1.0, 'coordinate': 1.0},
+                'TN5': {'pick': 1.56, 'guess': 1.31, 'coordinate': 1.0},
                 'TN6': {'pick': 1.0, 'guess': 1.0, 'coordinate': 1.0},
-                'TN7': {'pick': 1.0, 'guess': 1.938988, 'coordinate': 1.450893},
-                'TN8': {'pick': 1.464286, 'guess': 1.032738, 'coordinate': 1.0},
+                'TN7': {'pick': 1.0, 'guess': 1.8, 'coordinate': 1.28},
+                'TN8': {'pick': 1.51, 'guess': 1.15, 'coordinate': 1.0},
                 'TN9': {'pick': 1.0, 'guess': 1.0, 'coordinate': 1.0},
                 'TN10': {'pick': 1.0, 'guess': 1.0, 'coordinate': 1.0},
-                'TN11': {'pick': 1.083333, 'guess': 1.458333, 'coordinate': 1.721726},
+                'TN11': {'pick': 1.02, 'guess': 1.83, 'coordinate': 1.65},
                 'TN12': {'pick': 1.0, 'guess': 1.0, 'coordinate': 1.0},
-                'TN13': {'pick': 1.464286, 'guess': 1.818452, 'coordinate': 1.178571},
+                'TN13': {'pick': 1.76, 'guess': 1.82, 'coordinate': 1.38},
                 'TN14': {'pick': 1.0, 'guess': 1.0, 'coordinate': 1.0}}
 
     TAs = list(human_data.keys())
@@ -483,15 +494,15 @@ if __name__ == "__main__":
 
     # Human bars (black)
     human_vals = np.array([[human_data[ta][task] for task in tasks] for ta in TAs])
-    ax.bar(x - width/2, human_vals[:,0], width/3, color='black', label='Human Pick')
-    ax.bar(x - width/2 + width/3, human_vals[:,1], width/3, color='black', alpha=0.7, label='Human Guess')
-    ax.bar(x - width/2 + 2*width/3, human_vals[:,2], width/3, color='black', alpha=0.4, label='Human Coordinate')
+    ax.bar(x - width/2, human_vals[:,0], width/3, color='black', edgecolor='black', label='Human Pick')
+    ax.bar(x - width/2 + width/3, human_vals[:,1], width/3, color='black', edgecolor='black', alpha=0.7, label='Human Guess')
+    ax.bar(x - width/2 + 2*width/3, human_vals[:,2], width/3, color='black', edgecolor='black', alpha=0.4, label='Human Coordinate')
 
     # LLM bars (blue)
     llm_vals = np.array([[llm_data[ta][task] for task in tasks] for ta in TAs])
-    ax.bar(x + width/2, llm_vals[:,0], width/3, color='blue', label='LLM Pick')
-    ax.bar(x + width/2 + width/3, llm_vals[:,1], width/3, color='blue', alpha=0.7, label='LLM Guess')
-    ax.bar(x + width/2 + 2*width/3, llm_vals[:,2], width/3, color='blue', alpha=0.4, label='LLM Coordinate')
+    ax.bar(x + width/2, llm_vals[:,0], width/3, color='blue', edgecolor='black', label='Llama Pick')
+    ax.bar(x + width/2 + width/3, llm_vals[:,1], width/3, color='blue', edgecolor='black', alpha=0.7, label='Llama Guess')
+    ax.bar(x + width/2 + 2*width/3, llm_vals[:,2], width/3, color='blue', edgecolor='black', alpha=0.4, label='Llama Coordinate')
 
     # Labels and formatting
     ax.set_ylabel('Normalised Coordination Index')
@@ -502,6 +513,7 @@ if __name__ == "__main__":
     ax.legend(ncol=2, fontsize=9)
     plt.xticks(rotation=45)
     plt.tight_layout()
+    plt.grid(axis='y', alpha=0.3)
     plt.savefig(SAVEDIR + BEST_MODELS_COORDINATION_INDEX_SAMPLING_FOLDER_SIDE + f"/nottingham.png")
     plt.show()
 
