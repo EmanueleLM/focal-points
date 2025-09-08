@@ -4,8 +4,31 @@ import matplotlib.pyplot as plt
 import matplotlib.cm as cm
 import numpy as np
 import os
+import re
 from collections import defaultdict
 from pathlib import Path
+
+
+def sample(dict: dict, n: int) -> dict:
+    if not dict:
+        return dict
+    
+    # Keys and weights
+    elements = np.array(list(dict.keys()))
+    weights = np.array(list(dict.values()), dtype=float)
+
+    # Normalize weights to probabilities
+    probabilities = weights / weights.sum()
+
+    # Sample with replacement
+    samples = np.random.choice(elements, size=n, p=probabilities)
+
+    # Count occurrences and convert back to dictionary
+    sampled_dict = {
+        str(key): int(count) for key, count in zip(*np.unique(samples, return_counts=True))
+    }
+
+    return sampled_dict
 
 def get_family(model_name):
     return model_name.split("/")[1] if model_name.startswith("/") else model_name.split("/")[0]
@@ -41,10 +64,6 @@ family_colormaps = {
     "deepseek-ai": cm.Oranges,
 }
 
-# Matplotlib config
-plt.rcParams['figure.dpi'] = 300
-plt.rcParams['font.family'] = 'Times New Roman'
-
 # Files required to run all the experiments
 required_files = [
     "amsterdam_problem-coordinate.jsonl",
@@ -56,25 +75,29 @@ required_files = [
 ]
 
 # Families of models we test: each corresponds to a folder in ./results
-models = ["meta-llama"
-          "google", 
-          "microsoft", 
-          "Qwen"
-          ]
+models = ["meta-llama"]
+num_samples = 64
 
 # Datasets and tasks (we name them labels)
 dataset_names = ["amsterdam", "nottingham"]
 labels = ["pick", "guess", "coordinate"]
 
+# Matplotlib config
+plt.rcParams['figure.dpi'] = 300
+plt.rcParams['font.family'] = 'Times New Roman'
+
 # Savedir (creation)
 SAVEDIR = "./plots"
-COORDINATION_INDEX_FOLDER = "/coordination-index"
-FAMILY_COORDINATION_INDEX_FOLDER = "/family-coordination-index"
-BEST_MODELS_COORDINATION_INDEX_FOLDER = "/best-models-coordination-index"
+COORDINATION_INDEX_FOLDER = "/coordination-index/sample/llama"
+BEST_MODELS_COORDINATION_INDEX_FOLDER = "/coordination-index-best/sample/llama"
+BEST_MODELS_COORDINATION_INDEX_SAMPLING_FOLDER = "/coordination-index-best-merge/sample/llama"
+BEST_MODELS_COORDINATION_INDEX_SAMPLING_FOLDER_SIDE = "/coordination-index-best-merge-side/sample/llama"
+
 
 for folder in [COORDINATION_INDEX_FOLDER, 
-               FAMILY_COORDINATION_INDEX_FOLDER, 
-               BEST_MODELS_COORDINATION_INDEX_FOLDER]:
+               BEST_MODELS_COORDINATION_INDEX_FOLDER,
+               BEST_MODELS_COORDINATION_INDEX_SAMPLING_FOLDER,
+               BEST_MODELS_COORDINATION_INDEX_SAMPLING_FOLDER_SIDE]:
     if not os.path.exists(Path(SAVEDIR + folder)):
         print("Creating path: ", Path(SAVEDIR + folder))
         os.makedirs(Path(SAVEDIR + folder))
@@ -96,7 +119,17 @@ if __name__ == "__main__":
         
     model_names = get_available_models(model_names, required_files)
     
-    # 1. Coordination Index -- Each LLM has its own line
+    # Sort by model-size
+    model_by_size = {}
+    for m in model_names:
+        match = re.search(r"-([0-9]+)([B])(?:-|$)", m, re.DOTALL)
+        size = int(match.group(1).strip())
+        model_by_size[m] = size
+    
+    model_by_size = {k: v for k, v in sorted(model_by_size.items(), key=lambda item: item[1])}
+    model_names = list(model_by_size.keys())
+    
+    # 1. Coordination Index -- All Llamas
     family_models = defaultdict(list)
     for m in model_names:
         family_models[get_family(m)].append(m)
@@ -112,30 +145,34 @@ if __name__ == "__main__":
                 print(model_name)
                 with open(f"./results{model_name}/{d_name}_problem-{l}.jsonl", "r") as f:
                     data_llm = json.load(f)
-                    
-                    
-                data_llms[model_name] = [
-                    sum([d["normalised_coordination_index"] for d in data_llm[i:i+3]])/3
-                    for i in range(0, len(data_llm), 3)
-                ]
                 
                 data_llms[model_name] = []
                 for i in range(0, len(data_llm), 3):
                     current_responses = {}
-                    for d in data_llm[i:i+3]:
+                    for d in data_llm[i:i+1]:
                         # For each task, put together the tasks and then average
                         for response in d["responses"].keys():
-                            if response not in current_responses:
-                                current_responses[response] = 0
-                            current_responses[response] += d["responses"][response]
+                            match = re.search(r"<answer>(.*?)</answer>", response, re.DOTALL)
+
+                            if match:
+                                re_response = match.group(1).strip().lower()
+                                if re_response not in current_responses:
+                                    current_responses[re_response] = 0
+                                current_responses[re_response] += d["responses"][response]
+                            else:
+                                pass
+                    
                     # Normalised coordination index
-                    nci = 0.
+                    current_responses = sample(current_responses, n=num_samples)
                     N = sum(list(current_responses.values()))
-                    n = len(current_responses)
-                    for _,v in current_responses.items():
-                        nci += v*(v-1)
-                    print(N, n)
-                    data_llms[model_name].append(nci*n/(N*(N-1)))
+                    n = len(current_responses.keys())
+                    nci = 0.
+                    if N > 1:
+                        for _,v in current_responses.items():
+                            nci += v*(v-1)
+                        data_llms[model_name].append(nci*n/(N*(N-1)))
+                    else:
+                        data_llms[model_name].append(0.)
 
             # Load Human results
             with open(f"./data/Bardsley-humans/{d_name}.jsonl", "r") as f:
@@ -146,24 +183,41 @@ if __name__ == "__main__":
 
             # ---- Plot ----
             plt.figure(figsize=(12, 5))
-            plt.plot(current_data_humans, label="Humans", marker="o", color="black")
 
-            for model_name in model_names:
+            tasks = [f"T{d_name[0].upper()}{i+1}" for i in range(14)]
+            x = np.arange(len(tasks))  # label locations
+            width = 0.1  # width of each bar
+
+            # Plot human data
+            plt.bar(x - width, current_data_humans, width, label="Humans", color="black")
+
+            # Plot LLM data
+            for idx, model_name in enumerate(model_names):
                 current_data_llm = data_llms[model_name]
                 family = get_family(model_name)
                 color = get_color(model_name, family_models[family])
-                plt.plot(current_data_llm, label=model_name, marker="x", color=color)
+                plt.bar(x + width*(idx), current_data_llm, width, label=model_name, color=color, edgecolor="black")
 
-            plt.xticks([i for i in range(14)], [f"T{d_name[0].upper()}{i+1}" for i in range(14)])
+            plt.xticks(x, tasks)
             plt.title(f"Coordination Index Comparison: {d_name.capitalize()}-{l}")
             plt.ylabel("Normalised Coordination Index")
             plt.legend(bbox_to_anchor=(1., 1.))
             plt.tight_layout()
-            plt.grid()
+            plt.grid(axis='y', alpha=0.3)
             plt.savefig(SAVEDIR + COORDINATION_INDEX_FOLDER + f"/{d_name}-{l}.png")
+            plt.show()
             
-    # 2. Average Coordination Index -- Each family has its own line
-    # Each family's coordination index is the average of its members
+    # 2. Coordination Index -- Best llamas
+    model_names = [
+        "/meta-llama/Meta-Llama-3-70B-Instruct",
+        "/meta-llama/Llama-3.1-70B-Instruct",
+        "/meta-llama/Llama-3.3-70B-Instruct",
+                   ]
+    
+    family_models = defaultdict(list)
+    for m in model_names:
+        family_models[get_family(m)].append(m)
+        
     for d_name in dataset_names:
         print(f"Dataset: {d_name}")
         for l in labels:
@@ -172,114 +226,37 @@ if __name__ == "__main__":
             # Load LLM results
             data_llms = {}
             for model_name in model_names:
-                with open(f"./results/{model_name}/{d_name}_problem-{l}.jsonl", "r") as f:
-                    data_llm = json.load(f)
-                data_llms[model_name] = [
-                    sum([d["normalised_coordination_index"] for d in data_llm[i:i+3]])/3
-                    for i in range(0, len(data_llm), 3)
-                ]
-
-            # Load Human results
-            with open(f"./data/Bardsley-humans/{d_name}.jsonl", "r") as f:
-                data_humans = json.load(f)
-            current_data_humans = [
-                d["normalised_coordination_index"] for d in data_humans if d["task"] == l
-            ]
-
-            # --- Plot ---
-            plt.figure(figsize=(10, 5))
-            plt.plot(current_data_humans, label="Humans", marker="o", color="black")
-
-            # Overall LLM average
-            all_data = [data_llms[m] for m in model_names]
-            plt.plot(np.mean(all_data, axis=0), label="LLMs - Average", marker="x", color="gray")
-
-            # Family averages
-            family_data = defaultdict(list)
-            for m in model_names:
-                family = get_family(m)
-                family_data[family].append(data_llms[m])
-
-            for family, curves in family_data.items():
-                avg_curve = np.mean(curves, axis=0)
-                cmap = family_colormaps[family]
-                plt.plot(avg_curve, label=f"{family} (avg)", marker="s", color=cmap(0.7))
-
-            plt.xticks([i for i in range(14)], [f"T{d_name[0].upper()}{i+1}" for i in range(14)])
-            plt.title(f"Coordination Index Comparison: {d_name.capitalize()}-{l}")
-            plt.ylabel("Normalised Coordination Index")
-            plt.legend(bbox_to_anchor=(1, 0.5))
-            plt.grid()
-            plt.savefig(SAVEDIR + FAMILY_COORDINATION_INDEX_FOLDER + f"/{d_name}-{l}.png")
-            
-    # 3. Coordination Index Between best models
-    # In this case, we do not average but first merge and then compute the coordination index
-    best_models = [
-        "/meta-llama/Llama-3.3-70B-Instruct",
-        "/google/gemma-3-4b-it",
-        "/microsoft/Phi-4-mini-instruct",
-        "/Qwen/Qwen2.5-14B-Instruct-1M"
-    ]
-
-    # Collect the normalisation factor for each task
-    normalisation_factor = {}
-    for d_name in dataset_names:
-        normalisation_factor[d_name] = {}
-        with open(f"./data/{d_name}.jsonl", "r") as f:
-            data = json.load(f)
-        
-        for problem in data:
-            normalisation_factor[d_name][problem["id"]] = int(problem["normalization_factor"])
-
-    # Sample one model per family
-    model_name_per_family = {}
-    for m in best_models:
-        # Collect prefixes
-        family_name = m.split('/')[1]
-        if family_name not in model_name_per_family:
-            model_name_per_family[family_name] = []
-        model_name_per_family[family_name].append(m)
-
-    best_models_results = {}
-    for d_name in dataset_names:
-        print(f"Dataset: {d_name}")
-        best_models_results[d_name] = {}
-        for l in labels:
-            print(f"Label: {l}")
-            best_models_results[d_name][l] = {}
-            # Load LLM results
-            data_llms = {}
-            for model_name in best_models:
-                with open(f"./results/{model_name}/{d_name}_problem-{l}.jsonl", "r") as f:
+                print(model_name)
+                with open(f"./results{model_name}/{d_name}_problem-{l}.jsonl", "r") as f:
                     data_llm = json.load(f)
                 
+                data_llms[model_name] = []
                 for i in range(0, len(data_llm), 3):
-                    for d in data_llm[i:i+3]:
-                        if d["idx"] not in best_models_results[d_name][l]:
-                            best_models_results[d_name][l][d["idx"]] = {}
+                    current_responses = {}
+                    for d in data_llm[i:i+1]:
+                        # For each task, put together the tasks and then average
                         for response in d["responses"].keys():
-                            if response not in best_models_results[d_name][l][d["idx"]].keys():
-                                best_models_results[d_name][l][d["idx"]][response] = 0
-                            best_models_results[d_name][l][d["idx"]][response] += int(d["responses"][response])
+                            match = re.search(r"<answer>(.*?)</answer>", response, re.DOTALL)
 
-    # Compute the normalised coordination index
-    normalised_coordination_index = {}                       
-    for d_name in dataset_names:
-        normalised_coordination_index[d_name] = {}
-        for l in labels:
-            llm_all_results = []
-            normalised_coordination_index[d_name][l] = {}
-            _ta_order = []
-            for ta in best_models_results[d_name][l]:
-                _ta_order.append(ta)
-                N = sum(list(best_models_results[d_name][l][ta].values()))
-                normalised_coordination_index[d_name][l][ta] = 0.
-                for choice in best_models_results[d_name][l][ta]:
-                    m_j = best_models_results[d_name][l][ta][choice]
-                    normalised_coordination_index[d_name][l][ta] += (m_j * (m_j - 1))/(N*(N-1))
+                            if match:
+                                re_response = match.group(1).strip().lower()
+                                if re_response not in current_responses:
+                                    current_responses[re_response] = 0
+                                current_responses[re_response] += d["responses"][response]
+                            else:
+                                pass
                     
-                normalised_coordination_index[d_name][l][ta] *= normalisation_factor[d_name][ta]
-                llm_all_results.append(normalised_coordination_index[d_name][l][ta])
+                    # Normalised coordination index
+                    current_responses = sample(current_responses, n=num_samples)
+                    N = sum(list(current_responses.values()))
+                    n = len(current_responses.keys())
+                    nci = 0.
+                    if N > 1:
+                        for _,v in current_responses.items():
+                            nci += v*(v-1)
+                        data_llms[model_name].append(nci*n/(N*(N-1)))
+                    else:
+                        data_llms[model_name].append(0.)
 
             # Load Human results
             with open(f"./data/Bardsley-humans/{d_name}.jsonl", "r") as f:
@@ -288,19 +265,243 @@ if __name__ == "__main__":
                 d["normalised_coordination_index"] for d in data_humans if d["task"] == l
             ]
 
-            # --- Plot ---
-            plt.figure(figsize=(10, 5))
-            plt.plot(current_data_humans, label="Humans", marker="o", color="black")
+            # ---- Plot ----
+            plt.figure(figsize=(12, 5))
 
-            # Best LLMs
-            print(_ta_order)  # Should be in the correct order
-            print(llm_all_results)
-            plt.plot(llm_all_results, label="Best LLMs", marker="x", color="gray")
+            tasks = [f"T{d_name[0].upper()}{i+1}" for i in range(14)]
+            x = np.arange(len(tasks))  # label locations
+            width = 0.1  # width of each bar
 
-            plt.xticks([i for i in range(14)], [f"T{d_name[0].upper()}{i+1}" for i in range(14)])
+            # Plot human data
+            plt.bar(x - width, current_data_humans, width, label="Humans", color="black")
+
+            # Plot LLM data
+            for idx, model_name in enumerate(model_names):
+                current_data_llm = data_llms[model_name]
+                family = get_family(model_name)
+                color = get_color(model_name, family_models[family])
+                plt.bar(x + width*(idx), current_data_llm, width, label=model_name, color=color, edgecolor="black")
+
+            plt.xticks(x, tasks)
             plt.title(f"Coordination Index Comparison: {d_name.capitalize()}-{l}")
-            plt.ylabel("Inter-Models Normalised Coordination Index")
-            plt.legend(bbox_to_anchor=(1, 0.5))
-            plt.grid()
+            plt.ylabel("Normalised Coordination Index")
+            plt.legend(bbox_to_anchor=(1., 1.))
+            plt.tight_layout()
+            plt.grid(axis='y', alpha=0.3)
             plt.savefig(SAVEDIR + BEST_MODELS_COORDINATION_INDEX_FOLDER + f"/{d_name}-{l}.png")
+            plt.show()
+            
+    # 3. Coordination Index -- Merge best llamas
+    model_names = [
+        "/meta-llama/Meta-Llama-3-70B-Instruct",
+        "/meta-llama/Llama-3.1-70B-Instruct",
+        "/meta-llama/Llama-3.3-70B-Instruct",
+                   ]
     
+    family_models = defaultdict(list)
+    for m in model_names:
+        family_models[get_family(m)].append(m)
+        
+    for d_name in dataset_names:
+        print(f"Dataset: {d_name}")
+        for l in labels:
+            print(f"Label: {l}")
+
+            # Load LLM results
+            data_llms = {}
+            for model_name in model_names:
+                print(model_name)
+                with open(f"./results{model_name}/{d_name}_problem-{l}.jsonl", "r") as f:
+                    data_llm = json.load(f)
+                
+                data_llms["meta-llama"] = []
+                for i in range(0, len(data_llm), 3):
+                    current_responses = {}
+                    for d in data_llm[i:i+1]:
+                        # For each task, put together the tasks and then average
+                        for response in d["responses"].keys():
+                            match = re.search(r"<answer>(.*?)</answer>", response, re.DOTALL)
+
+                            if match:
+                                re_response = match.group(1).strip().lower()
+                                if re_response not in current_responses:
+                                    current_responses[re_response] = 0
+                                current_responses[re_response] += d["responses"][response]
+                            else:
+                                pass
+                    
+                    # Normalised coordination index
+                    current_responses = sample(current_responses, n=num_samples)
+                    N = sum(list(current_responses.values()))
+                    n = len(current_responses.keys())
+                    nci = 0.
+                    if N > 1:
+                        for _,v in current_responses.items():
+                            nci += v*(v-1)
+                        data_llms["meta-llama"].append(nci*n/(N*(N-1)))
+                    else:
+                        data_llms["meta-llama"].append(0.)
+
+            # Load Human results
+            with open(f"./data/Bardsley-humans/{d_name}.jsonl", "r") as f:
+                data_humans = json.load(f)
+            current_data_humans = [
+                d["normalised_coordination_index"] for d in data_humans if d["task"] == l
+            ]
+
+            # ---- Plot ----
+            plt.figure(figsize=(12, 5))
+
+            tasks = [f"T{d_name[0].upper()}{i+1}" for i in range(14)]
+            x = np.arange(len(tasks))  # label locations
+            width = 0.3  # width of each bar
+
+            # Plot human data (shifted left)
+            plt.bar(x - width/2, current_data_humans, width, label="Humans", color="black")
+
+            # Plot meta-llama data (shifted right)
+            current_data_llm = data_llms["meta-llama"]
+            plt.bar(x + width/2, current_data_llm, width, label="meta-llama", color="blue", edgecolor="black")
+
+            plt.xticks(x, tasks)
+            plt.title(f"Coordination Index Comparison: {d_name.capitalize()}-{l}")
+            plt.ylabel("Normalised Coordination Index")
+            plt.legend(bbox_to_anchor=(1., 1.))
+            plt.tight_layout()
+            plt.grid(axis='y', alpha=0.3)
+            plt.savefig(SAVEDIR + BEST_MODELS_COORDINATION_INDEX_SAMPLING_FOLDER + f"/{d_name}-{l}.png")
+            plt.show()
+
+
+    # 4. Coordination Index -- Merge best llamas all tasks together
+    # Amsterdam
+    # Human data
+    human_data = {'TA1': {'pick': 0.935, 'guess': 1.04, 'coordinate': 2.125},
+                'TA2': {'pick': 1.04, 'guess': 1.124, 'coordinate': 1.472},
+                'TA3': {'pick': 1.115, 'guess': 1.255, 'coordinate': 1.355},
+                'TA4': {'pick': 1.064, 'guess': 1.112, 'coordinate': 0.984},
+                'TA5': {'pick': 1.18, 'guess': 1.504, 'coordinate': 1.684},
+                'TA6': {'pick': 0.985, 'guess': 1.02, 'coordinate': 2.2},
+                'TA7': {'pick': 1.136, 'guess': 1.148, 'coordinate': 1.156},
+                'TA8': {'pick': 1.21, 'guess': 1.7, 'coordinate': 2.495},
+                'TA9': {'pick': 1.41, 'guess': 1.42, 'coordinate': 2.365},
+                'TA10': {'pick': 1.06, 'guess': 1.168, 'coordinate': 2.208},
+                'TA11': {'pick': 1.116, 'guess': 1.104, 'coordinate': 2.008},
+                'TA12': {'pick': 1.235, 'guess': 2.095, 'coordinate': 2.36},
+                'TA13': {'pick': 1.076, 'guess': 0.98, 'coordinate': 1.384},
+                'TA14': {'pick': 1.104, 'guess': 1.148, 'coordinate': 2.072}}
+
+    # LLM data
+    llm_data = {'TA1': {'pick': 1.0, 'guess': 1.8229, 'coordinate': 0.9931},
+                'TA2': {'pick': 1.0, 'guess': 1.0, 'coordinate': 1.0},
+                'TA3': {'pick': 1.4643, 'guess': 1.7073, 'coordinate': 1.0198},
+                'TA4': {'pick': 1.0, 'guess': 1.0833, 'coordinate': 1.0},
+                'TA5': {'pick': 1.0, 'guess': 1.0833, 'coordinate': 1.0},
+                'TA6': {'pick': 1.2381, 'guess': 1.7619, 'coordinate': 1.0833},
+                'TA7': {'pick': 0.9851, 'guess': 2.3155, 'coordinate': 1.9375},
+                'TA8': {'pick': 1.1518, 'guess': 1.8353, 'coordinate': 0.9841},
+                'TA9': {'pick': 1.0, 'guess': 1.2753, 'coordinate': 1.1518},
+                'TA10': {'pick': 1.0, 'guess': 1.0, 'coordinate': 1.5223},
+                'TA11': {'pick': 1.38095, 'guess': 1.3056, 'coordinate': 1.0},
+                'TA12': {'pick': 1.0, 'guess': 1.8854, 'coordinate': 1.0},
+                'TA13': {'pick': 1.0, 'guess': 1.7619, 'coordinate': 1.0},
+                'TA14': {'pick': 0.9881, 'guess': 1.0645, 'coordinate': 1.0645}}
+
+    TAs = list(human_data.keys())
+    tasks = ['pick', 'guess', 'coordinate']
+
+    x = np.arange(len(TAs))  # the label locations
+    width = 0.35  # width of bar group
+
+    fig, ax = plt.subplots(figsize=(14,6))
+
+    # Human bars (black)
+    human_vals = np.array([[human_data[ta][task] for task in tasks] for ta in TAs])
+    ax.bar(x - width/2, human_vals[:,0], width/3, color='black', label='Human Pick')
+    ax.bar(x - width/2 + width/3, human_vals[:,1], width/3, color='black', alpha=0.7, label='Human Guess')
+    ax.bar(x - width/2 + 2*width/3, human_vals[:,2], width/3, color='black', alpha=0.4, label='Human Coordinate')
+
+    # LLM bars (blue)
+    llm_vals = np.array([[llm_data[ta][task] for task in tasks] for ta in TAs])
+    ax.bar(x + width/2, llm_vals[:,0], width/3, color='blue', label='LLM Pick')
+    ax.bar(x + width/2 + width/3, llm_vals[:,1], width/3, color='blue', alpha=0.7, label='LLM Guess')
+    ax.bar(x + width/2 + 2*width/3, llm_vals[:,2], width/3, color='blue', alpha=0.4, label='LLM Coordinate')
+
+    # Labels and formatting
+    ax.set_ylabel('Normalised Coordination Index')
+    ax.set_xlabel('TA')
+    ax.set_title('Human vs LLM coordination indices for Amsterdam')
+    ax.set_xticks(x + width/6)
+    ax.set_xticklabels(TAs)
+    ax.legend(ncol=2, fontsize=9)
+    plt.xticks(rotation=45)
+    plt.tight_layout()
+    plt.savefig(SAVEDIR + BEST_MODELS_COORDINATION_INDEX_SAMPLING_FOLDER_SIDE + f"/amsterdam.png")
+    plt.show()
+    
+
+    # Nottingham
+    # Human data for Nottingham
+    human_data = {'TN1': {'pick': 1.235, 'guess': 3.22, 'coordinate': 3.03},
+                'TN2': {'pick': 1.195, 'guess': 1.77, 'coordinate': 2.855},
+                'TN3': {'pick': 1.43, 'guess': 2.36, 'coordinate': 2.15},
+                'TN4': {'pick': 1.235, 'guess': 1.36, 'coordinate': 1.1425},
+                'TN5': {'pick': 1.145, 'guess': 1.59, 'coordinate': 1.625},
+                'TN6': {'pick': 1.17, 'guess': 1.695, 'coordinate': 1.355},
+                'TN7': {'pick': 1.2, 'guess': 2.775, 'coordinate': 2.88},
+                'TN8': {'pick': 1.07, 'guess': 2.315, 'coordinate': 1.92},
+                'TN9': {'pick': 1.23, 'guess': 1.78, 'coordinate': 2.065},
+                'TN10': {'pick': 0.93, 'guess': 0.98, 'coordinate': 1.105},
+                'TN11': {'pick': 1.465, 'guess': 3.585, 'coordinate': 4.335},
+                'TN12': {'pick': 1.17, 'guess': 1.38, 'coordinate': 1.61},
+                'TN13': {'pick': 0.995, 'guess': 1.26, 'coordinate': 2.275},
+                'TN14': {'pick': 1.385, 'guess': 1.675, 'coordinate': 2.13}}
+
+    # LLM data for Nottingham
+    llm_data = {'TN1': {'pick': 1.144841, 'guess': 1.136905, 'coordinate': 1.662698},
+                'TN2': {'pick': 1.232143, 'guess': 1.032738, 'coordinate': 1.008929},
+                'TN3': {'pick': 1.555556, 'guess': 1.178571, 'coordinate': 1.064484},
+                'TN4': {'pick': 2.087798, 'guess': 1.0, 'coordinate': 1.0},
+                'TN5': {'pick': 1.508929, 'guess': 1.761905, 'coordinate': 1.0},
+                'TN6': {'pick': 1.0, 'guess': 1.0, 'coordinate': 1.0},
+                'TN7': {'pick': 1.0, 'guess': 1.938988, 'coordinate': 1.450893},
+                'TN8': {'pick': 1.464286, 'guess': 1.032738, 'coordinate': 1.0},
+                'TN9': {'pick': 1.0, 'guess': 1.0, 'coordinate': 1.0},
+                'TN10': {'pick': 1.0, 'guess': 1.0, 'coordinate': 1.0},
+                'TN11': {'pick': 1.083333, 'guess': 1.458333, 'coordinate': 1.721726},
+                'TN12': {'pick': 1.0, 'guess': 1.0, 'coordinate': 1.0},
+                'TN13': {'pick': 1.464286, 'guess': 1.818452, 'coordinate': 1.178571},
+                'TN14': {'pick': 1.0, 'guess': 1.0, 'coordinate': 1.0}}
+
+    TAs = list(human_data.keys())
+    tasks = ['pick', 'guess', 'coordinate']
+
+    x = np.arange(len(TAs))  # the label locations
+    width = 0.35  # width of bar group
+
+    fig, ax = plt.subplots(figsize=(14,6))
+
+    # Human bars (black)
+    human_vals = np.array([[human_data[ta][task] for task in tasks] for ta in TAs])
+    ax.bar(x - width/2, human_vals[:,0], width/3, color='black', label='Human Pick')
+    ax.bar(x - width/2 + width/3, human_vals[:,1], width/3, color='black', alpha=0.7, label='Human Guess')
+    ax.bar(x - width/2 + 2*width/3, human_vals[:,2], width/3, color='black', alpha=0.4, label='Human Coordinate')
+
+    # LLM bars (blue)
+    llm_vals = np.array([[llm_data[ta][task] for task in tasks] for ta in TAs])
+    ax.bar(x + width/2, llm_vals[:,0], width/3, color='blue', label='LLM Pick')
+    ax.bar(x + width/2 + width/3, llm_vals[:,1], width/3, color='blue', alpha=0.7, label='LLM Guess')
+    ax.bar(x + width/2 + 2*width/3, llm_vals[:,2], width/3, color='blue', alpha=0.4, label='LLM Coordinate')
+
+    # Labels and formatting
+    ax.set_ylabel('Normalised Coordination Index')
+    ax.set_xlabel('TN')
+    ax.set_title('Human vs LLM coordination indices for Nottingham')
+    ax.set_xticks(x + width/6)
+    ax.set_xticklabels(TAs)
+    ax.legend(ncol=2, fontsize=9)
+    plt.xticks(rotation=45)
+    plt.tight_layout()
+    plt.savefig(SAVEDIR + BEST_MODELS_COORDINATION_INDEX_SAMPLING_FOLDER_SIDE + f"/nottingham.png")
+    plt.show()
+

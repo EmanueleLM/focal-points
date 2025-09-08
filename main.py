@@ -1,14 +1,15 @@
 import argparse
 import json
+import os
 import sys
 import time
+import torch
 from pathlib import Path
 from typing import Dict, List, Tuple
+
 from src.llm import LLM
 from src.prompt import Level0
-from src.utils import iterate_data
-import torch
-import os
+from src.utils import iterate_data, plot_block_frequencies
 
 
 def parse_arguments() -> argparse.Namespace:
@@ -25,6 +26,8 @@ def parse_arguments() -> argparse.Namespace:
                         default=30, help="Responses per single prompt.")
     parser.add_argument("-q", "--quantization", dest="quantization",
                         default=None, help="None, 8bit or 4bit.")
+    parser.add_argument("-pg", "--plot_graphs", dest="plot_graph", type=bool, default=True,
+                    help="Whether to plot or not the barplots for each model and problem.")
     return parser.parse_args()
 
 
@@ -124,9 +127,13 @@ def run_job(args: argparse.Namespace) -> None:
     print(f"[{args.model_name}] elapsed "
           f"{elapsed // 3600:02d}:{(elapsed % 3600) // 60:02d}:{elapsed % 60:02d}")
 
+    # Plot graphs and create result folders
+    if args.plot_graph:
+        compute_metrics(args.model_name, args.dataset, jsonl_logs, args.problem_tag)
+    
     # cleanup – free VRAM and delete weights on disk
     model.clear_cache()
-
+    
 
 def print_gpu_info() -> None:
     try:
@@ -149,6 +156,21 @@ def print_gpu_info() -> None:
     except ImportError:
         print("[WARNING] PyTorch not installed, cannot check GPU status.")
 
+def compute_metrics(model_name:str, 
+                    dataset:str,
+                    data:dict, 
+                    problem_tag:str) -> None:
+    """Plot graphs and compute the results
+
+    Args:
+        model_name (str): the LLM name
+        dataset (str): the dataset name
+        problem_tag (str): pick, guess, or coordinate
+    """
+    os.makedirs(f"./images/{model_name}/{dataset}/{problem_tag}/", exist_ok=True)
+    os.makedirs(f"./results/{model_name}/", exist_ok=True)
+    
+    plot_block_frequencies(data, dataset, model_name, problem_tag)
 
 if __name__ == "__main__":
     # Print GPU info
@@ -159,5 +181,6 @@ if __name__ == "__main__":
 
     try:
         run_job(cli_args)
+
     except Exception as exc:
         print(f"[ERROR] {exc}", file=sys.stderr)

@@ -14,21 +14,13 @@ parser.add_argument("-d", "--dataset", dest="dataset", type=str, default='schell
                     help="Jsonl dataset. Options are 'schelling'.")
 parser.add_argument("-p", "--problem-tag", dest="problem_tag", type=str, default='problem',
                     help="Key of the problem in the json data. Options are 'problem', 'problem-nwp'.")
-parser.add_argument("-pg", "--plot-graphs", dest="plot_graphs", type=str, default='false',
-                    help="Whether to plot or not the barplots for each model and problem.")
 
 args = parser.parse_args()
-model_name = args.model_name
-dataset = args.dataset
-problem_tag = args.problem_tag
-plot_graphs = bool("true" if args.plot_graphs.lower()=="true" else False)
 
-if plot_graphs:
-    os.makedirs(f"./images/{model_name}/{dataset}/{problem_tag}/", exist_ok=True)
-os.makedirs(f"./results/{model_name}/", exist_ok=True)
+os.makedirs(f"./images/{args.model_name}/{args.dataset}/{args.problem_tag}/", exist_ok=True)
+os.makedirs(f"./results/{args.model_name}/", exist_ok=True)
 
-with open(f"./logs/{model_name}/{dataset}_responses_{problem_tag}.jsonl", "r") as f:
+with open(f"./logs/{args.model_name}/{args.dataset}_responses_{args.problem_tag}.jsonl", "r") as f:
     data = json.load(f)
 
-if plot_graphs:    
-    plot_block_frequencies(data, dataset, model_name, problem_tag)
+plot_block_frequencies(data, args.dataset, args.model_name, args.problem_tag)
