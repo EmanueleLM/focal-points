@@ -2,24 +2,12 @@
 
 # Default arguments
 models=("meta-llama/Llama-3.3-70B-Instruct")
-num_experiments=30
-quantization="None"
-plot_graphs=true
 
 # Parse command-line arguments
-while getopts "m:n:q:pg" opt; do
+while getopts "m" opt; do
   case $opt in
     m)
       models=("$OPTARG")
-      ;;
-    n)
-      num_experiments=$OPTARG
-      ;;
-    q)
-      quantization=$OPTARG
-      ;;
-    pg)
-      plot_graphs=$OPTARG
       ;;
     \?)
       echo "Invalid option: -$OPTARG" >&2
@@ -61,7 +49,7 @@ else
   models=("$models")
 fi
 
-echo "Running experiments with model: $models, quantization: $quantization, number of experiments: $num_experiments"
+echo "Computing metrics with model: $models"
 
 for model in "${models[@]}"; do
   echo "Using model: $model"
@@ -72,23 +60,25 @@ for model in "${models[@]}"; do
 
   for data in "${datasets[@]}"; do
     for ptag in "${problemtags[@]}"; do
-      echo "Running main.py with $data and $ptag"
-      python main.py --model "$model" --dataset "$data" --problem-tag "$ptag"  --return-sequences "$num_experiments" --quantization "$quantization"
+
+      echo "Running metrics.py with $data and $ptag"
+      python metrics.py --model "$model" --dataset "$data" --problem-tag "$ptag"
 
     done
   done
 
-  # # le Amsterdam and Nottingham
-  # datasets=("amsterdam" "nottingham")
-  # problemtags=("problem-pick" "problem-guess" "problem-coordinate")
+  # le Amsterdam and Nottingham
+  datasets=("amsterdam" "nottingham")
+  problemtags=("problem-pick" "problem-guess" "problem-coordinate")
 
-  # for data in "${datasets[@]}"; do
-  #   for ptag in "${problemtags[@]}"; do
-  #     echo "Running main.py with $data and $ptag"
-  #     python main.py --model "$model" --dataset "$data" --problem-tag "$ptag" --return-sequences "$num_experiments" --quantization "$quantization"
+  for data in "${datasets[@]}"; do
+    for ptag in "${problemtags[@]}"; do
 
-  #   done
-  # done
+      echo "Running metrics.py with $data and $ptag"
+      python metrics.py --model "$model" --dataset "$data" --problem-tag "$ptag"
+
+    done
+  done
 
   # le Amsterdam and Nottingham numeric
   datasets=("amsterdam_numeric" "nottingham_numeric")
@@ -96,8 +86,9 @@ for model in "${models[@]}"; do
 
   for data in "${datasets[@]}"; do
     for ptag in "${problemtags[@]}"; do
-      echo "Running main.py with $data and $ptag"
-      python main.py --model "$model" --dataset "$data" --problem-tag "$ptag"  --return-sequences "$num_experiments" --quantization "$quantization"
+
+      echo "Running metrics.py with $data and $ptag"
+      python metrics.py --model "$model" --dataset "$data" --problem-tag "$ptag"
 
     done
   done
@@ -108,8 +99,9 @@ for model in "${models[@]}"; do
 
   for data in "${datasets[@]}"; do
     for ptag in "${problemtags[@]}"; do
-      echo "Running main.py with $data and $ptag"
-      python main.py --model "$model" --dataset "$data" --problem-tag "$ptag" --return-sequences "$num_experiments" --quantization "$quantization"
+
+      echo "Running metrics.py with $data and $ptag"
+      python metrics.py --model "$model" --dataset "$data" --problem-tag "$ptag"
 
     done
   done
