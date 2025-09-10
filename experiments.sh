@@ -78,17 +78,17 @@ for model in "${models[@]}"; do
     done
   done
 
-  # # le Amsterdam and Nottingham
-  # datasets=("amsterdam" "nottingham")
-  # problemtags=("problem-pick" "problem-guess" "problem-coordinate")
+  # le Amsterdam and Nottingham
+  datasets=("amsterdam" "nottingham")
+  problemtags=("problem-pick" "problem-guess" "problem-coordinate")
 
-  # for data in "${datasets[@]}"; do
-  #   for ptag in "${problemtags[@]}"; do
-  #     echo "Running main.py with $data and $ptag"
-  #     python main.py --model "$model" --dataset "$data" --problem-tag "$ptag" --return-sequences "$num_experiments" --quantization "$quantization"
+  for data in "${datasets[@]}"; do
+    for ptag in "${problemtags[@]}"; do
+      echo "Running main.py with $data and $ptag"
+      python main.py --model "$model" --dataset "$data" --problem-tag "$ptag" --return-sequences "$num_experiments" --quantization "$quantization"
 
-  #   done
-  # done
+    done
+  done
 
   # le Amsterdam and Nottingham numeric
   datasets=("amsterdam_numeric" "nottingham_numeric")

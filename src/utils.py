@@ -1,10 +1,12 @@
 import json
 import itertools
+import matplotlib as mpl
 import matplotlib.pyplot as plt
 import re
 import textwrap
 from collections import Counter
 
+mpl.rcParams['figure.max_open_warning'] = 10
 
 # Plot function
 def plot_block_frequencies(data,
