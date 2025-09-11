@@ -79,8 +79,8 @@ required_files = [
 
 # Families of models we test: each corresponds to a folder in ./results
 models = ["meta-llama"]
-num_samples = 1000
-sample_with_replacement = False
+num_samples = 64
+sample_with_replacement = True
 
 # Datasets and tasks (we name them labels)
 dataset_names = ["amsterdam", "nottingham"]
@@ -221,7 +221,7 @@ if __name__ == "__main__":
         "/meta-llama/Meta-Llama-3-70B-Instruct",
         "/meta-llama/Llama-3.1-70B-Instruct",
         "/meta-llama/Llama-3.3-70B-Instruct",
-                   ]
+        ]
         
     for suffix, mega_i in [("-all-variations", 3), ("-first-variation", 1)]:
         for d_name in dataset_names:
@@ -303,9 +303,10 @@ if __name__ == "__main__":
     # 3. Coordination Index -- Merge best llamas
     model_names = [
         "/meta-llama/Llama-3.1-70B-Instruct",
-        "/meta-llama/Llama-3.3-70B-Instruct"
-                   ]
-        
+        "/meta-llama/Llama-3.3-70B-Instruct",
+        "/meta-llama/Meta-Llama-3-70B-Instruct"
+                ]
+    
     for suffix, mega_i in [("-all-variations", 3), ("-first-variation", 1)]:  
         for d_name in dataset_names:
             print(f"Dataset: {d_name}")
@@ -348,46 +349,45 @@ if __name__ == "__main__":
                     else:
                         data_llms.append(0.)
 
-            # Load Human results
-            with open(f"./data/Bardsley-humans/{d_name}.jsonl", "r") as f:
-                data_humans = json.load(f)
-            current_data_humans = [
-                dd["normalised_coordination_index"] for dd in data_humans if dd["task"] == l
-            ]
+                # Load Human results
+                with open(f"./data/Bardsley-humans/{d_name}.jsonl", "r") as f:
+                    results_humans = json.load(f)
+                current_data_humans = [
+                    dd["normalised_coordination_index"] for dd in results_humans if dd["task"] == l
+                ]
 
-            # ---- Plot ----
-            plt.figure(figsize=(12, 5))
+                # ---- Plot ----
+                plt.figure(figsize=(12, 5))
 
-            tasks = [f"T{d_name[0].upper()}{i+1}" for i in range(14)]
-            x = np.arange(len(tasks))  # label locations
-            width = 0.3  # width of each bar
+                tasks = [f"T{d_name[0].upper()}{i+1}" for i in range(14)]
+                x = np.arange(len(tasks))  # label locations
+                width = 0.3  # width of each bar
 
-            # Plot human data (shifted left)
-            human_bars = plt.bar(x - width/2, current_data_humans, width, label="Humans", color="black")
+                # Plot human data (shifted left)
+                human_bars = plt.bar(x - width/2, current_data_humans, width, label="Humans", color="black")
 
-            # Plot meta-llama data (shifted right)
-            llm_bars = plt.bar(x + width/2, data_llms, width, label="meta-llama", color="blue", edgecolor="black")
+                # Plot meta-llama data (shifted right)
+                llm_bars = plt.bar(x + width/2, data_llms, width, label="meta-llama", color="blue", edgecolor="black")
 
-            # Add values on top of human bars
-            for bar in human_bars:
-                height = bar.get_height()
-                plt.text(bar.get_x() + bar.get_width()/2, height + 0.02, f'{height:.2f}', ha='center', va='bottom', fontsize=8)
+                # Add values on top of human bars
+                for bar in human_bars:
+                    height = bar.get_height()
+                    plt.text(bar.get_x() + bar.get_width()/2, height + 0.02, f'{height:.2f}', ha='center', va='bottom', fontsize=8)
 
-            # Add values on top of LLM bars
-            for bar in llm_bars:
-                height = bar.get_height()
-                plt.text(bar.get_x() + bar.get_width()/2, height + 0.02, f'{height:.2f}', ha='center', va='bottom', fontsize=8)
+                # Add values on top of LLM bars
+                for bar in llm_bars:
+                    height = bar.get_height()
+                    plt.text(bar.get_x() + bar.get_width()/2, height + 0.02, f'{height:.2f}', ha='center', va='bottom', fontsize=8)
 
-            plt.xticks(x, tasks)
-            plt.title(f"Coordination Index Comparison: {d_name.capitalize()}-{l}")
-            plt.ylabel("Normalised Coordination Index")
-            plt.legend(bbox_to_anchor=(1., 1.))
-            plt.tight_layout()
-            plt.grid(axis='y', alpha=0.3)
-            plt.savefig(SAVEDIR + BEST_MODELS_COORDINATION_INDEX_SAMPLING_FOLDER + f"/{d_name}-{l}{suffix}.png")
-            plt.show()
-
-
+                plt.xticks(x, tasks)
+                plt.title(f"Coordination Index Comparison: {d_name.capitalize()}-{l}")
+                plt.ylabel("Normalised Coordination Index")
+                plt.legend(bbox_to_anchor=(1., 1.))
+                plt.tight_layout()
+                plt.grid(axis='y', alpha=0.3)
+                plt.savefig(SAVEDIR + BEST_MODELS_COORDINATION_INDEX_SAMPLING_FOLDER + f"/{d_name}-{l}{suffix}.png")
+                plt.show()
+            
     # # 4. Coordination Index -- Merge best llamas all tasks together
     # # Amsterdam
     # # Human data
