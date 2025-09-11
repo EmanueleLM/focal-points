@@ -79,8 +79,8 @@ required_files = [
 
 # Families of models we test: each corresponds to a folder in ./results
 models = ["meta-llama"]
-num_samples = 64
-sample_with_replacement = True
+num_samples = 1000
+sample_with_replacement = False
 
 # Datasets and tasks (we name them labels)
 dataset_names = ["amsterdam", "nottingham"]
@@ -185,9 +185,9 @@ if __name__ == "__main__":
                             
                 # Load Human results
                 with open(f"./data/Bardsley-humans/{d_name}.jsonl", "r") as f:
-                    data_humans = json.load(f)
+                    results_humans = json.load(f)
                 current_data_humans = [
-                    d["normalised_coordination_index"] for d in data_humans if d["task"] == l
+                    d["normalised_coordination_index"] for d in results_humans if d["task"] == l
                 ]
 
                 # ---- Plot ----
@@ -269,9 +269,9 @@ if __name__ == "__main__":
                             
                 # Load Human results
                 with open(f"./data/Bardsley-humans/{d_name}.jsonl", "r") as f:
-                    data_humans = json.load(f)
+                    results_humans = json.load(f)
                 current_data_humans = [
-                    d["normalised_coordination_index"] for d in data_humans if d["task"] == l
+                    d["normalised_coordination_index"] for d in results_humans if d["task"] == l
                 ]
 
                 # ---- Plot ----
