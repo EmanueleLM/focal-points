@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Default arguments
-models=("meta-llama/Llama-3.3-70B-Instruct")
+models=("meta-llama/Meta-Llama-3-70B-Instruct")
 
 # Parse command-line arguments
 while getopts "m" opt; do
@@ -54,9 +54,9 @@ echo "Computing metrics with model: $models"
 for model in "${models[@]}"; do
   echo "Using model: $model"
 
-  # le Amsterdam and Nottingham
-  datasets=("amsterdam" "nottingham")
-  problemtags=("problem-pick" "problem-guess" "problem-coordinate")
+  # # le Amsterdam and Nottingham
+  # datasets=("amsterdam" "nottingham")
+  # problemtags=("problem-pick" "problem-guess" "problem-coordinate")
 
   # for data in "${datasets[@]}"; do
   #   for ptag in "${problemtags[@]}"; do

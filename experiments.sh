@@ -63,12 +63,12 @@ fi
 
 echo "Running experiments with model: $models, quantization: $quantization, number of experiments: $num_experiments"
 
-for model in "${models[@]}"; do
-  echo "Using model: $model"
+# for model in "${models[@]}"; do
+#   echo "Using model: $model"
 
   # le Amsterdam and Nottingham
-  datasets=("amsterdam" "nottingham")
-  problemtags=("problem-pick" "problem-guess" "problem-coordinate")
+  # datasets=("amsterdam" "nottingham")
+  # problemtags=("problem-pick" "problem-guess" "problem-coordinate")
 
   # for data in "${datasets[@]}"; do
   #   for ptag in "${problemtags[@]}"; do
@@ -91,7 +91,7 @@ for model in "${models[@]}"; do
   # done
 
   # le Amsterdam and Nottingham instruct for saliency
-  datasets=("amsterdam-instruct-saliency" "nottingham-instruct-saliency")
+  datasets=("amsterdam-instruct-all-features" "nottingham-instruct-all-features")
   problemtags=("problem-pick" "problem-guess" "problem-coordinate")
 
   for data in "${datasets[@]}"; do
