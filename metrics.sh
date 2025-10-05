@@ -80,8 +80,20 @@ for model in "${models[@]}"; do
   #   done
   # done
 
-  # le Amsterdam and Nottingham instruct for saliency
-  datasets=("amsterdam-instruct-saliency" "nottingham-instruct-saliency")
+  # # le Amsterdam and Nottingham instruct for saliency
+  # datasets=("amsterdam-instruct-saliency" "nottingham-instruct-saliency")
+  # problemtags=("problem-pick" "problem-guess" "problem-coordinate")
+
+  # for data in "${datasets[@]}"; do
+  #   for ptag in "${problemtags[@]}"; do
+  #     echo "Running metrics.py with $data and $ptag"
+  #     python metrics.py --model "$model" --dataset "$data" --problem-tag "$ptag"
+
+  #   done
+  # done
+
+  # le Amsterdam and Nottingham instruct for everything
+  datasets=("amsterdam-instruct-all-features" "nottingham-instruct-all-features")
   problemtags=("problem-pick" "problem-guess" "problem-coordinate")
 
   for data in "${datasets[@]}"; do
