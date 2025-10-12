@@ -1,3 +1,4 @@
+import argparse
 import glob
 import json
 import matplotlib.pyplot as plt
@@ -44,7 +45,31 @@ def get_color(model_name, models_in_family):
     n = len(models_in_family)
     return cmap(0.3 + 0.6 * idx / (n - 1 if n > 1 else 1))  # spaced shades
 
-from pathlib import Path
+def size_in_billions(model_name: str) -> float:
+    """
+    Extract the numeric size and unit from model_name and return size in billions.
+    Examples matched: -1B, -1.5B, -0.5B, -72B, -14B, -3B, -1500M, etc.
+    Falls back to 0.0 if no size token found.
+    """
+    # Look for a number (integer or decimal) followed by a unit letter (B/M/K) with word boundary.
+    m = re.search(r"-(\d+(?:\.\d+)?)([bBkKmM])\b", model_name)
+    if not m:
+        return 0.0
+
+    value = float(m.group(1))
+    unit = m.group(2).upper()
+
+    if unit == "B":
+        return value
+    if unit == "M":
+        return value / 1000.0
+    if unit == "K":
+        return value / 1_000_000.0
+
+    return value  # fallback (shouldn't reach)
+
+def sort_models_by_size(models, descending=True):
+    return sorted(models, key=size_in_billions, reverse=descending)
 
 def get_available_models(model_names, required_files):
     base = Path("./results")
@@ -90,46 +115,109 @@ family_colormaps = defaultdict(
     }
 )
 
-# Datasets and tasks (we name them labels)
-dataset_names = ["amsterdam", "nottingham"]
-labels = ["pick", "guess", "coordinate"]
+def get_args():
+    parser = argparse.ArgumentParser(
+        description="Run dataset analysis or model evaluation."
+    )
 
-required_files = [
-    "amsterdam_numeric-instruct-all-features_problem-coordinate.jsonl",
-    "amsterdam_numeric-instruct-all-features_problem-guess.jsonl",
-    "amsterdam_numeric-instruct-all-features_problem-pick.jsonl",
-    "nottingham_numeric-instruct-all-features_problem-coordinate.jsonl",
-    "nottingham_numeric-instruct-all-features_problem-guess.jsonl",
-    "nottingham_numeric-instruct-all-features_problem-pick.jsonl"
-]
+    # Dataset and task options
+    parser.add_argument(
+        "--dataset-names",
+        nargs="+",
+        default=["amsterdam", "nottingham"],
+        choices=["amsterdam", "nottingham"],
+        help="List of dataset names to process."
+    )
 
-# Families of models we test: each corresponds to a folder in ./results
-models = ["Qwen"]
-num_samples = 1000
-sample_with_replacement = True
-mode_variations = [("-all-variations", 3)]
-
-# Matplotlib config
-plt.rcParams['figure.dpi'] = 300
-plt.rcParams['font.family'] = 'Times New Roman'
-
-# Create save directories
-SAVEDIR = "./plots"
-sample_folder = ('sample-with-replacement' if sample_with_replacement else 'sample-without-replacement')
-
-COORDINATION_INDEX_FOLDER = f"/all-features-numeric/coordination-index/{sample_folder}/{models[0]}"
-BEST_MODELS_COORDINATION_INDEX_FOLDER = f"/all-features-numeric/coordination-index-best/{sample_folder}/{models[0]}"
-BEST_MODELS_COORDINATION_INDEX_SAMPLING_FOLDER = f"/all-features-numeric/coordination-index-best-merge/{sample_folder}/{models[0]}"
-
-for folder in [COORDINATION_INDEX_FOLDER, 
-               BEST_MODELS_COORDINATION_INDEX_FOLDER,
-               BEST_MODELS_COORDINATION_INDEX_SAMPLING_FOLDER
-               ]:
-    if not os.path.exists(Path(SAVEDIR + folder)):
-        print("Creating path: ", Path(SAVEDIR + folder))
-        os.makedirs(Path(SAVEDIR + folder))
+    parser.add_argument(
+        "--labels",
+        nargs="+",
+        default=["pick", "guess", "coordinate"],
+        choices=["pick", "guess", "coordinate"],
+        help="Task labels corresponding to problem types."
+    )
     
+    parser.add_argument(
+        "--task-folder",
+        default="all-features",
+        choices=["vanilla", "saliency", "all-features"],
+        help="Task folder corresponding to the technique used."
+    )
+
+    # Required files
+    parser.add_argument(
+        "--required-files",
+        nargs="+",
+        default=[
+            "amsterdam-instruct-all-features_problem-coordinate.jsonl",
+            "amsterdam-instruct-all-features_problem-guess.jsonl",
+            "amsterdam-instruct-all-features_problem-pick.jsonl",
+            "nottingham-instruct-all-features_problem-coordinate.jsonl",
+            "nottingham-instruct-all-features_problem-guess.jsonl",
+            "nottingham-instruct-all-features_problem-pick.jsonl"
+        ],
+        help="List of required JSONL files for analysis."
+    )
+
+    # Model configurations
+    parser.add_argument(
+        "--models",
+        nargs="+",
+        default=["meta-llama"],
+        help="Model families (folders under ./results)."
+    )
+    
+    parser.add_argument(
+        "--model-names-selection",
+        nargs="+",
+        default=[
+            "/meta-llama/Meta-Llama-3-70B-Instruct",
+            "/meta-llama/Llama-3.1-70B-Instruct",
+            "/meta-llama/Llama-3.3-70B-Instruct",
+        ],
+        help="List of specific model names for plots or evaluation."
+    )
+
+    args = parser.parse_args()
+    return args
+
 if __name__ == "__main__":
+    
+    # Argparse options
+    args = get_args()
+    dataset_names = args.dataset_names
+    labels = args.labels
+    task_folder = args.task_folder
+    required_files = args.required_files
+    model_names_selection = args.model_names_selection
+    models = args.models
+    
+    # Other options
+    num_samples = 1000
+    sample_with_replacement = True
+    mode_variations = [("-all-variations", 3)]
+
+    # Matplotlib config
+    plt.rcParams['figure.dpi'] = 300
+    plt.rcParams['font.family'] = 'Times New Roman'
+
+    # Create save directories
+    SAVEDIR = "./plots"
+    sample_folder = ('sample-with-replacement' if sample_with_replacement else 'sample-without-replacement')
+
+    assert len(models) == 1, "Please select only one family of models at a time."
+
+    COORDINATION_INDEX_FOLDER = f"/{task_folder}/coordination-index/{sample_folder}/{models[0]}"
+    BEST_MODELS_COORDINATION_INDEX_FOLDER = f"/{task_folder}/coordination-index-best/{sample_folder}/{models[0]}"
+    BEST_MODELS_COORDINATION_INDEX_SAMPLING_FOLDER = f"/{task_folder}/coordination-index-best-merge/{sample_folder}/{models[0]}"
+
+    for folder in [COORDINATION_INDEX_FOLDER, 
+                BEST_MODELS_COORDINATION_INDEX_FOLDER,
+                BEST_MODELS_COORDINATION_INDEX_SAMPLING_FOLDER
+                ]:
+        if not os.path.exists(Path(SAVEDIR + folder)):
+            print("Creating path: ", Path(SAVEDIR + folder))
+            os.makedirs(Path(SAVEDIR + folder))
 
     # Collect the names of the folders inside each "model"
     model_names = []
@@ -147,14 +235,8 @@ if __name__ == "__main__":
     model_names = get_available_models(model_names, required_files)
     
     # Sort by model-size
-    model_by_size = {}
-    for m in model_names:
-        match = re.search(r"-([0-9]+)([B])(?:-|$)", m, re.DOTALL)
-        size = int(match.group(1).strip())
-        model_by_size[m] = size
-    
-    model_by_size = {k: v for k, v in sorted(model_by_size.items(), key=lambda item: item[1])}
-    model_names = list(model_by_size.keys())
+    print(model_names)
+    model_by_size = sort_models_by_size(model_names)
 
     family_models = defaultdict(list)
     for m in model_names:
@@ -238,11 +320,7 @@ if __name__ == "__main__":
                 plt.savefig(SAVEDIR + COORDINATION_INDEX_FOLDER + f"/{d_name}-{l}{suffix}.png")
                 plt.show()
             
-    # 2. Coordination Index -- Best llamas
-    model_names = [
-        "/Qwen/Qwen2-72B-Instruct",
-        "/Qwen/Qwen2.5-72B-Instruct",
-        ]
+    # 2. Coordination Index -- Best models
         
     for suffix, mega_i in mode_variations:
         for d_name in dataset_names:
@@ -257,7 +335,7 @@ if __name__ == "__main__":
                 print(f"Label: {l}")
                 # Load LLM results
                 data_llms = {}
-                for model_name in model_names:
+                for model_name in model_names_selection:
                     print(model_name)
                     with open(f"./results{model_name}/{d_name}_problem-{l}.jsonl", "r") as f:
                         data_llm = json.load(f)
@@ -306,7 +384,7 @@ if __name__ == "__main__":
                 plt.bar(x - width, current_data_humans, width, label="Humans", color="black")
 
                 # Plot LLM data
-                for idx, model_name in enumerate(model_names):
+                for idx, model_name in enumerate(model_names_selection):
                     current_data_llm = data_llms[model_name]
                     family = get_family(model_name)
                     color = get_color(model_name, family_models[family])
@@ -321,12 +399,8 @@ if __name__ == "__main__":
                 plt.savefig(SAVEDIR + BEST_MODELS_COORDINATION_INDEX_FOLDER + f"/{d_name}-{l}{suffix}.png")
                 plt.show()
             
-    # 3. Coordination Index -- Merge best llamas
-    model_names = [
-        "/Qwen/Qwen2-72B-Instruct",
-        "/Qwen/Qwen2.5-72B-Instruct",
-        ]
-    
+    # 3. Coordination Index -- Merge best models
+        
     for suffix, mega_i in mode_variations:  
         for d_name in dataset_names:
             print(f"Dataset: {d_name}")
@@ -342,7 +416,7 @@ if __name__ == "__main__":
                 # Load LLM results
                 for i in range(0, len(data_humans)*3, 3):  # TA
                     current_responses = {}
-                    for model_name in model_names:
+                    for model_name in model_names_selection:
                         with open(f"./results{model_name}/{d_name}_problem-{l}.jsonl", "r") as f:
                             data_llm = json.load(f)
                         
