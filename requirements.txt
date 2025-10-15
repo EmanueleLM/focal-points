@@ -1,12 +1,13 @@
-accelerate~=1.7.0
-huggingface-hub~=0.32.2
-transformers~=4.52.3
-python-dotenv~=1.1.0
-torch~=2.7.0
-jupyter~=1.1.1
-typing-extensions~=4.13.2
-matplotlib~=3.10.3
-torchvision~=0.22.0
-bitsandbytes~=0.46.0
-numpy~=2.2.6
-nvidia-ml-py~=13.580.65
+transformers==4.57.1
+torch==2.9.0
+torchvision==0.24.0
+huggingface-hub==0.35.3
+accelerate==1.10.1
+python-dotenv==1.1.1
+jupyter==1.1.1
+typing-extensions==4.15.0
+matplotlib==3.10.7
+bitsandbytes==0.48.1
+triton==3.5.0 ; platform_system == "Linux" and platform_machine == "x86_64"
+numpy==2.3.4
+nvidia-ml-py==13.580.82

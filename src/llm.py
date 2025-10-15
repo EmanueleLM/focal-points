@@ -16,13 +16,13 @@ login(token=os.environ["HF_TOKEN"])
 
 class LLM:
     def __init__(
-            self,
-            model_id: str,
-            top_p: float = None,
-            temperature: float = None,
-            max_new_tokens: int = None,
-            num_return_sequences: int = None,
-            quantization: str | None = None,  # None, "8bit", or "4bit"
+        self,
+        model_id: str,
+        top_p: float | None = None,
+        temperature: float | None = None,
+        max_new_tokens: int | None = None,
+        num_return_sequences: int | None = None,
+        quantization: str | None = None,  # None, "8bit", or "4bit"
     ):
         self.model_id = model_id
         self.top_p = top_p
@@ -61,7 +61,7 @@ class LLM:
         if bnb_config is not None:
             model_kwargs["quantization_config"] = bnb_config
         else:
-            model_kwargs["torch_dtype"] = torch.bfloat16
+            model_kwargs["dtype"] = torch.bfloat16
 
         # Load the model once
         self.model = AutoModelForCausalLM.from_pretrained(
@@ -73,7 +73,6 @@ class LLM:
         generation_kwargs: dict = {
             "do_sample": True,
             "return_full_text": False,
-            "torch_dtype": torch.bfloat16,
         }
         if self.top_p is not None:
             generation_kwargs["top_p"] = self.top_p
@@ -95,9 +94,8 @@ class LLM:
         )
 
         self.chat_template = [
-            {"role": "system",
-             "content": "You are a helpful assistant."},
-            {"role": "user", "content": None}
+            {"role": "system", "content": "You are a helpful assistant."},
+            {"role": "user", "content": None},
         ]
 
     def clear_cache(self) -> None:
@@ -109,9 +107,7 @@ class LLM:
 
         # remove the weight files from disk
         cache_root = os.getenv("HF_HOME", os.path.expanduser("~/.cache/huggingface"))
-        model_cache = os.path.join(
-            cache_root, "huggingface"
-        )
+        model_cache = os.path.join(cache_root, "huggingface")
         shutil.rmtree(model_cache, ignore_errors=True)
         print(f"[INFO] Deleted on-disk cache for {self.model_id}")
 
@@ -120,7 +116,7 @@ class LLM:
         for prompt in prompts:
             chat = [
                 {"role": "system", "content": self.chat_template[0]["content"]},
-                {"role": "user", "content": prompt}
+                {"role": "user", "content": prompt},
             ]
             formatted_chats.append(chat)
 
@@ -130,11 +126,21 @@ class LLM:
         for out in results:
             if isinstance(out, list):
                 texts = [
-                    ''.join(c for c in entry["generated_text"].strip().lower() if c.isalnum() or c.isspace() or c in "<>/")
+                    "".join(
+                        c
+                        for c in entry["generated_text"].strip().lower()
+                        if c.isalnum() or c.isspace() or c in "<>/"
+                    )
                     for entry in out
                 ]
             else:
-                texts = [''.join(c for c in out["generated_text"].strip().lower() if c.isalnum() or c.isspace() or c in "<>/")]
+                texts = [
+                    "".join(
+                        c
+                        for c in out["generated_text"].strip().lower()
+                        if c.isalnum() or c.isspace() or c in "<>/"
+                    )
+                ]
             all_responses.append(texts)
 
         return all_responses

@@ -1,5 +1,5 @@
 # Start from a base image with GPU support
-FROM pytorch/pytorch:2.2.2-cuda12.1-cudnn8-runtime
+FROM pytorch/pytorch:2.5.1-cuda12.1-cudnn9-runtime
 
 # Create a new folder, grant rwx to everyone (inside container)
 RUN mkdir -p /workspace && chmod -R 777 /workspace
@@ -16,7 +16,7 @@ RUN mkdir -p /cache /logs /results && chmod -R 777 /cache /logs /results
 
 # Build essential tools for compiling
 RUN apt-get update && \
-    apt-get install -y --no-install-recommends build-essential && \
+    apt-get install -y --no-install-recommends build-essential git && \
     rm -rf /var/lib/apt/lists/*
 
 ENV AUDIOCRAFT_CACHE_DIR=/cache \
