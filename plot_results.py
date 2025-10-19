@@ -103,6 +103,32 @@ def get_available_models(model_names, required_files):
     return working_model_names
 
 
+def build_required_filename_lookup(required_files, dataset_names, labels):
+    lookup = {}
+    for file_name in required_files:
+        if "_problem-" not in file_name:
+            continue
+        prefix, suffix = file_name.rsplit("_problem-", 1)
+        label = suffix.replace(".jsonl", "")
+        dataset_candidate = prefix.split("-")[0]
+        key = (dataset_candidate, label)
+        if key in lookup and lookup[key] != file_name:
+            raise ValueError(
+                f"Ambiguous required file mapping for {key}: {lookup[key]} vs {file_name}"
+            )
+        lookup[key] = file_name
+
+    for dataset in dataset_names:
+        for label in labels:
+            key = (dataset, label)
+            if key not in lookup:
+                raise ValueError(
+                    f"No required file specified for dataset '{dataset}' and label '{label}'."
+                )
+
+    return lookup
+
+
 # Define families and assign colormaps
 family_colormaps = defaultdict(
     lambda: cm.Greys,  # default colormap
@@ -191,6 +217,7 @@ if __name__ == "__main__":
     required_files = args.required_files
     model_names_selection = args.model_names_selection
     models = args.models
+    required_file_lookup = build_required_filename_lookup(required_files, dataset_names, labels)
     
     # Other options
     num_samples = 1000
@@ -254,11 +281,13 @@ if __name__ == "__main__":
     
             for l in labels:
                 print(f"Label: {l}")
+                required_filename = required_file_lookup[(d_name, l)]
                 # Load LLM results
                 data_llms = {}
                 for model_name in model_names:
                     print(model_name)
-                    with open(f"./results{model_name}/{d_name}_problem-{l}.jsonl", "r") as f:
+                    model_path = Path("./results") / model_name.lstrip("/")
+                    with open(model_path / required_filename, "r") as f:
                         data_llm = json.load(f)
                     
                     data_llms[model_name] = []
@@ -333,11 +362,13 @@ if __name__ == "__main__":
     
             for l in labels:
                 print(f"Label: {l}")
+                required_filename = required_file_lookup[(d_name, l)]
                 # Load LLM results
                 data_llms = {}
                 for model_name in model_names_selection:
                     print(model_name)
-                    with open(f"./results{model_name}/{d_name}_problem-{l}.jsonl", "r") as f:
+                    model_path = Path("./results") / model_name.lstrip("/")
+                    with open(model_path / required_filename, "r") as f:
                         data_llm = json.load(f)
                     
                     data_llms[model_name] = []
@@ -412,12 +443,14 @@ if __name__ == "__main__":
             for l in labels:
                 data_llms = []
                 print(f"Label: {l}")
+                required_filename = required_file_lookup[(d_name, l)]
 
                 # Load LLM results
                 for i in range(0, len(data_humans)*3, 3):  # TA
                     current_responses = {}
                     for model_name in model_names_selection:
-                        with open(f"./results{model_name}/{d_name}_problem-{l}.jsonl", "r") as f:
+                        model_path = Path("./results") / model_name.lstrip("/")
+                        with open(model_path / required_filename, "r") as f:
                             data_llm = json.load(f)
                         
                         for d in data_llm[i:i+mega_i]:
@@ -457,11 +490,19 @@ if __name__ == "__main__":
                 x = np.arange(len(tasks))  # label locations
                 width = 0.3  # width of each bar
 
+                human_avg = float(np.mean(current_data_humans)) if current_data_humans else 0.0
+                llm_avg = float(np.mean(data_llms)) if data_llms else 0.0
+                human_color = "black"
+                llm_family = models[0] if models else "LLM"
+                family_cmap = family_colormaps[llm_family]
+                llm_color = family_cmap(0.6)
+                llm_label = llm_family
+
                 # Plot human data (shifted left)
-                human_bars = plt.bar(x - width/2, current_data_humans, width, label="Humans", color="black")
+                human_bars = plt.bar(x - width/2, current_data_humans, width, label="Humans", color=human_color)
 
                 # Plot meta-llama data (shifted right)
-                llm_bars = plt.bar(x + width/2, data_llms, width, label="meta-llama", color="blue", edgecolor="black")
+                llm_bars = plt.bar(x + width/2, data_llms, width, label=llm_label, color=llm_color, edgecolor="black")
 
                 # Add values on top of human bars
                 for bar in human_bars:
@@ -472,6 +513,14 @@ if __name__ == "__main__":
                 for bar in llm_bars:
                     height = bar.get_height()
                     plt.text(bar.get_x() + bar.get_width()/2, height + 0.02, f'{height:.2f}', ha='center', va='bottom', fontsize=8)
+
+                ax = plt.gca()
+                plt.axhline(human_avg, color=human_color, linestyle="--", linewidth=1.2)
+                plt.axhline(llm_avg, color=llm_color, linestyle="--", linewidth=1.2)
+                x_text = ax.get_xlim()[1] - 0.2
+                text_kwargs = {"ha": "right", "va": "bottom", "fontsize": 8}
+                plt.text(x_text, human_avg, f"Human avg: {human_avg:.2f}", color=human_color, **text_kwargs)
+                plt.text(x_text, llm_avg, f"{llm_label} avg: {llm_avg:.2f}", color=llm_color, **text_kwargs)
 
                 plt.xticks(x, tasks)
                 plt.title(f"Coordination Index Comparison: {d_name.capitalize()}-{l}")

@@ -3,10 +3,15 @@ set -u
 set -o pipefail
 # note: we do NOT set -e so we can handle python failures manually
 
+# Configure which model families to plot (default: meta-llama). You can also pass families as CLI args.
+MODELS=("meta-llama" "Qwen")
+if [ $# -gt 0 ]; then
+    MODELS=("$@")
+fi
+
 DATASET_NAMES=("amsterdam" "nottingham")
 LABELS=("pick" "guess" "coordinate")
 TASK_FOLDER=("vanilla" "saliency" "all-features")
-MODELS=("meta-llama")
 
 META_LLAMA_MODELS=(
   "/meta-llama/Meta-Llama-3-70B-Instruct"
@@ -87,6 +92,7 @@ for MODEL in "${MODELS[@]}"; do
         for DATASET in "${DATASET_NAMES[@]}"; do
             LOG_FILE="logs/${MODEL}_${TASK}_${DATASET}.log"
             echo "Running: $MODEL / $TASK / $DATASET (log -> $LOG_FILE)"
+            echo "Prompting files: ${REQUIRED_FILES[@]}"
 
             # Run Python and explicitly handle failures so loop continues.
             if ! python "$PY_SCRIPT" \
@@ -107,6 +113,7 @@ for MODEL in "${MODELS[@]}"; do
             fi
 
             echo "✅  Finished ${MODEL}_${TASK}_${DATASET}"
+            echo ""
         done
     done
 done
