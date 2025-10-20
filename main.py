@@ -131,8 +131,8 @@ def run_job(args: argparse.Namespace) -> None:
     if args.plot_graph:
         compute_metrics(args.model_name, args.dataset, jsonl_logs, args.problem_tag)
 
-    # cleanup – free VRAM and delete weights on disk
-    model.clear_cache()
+    # cleanup – free VRAM
+    # model.clear_cache()
 
 
 def print_gpu_info() -> None:

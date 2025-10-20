@@ -10,8 +10,9 @@ from transformers import (
     BitsAndBytesConfig,
 )
 
-load_dotenv()
-login(token=os.environ["HF_TOKEN"])
+tok = os.getenv("HUGGINGFACE_HUB_TOKEN") or os.getenv("HF_TOKEN")
+if tok:
+    os.environ["HUGGINGFACE_HUB_TOKEN"] = tok
 
 
 class LLM:
@@ -104,12 +105,6 @@ class LLM:
             torch.cuda.empty_cache()
         del self.generator, self.model
         gc.collect()
-
-        # remove the weight files from disk
-        cache_root = os.getenv("HF_HOME", os.path.expanduser("~/.cache/huggingface"))
-        model_cache = os.path.join(cache_root, "huggingface")
-        shutil.rmtree(model_cache, ignore_errors=True)
-        print(f"[INFO] Deleted on-disk cache for {self.model_id}")
 
     def generate_batch(self, prompts: list[str]) -> list[list[str]]:
         formatted_chats = []
