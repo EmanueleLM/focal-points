@@ -6,7 +6,6 @@ import time
 import torch
 from pathlib import Path
 from typing import Dict, List, Tuple
-
 from src.llm import LLM
 from src.prompt import Level0
 from src.utils import iterate_data, plot_block_frequencies
@@ -14,24 +13,64 @@ from src.utils import iterate_data, plot_block_frequencies
 
 def parse_arguments() -> argparse.Namespace:
     parser = argparse.ArgumentParser()
-    parser.add_argument("-m", "--model", dest="model_name",
-                        default="meta-llama/Llama-3.2-1B-Instruct", help="HuggingFace model id string.")
-    parser.add_argument("-d", "--dataset", dest="dataset",
-                        default="schelling", help="Dataset name (without .jsonl).")
-    parser.add_argument("-p", "--problem-tag", dest="problem_tag",
-                        default="problem", help="Key of the problem in the json data.")
-    parser.add_argument("-t", "--trials", dest="trials", type=int, default=1,
-                        help="How many times to call the model per prompt.")
-    parser.add_argument("-s", "--return-sequences", dest="sequences", type=int,
-                        default=30, help="Responses per single prompt.")
-    parser.add_argument("-q", "--quantization", dest="quantization",
-                        default=None, help="None, 8bit or 4bit.")
-    parser.add_argument("-g", "--plot-graphs", dest="plot_graph", type=lambda s: s.lower() == "true", default=True,
-                        help="Whether to plot or not the barplots for each model and problem.")
+    parser.add_argument(
+        "-m",
+        "--model",
+        dest="model_name",
+        default="meta-llama/Llama-3.2-1B-Instruct",
+        help="HuggingFace model id string.",
+    )
+    parser.add_argument(
+        "-d",
+        "--dataset",
+        dest="dataset",
+        default="schelling",
+        help="Dataset name (without .jsonl).",
+    )
+    parser.add_argument(
+        "-p",
+        "--problem-tag",
+        dest="problem_tag",
+        default="problem",
+        help="Key of the problem in the json data.",
+    )
+    parser.add_argument(
+        "-t",
+        "--trials",
+        dest="trials",
+        type=int,
+        default=1,
+        help="How many times to call the model per prompt.",
+    )
+    parser.add_argument(
+        "-s",
+        "--return-sequences",
+        dest="sequences",
+        type=int,
+        default=30,
+        help="Responses per single prompt.",
+    )
+    parser.add_argument(
+        "-q",
+        "--quantization",
+        dest="quantization",
+        default=None,
+        help="None, 8bit or 4bit.",
+    )
+    parser.add_argument(
+        "-g",
+        "--plot-graphs",
+        dest="plot_graph",
+        type=lambda s: s.lower() == "true",
+        default=True,
+        help="Whether to plot or not the barplots for each model and problem.",
+    )
     return parser.parse_args()
 
 
-def prepare_directories(model_name: str, base_data_dir: str = "./data/") -> Tuple[Path, Path]:
+def prepare_directories(
+    model_name: str, base_data_dir: str = "./data/"
+) -> Tuple[Path, Path]:
     dataset_dir = Path(base_data_dir)
     logs_dir = Path("./logs") / model_name
     for d in (dataset_dir, logs_dir):
@@ -45,7 +84,9 @@ def save_jsonl(path: Path, data: List[dict]) -> None:
         json.dump(data, f, indent=2)
 
 
-def build_flat_prompt_list(problems: Dict[int, List[str]]) -> Tuple[List[str], List[Tuple[int, str]]]:
+def build_flat_prompt_list(
+    problems: Dict[int, List[str]],
+) -> Tuple[List[str], List[Tuple[int, str]]]:
     prompts, keys = [], []
     for idx, variants in problems.items():
         for v in variants:
@@ -54,14 +95,18 @@ def build_flat_prompt_list(problems: Dict[int, List[str]]) -> Tuple[List[str], L
     return prompts, keys
 
 
-def generate_batch_responses(model: LLM, prompts: List[str], trials: int, seq_per_prompt: int) -> List[List[str]]:
+def generate_batch_responses(
+    model: LLM, prompts: List[str], trials: int, seq_per_prompt: int
+) -> List[List[str]]:
     all_outputs: List[List[str]] = []
     for i, prompt in enumerate(prompts, start=1):
         combined: List[str] = []
         for t in range(trials):
-            print(f"[{model.model_id}] Q {i}/{len(prompts)}  "
-                  f"Trial {t + 1}/{trials}  "
-                  f"({seq_per_prompt} seqs)")
+            print(
+                f"[{model.model_id}] Q {i}/{len(prompts)}  "
+                f"Trial {t + 1}/{trials}  "
+                f"({seq_per_prompt} seqs)"
+            )
             texts = model.generate_batch([prompt])[0]
             combined.extend(texts)
             print("\n".join(texts))
@@ -69,24 +114,31 @@ def generate_batch_responses(model: LLM, prompts: List[str], trials: int, seq_pe
     return all_outputs
 
 
-def nest_outputs(keys: List[Tuple[int, str]], outputs: List[List[str]]) -> Dict[int, Dict[str, List[str]]]:
+def nest_outputs(
+    keys: List[Tuple[int, str]], outputs: List[List[str]]
+) -> Dict[int, Dict[str, List[str]]]:
     resp: Dict[int, Dict[str, List[str]]] = {}
     for (idx, prompt), outs in zip(keys, outputs):
         resp.setdefault(idx, {})[prompt] = outs
     return resp
 
 
-def build_log_json(idx_to_responses: Dict[int, Dict[str, List[str]]], norm_factors: Dict[int, List[int]]) -> List[dict]:
+def build_log_json(
+    idx_to_responses: Dict[int, Dict[str, List[str]]],
+    norm_factors: Dict[int, List[int]],
+) -> List[dict]:
     logs: List[dict] = []
     for idx, variants in idx_to_responses.items():
         for (var_idx, prompt), norm in zip(enumerate(variants), norm_factors[idx]):
-            logs.append({
-                "idx": idx,
-                "variation-idx": str(var_idx),
-                "prompt": prompt,
-                "responses": variants[prompt],
-                "normalization_factor": norm,
-            })
+            logs.append(
+                {
+                    "idx": idx,
+                    "variation-idx": str(var_idx),
+                    "prompt": prompt,
+                    "responses": variants[prompt],
+                    "normalization_factor": norm,
+                }
+            )
     return logs
 
 
@@ -113,7 +165,9 @@ def run_job(args: argparse.Namespace) -> None:
     prompts, keys = build_flat_prompt_list(problems)
 
     # generate
-    outputs = generate_batch_responses(model, prompts, trials=args.trials, seq_per_prompt=args.sequences)
+    outputs = generate_batch_responses(
+        model, prompts, trials=args.trials, seq_per_prompt=args.sequences
+    )
 
     # reshape & save
     nested = nest_outputs(keys, outputs)
@@ -124,43 +178,22 @@ def run_job(args: argparse.Namespace) -> None:
 
     # print timing
     elapsed = int(time.time() - start)
-    print(f"[{args.model_name}] elapsed "
-          f"{elapsed // 3600:02d}:{(elapsed % 3600) // 60:02d}:{elapsed % 60:02d}")
+    print(
+        f"[{args.model_name}] elapsed "
+        f"{elapsed // 3600:02d}:{(elapsed % 3600) // 60:02d}:{elapsed % 60:02d}"
+    )
 
     # Plot graphs and create result folders
     if args.plot_graph:
         compute_metrics(args.model_name, args.dataset, jsonl_logs, args.problem_tag)
 
-    # cleanup – free VRAM
-    # model.clear_cache()
+    # cleanup
+    model.clear_cache()
 
 
-def print_gpu_info() -> None:
-    try:
-        if torch.cuda.is_available():
-            visible_devices = os.environ.get("CUDA_VISIBLE_DEVICES", "")
-            if visible_devices:
-                ids = visible_devices.split(",")
-                num_gpus = len(ids)
-                print(f"[INFO] {num_gpus} GPU(s) allocated to this process:")
-                for idx, dev_id in enumerate(ids):
-                    name = torch.cuda.get_device_name(idx)
-                    print(f"- CUDA:{idx} (physical GPU {dev_id.strip()}): {name}")
-            else:
-                num_gpus = torch.cuda.device_count()
-                print(f"[INFO] {num_gpus} GPU(s) detected (no restriction):")
-                for i in range(num_gpus):
-                    print(f"- CUDA:{i}: {torch.cuda.get_device_name(i)}")
-        else:
-            print("[INFO] No GPUs detected, running on CPU.")
-    except ImportError:
-        print("[WARNING] PyTorch not installed, cannot check GPU status.")
-
-
-def compute_metrics(model_name: str,
-                    dataset: str,
-                    data: dict,
-                    problem_tag: str) -> None:
+def compute_metrics(
+    model_name: str, dataset: str, data: dict, problem_tag: str
+) -> None:
     """Plot graphs and compute the results
 
     Args:
@@ -175,9 +208,6 @@ def compute_metrics(model_name: str,
 
 
 if __name__ == "__main__":
-    # Print GPU info
-    print_gpu_info()
-
     # Parse CLI args and run the job
     cli_args = parse_arguments()
 

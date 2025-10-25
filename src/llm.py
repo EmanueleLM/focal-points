@@ -70,6 +70,8 @@ class LLM:
             **model_kwargs,
         )
 
+        self._log_device_allocation()
+
         # Build the generation kwargs dictionary
         generation_kwargs: dict = {
             "do_sample": True,
@@ -99,7 +101,30 @@ class LLM:
             {"role": "user", "content": None},
         ]
 
-    def clear_cache(self) -> None:
+    def _log_device_allocation(self) -> None:
+        if not torch.cuda.is_available():
+            print("[INFO] CUDA not available; skipping device allocation check.")
+            return
+
+        device_map = getattr(self.model, "hf_device_map", None)
+        if device_map:
+            print("[INFO] Model device map:")
+            for module, device in device_map.items():
+                print(f"  - {module}: {device}")
+        else:
+            print(
+                "[INFO] Model did not expose a device map; assuming single-device placement."
+            )
+
+        for idx in range(torch.cuda.device_count()):
+            allocated_gib = torch.cuda.memory_allocated(idx) / (1024**3)
+            reserved_gib = torch.cuda.memory_reserved(idx) / (1024**3)
+            print(
+                f"[INFO] CUDA:{idx} memory allocated: {allocated_gib:.2f} GiB "
+                f"(reserved {reserved_gib:.2f} GiB)"
+            )
+
+    def clear_cache(self):
         # free VRAM / system RAM
         if torch.cuda.is_available():
             torch.cuda.empty_cache()

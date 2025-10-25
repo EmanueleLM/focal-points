@@ -11,6 +11,7 @@ ENV DEBIAN_FRONTEND=noninteractive \
     HF_HOME=/cache \
     HF_DATASETS_CACHE=/cache \
     HUGGINGFACE_HUB_CACHE=/cache \
+    HF_HUB_CACHE=/cache \
     TORCH_HOME=/cache \
     TRITON_CACHE_DIR=/cache \
     TORCHINDUCTOR_CACHE_DIR=/cache \
