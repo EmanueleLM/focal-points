@@ -350,7 +350,6 @@ if __name__ == "__main__":
                 plt.show()
             
     # 2. Coordination Index -- Best models
-        
     for suffix, mega_i in mode_variations:
         for d_name in dataset_names:
             print(f"Dataset: {d_name}")
@@ -431,7 +430,6 @@ if __name__ == "__main__":
                 plt.show()
             
     # 3. Coordination Index -- Merge best models
-        
     for suffix, mega_i in mode_variations:  
         for d_name in dataset_names:
             print(f"Dataset: {d_name}")
