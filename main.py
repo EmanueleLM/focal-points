@@ -211,8 +211,4 @@ if __name__ == "__main__":
     # Parse CLI args and run the job
     cli_args = parse_arguments()
 
-    try:
-        run_job(cli_args)
-
-    except Exception as exc:
-        print(f"[ERROR] {exc}", file=sys.stderr)
+    run_job(cli_args)
