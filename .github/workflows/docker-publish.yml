@@ -37,7 +37,7 @@ jobs:
           username: ${{ secrets.DOCKER_USERNAME }}
           password: ${{ secrets.DOCKER_PASSWORD }}
 
-      - name: Build and push Docker image with cache
+      - name: Build and push Docker image (no cache)
         uses: docker/build-push-action@v5
         with:
           context: .
@@ -45,5 +45,5 @@ jobs:
           tags: ido106/lefocal:latest
           build-args: |
             HF_TOKEN=${{ secrets.HF_TOKEN }}
-          cache-from: type=gha
-          cache-to: type=gha,mode=max
+          no-cache: true
+          pull: true

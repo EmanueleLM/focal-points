@@ -8,10 +8,10 @@ ENV DEBIAN_FRONTEND=noninteractive \
     OMP_NUM_THREADS=1 \
     NCCL_SHM_DISABLE=1 \
     TRANSFORMERS_NO_TORCHVISION=1 \
+    TORCH_COMPILE_DISABLE=1 \
     HF_HOME=/cache \
     HF_DATASETS_CACHE=/cache \
     HUGGINGFACE_HUB_CACHE=/cache \
-    HF_HUB_CACHE=/cache \
     TORCH_HOME=/cache \
     TRITON_CACHE_DIR=/cache \
     TORCHINDUCTOR_CACHE_DIR=/cache \
@@ -31,7 +31,7 @@ RUN python3.12 -m venv /opt/venv
 ENV PATH="/opt/venv/bin:${PATH}"
 RUN python -m pip install --upgrade pip setuptools wheel
 
-# Workdirs (owned by root during build)
+# Workdirs
 RUN mkdir -p /workspace /cache /logs /results && chmod -R 777 /workspace /cache /logs /results
 WORKDIR /workspace
 
@@ -47,10 +47,7 @@ RUN python -m pip install --no-cache-dir -r /workspace/requirements.txt
 # Copy project files
 COPY . /workspace
 
-# Create non-root user to have own writable paths
-RUN useradd -ms /bin/bash app && \
-    chown -R app:app /workspace /cache /logs /results /opt/venv
-USER app
+# Set HOME
 ENV HOME=/workspace
 
 # Entrypoint 
