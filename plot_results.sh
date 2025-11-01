@@ -4,14 +4,14 @@ set -o pipefail
 # note: we do NOT set -e so we can handle python failures manually
 
 # Configure which model families to plot (default: meta-llama). You can also pass families as CLI args.
-MODELS=("meta-llama" "Qwen")
+MODELS=("meta-llama")
 if [ $# -gt 0 ]; then
     MODELS=("$@")
 fi
 
 DATASET_NAMES=("amsterdam" "nottingham")
 LABELS=("pick" "guess" "coordinate")
-TASK_FOLDER=("vanilla" "saliency" "all-features")
+TASK_FOLDER=("vanilla" "saliency" "all-features" "culture")
 
 META_LLAMA_MODELS=(
   "/meta-llama/Meta-Llama-3-70B-Instruct"
@@ -51,6 +51,15 @@ REQUIRED_FILES_INSTRUCT_ALL_FEATURES=(
     "nottingham-instruct-all-features_problem-pick.jsonl"
 )
 
+REQUIRED_FILES_INSTRUCT_CULTURE=(
+    "amsterdam-instruct-culture_problem-coordinate.jsonl"
+    "amsterdam-instruct-culture_problem-guess.jsonl"
+    "amsterdam-instruct-culture_problem-pick.jsonl"
+    "nottingham-instruct-culture_problem-coordinate.jsonl"
+    "nottingham-instruct-culture_problem-guess.jsonl"
+    "nottingham-instruct-culture_problem-pick.jsonl"
+)
+
 PY_SCRIPT="plot_results.py"
 mkdir -p logs
 
@@ -82,6 +91,9 @@ for MODEL in "${MODELS[@]}"; do
                 ;;
             "all-features")
                 REQUIRED_FILES=("${REQUIRED_FILES_INSTRUCT_ALL_FEATURES[@]}")
+                ;;
+            "culture")
+                REQUIRED_FILES=("${REQUIRED_FILES_INSTRUCT_CULTURE[@]}")
                 ;;
             *)
                 echo "Unknown task folder: $TASK — skipping."
