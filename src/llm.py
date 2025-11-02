@@ -41,11 +41,11 @@ class LLM:
         # Build a BitsAndBytesConfig only if quantization is requested
         bnb_config = None
 
-        if quantization == "8bit":
+        if quantization == "8bit" and self.model_id != "openai/gpt-oss-120b":
             bnb_config = BitsAndBytesConfig(
                 load_in_8bit=True,
             )
-        elif quantization == "4bit":
+        elif quantization == "4bit" and self.model_id != "openai/gpt-oss-120b":
             bnb_config = BitsAndBytesConfig(
                 load_in_4bit=True,
                 bnb_4bit_quant_type="nf4",

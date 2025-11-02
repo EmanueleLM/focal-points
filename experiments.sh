@@ -31,9 +31,9 @@ done
 # Handle "all-models" option
 if [[ "$models" == "all" ]]; then
   models=(
-  "meta-llama/Llama-3.3-70B-Instruct"
-  "meta-llama/Llama-3.1-70B-Instruct"
-  "meta-llama/Meta-Llama-3-70B-Instruct"
+  # "meta-llama/Llama-3.3-70B-Instruct"
+  # "meta-llama/Llama-3.1-70B-Instruct"
+  # "meta-llama/Meta-Llama-3-70B-Instruct"
   # "meta-llama/Llama-3.1-8B-Instruct"
   # "meta-llama/Meta-Llama-3-8B-Instruct"
   # "meta-llama/Llama-3.2-3B-Instruct"
@@ -56,6 +56,7 @@ if [[ "$models" == "all" ]]; then
   # "google/gemma-3-12b-it"
   # "google/gemma-3-27b-it"
   # "microsoft/Phi-4-mini-instruct"
+  "openai/gpt-oss-120b"
   )
 else
   models=("$models")
