@@ -4,14 +4,14 @@ set -o pipefail
 # note: we do NOT set -e so we can handle python failures manually
 
 # Configure which model families to plot (default: meta-llama). You can also pass families as CLI args.
-MODELS=("meta-llama")
+MODELS=("meta-llama" "Qwen")
 if [ $# -gt 0 ]; then
     MODELS=("$@")
 fi
 
 DATASET_NAMES=("amsterdam" "nottingham")
 LABELS=("pick" "guess" "coordinate")
-TASK_FOLDER=("vanilla" "saliency" "all-features" "culture")
+TASK_FOLDER=("culture")
 
 META_LLAMA_MODELS=(
   "/meta-llama/Meta-Llama-3-70B-Instruct"

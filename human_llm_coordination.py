@@ -475,7 +475,7 @@ def plot_ensemble_from_files(
     basepaths, datasets, tasks, methods,
     load_human_data, load_llm_data, compute_overlaps_all_tasks,
     methods_order=None, tasks_order=None,
-    show=True, save_dir: Optional[str] = "./results/human_llm_coordination/llms-ensemble/", fuzzy_match=True,
+    show=True, save_dir: Optional[str] = "./results/human_llm_coordination/_llms-ensemble/", fuzzy_match=True,
     alpha: float = 0.05, n_resamples: int = 300, random_state: Optional[int] = None
 ):
     """
@@ -607,7 +607,7 @@ if __name__ == "__main__":
             load_human_data, load_llm_data, compute_overlaps_all_tasks,
             methods_order=list(methods.keys()),
             tasks_order=list(tasks),
-            show=show, save_dir="./plots/human_llm_coordination/llms-ensemble/", fuzzy_match=True,
+            show=show, save_dir="./plots/human_llm_coordination/_llms-ensemble/", fuzzy_match=True,
             alpha=args.alpha, n_resamples=args.n_resamples, random_state=args.random_state
         )
     else:
