@@ -64,8 +64,8 @@ fi
 
 datasets=(
     # TASK -- Amsterdam
-    "amsterdam"
-    "amsterdam-instruct-all-features"
+    # "amsterdam"
+    # "amsterdam-instruct-all-features"
     "amsterdam-instruct-saliency"
     # TASK -- Amsterdam_numeric
     "amsterdam_numeric"
