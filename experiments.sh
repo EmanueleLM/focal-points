@@ -66,17 +66,17 @@ datasets=(
     # TASK -- Amsterdam
     # "amsterdam"
     # "amsterdam-instruct-all-features"
-    "amsterdam-instruct-saliency"
+    # "amsterdam-instruct-saliency"
     # TASK -- Amsterdam_numeric
-    "amsterdam_numeric"
-    "amsterdam_numeric-instruct-all-features"
-    "amsterdam_numeric-instruct-saliency"
+    # "amsterdam_numeric"
+    # "amsterdam_numeric-instruct-all-features"
+    # "amsterdam_numeric-instruct-saliency"
     # TASK -- Asymmetric_payoff
-    "asymmetric_payoff"
-    "asymmetric_payoff-instruct-all-features"
-    "asymmetric_payoff-instruct-saliency"
+    # "asymmetric_payoff"
+    # "asymmetric_payoff-instruct-all-features"
+    # "asymmetric_payoff-instruct-saliency"
     # TASK -- Nottingham
-    "nottingham"
+    # "nottingham"
     "nottingham-instruct-all-features"
     "nottingham-instruct-saliency"
     # TASK -- Nottingham_numeric
