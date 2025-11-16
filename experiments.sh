@@ -5,9 +5,10 @@ models=("meta-llama/Llama-3.3-70B-Instruct")
 num_experiments=30
 quantization="None"
 plot_graphs="true"
+reasoning="None"
 
 # Parse command-line arguments
-while getopts "m:n:q:p:" opt; do
+while getopts "m:n:q:p:r:" opt; do
   case $opt in
     m)
       models=("$OPTARG")
@@ -20,6 +21,9 @@ while getopts "m:n:q:p:" opt; do
       ;;
     p)
       plot_graphs=$OPTARG
+      ;;
+    r)
+      reasoning=$OPTARG
       ;;
     \?)
       echo "Invalid option: -$OPTARG" >&2
@@ -64,19 +68,19 @@ fi
 
 datasets=(
     # TASK -- Amsterdam
-    # "amsterdam"
-    # "amsterdam-instruct-all-features"
-    # "amsterdam-instruct-saliency"
+    "amsterdam"
+    "amsterdam-instruct-all-features"
+    "amsterdam-instruct-saliency"
     # TASK -- Amsterdam_numeric
-    # "amsterdam_numeric"
-    # "amsterdam_numeric-instruct-all-features"
-    # "amsterdam_numeric-instruct-saliency"
+    "amsterdam_numeric"
+    "amsterdam_numeric-instruct-all-features"
+    "amsterdam_numeric-instruct-saliency"
     # TASK -- Asymmetric_payoff
-    # "asymmetric_payoff"
-    # "asymmetric_payoff-instruct-all-features"
-    # "asymmetric_payoff-instruct-saliency"
+    "asymmetric_payoff"
+    "asymmetric_payoff-instruct-all-features"
+    "asymmetric_payoff-instruct-saliency"
     # TASK -- Nottingham
-    # "nottingham"
+    "nottingham"
     "nottingham-instruct-all-features"
     "nottingham-instruct-saliency"
     # TASK -- Nottingham_numeric
@@ -91,7 +95,7 @@ datasets=(
 
 problemtags=("problem-pick" "problem-guess" "problem-coordinate")
 
-echo "Running experiments with model: $models, quantization: $quantization, number of experiments: $num_experiments"
+echo "Running experiments with model: $models, quantization: $quantization, number of experiments: $num_experiments, reasoning: $reasoning"
 
 for model in "${models[@]}"; do
   echo "Using model: $model"
@@ -99,7 +103,7 @@ for model in "${models[@]}"; do
   for data in "${datasets[@]}"; do
     for ptag in "${problemtags[@]}"; do
       echo "Running main.py with $data and $ptag"
-      python main.py --model "$model" --dataset "$data" --problem-tag "$ptag"  --return-sequences "$num_experiments" --quantization "$quantization" --plot-graphs "$plot_graphs"
+      python main.py --model "$model" --dataset "$data" --problem-tag "$ptag"  --return-sequences "$num_experiments" --quantization "$quantization" --plot-graphs "$plot_graphs" --reasoning "$reasoning"
 
     done
   done
@@ -120,7 +124,7 @@ for model in "${models[@]}"; do
   for data in "${datasets[@]}"; do
     for ptag in "${problemtags[@]}"; do
       echo "Running main.py with $data and $ptag"
-      python main.py --model "$model" --dataset "$data" --problem-tag "$ptag"  --return-sequences "$num_experiments" --quantization "$quantization" --plot-graphs "$plot_graphs"
+      python main.py --model "$model" --dataset "$data" --problem-tag "$ptag"  --return-sequences "$num_experiments" --quantization "$quantization" --plot-graphs "$plot_graphs" --reasoning "$reasoning"
 
     done
   done

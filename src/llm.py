@@ -1,8 +1,8 @@
+from abc import ABC, abstractmethod
 import os
-from dotenv import load_dotenv
-from huggingface_hub import login
 import torch
-import gc, shutil
+import gc
+from openai import OpenAI
 from transformers import (
     AutoModelForCausalLM,
     AutoTokenizer,
@@ -10,12 +10,23 @@ from transformers import (
     BitsAndBytesConfig,
 )
 
-tok = os.getenv("HUGGINGFACE_HUB_TOKEN") or os.getenv("HF_TOKEN")
-if tok:
-    os.environ["HUGGINGFACE_HUB_TOKEN"] = tok
+
+class LLM(ABC):
+    def __init__(self, model_id: str) -> None:
+        self.model_id = model_id
+
+    @abstractmethod
+    def generate(self, prompt: str) -> str:
+        """Generate a single response for the provided prompt."""
+        raise NotImplementedError
+
+    @abstractmethod
+    def generate_batch(self, prompts: list[str]) -> list[list[str]]:
+        """Generate responses for a list of prompts."""
+        raise NotImplementedError
 
 
-class LLM:
+class LocalLLM(LLM):
     def __init__(
         self,
         model_id: str,
@@ -25,7 +36,7 @@ class LLM:
         num_return_sequences: int | None = None,
         quantization: str | None = None,  # None, "8bit", or "4bit"
     ):
-        self.model_id = model_id
+        super().__init__(model_id=model_id)
         self.top_p = top_p
         self.temperature = temperature
         self.max_new_tokens = max_new_tokens
@@ -167,3 +178,122 @@ class LLM:
 
     def generate(self, prompt: str) -> str:
         return self.generate_batch([prompt])[0][0]
+
+
+class APILLM(LLM):
+    def __init__(
+        self,
+        model_id: str,
+        reasoning: dict | None = None,
+        num_return_sequences: int = 1,
+    ) -> None:
+        super().__init__(model_id=model_id)
+        self.client = OpenAI(api_key=os.getenv("OPENAI_API_KEY"))
+        self.reasoning = reasoning
+        self.num_return_sequences = num_return_sequences
+
+        # Add print statement to confirm initialization
+        print(f"[INFO] Initialized APILLM with model_id: {self.model_id}")
+        print(f"[INFO] Reasoning parameters: {self.reasoning}")
+        print(f"[INFO] API sequences per prompt: {self.num_return_sequences}")
+
+    def _extract_output_text(self, response) -> str:
+        text_chunks: list[str] = []
+        for item in getattr(response, "output", []) or []:
+            if getattr(item, "type", None) == "message":
+                for content in getattr(item, "content", []):
+                    if getattr(content, "type", None) == "output_text":
+                        text_chunks.append(content.text)
+            elif getattr(item, "type", None) == "output_text":
+                text_chunks.append(item.text)
+        if not text_chunks and getattr(response, "output_text", None):
+            text_chunks.append(response.output_text)
+        return "".join(text_chunks).strip()
+
+    def generate_batch(self, prompts: list[str]) -> list[list[str]]:
+        all_outputs: list[list[str]] = []
+        for prompt in prompts:
+            prompt_outputs: list[str] = []
+            for _ in range(self.num_return_sequences):
+                response = self.client.responses.create(
+                    model=self.model_id,
+                    input=prompt,
+                    reasoning=self.reasoning,
+                )
+                raw_text = self._extract_output_text(response)
+                normalized = "".join(
+                    c
+                    for c in raw_text.strip().lower()
+                    if c.isalnum() or c.isspace() or c in "<>/"
+                )
+                prompt_outputs.append(normalized)
+            all_outputs.append(prompt_outputs)
+        return all_outputs
+
+    def generate(self, prompt: str) -> str:
+        return self.generate_batch([prompt])[0][0]
+
+
+def load_model(
+    model_id: str,
+    top_p: float | None = None,
+    temperature: float | None = None,
+    max_new_tokens: int | None = None,
+    num_return_sequences: int | None = None,
+    quantization: str | None = None,
+    reasoning: str | None = None,
+) -> LLM:
+    """Load either an API or locally hosted LLM implementation"""
+
+    API_MODELS = {"gpt-5", "gpt-5.1"}
+
+    LOCAL_MODELS = {
+        "meta-llama/Llama-3.3-70B-Instruct",
+        "meta-llama/Llama-3.1-70B-Instruct",
+        "meta-llama/Meta-Llama-3-70B-Instruct",
+        "meta-llama/Llama-3.1-8B-Instruct",
+        "meta-llama/Meta-Llama-3-8B-Instruct",
+        "meta-llama/Llama-3.2-3B-Instruct",
+        "meta-llama/Llama-3.2-1B-Instruct",
+        "Qwen/Qwen2-72B-Instruct",
+        "Qwen/Qwen2.5-72B-Instruct",
+        "Qwen/Qwen2.5-32B-Instruct",
+        "Qwen/Qwen2.5-14B-Instruct-1M",
+        "Qwen/Qwen2.5-14B-Instruct",
+        "Qwen/Qwen2.5-7B-Instruct-1M",
+        "Qwen/Qwen2.5-7B-Instruct",
+        "Qwen/Qwen2-7B-Instruct",
+        "Qwen/Qwen2.5-3B-Instruct",
+        "Qwen/Qwen2.5-1.5B-Instruct",
+        "Qwen/Qwen2-1.5B-Instruct",
+        "Qwen/Qwen2.5-0.5B-Instruct",
+        "Qwen/Qwen2-0.5B-Instruct",
+        "google/gemma-3-1b-it",
+        "google/gemma-3-4b-it",
+        "google/gemma-3-12b-it",
+        "google/gemma-3-27b-it",
+        "microsoft/Phi-4-mini-instruct",
+        "openai/gpt-oss-120b",
+    }
+
+    if model_id in API_MODELS:
+        reasoning_payload = None
+        if reasoning:
+            reasoning_payload = {"effort": reasoning}  # OPENAI style
+
+        return APILLM(
+            model_id=model_id,
+            reasoning=reasoning_payload,
+            num_return_sequences=num_return_sequences,
+        )
+    elif model_id in LOCAL_MODELS:
+        return LocalLLM(
+            model_id=model_id,
+            top_p=top_p,
+            temperature=temperature,
+            max_new_tokens=max_new_tokens,
+            num_return_sequences=num_return_sequences,
+            quantization=quantization,
+        )
+
+    raise ValueError(f"Model ID '{model_id}' is not recognized as a valid model.")

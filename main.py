@@ -1,12 +1,10 @@
 import argparse
 import json
 import os
-import sys
 import time
-import torch
 from pathlib import Path
 from typing import Dict, List, Tuple
-from src.llm import LLM
+from src.llm import LLM, load_model
 from src.prompt import Level0
 from src.utils import iterate_data, plot_block_frequencies
 
@@ -64,6 +62,13 @@ def parse_arguments() -> argparse.Namespace:
         type=lambda s: s.lower() == "true",
         default=True,
         help="Whether to plot or not the barplots for each model and problem.",
+    )
+    parser.add_argument(
+        "-r",
+        "--reasoning",
+        dest="reasoning",
+        default=None,
+        help='Reasoning effort for API models (e.g., "low", "medium").',
     )
     return parser.parse_args()
 
@@ -155,10 +160,15 @@ def run_job(args: argparse.Namespace) -> None:
     problems, norm_factors = iterate_data(raw_data, args.problem_tag)
 
     # load model
-    model = LLM(
+    reasoning_arg = args.reasoning
+    if reasoning_arg.lower() == "none":
+        reasoning_arg = None
+
+    model = load_model(
         model_id=args.model_name,
         num_return_sequences=args.sequences,
         quantization=args.quantization,
+        reasoning=reasoning_arg,
     )
 
     # build the prompt list
@@ -188,7 +198,8 @@ def run_job(args: argparse.Namespace) -> None:
         compute_metrics(args.model_name, args.dataset, jsonl_logs, args.problem_tag)
 
     # cleanup
-    model.clear_cache()
+    if hasattr(model, "clear_cache"):
+        model.clear_cache()
 
 
 def compute_metrics(

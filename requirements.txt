@@ -1,3 +1,5 @@
+triton==3.5.0 ; platform_system == "Linux" and platform_machine == "x86_64"
+kernels==0.10.4 ; platform_system == "Linux" and platform_machine == "x86_64"
 transformers==4.57.1
 huggingface-hub==0.35.3
 accelerate==1.11.0
@@ -8,5 +10,4 @@ matplotlib==3.10.7
 bitsandbytes==0.48.1
 numpy==2.3.4
 nvidia-ml-py==13.580.82
-triton==3.5.0 ; platform_system == "Linux" and platform_machine == "x86_64"
-kernels==0.10.4 ; platform_system == "Linux" and platform_machine == "x86_64"
+openai==2.8.0
