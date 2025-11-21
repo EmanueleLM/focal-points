@@ -35,6 +35,7 @@ class LocalLLM(LLM):
         max_new_tokens: int | None = None,
         num_return_sequences: int | None = None,
         quantization: str | None = None,  # None, "8bit", or "4bit"
+        reasoning: str | None = None,
     ):
         super().__init__(model_id=model_id)
         self.top_p = top_p
@@ -42,6 +43,16 @@ class LocalLLM(LLM):
         self.max_new_tokens = max_new_tokens
         self.num_return_sequences = num_return_sequences
         self.quantization = quantization
+
+        if reasoning:
+            if reasoning.lower() in {"low", "medium", "high"}:
+                self.reasoning = reasoning.lower()
+                print(f"[INFO] Local model reasoning level: {self.reasoning}")
+            else:
+                self.reasoning = None
+                print(
+                    "[WARNING] Invalid reasoning level provided; ignoring reasoning parameter and using default."
+                )
 
         # Load the tokenizer (same for all cases)
         self.tokenizer = AutoTokenizer.from_pretrained(
@@ -107,10 +118,17 @@ class LocalLLM(LLM):
             **generation_kwargs,
         )
 
+        system_prompt = "You are a helpful assistant."
+        if self.model_id == "openai/gpt-oss-120b" and self.reasoning:
+            system_prompt = f"{system_prompt}\nReasoning: {self.reasoning}"
+
         self.chat_template = [
-            {"role": "system", "content": "You are a helpful assistant."},
+            {"role": "system", "content": system_prompt},
             {"role": "user", "content": None},
         ]
+
+        # Print system prompt for verification
+        print(f"[INFO] System prompt set to: \n{system_prompt}")
 
     def _log_device_allocation(self) -> None:
         if not torch.cuda.is_available():
@@ -194,7 +212,7 @@ class APILLM(LLM):
 
         # Add print statement to confirm initialization
         print(f"[INFO] Initialized APILLM with model_id: {self.model_id}")
-        print(f"[INFO] Reasoning parameters: {self.reasoning}")
+        print(f"[INFO] API reasoning parameters: {self.reasoning}")
         print(f"[INFO] API sequences per prompt: {self.num_return_sequences}")
 
     def _extract_output_text(self, response) -> str:
@@ -239,7 +257,7 @@ def load_model(
     top_p: float | None = None,
     temperature: float | None = None,
     max_new_tokens: int | None = None,
-    num_return_sequences: int | None = None,
+    num_return_sequences: int = 1,
     quantization: str | None = None,
     reasoning: str | None = None,
 ) -> LLM:
@@ -294,6 +312,7 @@ def load_model(
             max_new_tokens=max_new_tokens,
             num_return_sequences=num_return_sequences,
             quantization=quantization,
+            reasoning=reasoning,
         )
 
     raise ValueError(f"Model ID '{model_id}' is not recognized as a valid model.")
