@@ -1,0 +1,280 @@
+[
+  {
+    "idx": "0",
+    "variation-idx": "0",
+    "prompt": "Choose a number between 1 and 10. Return the option you chose between <answer></answer> tags.",
+    "responses": {
+      "<answer>7</answer>": 30
+    },
+    "coordination_index": 1.0,
+    "normalised_coordination_index": 10.0
+  },
+  {
+    "idx": "0",
+    "variation-idx": "1",
+    "prompt": "Choose a number between 1 and 100. Return the option you chose between <answer></answer> tags.",
+    "responses": {
+      "<answer>42</answer>": 30
+    },
+    "coordination_index": 1.0,
+    "normalised_coordination_index": 100.0
+  },
+  {
+    "idx": "0",
+    "variation-idx": "2",
+    "prompt": "Choose a number between 1 and 1000. Return the option you chose between <answer></answer> tags.",
+    "responses": {
+      "<answer>527</answer>": 29,
+      "<answer>587</answer>": 1
+    },
+    "coordination_index": 0.9333333333333333,
+    "normalised_coordination_index": 933.3333333333334
+  },
+  {
+    "idx": "1",
+    "variation-idx": "0",
+    "prompt": "You have to choose a number between 1 and 10. If you choose the same number as another agent would, you both win. Return the option you chose between <answer></answer> tags.",
+    "responses": {
+      "<answer>7</answer>": 27,
+      "<answer>5</answer>": 3
+    },
+    "coordination_index": 0.8137931034482758,
+    "normalised_coordination_index": 8.137931034482758
+  },
+  {
+    "idx": "1",
+    "variation-idx": "1",
+    "prompt": "You have to choose a number between 1 and 100. If you choose the same number as another agent would, you both win. Return the option you chose between <answer></answer> tags.",
+    "responses": {
+      "<answer>42</answer>": 16,
+      "<answer>50</answer>": 14
+    },
+    "coordination_index": 0.4850574712643678,
+    "normalised_coordination_index": 48.50574712643678
+  },
+  {
+    "idx": "1",
+    "variation-idx": "2",
+    "prompt": "You have to choose a number between 1 and 1000. If you choose the same number as another agent would, you both win. Return the option you chose between <answer></answer> tags.",
+    "responses": {
+      "<answer>42</answer>": 17,
+      "<answer>1</answer>": 2,
+      "<answer>500</answer>": 6,
+      "<answer>7</answer>": 3,
+      "<answer>527</answer>": 2
+    },
+    "coordination_index": 0.3586206896551724,
+    "normalised_coordination_index": 358.6206896551724
+  },
+  {
+    "idx": "2",
+    "variation-idx": "0",
+    "prompt": "You and a friend have to meet in Paris tomorrow at noon. Your phone broke so you cannot communicate with him. Where would you go at noon? Return the option you chose between <answer></answer> tags.",
+    "responses": {
+      "<answer>meet at the entrance of the louvre museum pyramide du louvre at noon</answer>": 1,
+      "<answer>the main entrance of the louvre museum pyramide du louvre at noon</answer>": 2,
+      "<answer>eiffel tower  meet at the main entrance on the champ de mars at noon</answer>": 2,
+      "<answer>eiffel tower champ de mars</answer>": 3,
+      "<answer>eiffel tower champ de mars near the main entrance</answer>": 1,
+      "<answer>the main entrance of the louvre museum the glass pyramid at noon</answer>": 1,
+      "<answer>eiffel tower  champ de mars near the main entrance</answer>": 2,
+      "<answer>the eiffel tower champ de mars</answer>": 1,
+      "<answer>eiffel tower champ de mars 5 avenue anatole france 75007 paris</answer>": 3,
+      "<answer>eiffel tower champ de mars paris</answer>": 1,
+      "<answer>eiffel tower champ de mars near the trocad\u00e9ro</answer>": 1,
+      "<answer>the clock at the base of the eiffel tower on the champ de mars</answer>": 1,
+      "<answer>place de la concorde at the centre of the large roundabout near the egyptian obelisk</answer>": 1,
+      "<answer>eiffel tower</answer>": 2,
+      "<answer>the tuileries garden near the louvre the main entrance at place du carrousel  a central easytofind spot for a noon meeting</answer>": 1,
+      "<answer>eiffel tower  champ de mars the area directly in front of the tower</answer>": 1,
+      "<answer>the main entrance of the louvre museum pyramide du louvre</answer>": 2,
+      "<answer>eiffel tower  champ de mars near the main entrance the iconic landmark is a wellknown meeting point and easy to find without a phone</answer>": 1,
+      "<answer>the base of the eiffel tower on the champ de mars the main entrance area</answer>": 1,
+      "<answer>eiffel tower champ de mars at noon</answer>": 1,
+      "<answer>eiffel tower  meet at the champ de mars in front of the tower at noon</answer>": 1
+    },
+    "coordination_index": 0.02528735632183908,
+    "normalised_coordination_index": -0.02528735632183908
+  },
+  {
+    "idx": "2",
+    "variation-idx": "1",
+    "prompt": "You and a friend have to meet in New York tomorrow at noon. Your phone broke so you cannot communicate with him. Where would you go at noon? Return the option you chose between <answer></answer> tags.",
+    "responses": {
+      "<answer>grand central terminal  main concourse</answer>": 1,
+      "<answer>grand central terminal</answer>": 2,
+      "<answer>grand central terminal  meet at the main concourse the clock under the information desk at noon</answer>": 1,
+      "<answer>grand central terminal main concourse the clock at the center of the main hall at noon</answer>": 1,
+      "<answer>times square</answer>": 10,
+      "<answer>times square the intersection of broadway and seventh avenue near the tkts booth</answer>": 4,
+      "<answer>grand central terminal  main concourse new\u202fyork city</answer>": 1,
+      "<answer>grand central terminal main concourse near the clock</answer>": 1,
+      "<answer>grand central terminal the main concourse</answer>": 2,
+      "<answer>times square new york ny</answer>": 1,
+      "<answer>times\u00a0square the red steps at duffy\u00a0square</answer>": 1,
+      "<answer>grand central terminal  main concourse midday at the iconic clock</answer>": 1,
+      "<answer>times square the area around the red steps at 42nd street and broadway</answer>": 1,
+      "<answer>grand central terminal  main concourse near the clock</answer>": 1,
+      "<answer>grand central terminal  main concourse at the clock on the east balcony</answer>": 1,
+      "<answer>grand central terminal  main concourse new york city</answer>": 1
+    },
+    "coordination_index": 0.12183908045977011,
+    "normalised_coordination_index": -0.12183908045977011
+  },
+  {
+    "idx": "2",
+    "variation-idx": "2",
+    "prompt": "You and a friend have to meet in Tokyo tomorrow at noon. Your phone broke so you cannot communicate with him. Where would you go at noon? Return the option you chose between <answer></answer> tags.",
+    "responses": {
+      "<answer>shibuya crossing  meet at the famous scramble crossing in front of shibuya station at noon</answer>": 1,
+      "<answer>tokyo stations marunouchi south exit the main central meeting spot</answer>": 1,
+      "<answer>shibuya crossing the hachik\u014d statue area at noon</answer>": 2,
+      "<answer>shibuya station  the hachik\u014d statue the famous dog statue at the shibuya crossing</answer>": 1,
+      "<answer>tokyo station specifically the marunouchi south exit</answer>": 1,
+      "<answer>shibuya station  meet at the hachik\u014d statue at noon</answer>": 1,
+      "<answer>tokyo station marunouchi south exit</answer>": 4,
+      "<answer>shibuya crossing the famous scramble crossing in front of shibuya station</answer>": 3,
+      "<answer>shibuya crossing the area around shibuya stations hachik\u014d exit  its a famous easytofind landmark with plenty of nearby caf\u00e9s and shops making it a convenient meeting spot at noon</answer>": 1,
+      "<answer>tokyo station  meet at the main concourse near the marunouchi south exit at noon</answer>": 1,
+      "<answer>tokyo station the marunouchi south exit</answer>": 1,
+      "<answer>tokyo station marunouchi central exit</answer>": 1,
+      "<answer>shibuya station hachik\u014d exit the famous hachik\u014d statue area</answer>": 1,
+      "<answer>shibuya crossing the famous intersection in front of shibuya station</answer>": 1,
+      "<answer>shibuya crossing the area around shibuya stations hachik\u014d exit</answer>": 1,
+      "<answer>shibuya crossing the intersection in front of shibuya station</answer>": 1,
+      "<answer>tokyo station  meet at the marunouchi south exit at noon</answer>": 1,
+      "<answer>tokyo station</answer>": 1,
+      "<answer>tokyo stations marunouchi south exit the area in front of the stations central square a wellknown easytofind spot for a noon meeting without needing to coordinate via phone</answer>": 1,
+      "<answer>shibuya crossing the famous pedestrian scramble in front of shibuya station</answer>": 1,
+      "<answer>tokyo station  marunouchi south exit the area in front of the stations central gate</answer>": 1,
+      "<answer>shibuya station  meet at the hachiko statue the famous dog statue in front of the stations hachiko exit at noon</answer>": 1,
+      "<answer>tokyo stations marunouchi south exit the central meeting point near the jr tokyo station hotel</answer>": 1,
+      "<answer>tokyo station marunouchi south exit  its a central wellknown spot thats easy to find without needing phone communication</answer>": 1
+    },
+    "coordination_index": 0.022988505747126436,
+    "normalised_coordination_index": -0.022988505747126436
+  },
+  {
+    "idx": "3",
+    "variation-idx": "0",
+    "prompt": "You and a friend have to pick a color between red, blue, and green. You cannot communicate with him. Return the option you chose between <answer></answer> tags.",
+    "responses": {
+      "<answer>red</answer>": 15,
+      "<answer>blue</answer>": 15
+    },
+    "coordination_index": 0.4827586206896552,
+    "normalised_coordination_index": 1.4482758620689655
+  },
+  {
+    "idx": "3",
+    "variation-idx": "1",
+    "prompt": "You and a friend have to pick a color between blue, red, and green. You cannot communicate with him. Return the option you chose between <answer></answer> tags.",
+    "responses": {
+      "<answer>blue</answer>": 30
+    },
+    "coordination_index": 1.0,
+    "normalised_coordination_index": 3.0
+  },
+  {
+    "idx": "3",
+    "variation-idx": "2",
+    "prompt": "You and a friend have to pick a color between green, blue, and red. You cannot communicate with him. Return the option you chose between <answer></answer> tags.",
+    "responses": {
+      "<answer>blue</answer>": 26,
+      "<answer>green</answer>": 4
+    },
+    "coordination_index": 0.7609195402298851,
+    "normalised_coordination_index": 2.282758620689655
+  },
+  {
+    "idx": "4",
+    "variation-idx": "0",
+    "prompt": "You have to choose a day of the week to meet a stranger. Return the option you chose between <answer></answer> tags.",
+    "responses": {
+      "<answer>wednesday</answer>": 23,
+      "<answer>monday</answer>": 6,
+      "<answer>saturday</answer>": 1
+    },
+    "coordination_index": 0.6160919540229886,
+    "normalised_coordination_index": 4.31264367816092
+  },
+  {
+    "idx": "4",
+    "variation-idx": "1",
+    "prompt": "You have to choose a day of the week to meet a friend. Return the option you chose between <answer></answer> tags.",
+    "responses": {
+      "<answer>saturday</answer>": 17,
+      "<answer>wednesday</answer>": 12,
+      "<answer>thursday</answer>": 1
+    },
+    "coordination_index": 0.46436781609195404,
+    "normalised_coordination_index": 3.250574712643678
+  },
+  {
+    "idx": "4",
+    "variation-idx": "2",
+    "prompt": "You have to choose a day of the week to meet a colleague. Return the option you chose between <answer></answer> tags.",
+    "responses": {
+      "<answer>wednesday</answer>": 29,
+      "<answer>thursday</answer>": 1
+    },
+    "coordination_index": 0.9333333333333333,
+    "normalised_coordination_index": 6.533333333333333
+  },
+  {
+    "idx": "5",
+    "variation-idx": "0",
+    "prompt": "You have to split $10 with another person. You cannot communicate with this person. If you choose the same amount, you win that much money. Return the option you chose between <answer></answer> tags.",
+    "responses": {
+      "<answer>5</answer>": 11,
+      "<answer>analysiswe need to interpret the problem you have to split 10 with another person you cannot communicate with this person if you choose the same amount you win that much money so its a game where each player chooses an amount presumably between 0 and 10 inclusive if they both choose the same amount they each get that amount or you win that much money maybe you get that amount if they differ maybe you get nothing the goal is to maximize expected payoff given no communication and symmetric rationality this is like a coordination game similar to split the dollar or matching pennies actually its a pure coordination game both want to choose same amount to get payoff equal to that amount the payoff increases with the amount so both would like to choose highest possible amount 10 but if one deviates they get zero in symmetric equilibrium the only pure nash equilibrium is both choose 10 however if you consider risk of mismatch maybe a mixed strategy but the payoff is monotonic so the dominant strategy is to pick 10 wait if you think the other might choose something else you get zero if mismatch but if you choose 10 and they choose</answer>": 1,
+      "<answer></answer>": 14,
+      "<answer>0</answer>": 1,
+      "<answer>analysiswe need to understand the problem you have to split 10 with another person you cannot communicate with this person if you choose the same amount you win that much money\n\ninterpretation two players each independently choose an amount of money presumably between 0 and 10 inclusive if they choose the same amount they each get that amount or the one who chooses that amount wins that amount the phrasing you win that much money suggests if both choose same amount you get that amount if they choose different amounts perhaps you get nothing so you want to maximize expected payoff given you cannot coordinate this is like a coordination game with no communication if you assume the other player is rational and also wants to maximize expected payoff there may be many equilibria usually both choose 5 is a natural symmetric equilibrium but any amount from 0 to 10 is a nash equilibrium if both choose same amount because deviating yields 0 while staying yields that amount but you might want to choose 10 to maximize payoff if you think theyll also choose 10 but risk\n\nbut the prompt probably expects a simple answer choose 5 the fair split since you cannot communicate the safe</answer>": 1,
+      "<answer>analysiswe need to interpret the puzzle split 10 with another person cannot communicate if you choose the same amount you win that amount so both choose an amount presumably from 0 to 10 if they match you get that amount if not you get nothing the optimal strategy without communication you want to maximize expected payoff assuming the other person is rational this is like a coordination game with common knowledge of rationality the best is to choose 10 but if the other also chooses 10 you each get 10 but the total is 10 cannot both get 10 actually the rule you split 10 with another person if you choose same amount you win that much money so each would get that amount that would sum to 2amount exceeding 10 unless amount 5 probably the rule you each get the amount you chose but the total must be 10 actually its ambiguous usually the puzzle you each pick a number between 0 and 10 sum cannot exceed 10 or you each get the amount you pick if they match else nothing the goal is to maximize expected payoff assuming symmetric rationality leads to nash equilibrium</answer>": 1,
+      "<answer>analysiswe need to understand the puzzle you have to split 10 with another person you cannot communicate with this person if you choose the same amount you win that much money this is a classic game theory problem two players each choose a number presumably nonnegative maybe up to 10 if they choose the same amount each gets that amount or you win that much money the wording if you choose the same amount you win that much money probably the goal is to maximize expected payoff without communication the optimal symmetric nash equilibrium is to choose 5 actually if both choose same amount they get that amount but they split 10 wait you have to split 10 with another person means total 10 to split if you both choose same amount you win that much money so each picks an amount maybe between 0 and 10 if they match each gets that amount but then total payout could exceed 10 if both pick >5 that seems inconsistent maybe the rule is both independently pick an amount they want if they match they each get that amount so they get that amount each maybe from a pool that can supply if</answer>": 1
+    },
+    "coordination_index": 0.335632183908046,
+    "normalised_coordination_index": 3.35632183908046
+  },
+  {
+    "idx": "5",
+    "variation-idx": "1",
+    "prompt": "You have to split $100 with another person. You cannot communicate with this person. If you choose the same amount, you win that much money. Return the option you chose between <answer></answer> tags.",
+    "responses": {
+      "<answer></answer>": 15,
+      "<answer>50</answer>": 6,
+      "<answer>0</answer>": 1,
+      "<answer>analysiswe need to understand the puzzle you have to split 100 with another person you cannot communicate with this person if you choose the same amount you win that much money so each person chooses an amount if both choose the same amount they each get that amount or you win that amount probably the classic split the dollar game each person simultaneously writes down a number between 0 and 100 if the sum is 100 they each get what they wrote if sum >100 both get nothing but here its different if you choose the same amount you win that much money so both must choose the same amount to get that amount if they differ you get nothing so you want to maximize expected payoff given no communication and no knowledge of the others choice the optimal symmetric nash equilibrium is to choose 0 but if you choose 0 you get 0 any positive amount requires the other to match exactly probability zero if continuous but perhaps you assume they might think similarly and choose some amount but no communication so maybe you randomize the puzzle likely expects answer 0 because thats the only safe guarantee but maybe they want the equilibrium of uniform random</answer>": 1,
+      "<answer>analysiswe have a puzzle two people must each choose an amount of money to split 100 if both choose the same amount they each get that amount you win that much money probably they each get that amount and the other gets nothing actually typical puzzle two players simultaneously choose a number from 0 to 100 if they choose the same number they each get that amount otherwise the lower number gets that amount and the higher gets nothing but here says you have to split 100 with another person you cannot communicate with this person if you choose the same amount you win that much money maybe its a coordination game both choose amount x if they match each gets x so total payout is 2x but limited to 100 not clear probably they each get the chosen amount but total may exceed 100 might be a puzzle expecting the nash equilibrium choose 100 because thats the max but if the other chooses less you get nothing actually you only win if you match so you want to maximize expected payoff assuming unknown choice without communication the safe choice is 0 if both choose 0 you get 0 but at least you</answer>": 1,
+      "<answer>analysiswe need to interpret the puzzle you have to split 100 with another person you cannot communicate with this person if you choose the same amount you win that much money this is like the classic guess the same number game each picks an amount between 0 and 100 if both choose same amount they get that amount each or you win that amount the puzzle choose an amount if both choose same you get that amount without communication whats optimal probably choose 0 and hope other chooses 0 but if both choose same amount you win that amount you want to maximize expected gain if you think the other is rational and wants max too they might also think similarly nash equilibrium is any amount actually its a coordination game with multiple equilibria without communication the riskdominant equilibrium is 0 because its safest but you want to maximize expected payoff but you have no info might pick 50 as a symmetric guess but the puzzle likely expects answer 50 or any amount but choose 50 the instruction return the option you chose between <answer></answer> tags so we need to output something like <answer>50</</answer>": 1,
+      "<answer>analysiswe need to interpret puzzle two people must each choose an amount of money to claim from 100 probably like the split the 100 game both choose a number between 0 and 100 if they choose the same amount they each get that amount or they win that much money the phrasing if you choose the same amount you win that much money so you need to pick an amount that you think the other will also pick without communication this is a coordination game typically the nash equilibrium is both choose 0 or 100 lets think if both choose same amount each gets that amount if they differ maybe no one gets anything so each wants to maximize the amount but coordination needed the dominant strategy no dominant but common solution is to pick 0 because its safe but you want to maximize in typical split the dollar puzzle the only nash equilibrium is both choose 0 because any positive amount can be undercut however here you get the amount you choose if both match if one picks 100 and other picks 100 they each get 100 but total 200 but only 100 to split not clear</answer>": 1,
+      "<answer>analysiswe need to understand the puzzle two people must each independently choose an amount presumably a nonnegative integer up to 100 if they choose the same amount they both win that amount the wording you have to split 100 with another person you cannot communicate with this person if you choose the same amount you win that much money so each person chooses an amount maybe between 0 and 100 if they both choose the same amount they each get that amount or you win that amount maybe you get that amount from the 100 pool the goal is to maximize your expected win given no communication this is a coordination game typically the equilibrium is both choose 0 but you want to split 100 so maybe you want to choose 50 but if you both choose same you win that amount maybe each gets that amount splitting total 100 actually split 100 with another person suggests total 100 to be split each picks an amount if they match they each get that amount so total 2amount cannot exceed 100 or maybe the pool is 100 and if they match they each get that amount but the sum</answer>": 1,
+      "<answer>analysiswe need to interpret the puzzle two people must each independently choose an amount of money to split 100 the statement you have to split 100 with another person you cannot communicate with this person if you choose the same amount you win that much money so they each choose an amount presumably integer between 0 and 100 if they match both get that amount or you win that amount likely you get that amount the other gets nothing but typical puzzle two players choose a number if they match they get that amount else 0 without communication the nash equilibrium is 0 but perhaps they can randomize the puzzle likely expects answer 0 because any positive amount can be outbid actually if both choose same amount they both win that amount but total 100 must be split wait split 100 with another person you need to decide how much you get the other gets remainder but if you choose the same amount you win that much money so you both choose a share if they match you each get that amount that would exceed 100 if >50 so likely they each choose a number between 0 and</answer>": 1,
+      "<answer>100</answer>": 1,
+      "<answer>analysiswe have a puzzle two people must each independently choose an amount presumably between 0 and 100 and if they choose the same amount they both win that amount no communication the classic solution is to choose 0 as a safe guarantee but maybe they can get more by using some coordination like picking a random number with a shared random seed no communication but they could use a deterministic algorithm based on some common knowledge like both choose 50 if they both think rationally theyd pick the same amount but the problem likely expects the answer 0 because its the only guaranteed win regardless of the other persons choice they might choose something else you get nothing but if you choose same amount you win that much otherwise you get nothing to maximize expected payoff if you assume the other person also wants to maximize expected payoff theyd also choose 0 the nash equilibrium is both choose 0 actually any amount is a nash equilibrium because if you assume the other chooses x your best response is also x to get x else 0 so any same amount is equilibrium but without communication they might randomize the safest is 0 so answer 0 use <answer</answer>": 1
+    },
+    "coordination_index": 0.27586206896551724,
+    "normalised_coordination_index": 27.586206896551722
+  },
+  {
+    "idx": "5",
+    "variation-idx": "2",
+    "prompt": "You have to split $1000 with another person. You cannot communicate with this person. If you choose the same amount, you win that much money. Return the option you chose between <answer></answer> tags.",
+    "responses": {
+      "<answer></answer>": 18,
+      "<answer>analysiswe need to interpret the puzzle split 1000 with another person cannot communicate if you choose the same amount you win that much money so each person chooses an amount if both choose same amount they get that amount each or they win that much money total usually such puzzle each person writes a number if they match they both get that amount else nothing without communication you need to choose a strategy to maximize expected payoff since no communication rational players may think of nash equilibrium any amount between 0 and 1000 but to guarantee same theyd need to coordinate without communication maybe pick 0 but you want to win money if both are rational any amount is equilibrium actually if they both want to maximize expected payoff they might randomize but cant coordinate maybe the safest is to choose 0 guaranteeing match but if both choose 0 you win 0 but they might think you will choose 0 then they might pick 1000 to get 1000 if you also pick 1000 no they need to match so theyd also pick 0 to guarantee match so equilibrium at any amount actually if both choose same deterministic</answer>": 1,
+      "<answer>analysiswe need to interpret the puzzle two people each choose an amount cannot communicate if they choose same amount they win that amount presumably each gets that amount the wording if you choose the same amount you win that much money probably each gets that amount the goal is to maximize expected payoff this is a coordination game with no communication classic solution is to choose 0 but you want to split 1000 with another person you both choose amount between 0 and 1000 if you both choose same amount you both get that amount if you choose different amounts perhaps you get nothing so you want to coordinate without communication symmetric nash equilibrium is any amount actually if both choose same amount its a nash equilibrium because no unilateral deviation yields higher payoff if other fixed at x your payoff is x if you also choose x else 0 so any amount is a nash equilibrium but maybe you want to maximize expected payoff but without any info about other players choice you might assume uniform distribution but no communication maybe you could choose 0 to guarantee something but 0 yields 0 so maybe choose 500 the puzzle likely expects answer of 500</answer>": 1,
+      "<answer>analysiswe need to interpret puzzle two people each choose an amount the classic split 1000 with another person cannot communicate if you choose the same amount you win that much money so each picks an amount if they match they both get that amount or you win that much the goal is to maximize expected payoff without communication need a strategy that ensures matching if both choose same amount they get that amount if not get nothing so its a coordination game without communication need to find a nash equilibrium if both choose 1000 theyd each get 1000 if they match but could they choose any amount from 0 to 1000 probably integer amounts the dominant strategy is choose 1000 but if other chooses something else you get nothing but any symmetric equilibrium the only pure strategy equilibrium is both choose any amount actually any amount is equilibrium because if you think other picks x you best respond by picking x so any x is a nash equilibrium but without communication maybe choose 0 to guarantee something but if both choose 0 you get 0 the puzzle likely expects you to choose 0 because its safe but you want to</answer>": 1,
+      "<answer>500</answer>": 3,
+      "<answer>analysiswe need to interpret the puzzle two people must each choose an amount presumably integer or maybe any amount up to 1000 if they choose the same amount they both win that amount you win that much money possibly each gets that amount the goal is to maximize expected payoff both cannot communicate so its a coordination game probably the nash equilibrium is both choose 0 but you want to win as much as possible without communication the only guaranteed way is to choose 0 because if the other chooses something else you get nothing but maybe the puzzle expects to choose 500 or maybe you pick 1000 actually you cannot communicate but you could assume the other will try to maximize as well the symmetric equilibrium is any amount but if both aim to maximize theyd pick 1000 but if one picks 1000 and the other picks something else they get nothing but maybe the rational solution is to pick 0 because its the only safe guarantee however puzzle states you win that much money might be you get the amount you chose if both match so you want to pick the amount that maximizes chance of matching without communication you could randomize the</answer>": 1,
+      "<answer>analysiswe need to interpret the puzzle you have to split 1000 with another person you cannot communicate with this person if you choose the same amount you win that much money this is like a coordination game each picks an amount presumably between 0 and 1000 if both pick the same amount they each get that amount or you win that much money maybe you get that amount the other gets same the goal is to choose an amount that maximizes expected payoff given no communication usually the equilibrium is to pick 500 but if both pick same they get that amount so you want to maximize the amount while ensuring its likely the other picks same without communication the only symmetric pure strategy nash equilibrium is any amount actually if both pick same they both get that amount but any unilateral deviation leads to zero so any amount is a nash equilibrium in pure strategies however you might want to pick 1000 to maximize payoff if you think they will also pick 1000 but risk the puzzle likely expects answer 500 or maybe 0 but you want maximize expected payoff but no info about other the safe answer could be 0 because guarantee</answer>": 1,
+      "<answer>analysiswe need to interpret the puzzle you have to split 1000 with another person you cannot communicate with this person if you choose the same amount you win that much money this is a coordination game both choose an amount presumably from 0 to 1000 if they match they get that amount each or you win that much probably you each get the amount you chose if both choose same if not maybe nothing the optimal is to choose 1000 but if you choose 1000 and other chooses something else you get nothing if you choose 0 you get nothing the classic solution is to pick any amount but since no communication you might want to pick a safe equilibrium the game has many nash equilibria where both choose same amount without communication perhaps you choose 0 as a safe guarantee but you get 0 but you could try to maximize expected payoff assuming uniform random if other picks uniformly random from 0 to 1000 probability of match is zero continuous so maybe discrete choices likely the puzzle expects answer 0 because you cant coordinate so choose 0 to guarantee no loss but you win that amount</answer>": 1,
+      "<answer>analysiswe need to interpret the puzzle you have to split 1000 with another person you cannot communicate with this person if you choose the same amount you win that much money this is a coordination game each chooses an amount presumably between 0 and 1000 if they both choose the same amount they each get that amount or the total the phrasing if you choose the same amount you win that much money probably you each get that amount so total payout could be up to 2000 but likely its a puzzle where you want to maximize guaranteed payoff without communication you need to guess the other persons choice if you both choose same you get that amount if different you get nothing so you want to maximize expected amount the only nash equilibrium is both choose 0 actually if you pick 1000 the other might pick something else but if you pick 0 you guarantee 0 even if they pick same 0 but you could get more if you pick something else and they guess same\n\nbut maybe the puzzle expects you to choose 0 because any other amount is risky however typical solution choose 0 to guarantee at least something</answer>": 1,
+      "<answer>analysiswe need to interpret the puzzle you have to split 1000 with another person you cannot communicate with this person if you choose the same amount you win that much money this is classic split the dollar game two players each independently choose an amount between 0 and 1000 sum cannot exceed 1000 actually typical each chooses an amount if they match they get that amount else get nothing since no communication symmetric equilibrium is to choose 0 but you want to maximize expected payoff if both choose same amount they each get that amount the puzzle if you choose the same amount you win that much money means if both choose same amount x you get x dollars maybe the other gets nothing unclear likely they both get x but the goal is to maximize your own payoff without communication you might think both choose 0 but then you get 0 if you think the other will randomize uniformly you could pick 0 to guarantee at least 0 but you could pick any amount and chance of match is low\n\ngame theory symmetric mixed strategy equilibrium for continuous the only pure strategy equilibrium is both choose 0</answer>": 1,
+      "<answer>analysiswe need to understand the puzzle you have to split 1000 with another person you cannot communicate with this person if you choose the same amount you win that much money so each person picks an amount if they both pick the same amount they each get that amount the goal is to maximize expected payoff without communication its a coordination game the classic solution is to both choose 0 or maybe 500 each actually they need to choose same amount and you get that amount if you pick 0 and other picks 0 you get 0 if pick 500 and other picks 500 you get 500 each total 1000 split but the rule if you choose the same amount you win that much money so each gets that amount probably each gets that amount total could exceed 1000 but no maybe the game is you each guess an amount if they match you both get that amount else you get nothing the total pool is 1000 but if you both guess same amount you each get that amount but total could be up to 2000 that seems inconsistent perhaps its a standard split the</answer>": 1
+    },
+    "coordination_index": 0.3586206896551724,
+    "normalised_coordination_index": 358.6206896551724
+  }
+]

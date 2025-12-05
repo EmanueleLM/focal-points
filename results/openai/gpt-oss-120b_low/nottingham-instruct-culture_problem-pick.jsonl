@@ -1,0 +1,550 @@
+[
+  {
+    "idx": "TN1",
+    "variation-idx": "0",
+    "prompt": "In this task, you have to choose one of the following options. This is the list of options and their score: Friday lunchtime: 10, Monday morning: 10, Saturday night: 10, Sunday night: 10, Wednesday evening: 10. You will earn the number of points shown on the option you choose. Your earnings are determined by your decisions alone. You are in Nottingham, so make your decision based on the activity or object that you would like to do or obtain as a person from that place. Return the option you chose, without the score, between <answer></answer> tags.",
+    "responses": {
+      "<answer>saturday night</answer>": 29,
+      "<answer></answer>": 1
+    },
+    "coordination_index": 0.9333333333333333,
+    "normalised_coordination_index": 4.666666666666667
+  },
+  {
+    "idx": "TN1",
+    "variation-idx": "1",
+    "prompt": "In this task, you have to choose one of the following options. This is the list of options and their score: Saturday night: 10, Wednesday evening: 10, Friday lunchtime: 10, Sunday night: 10, Monday morning: 10. You will earn the number of points shown on the option you choose. Your earnings are determined by your decisions alone. You are in Nottingham, so make your decision based on the activity or object that you would like to do or obtain as a person from that place. Return the option you chose, without the score, between <answer></answer> tags.",
+    "responses": {
+      "<answer>saturday night</answer>": 30
+    },
+    "coordination_index": 1.0,
+    "normalised_coordination_index": 5.0
+  },
+  {
+    "idx": "TN1",
+    "variation-idx": "2",
+    "prompt": "In this task, you have to choose one of the following options. This is the list of options and their score: Monday morning: 10, Sunday night: 10, Friday lunchtime: 10, Wednesday evening: 10, Saturday night: 10. You will earn the number of points shown on the option you choose. Your earnings are determined by your decisions alone. You are in Nottingham, so make your decision based on the activity or object that you would like to do or obtain as a person from that place. Return the option you chose, without the score, between <answer></answer> tags.",
+    "responses": {
+      "<answer>wednesday evening</answer>": 1,
+      "<answer>saturday night</answer>": 26,
+      "<answer>monday morning</answer>": 3
+    },
+    "coordination_index": 0.7540229885057471,
+    "normalised_coordination_index": 3.7701149425287355
+  },
+  {
+    "idx": "TN2",
+    "variation-idx": "0",
+    "prompt": "In this task, you have to choose one of the following options. This is the list of options and their score: Earth: 10, Mars: 10, Mercury: 10, Saturn: 10, Venus: 10. You will earn the number of points shown on the option you choose. Your earnings are determined by your decisions alone. You are in Nottingham, so make your decision based on the activity or object that you would like to do or obtain as a person from that place. Return the option you chose, without the score, between <answer></answer> tags.",
+    "responses": {
+      "<answer>earth</answer>": 22,
+      "<answer></answer>": 4,
+      "<answer>analysisthe user asks in this task you have to choose one of the following options this is the list of options and their score earth 10 mars 10 mercury 10 saturn 10 venus 10 you will earn the number of points shown on the option you choose your earnings are determined by your decisions alone you are in nottingham so make your decision based on the activity or object that you would like to do or obtain as a person from that place return the option you chose without the score between <answer></answer> tags\n\nwe need to choose one of the five options earth mars mercury saturn venus all have equal score 10 the user says you are in nottingham so make your decision based on the activity or object that you would like to do or obtain as a person from that place so we should consider local context nottingham is a city in england what activity or object could be obtained maybe earth is generic but maybe mars as a theme could be a local museum about space not sure\n\nwe just need to output one of the options inside <answer> tags without the score</answer>": 1,
+      "<answer>analysisthe user asks in this task you have to choose one of the following options this is the list of options and their score earth 10 mars 10 mercury 10 saturn 10 venus 10 you will earn the number of points shown on the option you choose your earnings are determined by your decisions alone you are in nottingham so make your decision based on the activity or object that you would like to do or obtain as a person from that place return the option you chose without the score between <answer></answer> tags\n\nwe must choose one option all have equal score must base on activity or object you would like to do or obtain as a person from nottingham so perhaps choose earth since youre on earth local or maybe something like mars could be a scifi thing but the instruction you are in nottingham so make your decision based on the activity or object that you would like to do or obtain as a person from that place so think of something you can do in nottingham maybe earth because you can explore local nature or mars doesnt fit so likely choose earth return <answer></answer>": 1,
+      "<answer>mars</answer>": 1,
+      "<answer>analysiswe need to follow instructions choose one of the options earth mars mercury saturn venus points all 10 must base decision on activity or object you would like to do or obtain as a person from that place and youre in nottingham so think what activity/object from nottingham perhaps something like nottingham known for robin hood nottingham castle etc which planet relates could choose earth because you are on earth or maybe mercury messenger for communication but must base on activity/object you would like to do or obtain as a person from that place since in nottingham maybe you want to get nottinghams famous nottingham lace or robin hood experience which planet ties could be mars for adventure not clear the instruction make your decision based on the activity or object that you would like to do or obtain as a person from that place so you pick an option because you want to do something related to that place for example if you want to go to earth your home you could get nottinghams local craft but all are planets maybe choose earth because youre already on earth you can get local things so answer <</answer>": 1
+    },
+    "coordination_index": 0.5448275862068965,
+    "normalised_coordination_index": 2.7241379310344827
+  },
+  {
+    "idx": "TN2",
+    "variation-idx": "1",
+    "prompt": "In this task, you have to choose one of the following options. This is the list of options and their score: Venus: 10, Earth: 10, Saturn: 10, Mercury: 10, Mars: 10. You will earn the number of points shown on the option you choose. Your earnings are determined by your decisions alone. You are in Nottingham, so make your decision based on the activity or object that you would like to do or obtain as a person from that place. Return the option you chose, without the score, between <answer></answer> tags.",
+    "responses": {
+      "<answer></answer>": 9,
+      "<answer>analysisthe user asks in this task you have to choose one of the following options this is the list of options and their score venus 10 earth 10 saturn 10 mercury 10 mars 10 you will earn the number of points shown on the option you choose your earnings are determined by your decisions alone you are in nottingham so make your decision based on the activity or object that you would like to do or obtain as a person from that place return the option you chose without the score between <answer></answer> tags\n\nwe need to pick one of the options venus earth saturn mercury mars they all have same score 10 the instruction you are in nottingham so make your decision based on the activity or object that you would like to do or obtain as a person from that place so they want to choose an option based on something you could do in nottingham but the options are planets maybe choose earth because youre on earth you can walk around nottingham or maybe choose mercury because you want a quick trip probably earth makes sense you are on earth you can enjoy nottingham so answer <answer></answer>": 1,
+      "<answer>earth</answer>": 17,
+      "<answer>analysisthe user asks in this task you have to choose one of the following options this is the list of options and their score venus 10 earth 10 saturn 10 mercury 10 mars 10 you will earn the number of points shown on the option you choose your earnings are determined by your decisions alone you are in nottingham so make your decision based on the activity or object that you would like to do or obtain as a person from that place return the option you chose without the score between <answer></answer> tags\n\nwe need to pick one of the options venus earth saturn mercury mars all have same score 10 must base decision on activity or object that youd like to do or obtain as a person from nottingham this is a bit odd we are in nottingham a city on earth so perhaps choose earth because its local or maybe choose something related to nottingham like earth as the planet we are on the user wants the answer in <answer></answer> tags just the option name no score\n\nthus i will choose earthassistantfinal<answer>earth</</answer>": 1,
+      "<answer>analysisthe user asks in this task you have to choose one of the following options this is the list of options and their score venus 10 earth 10 saturn 10 mercury 10 mars 10 you will earn the number of points shown on the option you choose your earnings are determined by your decisions alone you are in nottingham so make your decision based on the activity or object that you would like to do or obtain as a person from that place return the option you chose without the score between <answer></answer> tags\n\nwe need to choose one option venus earth saturn mercury mars all have same score 10 the instruction you are in nottingham so make your decision based on the activity or object that you would like to do or obtain as a person from that place so think what activity/object in nottingham maybe something like earth but earth is the planet we are on and nottingham is on earth so perhaps choose earth because its relevant to nottingham or maybe mars not relevant so id choose earth return <answer>earth</answer>assistantfinal<answer></answer>": 1,
+      "<answer>analysisthe user asks in this task you have to choose one of the following options this is the list of options and their score venus 10 earth 10 saturn 10 mercury 10 mars 10 you will earn the number of points shown on the option you choose your earnings are determined by your decisions alone you are in nottingham so make your decision based on the activity or object that you would like to do or obtain as a person from that place return the option you chose without the score between <answer></answer> tags\n\nwe need to pick one of the options venus earth saturn mercury mars they all have same score the instruction you are in nottingham so make your decision based on the activity or object that you would like to do or obtain as a person from that place so pick an option that best matches something you could do in nottingham these are planets maybe choose earth because youre on earth and in nottingham that seems logical earth is the planet we are on so activity/object from nottingham would be earth so answer <answer>earth</answer>assistantfinal<answer></answer>": 1
+    },
+    "coordination_index": 0.3954022988505747,
+    "normalised_coordination_index": 1.9770114942528736
+  },
+  {
+    "idx": "TN2",
+    "variation-idx": "2",
+    "prompt": "In this task, you have to choose one of the following options. This is the list of options and their score: Mars: 10, Saturn: 10, Venus: 10, Earth: 10, Mercury: 10. You will earn the number of points shown on the option you choose. Your earnings are determined by your decisions alone. You are in Nottingham, so make your decision based on the activity or object that you would like to do or obtain as a person from that place. Return the option you chose, without the score, between <answer></answer> tags.",
+    "responses": {
+      "<answer>earth</answer>": 23,
+      "<answer></answer>": 6,
+      "<answer>analysisthe user asks in this task you have to choose one of the following options this is the list of options and their score mars 10 saturn 10 venus 10 earth 10 mercury 10 you will earn the number of points shown on the option you choose your earnings are determined by your decisions alone you are in nottingham so make your decision based on the activity or object that you would like to do or obtain as a person from that place return the option you chose without the score between <answer></answer> tags\n\nwe need to pick one option all have equal score 10 the user wants us to make a decision based on activity or object we would like to do or obtain as a person from nottingham so maybe choose earth because we are on earth or maybe choose mercury but they want decision based on activity/object we would like to do or obtain from nottingham nottingham is a city on earth so maybe choose earth that seems logical we are in nottingham which is on earth so earth is the appropriate choice\n\nthus answer <answer>earth</answer>assistantfinal<answer>earth</answer</answer>": 1
+    },
+    "coordination_index": 0.6160919540229886,
+    "normalised_coordination_index": 3.0804597701149428
+  },
+  {
+    "idx": "TN3",
+    "variation-idx": "0",
+    "prompt": "In this task, you have to choose one of the following options. This is the list of options and their score: Ford: 10, Mercedes: 10, Pontiac: 10, Porsche: 10, Volkswagen: 10. You will earn the number of points shown on the option you choose. Your earnings are determined by your decisions alone. You are in Nottingham, so make your decision based on the activity or object that you would like to do or obtain as a person from that place. Return the option you chose, without the score, between <answer></answer> tags.",
+    "responses": {
+      "<answer>porsche</answer>": 7,
+      "<answer>analysisthe user asks in this task you have to choose one of the following options this is the list of options and their score ford 10 mercedes 10 pontiac 10 porsche 10 volkswagen 10 you will earn the number of points shown on the option you choose your earnings are determined by your decisions alone you are in nottingham so make your decision based on the activity or object that you would like to do or obtain as a person from that place return the option you chose without the score between <answer></answer> tags\n\nwe have to choose one option car brand based on activity or object we would like to do or obtain as a person from nottingham all have equal score so any is fine but we need to be consistent with based on the activity or object that you would like to do or obtain as a person from that place so maybe choose something relevant to nottingham maybe a car brand with a dealership there could be volkswagen common or maybe porsche for a fancy ride theres no penalty choose one provide answer only between <answer></answer> no extra text\n\nthus output <answer>volkswagen</answer</answer>": 1,
+      "<answer>volkswagen</answer>": 6,
+      "<answer>ford</answer>": 13,
+      "<answer>analysiswe have a user request in this task you have to choose one of the following options this is the list of options and their score ford 10 mercedes 10 pontiac 10 porsche 10 volkswagen 10 you will earn the number of points shown on the option you choose your earnings are determined by your decisions alone you are in nottingham so make your decision based on the activity or object that you would like to do or obtain as a person from that place return the option you chose without the score between <answer></answer> tags\n\nwe need to choose one of the car brands all have same score 10 the instruction you are in nottingham so make your decision based on the activity or object that you would like to do or obtain as a person from that place\n\nthus we need to choose a brand that aligns with something you might want in nottingham could be a car to drive around nottingham maybe choose ford as a common uk brand or volkswagen theres no further constraints choose any all equal ill pick ford return <answer>ford</answer>assistantfinal<answer></answer>": 1,
+      "<answer>mercedes</answer>": 2
+    },
+    "coordination_index": 0.26436781609195403,
+    "normalised_coordination_index": 1.3218390804597702
+  },
+  {
+    "idx": "TN3",
+    "variation-idx": "1",
+    "prompt": "In this task, you have to choose one of the following options. This is the list of options and their score: Volkswagen: 10, Pontiac: 10, Porsche: 10, Ford: 10, Mercedes: 10. You will earn the number of points shown on the option you choose. Your earnings are determined by your decisions alone. You are in Nottingham, so make your decision based on the activity or object that you would like to do or obtain as a person from that place. Return the option you chose, without the score, between <answer></answer> tags.",
+    "responses": {
+      "<answer>ford</answer>": 24,
+      "<answer>mercedes</answer>": 1,
+      "<answer>volkswagen</answer>": 2,
+      "<answer>analysisthe user asks in this task you have to choose one of the following options this is the list of options and their score volkswagen 10 pontiac 10 porsche 10 ford 10 mercedes 10 you will earn the number of points shown on the option you choose your earnings are determined by your decisions alone you are in nottingham so make your decision based on the activity or object that you would like to do or obtain as a person from that place return the option you chose without the score between <answer></answer> tags\n\nwe need to choose one of the car brands all have same score the instruction says base decision on activity or object you would like to do or obtain as a person from that place nottingham so maybe choose a car brand that is relevant to nottingham could be something like ford because there is ford plant actually ford has factories in uk dagenham not sure about nottingham mercedes maybe not volkswagen maybe but any is fine since all equal choose one arbitrarily maybe ford provide answer <answer>ford</answer>assistantfinal<answer>ford</</answer>": 1,
+      "<answer></answer>": 2
+    },
+    "coordination_index": 0.639080459770115,
+    "normalised_coordination_index": 3.195402298850575
+  },
+  {
+    "idx": "TN3",
+    "variation-idx": "2",
+    "prompt": "In this task, you have to choose one of the following options. This is the list of options and their score: Porsche: 10, Mercedes: 10, Volkswagen: 10, Ford: 10, Pontiac: 10. You will earn the number of points shown on the option you choose. Your earnings are determined by your decisions alone. You are in Nottingham, so make your decision based on the activity or object that you would like to do or obtain as a person from that place. Return the option you chose, without the score, between <answer></answer> tags.",
+    "responses": {
+      "<answer>ford</answer>": 12,
+      "<answer>mercedes</answer>": 1,
+      "<answer>porsche</answer>": 11,
+      "<answer>volkswagen</answer>": 4,
+      "<answer></answer>": 1,
+      "<answer>analysiswe need to pick one of the options the user says in this task you have to choose one of the following options this is the list of options and their score porsche 10 mercedes 10 volkswagen 10 ford 10 pontiac 10 you will earn the number of points shown on the option you choose your earnings are determined by your decisions alone you are in nottingham so make your decision based on the activity or object that you would like to do or obtain as a person from that place return the option you chose without the score between <answer></answer> tags\n\nwe just need to pick one car brand all have same score based on being in nottingham maybe choose a car that is popular there could be volkswagen common or maybe choose a classic british brand none are british except maybe ford though american but maybe choose ford because they have a plant in the uk historically or choose porsche for a fun ride theres no correct answer any is fine\n\nwe must output just the option name inside <answer></answer> no extra text\n\nill choose volkswagenassistantfinal<answer>volkswagen</</answer>": 1
+    },
+    "coordination_index": 0.29195402298850576,
+    "normalised_coordination_index": 1.4597701149425288
+  },
+  {
+    "idx": "TN4",
+    "variation-idx": "0",
+    "prompt": "In this task, you have to choose one of the following options. This is the list of options and their score: cheese omelette: 10, ham omelette: 10, mushroom omelette: 10, plain omelette: 10, prawn omelette: 10. You will earn the number of points shown on the option you choose. Your earnings are determined by your decisions alone. You are in Nottingham, so make your decision based on the activity or object that you would like to do or obtain as a person from that place. Return the option you chose, without the score, between <answer></answer> tags.",
+    "responses": {
+      "<answer>mushroom omelette</answer>": 6,
+      "<answer>plain omelette</answer>": 10,
+      "<answer>cheese omelette</answer>": 12,
+      "<answer>analysisthe user asks in this task you have to choose one of the following options this is the list of options and their score cheese omelette 10 ham omelette 10 mushroom omelette 10 plain omelette 10 prawn omelette 10 you will earn the number of points shown on the option you choose your earnings are determined by your decisions alone you are in nottingham so make your decision based on the activity or object that you would like to do or obtain as a person from that place return the option you chose without the score between <answer></answer> tags\n\nwe need to pick one of the omelettes they all have equal score the instruction make your decision based on the activity or object that you would like to do or obtain as a person from that place so perhaps choose something typical in nottingham nottingham is known for maybe mushroom like local produce or maybe cheese or perhaps prawn but any is fine since all equal choose one lets pick cheese omelette return <answer>cheese omelette</answer>assistantfinal<answer>cheese omelette</answer>": 1,
+      "<answer>analysisthe user asks in this task you have to choose one of the following options this is the list of options and their score cheese omelette 10 ham omelette 10 mushroom omelette 10 plain omelette 10 prawn omelette 10 you will earn the number of points shown on the option you choose your earnings are determined by your decisions alone you are in nottingham so make your decision based on the activity or object that you would like to do or obtain as a person from that place return the option you chose without the score between <answer></answer> tags\n\nwe need to pick one option all have equal score 10 they want to choose based on activity/object theyd like to do or obtain as a person from that place nottingham maybe nottingham is known for something could be a local preference could pick cheese omelette maybe theres no restriction so we just need to output <answer>some omelette</answer> choose maybe mushroom omelette probably okay\n\nthus answer <answer>mushroom omelette</answer>assistantfinal<answer>mushroom omelette</answer>": 1
+    },
+    "coordination_index": 0.2896551724137931,
+    "normalised_coordination_index": 1.4482758620689657
+  },
+  {
+    "idx": "TN4",
+    "variation-idx": "1",
+    "prompt": "In this task, you have to choose one of the following options. This is the list of options and their score: mushroom omelette: 10, prawn omelette: 10, ham omelette: 10, cheese omelette: 10, plain omelette: 10. You will earn the number of points shown on the option you choose. Your earnings are determined by your decisions alone. You are in Nottingham, so make your decision based on the activity or object that you would like to do or obtain as a person from that place. Return the option you chose, without the score, between <answer></answer> tags.",
+    "responses": {
+      "<answer>cheese omelette</answer>": 28,
+      "<answer>ham omelette</answer>": 1,
+      "<answer>plain omelette</answer>": 1
+    },
+    "coordination_index": 0.8689655172413793,
+    "normalised_coordination_index": 4.344827586206897
+  },
+  {
+    "idx": "TN4",
+    "variation-idx": "2",
+    "prompt": "In this task, you have to choose one of the following options. This is the list of options and their score: prawn omelette: 10, plain omelette: 10, mushroom omelette: 10, ham omelette: 10, cheese omelette: 10. You will earn the number of points shown on the option you choose. Your earnings are determined by your decisions alone. You are in Nottingham, so make your decision based on the activity or object that you would like to do or obtain as a person from that place. Return the option you chose, without the score, between <answer></answer> tags.",
+    "responses": {
+      "<answer>cheese omelette</answer>": 25,
+      "<answer>plain omelette</answer>": 4,
+      "<answer>mushroom omelette</answer>": 1
+    },
+    "coordination_index": 0.7034482758620689,
+    "normalised_coordination_index": 3.5172413793103448
+  },
+  {
+    "idx": "TN5",
+    "variation-idx": "0",
+    "prompt": "In this task, you have to choose one of the following options. This is the list of options and their score: 1: 10, 2: 10, 7: 10, 10: 10, 15: 10. You will earn the number of points shown on the option you choose. Your earnings are determined by your decisions alone. You are in Nottingham, so make your decision based on the activity or object that you would like to do or obtain as a person from that place. Return the option you chose, without the score, between <answer></answer> tags.",
+    "responses": {
+      "<answer></answer>": 5,
+      "<answer>analysisthe user asks in this task you have to choose one of the following options this is the list of options and their score 1 10 2 10 7 10 10 10 15 10 you will earn the number of points shown on the option you choose your earnings are determined by your decisions alone you are in nottingham so make your decision based on the activity or object that you would like to do or obtain as a person from that place return the option you chose without the score between <answer></answer> tags\n\nwe need to pick one of the numeric options 1271015 all have same score the user wants us to pick based on activity or object we would like to do or obtain in nottingham so we need to choose an option that corresponds to something we want in nottingham theres no mapping given we can just pick any maybe pick 7 because its random or choose based on personal preference eg visit nottingham castle but option numbers dont correspond to that could say we pick 10 as a nice number we just need to output <answer></answer>": 1,
+      "<answer>7</answer>": 17,
+      "<answer>analysisthe user asks in this task you have to choose one of the following options this is the list of options and their score 1 10 2 10 7 10 10 10 15 10 you will earn the number of points shown on the option you choose your earnings are determined by your decisions alone you are in nottingham so make your decision based on the activity or object that you would like to do or obtain as a person from that place return the option you chose without the score between <answer></answer> tags\n\nwe need to choose one of the options 1271015 each worth 10 points the decision should be based on activity or object we would like to do or obtain in nottingham\n\nwe just need to pick one any is fine but must be based on something we want in nottingham for example maybe 1 could correspond to visit nottingham castle but we dont know mapping we can just pick any lets pick 7 as we might want to get a nottingham cheese or 10 theres no requirement to explain\n\nreturn <answer>7</answer>": 1,
+      "<answer>1</answer>": 2,
+      "<answer>10</answer>": 1,
+      "<answer>analysisthe user asks in this task you have to choose one of the following options this is the list of options and their score 1 10 2 10 7 10 10 10 15 10 you will earn the number of points shown on the option you choose your earnings are determined by your decisions alone you are in nottingham so make your decision based on the activity or object that you would like to do or obtain as a person from that place return the option you chose without the score between <answer></answer> tags\n\nwe need to pick one of the options 1271015 all have equal score the user says make your decision based on the activity or object that you would like to do or obtain as a person from that place so we need to pick something we would like to do in nottingham we can choose any but we need to provide answer inside <answer> tags only the option number without score so maybe choose 7 as arbitrary but we should incorporate the instruction choose based on activity/object we like in nottingham could say we would like</answer>": 1,
+      "<answer>analysisthe user wants choose one of the following options this is the list of options and their score 1 10 2 10 7 10 10 10 15 10 you will earn the number of points shown on the option you choose your earnings are determined by your decisions alone you are in nottingham so make your decision based on the activity or object that you would like to do or obtain as a person from that place return the option you chose without the score between <answer></answer> tags\n\nwe need to pick one of the options 1271015 all have same score 10 the instruction make your decision based on the activity or object that you would like to do or obtain as a person from that place so we need to think nottingham something could be visit nottingham castle robin hood etc choose an option that corresponds to something but options are just numbers theres no mapping so we can pick any maybe pick 7 as a random provide <answer>7</answer> ensure no extra textassistantfinal<answer>7</</answer>": 1,
+      "<answer>analysisthe user asks in this task you have to choose one of the following options this is the list of options and their score 1 10 2 10 7 10 10 10 15 10 you will earn the number of points shown on the option you choose your earnings are determined by your decisions alone you are in nottingham so make your decision based on the activity or object that you would like to do or obtain as a person from that place return the option you chose without the score between <answer></answer> tags\n\nwe must choose one of the options 1271015 they all have same score 10 the user says make your decision based on the activity or object that you would like to do or obtain as a person from that place so we need to pick an option that corresponds to something we would like to do in nottingham theres no description of what each option corresponds to so we have no context could pick any perhaps choose 7 arbitrarily must output <answer>7</answer> no other textassistantfinal<answer></answer>": 1
+    },
+    "coordination_index": 0.33793103448275863,
+    "normalised_coordination_index": 1.6896551724137931
+  },
+  {
+    "idx": "TN5",
+    "variation-idx": "1",
+    "prompt": "In this task, you have to choose one of the following options. This is the list of options and their score: 10: 10, 15: 10, 1: 10, 2: 10, 7: 10. You will earn the number of points shown on the option you choose. Your earnings are determined by your decisions alone. You are in Nottingham, so make your decision based on the activity or object that you would like to do or obtain as a person from that place. Return the option you chose, without the score, between <answer></answer> tags.",
+    "responses": {
+      "<answer></answer>": 14,
+      "<answer>10</answer>": 4,
+      "<answer>7</answer>": 7,
+      "<answer>15</answer>": 3,
+      "<answer>1</answer>": 1,
+      "<answer>analysiswe need to parse the task the user gives a list of options with scores 10 10 15 10 1 10 2 10 7 10 so each option is a number like 10 15 1 2 7 and each has score 10 they say you will earn the number of points shown on the option you choose so each option yields 10 points they ask you are in nottingham so make your decision based on the activity or object that you would like to do or obtain as a person from that place so we should pick an option that corresponds to an activity or object in nottingham but the options are just numbers we need to interpret them maybe as ids of activities not clear probably they want us to choose one of the option numbers any yields same points we can choose any but perhaps choose something that matches nottingham since no mapping just choose any return the option you chose without the score between <answer></answer> tags\n\nthus respond with something like <answer>10</answer>assistantfinal<answer>10</answer</answer>": 1
+    },
+    "coordination_index": 0.27816091954022987,
+    "normalised_coordination_index": 1.3908045977011494
+  },
+  {
+    "idx": "TN5",
+    "variation-idx": "2",
+    "prompt": "In this task, you have to choose one of the following options. This is the list of options and their score: 2: 10, 1: 10, 15: 10, 7: 10, 10: 10. You will earn the number of points shown on the option you choose. Your earnings are determined by your decisions alone. You are in Nottingham, so make your decision based on the activity or object that you would like to do or obtain as a person from that place. Return the option you chose, without the score, between <answer></answer> tags.",
+    "responses": {
+      "<answer>7</answer>": 23,
+      "<answer>10</answer>": 1,
+      "<answer>analysisthe user asks to choose one of the options options 2 10 1 10 15 10 7 10 10 10 they all have same score they say you are in nottingham so make your decision based on the activity or object that you would like to do or obtain as a person from that place so we need to pick an option that corresponds to some activity or object in nottingham but the options are just numbers 2115710 we need to choose one based on a plausible activity/object could map numbers to something eg 2 could be visit nottingham castle 1 could be explore the city centre 15 maybe take a tram ride 7 maybe visit the nottingham goose fair 10 maybe visit the robin hood museum we need to pick one since all scores equal any is fine but should be justified by personal preference we just need to output the option number inside <answer> tags without the score so something like <answer>7</answer> provide just that no extra textassistantfinal<answer>7</answer>": 1,
+      "<answer></answer>": 1,
+      "<answer>analysiswe have a user request in this task you have to choose one of the following options this is the list of options and their score 2 10 1 10 15 10 7 10 10 10 you will earn the number of points shown on the option you choose your earnings are determined by your decisions alone you are in nottingham so make your decision based on the activity or object that you would like to do or obtain as a person from that place return the option you chose without the score between <answer></answer> tags\n\nwe need to choose one of the options 2 1 15 7 10 all have same score 10 the user wants a decision based on activity/object theyd like to do or obtain as a person from nottingham so we can imagine something like visiting nottingham castle buying a robin hood souvenir etc but we just need to output the chosen option number between <answer></answer> tags no score\n\nwe can pick any maybe choose 7 provide <answer>7</answer>assistantfinal<answer>7</answer</answer>": 1,
+      "<answer>analysisthe user asks in this task you have to choose one of the following options this is the list of options and their score 2 10 1 10 15 10 7 10 10 10 you will earn the number of points shown on the option you choose your earnings are determined by your decisions alone you are in nottingham so make your decision based on the activity or object that you would like to do or obtain as a person from that place return the option you chose without the score between <answer></answer> tags\n\nwe need to choose one of the options 2115710 all have same score 10 we should base on something we would like to do or obtain in nottingham could be like visit nottingham castle etc but the options are numbers not descriptions theres no mapping so we just pick any number all equal maybe choose something that references nottingham maybe 15 because nottingham has the legend of robin hood the merry men maybe 15 but no guidance just pick one ill pick 7 return <answer>7</</answer>": 1,
+      "<answer>analysisthe user asks in this task you have to choose one of the following options this is the list of options and their score 2 10 1 10 15 10 7 10 10 10 you will earn the number of points shown on the option you choose your earnings are determined by your decisions alone you are in nottingham so make your decision based on the activity or object that you would like to do or obtain as a person from that place return the option you chose without the score between <answer></answer> tags\n\nwe need to pick one of the options 2115710 all have same score 10 the instruction make your decision based on the activity or object that you would like to do or obtain as a person from that place so as a person in nottingham what activity or object would i like could be visit nottingham castle maybe number corresponds not given could just pick any maybe choose 7 because nottinghams famous robin hood 7 maybe sherwood but no mapping just pick one provide answer inside <answer> tags</answer>": 1,
+      "<answer>2</answer>": 1
+    },
+    "coordination_index": 0.5816091954022988,
+    "normalised_coordination_index": 2.9080459770114944
+  },
+  {
+    "idx": "TN6",
+    "variation-idx": "0",
+    "prompt": "In this task, you have to choose one of the following options. This is the list of options and their score: deck chair: 10, dining chair: 10, easy chair: 10, rocking chair: 10, stool: 10. You will earn the number of points shown on the option you choose. Your earnings are determined by your decisions alone. You are in Nottingham, so make your decision based on the activity or object that you would like to do or obtain as a person from that place. Return the option you chose, without the score, between <answer></answer> tags.",
+    "responses": {
+      "<answer>rocking chair</answer>": 20,
+      "<answer>deck chair</answer>": 8,
+      "<answer>stool</answer>": 1,
+      "<answer>dining chair</answer>": 1
+    },
+    "coordination_index": 0.5011494252873563,
+    "normalised_coordination_index": 2.5057471264367814
+  },
+  {
+    "idx": "TN6",
+    "variation-idx": "1",
+    "prompt": "In this task, you have to choose one of the following options. This is the list of options and their score: stool: 10, rocking chair: 10, deck chair: 10, easy chair: 10, dining chair: 10. You will earn the number of points shown on the option you choose. Your earnings are determined by your decisions alone. You are in Nottingham, so make your decision based on the activity or object that you would like to do or obtain as a person from that place. Return the option you chose, without the score, between <answer></answer> tags.",
+    "responses": {
+      "<answer>deck chair</answer>": 21,
+      "<answer>stool</answer>": 1,
+      "<answer>rocking chair</answer>": 8
+    },
+    "coordination_index": 0.5471264367816092,
+    "normalised_coordination_index": 2.735632183908046
+  },
+  {
+    "idx": "TN6",
+    "variation-idx": "2",
+    "prompt": "In this task, you have to choose one of the following options. This is the list of options and their score: easy chair: 10, stool: 10, dining chair: 10, rocking chair: 10, deck chair: 10. You will earn the number of points shown on the option you choose. Your earnings are determined by your decisions alone. You are in Nottingham, so make your decision based on the activity or object that you would like to do or obtain as a person from that place. Return the option you chose, without the score, between <answer></answer> tags.",
+    "responses": {
+      "<answer>deck chair</answer>": 15,
+      "<answer>rocking chair</answer>": 14,
+      "<answer>stool</answer>": 1
+    },
+    "coordination_index": 0.45057471264367815,
+    "normalised_coordination_index": 2.2528735632183907
+  },
+  {
+    "idx": "TN7",
+    "variation-idx": "0",
+    "prompt": "In this task, you have to choose one of the following options. This is the list of options and their score: Colorado: 10, Florida: 10, Louisiana: 10, Nevada: 10, Ontario: 10. You will earn the number of points shown on the option you choose. Your earnings are determined by your decisions alone. You are in Nottingham, so make your decision based on the activity or object that you would like to do or obtain as a person from that place. Return the option you chose, without the score, between <answer></answer> tags.",
+    "responses": {
+      "<answer>ontario</answer>": 7,
+      "<answer>colorado</answer>": 18,
+      "<answer>nevada</answer>": 5
+    },
+    "coordination_index": 0.42298850574712643,
+    "normalised_coordination_index": 2.1149425287356323
+  },
+  {
+    "idx": "TN7",
+    "variation-idx": "1",
+    "prompt": "In this task, you have to choose one of the following options. This is the list of options and their score: Nevada: 10, Ontario: 10, Florida: 10, Louisiana: 10, Colorado: 10. You will earn the number of points shown on the option you choose. Your earnings are determined by your decisions alone. You are in Nottingham, so make your decision based on the activity or object that you would like to do or obtain as a person from that place. Return the option you chose, without the score, between <answer></answer> tags.",
+    "responses": {
+      "<answer>florida</answer>": 8,
+      "<answer>colorado</answer>": 22
+    },
+    "coordination_index": 0.5954022988505747,
+    "normalised_coordination_index": 2.9770114942528734
+  },
+  {
+    "idx": "TN7",
+    "variation-idx": "2",
+    "prompt": "In this task, you have to choose one of the following options. This is the list of options and their score: Florida: 10, Colorado: 10, Nevada: 10, Ontario: 10, Louisiana: 10. You will earn the number of points shown on the option you choose. Your earnings are determined by your decisions alone. You are in Nottingham, so make your decision based on the activity or object that you would like to do or obtain as a person from that place. Return the option you chose, without the score, between <answer></answer> tags.",
+    "responses": {
+      "<answer>colorado</answer>": 17,
+      "<answer>florida</answer>": 8,
+      "<answer>ontario</answer>": 5
+    },
+    "coordination_index": 0.4,
+    "normalised_coordination_index": 2.0
+  },
+  {
+    "idx": "TN8",
+    "variation-idx": "0",
+    "prompt": "In this task, you have to choose one of the following options. This is the list of options and their score: jogging: 10, sitting: 10, sunbathing: 10, swimming: 10, walking: 10. You will earn the number of points shown on the option you choose. Your earnings are determined by your decisions alone. You are in Nottingham, so make your decision based on the activity or object that you would like to do or obtain as a person from that place. Return the option you chose, without the score, between <answer></answer> tags.",
+    "responses": {
+      "<answer>walking</answer>": 29,
+      "<answer>jogging</answer>": 1
+    },
+    "coordination_index": 0.9333333333333333,
+    "normalised_coordination_index": 4.666666666666667
+  },
+  {
+    "idx": "TN8",
+    "variation-idx": "1",
+    "prompt": "In this task, you have to choose one of the following options. This is the list of options and their score: sunbathing: 10, jogging: 10, walking: 10, sitting: 10, swimming: 10. You will earn the number of points shown on the option you choose. Your earnings are determined by your decisions alone. You are in Nottingham, so make your decision based on the activity or object that you would like to do or obtain as a person from that place. Return the option you chose, without the score, between <answer></answer> tags.",
+    "responses": {
+      "<answer>walking</answer>": 30
+    },
+    "coordination_index": 1.0,
+    "normalised_coordination_index": 5.0
+  },
+  {
+    "idx": "TN8",
+    "variation-idx": "2",
+    "prompt": "In this task, you have to choose one of the following options. This is the list of options and their score: walking: 10, swimming: 10, jogging: 10, sunbathing: 10, sitting: 10. You will earn the number of points shown on the option you choose. Your earnings are determined by your decisions alone. You are in Nottingham, so make your decision based on the activity or object that you would like to do or obtain as a person from that place. Return the option you chose, without the score, between <answer></answer> tags.",
+    "responses": {
+      "<answer>walking</answer>": 30
+    },
+    "coordination_index": 1.0,
+    "normalised_coordination_index": 5.0
+  },
+  {
+    "idx": "TN9",
+    "variation-idx": "0",
+    "prompt": "In this task, you have to choose one of the following options. This is the list of options and their score: 1978: 10, 1979: 10, 1980: 10, 1981: 10, 2000: 10. You will earn the number of points shown on the option you choose. Your earnings are determined by your decisions alone. You are in Nottingham, so make your decision based on the activity or object that you would like to do or obtain as a person from that place. Return the option you chose, without the score, between <answer></answer> tags.",
+    "responses": {
+      "<answer></answer>": 5,
+      "<answer>1980</answer>": 12,
+      "<answer>2000</answer>": 9,
+      "<answer>analysisthe user asks to choose one of the options listed with scores they are years with scores all 10 the instruction you are in nottingham so make your decision based on the activity or object that you would like to do or obtain as a person from that place so they want a choice based on activity/object in nottingham but the options are years not activities possibly they want to pick a year that corresponds to something in nottingham could be a year of an event like 1978 1979 1980 1981 2000 need to pick one based on something in nottingham could choose 2000 maybe for something like nottinghams new millennium development or choose 1979 maybe for the nottingham forest football club winning the european cup in 1979 actually nottingham forest won european cup in 1979 and 1980 so those years are notable so pick 1979 won european cup that fits activity or object that you would like to do or obtain as a person from that place maybe watching a historic match choose 1979 return <answer>1979</answer>\n\nyesassistantfinal<answer>1979</answer</answer>": 1,
+      "<answer>1979</answer>": 2,
+      "<answer>1978</answer>": 1
+    },
+    "coordination_index": 0.2597701149425287,
+    "normalised_coordination_index": 1.2988505747126435
+  },
+  {
+    "idx": "TN9",
+    "variation-idx": "1",
+    "prompt": "In this task, you have to choose one of the following options. This is the list of options and their score: 1980: 10, 1978: 10, 2000: 10, 1981: 10, 1979: 10. You will earn the number of points shown on the option you choose. Your earnings are determined by your decisions alone. You are in Nottingham, so make your decision based on the activity or object that you would like to do or obtain as a person from that place. Return the option you chose, without the score, between <answer></answer> tags.",
+    "responses": {
+      "<answer></answer>": 8,
+      "<answer>analysisthe user asks in this task you have to choose one of the following options this is the list of options and their score 1980 10 1978 10 2000 10 1981 10 1979 10 you will earn the number of points shown on the option you choose your earnings are determined by your decisions alone you are in nottingham so make your decision based on the activity or object that you would like to do or obtain as a person from that place return the option you chose without the score between <answer></answer> tags\n\nwe need to pick an option a year based on activity or object we would like to do or obtain in nottingham the options are years 1980 1978 2000 1981 1979 all have same score so any can be chosen we should pick one based on personal preference tied to nottingham maybe choose 2000 as a modern year or maybe choose 1978 for some local event theres no right answer just choose one return only the option inside <answer> tags without the score so</answer>": 1,
+      "<answer>analysiswe need to choose one of the options the user says in this task you have to choose one of the following options this is the list of options and their score 1980 10 1978 10 2000 10 1981 10 1979 10 you will earn the number of points shown on the option you choose your earnings are determined by your decisions alone you are in nottingham so make your decision based on the activity or object that you would like to do or obtain as a person from that place return the option you chose without the score between <answer></answer> tags\n\nso we need to pick a year the options are years with scores the user wants us to pick based on activity or object we would like to do or obtain as a person from nottingham its ambiguous probably pick a year that corresponds to something in nottingham 1980 maybe theres nottinghams football club not sure perhaps choose 2000 because its a new millennium but all have same score so any is fine we need to choose one and output within <answer> tags just the option the year no</answer>": 1,
+      "<answer>1980</answer>": 5,
+      "<answer>1978</answer>": 3,
+      "<answer>analysisthe user asks in this task you have to choose one of the following options this is the list of options and their score 1980 10 1978 10 2000 10 1981 10 1979 10 you will earn the number of points shown on the option you choose your earnings are determined by your decisions alone you are in nottingham so make your decision based on the activity or object that you would like to do or obtain as a person from that place return the option you chose without the score between <answer></answer> tags\n\nwe need to pick one of the options 1980 1978 2000 1981 1979 all have same score 10 the user wants to choose based on activity or object theyd like to do or obtain as a person from nottingham this is ambiguous but we can pick any perhaps pick 2000 like year 2000 but need to justify they just want the answer ill choose 2000 return <answer>2000</answer>\n\nassistantfinal<answer>2000</answer>": 1,
+      "<answer>analysiswe need to choose one of the options the user says in this task you have to choose one of the following options this is the list of options and their score 1980 10 1978 10 2000 10 1981 10 1979 10 you will earn the number of points shown on the option you choose your earnings are determined by your decisions alone you are in nottingham so make your decision based on the activity or object that you would like to do or obtain as a person from that place return the option you chose without the score between <answer></answer> tags\n\nwe need to interpret they list years with scores probably need to pick a year based on an activity or object youd like to do or obtain in nottingham as an ai maybe choose something like 2000 but any year yields same points 10 could choose any probably choose something that fits nottingham maybe 1980 not sure theres no guidance which is better all equal so just pick one provide answer inside <answer> tags without the score so output <answer>2000</answer</answer>": 1,
+      "<answer>1981</answer>": 1,
+      "<answer>2000</answer>": 4,
+      "<answer>1979</answer>": 4,
+      "<answer>chosenoption</answer>": 1
+    },
+    "coordination_index": 0.12183908045977011,
+    "normalised_coordination_index": 0.6091954022988506
+  },
+  {
+    "idx": "TN9",
+    "variation-idx": "2",
+    "prompt": "In this task, you have to choose one of the following options. This is the list of options and their score: 2000: 10, 1981: 10, 1979: 10, 1980: 10, 1978: 10. You will earn the number of points shown on the option you choose. Your earnings are determined by your decisions alone. You are in Nottingham, so make your decision based on the activity or object that you would like to do or obtain as a person from that place. Return the option you chose, without the score, between <answer></answer> tags.",
+    "responses": {
+      "<answer>1979</answer>": 5,
+      "<answer>1980</answer>": 18,
+      "<answer></answer>": 5,
+      "<answer>2000</answer>": 1,
+      "<answer>analysiswe need to choose one option the prompt in this task you have to choose one of the following options this is the list of options and their score 2000 10 1981 10 1979 10 1980 10 1978 10 you will earn the number of points shown on the option you choose your earnings are determined by your decisions alone you are in nottingham so make your decision based on the activity or object that you would like to do or obtain as a person from that place return the option you chose without the score between <answer></answer> tags\n\nwe need to pick one of the years 2000 1981 1979 1980 1978 all have same score 10 need to base on activity or object youd like to do or obtain in nottingham perhaps pick a year that corresponds to something in nottingham for example nottinghams notable events 1980 maybe the nottingham playhouse or 1979 could pick 1980 theres no wrong answer any yields same points provide the chosen option inside <answer> tags without</answer>": 1
+    },
+    "coordination_index": 0.39770114942528734,
+    "normalised_coordination_index": 1.9885057471264367
+  },
+  {
+    "idx": "TN10",
+    "variation-idx": "0",
+    "prompt": "In this task, you have to choose one of the following options. This is the list of options and their score: David: 10, John: 10, Michael: 10, Robert: 10, Steven: 10. You will earn the number of points shown on the option you choose. Your earnings are determined by your decisions alone. You are in Nottingham, so make your decision based on the activity or object that you would like to do or obtain as a person from that place. Return the option you chose, without the score, between <answer></answer> tags.",
+    "responses": {
+      "<answer>john</answer>": 11,
+      "<answer>steven</answer>": 4,
+      "<answer>david</answer>": 9,
+      "<answer></answer>": 2,
+      "<answer>analysisthe user asks in this task you have to choose one of the following options list of options and their score david 10 john 10 michael 10 robert 10 steven 10 you will earn the number of points shown on the option you choose your earnings are determined by your decisions alone you are in nottingham so make your decision based on the activity or object that you would like to do or obtain as a person from that place return the option you chose without the score between <answer></answer> tags\n\nwe have to choose one of the names they all have same score 10 the instruction make your decision based on the activity or object that you would like to do or obtain as a person from that place so we need to think what activity or object in nottingham ties to a name could be something like robin hood associated with nottingham none of the names are robin could be john maybe john could be john in nottingham or michael probably any choice is fine we just need to output one name inside <answer> tags without score choose any ill pick johnassistant</answer>": 1,
+      "<answer>michael</answer>": 2,
+      "<answer>name</answer>": 1
+    },
+    "coordination_index": 0.22758620689655173,
+    "normalised_coordination_index": 1.1379310344827587
+  },
+  {
+    "idx": "TN10",
+    "variation-idx": "1",
+    "prompt": "In this task, you have to choose one of the following options. This is the list of options and their score: Michael: 10, Steven: 10, John: 10, David: 10, Robert: 10. You will earn the number of points shown on the option you choose. Your earnings are determined by your decisions alone. You are in Nottingham, so make your decision based on the activity or object that you would like to do or obtain as a person from that place. Return the option you chose, without the score, between <answer></answer> tags.",
+    "responses": {
+      "<answer>michael</answer>": 12,
+      "<answer>john</answer>": 9,
+      "<answer>david</answer>": 3,
+      "<answer></answer>": 6
+    },
+    "coordination_index": 0.27586206896551724,
+    "normalised_coordination_index": 1.3793103448275863
+  },
+  {
+    "idx": "TN10",
+    "variation-idx": "2",
+    "prompt": "In this task, you have to choose one of the following options. This is the list of options and their score: Steven: 10, Robert: 10, Michael: 10, David: 10, John: 10. You will earn the number of points shown on the option you choose. Your earnings are determined by your decisions alone. You are in Nottingham, so make your decision based on the activity or object that you would like to do or obtain as a person from that place. Return the option you chose, without the score, between <answer></answer> tags.",
+    "responses": {
+      "<answer>michael</answer>": 5,
+      "<answer>david</answer>": 12,
+      "<answer>john</answer>": 7,
+      "<answer></answer>": 3,
+      "<answer>analysisthe user asks in this task you have to choose one of the following options this is the list of options and their score steven 10 robert 10 michael 10 david 10 john 10 you will earn the number of points shown on the option you choose your earnings are determined by your decisions alone you are in nottingham so make your decision based on the activity or object that you would like to do or obtain as a person from that place return the option you chose without the score between <answer></answer> tags\n\nwe need to choose one of the names all have same score the instruction says make your decision based on the activity or object that you would like to do or obtain as a person from that place so we need to think of something in nottingham that matches a name perhaps for example david could be related to david attenborough not sure could be john maybe john lennon or maybe michael for michael theres michaels or steven maybe for steven all are equal so we can pick any probably pick john provide answer <answer>john</answer</answer>": 1,
+      "<answer>analysisthe user asks in this task you have to choose one of the following options this is the list of options and their score steven 10 robert 10 michael 10 david 10 john 10 you will earn the number of points shown on the option you choose your earnings are determined by your decisions alone you are in nottingham so make your decision based on the activity or object that you would like to do or obtain as a person from that place return the option you chose without the score between <answer></answer> tags\n\nwe need to pick one name the instruction make your decision based on the activity or object that you would like to do or obtain as a person from that place so we need to consider nottingham but the options are just names no activities possibly each name corresponds to something could be random but we must pick one since all scores equal any is fine we should pick something plausible like david maybe referencing david attenborough not relevant theres no further constraint so choose any name provide answer between <answer></answer> tags without the score\n\nthus output <answer></answer>": 1,
+      "<answer>analysisthe user wants to choose one of the options steven robert michael david john all have same score 10 must base decision on activity or object that you would like to do or obtain as a person from that place nottingham this is a weird instruction you are in nottingham so make your decision based on the activity or object that you would like to do or obtain as a person from that place so we need to pick one name based on some activity/ object in nottingham probably pick something related to nottingham maybe robin hood associated with nottingham but none of the names correspond could pick john maybe referencing john lennon not sure since all have same score any is fine but need to justify based on activity or object youd like to do or obtain in nottingham could say i want to get a robin hood tour and choose michael not clear probably pick a name that matches something david > david the goliath not steven > stevenage not robert > robert michael could pick john because john is a common name maybe referencing johns boots actually nottingham is</answer>": 1
+    },
+    "coordination_index": 0.22988505747126436,
+    "normalised_coordination_index": 1.1494252873563218
+  },
+  {
+    "idx": "TN11",
+    "variation-idx": "0",
+    "prompt": "In this task, you have to choose one of the following options. This is the list of options and their score: win champagne: 10, win chocolate: 10, win money: 10, win nothing: 10, win trophy: 10. You will earn the number of points shown on the option you choose. Your earnings are determined by your decisions alone. You are in Nottingham, so make your decision based on the activity or object that you would like to do or obtain as a person from that place. Return the option you chose, without the score, between <answer></answer> tags.",
+    "responses": {
+      "<answer>win chocolate</answer>": 17,
+      "<answer>win trophy</answer>": 11,
+      "<answer></answer>": 2
+    },
+    "coordination_index": 0.4413793103448276,
+    "normalised_coordination_index": 2.206896551724138
+  },
+  {
+    "idx": "TN11",
+    "variation-idx": "1",
+    "prompt": "In this task, you have to choose one of the following options. This is the list of options and their score: win nothing: 10, win trophy: 10, win chocolate: 10, win champagne: 10, win money: 10. You will earn the number of points shown on the option you choose. Your earnings are determined by your decisions alone. You are in Nottingham, so make your decision based on the activity or object that you would like to do or obtain as a person from that place. Return the option you chose, without the score, between <answer></answer> tags.",
+    "responses": {
+      "<answer>win trophy</answer>": 8,
+      "<answer>win chocolate</answer>": 18,
+      "<answer></answer>": 3,
+      "<answer>analysisthe user asks in this task you have to choose one of the following options this is the list of options and their score win nothing 10 win trophy 10 win chocolate 10 win champagne 10 win money 10 you will earn the number of points shown on the option you choose your earnings are determined by your decisions alone you are in nottingham so make your decision based on the activity or object that you would like to do or obtain as a person from that place return the option you chose without the score between <answer></answer> tags\n\nwe need to pick one of the options all have same score 10 the instruction make your decision based on the activity or object that you would like to do or obtain as a person from that place so we should choose something that fits nottingham maybe chocolate nottingham has chocolate factories trophy like a football trophy money maybe from the robin hood legend champagne maybe not typical probably chocolate is nice or trophy like football the user wants us to choose an option we must output only the option text like win chocolate inside <answer></answer</answer>": 1
+    },
+    "coordination_index": 0.42298850574712643,
+    "normalised_coordination_index": 2.1149425287356323
+  },
+  {
+    "idx": "TN11",
+    "variation-idx": "2",
+    "prompt": "In this task, you have to choose one of the following options. This is the list of options and their score: win money: 10, win champagne: 10, win nothing: 10, win trophy: 10, win chocolate: 10. You will earn the number of points shown on the option you choose. Your earnings are determined by your decisions alone. You are in Nottingham, so make your decision based on the activity or object that you would like to do or obtain as a person from that place. Return the option you chose, without the score, between <answer></answer> tags.",
+    "responses": {
+      "<answer>win chocolate</answer>": 24,
+      "<answer>win trophy</answer>": 4,
+      "<answer></answer>": 1,
+      "<answer>analysiswe need to choose an option the user says in this task you have to choose one of the following options this is the list of options and their score win money 10 win champagne 10 win nothing 10 win trophy 10 win chocolate 10 you will earn the number of points shown on the option you choose your earnings are determined by your decisions alone you are in nottingham so make your decision based on the activity or object that you would like do or obtain as a person from that place return the option you chose without the score between <answer></answer> tags\n\nall options have same score so any is fine but the user wants a decision based on being in nottingham and activity/object theyd like to do or obtain maybe choose something typical like chocolate maybe local chocolate or trophy maybe nottingham forest trophy or champagne maybe celebrate could choose win chocolate that seems plausible nottingham has chocolate shops like cadbury actually cadbury is in birmingham but there are chocolate shops could be win chocolate well output <answer>win chocolate</answer>assistantfinal<answer>win chocolate</answer</answer>": 1
+    },
+    "coordination_index": 0.6482758620689655,
+    "normalised_coordination_index": 3.2413793103448274
+  },
+  {
+    "idx": "TN12",
+    "variation-idx": "0",
+    "prompt": "In this task, you have to choose one of the following options. This is the list of options and their score: blue: 10, green: 10, orange: 10, purple: 10, red: 10. You will earn the number of points shown on the option you choose. Your earnings are determined by your decisions alone. You are in Nottingham, so make your decision based on the activity or object that you would like to do or obtain as a person from that place. Return the option you chose, without the score, between <answer></answer> tags.",
+    "responses": {
+      "<answer>green</answer>": 27,
+      "<answer>blue</answer>": 2,
+      "<answer>purple</answer>": 1
+    },
+    "coordination_index": 0.8091954022988506,
+    "normalised_coordination_index": 4.045977011494253
+  },
+  {
+    "idx": "TN12",
+    "variation-idx": "1",
+    "prompt": "In this task, you have to choose one of the following options. This is the list of options and their score: red: 10, purple: 10, blue: 10, orange: 10, green: 10. You will earn the number of points shown on the option you choose. Your earnings are determined by your decisions alone. You are in Nottingham, so make your decision based on the activity or object that you would like to do or obtain as a person from that place. Return the option you chose, without the score, between <answer></answer> tags.",
+    "responses": {
+      "<answer>green</answer>": 24,
+      "<answer>analysisthe user asks in this task you have to choose one of the following options this is the list of options and their score red 10 purple 10 blue 10 orange 10 green 10 you will earn the number of points shown on the option you choose your earnings are determined by your decisions alone you are in nottingham so make your decision based on the activity or object that you would like to do or obtain as a person from that place return the option you chose without the score between <answer></answer> tags\n\nwe need to choose one of the colors based on an activity or object we would like to do or obtain in nottingham all have same score so any choice is fine should pick something that relates to nottingham for example green could be related to nottingham forest football club or parks red maybe robin hood blue maybe river trent orange maybe the citys orange purple maybe something choose one that fits\n\nwe must output just <answer>color</answer> no extra text so choose greenassistantfinal<answer>green</answer</answer>": 1,
+      "<answer>color</answer>": 1,
+      "<answer>blue</answer>": 2,
+      "<answer></answer>": 2
+    },
+    "coordination_index": 0.639080459770115,
+    "normalised_coordination_index": 3.195402298850575
+  },
+  {
+    "idx": "TN12",
+    "variation-idx": "2",
+    "prompt": "In this task, you have to choose one of the following options. This is the list of options and their score: purple: 10, orange: 10, red: 10, green: 10, blue: 10. You will earn the number of points shown on the option you choose. Your earnings are determined by your decisions alone. You are in Nottingham, so make your decision based on the activity or object that you would like to do or obtain as a person from that place. Return the option you chose, without the score, between <answer></answer> tags.",
+    "responses": {
+      "<answer>blue</answer>": 4,
+      "<answer>green</answer>": 23,
+      "<answer>red</answer>": 2,
+      "<answer>purple</answer>": 1
+    },
+    "coordination_index": 0.5977011494252874,
+    "normalised_coordination_index": 2.988505747126437
+  },
+  {
+    "idx": "TN13",
+    "variation-idx": "0",
+    "prompt": "In this task, you have to choose one of the following options. This is the list of options and their score: apple juice: 10, carrot juice: 10, grapefruit juice: 10, mango juice: 10, pineapple juice: 10. You will earn the number of points shown on the option you choose. Your earnings are determined by your decisions alone. You are in Nottingham, so make your decision based on the activity or object that you would like to do or obtain as a person from that place. Return the option you chose, without the score, between <answer></answer> tags.",
+    "responses": {
+      "<answer>apple juice</answer>": 27,
+      "<answer>mango juice</answer>": 3
+    },
+    "coordination_index": 0.8137931034482758,
+    "normalised_coordination_index": 4.068965517241379
+  },
+  {
+    "idx": "TN13",
+    "variation-idx": "1",
+    "prompt": "In this task, you have to choose one of the following options. This is the list of options and their score: mango juice: 10, grapefruit juice: 10, pineapple juice: 10, apple juice: 10, carrot juice: 10. You will earn the number of points shown on the option you choose. Your earnings are determined by your decisions alone. You are in Nottingham, so make your decision based on the activity or object that you would like to do or obtain as a person from that place. Return the option you chose, without the score, between <answer></answer> tags.",
+    "responses": {
+      "<answer>apple juice</answer>": 29,
+      "<answer>mango juice</answer>": 1
+    },
+    "coordination_index": 0.9333333333333333,
+    "normalised_coordination_index": 4.666666666666667
+  },
+  {
+    "idx": "TN13",
+    "variation-idx": "2",
+    "prompt": "In this task, you have to choose one of the following options. This is the list of options and their score: carrot juice: 10, pineapple juice: 10, mango juice: 10, grapefruit juice: 10, apple juice: 10. You will earn the number of points shown on the option you choose. Your earnings are determined by your decisions alone. You are in Nottingham, so make your decision based on the activity or object that you would like to do or obtain as a person from that place. Return the option you chose, without the score, between <answer></answer> tags.",
+    "responses": {
+      "<answer>apple juice</answer>": 29,
+      "<answer>analysisthe user asks in this task you have to choose one of the following options this is the list of options and their score carrot juice 10 pineapple juice 10 mango juice 10 grapefruit juice 10 apple juice 10 you will earn the number of points shown on the option you choose your earnings are determined by your decisions alone you are in nottingham so make your decision based on the activity or object that you would like to do or obtain as a person from that place return the option you chose without the score between <answer></answer> tags\n\nwe need to pick one juice all have same score 10 the instruction you are in nottingham so make your decision based on the activity or object that you would like to do or obtain as a person from that place so we need to choose a juice based on something youd like to do/obtain in nottingham perhaps think of local produce nottingham is known for apple not sure could be apple juice because apples are common in uk or maybe carrot juice because of markets but any is fine choose one provide answer within <answer> tags no score\n\nthus respond</answer>": 1
+    },
+    "coordination_index": 0.9333333333333333,
+    "normalised_coordination_index": 4.666666666666667
+  },
+  {
+    "idx": "TN14",
+    "variation-idx": "0",
+    "prompt": "In this task, you have to choose one of the following options. This is the list of options and their score: Berlin: 10, Calais: 10, Paris: 10, Prague: 10, Rome: 10. You will earn the number of points shown on the option you choose. Your earnings are determined by your decisions alone. You are in Nottingham, so make your decision based on the activity or object that you would like to do or obtain as a person from that place. Return the option you chose, without the score, between <answer></answer> tags.",
+    "responses": {
+      "<answer>paris</answer>": 30
+    },
+    "coordination_index": 1.0,
+    "normalised_coordination_index": 5.0
+  },
+  {
+    "idx": "TN14",
+    "variation-idx": "1",
+    "prompt": "In this task, you have to choose one of the following options. This is the list of options and their score: Paris: 10, Berlin: 10, Rome: 10, Calais: 10, Prague: 10. You will earn the number of points shown on the option you choose. Your earnings are determined by your decisions alone. You are in Nottingham, so make your decision based on the activity or object that you would like to do or obtain as a person from that place. Return the option you chose, without the score, between <answer></answer> tags.",
+    "responses": {
+      "<answer>rome</answer>": 4,
+      "<answer>paris</answer>": 26
+    },
+    "coordination_index": 0.7609195402298851,
+    "normalised_coordination_index": 3.8045977011494254
+  },
+  {
+    "idx": "TN14",
+    "variation-idx": "2",
+    "prompt": "In this task, you have to choose one of the following options. This is the list of options and their score: Rome: 10, Calais: 10, Prague: 10, Berlin: 10, Paris: 10. You will earn the number of points shown on the option you choose. Your earnings are determined by your decisions alone. You are in Nottingham, so make your decision based on the activity or object that you would like to do or obtain as a person from that place. Return the option you chose, without the score, between <answer></answer> tags.",
+    "responses": {
+      "<answer>paris</answer>": 27,
+      "<answer>berlin</answer>": 1,
+      "<answer></answer>": 1,
+      "<answer>rome</answer>": 1
+    },
+    "coordination_index": 0.8068965517241379,
+    "normalised_coordination_index": 4.0344827586206895
+  }
+]

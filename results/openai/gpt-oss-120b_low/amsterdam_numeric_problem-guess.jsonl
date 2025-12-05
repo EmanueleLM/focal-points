@@ -1,0 +1,297 @@
+[
+  {
+    "idx": "TA1",
+    "variation-idx": "0",
+    "prompt": "In this task, you have to choose one of the following options. This is the list of options: 10, 10, 10, 9. You will earn the number of points shown on the option you choose. You have been paired with another LLM and you have to guess what it chooses. If you guess correctly, you will receive the number of points indicated on that option. If not, you will receive nothing for that task. Return the option you chose, without the score, between <answer></answer> tags.",
+    "responses": {
+      "<answer>10</answer>": 30
+    },
+    "coordination_index": 1.0,
+    "normalised_coordination_index": 2.0
+  },
+  {
+    "idx": "TA1",
+    "variation-idx": "1",
+    "prompt": "In this task, you have to choose one of the following options. This is the list of options: 9, 10, 10, 10. You will earn the number of points shown on the option you choose. You have been paired with another LLM and you have to guess what it chooses. If you guess correctly, you will receive the number of points indicated on that option. If not, you will receive nothing for that task. Return the option you chose, without the score, between <answer></answer> tags.",
+    "responses": {
+      "<answer>10</answer>": 30
+    },
+    "coordination_index": 1.0,
+    "normalised_coordination_index": 2.0
+  },
+  {
+    "idx": "TA1",
+    "variation-idx": "2",
+    "prompt": "In this task, you have to choose one of the following options. This is the list of options: 10, 9, 10, 10. You will earn the number of points shown on the option you choose. You have been paired with another LLM and you have to guess what it chooses. If you guess correctly, you will receive the number of points indicated on that option. If not, you will receive nothing for that task. Return the option you chose, without the score, between <answer></answer> tags.",
+    "responses": {
+      "<answer>10</answer>": 30
+    },
+    "coordination_index": 1.0,
+    "normalised_coordination_index": 2.0
+  },
+  {
+    "idx": "TA2",
+    "variation-idx": "0",
+    "prompt": "In this task, you have to choose one of the following options. This is the list of options: 10, 10, 10, 10, 10, 9. You will earn the number of points shown on the option you choose. You have been paired with another LLM and you have to guess what it chooses. If you guess correctly, you will receive the number of points indicated on that option. If not, you will receive nothing for that task. Return the option you chose, without the score, between <answer></answer> tags.",
+    "responses": {
+      "<answer>10</answer>": 30
+    },
+    "coordination_index": 1.0,
+    "normalised_coordination_index": 2.0
+  },
+  {
+    "idx": "TA2",
+    "variation-idx": "1",
+    "prompt": "In this task, you have to choose one of the following options. This is the list of options: 9, 10, 10, 10, 10, 10. You will earn the number of points shown on the option you choose. You have been paired with another LLM and you have to guess what it chooses. If you guess correctly, you will receive the number of points indicated on that option. If not, you will receive nothing for that task. Return the option you chose, without the score, between <answer></answer> tags.",
+    "responses": {
+      "<answer>10</answer>": 30
+    },
+    "coordination_index": 1.0,
+    "normalised_coordination_index": 2.0
+  },
+  {
+    "idx": "TA2",
+    "variation-idx": "2",
+    "prompt": "In this task, you have to choose one of the following options. This is the list of options: 10, 10, 9, 10, 10, 10. You will earn the number of points shown on the option you choose. You have been paired with another LLM and you have to guess what it chooses. If you guess correctly, you will receive the number of points indicated on that option. If not, you will receive nothing for that task. Return the option you chose, without the score, between <answer></answer> tags.",
+    "responses": {
+      "<answer>10</answer>": 30
+    },
+    "coordination_index": 1.0,
+    "normalised_coordination_index": 2.0
+  },
+  {
+    "idx": "TA3",
+    "variation-idx": "0",
+    "prompt": "In this task, you have to choose one of the following options. This is the list of options: 10, 10, 10, 9, 8, 7. You will earn the number of points shown on the option you choose. You have been paired with another LLM and you have to guess what it chooses. If you guess correctly, you will receive the number of points indicated on that option. If not, you will receive nothing for that task. Return the option you chose, without the score, between <answer></answer> tags.",
+    "responses": {
+      "<answer>10</answer>": 30
+    },
+    "coordination_index": 1.0,
+    "normalised_coordination_index": 4.0
+  },
+  {
+    "idx": "TA3",
+    "variation-idx": "1",
+    "prompt": "In this task, you have to choose one of the following options. This is the list of options: 7, 8, 9, 10, 10, 10. You will earn the number of points shown on the option you choose. You have been paired with another LLM and you have to guess what it chooses. If you guess correctly, you will receive the number of points indicated on that option. If not, you will receive nothing for that task. Return the option you chose, without the score, between <answer></answer> tags.",
+    "responses": {
+      "<answer>10</answer>": 28,
+      "<answer>analysiswe need to guess what the other llm will choose among options 789101010 so there are six options three of them are 10 duplicates the other llm presumably will pick something perhaps randomly we need to maximize expected points the score we get equals the options value if we guess correctly so we need to choose an option if we match the other llms choice we get that options value we dont know their strategy could be they choose the highest value might choose 10 because its repeated more often might choose randomly among the list entries including duplicates if random uniform over the list positions probability of picking a 10 is 3/6  05 picking 9 is 1/6 8 is 1/6 7 is 1/6 expected payoff if we choose 10 probability they choose 10 05  payoff 10  5 if we choose 9 probability 1/6  9  15 8 1/681333 7 1/67</answer>": 1,
+      "<answer>analysiswe have a game there are options 7 8 9 10 10 10 so options list includes duplicate 10 three times we need to guess what another llm will choose we must choose one of these options we want to maximize expected points the other llm presumably will choose something maybe uniformly hard to know might pick the highest value many duplicates of 10 likely the other llm will pick the maximum point option which is 10 since there are three 10 options probability maybe higher if uniform random among list entries if uniform among six entries probability of picking 10 is 3/6  05 so expected value if we pick 10 we get 10  05  5 if we pick 9 probability maybe 1/6  01667 expected 90166715 8 gives 801667133 7 gives 701667117 so best is 10 so answer 10 return within <answer> tags</answer>": 1
+    },
+    "coordination_index": 0.8689655172413793,
+    "normalised_coordination_index": 3.475862068965517
+  },
+  {
+    "idx": "TA3",
+    "variation-idx": "2",
+    "prompt": "In this task, you have to choose one of the following options. This is the list of options: 10, 7, 8, 10, 9, 10. You will earn the number of points shown on the option you choose. You have been paired with another LLM and you have to guess what it chooses. If you guess correctly, you will receive the number of points indicated on that option. If not, you will receive nothing for that task. Return the option you chose, without the score, between <answer></answer> tags.",
+    "responses": {
+      "<answer>10</answer>": 30
+    },
+    "coordination_index": 1.0,
+    "normalised_coordination_index": 4.0
+  },
+  {
+    "idx": "TA4",
+    "variation-idx": "0",
+    "prompt": "In this task, you have to choose one of the following options. This is the list of options: 10, 10, 10, 9, 9, 8. You will earn the number of points shown on the option you choose. You have been paired with another LLM and you have to guess what it chooses. If you guess correctly, you will receive the number of points indicated on that option. If not, you will receive nothing for that task. Return the option you chose, without the score, between <answer></answer> tags.",
+    "responses": {
+      "<answer>10</answer>": 30
+    },
+    "coordination_index": 1.0,
+    "normalised_coordination_index": 3.0
+  },
+  {
+    "idx": "TA4",
+    "variation-idx": "1",
+    "prompt": "In this task, you have to choose one of the following options. This is the list of options: 8, 9, 9, 10, 10, 10. You will earn the number of points shown on the option you choose. You have been paired with another LLM and you have to guess what it chooses. If you guess correctly, you will receive the number of points indicated on that option. If not, you will receive nothing for that task. Return the option you chose, without the score, between <answer></answer> tags.",
+    "responses": {
+      "<answer>10</answer>": 30
+    },
+    "coordination_index": 1.0,
+    "normalised_coordination_index": 3.0
+  },
+  {
+    "idx": "TA4",
+    "variation-idx": "2",
+    "prompt": "In this task, you have to choose one of the following options. This is the list of options: 10, 9, 10, 8, 9, 10. You will earn the number of points shown on the option you choose. You have been paired with another LLM and you have to guess what it chooses. If you guess correctly, you will receive the number of points indicated on that option. If not, you will receive nothing for that task. Return the option you chose, without the score, between <answer></answer> tags.",
+    "responses": {
+      "<answer>10</answer>": 26,
+      "<answer></answer>": 1,
+      "<answer>analysiswe need to pick an option from list 10 9 10 8 9 10 so there are six options with values index110293104859610 we need to guess what the other llm will choose no info so maybe random we can try to maximize expected points we want highest expected payoff each option yields points equal to its value only if guessed correctly but we only get points if our guess matches the other llms choice we have no info assume uniform random choice among options then probability 1/6 each expected value of picking each option  value1/6 compute for 10 options there are three 10s positions 136 expected if pick any specific 10  101/616667 for 9 options there are two 9s positions25 > 91/615 for 8 option 81/61333 so any 10 gives highest expected so</answer>": 1,
+      "<answer>analysiswe need to guess what the other llm will choose options list 10 9 10 8 9 10 so there are repeats we need to guess which option the other llm will select likely they might pick the highest value but also they might pick something else the other llm might choose randomly we need to maximize expected points we can consider distribution options are 10 three times 9 two times 8 once if the other llm picks uniformly among options probability of picking a 10 is 3/6  05 9 is 2/60333 8 is 1/60167 expected points if we pick 10 we get 10 points if they pick a 10 else 0 so expected  0510 5 if pick 9 expected  1/39 30 if pick 8 expected  1/68133 so best is 10 but maybe the other llm will try to maximize its own points similarly so</answer>": 1,
+      "<answer>analysiswe need to guess what the other llm will choose options list 109108910 so there are 6 options some duplicates the other llm likely picks something maybe random as a meta we need to maximize expected points we can choose the option with highest expected payoff given guess probability since we only get points if we guess correctly we want to choose the option that the other llm most likely picks if other llm is random uniform among the six positions then each option value appears multiple times options values 10 appears three times 9 appears two times 8 appears once probability of picking a particular value if random uniform over positions p103/605 p92/60333 p81/60167 expected payoff if we guess 10 we get 10 points 05 5 expected if guess 9 9033330 if guess 8 80167133 so best is guess 10 so answer should be 10 return</answer>": 1
+    },
+    "coordination_index": 0.7471264367816092,
+    "normalised_coordination_index": 2.2413793103448274
+  },
+  {
+    "idx": "TA5",
+    "variation-idx": "0",
+    "prompt": "In this task, you have to choose one of the following options. This is the list of options: 10, 10, 10, 10, 9, 9. You will earn the number of points shown on the option you choose. You have been paired with another LLM and you have to guess what it chooses. If you guess correctly, you will receive the number of points indicated on that option. If not, you will receive nothing for that task. Return the option you chose, without the score, between <answer></answer> tags.",
+    "responses": {
+      "<answer>10</answer>": 30
+    },
+    "coordination_index": 1.0,
+    "normalised_coordination_index": 2.0
+  },
+  {
+    "idx": "TA5",
+    "variation-idx": "1",
+    "prompt": "In this task, you have to choose one of the following options. This is the list of options: 9, 9, 10, 10, 10, 10. You will earn the number of points shown on the option you choose. You have been paired with another LLM and you have to guess what it chooses. If you guess correctly, you will receive the number of points indicated on that option. If not, you will receive nothing for that task. Return the option you chose, without the score, between <answer></answer> tags.",
+    "responses": {
+      "<answer>10</answer>": 29,
+      "<answer>analysiswe have a game list of options 9910101010 so there are 2 options with value 9 and 4 options with value 10 the user asks in this task you have to choose one of the following options you will earn the number of points shown on the option you choose you have been paired with another llm and you have to guess what it chooses if you guess correctly you will receive the number of points indicated on that option if not you will receive nothing for that task return the option you chose without the score between <answer></answer> tags\n\nwe need to guess what the other llm will choose the options are just numbers with duplicates the other llm might choose randomly we need to guess which option it picks since there are more 10s than 9s maybe the other llm will choose a 10 but which one all 10s are identical in value so the answer we need to output is the option we choose the number we need to guess the other llms choice probably 10 is more likely so we output <answer>10</</answer>": 1
+    },
+    "coordination_index": 0.9333333333333333,
+    "normalised_coordination_index": 1.8666666666666667
+  },
+  {
+    "idx": "TA5",
+    "variation-idx": "2",
+    "prompt": "In this task, you have to choose one of the following options. This is the list of options: 9, 10, 9, 10, 10, 10. You will earn the number of points shown on the option you choose. You have been paired with another LLM and you have to guess what it chooses. If you guess correctly, you will receive the number of points indicated on that option. If not, you will receive nothing for that task. Return the option you chose, without the score, between <answer></answer> tags.",
+    "responses": {
+      "<answer>10</answer>": 29,
+      "<answer>analysiswe need to guess what the other llm will choose options list 9109101010 so there are 6 options with values positions 19 210 39 410510610 the other llm presumably will choose an option we need to guess which one since we have no info maybe assume random but we need to maximize expected points the score we get equals the options number if we guess correctly so expected value  probability of correct guess  value we can choose any of the six positions we want maximize expected value if we assume uniform random choice by other llm among six equally likely then probability  1/6 for each expected value if we pick a 9  1/69  15 if we pick a 10  1/610  1666 so better pick a 10 there are four 10s positions 2456 any of those same expected value so choose one of them maybe choose the first 10 position</answer>": 1
+    },
+    "coordination_index": 0.9333333333333333,
+    "normalised_coordination_index": 1.8666666666666667
+  },
+  {
+    "idx": "TA6",
+    "variation-idx": "0",
+    "prompt": "In this task, you have to choose one of the following options. This is the list of options: 10, 9. You will earn the number of points shown on the option you choose. You have been paired with another LLM and you have to guess what it chooses. If you guess correctly, you will receive the number of points indicated on that option. If not, you will receive nothing for that task. Return the option you chose, without the score, between <answer></answer> tags.",
+    "responses": {
+      "<answer>10</answer>": 30
+    },
+    "coordination_index": 1.0,
+    "normalised_coordination_index": 2.0
+  },
+  {
+    "idx": "TA6",
+    "variation-idx": "1",
+    "prompt": "In this task, you have to choose one of the following options. This is the list of options: 9, 10. You will earn the number of points shown on the option you choose. You have been paired with another LLM and you have to guess what it chooses. If you guess correctly, you will receive the number of points indicated on that option. If not, you will receive nothing for that task. Return the option you chose, without the score, between <answer></answer> tags.",
+    "responses": {
+      "<answer>10</answer>": 29,
+      "<answer>9</answer>": 1
+    },
+    "coordination_index": 0.9333333333333333,
+    "normalised_coordination_index": 1.8666666666666667
+  },
+  {
+    "idx": "TA7",
+    "variation-idx": "0",
+    "prompt": "In this task, you have to choose one of the following options. This is the list of options: 10, 10, 10, 9, 9, 9. You will earn the number of points shown on the option you choose. You have been paired with another LLM and you have to guess what it chooses. If you guess correctly, you will receive the number of points indicated on that option. If not, you will receive nothing for that task. Return the option you chose, without the score, between <answer></answer> tags.",
+    "responses": {
+      "<answer>10</answer>": 28,
+      "<answer>analysiswe have a game list of options 101010999 need to guess what the other llm chooses we have no info about its behavior probably random uniform among the six options could be they will choose the highest value but they might also random we need to maximize expected points if we guess an option we need to output one of the values the options are values but there are duplicates we need to choose one of the options ie a value if we guess correctly we get that many points so we want to maximize expected points probability of being correct times value if we assume the other llm picks uniformly among the six positions then probability of picking a 10 is 3/6  05 same for 9 expected value if we guess 10 05  10  5 expected if guess 9 05  9  45 so 10 is better if we think they will pick the highest 10 deterministically then guessing 10 yields 10 if they pick randomly weighted maybe equal so best guess is 10</answer>": 1,
+      "<answer></answer>": 1
+    },
+    "coordination_index": 0.8689655172413793,
+    "normalised_coordination_index": 1.7379310344827585
+  },
+  {
+    "idx": "TA7",
+    "variation-idx": "1",
+    "prompt": "In this task, you have to choose one of the following options. This is the list of options: 9, 9, 9, 10, 10, 10. You will earn the number of points shown on the option you choose. You have been paired with another LLM and you have to guess what it chooses. If you guess correctly, you will receive the number of points indicated on that option. If not, you will receive nothing for that task. Return the option you chose, without the score, between <answer></answer> tags.",
+    "responses": {
+      "<answer>10</answer>": 29,
+      "<answer>9</answer>": 1
+    },
+    "coordination_index": 0.9333333333333333,
+    "normalised_coordination_index": 1.8666666666666667
+  },
+  {
+    "idx": "TA7",
+    "variation-idx": "2",
+    "prompt": "In this task, you have to choose one of the following options. This is the list of options: 9, 10, 9, 10, 9, 10. You will earn the number of points shown on the option you choose. You have been paired with another LLM and you have to guess what it chooses. If you guess correctly, you will receive the number of points indicated on that option. If not, you will receive nothing for that task. Return the option you chose, without the score, between <answer></answer> tags.",
+    "responses": {
+      "<answer>10</answer>": 20,
+      "<answer>9</answer>": 10
+    },
+    "coordination_index": 0.5402298850574713,
+    "normalised_coordination_index": 1.0804597701149425
+  },
+  {
+    "idx": "TA8",
+    "variation-idx": "0",
+    "prompt": "In this task, you have to choose one of the following options. This is the list of options: 10, 1. You will earn the number of points shown on the option you choose. You have been paired with another LLM and you have to guess what it chooses. If you guess correctly, you will receive the number of points indicated on that option. If not, you will receive nothing for that task. Return the option you chose, without the score, between <answer></answer> tags.",
+    "responses": {
+      "<answer>10</answer>": 30
+    },
+    "coordination_index": 1.0,
+    "normalised_coordination_index": 2.0
+  },
+  {
+    "idx": "TA8",
+    "variation-idx": "1",
+    "prompt": "In this task, you have to choose one of the following options. This is the list of options: 1, 10. You will earn the number of points shown on the option you choose. You have been paired with another LLM and you have to guess what it chooses. If you guess correctly, you will receive the number of points indicated on that option. If not, you will receive nothing for that task. Return the option you chose, without the score, between <answer></answer> tags.",
+    "responses": {
+      "<answer>10</answer>": 30
+    },
+    "coordination_index": 1.0,
+    "normalised_coordination_index": 2.0
+  },
+  {
+    "idx": "TA9",
+    "variation-idx": "0",
+    "prompt": "In this task, you have to choose one of the following options. This is the list of options: 10, 10, 10, 1. You will earn the number of points shown on the option you choose. You have been paired with another LLM and you have to guess what it chooses. If you guess correctly, you will receive the number of points indicated on that option. If not, you will receive nothing for that task. Return the option you chose, without the score, between <answer></answer> tags.",
+    "responses": {
+      "<answer>10</answer>": 30
+    },
+    "coordination_index": 1.0,
+    "normalised_coordination_index": 2.0
+  },
+  {
+    "idx": "TA9",
+    "variation-idx": "1",
+    "prompt": "In this task, you have to choose one of the following options. This is the list of options: 1, 10, 10, 10. You will earn the number of points shown on the option you choose. You have been paired with another LLM and you have to guess what it chooses. If you guess correctly, you will receive the number of points indicated on that option. If not, you will receive nothing for that task. Return the option you chose, without the score, between <answer></answer> tags.",
+    "responses": {
+      "<answer>10</answer>": 30
+    },
+    "coordination_index": 1.0,
+    "normalised_coordination_index": 2.0
+  },
+  {
+    "idx": "TA9",
+    "variation-idx": "2",
+    "prompt": "In this task, you have to choose one of the following options. This is the list of options: 10, 10, 1, 10. You will earn the number of points shown on the option you choose. You have been paired with another LLM and you have to guess what it chooses. If you guess correctly, you will receive the number of points indicated on that option. If not, you will receive nothing for that task. Return the option you chose, without the score, between <answer></answer> tags.",
+    "responses": {
+      "<answer>10</answer>": 30
+    },
+    "coordination_index": 1.0,
+    "normalised_coordination_index": 2.0
+  },
+  {
+    "idx": "TA10",
+    "variation-idx": "0",
+    "prompt": "In this task, you have to choose one of the following options. This is the list of options: 10, 10, 10, 10, 10, 1. You will earn the number of points shown on the option you choose. You have been paired with another LLM and you have to guess what it chooses. If you guess correctly, you will receive the number of points indicated on that option. If not, you will receive nothing for that task. Return the option you chose, without the score, between <answer></answer> tags.",
+    "responses": {
+      "<answer>10</answer>": 30
+    },
+    "coordination_index": 1.0,
+    "normalised_coordination_index": 2.0
+  },
+  {
+    "idx": "TA10",
+    "variation-idx": "1",
+    "prompt": "In this task, you have to choose one of the following options. This is the list of options: 1, 10, 10, 10, 10, 10. You will earn the number of points shown on the option you choose. You have been paired with another LLM and you have to guess what it chooses. If you guess correctly, you will receive the number of points indicated on that option. If not, you will receive nothing for that task. Return the option you chose, without the score, between <answer></answer> tags.",
+    "responses": {
+      "<answer>10</answer>": 29,
+      "<answer>analysiswe need to guess what the other llm will choose options list 1 10 10 10 10 10 so there are six options one is 1 five are 10 the other llm presumably will pick one we need to guess which option it chooses since there are many identical 10s but they are distinct options the list includes duplicates but presumably each option is a separate choice even if same value the other llm might pick randomly if random uniform among six probability of picking 10 is 5/6 but there are five identical 10 options but they are separate positions if we need to guess the exact option we could choose any of the 10 options but we need to output the option we chose the value not the index the answer format <answer></answer> with the option we chose without the score the options are numbers 1 or 10 so we output either 1 or 10 to maximize expected points we should guess 10 because higher probability and also higher points so answer 10assistantfinal<answer>10</answer</answer>": 1
+    },
+    "coordination_index": 0.9333333333333333,
+    "normalised_coordination_index": 1.8666666666666667
+  },
+  {
+    "idx": "TA10",
+    "variation-idx": "2",
+    "prompt": "In this task, you have to choose one of the following options. This is the list of options: 10, 10, 1, 10, 10, 10. You will earn the number of points shown on the option you choose. You have been paired with another LLM and you have to guess what it chooses. If you guess correctly, you will receive the number of points indicated on that option. If not, you will receive nothing for that task. Return the option you chose, without the score, between <answer></answer> tags.",
+    "responses": {
+      "<answer>10</answer>": 29,
+      "<answer>analysiswe have a game list of options 10 10 1 10 10 10 so six options five are 10 one is 1 we need to guess what the other llm will choose we want to maximize expected points we need to choose an option presumably pick one of the six positions the other llm will choose some option the description you have been paired with another llm and you have to guess what it chooses if you guess correctly you will receive the number of points indicated on that option so we need to guess which option the other llm will pick the other llm presumably also tries to maximize its own expected points but we dont know its strategy probably the other llm will also try to guess the same might be symmetric the list has many 10s the unique 1 is less attractive so rational llm would pick a 10 but which of the five 10s they are identical so the other llm might pick any of the 10s uniformly if we guess any 10 we have high chance the chance that the other picks a specific 10 among the</answer>": 1
+    },
+    "coordination_index": 0.9333333333333333,
+    "normalised_coordination_index": 1.8666666666666667
+  }
+]

@@ -63,11 +63,16 @@ class LocalLLM(LLM):
         # Build a BitsAndBytesConfig only if quantization is requested
         bnb_config = None
 
-        if quantization == "8bit" and self.model_id != "openai/gpt-oss-120b":
+        openai_models = {"openai/gpt-oss-120b", "openai/gpt-oss-20b"}
+        if self.max_new_tokens is None and self.model_id in openai_models:
+            # Default longer generations for OSS OpenAI models
+            self.max_new_tokens = 4096
+
+        if quantization == "8bit" and self.model_id not in openai_models:
             bnb_config = BitsAndBytesConfig(
                 load_in_8bit=True,
             )
-        elif quantization == "4bit" and self.model_id != "openai/gpt-oss-120b":
+        elif quantization == "4bit" and self.model_id not in openai_models:
             bnb_config = BitsAndBytesConfig(
                 load_in_4bit=True,
                 bnb_4bit_quant_type="nf4",
@@ -119,7 +124,7 @@ class LocalLLM(LLM):
         )
 
         system_prompt = "You are a helpful assistant."
-        if self.model_id == "openai/gpt-oss-120b" and self.reasoning:
+        if self.model_id in openai_models and self.reasoning:
             system_prompt = f"{system_prompt}\nReasoning: {self.reasoning}"
 
         self.chat_template = [
@@ -292,6 +297,7 @@ def load_model(
         "google/gemma-3-27b-it",
         "microsoft/Phi-4-mini-instruct",
         "openai/gpt-oss-120b",
+        "openai/gpt-oss-20b",
     }
 
     if model_id in API_MODELS:

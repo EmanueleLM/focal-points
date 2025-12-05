@@ -1,0 +1,363 @@
+[
+  {
+    "idx": "TA1",
+    "variation-idx": "0",
+    "prompt": "In this task, you have to choose one of the following options. This is the list of options: 10, 10, 10, 10, 9. You will earn the number of points shown on the option you choose. Your earnings are determined by your decisions alone. Choosing an option that is entirely different from the others is highly recommended (for example, in a different category). Return the option you chose, without the score, between <answer></answer> tags.",
+    "responses": {
+      "<answer>9</answer>": 30
+    },
+    "coordination_index": 1.0,
+    "normalised_coordination_index": 2.0
+  },
+  {
+    "idx": "TA1",
+    "variation-idx": "1",
+    "prompt": "In this task, you have to choose one of the following options. This is the list of options: 9, 10, 10, 10, 10. You will earn the number of points shown on the option you choose. Your earnings are determined by your decisions alone. Choosing an option that is entirely different from the others is highly recommended (for example, in a different category). Return the option you chose, without the score, between <answer></answer> tags.",
+    "responses": {
+      "<answer>9</answer>": 30
+    },
+    "coordination_index": 1.0,
+    "normalised_coordination_index": 2.0
+  },
+  {
+    "idx": "TA1",
+    "variation-idx": "2",
+    "prompt": "In this task, you have to choose one of the following options. This is the list of options: 10, 10, 9, 10, 10. You will earn the number of points shown on the option you choose. Your earnings are determined by your decisions alone. Choosing an option that is entirely different from the others is highly recommended (for example, in a different category). Return the option you chose, without the score, between <answer></answer> tags.",
+    "responses": {
+      "<answer>9</answer>": 29,
+      "<answer></answer>": 1
+    },
+    "coordination_index": 0.9333333333333333,
+    "normalised_coordination_index": 1.8666666666666667
+  },
+  {
+    "idx": "TA2",
+    "variation-idx": "0",
+    "prompt": "In this task, you have to choose one of the following options. This is the list of options: 10, 10, 10, 10, 9. You will earn the number of points shown on the option you choose. Your earnings are determined by your decisions alone. Choosing an option that is entirely different from the others is highly recommended (for example, in a different category). Return the option you chose, without the score, between <answer></answer> tags.",
+    "responses": {
+      "<answer>9</answer>": 28,
+      "<answer></answer>": 2
+    },
+    "coordination_index": 0.871264367816092,
+    "normalised_coordination_index": 1.742528735632184
+  },
+  {
+    "idx": "TA2",
+    "variation-idx": "1",
+    "prompt": "In this task, you have to choose one of the following options. This is the list of options: 9, 10, 10, 10, 10. You will earn the number of points shown on the option you choose. Your earnings are determined by your decisions alone. Choosing an option that is entirely different from the others is highly recommended (for example, in a different category). Return the option you chose, without the score, between <answer></answer> tags.",
+    "responses": {
+      "<answer>9</answer>": 30
+    },
+    "coordination_index": 1.0,
+    "normalised_coordination_index": 2.0
+  },
+  {
+    "idx": "TA2",
+    "variation-idx": "2",
+    "prompt": "In this task, you have to choose one of the following options. This is the list of options: 10, 9, 10, 10, 10. You will earn the number of points shown on the option you choose. Your earnings are determined by your decisions alone. Choosing an option that is entirely different from the others is highly recommended (for example, in a different category). Return the option you chose, without the score, between <answer></answer> tags.",
+    "responses": {
+      "<answer>9</answer>": 29,
+      "<answer></answer>": 1
+    },
+    "coordination_index": 0.9333333333333333,
+    "normalised_coordination_index": 1.8666666666666667
+  },
+  {
+    "idx": "TA3",
+    "variation-idx": "0",
+    "prompt": "In this task, you have to choose one of the following options. This is the list of options: 10, 10, 10, 10, 9. You will earn the number of points shown on the option you choose. Your earnings are determined by your decisions alone. Choosing an option that is entirely different from the others is highly recommended (for example, in a different category). Return the option you chose, without the score, between <answer></answer> tags.",
+    "responses": {
+      "<answer>9</answer>": 30
+    },
+    "coordination_index": 1.0,
+    "normalised_coordination_index": 2.0
+  },
+  {
+    "idx": "TA3",
+    "variation-idx": "1",
+    "prompt": "In this task, you have to choose one of the following options. This is the list of options: 9, 10, 10, 10, 10. You will earn the number of points shown on the option you choose. Your earnings are determined by your decisions alone. Choosing an option that is entirely different from the others is highly recommended (for example, in a different category). Return the option you chose, without the score, between <answer></answer> tags.",
+    "responses": {
+      "<answer>9</answer>": 27,
+      "<answer>analysiswe need to parse the instruction the user in this task you have to choose one of the following options this is the list of options 9 10 10 10 10 you will earn the number of points shown on the option you choose your earnings are determined by your decisions alone choosing an option that is entirely different from the others is highly recommended for example in a different category return the option you chose without the score between <answer></answer> tags\n\nwe have options 9 10 10 10 10 so the only distinct option is 9 the instruction says choosing an option that is entirely different from the others is highly recommended for example in a different category so we should choose 9 as its different from the rest 10 then we need to return the option we chose without the score between <answer></answer> tags the option is 9 but without the score the score is the numeric value probably they just want the option text which is 9 so we output <answer>9</answer>assistantfinal<answer></answer>": 1,
+      "<answer></answer>": 1,
+      "<answer>analysiswe need to parse the task the user says in this task you have to choose one of the following options this is the list of options 9 10 10 10 10 you will earn the number of points shown on the option you choose your earnings are determined by your decisions alone choosing an option that is entirely different from the others is highly recommended for example in a different category return the option you chose without the score between <answer></answer> tags\n\nwe have options 9 10 10 10 10 the only unique one is 9 the rest are 10 the instruction says choosing an option that is entirely different from the others is highly recommended for example in a different category so we should choose 9 as its different from the 10s\n\nwe need to return the option we chose without the score between <answer></answer> tags since the option is just a number we should output <answer>9</answer> that satisfies\n\nno other constraints so final answer <answer>9</answer>assistantfinal<answer>9</answer>": 1
+    },
+    "coordination_index": 0.8068965517241379,
+    "normalised_coordination_index": 1.6137931034482758
+  },
+  {
+    "idx": "TA3",
+    "variation-idx": "2",
+    "prompt": "In this task, you have to choose one of the following options. This is the list of options: 10, 10, 10, 9, 10. You will earn the number of points shown on the option you choose. Your earnings are determined by your decisions alone. Choosing an option that is entirely different from the others is highly recommended (for example, in a different category). Return the option you chose, without the score, between <answer></answer> tags.",
+    "responses": {
+      "<answer>9</answer>": 29,
+      "<answer></answer>": 1
+    },
+    "coordination_index": 0.9333333333333333,
+    "normalised_coordination_index": 1.8666666666666667
+  },
+  {
+    "idx": "TA4",
+    "variation-idx": "0",
+    "prompt": "In this task, you have to choose one of the following options. This is the list of options: 10, 10, 10, 10, 9. You will earn the number of points shown on the option you choose. Your earnings are determined by your decisions alone. Choosing an option that is entirely different from the others is highly recommended (for example, in a different category). Return the option you chose, without the score, between <answer></answer> tags.",
+    "responses": {
+      "<answer>9</answer>": 28,
+      "<answer></answer>": 2
+    },
+    "coordination_index": 0.871264367816092,
+    "normalised_coordination_index": 1.742528735632184
+  },
+  {
+    "idx": "TA4",
+    "variation-idx": "1",
+    "prompt": "In this task, you have to choose one of the following options. This is the list of options: 9, 10, 10, 10, 10. You will earn the number of points shown on the option you choose. Your earnings are determined by your decisions alone. Choosing an option that is entirely different from the others is highly recommended (for example, in a different category). Return the option you chose, without the score, between <answer></answer> tags.",
+    "responses": {
+      "<answer>9</answer>": 29,
+      "<answer></answer>": 1
+    },
+    "coordination_index": 0.9333333333333333,
+    "normalised_coordination_index": 1.8666666666666667
+  },
+  {
+    "idx": "TA4",
+    "variation-idx": "2",
+    "prompt": "In this task, you have to choose one of the following options. This is the list of options: 10, 10, 10, 9, 10. You will earn the number of points shown on the option you choose. Your earnings are determined by your decisions alone. Choosing an option that is entirely different from the others is highly recommended (for example, in a different category). Return the option you chose, without the score, between <answer></answer> tags.",
+    "responses": {
+      "<answer>9</answer>": 29,
+      "<answer></answer>": 1
+    },
+    "coordination_index": 0.9333333333333333,
+    "normalised_coordination_index": 1.8666666666666667
+  },
+  {
+    "idx": "TA5",
+    "variation-idx": "0",
+    "prompt": "In this task, you have to choose one of the following options. This is the list of options: 10, 10, 10, 10, 9. You will earn the number of points shown on the option you choose. Your earnings are determined by your decisions alone. Choosing an option that is entirely different from the others is highly recommended (for example, in a different category). Return the option you chose, without the score, between <answer></answer> tags.",
+    "responses": {
+      "<answer>9</answer>": 30
+    },
+    "coordination_index": 1.0,
+    "normalised_coordination_index": 2.0
+  },
+  {
+    "idx": "TA5",
+    "variation-idx": "1",
+    "prompt": "In this task, you have to choose one of the following options. This is the list of options: 9, 10, 10, 10, 10. You will earn the number of points shown on the option you choose. Your earnings are determined by your decisions alone. Choosing an option that is entirely different from the others is highly recommended (for example, in a different category). Return the option you chose, without the score, between <answer></answer> tags.",
+    "responses": {
+      "<answer>9</answer>": 30
+    },
+    "coordination_index": 1.0,
+    "normalised_coordination_index": 2.0
+  },
+  {
+    "idx": "TA5",
+    "variation-idx": "2",
+    "prompt": "In this task, you have to choose one of the following options. This is the list of options: 10, 10, 9, 10, 10. You will earn the number of points shown on the option you choose. Your earnings are determined by your decisions alone. Choosing an option that is entirely different from the others is highly recommended (for example, in a different category). Return the option you chose, without the score, between <answer></answer> tags.",
+    "responses": {
+      "<answer>9</answer>": 29,
+      "<answer>analysiswe need to parse the instruction the user says in this task you have to choose one of the following options this is the list of options 10 10 9 10 10 you will earn the number of points shown on the option you choose your earnings are determined by your decisions alone choosing an option that is entirely different from the others is highly recommended for example in a different category return the option you chose without the score between <answer></answer> tags\n\nwe need to choose one of the options options are numbers 10 10 9 10 10 the instruction choosing an option that is entirely different from the others is highly recommended for example in a different category so we should choose the one thats different 9 because others are 10 so we choose 9 return the option you chose without the score between <answer></answer> tags without the score the option is 9 which is the score itself but they say without the score maybe they mean just the option string probably just 9 so output <answer>9</answer</answer>": 1
+    },
+    "coordination_index": 0.9333333333333333,
+    "normalised_coordination_index": 1.8666666666666667
+  },
+  {
+    "idx": "TA6",
+    "variation-idx": "0",
+    "prompt": "In this task, you have to choose one of the following options. This is the list of options: 10, 10, 10, 10, 9. You will earn the number of points shown on the option you choose. Your earnings are determined by your decisions alone. Choosing an option that is entirely different from the others is highly recommended (for example, in a different category). Return the option you chose, without the score, between <answer></answer> tags.",
+    "responses": {
+      "<answer>9</answer>": 29,
+      "<answer></answer>": 1
+    },
+    "coordination_index": 0.9333333333333333,
+    "normalised_coordination_index": 1.8666666666666667
+  },
+  {
+    "idx": "TA6",
+    "variation-idx": "1",
+    "prompt": "In this task, you have to choose one of the following options. This is the list of options: 9, 10, 10, 10, 10. You will earn the number of points shown on the option you choose. Your earnings are determined by your decisions alone. Choosing an option that is entirely different from the others is highly recommended (for example, in a different category). Return the option you chose, without the score, between <answer></answer> tags.",
+    "responses": {
+      "<answer>9</answer>": 30
+    },
+    "coordination_index": 1.0,
+    "normalised_coordination_index": 2.0
+  },
+  {
+    "idx": "TA6",
+    "variation-idx": "2",
+    "prompt": "In this task, you have to choose one of the following options. This is the list of options: 10, 9, 10, 10, 10. You will earn the number of points shown on the option you choose. Your earnings are determined by your decisions alone. Choosing an option that is entirely different from the others is highly recommended (for example, in a different category). Return the option you chose, without the score, between <answer></answer> tags.",
+    "responses": {
+      "<answer>9</answer>": 27,
+      "<answer></answer>": 3
+    },
+    "coordination_index": 0.8137931034482758,
+    "normalised_coordination_index": 1.6275862068965516
+  },
+  {
+    "idx": "TA7",
+    "variation-idx": "0",
+    "prompt": "In this task, you have to choose one of the following options. This is the list of options: 10, 10, 10, 10, 1. You will earn the number of points shown on the option you choose. Your earnings are determined by your decisions alone. Choosing an option that is entirely different from the others is highly recommended (for example, in a different category). Return the option you chose, without the score, between <answer></answer> tags.",
+    "responses": {
+      "<answer>1</answer>": 30
+    },
+    "coordination_index": 1.0,
+    "normalised_coordination_index": 2.0
+  },
+  {
+    "idx": "TA7",
+    "variation-idx": "1",
+    "prompt": "In this task, you have to choose one of the following options. This is the list of options: 1, 10, 10, 10, 10. You will earn the number of points shown on the option you choose. Your earnings are determined by your decisions alone. Choosing an option that is entirely different from the others is highly recommended (for example, in a different category). Return the option you chose, without the score, between <answer></answer> tags.",
+    "responses": {
+      "<answer>1</answer>": 30
+    },
+    "coordination_index": 1.0,
+    "normalised_coordination_index": 2.0
+  },
+  {
+    "idx": "TA7",
+    "variation-idx": "2",
+    "prompt": "In this task, you have to choose one of the following options. This is the list of options: 10, 1, 10, 10, 10. You will earn the number of points shown on the option you choose. Your earnings are determined by your decisions alone. Choosing an option that is entirely different from the others is highly recommended (for example, in a different category). Return the option you chose, without the score, between <answer></answer> tags.",
+    "responses": {
+      "<answer>1</answer>": 30
+    },
+    "coordination_index": 1.0,
+    "normalised_coordination_index": 2.0
+  },
+  {
+    "idx": "TA8",
+    "variation-idx": "0",
+    "prompt": "In this task, you have to choose one of the following options. This is the list of options: 10, 10, 10, 10, 1. You will earn the number of points shown on the option you choose. Your earnings are determined by your decisions alone. Choosing an option that is entirely different from the others is highly recommended (for example, in a different category). Return the option you chose, without the score, between <answer></answer> tags.",
+    "responses": {
+      "<answer>1</answer>": 29,
+      "<answer></answer>": 1
+    },
+    "coordination_index": 0.9333333333333333,
+    "normalised_coordination_index": 1.8666666666666667
+  },
+  {
+    "idx": "TA8",
+    "variation-idx": "1",
+    "prompt": "In this task, you have to choose one of the following options. This is the list of options: 1, 10, 10, 10, 10. You will earn the number of points shown on the option you choose. Your earnings are determined by your decisions alone. Choosing an option that is entirely different from the others is highly recommended (for example, in a different category). Return the option you chose, without the score, between <answer></answer> tags.",
+    "responses": {
+      "<answer></answer>": 1,
+      "<answer>1</answer>": 29
+    },
+    "coordination_index": 0.9333333333333333,
+    "normalised_coordination_index": 1.8666666666666667
+  },
+  {
+    "idx": "TA8",
+    "variation-idx": "2",
+    "prompt": "In this task, you have to choose one of the following options. This is the list of options: 10, 10, 1, 10, 10. You will earn the number of points shown on the option you choose. Your earnings are determined by your decisions alone. Choosing an option that is entirely different from the others is highly recommended (for example, in a different category). Return the option you chose, without the score, between <answer></answer> tags.",
+    "responses": {
+      "<answer>1</answer>": 30
+    },
+    "coordination_index": 1.0,
+    "normalised_coordination_index": 2.0
+  },
+  {
+    "idx": "TA9",
+    "variation-idx": "0",
+    "prompt": "In this task, you have to choose one of the following options. This is the list of options: 10, 10, 10, 10, 1. You will earn the number of points shown on the option you choose. Your earnings are determined by your decisions alone. Choosing an option that is entirely different from the others is highly recommended (for example, in a different category). Return the option you chose, without the score, between <answer></answer> tags.",
+    "responses": {
+      "<answer>1</answer>": 29,
+      "<answer></answer>": 1
+    },
+    "coordination_index": 0.9333333333333333,
+    "normalised_coordination_index": 1.8666666666666667
+  },
+  {
+    "idx": "TA9",
+    "variation-idx": "1",
+    "prompt": "In this task, you have to choose one of the following options. This is the list of options: 1, 10, 10, 10, 10. You will earn the number of points shown on the option you choose. Your earnings are determined by your decisions alone. Choosing an option that is entirely different from the others is highly recommended (for example, in a different category). Return the option you chose, without the score, between <answer></answer> tags.",
+    "responses": {
+      "<answer>1</answer>": 30
+    },
+    "coordination_index": 1.0,
+    "normalised_coordination_index": 2.0
+  },
+  {
+    "idx": "TA9",
+    "variation-idx": "2",
+    "prompt": "In this task, you have to choose one of the following options. This is the list of options: 10, 10, 10, 1, 10. You will earn the number of points shown on the option you choose. Your earnings are determined by your decisions alone. Choosing an option that is entirely different from the others is highly recommended (for example, in a different category). Return the option you chose, without the score, between <answer></answer> tags.",
+    "responses": {
+      "<answer>1</answer>": 28,
+      "<answer></answer>": 1,
+      "<answer>analysiswe need to parse the task the user says in this task you have to choose one of the following options this is the list of options 10 10 10 1 10 you will earn the number of points shown on the option you choose your earnings are determined by your decisions alone choosing an option that is entirely different from the others is highly recommended for example in a different category return the option you chose without the score between <answer></answer> tags\n\nwe have options 10 10 10 1 10 so four 10s and one 1 choosing an option that is entirely different from the others is highly recommended for example in a different category so we should choose the outlier which is 1 return the option you chose without the score between <answer></answer> tags without the score the option is just the number but without the score maybe means just the text of the option the option is the number itself so we should output <answer>1</answer> probably correctassistantfinal<answer>1</answer</answer>": 1
+    },
+    "coordination_index": 0.8689655172413793,
+    "normalised_coordination_index": 1.7379310344827585
+  },
+  {
+    "idx": "TA10",
+    "variation-idx": "0",
+    "prompt": "In this task, you have to choose one of the following options. This is the list of options: 10, 10, 10, 10, 1. You will earn the number of points shown on the option you choose. Your earnings are determined by your decisions alone. Choosing an option that is entirely different from the others is highly recommended (for example, in a different category). Return the option you chose, without the score, between <answer></answer> tags.",
+    "responses": {
+      "<answer>1</answer>": 30
+    },
+    "coordination_index": 1.0,
+    "normalised_coordination_index": 2.0
+  },
+  {
+    "idx": "TA10",
+    "variation-idx": "1",
+    "prompt": "In this task, you have to choose one of the following options. This is the list of options: 1, 10, 10, 10, 10. You will earn the number of points shown on the option you choose. Your earnings are determined by your decisions alone. Choosing an option that is entirely different from the others is highly recommended (for example, in a different category). Return the option you chose, without the score, between <answer></answer> tags.",
+    "responses": {
+      "<answer>1</answer>": 28,
+      "<answer></answer>": 2
+    },
+    "coordination_index": 0.871264367816092,
+    "normalised_coordination_index": 1.742528735632184
+  },
+  {
+    "idx": "TA11",
+    "variation-idx": "0",
+    "prompt": "In this task, you have to choose one of the following options. This is the list of options: 10, 10, 10, 10, 1. You will earn the number of points shown on the option you choose. Your earnings are determined by your decisions alone. Choosing an option that is entirely different from the others is highly recommended (for example, in a different category). Return the option you chose, without the score, between <answer></answer> tags.",
+    "responses": {
+      "<answer>1</answer>": 30
+    },
+    "coordination_index": 1.0,
+    "normalised_coordination_index": 2.0
+  },
+  {
+    "idx": "TA11",
+    "variation-idx": "1",
+    "prompt": "In this task, you have to choose one of the following options. This is the list of options: 1, 10, 10, 10, 10. You will earn the number of points shown on the option you choose. Your earnings are determined by your decisions alone. Choosing an option that is entirely different from the others is highly recommended (for example, in a different category). Return the option you chose, without the score, between <answer></answer> tags.",
+    "responses": {
+      "<answer>1</answer>": 30
+    },
+    "coordination_index": 1.0,
+    "normalised_coordination_index": 2.0
+  },
+  {
+    "idx": "TA12",
+    "variation-idx": "0",
+    "prompt": "In this task, you have to choose one of the following options. This is the list of options: 10, 10, 10, 10, 1. You will earn the number of points shown on the option you choose. Your earnings are determined by your decisions alone. Choosing an option that is entirely different from the others is highly recommended (for example, in a different category). Return the option you chose, without the score, between <answer></answer> tags.",
+    "responses": {
+      "<answer>1</answer>": 30
+    },
+    "coordination_index": 1.0,
+    "normalised_coordination_index": 2.0
+  },
+  {
+    "idx": "TA12",
+    "variation-idx": "1",
+    "prompt": "In this task, you have to choose one of the following options. This is the list of options: 1, 10, 10, 10, 10. You will earn the number of points shown on the option you choose. Your earnings are determined by your decisions alone. Choosing an option that is entirely different from the others is highly recommended (for example, in a different category). Return the option you chose, without the score, between <answer></answer> tags.",
+    "responses": {
+      "<answer>1</answer>": 30
+    },
+    "coordination_index": 1.0,
+    "normalised_coordination_index": 2.0
+  },
+  {
+    "idx": "TA12",
+    "variation-idx": "2",
+    "prompt": "In this task, you have to choose one of the following options. This is the list of options: 10, 1, 10, 10, 10. You will earn the number of points shown on the option you choose. Your earnings are determined by your decisions alone. Choosing an option that is entirely different from the others is highly recommended (for example, in a different category). Return the option you chose, without the score, between <answer></answer> tags.",
+    "responses": {
+      "<answer>1</answer>": 28,
+      "<answer></answer>": 1,
+      "<answer>analysiswe need to parse the instruction the user says in this task you have to choose one of the following options this is the list of options 10 1 10 10 10 you will earn the number of points shown on the option you choose your earnings are determined by your decisions alone choosing an option that is entirely different from the others is highly recommended for example in a different category return the option you chose without the score between <answer></answer> tags\n\nso options 10 1 10 10 10 the only different one is 1 so we should choose 1 return the option chosen without the score between <answer></answer> tags without the score maybe means just the option but the option is the score they want the option we chose but not the score possibly they want the value usually these tasks return the option you chose without the score hmm ambiguous probably they want the textual representation of the option like 1 without any extra explanation so output <answer>1</answer>assistantfinal<answer>1</answer>": 1
+    },
+    "coordination_index": 0.8689655172413793,
+    "normalised_coordination_index": 1.7379310344827585
+  }
+]

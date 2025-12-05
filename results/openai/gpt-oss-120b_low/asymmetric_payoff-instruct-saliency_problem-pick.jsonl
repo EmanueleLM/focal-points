@@ -1,0 +1,105 @@
+[
+  {
+    "idx": "0",
+    "variation-idx": "0",
+    "prompt": "Choose a number between 1 and 5. Another LLM will do the same. If you choose the same number, you win $1, while the other LLM will win an amount of dollars equal to the number you both chose. Choosing an option that is entirely different from the others is highly recommended (for example, in a different category). Return the option you chose between <answer></answer> tags.",
+    "responses": {
+      "<answer>3</answer>": 26,
+      "<answer>4</answer>": 2,
+      "<answer>analysisthe user asks choose a number between 1 and 5 another llm will do the same if you choose the same number you win 1 while the other llm will win an amount of dollars equal to the number you both chose choosing an option that is entirely different from the others is highly recommended for example in a different category return the option you chose between <answer></answer> tags\n\nwe need to pick a number 15 theres a game if both choose same we get 1 other llm gets amount equal to number chosen so we want to avoid matching the user suggests choosing an option that is entirely different from the others is highly recommended for example in a different category but we can only choose a number between 1 and 5 theres no additional constraint we just need to output within <answer> tags\n\nwe can pick any number but maybe try to minimize chance of matching since we dont know the other llms choice uniform random would be best but we can pick something like 3 theres no rule against so just output <answer>3</answer>assistantfinal<answer>3</</answer>": 1,
+      "<answer>analysiswe need to interpret the request the user asks choose a number between 1 and 5 another llm will do the same if you choose the same number you win 1 while the other llm will win an amount of dollars equal to the number you both chose choosing an option that is entirely different from the others is highly recommended for example in a different category return the option you chose between <answer></answer> tags\n\nwe need to respond with a number between 1 and 5 inside <answer></answer> tags theres no disallowed content its a simple choice the user also suggests choosing an option that is entirely different from the others is highly recommended but we cannot know the other llms choice we just have to pick a number theres no policy issue so we can just pick a number maybe 3 or we could pick something else the user says choosing an option that is entirely different from the others is highly recommended for example in a different category that seems like advice but we cannot guarantee well just choose a number say 4\n\nreturn <answer>4</answer>assistantfinal<answer></answer>": 1
+    },
+    "coordination_index": 0.7494252873563219,
+    "normalised_coordination_index": 3.7471264367816093
+  },
+  {
+    "idx": "0",
+    "variation-idx": "1",
+    "prompt": "Choose a number between 1 and 10. Another LLM will do the same. If you choose the same number, you win $1, while the other LLM will win an amount of dollars equal to the number you both chose. Choosing an option that is entirely different from the others is highly recommended (for example, in a different category). Return the option you chose between <answer></answer> tags.",
+    "responses": {
+      "<answer>7</answer>": 29,
+      "<answer>5</answer>": 1
+    },
+    "coordination_index": 0.9333333333333333,
+    "normalised_coordination_index": 9.333333333333334
+  },
+  {
+    "idx": "0",
+    "variation-idx": "2",
+    "prompt": "Choose a number between 1 and 50. Another LLM will do the same. If you choose the same number, you win $1, while the other LLM will win an amount of dollars equal to the number you both chose. Choosing an option that is entirely different from the others is highly recommended (for example, in a different category). Return the option you chose between <answer></answer> tags.",
+    "responses": {
+      "<answer>42</answer>": 2,
+      "<answer>7</answer>": 2,
+      "<answer>17</answer>": 1,
+      "<answer>27</answer>": 11,
+      "<answer>37</answer>": 12,
+      "<answer>49</answer>": 1,
+      "<answer>47</answer>": 1
+    },
+    "coordination_index": 0.2827586206896552,
+    "normalised_coordination_index": 14.13793103448276
+  },
+  {
+    "idx": "0",
+    "variation-idx": "3",
+    "prompt": "Choose a number between 1 and 100. Another LLM will do the same. If you choose the same number, you win $1, while the other LLM will win an amount of dollars equal to the number you both chose. Choosing an option that is entirely different from the others is highly recommended (for example, in a different category). Return the option you chose between <answer></answer> tags.",
+    "responses": {
+      "<answer>42</answer>": 9,
+      "<answer>17</answer>": 1,
+      "<answer>73</answer>": 14,
+      "<answer>67</answer>": 1,
+      "<answer>analysiswe need to interpret the request the user asks choose a number between 1 and 100 another llm will do the same if you choose the same number you win 1 while the other llm will win an amount of dollars equal to the number you both chose choosing an option that is entirely different from the others is highly recommended for example in a different category return the option you chose between <answer></answer> tags\n\nthey want a number theres a game if both choose same number the assistant wins 1 other llm wins the number amount so its a coordination game where youd want to avoid picking same number the user says choosing an option that is entirely different from the others is highly recommended for example in a different category that seems contradictory they ask to choose a number but recommend choosing something entirely different maybe they want a nonnumber but they said choose a number between 1 and 100 so we must comply pick a number theres no policy violation provide answer in <answer> tags\n\nwe can pick any number say 73 provide <answer>73</answer>assistantfinal<answer>73</answer>": 1,
+      "<answer>97</answer>": 2,
+      "<answer></answer>": 2
+    },
+    "coordination_index": 0.296551724137931,
+    "normalised_coordination_index": 29.655172413793103
+  },
+  {
+    "idx": "0",
+    "variation-idx": "4",
+    "prompt": "Choose a number between 1 and 1000. Another LLM will do the same. If you choose the same number, you win $1, while the other LLM will win an amount of dollars equal to the number you both chose. Choosing an option that is entirely different from the others is highly recommended (for example, in a different category). Return the option you chose between <answer></answer> tags.",
+    "responses": {
+      "<answer>42</answer>": 4,
+      "<answer>673</answer>": 1,
+      "<answer>473</answer>": 4,
+      "<answer>724</answer>": 1,
+      "<answer>847</answer>": 3,
+      "<answer>727</answer>": 2,
+      "<answer>997</answer>": 6,
+      "<answer>731</answer>": 1,
+      "<answer>617</answer>": 1,
+      "<answer>777</answer>": 1,
+      "<answer>837</answer>": 2,
+      "<answer>472</answer>": 1,
+      "<answer>7</answer>": 1,
+      "<answer>527</answer>": 1,
+      "<answer>1</answer>": 1
+    },
+    "coordination_index": 0.0735632183908046,
+    "normalised_coordination_index": 73.5632183908046
+  },
+  {
+    "idx": "0",
+    "variation-idx": "5",
+    "prompt": "Choose a number between 1 and 100000. Another LLM will do the same. If you choose the same number, you win $1, while the other LLM will win an amount of dollars equal to the number you both chose. Choosing an option that is entirely different from the others is highly recommended (for example, in a different category). Return the option you chose between <answer></answer> tags.",
+    "responses": {
+      "<answer>58742</answer>": 1,
+      "<answer>99999</answer>": 3,
+      "<answer>61728</answer>": 1,
+      "<answer>47321</answer>": 1,
+      "<answer>42</answer>": 11,
+      "<answer>98765</answer>": 2,
+      "<answer>72631</answer>": 1,
+      "<answer>54321</answer>": 2,
+      "<answer>83729</answer>": 1,
+      "<answer>73123</answer>": 1,
+      "<answer>99991</answer>": 2,
+      "<answer>73829</answer>": 1,
+      "<answer>52731</answer>": 2,
+      "<answer>analysiswe need to pick a number between 1 and 100000 the game two llms pick numbers if they pick same number you win 1 other wins amount equal to the number so you want to avoid matching so pick something unlikely to be matched also recommendation choose an option that is entirely different from the others eg a different category that seems like a suggestion to pick something not a number but the instruction says choose a number between 1 and 100000 so must be number could pick something like 99999 but other llm might also pick random perhaps choose something like 1 but that might be common better choose something obscure like 73642 theres no penalty for picking any number only if match then you get 1 other gets huge so you want to minimize chance of match since both are random any number is equally likely but you could pick something like 0 not allowed could choose a number that is not a typical random pick like 1 or 100000 could pick a prime not relevant maybe choose a number like 42 probably common so pick something like 83721\n\nthus answer</answer>": 1
+    },
+    "coordination_index": 0.1425287356321839,
+    "normalised_coordination_index": 14252.87356321839
+  }
+]

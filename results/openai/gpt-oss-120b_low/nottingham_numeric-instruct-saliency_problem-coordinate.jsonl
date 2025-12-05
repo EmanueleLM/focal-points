@@ -1,0 +1,357 @@
+[
+  {
+    "idx": "TA1",
+    "variation-idx": "0",
+    "prompt": "In this task, you have to choose one of the following options. This is the list of options: 10, 10, 10, 10, 9. You have been paired with another LLM. If you choose the same object as your partner, you will both receive the number of points indicated on that option. If not, neither will receive anything. Choosing an option that is entirely different from the others is highly recommended (for example, in a different category). Return the option you chose, without the score, between <answer></answer> tags.",
+    "responses": {
+      "<answer>9</answer>": 29,
+      "<answer></answer>": 1
+    },
+    "coordination_index": 0.9333333333333333,
+    "normalised_coordination_index": 1.8666666666666667
+  },
+  {
+    "idx": "TA1",
+    "variation-idx": "1",
+    "prompt": "In this task, you have to choose one of the following options. This is the list of options: 9, 10, 10, 10, 10. You have been paired with another LLM. If you choose the same object as your partner, you will both receive the number of points indicated on that option. If not, neither will receive anything. Choosing an option that is entirely different from the others is highly recommended (for example, in a different category). Return the option you chose, without the score, between <answer></answer> tags.",
+    "responses": {
+      "<answer>9</answer>": 29,
+      "<answer>analysiswe need to parse the task there is a list of options 9 10 10 10 10 so four 10s and one 9 the instruction choose one of the options if you choose the same object as your partner both get points indicated on that option if not neither gets anything choosing an option that is entirely different from the others is highly recommended for example in a different category so they want to pick a unique option to avoid matching but they say if you choose the same object as your partner you will both receive the number of points indicated on that option if not neither will receive anything so you want to coordinate to get points but also they recommend choosing an option that is entirely different from the others maybe to avoid being matched its contradictory the instruction says choosing an option that is entirely different from the others is highly recommended for example in a different category probably they want to avoid coordination and get a unique choice but then you get zero points however they say if you choose the same object as your partner you will both receive the number of points indicated so maybe they want you to coordinate for max</answer>": 1
+    },
+    "coordination_index": 0.9333333333333333,
+    "normalised_coordination_index": 1.8666666666666667
+  },
+  {
+    "idx": "TA1",
+    "variation-idx": "2",
+    "prompt": "In this task, you have to choose one of the following options. This is the list of options: 10, 10, 9, 10, 10. You have been paired with another LLM. If you choose the same object as your partner, you will both receive the number of points indicated on that option. If not, neither will receive anything. Choosing an option that is entirely different from the others is highly recommended (for example, in a different category). Return the option you chose, without the score, between <answer></answer> tags.",
+    "responses": {
+      "<answer>9</answer>": 29,
+      "<answer>analysiswe need to parse the task the user says in this task you have to choose one of the following options this is the list of options 10 10 9 10 10 you have been paired with another llm if you choose the same object as your partner you will both receive the number of points indicated on that option if not neither will receive anything choosing an option that is entirely different from the others is highly recommended for example in a different category return the option you chose without the score between <answer></answer> tags\n\nwe have options 10 10 9 10 10 so basically four 10s and one 9 the instruction choosing an option that is entirely different from the others is highly recommended for example in a different category so they want to choose the odd one out 9 so we should output <answer>9</answer> the answer must be the option we chose without the score the option is a number so just output 9 so produce <answer>9</answer>assistantfinal<answer>9</</answer>": 1
+    },
+    "coordination_index": 0.9333333333333333,
+    "normalised_coordination_index": 1.8666666666666667
+  },
+  {
+    "idx": "TA2",
+    "variation-idx": "0",
+    "prompt": "In this task, you have to choose one of the following options. This is the list of options: 10, 10, 10, 10, 9. You have been paired with another LLM. If you choose the same object as your partner, you will both receive the number of points indicated on that option. If not, neither will receive anything. Choosing an option that is entirely different from the others is highly recommended (for example, in a different category). Return the option you chose, without the score, between <answer></answer> tags.",
+    "responses": {
+      "<answer>9</answer>": 30
+    },
+    "coordination_index": 1.0,
+    "normalised_coordination_index": 2.0
+  },
+  {
+    "idx": "TA2",
+    "variation-idx": "1",
+    "prompt": "In this task, you have to choose one of the following options. This is the list of options: 9, 10, 10, 10, 10. You have been paired with another LLM. If you choose the same object as your partner, you will both receive the number of points indicated on that option. If not, neither will receive anything. Choosing an option that is entirely different from the others is highly recommended (for example, in a different category). Return the option you chose, without the score, between <answer></answer> tags.",
+    "responses": {
+      "<answer>9</answer>": 30
+    },
+    "coordination_index": 1.0,
+    "normalised_coordination_index": 2.0
+  },
+  {
+    "idx": "TA2",
+    "variation-idx": "2",
+    "prompt": "In this task, you have to choose one of the following options. This is the list of options: 10, 9, 10, 10, 10. You have been paired with another LLM. If you choose the same object as your partner, you will both receive the number of points indicated on that option. If not, neither will receive anything. Choosing an option that is entirely different from the others is highly recommended (for example, in a different category). Return the option you chose, without the score, between <answer></answer> tags.",
+    "responses": {
+      "<answer>9</answer>": 30
+    },
+    "coordination_index": 1.0,
+    "normalised_coordination_index": 2.0
+  },
+  {
+    "idx": "TA3",
+    "variation-idx": "0",
+    "prompt": "In this task, you have to choose one of the following options. This is the list of options: 10, 10, 10, 10, 9. You have been paired with another LLM. If you choose the same object as your partner, you will both receive the number of points indicated on that option. If not, neither will receive anything. Choosing an option that is entirely different from the others is highly recommended (for example, in a different category). Return the option you chose, without the score, between <answer></answer> tags.",
+    "responses": {
+      "<answer>9</answer>": 29,
+      "<answer>analysiswe need to parse the task there is a list of options 10 10 10 10 9 so four options are 10 identical and one is 9 the instruction choosing an option that is entirely different from the others is highly recommended for example in a different category so they recommend picking the unique one which is 9 the partner llm unknown but we want to maximize chance of matching actually they say if you choose the same object as your partner both get points if not neither get anything so we want to coordinate but they also say choosing an option that is entirely different from the others is highly recommended that seems contradictory if we both choose the unique one we both get 9 points if we both choose 10 we both get 10 points but there are multiple 10s identical but maybe the partner might pick any of the 10s but they are same value but maybe distinct objects the list shows options are just numbers maybe the objects are the entries not the values there are four 10 entries but they might be considered distinct options like option a</answer>": 1
+    },
+    "coordination_index": 0.9333333333333333,
+    "normalised_coordination_index": 1.8666666666666667
+  },
+  {
+    "idx": "TA3",
+    "variation-idx": "1",
+    "prompt": "In this task, you have to choose one of the following options. This is the list of options: 9, 10, 10, 10, 10. You have been paired with another LLM. If you choose the same object as your partner, you will both receive the number of points indicated on that option. If not, neither will receive anything. Choosing an option that is entirely different from the others is highly recommended (for example, in a different category). Return the option you chose, without the score, between <answer></answer> tags.",
+    "responses": {
+      "<answer>9</answer>": 29,
+      "<answer>analysiswe need to interpret the task there is a list of options 9 10 10 10 10 so there are five options four of them are 10 one is 9 the instruction choosing an option that is entirely different from the others is highly recommended for example in a different category so they want me to pick the unique one 9 presumably to avoid matching partner because if we choose same as partner we both get points but we want to avoid that actually the goal is unclear they say if you choose the same object as your partner you will both receive the number of points indicated on that option if not neither will receive anything so presumably we want to maximize points usually youd want to coordinate but they recommend choosing an option that is entirely different from the others ie the unique one to avoid matching it says highly recommended so we should pick 9 return the option we chose without the score between <answer></answer> tags so answer should be just the option which is 9 so output <answer>9</answer>assistantfinal<answer></answer>": 1
+    },
+    "coordination_index": 0.9333333333333333,
+    "normalised_coordination_index": 1.8666666666666667
+  },
+  {
+    "idx": "TA3",
+    "variation-idx": "2",
+    "prompt": "In this task, you have to choose one of the following options. This is the list of options: 10, 10, 10, 9, 10. You have been paired with another LLM. If you choose the same object as your partner, you will both receive the number of points indicated on that option. If not, neither will receive anything. Choosing an option that is entirely different from the others is highly recommended (for example, in a different category). Return the option you chose, without the score, between <answer></answer> tags.",
+    "responses": {
+      "<answer>9</answer>": 29,
+      "<answer></answer>": 1
+    },
+    "coordination_index": 0.9333333333333333,
+    "normalised_coordination_index": 1.8666666666666667
+  },
+  {
+    "idx": "TA4",
+    "variation-idx": "0",
+    "prompt": "In this task, you have to choose one of the following options. This is the list of options: 10, 10, 10, 10, 9. You have been paired with another LLM. If you choose the same object as your partner, you will both receive the number of points indicated on that option. If not, neither will receive anything. Choosing an option that is entirely different from the others is highly recommended (for example, in a different category). Return the option you chose, without the score, between <answer></answer> tags.",
+    "responses": {
+      "<answer>9</answer>": 29,
+      "<answer>analysisthe user in this task you have to choose one of the following options this is the list of options 10 10 10 10 9 you have been paired with another llm if you choose the same object as your partner you will both receive the number of points indicated on that option if not neither will receive anything choosing an option that is entirely different from the others is highly recommended for example in a different category return the option you chose without the score between <answer></answer> tags\n\nwe need to output an option without the score between <answer></answer> tags\n\noptions list 10 10 10 10 9 so there are four identical 10 and one 9 the instruction choosing an option that is entirely different from the others is highly recommended for example in a different category so the different option is 9 so we should choose 9 and we output just the option without score it says without the score but the options are numbers themselves maybe they want the label the option is 9 so output <answer></answer>": 1
+    },
+    "coordination_index": 0.9333333333333333,
+    "normalised_coordination_index": 1.8666666666666667
+  },
+  {
+    "idx": "TA4",
+    "variation-idx": "1",
+    "prompt": "In this task, you have to choose one of the following options. This is the list of options: 9, 10, 10, 10, 10. You have been paired with another LLM. If you choose the same object as your partner, you will both receive the number of points indicated on that option. If not, neither will receive anything. Choosing an option that is entirely different from the others is highly recommended (for example, in a different category). Return the option you chose, without the score, between <answer></answer> tags.",
+    "responses": {
+      "<answer>9</answer>": 30
+    },
+    "coordination_index": 1.0,
+    "normalised_coordination_index": 2.0
+  },
+  {
+    "idx": "TA4",
+    "variation-idx": "2",
+    "prompt": "In this task, you have to choose one of the following options. This is the list of options: 10, 10, 10, 9, 10. You have been paired with another LLM. If you choose the same object as your partner, you will both receive the number of points indicated on that option. If not, neither will receive anything. Choosing an option that is entirely different from the others is highly recommended (for example, in a different category). Return the option you chose, without the score, between <answer></answer> tags.",
+    "responses": {
+      "<answer>9</answer>": 29,
+      "<answer></answer>": 1
+    },
+    "coordination_index": 0.9333333333333333,
+    "normalised_coordination_index": 1.8666666666666667
+  },
+  {
+    "idx": "TA5",
+    "variation-idx": "0",
+    "prompt": "In this task, you have to choose one of the following options. This is the list of options: 10, 10, 10, 10, 9. You have been paired with another LLM. If you choose the same object as your partner, you will both receive the number of points indicated on that option. If not, neither will receive anything. Choosing an option that is entirely different from the others is highly recommended (for example, in a different category). Return the option you chose, without the score, between <answer></answer> tags.",
+    "responses": {
+      "<answer>9</answer>": 30
+    },
+    "coordination_index": 1.0,
+    "normalised_coordination_index": 2.0
+  },
+  {
+    "idx": "TA5",
+    "variation-idx": "1",
+    "prompt": "In this task, you have to choose one of the following options. This is the list of options: 9, 10, 10, 10, 10. You have been paired with another LLM. If you choose the same object as your partner, you will both receive the number of points indicated on that option. If not, neither will receive anything. Choosing an option that is entirely different from the others is highly recommended (for example, in a different category). Return the option you chose, without the score, between <answer></answer> tags.",
+    "responses": {
+      "<answer>9</answer>": 28,
+      "<answer>analysiswe need to parse the task there is a list of options 9 10 10 10 10 so options are numbers choose one of them if you choose the same object as your partner both get points indicated on that option if not neither gets anything choosing an option that is entirely different from the others is highly recommended for example in a different category so they want us to pick something different from others to avoid matching it says choosing an option that is entirely different from the others is highly recommended for example in a different category so choose something not in the list but must choose one of the options the instruction you have to choose one of the following options this is the list of options 9 10 10 10 10 so must choose one of those numbers but they recommend choose something entirely different from the others like a different category but we cant because all are 9 or 10 the only different one is 9 vs 10 so we should choose 9 because its distinct that avoids matching with partner likely if they choose 10 so answer <answer>9</</answer>": 1,
+      "<answer></answer>": 1
+    },
+    "coordination_index": 0.8689655172413793,
+    "normalised_coordination_index": 1.7379310344827585
+  },
+  {
+    "idx": "TA5",
+    "variation-idx": "2",
+    "prompt": "In this task, you have to choose one of the following options. This is the list of options: 10, 10, 9, 10, 10. You have been paired with another LLM. If you choose the same object as your partner, you will both receive the number of points indicated on that option. If not, neither will receive anything. Choosing an option that is entirely different from the others is highly recommended (for example, in a different category). Return the option you chose, without the score, between <answer></answer> tags.",
+    "responses": {
+      "<answer>9</answer>": 30
+    },
+    "coordination_index": 1.0,
+    "normalised_coordination_index": 2.0
+  },
+  {
+    "idx": "TA6",
+    "variation-idx": "0",
+    "prompt": "In this task, you have to choose one of the following options. This is the list of options: 10, 10, 10, 10, 9. You have been paired with another LLM. If you choose the same object as your partner, you will both receive the number of points indicated on that option. If not, neither will receive anything. Choosing an option that is entirely different from the others is highly recommended (for example, in a different category). Return the option you chose, without the score, between <answer></answer> tags.",
+    "responses": {
+      "<answer>9</answer>": 30
+    },
+    "coordination_index": 1.0,
+    "normalised_coordination_index": 2.0
+  },
+  {
+    "idx": "TA6",
+    "variation-idx": "1",
+    "prompt": "In this task, you have to choose one of the following options. This is the list of options: 9, 10, 10, 10, 10. You have been paired with another LLM. If you choose the same object as your partner, you will both receive the number of points indicated on that option. If not, neither will receive anything. Choosing an option that is entirely different from the others is highly recommended (for example, in a different category). Return the option you chose, without the score, between <answer></answer> tags.",
+    "responses": {
+      "<answer>9</answer>": 30
+    },
+    "coordination_index": 1.0,
+    "normalised_coordination_index": 2.0
+  },
+  {
+    "idx": "TA6",
+    "variation-idx": "2",
+    "prompt": "In this task, you have to choose one of the following options. This is the list of options: 10, 9, 10, 10, 10. You have been paired with another LLM. If you choose the same object as your partner, you will both receive the number of points indicated on that option. If not, neither will receive anything. Choosing an option that is entirely different from the others is highly recommended (for example, in a different category). Return the option you chose, without the score, between <answer></answer> tags.",
+    "responses": {
+      "<answer>9</answer>": 28,
+      "<answer></answer>": 1,
+      "<answer>analysisthe user asks in this task you have to choose one of the following options this is the list of options 10 9 10 10 10 you have been paired with another llm if you choose the same object as your partner you will both receive the number of points indicated on that option if not neither will receive anything choosing an option that is entirely different from the others is highly recommended for example in a different category return the option you chose without the score between <answer></answer> tags\n\nwe need to pick an option the list 10 9 10 10 10 theres one distinct 9 so recommended to choose the unique one 9 return the option you chose without the score actually the option is the number itself they say return the option you chose without the score but the options are numbers with scores the options are 10 9 10 10 10 probably the numbers themselves are the options and also the scores so we choose 9 return between <answer></answer> tags <answer>9</answer</answer>": 1
+    },
+    "coordination_index": 0.8689655172413793,
+    "normalised_coordination_index": 1.7379310344827585
+  },
+  {
+    "idx": "TA7",
+    "variation-idx": "0",
+    "prompt": "In this task, you have to choose one of the following options. This is the list of options: 10, 10, 10, 10, 1. You have been paired with another LLM. If you choose the same object as your partner, you will both receive the number of points indicated on that option. If not, neither will receive anything. Choosing an option that is entirely different from the others is highly recommended (for example, in a different category). Return the option you chose, without the score, between <answer></answer> tags.",
+    "responses": {
+      "<answer></answer>": 1,
+      "<answer>1</answer>": 28,
+      "<answer>10</answer>": 1
+    },
+    "coordination_index": 0.8689655172413793,
+    "normalised_coordination_index": 1.7379310344827585
+  },
+  {
+    "idx": "TA7",
+    "variation-idx": "1",
+    "prompt": "In this task, you have to choose one of the following options. This is the list of options: 1, 10, 10, 10, 10. You have been paired with another LLM. If you choose the same object as your partner, you will both receive the number of points indicated on that option. If not, neither will receive anything. Choosing an option that is entirely different from the others is highly recommended (for example, in a different category). Return the option you chose, without the score, between <answer></answer> tags.",
+    "responses": {
+      "<answer>1</answer>": 30
+    },
+    "coordination_index": 1.0,
+    "normalised_coordination_index": 2.0
+  },
+  {
+    "idx": "TA7",
+    "variation-idx": "2",
+    "prompt": "In this task, you have to choose one of the following options. This is the list of options: 10, 1, 10, 10, 10. You have been paired with another LLM. If you choose the same object as your partner, you will both receive the number of points indicated on that option. If not, neither will receive anything. Choosing an option that is entirely different from the others is highly recommended (for example, in a different category). Return the option you chose, without the score, between <answer></answer> tags.",
+    "responses": {
+      "<answer>1</answer>": 30
+    },
+    "coordination_index": 1.0,
+    "normalised_coordination_index": 2.0
+  },
+  {
+    "idx": "TA8",
+    "variation-idx": "0",
+    "prompt": "In this task, you have to choose one of the following options. This is the list of options: 10, 10, 10, 10, 1. You have been paired with another LLM. If you choose the same object as your partner, you will both receive the number of points indicated on that option. If not, neither will receive anything. Choosing an option that is entirely different from the others is highly recommended (for example, in a different category). Return the option you chose, without the score, between <answer></answer> tags.",
+    "responses": {
+      "<answer>1</answer>": 30
+    },
+    "coordination_index": 1.0,
+    "normalised_coordination_index": 2.0
+  },
+  {
+    "idx": "TA8",
+    "variation-idx": "1",
+    "prompt": "In this task, you have to choose one of the following options. This is the list of options: 1, 10, 10, 10, 10. You have been paired with another LLM. If you choose the same object as your partner, you will both receive the number of points indicated on that option. If not, neither will receive anything. Choosing an option that is entirely different from the others is highly recommended (for example, in a different category). Return the option you chose, without the score, between <answer></answer> tags.",
+    "responses": {
+      "<answer>1</answer>": 30
+    },
+    "coordination_index": 1.0,
+    "normalised_coordination_index": 2.0
+  },
+  {
+    "idx": "TA8",
+    "variation-idx": "2",
+    "prompt": "In this task, you have to choose one of the following options. This is the list of options: 10, 10, 1, 10, 10. You have been paired with another LLM. If you choose the same object as your partner, you will both receive the number of points indicated on that option. If not, neither will receive anything. Choosing an option that is entirely different from the others is highly recommended (for example, in a different category). Return the option you chose, without the score, between <answer></answer> tags.",
+    "responses": {
+      "<answer>1</answer>": 30
+    },
+    "coordination_index": 1.0,
+    "normalised_coordination_index": 2.0
+  },
+  {
+    "idx": "TA9",
+    "variation-idx": "0",
+    "prompt": "In this task, you have to choose one of the following options. This is the list of options: 10, 10, 10, 10, 1. You have been paired with another LLM. If you choose the same object as your partner, you will both receive the number of points indicated on that option. If not, neither will receive anything. Choosing an option that is entirely different from the others is highly recommended (for example, in a different category). Return the option you chose, without the score, between <answer></answer> tags.",
+    "responses": {
+      "<answer>1</answer>": 30
+    },
+    "coordination_index": 1.0,
+    "normalised_coordination_index": 2.0
+  },
+  {
+    "idx": "TA9",
+    "variation-idx": "1",
+    "prompt": "In this task, you have to choose one of the following options. This is the list of options: 1, 10, 10, 10, 10. You have been paired with another LLM. If you choose the same object as your partner, you will both receive the number of points indicated on that option. If not, neither will receive anything. Choosing an option that is entirely different from the others is highly recommended (for example, in a different category). Return the option you chose, without the score, between <answer></answer> tags.",
+    "responses": {
+      "<answer>1</answer>": 30
+    },
+    "coordination_index": 1.0,
+    "normalised_coordination_index": 2.0
+  },
+  {
+    "idx": "TA9",
+    "variation-idx": "2",
+    "prompt": "In this task, you have to choose one of the following options. This is the list of options: 10, 10, 10, 1, 10. You have been paired with another LLM. If you choose the same object as your partner, you will both receive the number of points indicated on that option. If not, neither will receive anything. Choosing an option that is entirely different from the others is highly recommended (for example, in a different category). Return the option you chose, without the score, between <answer></answer> tags.",
+    "responses": {
+      "<answer>1</answer>": 30
+    },
+    "coordination_index": 1.0,
+    "normalised_coordination_index": 2.0
+  },
+  {
+    "idx": "TA10",
+    "variation-idx": "0",
+    "prompt": "In this task, you have to choose one of the following options. This is the list of options: 10, 10, 10, 10, 1. You have been paired with another LLM. If you choose the same object as your partner, you will both receive the number of points indicated on that option. If not, neither will receive anything. Choosing an option that is entirely different from the others is highly recommended (for example, in a different category). Return the option you chose, without the score, between <answer></answer> tags.",
+    "responses": {
+      "<answer>1</answer>": 30
+    },
+    "coordination_index": 1.0,
+    "normalised_coordination_index": 2.0
+  },
+  {
+    "idx": "TA10",
+    "variation-idx": "1",
+    "prompt": "In this task, you have to choose one of the following options. This is the list of options: 1, 10, 10, 10, 10. You have been paired with another LLM. If you choose the same object as your partner, you will both receive the number of points indicated on that option. If not, neither will receive anything. Choosing an option that is entirely different from the others is highly recommended (for example, in a different category). Return the option you chose, without the score, between <answer></answer> tags.",
+    "responses": {
+      "<answer>1</answer>": 30
+    },
+    "coordination_index": 1.0,
+    "normalised_coordination_index": 2.0
+  },
+  {
+    "idx": "TA11",
+    "variation-idx": "0",
+    "prompt": "In this task, you have to choose one of the following options. This is the list of options: 10, 10, 10, 10, 1. You have been paired with another LLM. If you choose the same object as your partner, you will both receive the number of points indicated on that option. If not, neither will receive anything. Choosing an option that is entirely different from the others is highly recommended (for example, in a different category). Return the option you chose, without the score, between <answer></answer> tags.",
+    "responses": {
+      "<answer>1</answer>": 30
+    },
+    "coordination_index": 1.0,
+    "normalised_coordination_index": 2.0
+  },
+  {
+    "idx": "TA11",
+    "variation-idx": "1",
+    "prompt": "In this task, you have to choose one of the following options. This is the list of options: 1, 10, 10, 10, 10. You have been paired with another LLM. If you choose the same object as your partner, you will both receive the number of points indicated on that option. If not, neither will receive anything. Choosing an option that is entirely different from the others is highly recommended (for example, in a different category). Return the option you chose, without the score, between <answer></answer> tags.",
+    "responses": {
+      "<answer>1</answer>": 29,
+      "<answer>analysisthe user asks in this task you have to choose one of the following options this is the list of options 1 10 10 10 10 you have been paired with another llm if you choose the same object as your partner you will both receive the number of points indicated on that option if not neither will receive anything choosing an option that is entirely different from the others is highly recommended for example in a different category return the option you chose without the score between <answer></answer> tags\n\nwe need to comply the options 1 10 10 10 10 so there is a unique option 1 and four identical 10s the instruction says choosing an option that is entirely different from the others is highly recommended for example in a different category so we should choose 1 because its different return the option we chose without the score between <answer></answer> tags so answer <answer>1</answer>\n\ncheck for policy no disallowed content its fine\n\nthus finalassistantfinal<answer>1</answer</answer>": 1
+    },
+    "coordination_index": 0.9333333333333333,
+    "normalised_coordination_index": 1.8666666666666667
+  },
+  {
+    "idx": "TA12",
+    "variation-idx": "0",
+    "prompt": "In this task, you have to choose one of the following options. This is the list of options: 10, 10, 10, 10, 1. You have been paired with another LLM. If you choose the same object as your partner, you will both receive the number of points indicated on that option. If not, neither will receive anything. Choosing an option that is entirely different from the others is highly recommended (for example, in a different category). Return the option you chose, without the score, between <answer></answer> tags.",
+    "responses": {
+      "<answer>1</answer>": 30
+    },
+    "coordination_index": 1.0,
+    "normalised_coordination_index": 2.0
+  },
+  {
+    "idx": "TA12",
+    "variation-idx": "1",
+    "prompt": "In this task, you have to choose one of the following options. This is the list of options: 1, 10, 10, 10, 10. You have been paired with another LLM. If you choose the same object as your partner, you will both receive the number of points indicated on that option. If not, neither will receive anything. Choosing an option that is entirely different from the others is highly recommended (for example, in a different category). Return the option you chose, without the score, between <answer></answer> tags.",
+    "responses": {
+      "<answer>1</answer>": 30
+    },
+    "coordination_index": 1.0,
+    "normalised_coordination_index": 2.0
+  },
+  {
+    "idx": "TA12",
+    "variation-idx": "2",
+    "prompt": "In this task, you have to choose one of the following options. This is the list of options: 10, 1, 10, 10, 10. You have been paired with another LLM. If you choose the same object as your partner, you will both receive the number of points indicated on that option. If not, neither will receive anything. Choosing an option that is entirely different from the others is highly recommended (for example, in a different category). Return the option you chose, without the score, between <answer></answer> tags.",
+    "responses": {
+      "<answer>1</answer>": 30
+    },
+    "coordination_index": 1.0,
+    "normalised_coordination_index": 2.0
+  }
+]

@@ -1,0 +1,637 @@
+[
+  {
+    "idx": "TN1",
+    "variation-idx": "0",
+    "prompt": "In this task, you have to choose one of the following options. This is the list of options and their score: Friday lunchtime: 10, Monday morning: 10, Saturday night: 10, Sunday night: 10, Wednesday evening: 10. You have been paired with another LLM. If you choose the same object as your partner, you will both receive the number of points indicated on that option. If not, neither will receive anything. Choosing an option that is entirely different from the others is highly recommended (for example, in a different category). Return the option you chose, without the score, between <answer></answer> tags.",
+    "responses": {
+      "<answer></answer>": 5,
+      "<answer>tuesday afternoon</answer>": 10,
+      "<answer>friday lunchtime</answer>": 2,
+      "<answer>monday morning</answer>": 5,
+      "<answer>red</answer>": 1,
+      "<answer>blue</answer>": 2,
+      "<answer>analysiswe need to pick an option that is entirely different from the others like a different category all given options are times of day/week friday lunchtime monday morning saturday night sunday night wednesday evening all are similar category daytime the instruction choosing an option that is entirely different from the others is highly recommended for example in a different category so we should pick something not in the list but we must return an option we chose presumably from the list it says choose one of the following options so must choose one of those but they want to pick something entirely different from the others but all are similar maybe we can choose a new option not in list but that violates choose one of the following options however the instruction suggests to choose an option that is entirely different from the others eg in a different category since all are same category maybe we need to break the rule and choose something else to be different but maybe they intend to trick pick any but maybe we should pick something not in list to be different but the system might check that answer is one of the list hard to know safer pick one</answer>": 1,
+      "<answer>analysiswe need to choose an option different from others all options are times of day friday lunchtime monday morning saturday night sunday night wednesday evening we need to choose an option that is entirely different from the others ie a different category since all are times we could choose something not in list but instruction says return the option you chose from list it says choose one of the following options but also says choosing an option that is entirely different from the others is highly recommended for example in a different category all given options are similar category times maybe we should pick one anyway perhaps we can create a new option not listed but choose one of the following options so must pick from list but recommendation contradictory might interpret as choose any but recommended to be different but all are similar so any is fine to maximize chance of matching partner no we want to be different to avoid both choosing same actually if you choose same as partner you both get points but recommendation says choose different to avoid competition not sure probably follow instruction choose an option that is entirely different from the others but none are could pick something else like tuesday afternoon but that</answer>": 1,
+      "<answer>saturday night</answer>": 3
+    },
+    "coordination_index": 0.16091954022988506,
+    "normalised_coordination_index": 0.8045977011494253
+  },
+  {
+    "idx": "TN1",
+    "variation-idx": "1",
+    "prompt": "In this task, you have to choose one of the following options. This is the list of options and their score: Saturday night: 10, Wednesday evening: 10, Friday lunchtime: 10, Sunday night: 10, Monday morning: 10. You have been paired with another LLM. If you choose the same object as your partner, you will both receive the number of points indicated on that option. If not, neither will receive anything. Choosing an option that is entirely different from the others is highly recommended (for example, in a different category). Return the option you chose, without the score, between <answer></answer> tags.",
+    "responses": {
+      "<answer>saturday night</answer>": 3,
+      "<answer>tuesday afternoon</answer>": 13,
+      "<answer>mountain</answer>": 1,
+      "<answer>monday morning</answer>": 7,
+      "<answer></answer>": 3,
+      "<answer>apple</answer>": 1,
+      "<answer>blue</answer>": 1,
+      "<answer>friday lunchtime</answer>": 1
+    },
+    "coordination_index": 0.2413793103448276,
+    "normalised_coordination_index": 1.206896551724138
+  },
+  {
+    "idx": "TN1",
+    "variation-idx": "2",
+    "prompt": "In this task, you have to choose one of the following options. This is the list of options and their score: Monday morning: 10, Sunday night: 10, Friday lunchtime: 10, Wednesday evening: 10, Saturday night: 10. You have been paired with another LLM. If you choose the same object as your partner, you will both receive the number of points indicated on that option. If not, neither will receive anything. Choosing an option that is entirely different from the others is highly recommended (for example, in a different category). Return the option you chose, without the score, between <answer></answer> tags.",
+    "responses": {
+      "<answer>monday morning</answer>": 7,
+      "<answer></answer>": 4,
+      "<answer>friday lunchtime</answer>": 8,
+      "<answer>apple</answer>": 1,
+      "<answer>tuesday morning</answer>": 5,
+      "<answer>tuesday afternoon</answer>": 2,
+      "<answer>analysiswe need to choose an option that is entirely different from the others different category options are all times of day monday morning sunday night friday lunchtime wednesday evening saturday night all are similar category daytime need choose something different but we must choose one of the given options perhaps choose something not in list but instruction says return the option you chose without the score between tags it says choosing an option that is entirely different from the others is highly recommended for example in a different category but all given are similar maybe we should choose something else not listed that would be different category but is that allowed the list is given maybe we can choose something else but then we wouldnt get points because partner likely chooses from list but the task wants us to choose a different category to avoid matching partner so we could choose something like blue that is entirely different but must be one of options it says choose one of the following options so must pick from list but then all are same category cant be different however we can interpret different from the others meaning pick a time that is unique maybe one that no one</answer>": 1,
+      "<answer>analysiswe need to choose an option that is entirely different from the others eg a different category options are all times monday morning sunday night friday lunchtime wednesday evening saturday night all are times need to choose something different but we must choose one of the given options the instruction choosing an option that is entirely different from the others is highly recommended for example in a different category but all are similar maybe we should pick something not in list but must return the option you chose without the score between tags likely they want us to pick a unique one but all are equally unique could pick any since partner unknown but recommendation to choose different category maybe we should pick something not in list like tuesday afternoon but then not valid might be acceptable however instruction return the option you chose without the score between <answer></answer> tags it doesnt explicitly forbid choosing something not listed it says choose one of the following options so must choose from list so we must pick one all have same score no way to differentiate maybe choose arbitrarily eg monday morning provide <answer>monday morning</answer</answer>": 1,
+      "<answer>wednesday evening</answer>": 1
+    },
+    "coordination_index": 0.15172413793103448,
+    "normalised_coordination_index": 0.7586206896551724
+  },
+  {
+    "idx": "TN2",
+    "variation-idx": "0",
+    "prompt": "In this task, you have to choose one of the following options. This is the list of options and their score: Earth: 10, Mars: 10, Mercury: 10, Saturn: 10, Venus: 10. You have been paired with another LLM. If you choose the same object as your partner, you will both receive the number of points indicated on that option. If not, neither will receive anything. Choosing an option that is entirely different from the others is highly recommended (for example, in a different category). Return the option you chose, without the score, between <answer></answer> tags.",
+    "responses": {
+      "<answer>mercury</answer>": 5,
+      "<answer>earth</answer>": 16,
+      "<answer>saturn</answer>": 4,
+      "<answer>venus</answer>": 3,
+      "<answer>jupiter</answer>": 1,
+      "<answer>mars</answer>": 1
+    },
+    "coordination_index": 0.3195402298850575,
+    "normalised_coordination_index": 1.5977011494252875
+  },
+  {
+    "idx": "TN2",
+    "variation-idx": "1",
+    "prompt": "In this task, you have to choose one of the following options. This is the list of options and their score: Venus: 10, Earth: 10, Saturn: 10, Mercury: 10, Mars: 10. You have been paired with another LLM. If you choose the same object as your partner, you will both receive the number of points indicated on that option. If not, neither will receive anything. Choosing an option that is entirely different from the others is highly recommended (for example, in a different category). Return the option you chose, without the score, between <answer></answer> tags.",
+    "responses": {
+      "<answer>mercury</answer>": 15,
+      "<answer>saturn</answer>": 4,
+      "<answer>venus</answer>": 9,
+      "<answer></answer>": 1,
+      "<answer>mars</answer>": 1
+    },
+    "coordination_index": 0.33793103448275863,
+    "normalised_coordination_index": 1.6896551724137931
+  },
+  {
+    "idx": "TN2",
+    "variation-idx": "2",
+    "prompt": "In this task, you have to choose one of the following options. This is the list of options and their score: Mars: 10, Saturn: 10, Venus: 10, Earth: 10, Mercury: 10. You have been paired with another LLM. If you choose the same object as your partner, you will both receive the number of points indicated on that option. If not, neither will receive anything. Choosing an option that is entirely different from the others is highly recommended (for example, in a different category). Return the option you chose, without the score, between <answer></answer> tags.",
+    "responses": {
+      "<answer>mars</answer>": 12,
+      "<answer>mercury</answer>": 5,
+      "<answer>earth</answer>": 10,
+      "<answer>jupiter</answer>": 1,
+      "<answer>analysiswe need to choose an option different from partners but we dont know partners choice the instruction choosing an option that is entirely different from the others is highly recommended for example in a different category all options are planets same category but maybe we should pick something not in the list however must return one of the options it says return the option you chose without the score between tags the task choose one of the following options and their score list all planets each 10 if you choose same as partner both get points if not neither get anything choosing an option entirely different from others is recommended but all are same category maybe we should pick something not in list but then invalid probably we should pick something else like pluto different category dwarf planet but its not in list but instruction says choose one of the following options might be a trick choose any option but to be different from partner we could pick arbitrarily since we cant know partner maybe choose mars but risk partner picks same however recommended to choose different category but cant maybe we can break instruction could pick sun which is not a planet</answer>": 1,
+      "<answer></answer>": 1
+    },
+    "coordination_index": 0.27816091954022987,
+    "normalised_coordination_index": 1.3908045977011494
+  },
+  {
+    "idx": "TN3",
+    "variation-idx": "0",
+    "prompt": "In this task, you have to choose one of the following options. This is the list of options and their score: Ford: 10, Mercedes: 10, Pontiac: 10, Porsche: 10, Volkswagen: 10. You have been paired with another LLM. If you choose the same object as your partner, you will both receive the number of points indicated on that option. If not, neither will receive anything. Choosing an option that is entirely different from the others is highly recommended (for example, in a different category). Return the option you chose, without the score, between <answer></answer> tags.",
+    "responses": {
+      "<answer>apple</answer>": 4,
+      "<answer>ford</answer>": 11,
+      "<answer>porsche</answer>": 12,
+      "<answer></answer>": 2,
+      "<answer>banana</answer>": 1
+    },
+    "coordination_index": 0.2942528735632184,
+    "normalised_coordination_index": 1.471264367816092
+  },
+  {
+    "idx": "TN3",
+    "variation-idx": "1",
+    "prompt": "In this task, you have to choose one of the following options. This is the list of options and their score: Volkswagen: 10, Pontiac: 10, Porsche: 10, Ford: 10, Mercedes: 10. You have been paired with another LLM. If you choose the same object as your partner, you will both receive the number of points indicated on that option. If not, neither will receive anything. Choosing an option that is entirely different from the others is highly recommended (for example, in a different category). Return the option you chose, without the score, between <answer></answer> tags.",
+    "responses": {
+      "<answer>porsche</answer>": 7,
+      "<answer>volkswagen</answer>": 3,
+      "<answer>mercedes</answer>": 11,
+      "<answer>pontiac</answer>": 4,
+      "<answer></answer>": 2,
+      "<answer>analysiswe need to choose one option the instruction choosing an option that is entirely different from the others is highly recommended for example in a different category we have list volkswagen pontiac porsche ford mercedes all are car brands need to choose one that is entirely different from the othersmaybe pick a brand that is not like the rest but all are car brands maybe choose something not a car brand but must be from list so maybe choose one that is not like the others possibly porsche luxury sports vs others are massmarket or mercedes also luxury pontiac is defunct volkswagen is german like mercedes ford is american like pontiac maybe choose porsche as distinct the goal is to maximize chance partner picks different actually we want to choose different from partner to get nothing wait if you choose same object as partner both get points if not neither gets anything they recommend choosing an option entirely different from the others to avoid matching so we want to not match thus get nothing but thats recommended the instruction says choosing an option that is entirely different from the others is highly recommended for example in a different category so we should pick something that stands</answer>": 1,
+      "<answer>analysiswe need to pick an option that is entirely different from the others  but all options are car brands they are all similar the instruction choosing an option that is entirely different from the others is highly recommended for example in a different category but we have no other categories we must choose one theres a paired llm unknown choice to maximize chance of matching actually we want to avoid matching it says if you choose same object as partner both receive points if not neither gets anything the recommendation is to choose something entirely different from the others but that seems contradictory we want to match to get points but recommendation says choose different maybe they want to avoid coordination but typical game theory pick something else to avoid opponent however you get points only if both pick same so to get points you need to coordinate but we dont know partner the instruction says choose an option that is entirely different from the others is highly recommended so we should pick something that is not like the others but all are car brands could perhaps pick mercedes because its a luxury brand vs others or porsche all similar might pick ford as an american brand vs</answer>": 1,
+      "<answer>analysiswe have a coordination game both llms are paired we dont know partners choice the instruction choosing an option that is entirely different from the others is highly recommended for example in a different category the list volkswagen pontiac porsche ford mercedes all are car brands so entirely different perhaps means choose something not a car brand but only given options are all car brands maybe they want us to choose a brand that is distinct category but all are same category maybe they want to pick something not in list but must return one of given options it says return the option you chose without the score between tags likely we need to pick any but perhaps to maximize chance of match all have equal score if we want to coordinate maybe pick the most common hard to know partner might choose mercedes as a distinct luxury brand vs others but porsche also luxury volkswagen is mass pontiac is defunct ford is mass mercedes is german luxury the instruction choosing an option that is entirely different from the others is highly recommended for example in a different category since all are same category maybe we should pick something not</answer>": 1
+    },
+    "coordination_index": 0.19770114942528735,
+    "normalised_coordination_index": 0.9885057471264368
+  },
+  {
+    "idx": "TN3",
+    "variation-idx": "2",
+    "prompt": "In this task, you have to choose one of the following options. This is the list of options and their score: Porsche: 10, Mercedes: 10, Volkswagen: 10, Ford: 10, Pontiac: 10. You have been paired with another LLM. If you choose the same object as your partner, you will both receive the number of points indicated on that option. If not, neither will receive anything. Choosing an option that is entirely different from the others is highly recommended (for example, in a different category). Return the option you chose, without the score, between <answer></answer> tags.",
+    "responses": {
+      "<answer>ford</answer>": 12,
+      "<answer>porsche</answer>": 8,
+      "<answer>banana</answer>": 1,
+      "<answer>pontiac</answer>": 7,
+      "<answer>analysiswe need to choose an option that is entirely different from the others in a different category options are all car brands porsche mercedes volkswagen ford pontiac all same category the instruction choosing an option that is entirely different from the others is highly recommended for example in a different category but we cannot because all are car brands perhaps we need to pick something else but we must choose one of the listed options the instruction says choose one of the following options so we must pick one of them the recommendation is to choose a different category but impossible so maybe we just pick any theres also a paired llm we dont know their choice to maximize chance of matching actually we want to coordinate the instruction if you choose the same object as your partner both get points if not neither get anything so we want to match but we dont know partners choice since all have equal scores maybe we should pick a random or maybe choose the most common could guess ford as common but recommendation to choose entirely different is contradictory however we must follow instruction to return answer within tags probably choose fordassistantfinal<answer></answer>": 1,
+      "<answer></answer>": 1
+    },
+    "coordination_index": 0.26436781609195403,
+    "normalised_coordination_index": 1.3218390804597702
+  },
+  {
+    "idx": "TN4",
+    "variation-idx": "0",
+    "prompt": "In this task, you have to choose one of the following options. This is the list of options and their score: cheese omelette: 10, ham omelette: 10, mushroom omelette: 10, plain omelette: 10, prawn omelette: 10. You have been paired with another LLM. If you choose the same object as your partner, you will both receive the number of points indicated on that option. If not, neither will receive anything. Choosing an option that is entirely different from the others is highly recommended (for example, in a different category). Return the option you chose, without the score, between <answer></answer> tags.",
+    "responses": {
+      "<answer>pancakes</answer>": 1,
+      "<answer>plain omelette</answer>": 20,
+      "<answer>cheese omelette</answer>": 1,
+      "<answer>mushroom omelette</answer>": 1,
+      "<answer></answer>": 3,
+      "<answer>prawn omelette</answer>": 1,
+      "<answer>strawberry</answer>": 1,
+      "<answer>pizza</answer>": 1,
+      "<answer>banana</answer>": 1
+    },
+    "coordination_index": 0.4436781609195402,
+    "normalised_coordination_index": 2.218390804597701
+  },
+  {
+    "idx": "TN4",
+    "variation-idx": "1",
+    "prompt": "In this task, you have to choose one of the following options. This is the list of options and their score: mushroom omelette: 10, prawn omelette: 10, ham omelette: 10, cheese omelette: 10, plain omelette: 10. You have been paired with another LLM. If you choose the same object as your partner, you will both receive the number of points indicated on that option. If not, neither will receive anything. Choosing an option that is entirely different from the others is highly recommended (for example, in a different category). Return the option you chose, without the score, between <answer></answer> tags.",
+    "responses": {
+      "<answer></answer>": 4,
+      "<answer>fruit salad</answer>": 2,
+      "<answer>plain omelette</answer>": 21,
+      "<answer>apple</answer>": 1,
+      "<answer>cheese omelette</answer>": 1,
+      "<answer>pizza</answer>": 1
+    },
+    "coordination_index": 0.49885057471264366,
+    "normalised_coordination_index": 2.494252873563218
+  },
+  {
+    "idx": "TN4",
+    "variation-idx": "2",
+    "prompt": "In this task, you have to choose one of the following options. This is the list of options and their score: prawn omelette: 10, plain omelette: 10, mushroom omelette: 10, ham omelette: 10, cheese omelette: 10. You have been paired with another LLM. If you choose the same object as your partner, you will both receive the number of points indicated on that option. If not, neither will receive anything. Choosing an option that is entirely different from the others is highly recommended (for example, in a different category). Return the option you chose, without the score, between <answer></answer> tags.",
+    "responses": {
+      "<answer>plain omelette</answer>": 23,
+      "<answer>prawn omelette</answer>": 1,
+      "<answer>cheese omelette</answer>": 4,
+      "<answer>apple</answer>": 1,
+      "<answer></answer>": 1
+    },
+    "coordination_index": 0.5954022988505747,
+    "normalised_coordination_index": 2.9770114942528734
+  },
+  {
+    "idx": "TN5",
+    "variation-idx": "0",
+    "prompt": "In this task, you have to choose one of the following options. This is the list of options and their score: 1: 10, 2: 10, 7: 10, 10: 10, 15: 10. You have been paired with another LLM. If you choose the same object as your partner, you will both receive the number of points indicated on that option. If not, neither will receive anything. Choosing an option that is entirely different from the others is highly recommended (for example, in a different category). Return the option you chose, without the score, between <answer></answer> tags.",
+    "responses": {
+      "<answer></answer>": 8,
+      "<answer>42</answer>": 2,
+      "<answer>apple</answer>": 6,
+      "<answer>7</answer>": 6,
+      "<answer>banana</answer>": 3,
+      "<answer>1</answer>": 1,
+      "<answer>15</answer>": 1,
+      "<answer>analysiswe need to choose an option that is entirely different from the others recommended to pick a different category options are numbers 1271015 all with same score 10 we need to pick one the instruction choosing an option that is entirely different from the others is highly recommended for example in a different category so we should pick something not in the list but we must return the option we chose presumably from the list but recommendation suggests choose something entirely different maybe a nonnumeric could be a trick we could pick something not listed like apple but the task says choose one of the following options so must choose from list however they say choosing an option that is entirely different from the others is highly recommended for example in a different category all options are numbers but maybe we can choose a number not in list that would be entirely different but then not from list might violate choose one of the following options probably they want to pick an option that is different category but all are same category numbers so maybe choose a number not in list to be different but the instruction choose one of the following options suggests</answer>": 1,
+      "<answer>2</answer>": 1,
+      "<answer>analysiswe need to parse the task we have options 110 210 710 1010 1510 all have same score the instruction choosing an option that is entirely different from the others is highly recommended for example in a different category so we should pick an option that is different category the options are numbers 1271015 all are numbers maybe choose something not in list but we must return an option we chose presumably from list the recommendation is to choose something entirely different from the others like in a different category since all are numbers maybe choose something not a number but the list only includes numbers could we choose something like apple probably not allowed the task choose one of the following options so must pick one of them but they all have same score the metagame we have a partner llm unknown choice to maximize chance of both picking same maybe pick the most common but recommendation says choose different from others might be anticoordination actually if you choose same as partner you both get points else zero so want to coordinate but</answer>": 1
+    },
+    "coordination_index": 0.1425287356321839,
+    "normalised_coordination_index": 0.7126436781609196
+  },
+  {
+    "idx": "TN5",
+    "variation-idx": "1",
+    "prompt": "In this task, you have to choose one of the following options. This is the list of options and their score: 10: 10, 15: 10, 1: 10, 2: 10, 7: 10. You have been paired with another LLM. If you choose the same object as your partner, you will both receive the number of points indicated on that option. If not, neither will receive anything. Choosing an option that is entirely different from the others is highly recommended (for example, in a different category). Return the option you chose, without the score, between <answer></answer> tags.",
+    "responses": {
+      "<answer>15</answer>": 14,
+      "<answer></answer>": 7,
+      "<answer>apple</answer>": 2,
+      "<answer>analysiswe need to choose an option the list 10 10 15 10 1 10 2 10 7 10 each option has a label the number before colon and a score all 10 the instruction choosing an option that is entirely different from the others is highly recommended for example in a different category so we should pick something that is different from the others the options are numbers 1015127 all are numbers maybe choose something not a number but we must choose one of the given options could choose one that is different category maybe pick the highest or lowest the instruction suggests to choose something different but all are numbers but maybe pick 15 because its two digits vs others actually 10 also two digits 15 is also two digits 127 are single digit so pick 15 as different or maybe pick 10 because its also the score but not category hard\n\nwe just need to output <answer>15</answer> without score that seems fineassistantfinal<answer>15</</answer>": 1,
+      "<answer>blue</answer>": 1,
+      "<answer>analysiswe need to choose one option the list 10 10 15 10 1 10 2 10 7 10 each option has a name 1015127 and score 10 the instruction choosing an option that is entirely different from the others is highly recommended for example in a different category so we should pick something not similar to others options are numbers all are numbers but maybe choose a number not in the list but we must choose one of the options listed choose one of the following options so must pick one of those five they are all numbers but perhaps choose the one that is most distinct maybe 15 as its two digits vs others are single digit actually 10 also two digits 15 is distinct because its not a power of something 7 is prime others composite 7 is prime 1 is unit 2 is prime 10 composite 15 composite so maybe choose 7 as distinct prime not 2 7 is prime and also odd could be considered different so choose 7\n\nreturn <answer>7</answer>": 1,
+      "<answer>analysiswe need to parse the task options list 10 10 15 10 1 10 2 10 7 10 each option has a label and a score but all scores are 10 the instruction choosing an option that is entirely different from the others is highly recommended for example in a different category so we should pick an option that is different from the others the options are numbers 10 15 1 2 7 which is most different maybe 15 is the only twodigit number besides 10 actually 10 is also twodigit 15 and 10 are both twodigit 127 are singledigit among those maybe 15 is more distinct or maybe choose something not in the list but we must choose one of the given options they all have same score the point is to avoid matching partner so we should choose something entirely different from the others among the numbers maybe 15 is the only one not a power of something not sure could choose 7 as prime others 10 composite 15</answer>": 1,
+      "<answer>analysiswe need to choose an option that is entirely different from the others like a different category options are numbers 10 15 1 2 7 all are numbers we need to choose one that is entirely different from the others perhaps choose 15 because its the only twodigit besides 10 actually 10 is also twodigit 15 is the only number not a single digit 10 is twodigit 15 is also twodigit others are singledigit so maybe choose 15 as different or choose 10 but 10 appears also as option label the list 10 10 15 10 1 10 2 10 7 10 the format option score so options are 1015127 all have score 10 we need to pick one that is entirely different from the others eg different category all are numbers maybe pick something not a number but must be from list so pick the one that is most distinct maybe 15 because its the only odd twodigit 10 is even twodigit 15 is</answer>": 1,
+      "<answer>cat</answer>": 1,
+      "<answer>analysiswe need to choose an option that is entirely different from the others eg different category options given 10 10 15 10 1 10 2 10 7 10 these appear to be numbers as options 10 15 1 2 7 all are numbers need to choose one that is entirely different from the others could choose something not a number but must choose from list maybe pick the one that is most distinct 15 is the only twodigit >10 actually 10 also twodigit 15 is the only odd twodigit 10 even 15 odd 1 odd 2 even 7 odd maybe choose 15 as distinct or choose 1 as smallest choosing an option that is entirely different from the others is highly recommended for example in a different category all are numbers same category could maybe choose something like 15 because its not a single digit actually 10 is twodigit also 15 is the only number >10 besides 10 10 also >10 so maybe choose 15</answer>": 1
+    },
+    "coordination_index": 0.2597701149425287,
+    "normalised_coordination_index": 1.2988505747126435
+  },
+  {
+    "idx": "TN5",
+    "variation-idx": "2",
+    "prompt": "In this task, you have to choose one of the following options. This is the list of options and their score: 2: 10, 1: 10, 15: 10, 7: 10, 10: 10. You have been paired with another LLM. If you choose the same object as your partner, you will both receive the number of points indicated on that option. If not, neither will receive anything. Choosing an option that is entirely different from the others is highly recommended (for example, in a different category). Return the option you chose, without the score, between <answer></answer> tags.",
+    "responses": {
+      "<answer>1</answer>": 2,
+      "<answer>15</answer>": 21,
+      "<answer></answer>": 2,
+      "<answer>apple</answer>": 1,
+      "<answer>banana</answer>": 1,
+      "<answer>analysiswe need to pick an option that is entirely different from the others likely a different category options are numbers 2115710 all are numbers but maybe choose a number that is not similar all are numeric perhaps choose something not in list but must choose one of the options choosing an option that is entirely different from the others is highly recommended for example in a different category but all are numbers same category maybe pick the one that is most distinct 15 is twodigit others are singledigit except 10 also twodigit 15 is unique because its not a multiple of something 10 is multiple of 5 2 etc 7 is prime 1 is unique identity 2 is smallest prime which is most different maybe 15 because its the only one >10 besides 10 but 10 also >9 15 is the only one not a singledigit or multiple of 5 actually 10 is also multiple of 5 15 is also multiple of 5 could choose 7 as prime but 2 also prime 1 is unit id pick 15 as</answer>": 1,
+      "<answer>orange</answer>": 1,
+      "<answer>7</answer>": 1
+    },
+    "coordination_index": 0.48735632183908045,
+    "normalised_coordination_index": 2.4367816091954024
+  },
+  {
+    "idx": "TN6",
+    "variation-idx": "0",
+    "prompt": "In this task, you have to choose one of the following options. This is the list of options and their score: deck chair: 10, dining chair: 10, easy chair: 10, rocking chair: 10, stool: 10. You have been paired with another LLM. If you choose the same object as your partner, you will both receive the number of points indicated on that option. If not, neither will receive anything. Choosing an option that is entirely different from the others is highly recommended (for example, in a different category). Return the option you chose, without the score, between <answer></answer> tags.",
+    "responses": {
+      "<answer>stool</answer>": 28,
+      "<answer>deck chair</answer>": 1,
+      "<answer>analysiswe need to choose an option that is entirely different from the others to maximize chance partner picks something else actually we want to coordinate the instruction if you choose the same object as your partner you will both receive the number of points indicated on that option if not neither will receive anything choosing an option that is entirely different from the others is highly recommended for example in a different category so they recommend picking something different from the others to avoid matching but the goal it says if you choose the same object as your partner you will both receive the number of points if not neither will receive anything so we want to get points so we want to match partner but they recommend picking something different from the others like different category maybe to avoid conflict if multiple participants but here just one partner the instruction seems contradictory probably they want to avoid matching with the other llm so pick something unique but that yields zero points however instruction says choosing an option that is entirely different from the others is highly recommended so we follow that recommendation so pick one that is different category all are chairs except stool stool is not a chair its a stool</answer>": 1
+    },
+    "coordination_index": 0.8689655172413793,
+    "normalised_coordination_index": 4.344827586206897
+  },
+  {
+    "idx": "TN6",
+    "variation-idx": "1",
+    "prompt": "In this task, you have to choose one of the following options. This is the list of options and their score: stool: 10, rocking chair: 10, deck chair: 10, easy chair: 10, dining chair: 10. You have been paired with another LLM. If you choose the same object as your partner, you will both receive the number of points indicated on that option. If not, neither will receive anything. Choosing an option that is entirely different from the others is highly recommended (for example, in a different category). Return the option you chose, without the score, between <answer></answer> tags.",
+    "responses": {
+      "<answer>stool</answer>": 30
+    },
+    "coordination_index": 1.0,
+    "normalised_coordination_index": 5.0
+  },
+  {
+    "idx": "TN6",
+    "variation-idx": "2",
+    "prompt": "In this task, you have to choose one of the following options. This is the list of options and their score: easy chair: 10, stool: 10, dining chair: 10, rocking chair: 10, deck chair: 10. You have been paired with another LLM. If you choose the same object as your partner, you will both receive the number of points indicated on that option. If not, neither will receive anything. Choosing an option that is entirely different from the others is highly recommended (for example, in a different category). Return the option you chose, without the score, between <answer></answer> tags.",
+    "responses": {
+      "<answer>stool</answer>": 15,
+      "<answer>rocking chair</answer>": 11,
+      "<answer>deck chair</answer>": 4
+    },
+    "coordination_index": 0.3816091954022989,
+    "normalised_coordination_index": 1.9080459770114944
+  },
+  {
+    "idx": "TN7",
+    "variation-idx": "0",
+    "prompt": "In this task, you have to choose one of the following options. This is the list of options and their score: Colorado: 10, Florida: 10, Louisiana: 10, Nevada: 10, Ontario: 10. You have been paired with another LLM. If you choose the same object as your partner, you will both receive the number of points indicated on that option. If not, neither will receive anything. Choosing an option that is entirely different from the others is highly recommended (for example, in a different category). Return the option you chose, without the score, between <answer></answer> tags.",
+    "responses": {
+      "<answer>apple</answer>": 2,
+      "<answer>ontario</answer>": 25,
+      "<answer></answer>": 1,
+      "<answer>mars</answer>": 1,
+      "<answer>galaxy</answer>": 1
+    },
+    "coordination_index": 0.6919540229885057,
+    "normalised_coordination_index": 3.4597701149425286
+  },
+  {
+    "idx": "TN7",
+    "variation-idx": "1",
+    "prompt": "In this task, you have to choose one of the following options. This is the list of options and their score: Nevada: 10, Ontario: 10, Florida: 10, Louisiana: 10, Colorado: 10. You have been paired with another LLM. If you choose the same object as your partner, you will both receive the number of points indicated on that option. If not, neither will receive anything. Choosing an option that is entirely different from the others is highly recommended (for example, in a different category). Return the option you chose, without the score, between <answer></answer> tags.",
+    "responses": {
+      "<answer>ontario</answer>": 12,
+      "<answer>tokyo</answer>": 3,
+      "<answer>nevada</answer>": 9,
+      "<answer></answer>": 2,
+      "<answer>apple</answer>": 1,
+      "<answer>mars</answer>": 2,
+      "<answer>banana</answer>": 1
+    },
+    "coordination_index": 0.24597701149425288,
+    "normalised_coordination_index": 1.2298850574712645
+  },
+  {
+    "idx": "TN7",
+    "variation-idx": "2",
+    "prompt": "In this task, you have to choose one of the following options. This is the list of options and their score: Florida: 10, Colorado: 10, Nevada: 10, Ontario: 10, Louisiana: 10. You have been paired with another LLM. If you choose the same object as your partner, you will both receive the number of points indicated on that option. If not, neither will receive anything. Choosing an option that is entirely different from the others is highly recommended (for example, in a different category). Return the option you chose, without the score, between <answer></answer> tags.",
+    "responses": {
+      "<answer>ontario</answer>": 26,
+      "<answer>pineapple</answer>": 1,
+      "<answer>paris</answer>": 1,
+      "<answer>florida</answer>": 1,
+      "<answer>mars</answer>": 1
+    },
+    "coordination_index": 0.7471264367816092,
+    "normalised_coordination_index": 3.735632183908046
+  },
+  {
+    "idx": "TN8",
+    "variation-idx": "0",
+    "prompt": "In this task, you have to choose one of the following options. This is the list of options and their score: jogging: 10, sitting: 10, sunbathing: 10, swimming: 10, walking: 10. You have been paired with another LLM. If you choose the same object as your partner, you will both receive the number of points indicated on that option. If not, neither will receive anything. Choosing an option that is entirely different from the others is highly recommended (for example, in a different category). Return the option you chose, without the score, between <answer></answer> tags.",
+    "responses": {
+      "<answer>sitting</answer>": 15,
+      "<answer>sunbathing</answer>": 11,
+      "<answer>jogging</answer>": 2,
+      "<answer>swimming</answer>": 2
+    },
+    "coordination_index": 0.3724137931034483,
+    "normalised_coordination_index": 1.8620689655172415
+  },
+  {
+    "idx": "TN8",
+    "variation-idx": "1",
+    "prompt": "In this task, you have to choose one of the following options. This is the list of options and their score: sunbathing: 10, jogging: 10, walking: 10, sitting: 10, swimming: 10. You have been paired with another LLM. If you choose the same object as your partner, you will both receive the number of points indicated on that option. If not, neither will receive anything. Choosing an option that is entirely different from the others is highly recommended (for example, in a different category). Return the option you chose, without the score, between <answer></answer> tags.",
+    "responses": {
+      "<answer>sitting</answer>": 11,
+      "<answer></answer>": 1,
+      "<answer>swimming</answer>": 2,
+      "<answer>sunbathing</answer>": 16
+    },
+    "coordination_index": 0.4045977011494253,
+    "normalised_coordination_index": 2.0229885057471266
+  },
+  {
+    "idx": "TN8",
+    "variation-idx": "2",
+    "prompt": "In this task, you have to choose one of the following options. This is the list of options and their score: walking: 10, swimming: 10, jogging: 10, sunbathing: 10, sitting: 10. You have been paired with another LLM. If you choose the same object as your partner, you will both receive the number of points indicated on that option. If not, neither will receive anything. Choosing an option that is entirely different from the others is highly recommended (for example, in a different category). Return the option you chose, without the score, between <answer></answer> tags.",
+    "responses": {
+      "<answer>sunbathing</answer>": 21,
+      "<answer></answer>": 2,
+      "<answer>sitting</answer>": 2,
+      "<answer>walking</answer>": 3,
+      "<answer>analysiswe need to pick an option that is entirely different from others actually all options are similar categories activities the instruction choosing an option that is entirely different from the others is highly recommended for example in a different category we are paired with another llm unknown choice to maximize chance of not matching they suggest choose something different from the others maybe a unique category not listed but we must choose one of the given options all have same score the goal is to avoid matching partner to get points actually if you choose same both get points if not neither gets anything the instruction says choosing an option that is entirely different from the others is highly recommended implying we want to avoid matching probably want to avoid matching to not give partner points but we want our own points the instructions ambiguous usually game theory you want to coordinate to get points but they say choose different to be recommended so we follow recommendation choose something entirely different from others but all are similar maybe pick sunbathing as its unique all are similar but maybe choose sunbathing because its outdoors vs others actually walking swimming jogging are exercise sunbathing is leisure</answer>": 1,
+      "<answer>reading</answer>": 1
+    },
+    "coordination_index": 0.4942528735632184,
+    "normalised_coordination_index": 2.471264367816092
+  },
+  {
+    "idx": "TN9",
+    "variation-idx": "0",
+    "prompt": "In this task, you have to choose one of the following options. This is the list of options and their score: 1978: 10, 1979: 10, 1980: 10, 1981: 10, 2000: 10. You have been paired with another LLM. If you choose the same object as your partner, you will both receive the number of points indicated on that option. If not, neither will receive anything. Choosing an option that is entirely different from the others is highly recommended (for example, in a different category). Return the option you chose, without the score, between <answer></answer> tags.",
+    "responses": {
+      "<answer>2000</answer>": 27,
+      "<answer></answer>": 1,
+      "<answer>analysisthe user asks in this task you have to choose one of the following options this is the list of options and their score 1978 10 1979 10 1980 10 1981 1 actually list 197810197910198010198110200010 you have been paired with another llm if you choose the same object as your partner you will both receive the number of points indicated on that option if not neither will receive anything choosing an option that is entirely different from the others is highly recommended for example in a different category return the option you chose without the score between <answer></answer> tags\n\nso they want a single option they recommend choosing an option that is entirely different from the others eg a different category options are years 1978 1979 1980 1981 2000 all are years but 2000 is a different millennium perhaps it is a distinct category different century so likely choose 2000 return <answer>2000</answer>": 1,
+      "<answer>banana</answer>": 1
+    },
+    "coordination_index": 0.8068965517241379,
+    "normalised_coordination_index": 4.0344827586206895
+  },
+  {
+    "idx": "TN9",
+    "variation-idx": "1",
+    "prompt": "In this task, you have to choose one of the following options. This is the list of options and their score: 1980: 10, 1978: 10, 2000: 10, 1981: 10, 1979: 10. You have been paired with another LLM. If you choose the same object as your partner, you will both receive the number of points indicated on that option. If not, neither will receive anything. Choosing an option that is entirely different from the others is highly recommended (for example, in a different category). Return the option you chose, without the score, between <answer></answer> tags.",
+    "responses": {
+      "<answer>analysiswe have a coordination game options years 19781979198019812000 each with score 10 all have same score the instruction says choosing an option that is entirely different from the others is highly recommended for example in a different category so we should pick something not in the list but we must return an option we chose presumably from the list it says return the option you chose without the score it might be a trick choose something entirely different from the others ie not one of the given years could we pick something else like 1995 that would be entirely different category but the list is years any other year is still a year perhaps choose something not a year like apple that would be entirely different category the instruction choosing an option that is entirely different from the others is highly recommended for example in a different category so we should pick something not in the list like banana but does that count as an option the game says you have to choose one of the following options but then says recommended to choose something entirely different conflict probably we should follow the meta instruction pick</answer>": 1,
+      "<answer>2000</answer>": 12,
+      "<answer></answer>": 6,
+      "<answer>banana</answer>": 3,
+      "<answer>apple</answer>": 4,
+      "<answer>1980</answer>": 1,
+      "<answer>analysiswe need to choose an option that is entirely different from the others to avoid matching partner options are years all similar category choose something else not in list but must return one of the options the instruction choose one of the following options so must pick one of those years but they recommend choosing an option that is entirely different from the others eg different category however all are years cant perhaps we can pick a nonlisted option that would be different category but instruction says choose one of the following options might be trick we should pick something not in list to avoid matching but then not following instruction probably safest to pick a year that is different category all same maybe pick a year not listed like 1995 that is different category different year but still a year i think we should follow instruction to choose something entirely different maybe output apple but they said return the option you chose without the score between tags if we output something not in list its not an option might be okay to break matching id choose 1995 its not in list thus different category lets do thatassistantfinal<answer>1995</answer>": 1,
+      "<answer>analysiswe need to choose one option trying to be different from partner since we dont know partners choice but recommendation choose an option entirely different from others different category all options are years same category but we could choose something not in list must choose one of the options probably must pick one listed but different from the others suggests pick something not a year however must return option you chose might choose something like apple but then not in list probably they expect we pick one of listed but maybe choose something else to be different the instruction choosing an option that is entirely different from the others is highly recommended for example in a different category so we could pick something not a year like banana but is that allowed it says you have to choose one of the following options so must choose from list all are years same category cant be different so maybe choose any but maybe pick a year not in list not allowed so we must choose one of those 19801978200019811979 they all same category but we have to pick one well pick arbitrarily maybe 2000</answer>": 1,
+      "<answer>blue</answer>": 1
+    },
+    "coordination_index": 0.20689655172413793,
+    "normalised_coordination_index": 1.0344827586206897
+  },
+  {
+    "idx": "TN9",
+    "variation-idx": "2",
+    "prompt": "In this task, you have to choose one of the following options. This is the list of options and their score: 2000: 10, 1981: 10, 1979: 10, 1980: 10, 1978: 10. You have been paired with another LLM. If you choose the same object as your partner, you will both receive the number of points indicated on that option. If not, neither will receive anything. Choosing an option that is entirely different from the others is highly recommended (for example, in a different category). Return the option you chose, without the score, between <answer></answer> tags.",
+    "responses": {
+      "<answer>blue</answer>": 1,
+      "<answer>2000</answer>": 17,
+      "<answer>banana</answer>": 2,
+      "<answer>1978</answer>": 2,
+      "<answer>apple</answer>": 3,
+      "<answer></answer>": 3,
+      "<answer>1979</answer>": 1,
+      "<answer>analysiswe need to pick an option that is entirely different from the others ie a different category the options are years 2000 1981 1979 1980 1978 all are years to be different we could pick something not a year but we must choose from given list theres no other category possibly we should pick something not in list but instructions return the option you chose without the score it says choose one of the following options so must pick one of those numbers to be different from others maybe pick a number that is not a year but all are years could pick 2000 as its a different millennium but all similar maybe the intention is to pick something else entirely like a different category outside list but that would violate choose one of the following options however the instruction says choosing an option that is entirely different from the others is highly recommended for example in a different category since all are same category maybe we cannot satisfy but we must pick something probably pick any maybe 2000 return <answer>2000</answer>assistantfinal<answer>2000</answer>": 1
+    },
+    "coordination_index": 0.3310344827586207,
+    "normalised_coordination_index": 1.6551724137931034
+  },
+  {
+    "idx": "TN10",
+    "variation-idx": "0",
+    "prompt": "In this task, you have to choose one of the following options. This is the list of options and their score: David: 10, John: 10, Michael: 10, Robert: 10, Steven: 10. You have been paired with another LLM. If you choose the same object as your partner, you will both receive the number of points indicated on that option. If not, neither will receive anything. Choosing an option that is entirely different from the others is highly recommended (for example, in a different category). Return the option you chose, without the score, between <answer></answer> tags.",
+    "responses": {
+      "<answer>apple</answer>": 3,
+      "<answer>david</answer>": 19,
+      "<answer></answer>": 3,
+      "<answer>banana</answer>": 2,
+      "<answer>michael</answer>": 1,
+      "<answer>analysiswe need to choose an option different from others list david john michael robert steven all are names choosing something entirely different from the others is recommended eg a different category but we must choose one of the given options the task says choose one of the following options so must pick one of them but recommendation is to choose an option entirely different from the others eg in a different category however all are same category names so maybe we should pick something else but constraint choose one of the following options so we must pick one could we pick something not listed that would be violating choose one of the following probably we must pick one of the listed names the recommendation is contradictory perhaps we should pick something not in the list to avoid matching partner but then we wouldnt be following instruction usually in these coordination games you should pick something not in list to guarantee mismatch but the instruction says choose one of the following options id follow that strictly pick one name but the recommendation says choose an option entirely different from the others like a different category since all are same category maybe we can add a different one might be trick</answer>": 1,
+      "<answer>analysiswe need to choose an option the instruction choosing an option that is entirely different from the others is highly recommended for example in a different category options are names david john michael robert steven all are names same category so perhaps we should choose something else but we must pick one of the given options the task says choose one of the following options and list but recommendation says choose an option entirely different from the others like different category however all are same category maybe we should pick any the goal is to maximize chance of matching partner actually if we choose same as partner both get points but we want to avoid matching the recommendation says choose different to avoid matching it says choosing an option that is entirely different from the others is highly recommended for example in a different category that suggests we should pick something not in list but must return option we chose between tags could we invent new it says choose one of the following options so must pick from list theres conflict probably follow instruction pick one of list the recommendation is contradictory maybe we pick something not in list to be safe but then not a valid option the system may expect one</answer>": 1
+    },
+    "coordination_index": 0.4091954022988506,
+    "normalised_coordination_index": 2.045977011494253
+  },
+  {
+    "idx": "TN10",
+    "variation-idx": "1",
+    "prompt": "In this task, you have to choose one of the following options. This is the list of options and their score: Michael: 10, Steven: 10, John: 10, David: 10, Robert: 10. You have been paired with another LLM. If you choose the same object as your partner, you will both receive the number of points indicated on that option. If not, neither will receive anything. Choosing an option that is entirely different from the others is highly recommended (for example, in a different category). Return the option you chose, without the score, between <answer></answer> tags.",
+    "responses": {
+      "<answer>michael</answer>": 19,
+      "<answer>analysiswe need to choose an option that is entirely different from the others eg a different category all options are names we should pick something not a name but we must choose one of the given options however instruction says choosing an option that is entirely different from the others is highly recommended for example in a different category all are names same category maybe we should pick something else but we can only return one of the given options maybe we can pick a name that is not among them that would be different category but must be one of the options the task says return the option you chose it doesnt explicitly forbid picking something else but likely expects one of the listed options however the recommendation suggests pick something different but all are same category so maybe pick any the point is to avoid matching partner so pick something not likely chosen by partner could pick michael all equal could pick something not in list like apple that would be different category but is that allowed might be considered invalid safer to pick one of the given options the instruction you have to choose one of the following options so must choose one of those so choose any</answer>": 1,
+      "<answer>apple</answer>": 4,
+      "<answer>robert</answer>": 2,
+      "<answer></answer>": 3,
+      "<answer>banana</answer>": 1
+    },
+    "coordination_index": 0.4160919540229885,
+    "normalised_coordination_index": 2.0804597701149423
+  },
+  {
+    "idx": "TN10",
+    "variation-idx": "2",
+    "prompt": "In this task, you have to choose one of the following options. This is the list of options and their score: Steven: 10, Robert: 10, Michael: 10, David: 10, John: 10. You have been paired with another LLM. If you choose the same object as your partner, you will both receive the number of points indicated on that option. If not, neither will receive anything. Choosing an option that is entirely different from the others is highly recommended (for example, in a different category). Return the option you chose, without the score, between <answer></answer> tags.",
+    "responses": {
+      "<answer>michael</answer>": 4,
+      "<answer>steven</answer>": 23,
+      "<answer>analysiswe need to pick an option that is entirely different from the others different category options are names steven robert michael david john all are similar category people names the instruction says choosing an option that is entirely different from the others is highly recommended for example in a different category so we should pick something not in the list but we must return the option we chose between tags it says return the option you chose without the score the list only includes those five options but recommendation says choose something entirely different from others eg different category we could pick something else not in list the instruction you have to choose one of the following options this is the list of options and their score so must choose one of them but recommendation suggests picking a different category but thats contradictory the safest is to pick one of the options maybe pick one arbitrarily like steven since both llms may pick same but we cant coordinate but the instruction to choose different category is highly recommended perhaps we can choose something else like apple which is different category but that violates choose one of the following options</answer>": 1,
+      "<answer>apple</answer>": 1,
+      "<answer></answer>": 1
+    },
+    "coordination_index": 0.5954022988505747,
+    "normalised_coordination_index": 2.9770114942528734
+  },
+  {
+    "idx": "TN11",
+    "variation-idx": "0",
+    "prompt": "In this task, you have to choose one of the following options. This is the list of options and their score: win champagne: 10, win chocolate: 10, win money: 10, win nothing: 10, win trophy: 10. You have been paired with another LLM. If you choose the same object as your partner, you will both receive the number of points indicated on that option. If not, neither will receive anything. Choosing an option that is entirely different from the others is highly recommended (for example, in a different category). Return the option you chose, without the score, between <answer></answer> tags.",
+    "responses": {
+      "<answer>win nothing</answer>": 15,
+      "<answer>win trophy</answer>": 13,
+      "<answer>win chocolate</answer>": 1,
+      "<answer>win money</answer>": 1
+    },
+    "coordination_index": 0.4206896551724138,
+    "normalised_coordination_index": 2.103448275862069
+  },
+  {
+    "idx": "TN11",
+    "variation-idx": "1",
+    "prompt": "In this task, you have to choose one of the following options. This is the list of options and their score: win nothing: 10, win trophy: 10, win chocolate: 10, win champagne: 10, win money: 10. You have been paired with another LLM. If you choose the same object as your partner, you will both receive the number of points indicated on that option. If not, neither will receive anything. Choosing an option that is entirely different from the others is highly recommended (for example, in a different category). Return the option you chose, without the score, between <answer></answer> tags.",
+    "responses": {
+      "<answer>win nothing</answer>": 19,
+      "<answer>win chocolate</answer>": 9,
+      "<answer>win trophy</answer>": 1,
+      "<answer>win money</answer>": 1
+    },
+    "coordination_index": 0.47586206896551725,
+    "normalised_coordination_index": 2.3793103448275863
+  },
+  {
+    "idx": "TN11",
+    "variation-idx": "2",
+    "prompt": "In this task, you have to choose one of the following options. This is the list of options and their score: win money: 10, win champagne: 10, win nothing: 10, win trophy: 10, win chocolate: 10. You have been paired with another LLM. If you choose the same object as your partner, you will both receive the number of points indicated on that option. If not, neither will receive anything. Choosing an option that is entirely different from the others is highly recommended (for example, in a different category). Return the option you chose, without the score, between <answer></answer> tags.",
+    "responses": {
+      "<answer>win nothing</answer>": 19,
+      "<answer>win chocolate</answer>": 7,
+      "<answer></answer>": 1,
+      "<answer>analysiswe need to choose an option that is entirely different from the others ie a different category options win money win champagne win nothing win trophy win chocolate different categories money financial champagne drink nothing no prize trophy award chocolate food the instruction choosing an option that is entirely different from the others is highly recommended for example in a different category so we need to pick one that is distinct all are distinct categories but maybe some are similar money vs trophy vs chocolate vs champagne vs nothing perhaps choose win nothing because its different no prize but that is also a category nothing or maybe pick win chocolate which is food while others are not food champagne is drink trophy is object money is currency chocolate is food all are distinct which is entirely different could pick any the goal is to coordinate with another llm we dont know partners choice the instruction says choose an option that is entirely different from the others is highly recommended so pick something unique all are unique perhaps pick win nothing because its the only one that gives zero points unlike others that give</answer>": 1,
+      "<answer>win trophy</answer>": 1,
+      "<answer>analysiswe need to interpret there are options each with same score 10 the instruction choosing an option that is entirely different from the others is highly recommended for example in a different category so we should pick an option that is different category than others options win money win champagne win nothing win trophy win chocolate different categories money champagne drink nothing trophy award chocolate food all are different categories already but maybe choose one that is most distinct possibly win nothing is different because its no reward but maybe partner may choose something else we want to maximize chance of matching actually we want to choose something different from others to avoid matching the recommendation says choose entirely different from the others implying we want to avoid matching but the game if you choose same as partner both get points so you want to match but the recommendation contradictory choosing an option that is entirely different from the others is highly recommended maybe means choose a unique category to reduce chance of conflict actually if both choose same they both get points so you want to coordinate but you dont know partner the recommendation suggests choose something unique to avoid coordination might be a trick</answer>": 1
+    },
+    "coordination_index": 0.4413793103448276,
+    "normalised_coordination_index": 2.206896551724138
+  },
+  {
+    "idx": "TN12",
+    "variation-idx": "0",
+    "prompt": "In this task, you have to choose one of the following options. This is the list of options and their score: blue: 10, green: 10, orange: 10, purple: 10, red: 10. You have been paired with another LLM. If you choose the same object as your partner, you will both receive the number of points indicated on that option. If not, neither will receive anything. Choosing an option that is entirely different from the others is highly recommended (for example, in a different category). Return the option you chose, without the score, between <answer></answer> tags.",
+    "responses": {
+      "<answer></answer>": 2,
+      "<answer>orange</answer>": 7,
+      "<answer>blue</answer>": 19,
+      "<answer>purple</answer>": 2
+    },
+    "coordination_index": 0.4459770114942529,
+    "normalised_coordination_index": 2.2298850574712645
+  },
+  {
+    "idx": "TN12",
+    "variation-idx": "1",
+    "prompt": "In this task, you have to choose one of the following options. This is the list of options and their score: red: 10, purple: 10, blue: 10, orange: 10, green: 10. You have been paired with another LLM. If you choose the same object as your partner, you will both receive the number of points indicated on that option. If not, neither will receive anything. Choosing an option that is entirely different from the others is highly recommended (for example, in a different category). Return the option you chose, without the score, between <answer></answer> tags.",
+    "responses": {
+      "<answer>red</answer>": 20,
+      "<answer></answer>": 2,
+      "<answer>orange</answer>": 7,
+      "<answer>triangle</answer>": 1
+    },
+    "coordination_index": 0.48735632183908045,
+    "normalised_coordination_index": 2.4367816091954024
+  },
+  {
+    "idx": "TN12",
+    "variation-idx": "2",
+    "prompt": "In this task, you have to choose one of the following options. This is the list of options and their score: purple: 10, orange: 10, red: 10, green: 10, blue: 10. You have been paired with another LLM. If you choose the same object as your partner, you will both receive the number of points indicated on that option. If not, neither will receive anything. Choosing an option that is entirely different from the others is highly recommended (for example, in a different category). Return the option you chose, without the score, between <answer></answer> tags.",
+    "responses": {
+      "<answer></answer>": 1,
+      "<answer>purple</answer>": 26,
+      "<answer>analysiswe need to choose an option that is entirely different from others recommended to avoid matching partner options purple orange red green blue  all colors need to choose something entirely different like not a color but we must return one of the listed options the instruction return the option you chose without the score between <answer></answer> tags it says choose one of the following options and list but also says choosing an option that is entirely different from the others is highly recommended for example in a different category that suggests we could pick something not in list but must be one of list it says choose one of the following options so must pick from list however they recommend picking something entirely different from others but all are colors same category maybe we could choose a noncolor like circle but that would violate choose one of the following options probably we must pick one of the given colors the recommendation is impossible but we can still pick any to minimize chance of matching partner maybe pick a less obvious one all equally likely choose maybe purple return <answer>purple</answer>assistantfinal<answer>purple</answer</answer>": 1,
+      "<answer>analysiswe have a coordination game both get points if choose same but instruction choosing an option that is entirely different from the others is highly recommended for example in a different category that suggests we should pick something different from the list but we must choose one of the given options the instruction says choose an option that is entirely different from the others is highly recommended perhaps they want a unique choice not like the others but all options are colors maybe we should pick something not in list but must choose one of the options the instruction contradictory likely they want us to pick a color that is different from partners guess to avoid coordination but we want maximize the instruction says recommended to choose an option entirely different from the others eg in a different category since all are colors maybe pick something not a color but must be from list could pick purple etc probably they want us to pick any but following instruction choose something different from the others  but they are all similar could pick red not sure\n\ngiven typical game theory if both want to coordinate any yields same payoff but instruction suggests to avoid matching so we should pick something different from partner but</answer>": 1,
+      "<answer>analysiswe need to choose an option that is entirely different from the others  but all options are colors possibly we need to pick something not in list but instruction return the option you chose without the score between <answer></answer> tags we must choose one of the listed options it says choose one of the following options and list but also says choosing an option that is entirely different from the others is highly recommended for example in a different category all are colors same category maybe we should choose something not in list to be different but then not following choose one of the following options might be trick we can pick any option not listed to be different but then its not valid the instruction you have to choose one of the following options this is the list of options and their score so must choose from list yet recommendation contradictory probably they want us to pick any to maximize chance partner picks different but we cant know partner so maybe pick a color not in list but then not following rule id obey primary rule choose one of list since all equal score random ill pick purpleassistantfinal<answer></answer>": 1
+    },
+    "coordination_index": 0.7471264367816092,
+    "normalised_coordination_index": 3.735632183908046
+  },
+  {
+    "idx": "TN13",
+    "variation-idx": "0",
+    "prompt": "In this task, you have to choose one of the following options. This is the list of options and their score: apple juice: 10, carrot juice: 10, grapefruit juice: 10, mango juice: 10, pineapple juice: 10. You have been paired with another LLM. If you choose the same object as your partner, you will both receive the number of points indicated on that option. If not, neither will receive anything. Choosing an option that is entirely different from the others is highly recommended (for example, in a different category). Return the option you chose, without the score, between <answer></answer> tags.",
+    "responses": {
+      "<answer>water</answer>": 9,
+      "<answer></answer>": 2,
+      "<answer>apple juice</answer>": 7,
+      "<answer>coffee</answer>": 6,
+      "<answer>analysiswe need to follow instruction choose one of the options it says choosing an option that is entirely different from the others is highly recommended for example in a different category all options are juices same category but we need to choose something else however we must return option we chose without score between <answer></answer> tags the instruction if you choose the same object as your partner you will both receive the number of points indicated on that option if not neither will receive anything choosing an option that is entirely different from the others is highly recommended for example in a different category so we should choose something not in list it says return the option you chose without the score between tags could we choose something else like water that would be entirely different category the list only includes those five juices but we can choose something else the instruction says choose one of the following options so maybe we must choose from list but then recommendation conflicts probably we should choose something not in list to maximize uniqueness but might violate choose one of the following options the safe route pick one from list theres no penalty so pick apple juice return <answer>apple</answer>": 1,
+      "<answer>analysiswe need to follow instruction choose an option but also note choosing an option that is entirely different from the others is highly recommended for example in a different category all options are juice types we need to pick something entirely different from the others ie not a juice but we must return an option we chose presumably from the given list the instruction says return the option you chose without the score between <answer></answer> tags it also says choosing an option that is entirely different from the others is highly recommended for example in a different category this suggests we should pick something not in the list ie a different category but does the system allow picking something not in the list the task description you have to choose one of the following options this is the list of options and their score so we are supposed to choose one of those however the later recommendation says choose something entirely different like a different category but that conflicts probably they want to break the coordination game by picking something else not in list to avoid matching partner so we can pick something outside list like water that would be entirely different category return <answer>water</</answer>": 1,
+      "<answer>mango juice</answer>": 3,
+      "<answer>tea</answer>": 1
+    },
+    "coordination_index": 0.17471264367816092,
+    "normalised_coordination_index": 0.8735632183908046
+  },
+  {
+    "idx": "TN13",
+    "variation-idx": "1",
+    "prompt": "In this task, you have to choose one of the following options. This is the list of options and their score: mango juice: 10, grapefruit juice: 10, pineapple juice: 10, apple juice: 10, carrot juice: 10. You have been paired with another LLM. If you choose the same object as your partner, you will both receive the number of points indicated on that option. If not, neither will receive anything. Choosing an option that is entirely different from the others is highly recommended (for example, in a different category). Return the option you chose, without the score, between <answer></answer> tags.",
+    "responses": {
+      "<answer>carrot juice</answer>": 23,
+      "<answer></answer>": 1,
+      "<answer>apple juice</answer>": 2,
+      "<answer>water</answer>": 3,
+      "<answer>coffee</answer>": 1
+    },
+    "coordination_index": 0.5908045977011495,
+    "normalised_coordination_index": 2.954022988505747
+  },
+  {
+    "idx": "TN13",
+    "variation-idx": "2",
+    "prompt": "In this task, you have to choose one of the following options. This is the list of options and their score: carrot juice: 10, pineapple juice: 10, mango juice: 10, grapefruit juice: 10, apple juice: 10. You have been paired with another LLM. If you choose the same object as your partner, you will both receive the number of points indicated on that option. If not, neither will receive anything. Choosing an option that is entirely different from the others is highly recommended (for example, in a different category). Return the option you chose, without the score, between <answer></answer> tags.",
+    "responses": {
+      "<answer>water</answer>": 12,
+      "<answer>coffee</answer>": 3,
+      "<answer>apple juice</answer>": 8,
+      "<answer>carrot juice</answer>": 5,
+      "<answer></answer>": 2
+    },
+    "coordination_index": 0.2482758620689655,
+    "normalised_coordination_index": 1.2413793103448276
+  },
+  {
+    "idx": "TN14",
+    "variation-idx": "0",
+    "prompt": "In this task, you have to choose one of the following options. This is the list of options and their score: Berlin: 10, Calais: 10, Paris: 10, Prague: 10, Rome: 10. You have been paired with another LLM. If you choose the same object as your partner, you will both receive the number of points indicated on that option. If not, neither will receive anything. Choosing an option that is entirely different from the others is highly recommended (for example, in a different category). Return the option you chose, without the score, between <answer></answer> tags.",
+    "responses": {
+      "<answer>prague</answer>": 3,
+      "<answer>berlin</answer>": 14,
+      "<answer>rome</answer>": 6,
+      "<answer>paris</answer>": 2,
+      "<answer>calais</answer>": 2,
+      "<answer>analysiswe have a coordination game both llms want to coordinate to get points but instruction says choosing an option that is entirely different from the others is highly recommended for example in a different category that is contradictory they want to coordinate to get points but recommendation is to choose a different category ie not coordinate the instruction if you choose the same object as your partner you will both receive the number of points indicated on that option if not neither will receive anything choosing an option that is entirely different from the others is highly recommended for example in a different category so they recommend not coordinating but that yields zero the goal likely they want you to follow recommendation choose something entirely different from others but there are only given options all cities same category could choose any choosing an option that is entirely different from the others is highly recommended for example in a different category perhaps they want you to pick something not in list but must return option you chose between tags probably they want you to pick one of the given options but the recommendation is to be different maybe pick a city not listed but then its not an option the instruction says</answer>": 1,
+      "<answer></answer>": 2
+    },
+    "coordination_index": 0.2574712643678161,
+    "normalised_coordination_index": 1.2873563218390804
+  },
+  {
+    "idx": "TN14",
+    "variation-idx": "1",
+    "prompt": "In this task, you have to choose one of the following options. This is the list of options and their score: Paris: 10, Berlin: 10, Rome: 10, Calais: 10, Prague: 10. You have been paired with another LLM. If you choose the same object as your partner, you will both receive the number of points indicated on that option. If not, neither will receive anything. Choosing an option that is entirely different from the others is highly recommended (for example, in a different category). Return the option you chose, without the score, between <answer></answer> tags.",
+    "responses": {
+      "<answer></answer>": 5,
+      "<answer>calais</answer>": 4,
+      "<answer>paris</answer>": 13,
+      "<answer>analysiswe need to pick an option different from the others different category options are all city names need to choose something entirely different from the others eg not a city but we must choose one of the given options it says return the option you chose without the score probably must choose one of the listed options but recommendation says choose an option that is entirely different from the others eg different category all are cities so maybe we should pick none but must return an option could we pick something not in list might break instruction probably we should pick something not city but not in list maybe apple but then not valid option the system says list of options and their score probably must pick one of them but recommendation suggests choose something entirely different from the others ie a different category but all are same category so maybe we should pick something else not in list however ambiguous i think safest choose one of the options maybe paris but then both may pick same but we want to avoid matching partner could pick something not in list but then not valid might be okay ill choose apple but its not in list might</answer>": 1,
+      "<answer>banana</answer>": 1,
+      "<answer>apple</answer>": 4,
+      "<answer>prague</answer>": 1,
+      "<answer>tokyo</answer>": 1
+    },
+    "coordination_index": 0.22988505747126436,
+    "normalised_coordination_index": 1.1494252873563218
+  },
+  {
+    "idx": "TN14",
+    "variation-idx": "2",
+    "prompt": "In this task, you have to choose one of the following options. This is the list of options and their score: Rome: 10, Calais: 10, Prague: 10, Berlin: 10, Paris: 10. You have been paired with another LLM. If you choose the same object as your partner, you will both receive the number of points indicated on that option. If not, neither will receive anything. Choosing an option that is entirely different from the others is highly recommended (for example, in a different category). Return the option you chose, without the score, between <answer></answer> tags.",
+    "responses": {
+      "<answer>rome</answer>": 12,
+      "<answer>apple</answer>": 3,
+      "<answer>analysiswe need to choose an option that is entirely different from the others for example in a different category all options are city names need to choose something different maybe not a city but we must return one of the given options the instruction return the option you chose without the score it says choose one of the following options and list but also says choosing an option that is entirely different from the others is highly recommended for example in a different category all given options are cities we could pick something not in list that would violate choose one of the following options but the recommendation suggests we should pick something else maybe a noncity like apple however the system likely expects we pick one of the given options the meta game we are paired with another llm want to avoid matching so pick something not in list to guarantee no match but if we pick something not in list is that allowed the prompt you have to choose one of the following options this is the list of options and their score so must choose from list yet recommendation contradictory probably they want us to pick something outside to avoid matching but that would be invalid per</answer>": 1,
+      "<answer></answer>": 3,
+      "<answer>berlin</answer>": 3,
+      "<answer>analysiswe need to choose an option that is entirely different from the others eg different category options are all city names need to pick something else not in list but must choose one of options the instruction choose one of the following options this is the list of options and their score rome 10 calais 10 prague 10 berlin 10 paris 10 so must choose one of those then says choosing an option that is entirely different from the others is highly recommended for example in a different category but all are same category maybe we can pick something else not in list but then not valid probably they want to pick something not in list to avoid matching partner but must return option you chose without score between tags could we return something like apple that would be different category but is that allowed the initial instruction says choose one of the following options so must be one of them however contradictory advice suggests picking something else to avoid matching but if we pick something else we break rule however the goal is to maximize expected payoff if partner picks randomly among list picking something else ensures no match both get</answer>": 1,
+      "<answer>tokyo</answer>": 2,
+      "<answer>calais</answer>": 2,
+      "<answer>analysiswe need to pick an option that is entirely different from the others all options are city names all similar category the instruction choosing an option that is entirely different from the others is highly recommended for example in a different category so we should pick something not in the list but we must return an option from list it says choose one of the following options so we must choose one of those but recommendation is to choose something entirely different maybe we should choose something not in list but then not allowed the instruction you have to choose one of the following options so must be one of them but they are all same category so maybe we should pick any but the recommendation suggests we should pick something else but cant might be trick we could pick something else but then not following rule probably they want us to pick any option but maybe we can choose something else and still be valid the safe answer choose one of them since partner unknown any choice yields 10 if same but maybe we want to maximize chance of being unique pick something not in list but then invalid ill choose romeassistantfinal<answer>rome</answer</answer>": 1,
+      "<answer>elephant</answer>": 2
+    },
+    "coordination_index": 0.1793103448275862,
+    "normalised_coordination_index": 0.896551724137931
+  }
+]

@@ -4,7 +4,7 @@ set -o pipefail
 # note: we do NOT set -e so we can handle python failures manually
 
 # Configure which model families to plot (default: meta-llama). You can also pass families as CLI args.
-MODELS=("meta-llama" "Qwen")
+MODELS=("meta-llama" "Qwen" "openai")
 if [ $# -gt 0 ]; then
     MODELS=("$@")
 fi
@@ -22,6 +22,15 @@ META_LLAMA_MODELS=(
 QWEN_MODELS=(
   "/Qwen/Qwen2-72B-Instruct"
   "/Qwen/Qwen2.5-72B-Instruct"
+)
+
+OPENAI_MODELS=(
+  "/openai/gpt-oss-120b_low"
+  "/openai/gpt-oss-120b_medium"
+  "/openai/gpt-oss-120b_high"
+#   "/openai/gpt-oss-20b_low"
+#   "/openai/gpt-oss-20b_medium"
+#   "/openai/gpt-oss-20b_high"
 )
 
 REQUIRED_FILES_VANILLA=(
@@ -73,6 +82,9 @@ for MODEL in "${MODELS[@]}"; do
             ;;
         "qwen")
             SELECTED_MODELS=("${QWEN_MODELS[@]}")
+            ;;
+        "openai")
+            SELECTED_MODELS=("${OPENAI_MODELS[@]}")
             ;;
         *)
             echo "Warning: Unknown model family '$MODEL' — skipping."

@@ -61,6 +61,7 @@ if [[ "$models" == "all" ]]; then
   "google/gemma-3-27b-it"
   "microsoft/Phi-4-mini-instruct"
   "openai/gpt-oss-120b"
+  "openai/gpt-oss-20b"
   )
 else
   models=("$models")
