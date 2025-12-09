@@ -14,23 +14,26 @@ def parse_arguments() -> argparse.Namespace:
     parser.add_argument(
         "-m",
         "--model",
-        dest="model_name",
-        default="meta-llama/Llama-3.2-1B-Instruct",
-        help="HuggingFace model id string.",
+        dest="model_names",
+        nargs="+",
+        default=["meta-llama/Llama-3.2-1B-Instruct"],
+        help="HuggingFace model id string. Accepts multiple values.",
     )
     parser.add_argument(
         "-d",
         "--dataset",
-        dest="dataset",
-        default="schelling",
-        help="Dataset name (without .jsonl).",
+        dest="datasets",
+        nargs="+",
+        default=["schelling"],
+        help="Dataset name(s) (without .jsonl).",
     )
     parser.add_argument(
         "-p",
         "--problem-tag",
-        dest="problem_tag",
-        default="problem",
-        help="Key of the problem in the json data.",
+        dest="problem_tags",
+        nargs="+",
+        default=["problem"],
+        help="Key(s) of the problem in the json data.",
     )
     parser.add_argument(
         "-t",
@@ -73,6 +76,10 @@ def parse_arguments() -> argparse.Namespace:
     return parser.parse_args()
 
 
+def ensure_list(values: str | List[str]) -> List[str]:
+    return values if isinstance(values, list) else [values]
+
+
 def prepare_directories(
     model_name: str, base_data_dir: str = "./data/"
 ) -> Tuple[Path, Path]:
@@ -85,8 +92,69 @@ def prepare_directories(
 
 def save_jsonl(path: Path, data: List[dict]) -> None:
     path.parent.mkdir(parents=True, exist_ok=True)
-    with open(path, "w") as f:
+    tmp_path = path.with_suffix(path.suffix + ".tmp")
+    with open(tmp_path, "w") as f:
         json.dump(data, f, indent=2)
+    tmp_path.replace(path)
+
+
+def build_prompt_plan(
+    problems: Dict[int, List[str]], norm_factors: Dict[int, List[int]]
+) -> List[dict]:
+    prompt_plan: List[dict] = []
+    for idx, variants in problems.items():
+        for var_idx, variant in enumerate(variants):
+            prompt_plan.append(
+                {
+                    "idx": idx,
+                    "variation_idx": str(var_idx),
+                    "prompt": f"{Level0.prefix}{variant}{Level0.suffix}",
+                    "normalization_factor": norm_factors[idx][var_idx],
+                }
+            )
+    return prompt_plan
+
+
+def assemble_log_entries(
+    prompt_plan: List[dict], responses_by_prompt: Dict[Tuple[int, str], List[str]]
+) -> List[dict]:
+    logs: List[dict] = []
+    for entry in prompt_plan:
+        key = (entry["idx"], entry["prompt"])
+        logs.append(
+            {
+                "idx": entry["idx"],
+                "variation-idx": entry["variation_idx"],
+                "prompt": entry["prompt"],
+                "responses": responses_by_prompt.get(key, []),
+                "normalization_factor": entry["normalization_factor"],
+            }
+        )
+    return logs
+
+
+def load_existing_logs(path: Path) -> Dict[Tuple[int, str], List[str]]:
+    if not path.exists():
+        return {}
+
+    try:
+        with open(path, "r") as f:
+            data = json.load(f)
+    except json.JSONDecodeError:
+        print(f"[WARNING] Could not parse existing log at {path}; ignoring it.")
+        return {}
+
+    responses: Dict[Tuple[int, str], List[str]] = {}
+    for block in data:
+        idx = block.get("idx")
+        prompt = block.get("prompt")
+        if idx is None or prompt is None:
+            continue
+        stored_responses = block.get("responses") or []
+        if isinstance(stored_responses, list):
+            filtered = [r for r in stored_responses if isinstance(r, str)]
+            responses[(idx, prompt)] = filtered
+    return responses
 
 
 def build_flat_prompt_list(
@@ -101,22 +169,60 @@ def build_flat_prompt_list(
 
 
 def generate_batch_responses(
-    model: LLM, prompts: List[str], trials: int, seq_per_prompt: int
-) -> List[List[str]]:
-    all_outputs: List[List[str]] = []
-    for i, prompt in enumerate(prompts, start=1):
-        combined: List[str] = []
-        for t in range(trials):
+    model: LLM,
+    prompt_plan: List[dict],
+    trials: int,
+    seq_per_prompt: int,
+    log_path: Path,
+    existing_responses: Dict[Tuple[int, str], List[str]],
+) -> Tuple[Dict[Tuple[int, str], List[str]], bool]:
+    target_per_prompt = trials * seq_per_prompt
+    responses_by_prompt: Dict[Tuple[int, str], List[str]] = {
+        key: list(val) for key, val in existing_responses.items()
+    }
+
+    for entry in prompt_plan:
+        responses_by_prompt.setdefault((entry["idx"], entry["prompt"]), [])
+
+    new_data_generated = False
+    total_prompts = len(prompt_plan)
+
+    for i, entry in enumerate(prompt_plan, start=1):
+        key = (entry["idx"], entry["prompt"])
+        prompt_responses = responses_by_prompt[key]
+
+        if len(prompt_responses) >= target_per_prompt:
             print(
-                f"[{model.model_id}] Q {i}/{len(prompts)}  "
-                f"Trial {t + 1}/{trials}  "
-                f"({seq_per_prompt} seqs)"
+                f"[SKIP] idx={entry['idx']} var={entry['variation_idx']} "
+                f"already has {len(prompt_responses)}/{target_per_prompt} responses."
             )
-            texts = model.generate_batch([prompt])[0]
-            combined.extend(texts)
-            print("\n".join(texts))
-        all_outputs.append(combined)
-    return all_outputs
+            continue
+
+        if prompt_responses:
+            print(
+                f"[RESUME] idx={entry['idx']} var={entry['variation_idx']} "
+                f"continuing from {len(prompt_responses)}/{target_per_prompt}."
+            )
+
+        while len(prompt_responses) < target_per_prompt:
+            remaining = target_per_prompt - len(prompt_responses)
+            batch_size = min(seq_per_prompt, remaining)
+            print(
+                f"[{model.model_id}] Q {i}/{total_prompts} "
+                f"idx={entry['idx']} var={entry['variation_idx']} "
+                f"({len(prompt_responses)}/{target_per_prompt} done, "
+                f"+{batch_size} requested)"
+            )
+            texts = model.generate_batch(
+                [entry["prompt"]], num_return_sequences=batch_size
+            )[0]
+            prompt_responses.extend(texts[:batch_size])
+            new_data_generated = True
+            print("\n".join(texts[:batch_size]))
+
+            save_jsonl(log_path, assemble_log_entries(prompt_plan, responses_by_prompt))
+
+    return responses_by_prompt, new_data_generated
 
 
 def nest_outputs(
@@ -147,63 +253,115 @@ def build_log_json(
     return logs
 
 
-def run_job(args: argparse.Namespace) -> None:
+def run_single_job(
+    model_name: str, dataset: str, problem_tag: str, args: argparse.Namespace
+) -> None:
     start = time.time()
 
     # filesystem prep
-    dataset_dir, logs_dir = prepare_directories(args.model_name)
+    dataset_dir, logs_dir = prepare_directories(model_name)
+    log_file = logs_dir / f"{dataset}_responses_{problem_tag}.jsonl"
 
     # load dataset
-    ds_path = dataset_dir / f"{args.dataset}.jsonl"
+    ds_path = dataset_dir / f"{dataset}.jsonl"
     with open(ds_path) as f:
         raw_data = json.load(f)
-    problems, norm_factors = iterate_data(raw_data, args.problem_tag)
+    problems, norm_factors = iterate_data(raw_data, problem_tag)
 
-    # load model
-    reasoning_arg = args.reasoning
-    if reasoning_arg.lower() == "none":
-        reasoning_arg = None
-
-    model = load_model(
-        model_id=args.model_name,
-        num_return_sequences=args.sequences,
-        quantization=args.quantization,
-        reasoning=reasoning_arg,
+    # build prompt plan and check existing progress before loading the model
+    prompt_plan = build_prompt_plan(problems, norm_factors)
+    target_per_prompt = args.trials * args.sequences
+    existing_responses = load_existing_logs(log_file)
+    total_prompts = len(prompt_plan)
+    completed_prompts = sum(
+        1
+        for entry in prompt_plan
+        if len(existing_responses.get((entry["idx"], entry["prompt"]), []))
+        >= target_per_prompt
     )
+    if existing_responses:
+        print(
+            f"[INFO] Found stored responses for {completed_prompts}/{total_prompts} "
+            f"prompts in {log_file}."
+        )
 
-    # build the prompt list
-    prompts, keys = build_flat_prompt_list(problems)
+    all_complete = completed_prompts == total_prompts and total_prompts > 0
+    responses_by_prompt: Dict[Tuple[int, str], List[str]] = dict(existing_responses)
+    model: LLM | None = None
+    new_data_generated = False
 
-    # generate
-    outputs = generate_batch_responses(
-        model, prompts, trials=args.trials, seq_per_prompt=args.sequences
-    )
+    # load model if additional work is required
+    if not all_complete:
+        if total_prompts == 0:
+            print("[WARNING] No prompts generated from dataset; exiting early.")
+            return
+
+        # load model
+        reasoning_arg = args.reasoning
+        if reasoning_arg and reasoning_arg.lower() == "none":
+            reasoning_arg = None
+
+        model = load_model(
+            model_id=model_name,
+            num_return_sequences=args.sequences,
+            quantization=args.quantization,
+            reasoning=reasoning_arg,
+        )
+
+        # generate
+        responses_by_prompt, new_data_generated = generate_batch_responses(
+            model,
+            prompt_plan,
+            trials=args.trials,
+            seq_per_prompt=args.sequences,
+            log_path=log_file,
+            existing_responses=existing_responses,
+        )
+    else:
+        print("[INFO] All prompts already have the required number of responses.")
 
     # reshape & save
-    nested = nest_outputs(keys, outputs)
-    jsonl_logs = build_log_json(nested, norm_factors)
-    out_file = logs_dir / f"{args.dataset}_responses_{args.problem_tag}.jsonl"
-    save_jsonl(out_file, jsonl_logs)
-    print(f"[OK] Responses written to {out_file}")
+    jsonl_logs = assemble_log_entries(prompt_plan, responses_by_prompt)
+    save_jsonl(log_file, jsonl_logs)
+    print(f"[OK] Responses written to {log_file}")
 
     # print timing
     elapsed = int(time.time() - start)
     print(
-        f"[{args.model_name}] elapsed "
+        f"[{model_name}] elapsed "
         f"{elapsed // 3600:02d}:{(elapsed % 3600) // 60:02d}:{elapsed % 60:02d}"
     )
 
     # Plot graphs and create result folders
+    results_path = Path(
+        f"./results/{model_name}/{dataset}_{problem_tag}.jsonl"
+    )
     if args.plot_graph:
-        compute_metrics(args.model_name, args.dataset, jsonl_logs, args.problem_tag)
+        if new_data_generated or not results_path.exists():
+            compute_metrics(model_name, dataset, jsonl_logs, problem_tag)
+        else:
+            print(
+                f"[INFO] Results already exist at {results_path}; skipping recomputation."
+            )
 
     # cleanup
-    if hasattr(model, "clear_cache"):
+    if model and hasattr(model, "clear_cache"):
         model.clear_cache()
 
 
+def run_job(args: argparse.Namespace) -> None:
+    for model in ensure_list(args.model_names):
+        for dataset in ensure_list(args.datasets):
+            for problem_tag in ensure_list(args.problem_tags):
+                print(
+                    f"[INFO] Running model={model} dataset={dataset} "
+                    f"problem_tag={problem_tag}"
+                )
+                run_single_job(model, dataset, problem_tag, args)
+
+
 def compute_metrics(
-    model_name: str, dataset: str, data: dict, problem_tag: str
+    model_name: str, dataset: str, data: List[dict], problem_tag: str
 ) -> None:
     """Plot graphs and compute the results
 

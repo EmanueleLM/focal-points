@@ -1,17 +1,24 @@
 #!/bin/bash
 
 # Default arguments
-models=("meta-llama/Llama-3.3-70B-Instruct")
+default_models=("meta-llama/Llama-3.3-70B-Instruct")
+models=()
+datasets=()
 num_experiments=30
 quantization="None"
 plot_graphs="true"
 reasoning="None"
 
 # Parse command-line arguments
-while getopts "m:n:q:p:r:" opt; do
+while getopts "m:d:n:q:p:r:" opt; do
   case $opt in
     m)
-      models=("$OPTARG")
+      read -r -a parsed_models <<< "$OPTARG"
+      models+=("${parsed_models[@]}")
+      ;;
+    d)
+      read -r -a parsed_datasets <<< "$OPTARG"
+      datasets+=("${parsed_datasets[@]}")
       ;;
     n)
       num_experiments=$OPTARG
@@ -32,9 +39,7 @@ while getopts "m:n:q:p:r:" opt; do
   esac
 done
 
-# Handle "all-models" option
-if [[ "$models" == "all" ]]; then
-  models=(
+available_models=(
   "meta-llama/Llama-3.3-70B-Instruct"
   "meta-llama/Llama-3.1-70B-Instruct"
   "meta-llama/Meta-Llama-3-70B-Instruct"
@@ -62,71 +67,81 @@ if [[ "$models" == "all" ]]; then
   "microsoft/Phi-4-mini-instruct"
   "openai/gpt-oss-120b"
   "openai/gpt-oss-20b"
+)
+
+all_datasets=(
+  # TASK -- Amsterdam
+  "amsterdam"
+  "amsterdam-instruct-all-features"
+  "amsterdam-instruct-saliency"
+  # TASK -- Amsterdam_numeric
+  "amsterdam_numeric"
+  "amsterdam_numeric-instruct-all-features"
+  "amsterdam_numeric-instruct-saliency"
+  # TASK -- Asymmetric_payoff
+  "asymmetric_payoff"
+  "asymmetric_payoff-instruct-all-features"
+  "asymmetric_payoff-instruct-saliency"
+  # TASK -- Nottingham
+  "nottingham"
+  "nottingham-instruct-all-features"
+  "nottingham-instruct-saliency"
+  # TASK -- Nottingham_numeric
+  "nottingham_numeric"
+  "nottingham_numeric-instruct-all-features"
+  "nottingham_numeric-instruct-saliency"
+  # TASK -- Amsterdam culture
+  "amsterdam-instruct-culture"
+  # TASK -- Nottingham culture
+  "nottingham-instruct-culture"
+  # schelling
+  "schelling"
+  "schelling-instruct-all-features"
+  "schelling-instruct-saliency"
   )
-else
-  models=("$models")
+
+# Apply defaults if none provided
+if ((${#models[@]} == 0)); then
+  models=("${default_models[@]}")
 fi
 
-datasets=(
-    # TASK -- Amsterdam
-    "amsterdam"
-    "amsterdam-instruct-all-features"
-    "amsterdam-instruct-saliency"
-    # TASK -- Amsterdam_numeric
-    "amsterdam_numeric"
-    "amsterdam_numeric-instruct-all-features"
-    "amsterdam_numeric-instruct-saliency"
-    # TASK -- Asymmetric_payoff
-    "asymmetric_payoff"
-    "asymmetric_payoff-instruct-all-features"
-    "asymmetric_payoff-instruct-saliency"
-    # TASK -- Nottingham
-    "nottingham"
-    "nottingham-instruct-all-features"
-    "nottingham-instruct-saliency"
-    # TASK -- Nottingham_numeric
-    "nottingham_numeric"
-    "nottingham_numeric-instruct-all-features"
-    "nottingham_numeric-instruct-saliency"
-    # TASK -- Amsterdam culture
-    "amsterdam-instruct-culture"
-    # TASK -- Nottingham culture
-    "nottingham-instruct-culture"
-  )
+if ((${#datasets[@]} == 0)); then
+  datasets=("${all_datasets[@]}")
+fi
 
-problemtags=("problem-pick" "problem-guess" "problem-coordinate")
+# Handle "all" sentinel
+if ((${#models[@]} == 1)) && [[ "${models[0]}" == "all" ]]; then
+  models=("${available_models[@]}")
+fi
 
-echo "Running experiments with model: $models, quantization: $quantization, number of experiments: $num_experiments, reasoning: $reasoning"
+if ((${#datasets[@]} == 1)) && [[ "${datasets[0]}" == "all" ]]; then
+  datasets=("${all_datasets[@]}")
+fi
 
-for model in "${models[@]}"; do
-  echo "Using model: $model"
+standard_problemtags=("problem-pick" "problem-guess" "problem-coordinate")
+schelling_problemtags=("problem")
+standard_datasets=()
+schelling_datasets=()
 
-  for data in "${datasets[@]}"; do
-    for ptag in "${problemtags[@]}"; do
-      echo "Running main.py with $data and $ptag"
-      python main.py --model "$model" --dataset "$data" --problem-tag "$ptag"  --return-sequences "$num_experiments" --quantization "$quantization" --plot-graphs "$plot_graphs" --reasoning "$reasoning"
-
-    done
-  done
+for data in "${datasets[@]}"; do
+  case "$data" in
+    "schelling"|"schelling-instruct-all-features"|"schelling-instruct-saliency")
+      schelling_datasets+=("$data")
+      ;;
+    *)
+      standard_datasets+=("$data")
+      ;;
+  esac
 done
 
-datasets=(
-    # schelling
-    "schelling"
-    "schelling-instruct-all-features"
-    "schelling-instruct-saliency"
-  )
+echo "Running experiments with model(s): ${models[*]}, datasets: ${datasets[*]}, quantization: $quantization, number of experiments: $num_experiments, reasoning: $reasoning"
 
-problemtags=("problem")
+if ((${#standard_datasets[@]})); then
+  echo "Running main.py for standard datasets: ${standard_datasets[*]}"
+  python main.py --model "${models[@]}" --dataset "${standard_datasets[@]}" --problem-tag "${standard_problemtags[@]}" --return-sequences "$num_experiments" --quantization "$quantization" --plot-graphs "$plot_graphs" --reasoning "$reasoning"
+fi
 
-for model in "${models[@]}"; do
-  echo "Using model: $model"
-
-  for data in "${datasets[@]}"; do
-    for ptag in "${problemtags[@]}"; do
-      echo "Running main.py with $data and $ptag"
-      python main.py --model "$model" --dataset "$data" --problem-tag "$ptag"  --return-sequences "$num_experiments" --quantization "$quantization" --plot-graphs "$plot_graphs" --reasoning "$reasoning"
-
-    done
-  done
-done
+if ((${#schelling_datasets[@]})); then
+  echo "Running main.py for schelling datasets: ${schelling_datasets[*]}"
+  python main.py --model "${models[@]}" --dataset "${schelling_datasets[@]}" --problem-tag "${schelling_problemtags[@]}" --return-sequences "$num_experiments" --quantization "$quantization" --plot-graphs "$plot_graphs" --reasoning "$reasoning"
+fi

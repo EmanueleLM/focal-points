@@ -21,8 +21,16 @@ class LLM(ABC):
         raise NotImplementedError
 
     @abstractmethod
-    def generate_batch(self, prompts: list[str]) -> list[list[str]]:
-        """Generate responses for a list of prompts."""
+    def generate_batch(
+        self, prompts: list[str], num_return_sequences: int | None = None
+    ) -> list[list[str]]:
+        """Generate responses for a list of prompts.
+
+        Args:
+            prompts: Prompts to pass to the model.
+            num_return_sequences: Optional override for the number of responses per
+                prompt. If None, fall back to the model's configured default.
+        """
         raise NotImplementedError
 
 
@@ -165,7 +173,9 @@ class LocalLLM(LLM):
         del self.generator, self.model
         gc.collect()
 
-    def generate_batch(self, prompts: list[str]) -> list[list[str]]:
+    def generate_batch(
+        self, prompts: list[str], num_return_sequences: int | None = None
+    ) -> list[list[str]]:
         formatted_chats = []
         for prompt in prompts:
             chat = [
@@ -174,7 +184,11 @@ class LocalLLM(LLM):
             ]
             formatted_chats.append(chat)
 
-        results = self.generator(formatted_chats)
+        generator_kwargs: dict = {}
+        if num_return_sequences is not None:
+            generator_kwargs["num_return_sequences"] = num_return_sequences
+
+        results = self.generator(formatted_chats, **generator_kwargs)
         all_responses: list[list[str]] = []
 
         for out in results:
@@ -233,11 +247,18 @@ class APILLM(LLM):
             text_chunks.append(response.output_text)
         return "".join(text_chunks).strip()
 
-    def generate_batch(self, prompts: list[str]) -> list[list[str]]:
+    def generate_batch(
+        self, prompts: list[str], num_return_sequences: int | None = None
+    ) -> list[list[str]]:
         all_outputs: list[list[str]] = []
         for prompt in prompts:
             prompt_outputs: list[str] = []
-            for _ in range(self.num_return_sequences):
+            sequences_to_generate = (
+                num_return_sequences
+                if num_return_sequences is not None
+                else self.num_return_sequences
+            )
+            for _ in range(sequences_to_generate):
                 response = self.client.responses.create(
                     model=self.model_id,
                     input=prompt,
