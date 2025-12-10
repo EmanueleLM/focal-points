@@ -1,0 +1,447 @@
+[
+  {
+    "idx": "TN1",
+    "variation-idx": "0",
+    "prompt": "In this task, you have to choose one of the following options. This is the list of options and their score: Friday lunchtime: 10, Monday morning: 10, Saturday night: 10, Sunday night: 10, Wednesday evening: 10. You have been paired with another LLM. If you choose the same object as your partner, you will both receive the number of points indicated on that option. If not, neither will receive anything. Choosing an option that is entirely different from the others is highly recommended (for example, in a different category). Return the option you chose, without the score, between <answer></answer> tags.",
+    "responses": {
+      "<answer>wednesday evening</answer>": 30
+    },
+    "coordination_index": 1.0,
+    "normalised_coordination_index": 5.0
+  },
+  {
+    "idx": "TN1",
+    "variation-idx": "1",
+    "prompt": "In this task, you have to choose one of the following options. This is the list of options and their score: Saturday night: 10, Wednesday evening: 10, Friday lunchtime: 10, Sunday night: 10, Monday morning: 10. You have been paired with another LLM. If you choose the same object as your partner, you will both receive the number of points indicated on that option. If not, neither will receive anything. Choosing an option that is entirely different from the others is highly recommended (for example, in a different category). Return the option you chose, without the score, between <answer></answer> tags.",
+    "responses": {
+      "<answer>monday morning</answer>": 30
+    },
+    "coordination_index": 1.0,
+    "normalised_coordination_index": 5.0
+  },
+  {
+    "idx": "TN1",
+    "variation-idx": "2",
+    "prompt": "In this task, you have to choose one of the following options. This is the list of options and their score: Monday morning: 10, Sunday night: 10, Friday lunchtime: 10, Wednesday evening: 10, Saturday night: 10. You have been paired with another LLM. If you choose the same object as your partner, you will both receive the number of points indicated on that option. If not, neither will receive anything. Choosing an option that is entirely different from the others is highly recommended (for example, in a different category). Return the option you chose, without the score, between <answer></answer> tags.",
+    "responses": {
+      "<answer>wednesday evening</answer>": 30
+    },
+    "coordination_index": 1.0,
+    "normalised_coordination_index": 5.0
+  },
+  {
+    "idx": "TN2",
+    "variation-idx": "0",
+    "prompt": "In this task, you have to choose one of the following options. This is the list of options and their score: Earth: 10, Mars: 10, Mercury: 10, Saturn: 10, Venus: 10. You have been paired with another LLM. If you choose the same object as your partner, you will both receive the number of points indicated on that option. If not, neither will receive anything. Choosing an option that is entirely different from the others is highly recommended (for example, in a different category). Return the option you chose, without the score, between <answer></answer> tags.",
+    "responses": {
+      "<answer>mercury</answer>": 25,
+      "<answer>mercury</answer> \nnote there seems to be a typo in the provided options list its mercury instead of mercury but based on the instruction ive returned my choice as requested \n\ngiven the instruction to choose something different from what my partner might choose and considering there are only planets listed my selection is mercury hoping my partner might choose differently among the planetary options": 1,
+      "<answer>mercury</answer> \nnote theres a minor typo in the prompt where mercury is spelled as mercury in the answer the correct answer should be mercury however sticking strictly to the output format requested \n\n<answer>mercury</answer>": 1,
+      "<answer>mercury</answer> \nnote theres a minor typo in the prompt where mercury is written as mercury but for the purpose of the exercise im assuming this is the intended choice \n\nhowever to correct it based on the given options \n<answer>mercury</answer>": 1,
+      "<answer>mercury</answer> \nnote there seems to be a typo in the provided options list it should likely read mercury instead of mercury however ive assumed the intended planet was mercury based on the context \n\nsince the task suggests choosing an option that is different from what the other llm might choose and considering theres no additional information about the other llms preferences or strategy ive selected mercury": 1,
+      "<answer>mercury</answer> \n\nnote theres a minor typo in the instruction where mercury is spelled as mercury in the answer to match the format requested while selecting one distinct from typical choices given the instructions context the correct spelling should be mercury\n\ngiven the instructions context i assumed the intention was to select mercury as it seems somewhat distinct from the other planets typically associated with highprofile features or missions compared to earth mars saturn and venus which are often focal points of exploration or interest however since the request is to choose an option that is entirely different from the others and considering the options provided are all planets the selection aims for uniqueness within the set rather than literal difference": 1
+    },
+    "coordination_index": 0.6896551724137931,
+    "normalised_coordination_index": 3.4482758620689657
+  },
+  {
+    "idx": "TN2",
+    "variation-idx": "1",
+    "prompt": "In this task, you have to choose one of the following options. This is the list of options and their score: Venus: 10, Earth: 10, Saturn: 10, Mercury: 10, Mars: 10. You have been paired with another LLM. If you choose the same object as your partner, you will both receive the number of points indicated on that option. If not, neither will receive anything. Choosing an option that is entirely different from the others is highly recommended (for example, in a different category). Return the option you chose, without the score, between <answer></answer> tags.",
+    "responses": {
+      "<answer>mars</answer>": 30
+    },
+    "coordination_index": 1.0,
+    "normalised_coordination_index": 5.0
+  },
+  {
+    "idx": "TN2",
+    "variation-idx": "2",
+    "prompt": "In this task, you have to choose one of the following options. This is the list of options and their score: Mars: 10, Saturn: 10, Venus: 10, Earth: 10, Mercury: 10. You have been paired with another LLM. If you choose the same object as your partner, you will both receive the number of points indicated on that option. If not, neither will receive anything. Choosing an option that is entirely different from the others is highly recommended (for example, in a different category). Return the option you chose, without the score, between <answer></answer> tags.",
+    "responses": {
+      "<answer>mercury</answer>": 30
+    },
+    "coordination_index": 1.0,
+    "normalised_coordination_index": 5.0
+  },
+  {
+    "idx": "TN3",
+    "variation-idx": "0",
+    "prompt": "In this task, you have to choose one of the following options. This is the list of options and their score: Ford: 10, Mercedes: 10, Pontiac: 10, Porsche: 10, Volkswagen: 10. You have been paired with another LLM. If you choose the same object as your partner, you will both receive the number of points indicated on that option. If not, neither will receive anything. Choosing an option that is entirely different from the others is highly recommended (for example, in a different category). Return the option you chose, without the score, between <answer></answer> tags.",
+    "responses": {
+      "<answer>porsche</answer>": 30
+    },
+    "coordination_index": 1.0,
+    "normalised_coordination_index": 5.0
+  },
+  {
+    "idx": "TN3",
+    "variation-idx": "1",
+    "prompt": "In this task, you have to choose one of the following options. This is the list of options and their score: Volkswagen: 10, Pontiac: 10, Porsche: 10, Ford: 10, Mercedes: 10. You have been paired with another LLM. If you choose the same object as your partner, you will both receive the number of points indicated on that option. If not, neither will receive anything. Choosing an option that is entirely different from the others is highly recommended (for example, in a different category). Return the option you chose, without the score, between <answer></answer> tags.",
+    "responses": {
+      "<answer>porsche</answer>": 30
+    },
+    "coordination_index": 1.0,
+    "normalised_coordination_index": 5.0
+  },
+  {
+    "idx": "TN3",
+    "variation-idx": "2",
+    "prompt": "In this task, you have to choose one of the following options. This is the list of options and their score: Porsche: 10, Mercedes: 10, Volkswagen: 10, Ford: 10, Pontiac: 10. You have been paired with another LLM. If you choose the same object as your partner, you will both receive the number of points indicated on that option. If not, neither will receive anything. Choosing an option that is entirely different from the others is highly recommended (for example, in a different category). Return the option you chose, without the score, between <answer></answer> tags.",
+    "responses": {
+      "<pontiac></pontac>": 27,
+      "<pontiac></pontac> \nnote there seems to be a typo in the closing tag it should be </pontiac> but i assume its meant to refer to the brand pontiac chosen as the answer \n\n<answer>pontiac</answer>": 1,
+      "<pontiac></pontac> \nnote theres a typo in the closing tag above it should be </pontiac> but i kept it as is to reflect potential input accuracy \n\n<answer>pontiac</answer>": 1,
+      "<pontiac></pontac> \nnote there seems to be a typo in the closing tag it should be </pontiac> but i assume its meant to be the chosen answer pontiac \n\n<answer>pontiac</answer>": 1
+    },
+    "coordination_index": 0.8068965517241379,
+    "normalised_coordination_index": 4.0344827586206895
+  },
+  {
+    "idx": "TN4",
+    "variation-idx": "0",
+    "prompt": "In this task, you have to choose one of the following options. This is the list of options and their score: cheese omelette: 10, ham omelette: 10, mushroom omelette: 10, plain omelette: 10, prawn omelette: 10. You have been paired with another LLM. If you choose the same object as your partner, you will both receive the number of points indicated on that option. If not, neither will receive anything. Choosing an option that is entirely different from the others is highly recommended (for example, in a different category). Return the option you chose, without the score, between <answer></answer> tags.",
+    "responses": {
+      "<answer>mushroom omelette</answer>": 15,
+      "<answer>prawn omelette</answer>": 15
+    },
+    "coordination_index": 0.4827586206896552,
+    "normalised_coordination_index": 2.413793103448276
+  },
+  {
+    "idx": "TN4",
+    "variation-idx": "1",
+    "prompt": "In this task, you have to choose one of the following options. This is the list of options and their score: mushroom omelette: 10, prawn omelette: 10, ham omelette: 10, cheese omelette: 10, plain omelette: 10. You have been paired with another LLM. If you choose the same object as your partner, you will both receive the number of points indicated on that option. If not, neither will receive anything. Choosing an option that is entirely different from the others is highly recommended (for example, in a different category). Return the option you chose, without the score, between <answer></answer> tags.",
+    "responses": {
+      "<answer>mushroom omelette</answer>": 12,
+      "<answer>cheese omelette</answer>": 18
+    },
+    "coordination_index": 0.503448275862069,
+    "normalised_coordination_index": 2.5172413793103448
+  },
+  {
+    "idx": "TN4",
+    "variation-idx": "2",
+    "prompt": "In this task, you have to choose one of the following options. This is the list of options and their score: prawn omelette: 10, plain omelette: 10, mushroom omelette: 10, ham omelette: 10, cheese omelette: 10. You have been paired with another LLM. If you choose the same object as your partner, you will both receive the number of points indicated on that option. If not, neither will receive anything. Choosing an option that is entirely different from the others is highly recommended (for example, in a different category). Return the option you chose, without the score, between <answer></answer> tags.",
+    "responses": {
+      "<answer>cheese omelette</answer>": 30
+    },
+    "coordination_index": 1.0,
+    "normalised_coordination_index": 5.0
+  },
+  {
+    "idx": "TN5",
+    "variation-idx": "0",
+    "prompt": "In this task, you have to choose one of the following options. This is the list of options and their score: 1: 10, 2: 10, 7: 10, 10: 10, 15: 10. You have been paired with another LLM. If you choose the same object as your partner, you will both receive the number of points indicated on that option. If not, neither will receive anything. Choosing an option that is entirely different from the others is highly recommended (for example, in a different category). Return the option you chose, without the score, between <answer></answer> tags.",
+    "responses": {
+      "<answer>7</answer>": 30
+    },
+    "coordination_index": 1.0,
+    "normalised_coordination_index": 5.0
+  },
+  {
+    "idx": "TN5",
+    "variation-idx": "1",
+    "prompt": "In this task, you have to choose one of the following options. This is the list of options and their score: 10: 10, 15: 10, 1: 10, 2: 10, 7: 10. You have been paired with another LLM. If you choose the same object as your partner, you will both receive the number of points indicated on that option. If not, neither will receive anything. Choosing an option that is entirely different from the others is highly recommended (for example, in a different category). Return the option you chose, without the score, between <answer></answer> tags.",
+    "responses": {
+      "<answer>1</answer>": 30
+    },
+    "coordination_index": 1.0,
+    "normalised_coordination_index": 5.0
+  },
+  {
+    "idx": "TN5",
+    "variation-idx": "2",
+    "prompt": "In this task, you have to choose one of the following options. This is the list of options and their score: 2: 10, 1: 10, 15: 10, 7: 10, 10: 10. You have been paired with another LLM. If you choose the same object as your partner, you will both receive the number of points indicated on that option. If not, neither will receive anything. Choosing an option that is entirely different from the others is highly recommended (for example, in a different category). Return the option you chose, without the score, between <answer></answer> tags.",
+    "responses": {
+      "<answer>15</answer>": 30
+    },
+    "coordination_index": 1.0,
+    "normalised_coordination_index": 5.0
+  },
+  {
+    "idx": "TN6",
+    "variation-idx": "0",
+    "prompt": "In this task, you have to choose one of the following options. This is the list of options and their score: deck chair: 10, dining chair: 10, easy chair: 10, rocking chair: 10, stool: 10. You have been paired with another LLM. If you choose the same object as your partner, you will both receive the number of points indicated on that option. If not, neither will receive anything. Choosing an option that is entirely different from the others is highly recommended (for example, in a different category). Return the option you chose, without the score, between <answer></answer> tags.",
+    "responses": {
+      "<answer>stool</answer>": 30
+    },
+    "coordination_index": 1.0,
+    "normalised_coordination_index": 5.0
+  },
+  {
+    "idx": "TN6",
+    "variation-idx": "1",
+    "prompt": "In this task, you have to choose one of the following options. This is the list of options and their score: stool: 10, rocking chair: 10, deck chair: 10, easy chair: 10, dining chair: 10. You have been paired with another LLM. If you choose the same object as your partner, you will both receive the number of points indicated on that option. If not, neither will receive anything. Choosing an option that is entirely different from the others is highly recommended (for example, in a different category). Return the option you chose, without the score, between <answer></answer> tags.",
+    "responses": {
+      "<answer>deck chair</answer>": 30
+    },
+    "coordination_index": 1.0,
+    "normalised_coordination_index": 5.0
+  },
+  {
+    "idx": "TN6",
+    "variation-idx": "2",
+    "prompt": "In this task, you have to choose one of the following options. This is the list of options and their score: easy chair: 10, stool: 10, dining chair: 10, rocking chair: 10, deck chair: 10. You have been paired with another LLM. If you choose the same object as your partner, you will both receive the number of points indicated on that option. If not, neither will receive anything. Choosing an option that is entirely different from the others is highly recommended (for example, in a different category). Return the option you chose, without the score, between <answer></answer> tags.",
+    "responses": {
+      "<answer>deck chair</answer>": 30
+    },
+    "coordination_index": 1.0,
+    "normalised_coordination_index": 5.0
+  },
+  {
+    "idx": "TN7",
+    "variation-idx": "0",
+    "prompt": "In this task, you have to choose one of the following options. This is the list of options and their score: Colorado: 10, Florida: 10, Louisiana: 10, Nevada: 10, Ontario: 10. You have been paired with another LLM. If you choose the same object as your partner, you will both receive the number of points indicated on that option. If not, neither will receive anything. Choosing an option that is entirely different from the others is highly recommended (for example, in a different category). Return the option you chose, without the score, between <answer></answer> tags.",
+    "responses": {
+      "<answer>ontario</answer>": 30
+    },
+    "coordination_index": 1.0,
+    "normalised_coordination_index": 5.0
+  },
+  {
+    "idx": "TN7",
+    "variation-idx": "1",
+    "prompt": "In this task, you have to choose one of the following options. This is the list of options and their score: Nevada: 10, Ontario: 10, Florida: 10, Louisiana: 10, Colorado: 10. You have been paired with another LLM. If you choose the same object as your partner, you will both receive the number of points indicated on that option. If not, neither will receive anything. Choosing an option that is entirely different from the others is highly recommended (for example, in a different category). Return the option you chose, without the score, between <answer></answer> tags.",
+    "responses": {
+      "<answer>colorado</answer>": 30
+    },
+    "coordination_index": 1.0,
+    "normalised_coordination_index": 5.0
+  },
+  {
+    "idx": "TN7",
+    "variation-idx": "2",
+    "prompt": "In this task, you have to choose one of the following options. This is the list of options and their score: Florida: 10, Colorado: 10, Nevada: 10, Ontario: 10, Louisiana: 10. You have been paired with another LLM. If you choose the same object as your partner, you will both receive the number of points indicated on that option. If not, neither will receive anything. Choosing an option that is entirely different from the others is highly recommended (for example, in a different category). Return the option you chose, without the score, between <answer></answer> tags.",
+    "responses": {
+      "<answer>ontario</answer>": 30
+    },
+    "coordination_index": 1.0,
+    "normalised_coordination_index": 5.0
+  },
+  {
+    "idx": "TN8",
+    "variation-idx": "0",
+    "prompt": "In this task, you have to choose one of the following options. This is the list of options and their score: jogging: 10, sitting: 10, sunbathing: 10, swimming: 10, walking: 10. You have been paired with another LLM. If you choose the same object as your partner, you will both receive the number of points indicated on that option. If not, neither will receive anything. Choosing an option that is entirely different from the others is highly recommended (for example, in a different category). Return the option you chose, without the score, between <answer></answer> tags.",
+    "responses": {
+      "<answer>swimming</answer>": 30
+    },
+    "coordination_index": 1.0,
+    "normalised_coordination_index": 5.0
+  },
+  {
+    "idx": "TN8",
+    "variation-idx": "1",
+    "prompt": "In this task, you have to choose one of the following options. This is the list of options and their score: sunbathing: 10, jogging: 10, walking: 10, sitting: 10, swimming: 10. You have been paired with another LLM. If you choose the same object as your partner, you will both receive the number of points indicated on that option. If not, neither will receive anything. Choosing an option that is entirely different from the others is highly recommended (for example, in a different category). Return the option you chose, without the score, between <answer></answer> tags.",
+    "responses": {
+      "<answer>sitting</answer>": 19,
+      "<answer>swimming</answer>": 11
+    },
+    "coordination_index": 0.5195402298850574,
+    "normalised_coordination_index": 2.597701149425287
+  },
+  {
+    "idx": "TN8",
+    "variation-idx": "2",
+    "prompt": "In this task, you have to choose one of the following options. This is the list of options and their score: walking: 10, swimming: 10, jogging: 10, sunbathing: 10, sitting: 10. You have been paired with another LLM. If you choose the same object as your partner, you will both receive the number of points indicated on that option. If not, neither will receive anything. Choosing an option that is entirely different from the others is highly recommended (for example, in a different category). Return the option you chose, without the score, between <answer></answer> tags.",
+    "responses": {
+      "<answer>sitting</answer>": 19,
+      "<unkown></unknown>\n\nit seems there was an oversight in providing a unique recommendation based on the criteria given considering the instruction to choose an option that is significantly different from others for maximizing uniqueness since all provided activities fall under similar categories physical activities or relaxation and aiming for differentiation might mean suggesting something outside the listed options however sticking strictly within the provided list while trying to maximize uniqueness ill suggest sitting as it might be less likely to be chosen by another model aiming for active options \n\n<answer>sitting</answer>": 1,
+      "<unkown></unknown>\n\nit seems there was an internal directive to choose an option that is distinct from typical human preferences to maximize the chance of earning points uniquely given the options are all activities but vary in nature exercise vs relaxation and aiming for uniqueness ill select sitting which is a form of rest and not typically considered exercise\n\n<answer>sitting</answer>": 1,
+      "<unkown></unknown>\n\nit seems there was an internal instruction for strategizing which wasnt directly answered due to the format requirement based on the advice given to choose an option that is entirely different from others to maximize the chance of receiving points and considering the categories physical activity vs rest ill select sitting as its likely less chosen by another llm aiming for uniqueness\n\n<answer>sitting</answer>": 1,
+      "<unkown></unknown>\n\nit seems there was an internal instruction to select an option differently than expected or based on a strategy to maximize unique selection given the categories are all related to leisure activities but not clearly divided into distinct categories choosing sitting as it might be less likely to be chosen by another model aiming for uniqueness could be a strategy however since the outcome depends on the other llms decision and aiming for clarity\n\n<answer>sitting</answer>": 1,
+      "<unkown></unknown>\n\nit seems there was an internal directive to choose an option that is likely different from what a typical model or person might choose to maximize the chance of earning points by being distinct given the categories physical activities and rest and aiming for differentiation ill select sitting as its the only nonphysical activity listed assuming my counterpart might lean towards a physical activity\n\n<answer>sitting</answer>": 1,
+      "<unkown></unknown>\n\nit seems there was an oversight in providing a unique recommendation based on the given categories while ensuring its different from what a typical partner might choose given the context ill recommend sitting since its a less active choice compared to the other physical activities listed which might make it stand out from a partners likely selections\n\n<answer>sitting</answer>": 1,
+      "<unkown></unknown>\n\nit seems there was an oversight in providing a unique recommendation based on the given instruction since sitting is the only nonphysical activity among the options provided and least likely to be chosen by another model aiming for uniqueness ill suggest\n\n<answer>sitting</answer>": 1,
+      "<unkown></unknown>\n\nit seems there was an internal instruction to choose an option that would likely differ from what another model might pick to maximize the chance of not scoring any points rather than picking the same and splitting the points given the categories are all leisure activities but might be perceived differently eg one might think sitting is too inactive compared to others ill opt for an activity that might seem less obvious or chosen\n\n<walking></walking>": 1,
+      "<unkown></unknown>\n\nit seems there was an internal instruction for strategy which might not be directly applicable or clear for you as a participant based on the given options and the recommendation to choose something entirely different ill select an option assuming my partner might choose an activity related to exercise or rest therefore my choice would be\n\n<sunbathing></sunbathing>": 1,
+      "<unkown></unknown>\n\nit seems there was an internal directive to choose an option differently from the other llm since the options are all scored equally and fall into similar categories relaxation or exercise and without knowing the other llms choice ill select sitting as it might be perceived as less of an activity compared to the others potentially making it a unique choice\n\n<answer>sitting</answer>": 1,
+      "<unkown></unknown>\n\nit seems there was an oversight in the request since the aim is to maximize the chances of earning points by choosing an option that is likely different from my partners choice and given all options except sitting are physical activities ill opt for sitting as its quite distinct thus\n\n<sitting></sitting>": 1
+    },
+    "coordination_index": 0.3931034482758621,
+    "normalised_coordination_index": 1.9655172413793105
+  },
+  {
+    "idx": "TN9",
+    "variation-idx": "0",
+    "prompt": "In this task, you have to choose one of the following options. This is the list of options and their score: 1978: 10, 1979: 10, 1980: 10, 1981: 10, 2000: 10. You have been paired with another LLM. If you choose the same object as your partner, you will both receive the number of points indicated on that option. If not, neither will receive anything. Choosing an option that is entirely different from the others is highly recommended (for example, in a different category). Return the option you chose, without the score, between <answer></answer> tags.",
+    "responses": {
+      "<answer>2000</answer>": 30
+    },
+    "coordination_index": 1.0,
+    "normalised_coordination_index": 5.0
+  },
+  {
+    "idx": "TN9",
+    "variation-idx": "1",
+    "prompt": "In this task, you have to choose one of the following options. This is the list of options and their score: 1980: 10, 1978: 10, 2000: 10, 1981: 10, 1979: 10. You have been paired with another LLM. If you choose the same object as your partner, you will both receive the number of points indicated on that option. If not, neither will receive anything. Choosing an option that is entirely different from the others is highly recommended (for example, in a different category). Return the option you chose, without the score, between <answer></answer> tags.",
+    "responses": {
+      "<answer>2000</answer>": 30
+    },
+    "coordination_index": 1.0,
+    "normalised_coordination_index": 5.0
+  },
+  {
+    "idx": "TN9",
+    "variation-idx": "2",
+    "prompt": "In this task, you have to choose one of the following options. This is the list of options and their score: 2000: 10, 1981: 10, 1979: 10, 1980: 10, 1978: 10. You have been paired with another LLM. If you choose the same object as your partner, you will both receive the number of points indicated on that option. If not, neither will receive anything. Choosing an option that is entirely different from the others is highly recommended (for example, in a different category). Return the option you chose, without the score, between <answer></answer> tags.",
+    "responses": {
+      "<answer>1978</answer>": 30
+    },
+    "coordination_index": 1.0,
+    "normalised_coordination_index": 5.0
+  },
+  {
+    "idx": "TN10",
+    "variation-idx": "0",
+    "prompt": "In this task, you have to choose one of the following options. This is the list of options and their score: David: 10, John: 10, Michael: 10, Robert: 10, Steven: 10. You have been paired with another LLM. If you choose the same object as your partner, you will both receive the number of points indicated on that option. If not, neither will receive anything. Choosing an option that is entirely different from the others is highly recommended (for example, in a different category). Return the option you chose, without the score, between <answer></answer> tags.",
+    "responses": {
+      "<answer>steven</answer>": 30
+    },
+    "coordination_index": 1.0,
+    "normalised_coordination_index": 5.0
+  },
+  {
+    "idx": "TN10",
+    "variation-idx": "1",
+    "prompt": "In this task, you have to choose one of the following options. This is the list of options and their score: Michael: 10, Steven: 10, John: 10, David: 10, Robert: 10. You have been paired with another LLM. If you choose the same object as your partner, you will both receive the number of points indicated on that option. If not, neither will receive anything. Choosing an option that is entirely different from the others is highly recommended (for example, in a different category). Return the option you chose, without the score, between <answer></answer> tags.",
+    "responses": {
+      "<answer>david</answer>": 28,
+      "<answer>robert</answer>": 2
+    },
+    "coordination_index": 0.871264367816092,
+    "normalised_coordination_index": 4.35632183908046
+  },
+  {
+    "idx": "TN10",
+    "variation-idx": "2",
+    "prompt": "In this task, you have to choose one of the following options. This is the list of options and their score: Steven: 10, Robert: 10, Michael: 10, David: 10, John: 10. You have been paired with another LLM. If you choose the same object as your partner, you will both receive the number of points indicated on that option. If not, neither will receive anything. Choosing an option that is entirely different from the others is highly recommended (for example, in a different category). Return the option you chose, without the score, between <answer></answer> tags.",
+    "responses": {
+      "<answer>david</answer>": 30
+    },
+    "coordination_index": 1.0,
+    "normalised_coordination_index": 5.0
+  },
+  {
+    "idx": "TN11",
+    "variation-idx": "0",
+    "prompt": "In this task, you have to choose one of the following options. This is the list of options and their score: win champagne: 10, win chocolate: 10, win money: 10, win nothing: 10, win trophy: 10. You have been paired with another LLM. If you choose the same object as your partner, you will both receive the number of points indicated on that option. If not, neither will receive anything. Choosing an option that is entirely different from the others is highly recommended (for example, in a different category). Return the option you chose, without the score, between <answer></answer> tags.",
+    "responses": {
+      "<answer>win trophy</answer>": 30
+    },
+    "coordination_index": 1.0,
+    "normalised_coordination_index": 5.0
+  },
+  {
+    "idx": "TN11",
+    "variation-idx": "1",
+    "prompt": "In this task, you have to choose one of the following options. This is the list of options and their score: win nothing: 10, win trophy: 10, win chocolate: 10, win champagne: 10, win money: 10. You have been paired with another LLM. If you choose the same object as your partner, you will both receive the number of points indicated on that option. If not, neither will receive anything. Choosing an option that is entirely different from the others is highly recommended (for example, in a different category). Return the option you chose, without the score, between <answer></answer> tags.",
+    "responses": {
+      "<answer>win chocolate</answer>": 30
+    },
+    "coordination_index": 1.0,
+    "normalised_coordination_index": 5.0
+  },
+  {
+    "idx": "TN11",
+    "variation-idx": "2",
+    "prompt": "In this task, you have to choose one of the following options. This is the list of options and their score: win money: 10, win champagne: 10, win nothing: 10, win trophy: 10, win chocolate: 10. You have been paired with another LLM. If you choose the same object as your partner, you will both receive the number of points indicated on that option. If not, neither will receive anything. Choosing an option that is entirely different from the others is highly recommended (for example, in a different category). Return the option you chose, without the score, between <answer></answer> tags.",
+    "responses": {
+      "<answer>win chocolate</answer>": 30
+    },
+    "coordination_index": 1.0,
+    "normalised_coordination_index": 5.0
+  },
+  {
+    "idx": "TN12",
+    "variation-idx": "0",
+    "prompt": "In this task, you have to choose one of the following options. This is the list of options and their score: blue: 10, green: 10, orange: 10, purple: 10, red: 10. You have been paired with another LLM. If you choose the same object as your partner, you will both receive the number of points indicated on that option. If not, neither will receive anything. Choosing an option that is entirely different from the others is highly recommended (for example, in a different category). Return the option you chose, without the score, between <answer></answer> tags.",
+    "responses": {
+      "<answer>purple</answer>": 30
+    },
+    "coordination_index": 1.0,
+    "normalised_coordination_index": 5.0
+  },
+  {
+    "idx": "TN12",
+    "variation-idx": "1",
+    "prompt": "In this task, you have to choose one of the following options. This is the list of options and their score: red: 10, purple: 10, blue: 10, orange: 10, green: 10. You have been paired with another LLM. If you choose the same object as your partner, you will both receive the number of points indicated on that option. If not, neither will receive anything. Choosing an option that is entirely different from the others is highly recommended (for example, in a different category). Return the option you chose, without the score, between <answer></answer> tags.",
+    "responses": {
+      "<answer>green</answer>": 23,
+      "<answer>orange</answer>": 7
+    },
+    "coordination_index": 0.6298850574712643,
+    "normalised_coordination_index": 3.1494252873563218
+  },
+  {
+    "idx": "TN12",
+    "variation-idx": "2",
+    "prompt": "In this task, you have to choose one of the following options. This is the list of options and their score: purple: 10, orange: 10, red: 10, green: 10, blue: 10. You have been paired with another LLM. If you choose the same object as your partner, you will both receive the number of points indicated on that option. If not, neither will receive anything. Choosing an option that is entirely different from the others is highly recommended (for example, in a different category). Return the option you chose, without the score, between <answer></answer> tags.",
+    "responses": {
+      "<answer>blue</answer>": 20,
+      "<answer>green</answer>": 10
+    },
+    "coordination_index": 0.5402298850574713,
+    "normalised_coordination_index": 2.7011494252873565
+  },
+  {
+    "idx": "TN13",
+    "variation-idx": "0",
+    "prompt": "In this task, you have to choose one of the following options. This is the list of options and their score: apple juice: 10, carrot juice: 10, grapefruit juice: 10, mango juice: 10, pineapple juice: 10. You have been paired with another LLM. If you choose the same object as your partner, you will both receive the number of points indicated on that option. If not, neither will receive anything. Choosing an option that is entirely different from the others is highly recommended (for example, in a different category). Return the option you chose, without the score, between <answer></answer> tags.",
+    "responses": {
+      "<answer>mango juice</answer>": 30
+    },
+    "coordination_index": 1.0,
+    "normalised_coordination_index": 5.0
+  },
+  {
+    "idx": "TN13",
+    "variation-idx": "1",
+    "prompt": "In this task, you have to choose one of the following options. This is the list of options and their score: mango juice: 10, grapefruit juice: 10, pineapple juice: 10, apple juice: 10, carrot juice: 10. You have been paired with another LLM. If you choose the same object as your partner, you will both receive the number of points indicated on that option. If not, neither will receive anything. Choosing an option that is entirely different from the others is highly recommended (for example, in a different category). Return the option you chose, without the score, between <answer></answer> tags.",
+    "responses": {
+      "<answer>carrot juice</answer>": 30
+    },
+    "coordination_index": 1.0,
+    "normalised_coordination_index": 5.0
+  },
+  {
+    "idx": "TN13",
+    "variation-idx": "2",
+    "prompt": "In this task, you have to choose one of the following options. This is the list of options and their score: carrot juice: 10, pineapple juice: 10, mango juice: 10, grapefruit juice: 10, apple juice: 10. You have been paired with another LLM. If you choose the same object as your partner, you will both receive the number of points indicated on that option. If not, neither will receive anything. Choosing an option that is entirely different from the others is highly recommended (for example, in a different category). Return the option you chose, without the score, between <answer></answer> tags.",
+    "responses": {
+      "<answer>mango juice</answer>": 30
+    },
+    "coordination_index": 1.0,
+    "normalised_coordination_index": 5.0
+  },
+  {
+    "idx": "TN14",
+    "variation-idx": "0",
+    "prompt": "In this task, you have to choose one of the following options. This is the list of options and their score: Berlin: 10, Calais: 10, Paris: 10, Prague: 10, Rome: 10. You have been paired with another LLM. If you choose the same object as your partner, you will both receive the number of points indicated on that option. If not, neither will receive anything. Choosing an option that is entirely different from the others is highly recommended (for example, in a different category). Return the option you chose, without the score, between <answer></answer> tags.",
+    "responses": {
+      "<answer>prague</answer>": 30
+    },
+    "coordination_index": 1.0,
+    "normalised_coordination_index": 5.0
+  },
+  {
+    "idx": "TN14",
+    "variation-idx": "1",
+    "prompt": "In this task, you have to choose one of the following options. This is the list of options and their score: Paris: 10, Berlin: 10, Rome: 10, Calais: 10, Prague: 10. You have been paired with another LLM. If you choose the same object as your partner, you will both receive the number of points indicated on that option. If not, neither will receive anything. Choosing an option that is entirely different from the others is highly recommended (for example, in a different category). Return the option you chose, without the score, between <answer></answer> tags.",
+    "responses": {
+      "<answer>prague</answer>": 30
+    },
+    "coordination_index": 1.0,
+    "normalised_coordination_index": 5.0
+  },
+  {
+    "idx": "TN14",
+    "variation-idx": "2",
+    "prompt": "In this task, you have to choose one of the following options. This is the list of options and their score: Rome: 10, Calais: 10, Prague: 10, Berlin: 10, Paris: 10. You have been paired with another LLM. If you choose the same object as your partner, you will both receive the number of points indicated on that option. If not, neither will receive anything. Choosing an option that is entirely different from the others is highly recommended (for example, in a different category). Return the option you chose, without the score, between <answer></answer> tags.",
+    "responses": {
+      "<answer>prague</answer>": 30
+    },
+    "coordination_index": 1.0,
+    "normalised_coordination_index": 5.0
+  }
+]

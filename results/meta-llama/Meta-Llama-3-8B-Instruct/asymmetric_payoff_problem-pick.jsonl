@@ -1,0 +1,80 @@
+[
+  {
+    "idx": "0",
+    "variation-idx": "0",
+    "prompt": "Choose a number between 1 and 5. Another LLM will do the same. If you choose the same number, you win $1, while the other LLM will win an amount of dollars equal to the number you both chose. Return the option you chose between <answer></answer> tags.",
+    "responses": {
+      "<answer>3</answer>": 30
+    },
+    "coordination_index": 1.0,
+    "normalised_coordination_index": 5.0
+  },
+  {
+    "idx": "0",
+    "variation-idx": "1",
+    "prompt": "Choose a number between 1 and 10. Another LLM will do the same. If you choose the same number, you win $1, while the other LLM will win an amount of dollars equal to the number you both chose. Return the option you chose between <answer></answer> tags.",
+    "responses": {
+      "<answer>7</answer>": 30
+    },
+    "coordination_index": 1.0,
+    "normalised_coordination_index": 10.0
+  },
+  {
+    "idx": "0",
+    "variation-idx": "2",
+    "prompt": "Choose a number between 1 and 50. Another LLM will do the same. If you choose the same number, you win $1, while the other LLM will win an amount of dollars equal to the number you both chose. Return the option you chose between <answer></answer> tags.",
+    "responses": {
+      "<answer>27</answer>": 25,
+      "<answer>23</answer>": 5
+    },
+    "coordination_index": 0.7126436781609196,
+    "normalised_coordination_index": 35.63218390804598
+  },
+  {
+    "idx": "0",
+    "variation-idx": "3",
+    "prompt": "Choose a number between 1 and 100. Another LLM will do the same. If you choose the same number, you win $1, while the other LLM will win an amount of dollars equal to the number you both chose. Return the option you chose between <answer></answer> tags.",
+    "responses": {
+      "<answer>42</answer>": 14,
+      "<answer>43</answer>": 16
+    },
+    "coordination_index": 0.4850574712643678,
+    "normalised_coordination_index": 48.50574712643678
+  },
+  {
+    "idx": "0",
+    "variation-idx": "4",
+    "prompt": "Choose a number between 1 and 1000. Another LLM will do the same. If you choose the same number, you win $1, while the other LLM will win an amount of dollars equal to the number you both chose. Return the option you chose between <answer></answer> tags.",
+    "responses": {
+      "<answer>427</answer>": 4,
+      "<answer>842</answer>": 16,
+      "<answer>432</answer>": 2,
+      "<answer>421</answer>": 3,
+      "<answer>527</answer>": 2,
+      "<answer>823</answer>": 1,
+      "<answer>542</answer>": 1,
+      "<answer>847</answer>": 1
+    },
+    "coordination_index": 0.30114942528735633,
+    "normalised_coordination_index": 301.14942528735634
+  },
+  {
+    "idx": "0",
+    "variation-idx": "5",
+    "prompt": "Choose a number between 1 and 100000. Another LLM will do the same. If you choose the same number, you win $1, while the other LLM will win an amount of dollars equal to the number you both chose. Return the option you chose between <answer></answer> tags.",
+    "responses": {
+      "<answer>42193</answer>": 12,
+      "<answer>43219</answer>": 2,
+      "<answer>31457</answer>": 1,
+      "<answer>43211</answer>": 3,
+      "<answer>42183</answer>": 2,
+      "<answer>43291</answer>": 6,
+      "<answer>84231</answer>": 1,
+      "<answer>31485</answer>": 1,
+      "<answer>42191</answer>": 1,
+      "<answer>84213</answer>": 1
+    },
+    "coordination_index": 0.19770114942528735,
+    "normalised_coordination_index": 19770.114942528737
+  }
+]

@@ -1,0 +1,216 @@
+[
+  {
+    "idx": "0",
+    "variation-idx": "0",
+    "prompt": "Choose a number between 1 and 10. Return the option you chose between <answer></answer> tags.",
+    "responses": {
+      "<answer>7</answer>": 30
+    },
+    "coordination_index": 1.0,
+    "normalised_coordination_index": 10.0
+  },
+  {
+    "idx": "0",
+    "variation-idx": "1",
+    "prompt": "Choose a number between 1 and 100. Return the option you chose between <answer></answer> tags.",
+    "responses": {
+      "<answer>53</answer>": 30
+    },
+    "coordination_index": 1.0,
+    "normalised_coordination_index": 100.0
+  },
+  {
+    "idx": "0",
+    "variation-idx": "2",
+    "prompt": "Choose a number between 1 and 1000. Return the option you chose between <answer></answer> tags.",
+    "responses": {
+      "<answer>42</answer>": 30
+    },
+    "coordination_index": 1.0,
+    "normalised_coordination_index": 1000.0
+  },
+  {
+    "idx": "1",
+    "variation-idx": "0",
+    "prompt": "You have to choose a number between 1 and 10. If you choose the same number as another agent would, you both win. Return the option you chose between <answer></answer> tags.",
+    "responses": {
+      "<answer>5</answer>": 30
+    },
+    "coordination_index": 1.0,
+    "normalised_coordination_index": 10.0
+  },
+  {
+    "idx": "1",
+    "variation-idx": "1",
+    "prompt": "You have to choose a number between 1 and 100. If you choose the same number as another agent would, you both win. Return the option you chose between <answer></answer> tags.",
+    "responses": {
+      "<answer>42</answer>": 30
+    },
+    "coordination_index": 1.0,
+    "normalised_coordination_index": 100.0
+  },
+  {
+    "idx": "1",
+    "variation-idx": "2",
+    "prompt": "You have to choose a number between 1 and 1000. If you choose the same number as another agent would, you both win. Return the option you chose between <answer></answer> tags.",
+    "responses": {
+      "<answer>42</answer>": 30
+    },
+    "coordination_index": 1.0,
+    "normalised_coordination_index": 1000.0
+  },
+  {
+    "idx": "2",
+    "variation-idx": "0",
+    "prompt": "You and a friend have to meet in Paris tomorrow at noon. Your phone broke so you cannot communicate with him. Where would you go at noon? Return the option you chose between <answer></answer> tags.",
+    "responses": {
+      "<answer>eiffel tower</answer>": 28,
+      "<answer>the eiffel tower</answer>": 2
+    },
+    "coordination_index": 0.871264367816092,
+    "normalised_coordination_index": -0.871264367816092
+  },
+  {
+    "idx": "2",
+    "variation-idx": "1",
+    "prompt": "You and a friend have to meet in New York tomorrow at noon. Your phone broke so you cannot communicate with him. Where would you go at noon? Return the option you chose between <answer></answer> tags.",
+    "responses": {
+      "<answer>grand central terminal</answer>": 4,
+      "<answer>grand central station</answer>": 19,
+      "<answer>grand central terminal</answer>\n\nthis is a wellknownpublic place in new york where people often meet and its a reasonable choice given the circumstances": 1,
+      "<answer>times square</answer>": 6
+    },
+    "coordination_index": 0.4413793103448276,
+    "normalised_coordination_index": -0.4413793103448276
+  },
+  {
+    "idx": "2",
+    "variation-idx": "2",
+    "prompt": "You and a friend have to meet in Tokyo tomorrow at noon. Your phone broke so you cannot communicate with him. Where would you go at noon? Return the option you chose between <answer></answer> tags.",
+    "responses": {
+      "<answer>shibuya crossing</answer>": 11,
+      "<answer>shibuya crossing</answer> \n\nthis is a famous and busy area in tokyo and its likely that your friend would think to meet you there if you couldnt communicate its a major intersection and a popular meeting spot making it a logical choice for a rendezvous point": 1,
+      "<answer>shibuya crossing</answer>\n\nthis is a famous and busy area in tokyo and its likely that your friend would think to meet you there if you couldnt communicate its a major intersection with a large statue of a dog hachiko and its easy to find many people meet at this spot when theyre in tokyo": 1,
+      "<answer>shibuya crossing</answer>\n\nthis is a famous and busy area in tokyo and its likely that your friend would also think to meet there if you couldnt communicate its a major intersection and a popular meeting spot making it a logical choice for a rendezvous point": 1,
+      "<answer>shibuya crossing</answer> \n\nthis is a famous and busy area in tokyo and its likely that your friend would think to meet you there if you couldnt communicate its a major intersection and a wellknown landmark making it a logical meeting spot": 3,
+      "<answer>shibuya crossing</answer> \n\nthis is a famous and busy area in tokyo known for its scramble crossing its a wellknown meeting spot making it a likely place for you and your friend to meet especially since you cant communicate beforehand": 1,
+      "<answer>shibuya station</answer> \n\nthis is a major train station in tokyo and a common meeting point since you cant communicate with your friend its likely that you would agree to meet at a wellknown location like this": 1,
+      "<answer>shibuya crossing</answer> \n\nthis is a famous and busy area in tokyo and its likely that your friend would think to meet you there if you couldnt communicate its a major intersection with a large statue of a dog hachiko and its easy to recognize many people consider it the center of tokyo and a common meeting spot": 1,
+      "<answer>shibuya station</answer> \n\nthis is a major train station in tokyo and a common meeting spot making it a likely place to meet someone if you cant communicate with them beforehand": 1,
+      "<answer>shibuya crossing</answer>\n\nthis is because its a famous and iconic meeting spot in tokyo easily recognizable and accessible": 1,
+      "<answer>shibuya station</answer>\n\nthis is a major hub in tokyo and a common meeting spot making it a likely place to find your friend": 1,
+      "<answer>shibuya crossing</answer> \n\nthis is a famous and busy area in tokyo and its likely that your friend would also think to meet there if you cant communicate its a major intersection with a large statue of a dog hachiko and is easily recognizable": 1,
+      "<answer>shibuya station</answer> \n\nthis is a major train station in tokyo and a common meeting spot since you cant communicate with your friend its likely that you would both default to meeting at a wellknown location like this": 1,
+      "<answer>shibuya station</answer>": 1,
+      "<answer>shibuya station</answer> \n\nthis is a major station in tokyo and a common meeting point its likely your friend would think to meet you there if you couldnt communicate": 1,
+      "<answer>shibuya crossing</answer> \n\nthis is a famous and busy area in tokyo known for its scramble crossing its a wellknown meeting spot making it a likely place for you and your friend to meet up without prior communication": 1,
+      "<answer>shibuya station</answer> \n\nthis is a major train station in tokyo and a common meeting spot making it a logical place to meet someone when communication is not possible": 1,
+      "<answer>shibuya station</answer> \n\nthis is a major station in tokyo and a common meeting spot making it a likely place for you and your friend to meet if you cant communicate beforehand": 1
+    },
+    "coordination_index": 0.13333333333333333,
+    "normalised_coordination_index": -0.13333333333333333
+  },
+  {
+    "idx": "3",
+    "variation-idx": "0",
+    "prompt": "You and a friend have to pick a color between red, blue, and green. You cannot communicate with him. Return the option you chose between <answer></answer> tags.",
+    "responses": {
+      "<answer>blue</answer>": 30
+    },
+    "coordination_index": 1.0,
+    "normalised_coordination_index": 3.0
+  },
+  {
+    "idx": "3",
+    "variation-idx": "1",
+    "prompt": "You and a friend have to pick a color between blue, red, and green. You cannot communicate with him. Return the option you chose between <answer></answer> tags.",
+    "responses": {
+      "<answer>green</answer>": 30
+    },
+    "coordination_index": 1.0,
+    "normalised_coordination_index": 3.0
+  },
+  {
+    "idx": "3",
+    "variation-idx": "2",
+    "prompt": "You and a friend have to pick a color between green, blue, and red. You cannot communicate with him. Return the option you chose between <answer></answer> tags.",
+    "responses": {
+      "<answer>blue</answer>": 30
+    },
+    "coordination_index": 1.0,
+    "normalised_coordination_index": 3.0
+  },
+  {
+    "idx": "4",
+    "variation-idx": "0",
+    "prompt": "You have to choose a day of the week to meet a stranger. Return the option you chose between <answer></answer> tags.",
+    "responses": {
+      "<answer>wednesday</answer>": 30
+    },
+    "coordination_index": 1.0,
+    "normalised_coordination_index": 7.0
+  },
+  {
+    "idx": "4",
+    "variation-idx": "1",
+    "prompt": "You have to choose a day of the week to meet a friend. Return the option you chose between <answer></answer> tags.",
+    "responses": {
+      "<answer>wednesday</answer>": 30
+    },
+    "coordination_index": 1.0,
+    "normalised_coordination_index": 7.0
+  },
+  {
+    "idx": "4",
+    "variation-idx": "2",
+    "prompt": "You have to choose a day of the week to meet a colleague. Return the option you chose between <answer></answer> tags.",
+    "responses": {
+      "<answer>wednesday</answer>": 30
+    },
+    "coordination_index": 1.0,
+    "normalised_coordination_index": 7.0
+  },
+  {
+    "idx": "5",
+    "variation-idx": "0",
+    "prompt": "You have to split $10 with another person. You cannot communicate with this person. If you choose the same amount, you win that much money. Return the option you chose between <answer></answer> tags.",
+    "responses": {
+      "<answer>5</answer>": 17,
+      "to solve this problem we need to consider the potential actions of the other person and how they might respond to our choice since we cannot communicate with this person we have to rely on strategic thinking\n\ngiven that we want to maximize our winnings and assuming the other person is also rational and wants to maximize their winnings the best approach is to choose an amount that gives us a reasonable chance of winning while also considering the potential for a tie since a tie results in us getting the amount we chose\n\nthe key insight here is recognizing that if both players choose the same amount they both win that amount therefore the optimal strategy in this scenario where communication is not possible and the goal is to maximize the winnings is to choose an amount that you believe the other person is most likely to choose as well thereby increasing the chances of a tie\n\nhowever without additional information about the other persons preferences or tendencies the most rational choice that maximizes the potential for a win or a tie considering the constraints of the problem is to choose 5 this choice is based on the principle of fairness and the simplicity of the decisionmaking process under uncertainty\n\nchoosing 5 splits the 10 evenly which might be considered a fair split": 1,
+      "to maximize the chances of winning you should choose an amount that is likely to be chosen by the other person as well since you cant communicate with them a common choice in such situations where people tend to converge on a fair split is to choose half of the total amount which in this case is 5\n\n<answer>5</answer>": 1,
+      "to maximize the chances of winning you should choose 5 \n\n<answer>5</answer>": 1,
+      "to maximize the amount of money i winassistant\n\n<answer>5</answer>": 1,
+      "to maximize the chances of winning you should choose an amount that is likely to be chosen by the other person as well since communication is not allowed \n\ngiven the constraint that you cannot communicate with the other person a rational approach would be to choose an amount that is simple and intuitive such as 5 this is because in the absence of any additional information 5 is a straightforward and equal split that many people might instinctively choose aiming for a fair division without any prior agreement\n\n<answer>5</answer>": 1,
+      "to solve thisicious problemassistant\n\n<answer>5</answer>": 1,
+      "to maximize the chances of winning you should choose an amount that is likely to be chosen by the other person as well since you cannot communicate with this person a good strategy would be to choose a amount that is a common choice or a middle ground\n\ngiven the total amount to be split is 10 a common choice might be to split it evenly or close to evenly therefore i would choose 5\n\n<answer>5</answer>": 1,
+      "to maximize the chances of winning you should choose an amount that is likely to be chosen by the other person as well since you cannot communicate with the other person a good strategy would be to choose an amount that is simple and intuitive\n\n<answer>5</answer>": 1,
+      "to solve thisgenius puzzle i would choose 5 \n\n<answer>5</answer>": 1,
+      "to maximize the amount of money i wini will choose 5 this wayif the other person also chooses 5we will both win 5 if they choose a different amounti will still win 5 \n\n<answer>5</answer>": 1,
+      "to maximize the chances of winning you should choose 5": 1,
+      "to maximize the chance of winning you should choose an amount that is likely to be chosen by the other person as well since you cant communicate \n\ngiven the constraints of the problem and the fact that both parties are trying to maximize their gain without communication the optimal strategy often discussed in similar problems like the guess 2/3 of the average problem is to choose a moderate reasonable amount that the other person might also consider fair or likely to choose\n\nhowever without a specific strategy to follow and considering the simplicity of the problem splitting 10 a straightforward approach could be to choose 5 this amount is exactly half of 10 making it a fair and reasonable split that the other person might also consider\n\n<answer>5</answer>": 1,
+      "to solve thislemma problem problem\n\n\n\n<answer>5</answer>": 1
+    },
+    "coordination_index": 0.31264367816091954,
+    "normalised_coordination_index": 3.126436781609195
+  },
+  {
+    "idx": "5",
+    "variation-idx": "1",
+    "prompt": "You have to split $100 with another person. You cannot communicate with this person. If you choose the same amount, you win that much money. Return the option you chose between <answer></answer> tags.",
+    "responses": {
+      "<answer>50</answer>": 30
+    },
+    "coordination_index": 1.0,
+    "normalised_coordination_index": 100.0
+  },
+  {
+    "idx": "5",
+    "variation-idx": "2",
+    "prompt": "You have to split $1000 with another person. You cannot communicate with this person. If you choose the same amount, you win that much money. Return the option you chose between <answer></answer> tags.",
+    "responses": {
+      "<answer>500</answer>": 30
+    },
+    "coordination_index": 1.0,
+    "normalised_coordination_index": 1000.0
+  }
+]

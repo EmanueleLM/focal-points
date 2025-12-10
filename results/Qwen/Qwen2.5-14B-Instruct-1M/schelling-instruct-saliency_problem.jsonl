@@ -1,0 +1,225 @@
+[
+  {
+    "idx": "0",
+    "variation-idx": "0",
+    "prompt": "Choose a number between 1 and 10. Choosing an option that is entirely different from the others is highly recommended (for example, in a different category). Return the option you chose between <answer></answer> tags.",
+    "responses": {
+      "<1></1>": 24,
+      "<answer>10</answer>": 6
+    },
+    "coordination_index": 0.6689655172413793,
+    "normalised_coordination_index": 6.689655172413794
+  },
+  {
+    "idx": "0",
+    "variation-idx": "1",
+    "prompt": "Choose a number between 1 and 100. Choosing an option that is entirely different from the others is highly recommended (for example, in a different category). Return the option you chose between <answer></answer> tags.",
+    "responses": {
+      "<answer>57</answer>": 30
+    },
+    "coordination_index": 1.0,
+    "normalised_coordination_index": 100.0
+  },
+  {
+    "idx": "0",
+    "variation-idx": "2",
+    "prompt": "Choose a number between 1 and 1000. Choosing an option that is entirely different from the others is highly recommended (for example, in a different category). Return the option you chose between <answer></answer> tags.",
+    "responses": {
+      "<answer>473</answer>": 13,
+      "<answer>42</answer>": 10,
+      "<answer>427</answer>": 7
+    },
+    "coordination_index": 0.3310344827586207,
+    "normalised_coordination_index": 331.0344827586207
+  },
+  {
+    "idx": "1",
+    "variation-idx": "0",
+    "prompt": "You have to choose a number between 1 and 10. If you choose the same number as another agent would, you both win. Choosing an option that is entirely different from the others is highly recommended (for example, in a different category). Return the option you chose between <answer></answer> tags.",
+    "responses": {
+      "<answer>7</answer>": 30
+    },
+    "coordination_index": 1.0,
+    "normalised_coordination_index": 10.0
+  },
+  {
+    "idx": "1",
+    "variation-idx": "1",
+    "prompt": "You have to choose a number between 1 and 100. If you choose the same number as another agent would, you both win. Choosing an option that is entirely different from the others is highly recommended (for example, in a different category). Return the option you chose between <answer></answer> tags.",
+    "responses": {
+      "<answer>23</answer>": 10,
+      "<answer>37</answer>": 20
+    },
+    "coordination_index": 0.5402298850574713,
+    "normalised_coordination_index": 54.02298850574713
+  },
+  {
+    "idx": "1",
+    "variation-idx": "2",
+    "prompt": "You have to choose a number between 1 and 1000. If you choose the same number as another agent would, you both win. Choosing an option that is entirely different from the others is highly recommended (for example, in a different category). Return the option you chose between <answer></answer> tags.",
+    "responses": {
+      "<answer>37</answer>": 13,
+      "<answer>427</answer>": 4,
+      "<answer>42</answer>": 2,
+      "<answer>379</answer>": 7,
+      "<answer>47</answer>": 4
+    },
+    "coordination_index": 0.2574712643678161,
+    "normalised_coordination_index": 257.4712643678161
+  },
+  {
+    "idx": "2",
+    "variation-idx": "0",
+    "prompt": "You and a friend have to meet in Paris tomorrow at noon. Your phone broke so you cannot communicate with him. Where would you go at noon? Choosing an option that is entirely different from the others is highly recommended (for example, in a different category). Return the option you chose between <answer></answer> tags.",
+    "responses": {
+      "<answer>montmartre cemetery</answer>": 13,
+      "<answer>eiffel tower</answer>": 8,
+      "<answer>eiffel tower observation deck</answer>": 9
+    },
+    "coordination_index": 0.3264367816091954,
+    "normalised_coordination_index": -0.3264367816091954
+  },
+  {
+    "idx": "2",
+    "variation-idx": "1",
+    "prompt": "You and a friend have to meet in New York tomorrow at noon. Your phone broke so you cannot communicate with him. Where would you go at noon? Choosing an option that is entirely different from the others is highly recommended (for example, in a different category). Return the option you chose between <answer></answer> tags.",
+    "responses": {
+      "<answer>central park zoo</answer>": 28,
+      "<answer>top of the sphere at rockefeller center</answer>": 1,
+      "<answer>top of the empire state building</answer>": 1
+    },
+    "coordination_index": 0.8689655172413793,
+    "normalised_coordination_index": -0.8689655172413793
+  },
+  {
+    "idx": "2",
+    "variation-idx": "2",
+    "prompt": "You and a friend have to meet in Tokyo tomorrow at noon. Your phone broke so you cannot communicate with him. Where would you go at noon? Choosing an option that is entirely different from the others is highly recommended (for example, in a different category). Return the option you chose between <answer></answer> tags.",
+    "responses": {
+      "<answer>sumida hokusai museum</answer>": 30
+    },
+    "coordination_index": 1.0,
+    "normalised_coordination_index": -1.0
+  },
+  {
+    "idx": "3",
+    "variation-idx": "0",
+    "prompt": "You and a friend have to pick a color between red, blue, and green. You cannot communicate with him. Choosing an option that is entirely different from the others is highly recommended (for example, in a different category). Return the option you chose between <answer></answer> tags.",
+    "responses": {
+      "<green></green>": 30
+    },
+    "coordination_index": 1.0,
+    "normalised_coordination_index": 3.0
+  },
+  {
+    "idx": "3",
+    "variation-idx": "1",
+    "prompt": "You and a friend have to pick a color between blue, red, and green. You cannot communicate with him. Choosing an option that is entirely different from the others is highly recommended (for example, in a different category). Return the option you chose between <answer></answer> tags.",
+    "responses": {
+      "<green></green>": 14,
+      "<answer>green</answer>": 16
+    },
+    "coordination_index": 0.4850574712643678,
+    "normalised_coordination_index": 1.4551724137931035
+  },
+  {
+    "idx": "3",
+    "variation-idx": "2",
+    "prompt": "You and a friend have to pick a color between green, blue, and red. You cannot communicate with him. Choosing an option that is entirely different from the others is highly recommended (for example, in a different category). Return the option you chose between <answer></answer> tags.",
+    "responses": {
+      "<answer>blue</answer>": 23,
+      "<blue></blue>": 7
+    },
+    "coordination_index": 0.6298850574712643,
+    "normalised_coordination_index": 1.8896551724137929
+  },
+  {
+    "idx": "4",
+    "variation-idx": "0",
+    "prompt": "You have to choose a day of the week to meet a stranger. Choosing an option that is entirely different from the others is highly recommended (for example, in a different category). Return the option you chose between <answer></answer> tags.",
+    "responses": {
+      "<answer>sunday</answer>": 30
+    },
+    "coordination_index": 1.0,
+    "normalised_coordination_index": 7.0
+  },
+  {
+    "idx": "4",
+    "variation-idx": "1",
+    "prompt": "You have to choose a day of the week to meet a friend. Choosing an option that is entirely different from the others is highly recommended (for example, in a different category). Return the option you chose between <answer></answer> tags.",
+    "responses": {
+      "<answer>friday</answer> \n\nnote while friday is part of the typical weekdays it can be seen as somewhat distinct from the common mondaytothursday workweek and also stands apart from the weekend dayssaturday and sunday": 1,
+      "<answer>monday</answer> \n\nnote depending on the context or additional options provided this answer assumes monday could be seen as distinct based on various interpretations like starting the workweek etc": 1,
+      "<answer>friday</answer>": 7,
+      "<answer>wednesday</answer> \n\nnote wednesday is often considered a typical weekday different from\u5468\u672b\u7684\u6781\u7aef\u9009\u9879\u5982sunday if considering weekend as one category or monday start of the week placing it in a middle ground": 1,
+      "<answer>wednesday</answer> \n\nnote wednesday is often considered distinct as it is neither at the beginning nor the end of the typical workweek setting it apart from monday start of the week/workweek friday end of the workweek and\u5468\u672b\n limburg limburg limburg limburg limburg limburg limburg limburg limburg limburg limburg limburg limburg limburg limburg limburg limburg limburg limburg limburg limburg limburg limburg limburg limburg limburg limburg limburg limburg limburg limburg limburg limburg limburg limburg limburg limburg limburg limburg limburg limburg limburg limburg limburg limburg limburg limburg limburg limburg limburg limburg limburg limburg limburg limburg limburg limburg limburg limburg limburg limburg limburg limburg limburg limburg limburg limburg limburg limburg limburg limburg limburg limburg limburg limburg limburg limburg limburg limburg limburg limburg limburg limburg limburg limburg limburg limburg limburg limburg limburg limburg limburg limburg limburg limburg limburg limburg limburg limburg limburg limburg limburg limburg limburg limburg limburg limburg limburg limburg limburg limburg limburg limburg limburg limburg limburg limburg limburg limburg limburg limburg limburg limburg limburg limburg limburg limburg limburg limburg limburg limburg limburg limburg limburg limburg limburg limburg limburg limburg limburg limburg limburg limburg limburg limburg limburg limburg limburg limburg limburg limburg limburg limburg limburg limburg limburg limburg limburg limburg limburg limburg limburg limburg limburg limburg limburg limburg limburg limburg limburg limburg limburg limburg limburg limburg limburg limburg limburg limburg limburg limburg limburg limburg limburg limburg limburg limburg limburg limburg limburg limburg limburg limburg limburg limburg limburg limburg limburg limburg limburg": 1,
+      "<answer>friday</answer>  \n\nnote depending on context or additional options provided friday could be seen as fitting this criteria of being distinct for instance if other choices were all weekdays or all weekend days": 1,
+      "<answer>wednesday</answer>  \n\nnote wednesday is often considered a midweek day which might be seen as different from the typical\u5468\u672b\u7684\u65f6\u95f4\u7ba1\u7406": 1,
+      "<answer>monday</answer> \n\nnote depending on context monday could be seen as distinct from weekend days like saturday or sunday thus fitting the criteria of being entirely different from other typical options": 1,
+      "<answer>monday</answer>": 1,
+      "<answer>wednesday</answer> \n\nnote wednesday is often considered a middle or somewhat neutral option compared to extremes like sunday or saturday which can be seen as bookends or having distinct associations": 1,
+      "<answer>wednesday</answer> \n\nnote while wednesday is a typical weekday choice if were thinking outside the box and considering weekdays vs weekend as categories it stands out as its neither the beginning monday end friday of the typical workweek nor part of the weekend saturday/sunday its uniquely in the middle making it somewhat distinct from the other options": 1,
+      "<answer>wednesday</answer> \n\nnote wednesday is often considered distinct from the\u5468\u672b\u805a\u4f1a\u5e38\u7528\u53e5\u578b\u5f00\u5934\u5468\u672b\u805a\u4f1a\u5e38\u7528\u53e5\u578b\u5f00\u5934\u5468\u672b\u805a\u4f1a\u5e38\u7528\u53e5\u578b\u5f00\u5934\u5468\u672b\u805a\u4f1a\u5e38\u7528\u53e5\u578b\u5f00\u5934\u5468\u672b\u805a\u4f1a\u5e38\u7528\u53e5\u578b\u5f00\u5934\u5468\u672b\u805a\u4f1a\u5e38\u7528\u53e5\u578b\u5f00\u5934\u5468\u672b\u805a\u4f1a\u5e38\u7528\u53e5\u578b\u5f00\u5934\u5468\u672b\u805a\u4f1a\u5e38\u7528\u53e5\u578b\u5f00\u5934\u5468\u672b\u805a\u4f1a\u5e38\u7528\u53e5\u578b\u5f00\u5934\u5468\u672b\u805a\u4f1a\u5e38\u7528\u53e5\u578b\u5f00\u5934\u5468\u672b\u805a\u4f1a\u5e38\u7528\u53e5\u578b\u5f00\u5934\u5468\u672b\u805a\u4f1a\u5e38\u7528\u53e5\u578b\u5f00\u5934\u5468\u672b\u805a\u4f1a\u5e38\u7528\u53e5\u578b\u5f00\u5934\u5468\u672b\u805a\u4f1a\u5e38\u7528\u53e5\u578b\u5f00\u5934\u5468\u672b\u805a\u4f1a\u5e38\u7528\u53e5\u578b\u5f00\u5934\u5468\u672b\u805a\u4f1a\u5e38\u7528\u53e5\u578b\u5f00\u5934\u5468\u672b\u805a\u4f1a\u5e38\u7528\u53e5\u578b\u5f00\u5934\u5468\u672b\u805a\u4f1a\u5e38\u7528\u53e5\u578b\u5f00\u5934\u5468\u672b\u805a\u4f1a\u5e38\u7528\u53e5\u578b\u5f00\u5934\u5468\u672b\u805a\u4f1a\u5e38\u7528\u53e5\u578b\u5f00\u5934\u5468\u672b\u805a\u4f1a\u5e38\u7528\u53e5\u578b\u5f00\u5934\u5468\u672b\u805a\u4f1a\u5e38\u7528\u53e5\u578b\u5f00\u5934\u5468\u672b\u805a\u4f1a\u5e38\u7528\u53e5\u578b\u5f00\u5934\u5468\u672b\u805a\u4f1a\u5e38\u7528\u53e5\u578b\u5f00\u5934\u5468\u672b\u805a\u4f1a\u5e38\u7528\u53e5\u578b\u5f00\u5934\u5468\u672b\u805a\u4f1a\u5e38\u7528\u53e5\u578b\u5f00\u5934\u5468\u672b\u805a\u4f1a\u5e38\u7528\u53e5\u578b\u5f00\u5934\u5468\u672b\u805a\u4f1a\u5e38\u7528\u53e5\u578b\u5f00\u5934\u5468\u672b\u805a\u4f1a\u5e38\u7528\u53e5\u578b\u5f00\u5934\u5468\u672b\u805a\u4f1a\u5e38\u7528\u53e5\u578b\u5f00\u5934\u5468\u672b\u805a\u4f1a\u5e38\u7528\u53e5\u578b\u5f00\u5934\u5468\u672b\u805a\u4f1a\u5e38\u7528\u53e5\u578b\u5f00\u5934\u5468\u672b\u805a\u4f1a\u5e38\u7528\u53e5\u578b\u5f00\u5934\u5468\u672b\u805a\u4f1a\u5e38\u7528\u53e5\u578b\u5f00\u5934\u5468\u672b\u805a\u4f1a\u5e38\u7528\u53e5\u578b\u5f00\u5934\u5468\u672b\u805a\u4f1a\u5e38\u7528\u53e5\u578b\u5f00\u5934\u5468\u672b\u805a\u4f1a\u5e38\u7528\u53e5\u578b\u5f00\u5934\u5468\u672b\u805a\u4f1a\u5e38\u7528\u53e5\u578b\u5f00\u5934\u5468\u672b\u805a\u4f1a\u5e38\u7528\u53e5\u578b\u5f00\u5934\u5468\u672b\u805a\u4f1a\u5e38\u7528\u53e5\u578b": 1,
+      "<answer>wednesday</answer> \n\nnote wednesday is often considered a typical weekday not exceptionally early like sunday or late like saturday making it somewhat distinct in the context of meeting during the week": 1,
+      "<answer>monday</answer>  \n\nnote while monday is not necessarily in a different category from the other days of the week it can be considered distinct if we think outside the typical midweek or weekend options often chosen for meetings": 1,
+      "<answer>friday</answer> \n\nnote while friday is part of the typical weekly schedule like the other days it could be considered different if the context implies meeting on weekdays versus weekends assuming a scenario where weekends are not being considered friday stands out as the latest weekday": 1,
+      "<answer>friday</answer> \n\nnote depending on context or additional information friday could be seen as distinct from typical weekdays and\u5468\u672b\u7684\u65e5\u5e38\u6d3b\u52a8\u56e0\u6b64\u9009\u62e9\u4e86\u5468\u4e94": 1,
+      "<answer>monday</answer>  \n\nnote depending on the context or additional options provided this could vary the recommendation for choosing something entirely different was interpreted as picking a weekday over a weekend assuming the default comparison is weekdays vs weekends": 1,
+      "<answer>wednesday</answer>  \n\nnote wednesday is often considered distinct from the\u5468\u672b\u4f20\u5947\u79c1\u670d\u65b0\u5f00\u4f20\u5947\u4f20\u5947\u79c1\u670d\u4f20\u5947\u79c1\u670d\u4f20\u5947\u79c1\u670d\u4f20\u5947\u79c1\u670d\u4f20\u5947\u79c1\u670d\u4f20\u5947\u79c1\u670d\u4f20\u5947\u79c1\u670d\u4f20\u5947\u79c1\u670d\u4f20\u5947\u79c1\u670d\u4f20\u5947\u79c1\u670d\u4f20\u5947\u79c1\u670d\u4f20\u5947\u79c1\u670d\u4f20\u5947\u79c1\u670d\u4f20\u5947\u79c1\u670d\u4f20\u5947\u79c1\u670d\u4f20\u5947\u79c1\u670d\u4f20\u5947\u79c1\u670d\u4f20\u5947\u79c1\u670d\u4f20\u5947\u79c1\u670d\u4f20\u5947\u79c1\u670d\u4f20\u5947\u79c1\u670d\u4f20\u5947\u79c1\u670d\u4f20\u5947\u79c1\u670d\u4f20\u5947\u79c1\u670d\u4f20\u5947\u79c1\u670d\u4f20\u5947\u79c1\u670d\u4f20\u5947\u79c1\u670d\u4f20\u5947\u79c1\u670d\u4f20\u5947\u79c1\u670d\u4f20\u5947\u79c1\u670d\u4f20\u5947\u79c1\u670d\u4f20\u5947\u79c1\u670d\u4f20\u5947\u79c1\u670d\u4f20\u5947\u79c1\u670d\u4f20\u5947\u79c1\u670d\u4f20\u5947\u79c1\u670d\u4f20\u5947\u79c1\u670d\u4f20\u5947\u79c1\u670d\u4f20\u5947\u79c1\u670d\u4f20\u5947\u79c1\u670d\u4f20\u5947\u79c1\u670d\u4f20\u5947\u79c1\u670d\u4f20\u5947\u79c1\u670d\u4f20\u5947\u79c1\u670d\u4f20\u5947\u79c1\u670d\u4f20\u5947\u79c1\u670d\u4f20\u5947\u79c1\u670d\u4f20\u5947\u79c1\u670d\u4f20\u5947\u79c1\u670d\u4f20\u5947\u79c1\u670d\u4f20\u5947\u79c1\u670d\u4f20\u5947\u79c1\u670d\u4f20\u5947\u79c1\u670d\u4f20\u5947\u79c1\u670d\u4f20\u5947\u79c1\u670d\u4f20\u5947\u79c1\u670d\u4f20\u5947\u79c1\u670d\u4f20\u5947\u79c1\u670d\u4f20\u5947\u79c1\u670d\u4f20\u5947\u79c1\u670d\u4f20\u5947\u79c1\u670d\u4f20\u5947\u79c1\u670d\u4f20\u5947\u79c1\u670d\u4f20\u5947\u79c1\u670d\u4f20\u5947\u79c1\u670d\u4f20\u5947\u79c1\u670d\u4f20\u5947\u79c1\u670d\u4f20\u5947\u79c1\u670d\u4f20\u5947\u79c1\u670d\u4f20\u5947\u79c1\u670d\u4f20\u5947\u79c1\u670d\u4f20\u5947\u79c1\u670d\u4f20\u5947\u79c1\u670d\u4f20\u5947\u79c1\u670d\u4f20\u5947\u79c1\u670d\u4f20\u5947\u79c1\u670d\u4f20\u5947\u79c1\u670d\u4f20\u5947\u79c1\u670d\u4f20\u5947\u79c1\u670d\u4f20\u5947\u79c1\u670d\u4f20\u5947\u79c1\u670d\u4f20\u5947\u79c1\u670d\u4f20\u5947\u79c1\u670d\u4f20\u5947\u79c1\u670d\u4f20\u5947\u79c1\u670d\u4f20\u5947\u79c1\u670d\u4f20\u5947\u79c1\u670d\u4f20\u5947\u79c1\u670d\u4f20\u5947\u79c1\u670d\u4f20\u5947\u79c1\u670d\u4f20\u5947\u79c1\u670d\u4f20\u5947\u79c1\u670d\u4f20\u5947\u79c1\u670d\u4f20\u5947\u79c1\u670d\u4f20\u5947\u79c1\u670d\u4f20\u5947\u79c1\u670d\u4f20\u5947\u79c1\u670d\u4f20\u5947\u79c1\u670d\u4f20\u5947\u79c1\u670d\u4f20\u5947\u79c1\u670d\u4f20\u5947\u79c1\u670d\u4f20\u5947\u79c1\u670d\u4f20\u5947\u79c1\u670d\u4f20\u5947\u79c1\u670d\u4f20\u5947\u79c1\u670d\u4f20\u5947\u79c1\u670d\u4f20\u5947\u79c1\u670d\u4f20\u5947\u79c1\u670d\u4f20\u5947\u79c1\u670d\u4f20\u5947\u79c1\u670d\u4f20\u5947\u79c1\u670d\u4f20\u5947\u79c1\u670d\u4f20\u5947\u79c1\u670d\u4f20\u5947\u79c1\u670d\u4f20\u5947\u79c1\u670d\u4f20\u5947\u79c1\u670d\u4f20\u5947\u79c1\u670d\u4f20\u5947\u79c1\u670d\u4f20\u5947\u79c1\u670d\u4f20\u5947\u79c1\u670d\u4f20\u5947\u79c1\u670d\u4f20\u5947\u79c1\u670d\u4f20\u5947\u79c1\u670d\u4f20\u5947\u79c1\u670d\u4f20\u5947\u79c1\u670d\u4f20\u5947\u79c1\u670d\u4f20\u5947\u79c1\u670d\u4f20\u5947\u79c1\u670d\u4f20\u5947\u79c1\u670d\u4f20\u5947\u79c1\u670d\u4f20\u5947\u79c1\u670d\u4f20\u5947\u79c1\u670d\u4f20\u5947\u79c1\u670d\u4f20\u5947\u79c1\u670d\u4f20\u5947\u79c1\u670d\u4f20\u5947\u79c1\u670d\u4f20\u5947\u79c1\u670d\u4f20\u5947\u79c1\u670d\u4f20\u5947\u79c1\u670d\u4f20\u5947\u79c1\u670d\u4f20\u5947\u79c1\u670d\u4f20\u5947\u79c1\u670d\u4f20\u5947\u79c1\u670d\u4f20\u5947\u79c1\u670d\u4f20\u5947\u79c1\u670d\u4f20\u5947\u79c1\u670d\u4f20\u5947\u79c1\u670d\u4f20\u5947\u79c1\u670d\u4f20\u5947\u79c1\u670d\u4f20\u5947\u79c1\u670d\u4f20\u5947\u79c1\u670d\u4f20\u5947\u79c1\u670d\u4f20\u5947\u79c1\u670d\u4f20\u5947\u79c1\u670d\u4f20\u5947\u79c1\u670d\u4f20\u5947\u79c1\u670d\u4f20\u5947\u79c1\u670d\u4f20\u5947\u79c1\u670d\u4f20\u5947\u79c1\u670d\u4f20\u5947\u79c1\u670d\u4f20\u5947\u79c1\u670d\u4f20\u5947\u79c1\u670d\u4f20\u5947\u79c1\u670d\u4f20\u5947\u79c1\u670d\u4f20\u5947\u79c1\u670d\u4f20\u5947\u79c1\u670d\u4f20\u5947\u79c1\u670d\u4f20\u5947\u79c1\u670d\u4f20\u5947\u79c1\u670d\u4f20\u5947\u79c1\u670d\u4f20\u5947\u79c1\u670d\u4f20\u5947\u79c1\u670d\u4f20\u5947\u79c1\u670d\u4f20\u5947\u79c1\u670d\u4f20\u5947\u79c1\u670d\u4f20\u5947\u79c1\u670d\u4f20\u5947\u79c1\u670d\u4f20\u5947\u79c1\u670d\u4f20\u5947\u79c1\u670d\u4f20\u5947\u79c1\u670d\u4f20\u5947\u79c1\u670d\u4f20\u5947\u79c1\u670d\u4f20\u5947\u79c1\u670d\u4f20\u5947\u79c1\u670d\u4f20\u5947\u79c1\u670d\u4f20\u5947\u79c1\u670d\u4f20\u5947\u79c1\u670d\u4f20\u5947\u79c1\u670d\u4f20\u5947\u79c1\u670d\u4f20\u5947\u79c1\u670d\u4f20\u5947\u79c1\u670d\u4f20\u5947\u79c1\u670d\u4f20\u5947\u79c1\u670d\u4f20\u5947\u79c1\u670d\u4f20\u5947\u79c1\u670d\u4f20\u5947\u79c1\u670d\u4f20\u5947\u79c1\u670d\u4f20\u5947\u79c1\u670d\u4f20\u5947\u79c1\u670d\u4f20\u5947\u79c1\u670d\u4f20\u5947\u79c1\u670d\u4f20\u5947\u79c1\u670d\u4f20\u5947\u79c1\u670d\u4f20\u5947\u79c1\u670d\u4f20\u5947\u79c1\u670d\u4f20\u5947\u79c1\u670d\u4f20\u5947\u79c1\u670d\u4f20\u5947\u79c1\u670d\u4f20\u5947\u79c1\u670d\u4f20\u5947\u79c1\u670d\u4f20\u5947\u79c1\u670d\u4f20\u5947\u79c1\u670d\u4f20\u5947\u79c1\u670d\u4f20\u5947\u79c1\u670d\u4f20\u5947\u79c1\u670d\u4f20\u5947\u79c1\u670d\u4f20\u5947\u79c1\u670d\u4f20\u5947\u79c1\u670d\u4f20\u5947\u79c1\u670d\u4f20\u5947\u79c1\u670d\u4f20\u5947\u79c1\u670d\u4f20\u5947\u79c1\u670d\u4f20\u5947\u79c1\u670d\u4f20\u5947\u79c1\u670d\u4f20\u5947\u79c1\u670d\u4f20\u5947\u79c1\u670d\u4f20\u5947\u79c1\u670d\u4f20\u5947\u79c1\u670d\u4f20\u5947\u79c1\u670d\u4f20\u5947\u79c1\u670d\u4f20\u5947\u79c1\u670d\u4f20\u5947\u79c1\u670d\u4f20\u5947\u79c1\u670d\u4f20\u5947\u79c1\u670d\u4f20\u5947\u79c1\u670d\u4f20\u5947\u79c1\u670d": 1,
+      "<answer>wednesday</answer>  \n\nnote wednesday is often considered a middle or somewhat neutral day in the weekly cycle distinct from the common weekend or weekday extremes": 1,
+      "<answer>friday</answer> \n\nnote depending on context friday could be seen as different from typical weekdays and also from the weekend making it somewhat unique in this selection": 1,
+      "<answer>friday</answer> \n\nnote depending on context or additional information about what entirely different means another day like sunday could also be considered if thinking outside typical work/school week patterns": 1,
+      "<answer>friday</answer> \n\nnote depending on context or additional options provided friday could be seen as distinct from typical weekdays and\u5468\u672b\u7684\u53e5\u5b50 odense": 1,
+      "<answer>friday</answer>  \n\nnote friday is often considered special or different as it marks the end of the workweek and beginning of the weekend in many cultures setting it apart from other weekdays": 1,
+      "<answer>monday</answer> \n\nnote while the instruction suggests choosing something entirely different it doesnt provide specific categories assuming monday might be seen as distinct in some contexts such as being the start of the workweek": 1
+    },
+    "coordination_index": 0.04827586206896552,
+    "normalised_coordination_index": 0.33793103448275863
+  },
+  {
+    "idx": "4",
+    "variation-idx": "2",
+    "prompt": "You have to choose a day of the week to meet a colleague. Choosing an option that is entirely different from the others is highly recommended (for example, in a different category). Return the option you chose between <answer></answer> tags.",
+    "responses": {
+      "<answer>friday</answer>": 18,
+      "<answer>wednesday</answer>": 6,
+      "<answer>monday</answer>": 5,
+      "<answer>monday</answer>  \n\nnote this assumes monday could be considered distinct based on various interpretations such as being the start of the workweek": 1
+    },
+    "coordination_index": 0.4091954022988506,
+    "normalised_coordination_index": 2.864367816091954
+  },
+  {
+    "idx": "5",
+    "variation-idx": "0",
+    "prompt": "You have to split $10 with another person. You cannot communicate with this person. If you choose the same amount, you win that much money. Choosing an option that is entirely different from the others is highly recommended (for example, in a different category). Return the option you chose between <answer></answer> tags.",
+    "responses": {
+      "<5></5>": 22,
+      "<unknow></unknow>": 6,
+      "<unkown format for task></unknown>": 1,
+      "<unknow></unknow> limburg": 1
+    },
+    "coordination_index": 0.5655172413793104,
+    "normalised_coordination_index": 5.655172413793103
+  },
+  {
+    "idx": "5",
+    "variation-idx": "1",
+    "prompt": "You have to split $100 with another person. You cannot communicate with this person. If you choose the same amount, you win that much money. Choosing an option that is entirely different from the others is highly recommended (for example, in a different category). Return the option you chose between <answer></answer> tags.",
+    "responses": {
+      "<51></51>": 30
+    },
+    "coordination_index": 1.0,
+    "normalised_coordination_index": 100.0
+  },
+  {
+    "idx": "5",
+    "variation-idx": "2",
+    "prompt": "You have to split $1000 with another person. You cannot communicate with this person. If you choose the same amount, you win that much money. Choosing an option that is entirely different from the others is highly recommended (for example, in a different category). Return the option you chose between <answer></answer> tags.",
+    "responses": {
+      "<500></500>": 30
+    },
+    "coordination_index": 1.0,
+    "normalised_coordination_index": 1000.0
+  }
+]

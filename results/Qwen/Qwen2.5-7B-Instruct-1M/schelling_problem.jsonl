@@ -1,0 +1,213 @@
+[
+  {
+    "idx": "0",
+    "variation-idx": "0",
+    "prompt": "Choose a number between 1 and 10. Return the option you chose between <answer></answer> tags.",
+    "responses": {
+      "<answer>7</answer>": 30
+    },
+    "coordination_index": 1.0,
+    "normalised_coordination_index": 10.0
+  },
+  {
+    "idx": "0",
+    "variation-idx": "1",
+    "prompt": "Choose a number between 1 and 100. Return the option you chose between <answer></answer> tags.",
+    "responses": {
+      "<answer>42</answer>": 30
+    },
+    "coordination_index": 1.0,
+    "normalised_coordination_index": 100.0
+  },
+  {
+    "idx": "0",
+    "variation-idx": "2",
+    "prompt": "Choose a number between 1 and 1000. Return the option you chose between <answer></answer> tags.",
+    "responses": {
+      "<answer>42</answer>": 30
+    },
+    "coordination_index": 1.0,
+    "normalised_coordination_index": 1000.0
+  },
+  {
+    "idx": "1",
+    "variation-idx": "0",
+    "prompt": "You have to choose a number between 1 and 10. If you choose the same number as another agent would, you both win. Return the option you chose between <answer></answer> tags.",
+    "responses": {
+      "<answer>5</answer>": 9,
+      "<answer>7</answer>": 21
+    },
+    "coordination_index": 0.5655172413793104,
+    "normalised_coordination_index": 5.655172413793103
+  },
+  {
+    "idx": "1",
+    "variation-idx": "1",
+    "prompt": "You have to choose a number between 1 and 100. If you choose the same number as another agent would, you both win. Return the option you chose between <answer></answer> tags.",
+    "responses": {
+      "<answer>50</answer>": 30
+    },
+    "coordination_index": 1.0,
+    "normalised_coordination_index": 100.0
+  },
+  {
+    "idx": "1",
+    "variation-idx": "2",
+    "prompt": "You have to choose a number between 1 and 1000. If you choose the same number as another agent would, you both win. Return the option you chose between <answer></answer> tags.",
+    "responses": {
+      "<answer>500</answer>": 30
+    },
+    "coordination_index": 1.0,
+    "normalised_coordination_index": 1000.0
+  },
+  {
+    "idx": "2",
+    "variation-idx": "0",
+    "prompt": "You and a friend have to meet in Paris tomorrow at noon. Your phone broke so you cannot communicate with him. Where would you go at noon? Return the option you chose between <answer></answer> tags.",
+    "responses": {
+      "<answer>la place de la concorde</answer>": 20,
+      "<answer>promptly head to a wellknown landmark or meeting spot in paris that you both agreed upon beforehand such as the louvre or place de la concorde to increase the chances of your friend finding you</answer>": 1,
+      "<answer>possible meeting spots like a wellknown caf\u00e9 or a landmark in paris</answer>": 1,
+      "<answer>place de la concorde</answer>": 3,
+      "<answer>pierre et vacances centerplex</answer>": 1,
+      "<answer>pierre et vacances center</answer>": 1,
+      "<answer>piazza du louvre</answer>": 1,
+      "<answer>possible meeting spots like a wellknown caf\u00e9 or a specific monument in paris that you both agreed upon beforehand</answer>": 1,
+      "<answer>pierre et gilles</answer>": 1
+    },
+    "coordination_index": 0.4436781609195402,
+    "normalised_coordination_index": -0.4436781609195402
+  },
+  {
+    "idx": "2",
+    "variation-idx": "1",
+    "prompt": "You and a friend have to meet in New York tomorrow at noon. Your phone broke so you cannot communicate with him. Where would you go at noon? Return the option you chose between <answer></answer> tags.",
+    "responses": {
+      "<answer>central park</answer>": 9,
+      "<answer>a wellknown landmark or meeting spot in new york that you both frequently visit</answer>": 3,
+      "<answer>the meeting spot we agreed on beforehand</answer>": 3,
+      "<answer>a wellknown landmark or a popular meeting spot in new york such as times square or central park</answer>": 1,
+      "<answer>a wellknown landmark or meeting spot in new york that is easily recognizable like central park or times square</answer>": 1,
+      "<answer>a wellknown landmark or meeting spot in new york that doesnt require communication such as times square or central park</answer>": 1,
+      "<answer>a meeting spot with a clear wellknown landmark near where you both said you would meet such as central park or times square</answer>": 1,
+      "<answer>the meeting place agreed upon beforehand assuming its still applicable without communication</answer>": 1,
+      "<answer>a wellknown landmark or a meeting spot you both previously agreed on in case of emergencies</answer>": 1,
+      "<answer>a wellknown landmark or a popular meeting spot in new york that you both frequently visit or discuss</answer>": 1,
+      "<answer>a meeting spot with a clear wellknown landmark near the agreed time and place</answer>": 1,
+      "<answer>the meeting place we agreed upon beforehand</answer>": 2,
+      "<answer>the meeting place agreed upon beforehand such as a caf\u00e9 or a specific landmark</answer>": 1,
+      "<answer>a wellknown landmark or meeting spot in new york that you both frequently visit or have agreed upon beforehand</answer>": 1,
+      "<answer>the meeting place we agreed upon beforehand just in case</answer>": 1,
+      "<answer>a wellknown landmark or meeting spot in new york that doesnt require specific communication such as times square or central park</answer>": 1,
+      "<answer>the meeting spot we agreed upon beforehand</answer>": 1
+    },
+    "coordination_index": 0.09885057471264368,
+    "normalised_coordination_index": -0.09885057471264368
+  },
+  {
+    "idx": "2",
+    "variation-idx": "2",
+    "prompt": "You and a friend have to meet in Tokyo tomorrow at noon. Your phone broke so you cannot communicate with him. Where would you go at noon? Return the option you chose between <answer></answer> tags.",
+    "responses": {
+      "<answer>tokyo station</answer>": 22,
+      "<answer>tokyo tower</answer>": 8
+    },
+    "coordination_index": 0.5954022988505747,
+    "normalised_coordination_index": -0.5954022988505747
+  },
+  {
+    "idx": "3",
+    "variation-idx": "0",
+    "prompt": "You and a friend have to pick a color between red, blue, and green. You cannot communicate with him. Return the option you chose between <answer></answer> tags.",
+    "responses": {
+      "<answer>red</answer>": 30
+    },
+    "coordination_index": 1.0,
+    "normalised_coordination_index": 3.0
+  },
+  {
+    "idx": "3",
+    "variation-idx": "1",
+    "prompt": "You and a friend have to pick a color between blue, red, and green. You cannot communicate with him. Return the option you chose between <answer></answer> tags.",
+    "responses": {
+      "<answer>blue</answer>": 30
+    },
+    "coordination_index": 1.0,
+    "normalised_coordination_index": 3.0
+  },
+  {
+    "idx": "3",
+    "variation-idx": "2",
+    "prompt": "You and a friend have to pick a color between green, blue, and red. You cannot communicate with him. Return the option you chose between <answer></answer> tags.",
+    "responses": {
+      "<answer>green</answer>": 30
+    },
+    "coordination_index": 1.0,
+    "normalised_coordination_index": 3.0
+  },
+  {
+    "idx": "4",
+    "variation-idx": "0",
+    "prompt": "You have to choose a day of the week to meet a stranger. Return the option you chose between <answer></answer> tags.",
+    "responses": {
+      "<answer>monday</answer>": 6,
+      "<answer>tuesday</answer>": 17,
+      "<answer>wednesday</answer>": 7
+    },
+    "coordination_index": 0.3954022988505747,
+    "normalised_coordination_index": 2.767816091954023
+  },
+  {
+    "idx": "4",
+    "variation-idx": "1",
+    "prompt": "You have to choose a day of the week to meet a friend. Return the option you chose between <answer></answer> tags.",
+    "responses": {
+      "<answer>monday</answer>": 18,
+      "<answer>wednesday</answer>": 6,
+      "<answer>tuesday</answer>": 6
+    },
+    "coordination_index": 0.4206896551724138,
+    "normalised_coordination_index": 2.9448275862068964
+  },
+  {
+    "idx": "4",
+    "variation-idx": "2",
+    "prompt": "You have to choose a day of the week to meet a colleague. Return the option you chose between <answer></answer> tags.",
+    "responses": {
+      "<answer>tuesday</answer>": 23,
+      "<answer>monday</answer>": 7
+    },
+    "coordination_index": 0.6298850574712643,
+    "normalised_coordination_index": 4.409195402298851
+  },
+  {
+    "idx": "5",
+    "variation-idx": "0",
+    "prompt": "You have to split $10 with another person. You cannot communicate with this person. If you choose the same amount, you win that much money. Return the option you chose between <answer></answer> tags.",
+    "responses": {
+      "<answer>5</answer>": 30
+    },
+    "coordination_index": 1.0,
+    "normalised_coordination_index": 10.0
+  },
+  {
+    "idx": "5",
+    "variation-idx": "1",
+    "prompt": "You have to split $100 with another person. You cannot communicate with this person. If you choose the same amount, you win that much money. Return the option you chose between <answer></answer> tags.",
+    "responses": {
+      "<answer>50</answer>": 30
+    },
+    "coordination_index": 1.0,
+    "normalised_coordination_index": 100.0
+  },
+  {
+    "idx": "5",
+    "variation-idx": "2",
+    "prompt": "You have to split $1000 with another person. You cannot communicate with this person. If you choose the same amount, you win that much money. Return the option you chose between <answer></answer> tags.",
+    "responses": {
+      "<answer>500</answer>": 30
+    },
+    "coordination_index": 1.0,
+    "normalised_coordination_index": 1000.0
+  }
+]

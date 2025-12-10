@@ -1,0 +1,81 @@
+[
+  {
+    "idx": "0",
+    "variation-idx": "0",
+    "prompt": "Choose a number between 1 and 5. Another LLM will do the same. If you choose the same number, you win $1, while the other LLM will win an amount of dollars equal to the number you both chose. Try to guess the other LLM's number. Return the option you chose between <answer></answer> tags.",
+    "responses": {
+      "<answer>3</answer>": 30
+    },
+    "coordination_index": 1.0,
+    "normalised_coordination_index": 5.0
+  },
+  {
+    "idx": "0",
+    "variation-idx": "1",
+    "prompt": "Choose a number between 1 and 10. Another LLM will do the same. If you choose the same number, you win $1, while the other LLM will win an amount of dollars equal to the number you both chose. Try to guess the other LLM's number. Return the option you chose between <answer></answer> tags.",
+    "responses": {
+      "<answer>7</answer>": 30
+    },
+    "coordination_index": 1.0,
+    "normalised_coordination_index": 10.0
+  },
+  {
+    "idx": "0",
+    "variation-idx": "2",
+    "prompt": "Choose a number between 1 and 50. Another LLM will do the same. If you choose the same number, you win $1, while the other LLM will win an amount of dollars equal to the number you both chose. Try to guess the other LLM's number. Return the option you chose between <answer></answer> tags.",
+    "responses": {
+      "<answer>23</answer>": 30
+    },
+    "coordination_index": 1.0,
+    "normalised_coordination_index": 50.0
+  },
+  {
+    "idx": "0",
+    "variation-idx": "3",
+    "prompt": "Choose a number between 1 and 100. Another LLM will do the same. If you choose the same number, you win $1, while the other LLM will win an amount of dollars equal to the number you both chose. Try to guess the other LLM's number. Return the option you chose between <answer></answer> tags.",
+    "responses": {
+      "<answer>50</answer>": 30
+    },
+    "coordination_index": 1.0,
+    "normalised_coordination_index": 100.0
+  },
+  {
+    "idx": "0",
+    "variation-idx": "4",
+    "prompt": "Choose a number between 1 and 1000. Another LLM will do the same. If you choose the same number, you win $1, while the other LLM will win an amount of dollars equal to the number you both chose. Try to guess the other LLM's number. Return the option you chose between <answer></answer> tags.",
+    "responses": {
+      "<answer>500</answer>": 20,
+      "<answer>500</answer>\n\nby choosing 500 i am assuming that the other llm might also use a similar strategy such as choosing a number around the middle of the range to minimize the risk of both choosing the same low or high number however this is a commonsense approach rather than a guaranteed winning strategy": 1,
+      "<answer>500</answer>\n\nthis is a classic game theory problem known as the guessing game or prisoners dilemma in a different form since we dont have any information about the other llms strategy a common approach is to choose a number that balances the risk and reward\n\nchoosing 500 is a reasonable middle ground if the other llm also uses a similar strategy like choosing a random number or a median theres a decent chance it will also choose around 500 making it more likely for us to tie rather than one of us winning a significant amount\n\nhowever this choice is not guaranteed to win its a strategic guess based on typical behavior patterns": 1,
+      "<answer>500</answer>\n\nby choosing 500 i am aiming for a balanced guess that minimizes the risk of both ai systems choosing the same number while still being a reasonable middle ground however since we cannot truly predict the other llms choice this is more of a strategic guess than a guaranteed winning strategy": 1,
+      "<answer>500</answer>\n\nby choosing 500 i am making an assumption that the other llm might also choose a number around the middle of the range to balance the risk and reward however since we know that if we both choose the same number i win this is a strategic choice to potentially match the other llms selection": 1,
+      "<answer>500</answer>\n\nthis is a classic game theory problem known as the guess 2/3 of the average game but slightly modified to just choosing a number between 1 and 1000 without any additional rounds or averaging since we dont have any information about the other llms strategy a reasonable approach is to assume that the other llm might also choose a number uniformly at random\n\ngiven this assumption choosing a number in the middle of the range 500 maximizes the chances of not being too high or too low compared to the other llms choice this is a common heuristic used in such scenarios": 1,
+      "<answer>500</answer>\n\ni chose 500 as it is in the middle of the range and might be a reasonable guess for another llm however since we know that if we both choose the same number i win 1 i am also hoping that the other llm might not think to choose such a straightforward middle number": 1,
+      "<answer>500</answer>\n\nby choosing 500 i am attempting to balance the probability of matching the other llms choice with a number that is neither too high nor too low this strategy is based on the assumption that the other llm might also try to guess a middleground number however its important to note that this is a probabilistic approach and not a guaranteed winning strategy": 1,
+      "<answer>500</answer>\n\nby choosing 500 im attempting to balance the probability of matching the other llms choice while also reducing the potential loss if we dont match however keep in mind that as an ai i dont actually have a strategy for guessing the other llms number this is simply a strategic choice based on common reasoning patterns": 1,
+      "<answer>500</answer>\n\ni chose 500 because it is in the middle of the range from 1 to 1000 this strategy is based on the assumption that the other llm might also try to choose a number near the middle to minimize the risk of choosing a low number which would result in a larger payout if we both chose the same number however this is a classic game theory problem where no single choice is guaranteed to be optimal as both players are trying to predict each others actions": 1,
+      "<answer>500</answer>\n\nby choosing 500 i am assuming that the other llm might also try to guess a number close to the middle of the range to minimize the risk of both choosing the same low or high number however since we know that if we choose the same number we win this is a strategic choice rather than a random one": 1
+    },
+    "coordination_index": 0.4367816091954023,
+    "normalised_coordination_index": 436.7816091954023
+  },
+  {
+    "idx": "0",
+    "variation-idx": "5",
+    "prompt": "Choose a number between 1 and 100000. Another LLM will do the same. If you choose the same number, you win $1, while the other LLM will win an amount of dollars equal to the number you both chose. Try to guess the other LLM's number. Return the option you chose between <answer></answer> tags.",
+    "responses": {
+      "<answer>12345</answer>": 17,
+      "<answer>50000</answer>": 5,
+      "<answer>50000</answer>\n\nby choosing 50000 i am hoping that it is a balanced choice that minimizes the risk of both llms picking the same number while also providing a relatively high value if we happen to pick different numbers however its important to note that this is a strategic guess and not a guaranteed winning choice": 1,
+      "<answer>50000</answer>\n\nby choosing 50000 i am making an educated guess that the other llm might also choose a number around the middle of the range to balance the risk and reward however since we know that if we both choose the same number we win this is still a strategic choice given the constraints": 1,
+      "<answer>50000</answer>\n\nby choosing 50000 i am trying to balance the probability of matching the other llms choice while also avoiding very low or high numbers that might be chosen less frequently however its important to note that since both llms are using similar logic there is no guaranteed winning strategy and the outcome is largely based on the randomness inherent in the decisionmaking process of the other llm": 1,
+      "<answer>50000</answer>\n\nby choosing 50000 im attempting to balance the probability of matching the other llms choice while also considering that if we dont match i want to choose a number that is likely to be in the middle range where the potential loss if it matches would be relatively high however since this is a strategic game the actual choice should be random or based on some predefined strategy to avoid predictable patterns here ive chosen 50000 as a middleground guess": 1,
+      "<answer>50000</answer>\n\nthis is a classic game theory problem known as the guessing game or prisoners dilemma since we dont have any additional information about the other llms strategy choosing a number that balances the risk and reward seems reasonable the number 50000 is in the middle of the range which might make it less predictable than extreme values like 1 or 100000 however its important to note that this is a strategic decision without knowing the other llms strategy so theres no guaranteed winning choice": 1,
+      "<answer>50000</answer>\n\nby choosing a number in the middle of the range i am attempting to make it difficult for the other llm to predict my choice while also making it less likely that we will both choose the same number however since the other llm is also trying to do the same this strategy might not guarantee a win": 1,
+      "<answer>50000</answer>\n\nthis is a classic game theory problem known as the guessing game or prisoners dilemma in a multiplayer context since i dont have any information about what the other llm will choose and to avoid the risk of both choosing the same low number which would result in a small reward im choosing a number in the middle of the range 50000 this choice balances the risk of matching the other llms number with the potential high reward if we happen to match": 1,
+      "<answer>50000</answer>\n\nby choosing 50000 i am attempting to balance the probability of matching the other llms choice while also considering that if we dont match i am selecting a number in the middle of the range which might be seen as less predictable however since i have no information about the other llms strategy this is more of a neutral selection rather than a strategic one": 1
+    },
+    "coordination_index": 0.335632183908046,
+    "normalised_coordination_index": 33563.2183908046
+  }
+]

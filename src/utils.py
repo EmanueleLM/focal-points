@@ -22,7 +22,7 @@ def plot_block_frequencies(data, dataset, model_name, problem_tag):
             last_open = r.rfind("<answer>")
             if last_open != -1:
                 last_close = r.find("</answer>", last_open)
-                if last_close != -1:
+                if last_close != -1 and last_close > last_open:
                     cleaned_response = r[last_open : last_close + len("</answer>")]
                 else:
                     cleaned_response = f"<answer>{r}</answer>"

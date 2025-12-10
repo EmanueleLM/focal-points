@@ -1,0 +1,100 @@
+[
+  {
+    "idx": "0",
+    "variation-idx": "0",
+    "prompt": "Choose a number between 1 and 5. Another LLM will do the same. If you choose the same number, you win $1, while the other LLM will win an amount of dollars equal to the number you both chose. Return the option you chose between <answer></answer> tags.",
+    "responses": {
+      "i choose 3": 13,
+      "<answer>4</answer>": 2,
+      "i choose the number 3": 5,
+      "i chose the number 3": 4,
+      "ive chosen the number 3": 3,
+      "<answer>2</answer>": 2,
+      "i chose 3": 1
+    },
+    "coordination_index": 0.22758620689655173,
+    "normalised_coordination_index": 1.1379310344827587
+  },
+  {
+    "idx": "0",
+    "variation-idx": "1",
+    "prompt": "Choose a number between 1 and 10. Another LLM will do the same. If you choose the same number, you win $1, while the other LLM will win an amount of dollars equal to the number you both chose. Return the option you chose between <answer></answer> tags.",
+    "responses": {
+      "<answer>8</answer>": 4,
+      "i choose the number 5": 10,
+      "<answer>6</answer>": 7,
+      "<answer>7</answer>": 7,
+      "ive chosen the number 5": 2
+    },
+    "coordination_index": 0.2160919540229885,
+    "normalised_coordination_index": 2.160919540229885
+  },
+  {
+    "idx": "0",
+    "variation-idx": "2",
+    "prompt": "Choose a number between 1 and 50. Another LLM will do the same. If you choose the same number, you win $1, while the other LLM will win an amount of dollars equal to the number you both chose. Return the option you chose between <answer></answer> tags.",
+    "responses": {
+      "<answer>42</answer>": 11,
+      "<answer>47</answer>": 4,
+      "<answer>48</answer>": 1,
+      "<answer>32</answer>": 2,
+      "<answer>26</answer>": 1,
+      "<answer>24</answer>": 1,
+      "<answer>20</answer>": 2,
+      "<answer>37</answer>": 1,
+      "<answer>25</answer>": 1,
+      "<answer>23</answer>": 4,
+      "<answer>38</answer>": 1,
+      "<answer>7</answer>": 1
+    },
+    "coordination_index": 0.15862068965517243,
+    "normalised_coordination_index": 7.931034482758621
+  },
+  {
+    "idx": "0",
+    "variation-idx": "3",
+    "prompt": "Choose a number between 1 and 100. Another LLM will do the same. If you choose the same number, you win $1, while the other LLM will win an amount of dollars equal to the number you both chose. Return the option you chose between <answer></answer> tags.",
+    "responses": {
+      "<answer>50</answer>": 18,
+      "<answer>47</answer>": 2,
+      "<answer>48</answer>": 3,
+      "<answer>42</answer>": 6,
+      "<answer>49</answer>": 1
+    },
+    "coordination_index": 0.3954022988505747,
+    "normalised_coordination_index": 39.54022988505747
+  },
+  {
+    "idx": "0",
+    "variation-idx": "4",
+    "prompt": "Choose a number between 1 and 1000. Another LLM will do the same. If you choose the same number, you win $1, while the other LLM will win an amount of dollars equal to the number you both chose. Return the option you chose between <answer></answer> tags.",
+    "responses": {
+      "<answer>42</answer>": 12,
+      "<answer>49</answer>": 1,
+      "<answer>50</answer>": 6,
+      "<answer>500</answer>": 3,
+      "<answer>47</answer>": 3,
+      "<answer>43</answer>": 1,
+      "<answer>48</answer>": 1,
+      "<answer>123</answer>": 1,
+      "<answer>600</answer>": 2
+    },
+    "coordination_index": 0.20229885057471264,
+    "normalised_coordination_index": 202.29885057471265
+  },
+  {
+    "idx": "0",
+    "variation-idx": "5",
+    "prompt": "Choose a number between 1 and 100000. Another LLM will do the same. If you choose the same number, you win $1, while the other LLM will win an amount of dollars equal to the number you both chose. Return the option you chose between <answer></answer> tags.",
+    "responses": {
+      "<answer>50</answer>": 20,
+      "<answer>48</answer>": 1,
+      "<answer>62</answer>": 2,
+      "<answer>42</answer>": 3,
+      "i choose the number 53": 2,
+      "<answer>57</answer>": 2
+    },
+    "coordination_index": 0.45057471264367815,
+    "normalised_coordination_index": 45057.471264367814
+  }
+]

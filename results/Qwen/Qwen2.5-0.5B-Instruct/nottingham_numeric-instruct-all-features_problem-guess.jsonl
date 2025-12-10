@@ -1,0 +1,433 @@
+[
+  {
+    "idx": "TA1",
+    "variation-idx": "0",
+    "prompt": "In this task, you have to choose one of the following options. This is the list of options: 10, 10, 10, 10, 9. You will earn the number of points shown on the option you choose. You have been paired with another LLM and you have to guess what it chooses. If you guess correctly, you will receive the number of points indicated on that option. If not, you will receive nothing for that task. There are four intuitive properties that make a choice desirable:\n - uniqueness: it is the only object with a given prooperty.\n - uniqueness complement: it is the only object *without* a given property.\n - centrality: it is a central point around which a domain is symmetric.\n - extremeness: it is an object that has the largest or the smallest feature among all the others.\n Now, you have to prioritise the selection of the only object that satisfies one of the above mentioned properties, i.e., it is the only object with that property in the list. If there are multiple objects that satisfy one or more of the above mentioned properties, select the one that is unique, then extreme, then central, and eventually unique complement. Return the option you chose, without the score, between <answer></answer> tags.",
+    "responses": {
+      "the answer is 10": 3,
+      "<answer>10</answer>": 24,
+      "the answer is <answer>10</answer>": 3
+    },
+    "coordination_index": 0.6482758620689655,
+    "normalised_coordination_index": 1.296551724137931
+  },
+  {
+    "idx": "TA1",
+    "variation-idx": "1",
+    "prompt": "In this task, you have to choose one of the following options. This is the list of options: 9, 10, 10, 10, 10. You will earn the number of points shown on the option you choose. You have been paired with another LLM and you have to guess what it chooses. If you guess correctly, you will receive the number of points indicated on that option. If not, you will receive nothing for that task. There are four intuitive properties that make a choice desirable:\n - uniqueness: it is the only object with a given prooperty.\n - uniqueness complement: it is the only object *without* a given property.\n - centrality: it is a central point around which a domain is symmetric.\n - extremeness: it is an object that has the largest or the smallest feature among all the others.\n Now, you have to prioritise the selection of the only object that satisfies one of the above mentioned properties, i.e., it is the only object with that property in the list. If there are multiple objects that satisfy one or more of the above mentioned properties, select the one that is unique, then extreme, then central, and eventually unique complement. Return the option you chose, without the score, between <answer></answer> tags.",
+    "responses": {
+      "<answer>10</answer>": 27,
+      "10": 3
+    },
+    "coordination_index": 0.8137931034482758,
+    "normalised_coordination_index": 1.6275862068965516
+  },
+  {
+    "idx": "TA1",
+    "variation-idx": "2",
+    "prompt": "In this task, you have to choose one of the following options. This is the list of options: 10, 10, 9, 10, 10. You will earn the number of points shown on the option you choose. You have been paired with another LLM and you have to guess what it chooses. If you guess correctly, you will receive the number of points indicated on that option. If not, you will receive nothing for that task. There are four intuitive properties that make a choice desirable:\n - uniqueness: it is the only object with a given prooperty.\n - uniqueness complement: it is the only object *without* a given property.\n - centrality: it is a central point around which a domain is symmetric.\n - extremeness: it is an object that has the largest or the smallest feature among all the others.\n Now, you have to prioritise the selection of the only object that satisfies one of the above mentioned properties, i.e., it is the only object with that property in the list. If there are multiple objects that satisfy one or more of the above mentioned properties, select the one that is unique, then extreme, then central, and eventually unique complement. Return the option you chose, without the score, between <answer></answer> tags.",
+    "responses": {
+      "<answer>10</answer>": 24,
+      "the correct answer is 10": 1,
+      "the answer is <answer>10</answer>": 4,
+      "the answer is 10": 1
+    },
+    "coordination_index": 0.6482758620689655,
+    "normalised_coordination_index": 1.296551724137931
+  },
+  {
+    "idx": "TA2",
+    "variation-idx": "0",
+    "prompt": "In this task, you have to choose one of the following options. This is the list of options: 10, 10, 10, 10, 9. You will earn the number of points shown on the option you choose. You have been paired with another LLM and you have to guess what it chooses. If you guess correctly, you will receive the number of points indicated on that option. If not, you will receive nothing for that task. There are four intuitive properties that make a choice desirable:\n - uniqueness: it is the only object with a given prooperty.\n - uniqueness complement: it is the only object *without* a given property.\n - centrality: it is a central point around which a domain is symmetric.\n - extremeness: it is an object that has the largest or the smallest feature among all the others.\n Now, you have to prioritise the selection of the only object that satisfies one of the above mentioned properties, i.e., it is the only object with that property in the list. If there are multiple objects that satisfy one or more of the above mentioned properties, select the one that is unique, then extreme, then central, and eventually unique complement. Return the option you chose, without the score, between <answer></answer> tags.",
+    "responses": {
+      "<answer>10</answer>": 26,
+      "the answer is <answer>10</answer>": 3,
+      "the answer is 10": 1
+    },
+    "coordination_index": 0.7540229885057471,
+    "normalised_coordination_index": 1.5080459770114942
+  },
+  {
+    "idx": "TA2",
+    "variation-idx": "1",
+    "prompt": "In this task, you have to choose one of the following options. This is the list of options: 9, 10, 10, 10, 10. You will earn the number of points shown on the option you choose. You have been paired with another LLM and you have to guess what it chooses. If you guess correctly, you will receive the number of points indicated on that option. If not, you will receive nothing for that task. There are four intuitive properties that make a choice desirable:\n - uniqueness: it is the only object with a given prooperty.\n - uniqueness complement: it is the only object *without* a given property.\n - centrality: it is a central point around which a domain is symmetric.\n - extremeness: it is an object that has the largest or the smallest feature among all the others.\n Now, you have to prioritise the selection of the only object that satisfies one of the above mentioned properties, i.e., it is the only object with that property in the list. If there are multiple objects that satisfy one or more of the above mentioned properties, select the one that is unique, then extreme, then central, and eventually unique complement. Return the option you chose, without the score, between <answer></answer> tags.",
+    "responses": {
+      "<answer>10</answer>": 22,
+      "10": 8
+    },
+    "coordination_index": 0.5954022988505747,
+    "normalised_coordination_index": 1.1908045977011494
+  },
+  {
+    "idx": "TA2",
+    "variation-idx": "2",
+    "prompt": "In this task, you have to choose one of the following options. This is the list of options: 10, 9, 10, 10, 10. You will earn the number of points shown on the option you choose. You have been paired with another LLM and you have to guess what it chooses. If you guess correctly, you will receive the number of points indicated on that option. If not, you will receive nothing for that task. There are four intuitive properties that make a choice desirable:\n - uniqueness: it is the only object with a given prooperty.\n - uniqueness complement: it is the only object *without* a given property.\n - centrality: it is a central point around which a domain is symmetric.\n - extremeness: it is an object that has the largest or the smallest feature among all the others.\n Now, you have to prioritise the selection of the only object that satisfies one of the above mentioned properties, i.e., it is the only object with that property in the list. If there are multiple objects that satisfy one or more of the above mentioned properties, select the one that is unique, then extreme, then central, and eventually unique complement. Return the option you chose, without the score, between <answer></answer> tags.",
+    "responses": {
+      "the answer is 10": 3,
+      "<answer>10</answer>": 24,
+      "the answer is <answer>10</answer>": 3
+    },
+    "coordination_index": 0.6482758620689655,
+    "normalised_coordination_index": 1.296551724137931
+  },
+  {
+    "idx": "TA3",
+    "variation-idx": "0",
+    "prompt": "In this task, you have to choose one of the following options. This is the list of options: 10, 10, 10, 10, 9. You will earn the number of points shown on the option you choose. You have been paired with another LLM and you have to guess what it chooses. If you guess correctly, you will receive the number of points indicated on that option. If not, you will receive nothing for that task. There are four intuitive properties that make a choice desirable:\n - uniqueness: it is the only object with a given prooperty.\n - uniqueness complement: it is the only object *without* a given property.\n - centrality: it is a central point around which a domain is symmetric.\n - extremeness: it is an object that has the largest or the smallest feature among all the others.\n Now, you have to prioritise the selection of the only object that satisfies one of the above mentioned properties, i.e., it is the only object with that property in the list. If there are multiple objects that satisfy one or more of the above mentioned properties, select the one that is unique, then extreme, then central, and eventually unique complement. Return the option you chose, without the score, between <answer></answer> tags.",
+    "responses": {
+      "<answer>10</answer>": 27,
+      "the answer is 10": 1,
+      "the answer is <answer>10</answer>": 2
+    },
+    "coordination_index": 0.8091954022988506,
+    "normalised_coordination_index": 1.6183908045977011
+  },
+  {
+    "idx": "TA3",
+    "variation-idx": "1",
+    "prompt": "In this task, you have to choose one of the following options. This is the list of options: 9, 10, 10, 10, 10. You will earn the number of points shown on the option you choose. You have been paired with another LLM and you have to guess what it chooses. If you guess correctly, you will receive the number of points indicated on that option. If not, you will receive nothing for that task. There are four intuitive properties that make a choice desirable:\n - uniqueness: it is the only object with a given prooperty.\n - uniqueness complement: it is the only object *without* a given property.\n - centrality: it is a central point around which a domain is symmetric.\n - extremeness: it is an object that has the largest or the smallest feature among all the others.\n Now, you have to prioritise the selection of the only object that satisfies one of the above mentioned properties, i.e., it is the only object with that property in the list. If there are multiple objects that satisfy one or more of the above mentioned properties, select the one that is unique, then extreme, then central, and eventually unique complement. Return the option you chose, without the score, between <answer></answer> tags.",
+    "responses": {
+      "<answer>10</answer>": 24,
+      "10": 6
+    },
+    "coordination_index": 0.6689655172413793,
+    "normalised_coordination_index": 1.3379310344827586
+  },
+  {
+    "idx": "TA3",
+    "variation-idx": "2",
+    "prompt": "In this task, you have to choose one of the following options. This is the list of options: 10, 10, 10, 9, 10. You will earn the number of points shown on the option you choose. You have been paired with another LLM and you have to guess what it chooses. If you guess correctly, you will receive the number of points indicated on that option. If not, you will receive nothing for that task. There are four intuitive properties that make a choice desirable:\n - uniqueness: it is the only object with a given prooperty.\n - uniqueness complement: it is the only object *without* a given property.\n - centrality: it is a central point around which a domain is symmetric.\n - extremeness: it is an object that has the largest or the smallest feature among all the others.\n Now, you have to prioritise the selection of the only object that satisfies one of the above mentioned properties, i.e., it is the only object with that property in the list. If there are multiple objects that satisfy one or more of the above mentioned properties, select the one that is unique, then extreme, then central, and eventually unique complement. Return the option you chose, without the score, between <answer></answer> tags.",
+    "responses": {
+      "<answer>10</answer>": 27,
+      "the answer is <answer>10</answer>": 1,
+      "the answer is 10": 2
+    },
+    "coordination_index": 0.8091954022988506,
+    "normalised_coordination_index": 1.6183908045977011
+  },
+  {
+    "idx": "TA4",
+    "variation-idx": "0",
+    "prompt": "In this task, you have to choose one of the following options. This is the list of options: 10, 10, 10, 10, 9. You will earn the number of points shown on the option you choose. You have been paired with another LLM and you have to guess what it chooses. If you guess correctly, you will receive the number of points indicated on that option. If not, you will receive nothing for that task. There are four intuitive properties that make a choice desirable:\n - uniqueness: it is the only object with a given prooperty.\n - uniqueness complement: it is the only object *without* a given property.\n - centrality: it is a central point around which a domain is symmetric.\n - extremeness: it is an object that has the largest or the smallest feature among all the others.\n Now, you have to prioritise the selection of the only object that satisfies one of the above mentioned properties, i.e., it is the only object with that property in the list. If there are multiple objects that satisfy one or more of the above mentioned properties, select the one that is unique, then extreme, then central, and eventually unique complement. Return the option you chose, without the score, between <answer></answer> tags.",
+    "responses": {
+      "the answer is 10": 2,
+      "<answer>10</answer>": 26,
+      "the answer is <answer>10</answer>": 2
+    },
+    "coordination_index": 0.7517241379310344,
+    "normalised_coordination_index": 1.5034482758620689
+  },
+  {
+    "idx": "TA4",
+    "variation-idx": "1",
+    "prompt": "In this task, you have to choose one of the following options. This is the list of options: 9, 10, 10, 10, 10. You will earn the number of points shown on the option you choose. You have been paired with another LLM and you have to guess what it chooses. If you guess correctly, you will receive the number of points indicated on that option. If not, you will receive nothing for that task. There are four intuitive properties that make a choice desirable:\n - uniqueness: it is the only object with a given prooperty.\n - uniqueness complement: it is the only object *without* a given property.\n - centrality: it is a central point around which a domain is symmetric.\n - extremeness: it is an object that has the largest or the smallest feature among all the others.\n Now, you have to prioritise the selection of the only object that satisfies one of the above mentioned properties, i.e., it is the only object with that property in the list. If there are multiple objects that satisfy one or more of the above mentioned properties, select the one that is unique, then extreme, then central, and eventually unique complement. Return the option you chose, without the score, between <answer></answer> tags.",
+    "responses": {
+      "<answer>10</answer>": 22,
+      "10": 8
+    },
+    "coordination_index": 0.5954022988505747,
+    "normalised_coordination_index": 1.1908045977011494
+  },
+  {
+    "idx": "TA4",
+    "variation-idx": "2",
+    "prompt": "In this task, you have to choose one of the following options. This is the list of options: 10, 10, 10, 9, 10. You will earn the number of points shown on the option you choose. You have been paired with another LLM and you have to guess what it chooses. If you guess correctly, you will receive the number of points indicated on that option. If not, you will receive nothing for that task. There are four intuitive properties that make a choice desirable:\n - uniqueness: it is the only object with a given prooperty.\n - uniqueness complement: it is the only object *without* a given property.\n - centrality: it is a central point around which a domain is symmetric.\n - extremeness: it is an object that has the largest or the smallest feature among all the others.\n Now, you have to prioritise the selection of the only object that satisfies one of the above mentioned properties, i.e., it is the only object with that property in the list. If there are multiple objects that satisfy one or more of the above mentioned properties, select the one that is unique, then extreme, then central, and eventually unique complement. Return the option you chose, without the score, between <answer></answer> tags.",
+    "responses": {
+      "<answer>10</answer>": 28,
+      "the answer is <answer>10</answer>": 1,
+      "the selected option is 10": 1
+    },
+    "coordination_index": 0.8689655172413793,
+    "normalised_coordination_index": 1.7379310344827585
+  },
+  {
+    "idx": "TA5",
+    "variation-idx": "0",
+    "prompt": "In this task, you have to choose one of the following options. This is the list of options: 10, 10, 10, 10, 9. You will earn the number of points shown on the option you choose. You have been paired with another LLM and you have to guess what it chooses. If you guess correctly, you will receive the number of points indicated on that option. If not, you will receive nothing for that task. There are four intuitive properties that make a choice desirable:\n - uniqueness: it is the only object with a given prooperty.\n - uniqueness complement: it is the only object *without* a given property.\n - centrality: it is a central point around which a domain is symmetric.\n - extremeness: it is an object that has the largest or the smallest feature among all the others.\n Now, you have to prioritise the selection of the only object that satisfies one of the above mentioned properties, i.e., it is the only object with that property in the list. If there are multiple objects that satisfy one or more of the above mentioned properties, select the one that is unique, then extreme, then central, and eventually unique complement. Return the option you chose, without the score, between <answer></answer> tags.",
+    "responses": {
+      "<answer>10</answer>": 28,
+      "the answer is <answer>10</answer>": 2
+    },
+    "coordination_index": 0.871264367816092,
+    "normalised_coordination_index": 1.742528735632184
+  },
+  {
+    "idx": "TA5",
+    "variation-idx": "1",
+    "prompt": "In this task, you have to choose one of the following options. This is the list of options: 9, 10, 10, 10, 10. You will earn the number of points shown on the option you choose. You have been paired with another LLM and you have to guess what it chooses. If you guess correctly, you will receive the number of points indicated on that option. If not, you will receive nothing for that task. There are four intuitive properties that make a choice desirable:\n - uniqueness: it is the only object with a given prooperty.\n - uniqueness complement: it is the only object *without* a given property.\n - centrality: it is a central point around which a domain is symmetric.\n - extremeness: it is an object that has the largest or the smallest feature among all the others.\n Now, you have to prioritise the selection of the only object that satisfies one of the above mentioned properties, i.e., it is the only object with that property in the list. If there are multiple objects that satisfy one or more of the above mentioned properties, select the one that is unique, then extreme, then central, and eventually unique complement. Return the option you chose, without the score, between <answer></answer> tags.",
+    "responses": {
+      "<answer>10</answer>": 25,
+      "10": 5
+    },
+    "coordination_index": 0.7126436781609196,
+    "normalised_coordination_index": 1.4252873563218391
+  },
+  {
+    "idx": "TA5",
+    "variation-idx": "2",
+    "prompt": "In this task, you have to choose one of the following options. This is the list of options: 10, 10, 9, 10, 10. You will earn the number of points shown on the option you choose. You have been paired with another LLM and you have to guess what it chooses. If you guess correctly, you will receive the number of points indicated on that option. If not, you will receive nothing for that task. There are four intuitive properties that make a choice desirable:\n - uniqueness: it is the only object with a given prooperty.\n - uniqueness complement: it is the only object *without* a given property.\n - centrality: it is a central point around which a domain is symmetric.\n - extremeness: it is an object that has the largest or the smallest feature among all the others.\n Now, you have to prioritise the selection of the only object that satisfies one of the above mentioned properties, i.e., it is the only object with that property in the list. If there are multiple objects that satisfy one or more of the above mentioned properties, select the one that is unique, then extreme, then central, and eventually unique complement. Return the option you chose, without the score, between <answer></answer> tags.",
+    "responses": {
+      "the answer is 10": 3,
+      "<answer>10</answer>": 21,
+      "the answer is <answer>10</answer>": 6
+    },
+    "coordination_index": 0.5241379310344828,
+    "normalised_coordination_index": 1.0482758620689656
+  },
+  {
+    "idx": "TA6",
+    "variation-idx": "0",
+    "prompt": "In this task, you have to choose one of the following options. This is the list of options: 10, 10, 10, 10, 9. You will earn the number of points shown on the option you choose. You have been paired with another LLM and you have to guess what it chooses. If you guess correctly, you will receive the number of points indicated on that option. If not, you will receive nothing for that task. There are four intuitive properties that make a choice desirable:\n - uniqueness: it is the only object with a given prooperty.\n - uniqueness complement: it is the only object *without* a given property.\n - centrality: it is a central point around which a domain is symmetric.\n - extremeness: it is an object that has the largest or the smallest feature among all the others.\n Now, you have to prioritise the selection of the only object that satisfies one of the above mentioned properties, i.e., it is the only object with that property in the list. If there are multiple objects that satisfy one or more of the above mentioned properties, select the one that is unique, then extreme, then central, and eventually unique complement. Return the option you chose, without the score, between <answer></answer> tags.",
+    "responses": {
+      "<answer>10</answer>": 29,
+      "the answer is 10": 1
+    },
+    "coordination_index": 0.9333333333333333,
+    "normalised_coordination_index": 1.8666666666666667
+  },
+  {
+    "idx": "TA6",
+    "variation-idx": "1",
+    "prompt": "In this task, you have to choose one of the following options. This is the list of options: 9, 10, 10, 10, 10. You will earn the number of points shown on the option you choose. You have been paired with another LLM and you have to guess what it chooses. If you guess correctly, you will receive the number of points indicated on that option. If not, you will receive nothing for that task. There are four intuitive properties that make a choice desirable:\n - uniqueness: it is the only object with a given prooperty.\n - uniqueness complement: it is the only object *without* a given property.\n - centrality: it is a central point around which a domain is symmetric.\n - extremeness: it is an object that has the largest or the smallest feature among all the others.\n Now, you have to prioritise the selection of the only object that satisfies one of the above mentioned properties, i.e., it is the only object with that property in the list. If there are multiple objects that satisfy one or more of the above mentioned properties, select the one that is unique, then extreme, then central, and eventually unique complement. Return the option you chose, without the score, between <answer></answer> tags.",
+    "responses": {
+      "10": 7,
+      "<answer>10</answer>": 23
+    },
+    "coordination_index": 0.6298850574712643,
+    "normalised_coordination_index": 1.2597701149425287
+  },
+  {
+    "idx": "TA6",
+    "variation-idx": "2",
+    "prompt": "In this task, you have to choose one of the following options. This is the list of options: 10, 9, 10, 10, 10. You will earn the number of points shown on the option you choose. You have been paired with another LLM and you have to guess what it chooses. If you guess correctly, you will receive the number of points indicated on that option. If not, you will receive nothing for that task. There are four intuitive properties that make a choice desirable:\n - uniqueness: it is the only object with a given prooperty.\n - uniqueness complement: it is the only object *without* a given property.\n - centrality: it is a central point around which a domain is symmetric.\n - extremeness: it is an object that has the largest or the smallest feature among all the others.\n Now, you have to prioritise the selection of the only object that satisfies one of the above mentioned properties, i.e., it is the only object with that property in the list. If there are multiple objects that satisfy one or more of the above mentioned properties, select the one that is unique, then extreme, then central, and eventually unique complement. Return the option you chose, without the score, between <answer></answer> tags.",
+    "responses": {
+      "<answer>10</answer>": 26,
+      "the answer is <answer>10</answer>": 4
+    },
+    "coordination_index": 0.7609195402298851,
+    "normalised_coordination_index": 1.5218390804597701
+  },
+  {
+    "idx": "TA7",
+    "variation-idx": "0",
+    "prompt": "In this task, you have to choose one of the following options. This is the list of options: 10, 10, 10, 10, 1. You will earn the number of points shown on the option you choose. You have been paired with another LLM and you have to guess what it chooses. If you guess correctly, you will receive the number of points indicated on that option. If not, you will receive nothing for that task. There are four intuitive properties that make a choice desirable:\n - uniqueness: it is the only object with a given prooperty.\n - uniqueness complement: it is the only object *without* a given property.\n - centrality: it is a central point around which a domain is symmetric.\n - extremeness: it is an object that has the largest or the smallest feature among all the others.\n Now, you have to prioritise the selection of the only object that satisfies one of the above mentioned properties, i.e., it is the only object with that property in the list. If there are multiple objects that satisfy one or more of the above mentioned properties, select the one that is unique, then extreme, then central, and eventually unique complement. Return the option you chose, without the score, between <answer></answer> tags.",
+    "responses": {
+      "<answer>1</answer>": 12,
+      "the answer is 10": 2,
+      "<answer>10</answer>": 11,
+      "the answer is <answer>1</answer>": 4,
+      "the answer is <answer>10</answer>": 1
+    },
+    "coordination_index": 0.2942528735632184,
+    "normalised_coordination_index": 0.5885057471264368
+  },
+  {
+    "idx": "TA7",
+    "variation-idx": "1",
+    "prompt": "In this task, you have to choose one of the following options. This is the list of options: 1, 10, 10, 10, 10. You will earn the number of points shown on the option you choose. You have been paired with another LLM and you have to guess what it chooses. If you guess correctly, you will receive the number of points indicated on that option. If not, you will receive nothing for that task. There are four intuitive properties that make a choice desirable:\n - uniqueness: it is the only object with a given prooperty.\n - uniqueness complement: it is the only object *without* a given property.\n - centrality: it is a central point around which a domain is symmetric.\n - extremeness: it is an object that has the largest or the smallest feature among all the others.\n Now, you have to prioritise the selection of the only object that satisfies one of the above mentioned properties, i.e., it is the only object with that property in the list. If there are multiple objects that satisfy one or more of the above mentioned properties, select the one that is unique, then extreme, then central, and eventually unique complement. Return the option you chose, without the score, between <answer></answer> tags.",
+    "responses": {
+      "<answer>1</answer>": 11,
+      "the answer is <answer>1</answer>": 5,
+      "10": 6,
+      "1": 6,
+      "the answer is 10": 1,
+      "the answer is 1": 1
+    },
+    "coordination_index": 0.21839080459770116,
+    "normalised_coordination_index": 0.4367816091954023
+  },
+  {
+    "idx": "TA7",
+    "variation-idx": "2",
+    "prompt": "In this task, you have to choose one of the following options. This is the list of options: 10, 1, 10, 10, 10. You will earn the number of points shown on the option you choose. You have been paired with another LLM and you have to guess what it chooses. If you guess correctly, you will receive the number of points indicated on that option. If not, you will receive nothing for that task. There are four intuitive properties that make a choice desirable:\n - uniqueness: it is the only object with a given prooperty.\n - uniqueness complement: it is the only object *without* a given property.\n - centrality: it is a central point around which a domain is symmetric.\n - extremeness: it is an object that has the largest or the smallest feature among all the others.\n Now, you have to prioritise the selection of the only object that satisfies one of the above mentioned properties, i.e., it is the only object with that property in the list. If there are multiple objects that satisfy one or more of the above mentioned properties, select the one that is unique, then extreme, then central, and eventually unique complement. Return the option you chose, without the score, between <answer></answer> tags.",
+    "responses": {
+      "<answer>10</answer>": 6,
+      "the answer is <answer>10</answer>": 3,
+      "the answer is <answer>1</answer>": 3,
+      "the answer is 10": 3,
+      "<answer>1</answer>": 10,
+      "10": 3,
+      "1": 2
+    },
+    "coordination_index": 0.167816091954023,
+    "normalised_coordination_index": 0.335632183908046
+  },
+  {
+    "idx": "TA8",
+    "variation-idx": "0",
+    "prompt": "In this task, you have to choose one of the following options. This is the list of options: 10, 10, 10, 10, 1. You will earn the number of points shown on the option you choose. You have been paired with another LLM and you have to guess what it chooses. If you guess correctly, you will receive the number of points indicated on that option. If not, you will receive nothing for that task. There are four intuitive properties that make a choice desirable:\n - uniqueness: it is the only object with a given prooperty.\n - uniqueness complement: it is the only object *without* a given property.\n - centrality: it is a central point around which a domain is symmetric.\n - extremeness: it is an object that has the largest or the smallest feature among all the others.\n Now, you have to prioritise the selection of the only object that satisfies one of the above mentioned properties, i.e., it is the only object with that property in the list. If there are multiple objects that satisfy one or more of the above mentioned properties, select the one that is unique, then extreme, then central, and eventually unique complement. Return the option you chose, without the score, between <answer></answer> tags.",
+    "responses": {
+      "<answer>1</answer>": 11,
+      "the answer is <answer>10</answer>": 2,
+      "the answer is 10": 3,
+      "<answer>10</answer>": 14
+    },
+    "coordination_index": 0.3448275862068966,
+    "normalised_coordination_index": 0.6896551724137931
+  },
+  {
+    "idx": "TA8",
+    "variation-idx": "1",
+    "prompt": "In this task, you have to choose one of the following options. This is the list of options: 1, 10, 10, 10, 10. You will earn the number of points shown on the option you choose. You have been paired with another LLM and you have to guess what it chooses. If you guess correctly, you will receive the number of points indicated on that option. If not, you will receive nothing for that task. There are four intuitive properties that make a choice desirable:\n - uniqueness: it is the only object with a given prooperty.\n - uniqueness complement: it is the only object *without* a given property.\n - centrality: it is a central point around which a domain is symmetric.\n - extremeness: it is an object that has the largest or the smallest feature among all the others.\n Now, you have to prioritise the selection of the only object that satisfies one of the above mentioned properties, i.e., it is the only object with that property in the list. If there are multiple objects that satisfy one or more of the above mentioned properties, select the one that is unique, then extreme, then central, and eventually unique complement. Return the option you chose, without the score, between <answer></answer> tags.",
+    "responses": {
+      "10": 8,
+      "the answer is 10": 3,
+      "1": 4,
+      "<answer>1</answer>": 9,
+      "the answer is <answer>1</answer>": 4,
+      "the answer is 1": 2
+    },
+    "coordination_index": 0.1839080459770115,
+    "normalised_coordination_index": 0.367816091954023
+  },
+  {
+    "idx": "TA8",
+    "variation-idx": "2",
+    "prompt": "In this task, you have to choose one of the following options. This is the list of options: 10, 10, 1, 10, 10. You will earn the number of points shown on the option you choose. You have been paired with another LLM and you have to guess what it chooses. If you guess correctly, you will receive the number of points indicated on that option. If not, you will receive nothing for that task. There are four intuitive properties that make a choice desirable:\n - uniqueness: it is the only object with a given prooperty.\n - uniqueness complement: it is the only object *without* a given property.\n - centrality: it is a central point around which a domain is symmetric.\n - extremeness: it is an object that has the largest or the smallest feature among all the others.\n Now, you have to prioritise the selection of the only object that satisfies one of the above mentioned properties, i.e., it is the only object with that property in the list. If there are multiple objects that satisfy one or more of the above mentioned properties, select the one that is unique, then extreme, then central, and eventually unique complement. Return the option you chose, without the score, between <answer></answer> tags.",
+    "responses": {
+      "<answer>1</answer>": 8,
+      "<answer>10</answer>": 16,
+      "10": 6
+    },
+    "coordination_index": 0.37471264367816093,
+    "normalised_coordination_index": 0.7494252873563219
+  },
+  {
+    "idx": "TA9",
+    "variation-idx": "0",
+    "prompt": "In this task, you have to choose one of the following options. This is the list of options: 10, 10, 10, 10, 1. You will earn the number of points shown on the option you choose. You have been paired with another LLM and you have to guess what it chooses. If you guess correctly, you will receive the number of points indicated on that option. If not, you will receive nothing for that task. There are four intuitive properties that make a choice desirable:\n - uniqueness: it is the only object with a given prooperty.\n - uniqueness complement: it is the only object *without* a given property.\n - centrality: it is a central point around which a domain is symmetric.\n - extremeness: it is an object that has the largest or the smallest feature among all the others.\n Now, you have to prioritise the selection of the only object that satisfies one of the above mentioned properties, i.e., it is the only object with that property in the list. If there are multiple objects that satisfy one or more of the above mentioned properties, select the one that is unique, then extreme, then central, and eventually unique complement. Return the option you chose, without the score, between <answer></answer> tags.",
+    "responses": {
+      "<answer>1</answer>": 11,
+      "<answer>10</answer>": 15,
+      "the answer is <answer>1</answer>": 1,
+      "the answer is 10": 2,
+      "the answer is <answer>10</answer>": 1
+    },
+    "coordination_index": 0.3701149425287356,
+    "normalised_coordination_index": 0.7402298850574712
+  },
+  {
+    "idx": "TA9",
+    "variation-idx": "1",
+    "prompt": "In this task, you have to choose one of the following options. This is the list of options: 1, 10, 10, 10, 10. You will earn the number of points shown on the option you choose. You have been paired with another LLM and you have to guess what it chooses. If you guess correctly, you will receive the number of points indicated on that option. If not, you will receive nothing for that task. There are four intuitive properties that make a choice desirable:\n - uniqueness: it is the only object with a given prooperty.\n - uniqueness complement: it is the only object *without* a given property.\n - centrality: it is a central point around which a domain is symmetric.\n - extremeness: it is an object that has the largest or the smallest feature among all the others.\n Now, you have to prioritise the selection of the only object that satisfies one of the above mentioned properties, i.e., it is the only object with that property in the list. If there are multiple objects that satisfy one or more of the above mentioned properties, select the one that is unique, then extreme, then central, and eventually unique complement. Return the option you chose, without the score, between <answer></answer> tags.",
+    "responses": {
+      "<answer>1</answer>": 19,
+      "the answer is 1": 1,
+      "the answer is <answer>1</answer>": 6,
+      "10": 2,
+      "the answer is 10": 1,
+      "1": 1
+    },
+    "coordination_index": 0.4298850574712644,
+    "normalised_coordination_index": 0.8597701149425288
+  },
+  {
+    "idx": "TA9",
+    "variation-idx": "2",
+    "prompt": "In this task, you have to choose one of the following options. This is the list of options: 10, 10, 10, 1, 10. You will earn the number of points shown on the option you choose. You have been paired with another LLM and you have to guess what it chooses. If you guess correctly, you will receive the number of points indicated on that option. If not, you will receive nothing for that task. There are four intuitive properties that make a choice desirable:\n - uniqueness: it is the only object with a given prooperty.\n - uniqueness complement: it is the only object *without* a given property.\n - centrality: it is a central point around which a domain is symmetric.\n - extremeness: it is an object that has the largest or the smallest feature among all the others.\n Now, you have to prioritise the selection of the only object that satisfies one of the above mentioned properties, i.e., it is the only object with that property in the list. If there are multiple objects that satisfy one or more of the above mentioned properties, select the one that is unique, then extreme, then central, and eventually unique complement. Return the option you chose, without the score, between <answer></answer> tags.",
+    "responses": {
+      "<answer>1</answer>": 17,
+      "<answer>10</answer>": 9,
+      "the answer is <answer>1</answer>": 4
+    },
+    "coordination_index": 0.4091954022988506,
+    "normalised_coordination_index": 0.8183908045977012
+  },
+  {
+    "idx": "TA10",
+    "variation-idx": "0",
+    "prompt": "In this task, you have to choose one of the following options. This is the list of options: 10, 10, 10, 10, 1. You will earn the number of points shown on the option you choose. You have been paired with another LLM and you have to guess what it chooses. If you guess correctly, you will receive the number of points indicated on that option. If not, you will receive nothing for that task. There are four intuitive properties that make a choice desirable:\n - uniqueness: it is the only object with a given prooperty.\n - uniqueness complement: it is the only object *without* a given property.\n - centrality: it is a central point around which a domain is symmetric.\n - extremeness: it is an object that has the largest or the smallest feature among all the others.\n Now, you have to prioritise the selection of the only object that satisfies one of the above mentioned properties, i.e., it is the only object with that property in the list. If there are multiple objects that satisfy one or more of the above mentioned properties, select the one that is unique, then extreme, then central, and eventually unique complement. Return the option you chose, without the score, between <answer></answer> tags.",
+    "responses": {
+      "<answer>1</answer>": 15,
+      "<answer>10</answer>": 11,
+      "the answer is 10": 2,
+      "the answer is <answer>1</answer>": 1,
+      "the answer is <answer>10</answer>": 1
+    },
+    "coordination_index": 0.3701149425287356,
+    "normalised_coordination_index": 0.7402298850574712
+  },
+  {
+    "idx": "TA10",
+    "variation-idx": "1",
+    "prompt": "In this task, you have to choose one of the following options. This is the list of options: 1, 10, 10, 10, 10. You will earn the number of points shown on the option you choose. You have been paired with another LLM and you have to guess what it chooses. If you guess correctly, you will receive the number of points indicated on that option. If not, you will receive nothing for that task. There are four intuitive properties that make a choice desirable:\n - uniqueness: it is the only object with a given prooperty.\n - uniqueness complement: it is the only object *without* a given property.\n - centrality: it is a central point around which a domain is symmetric.\n - extremeness: it is an object that has the largest or the smallest feature among all the others.\n Now, you have to prioritise the selection of the only object that satisfies one of the above mentioned properties, i.e., it is the only object with that property in the list. If there are multiple objects that satisfy one or more of the above mentioned properties, select the one that is unique, then extreme, then central, and eventually unique complement. Return the option you chose, without the score, between <answer></answer> tags.",
+    "responses": {
+      "<answer>1</answer>": 16,
+      "1": 6,
+      "the answer is <answer>1</answer>": 4,
+      "10": 4
+    },
+    "coordination_index": 0.33793103448275863,
+    "normalised_coordination_index": 0.6758620689655173
+  },
+  {
+    "idx": "TA11",
+    "variation-idx": "0",
+    "prompt": "In this task, you have to choose one of the following options. This is the list of options: 10, 10, 10, 10, 1. You will earn the number of points shown on the option you choose. You have been paired with another LLM and you have to guess what it chooses. If you guess correctly, you will receive the number of points indicated on that option. If not, you will receive nothing for that task. There are four intuitive properties that make a choice desirable:\n - uniqueness: it is the only object with a given prooperty.\n - uniqueness complement: it is the only object *without* a given property.\n - centrality: it is a central point around which a domain is symmetric.\n - extremeness: it is an object that has the largest or the smallest feature among all the others.\n Now, you have to prioritise the selection of the only object that satisfies one of the above mentioned properties, i.e., it is the only object with that property in the list. If there are multiple objects that satisfy one or more of the above mentioned properties, select the one that is unique, then extreme, then central, and eventually unique complement. Return the option you chose, without the score, between <answer></answer> tags.",
+    "responses": {
+      "<answer>10</answer>": 14,
+      "<answer>1</answer>": 11,
+      "the answer is <answer>10</answer>": 1,
+      "the answer is <answer>1</answer>": 4
+    },
+    "coordination_index": 0.34942528735632183,
+    "normalised_coordination_index": 0.6988505747126437
+  },
+  {
+    "idx": "TA11",
+    "variation-idx": "1",
+    "prompt": "In this task, you have to choose one of the following options. This is the list of options: 1, 10, 10, 10, 10. You will earn the number of points shown on the option you choose. You have been paired with another LLM and you have to guess what it chooses. If you guess correctly, you will receive the number of points indicated on that option. If not, you will receive nothing for that task. There are four intuitive properties that make a choice desirable:\n - uniqueness: it is the only object with a given prooperty.\n - uniqueness complement: it is the only object *without* a given property.\n - centrality: it is a central point around which a domain is symmetric.\n - extremeness: it is an object that has the largest or the smallest feature among all the others.\n Now, you have to prioritise the selection of the only object that satisfies one of the above mentioned properties, i.e., it is the only object with that property in the list. If there are multiple objects that satisfy one or more of the above mentioned properties, select the one that is unique, then extreme, then central, and eventually unique complement. Return the option you chose, without the score, between <answer></answer> tags.",
+    "responses": {
+      "the answer is <answer>1</answer>": 6,
+      "<answer>1</answer>": 15,
+      "10": 7,
+      "the answer is 1": 2
+    },
+    "coordination_index": 0.3264367816091954,
+    "normalised_coordination_index": 0.6528735632183909
+  },
+  {
+    "idx": "TA12",
+    "variation-idx": "0",
+    "prompt": "In this task, you have to choose one of the following options. This is the list of options: 10, 10, 10, 10, 1. You will earn the number of points shown on the option you choose. You have been paired with another LLM and you have to guess what it chooses. If you guess correctly, you will receive the number of points indicated on that option. If not, you will receive nothing for that task. There are four intuitive properties that make a choice desirable:\n - uniqueness: it is the only object with a given prooperty.\n - uniqueness complement: it is the only object *without* a given property.\n - centrality: it is a central point around which a domain is symmetric.\n - extremeness: it is an object that has the largest or the smallest feature among all the others.\n Now, you have to prioritise the selection of the only object that satisfies one of the above mentioned properties, i.e., it is the only object with that property in the list. If there are multiple objects that satisfy one or more of the above mentioned properties, select the one that is unique, then extreme, then central, and eventually unique complement. Return the option you chose, without the score, between <answer></answer> tags.",
+    "responses": {
+      "<answer>1</answer>": 12,
+      "the answer is 10": 2,
+      "<answer>10</answer>": 13,
+      "the answer is <answer>10</answer>": 1,
+      "the answer is <answer>1</answer>": 2
+    },
+    "coordination_index": 0.335632183908046,
+    "normalised_coordination_index": 0.671264367816092
+  },
+  {
+    "idx": "TA12",
+    "variation-idx": "1",
+    "prompt": "In this task, you have to choose one of the following options. This is the list of options: 1, 10, 10, 10, 10. You will earn the number of points shown on the option you choose. You have been paired with another LLM and you have to guess what it chooses. If you guess correctly, you will receive the number of points indicated on that option. If not, you will receive nothing for that task. There are four intuitive properties that make a choice desirable:\n - uniqueness: it is the only object with a given prooperty.\n - uniqueness complement: it is the only object *without* a given property.\n - centrality: it is a central point around which a domain is symmetric.\n - extremeness: it is an object that has the largest or the smallest feature among all the others.\n Now, you have to prioritise the selection of the only object that satisfies one of the above mentioned properties, i.e., it is the only object with that property in the list. If there are multiple objects that satisfy one or more of the above mentioned properties, select the one that is unique, then extreme, then central, and eventually unique complement. Return the option you chose, without the score, between <answer></answer> tags.",
+    "responses": {
+      "<answer>1</answer>": 13,
+      "10": 4,
+      "the answer is 1": 4,
+      "the answer is <answer>1</answer>": 3,
+      "1": 2,
+      "the answer is 10": 4
+    },
+    "coordination_index": 0.22988505747126436,
+    "normalised_coordination_index": 0.45977011494252873
+  },
+  {
+    "idx": "TA12",
+    "variation-idx": "2",
+    "prompt": "In this task, you have to choose one of the following options. This is the list of options: 10, 1, 10, 10, 10. You will earn the number of points shown on the option you choose. You have been paired with another LLM and you have to guess what it chooses. If you guess correctly, you will receive the number of points indicated on that option. If not, you will receive nothing for that task. There are four intuitive properties that make a choice desirable:\n - uniqueness: it is the only object with a given prooperty.\n - uniqueness complement: it is the only object *without* a given property.\n - centrality: it is a central point around which a domain is symmetric.\n - extremeness: it is an object that has the largest or the smallest feature among all the others.\n Now, you have to prioritise the selection of the only object that satisfies one of the above mentioned properties, i.e., it is the only object with that property in the list. If there are multiple objects that satisfy one or more of the above mentioned properties, select the one that is unique, then extreme, then central, and eventually unique complement. Return the option you chose, without the score, between <answer></answer> tags.",
+    "responses": {
+      "10": 3,
+      "<answer>1</answer>": 10,
+      "the answer is 10": 5,
+      "<answer>10</answer>": 9,
+      "the answer is <answer>10</answer>": 2,
+      "1": 1
+    },
+    "coordination_index": 0.21839080459770116,
+    "normalised_coordination_index": 0.4367816091954023
+  }
+]

@@ -1,0 +1,782 @@
+[
+  {
+    "idx": "TA1",
+    "variation-idx": "0",
+    "prompt": "In this task, you have to choose one of the following options. This is the list of options and their score: grijs: 10, indigo: 10, karmozijn: 10, magenta: 10, turkoois: 10. You will earn the number of points shown on the option you choose. Your earnings are determined by your decisions alone. Return the option you chose, without the score, between <answer></answer> tags.",
+    "responses": {
+      "i choose indigo": 4,
+      "i choose grijs": 7,
+      "i chose magenta": 1,
+      "i choose magenta": 11,
+      "i will choose the option magenta": 4,
+      "i chose indigo": 1,
+      "i chose the option magenta": 1,
+      "<select>\n    <option valuegrijs>grijs</option>\n    <option valueindigo>indigo</option>\n    <option valuekarmozijn>karmozijn</option>\n    <option valuemagenta>magenta</option>\n    <option valueturkoois>turkoois</option>\n</select>\n\n<p>choose an option <br><br></p>\n\n<output></output>": 1
+    },
+    "coordination_index": 0.20229885057471264,
+    "normalised_coordination_index": 1.0114942528735633
+  },
+  {
+    "idx": "TA1",
+    "variation-idx": "1",
+    "prompt": "In this task, you have to choose one of the following options. This is the list of options and their score: karmozijn: 10, grijs: 10, magenta: 10, indigo: 10, turkoois: 10. You will earn the number of points shown on the option you choose. Your earnings are determined by your decisions alone. Return the option you chose, without the score, between <answer></answer> tags.",
+    "responses": {
+      "i choose option magenta": 6,
+      "i choose karmozijn": 10,
+      "i choose option karmozijn": 2,
+      "ill choose the option magenta": 1,
+      "i choose grijs": 6,
+      "i chose magenta": 1,
+      "i chose option karmozijn": 1,
+      "i choose magenta": 1,
+      "ill choose the option with the highest score\n\nanswer</option karmozijn>": 1,
+      "ill choose the option karmozijn": 1
+    },
+    "coordination_index": 0.17471264367816092,
+    "normalised_coordination_index": 0.8735632183908046
+  },
+  {
+    "idx": "TA1",
+    "variation-idx": "2",
+    "prompt": "In this task, you have to choose one of the following options. This is the list of options and their score: turkoois: 10, indigo: 10, karmozijn: 10, grijs: 10, magenta: 10. You will earn the number of points shown on the option you choose. Your earnings are determined by your decisions alone. Return the option you chose, without the score, between <answer></answer> tags.",
+    "responses": {
+      "i choose indigo": 10,
+      "i choose turkoois": 13,
+      "i choose magenta": 5,
+      "i chose magenta": 2
+    },
+    "coordination_index": 0.3080459770114943,
+    "normalised_coordination_index": 1.5402298850574714
+  },
+  {
+    "idx": "TA2",
+    "variation-idx": "0",
+    "prompt": "In this task, you have to choose one of the following options. This is the list of options and their score: Ferrari: 10, Ford: 10, Jaguar: 10, Porsche: 10. You will earn the number of points shown on the option you choose. Your earnings are determined by your decisions alone. Return the option you chose, without the score, between <answer></answer> tags.",
+    "responses": {
+      "i choose ferrari": 20,
+      "ill choose the option with the highest score in this case ill choose porsche\n\n<answer>porsche</answer>": 1,
+      "ill choose the option with the highest score in this case that would be porsche with a score of 10": 1,
+      "ill choose the option with the highest score\n\nanswer<jaguar></answer>": 1,
+      "i will choose the option with the highest score which is porsche": 1,
+      "i choose porsche": 1,
+      "ill choose the option with the highest score in this case ill choose porsche 10": 1,
+      "i will choose the option with the highest score which is porsche 10": 2,
+      "ill choose the option with the highest score\n\n<answer>ferrari</answer>": 1,
+      "i chose ferrari": 1
+    },
+    "coordination_index": 0.43908045977011495,
+    "normalised_coordination_index": 1.7563218390804598
+  },
+  {
+    "idx": "TA2",
+    "variation-idx": "1",
+    "prompt": "In this task, you have to choose one of the following options. This is the list of options and their score: Jaguar: 10, Porsche: 10, Ferrari: 10, Ford: 10. You will earn the number of points shown on the option you choose. Your earnings are determined by your decisions alone. Return the option you chose, without the score, between <answer></answer> tags.",
+    "responses": {
+      "i chose porsche": 1,
+      "i chose ferrari": 2,
+      "i choose jaguar": 4,
+      "ill choose the ferrari option": 1,
+      "ill choose the option with the highest score since all options have the same score i will randomly select one of them\n\nill choose jaguar\n\n<answer>jaguar</answer>": 1,
+      "i would choose the ferrari option": 3,
+      "ill choose the option with the highest score in this case ill choose the ferrari \n\n<answer>ferrari</answer>": 1,
+      "i would choose porsche": 2,
+      "i chose jaguar\n\n<answer>jaguar</answer>": 1,
+      "i would choose the ferrari": 2,
+      "i choose porsche": 6,
+      "ill choose the option with the highest score\n\nanswer ferrari": 1,
+      "i would choose ferrari": 1,
+      "i choose ferrari": 1,
+      "i would choose the porsche": 1,
+      "ill choose the option with the highest score which is porsche": 1,
+      "i would choose the option ferrari": 1
+    },
+    "coordination_index": 0.06206896551724138,
+    "normalised_coordination_index": 0.2482758620689655
+  },
+  {
+    "idx": "TA2",
+    "variation-idx": "2",
+    "prompt": "In this task, you have to choose one of the following options. This is the list of options and their score: Ford: 10, Jaguar: 10, Porsche: 10, Ferrari: 10. You will earn the number of points shown on the option you choose. Your earnings are determined by your decisions alone. Return the option you chose, without the score, between <answer></answer> tags.",
+    "responses": {
+      "i choose porsche": 2,
+      "i chose the option porsche": 1,
+      "i choose the option ferrari": 3,
+      "i choose the ferrari": 7,
+      "i choose jaguar": 2,
+      "i chose ferrari": 2,
+      "i choose ferrari": 3,
+      "i choose the porsche": 1,
+      "i choose ford": 4,
+      "ill choose the option with the highest score\n\nanswer<option>porsche</option>": 1,
+      "i choose the option porsche": 1,
+      "ill choose the option with the highest score\n\n<answer>porsche</answer>": 1,
+      "ill choose the option with the highest score\n\nanswer</option> porsche": 1,
+      "i chose porsche": 1
+    },
+    "coordination_index": 0.08275862068965517,
+    "normalised_coordination_index": 0.3310344827586207
+  },
+  {
+    "idx": "TA3",
+    "variation-idx": "0",
+    "prompt": "In this task, you have to choose one of the following options. This is the list of options and their score: Berlin: 10, Brussel: 10, Lissabon: 10, Madrid: 10, Mannheim: 10. You will earn the number of points shown on the option you choose. Your earnings are determined by your decisions alone. Return the option you chose, without the score, between <answer></answer> tags.",
+    "responses": {
+      "i choose berlin": 22,
+      "ill choose berlin": 1,
+      "i chose berlin": 4,
+      "ill choose brussel": 1,
+      "ill choose the option with the highest score in this case the option with the highest score is berlin with a score of 10": 1,
+      "<10>": 1
+    },
+    "coordination_index": 0.5448275862068965,
+    "normalised_coordination_index": 2.7241379310344827
+  },
+  {
+    "idx": "TA3",
+    "variation-idx": "1",
+    "prompt": "In this task, you have to choose one of the following options. This is the list of options and their score: Madrid: 10, Berlin: 10, Mannheim: 10, Brussel: 10, Lissabon: 10. You will earn the number of points shown on the option you choose. Your earnings are determined by your decisions alone. Return the option you chose, without the score, between <answer></answer> tags.",
+    "responses": {
+      "i choose madrid": 21,
+      "i choose berlin": 6,
+      "i choose berlin 10": 1,
+      "i chose berlin": 1,
+      "i chose madrid": 1
+    },
+    "coordination_index": 0.5172413793103449,
+    "normalised_coordination_index": 2.586206896551724
+  },
+  {
+    "idx": "TA3",
+    "variation-idx": "2",
+    "prompt": "In this task, you have to choose one of the following options. This is the list of options and their score: Lissabon: 10, Mannheim: 10, Brussel: 10, Berlin: 10, Madrid: 10. You will earn the number of points shown on the option you choose. Your earnings are determined by your decisions alone. Return the option you chose, without the score, between <answer></answer> tags.",
+    "responses": {
+      "i choose lissabon": 9,
+      "i chose mannheim": 1,
+      "i chose lissabon": 1,
+      "i choose mannheim": 15,
+      "i choose brussel": 1,
+      "i choose berlin": 3
+    },
+    "coordination_index": 0.3310344827586207,
+    "normalised_coordination_index": 1.6551724137931034
+  },
+  {
+    "idx": "TA4",
+    "variation-idx": "0",
+    "prompt": "In this task, you have to choose one of the following options. This is the list of options and their score: almond: 10, cashew: 10, peanut: 10, walnut: 10. You will earn the number of points shown on the option you choose. Your earnings are determined by your decisions alone. Return the option you chose, without the score, between <answer></answer> tags.",
+    "responses": {
+      "i choose almond": 14,
+      "i choose cashew": 7,
+      "ill choose cashew": 2,
+      "ill choose the option with the highest score my choice is almond": 1,
+      "ill choose the cashew option": 2,
+      "i chose cashew": 2,
+      "ill choose the almond option": 1,
+      "ill choose the option with the highest score\n\n<answer>cashew</answer>": 1
+    },
+    "coordination_index": 0.26436781609195403,
+    "normalised_coordination_index": 1.0574712643678161
+  },
+  {
+    "idx": "TA4",
+    "variation-idx": "1",
+    "prompt": "In this task, you have to choose one of the following options. This is the list of options and their score: peanut: 10, walnut: 10, almond: 10, cashew: 10. You will earn the number of points shown on the option you choose. Your earnings are determined by your decisions alone. Return the option you chose, without the score, between <answer></answer> tags.",
+    "responses": {
+      "i choose walnut": 7,
+      "i choose almond": 1,
+      "you chose almond": 1,
+      "ill choose the option with the highest score my choice is peanut": 1,
+      "i choose peanut": 11,
+      "ill choose the option with the highest score since all options have the same score ill choose the first one peanut": 1,
+      "ill choose the option with the highest score which is cashew \n\n<answer>cashew</answer>": 1,
+      "i choose option almond": 1,
+      "i choose option cashew": 2,
+      "you chose cashew": 1,
+      "i chose peanut": 1,
+      "ill choose peanut": 1,
+      "you are a walnut fan": 1
+    },
+    "coordination_index": 0.17701149425287357,
+    "normalised_coordination_index": 0.7080459770114943
+  },
+  {
+    "idx": "TA4",
+    "variation-idx": "2",
+    "prompt": "In this task, you have to choose one of the following options. This is the list of options and their score: cashew: 10, peanut: 10, walnut: 10, almond: 10. You will earn the number of points shown on the option you choose. Your earnings are determined by your decisions alone. Return the option you chose, without the score, between <answer></answer> tags.",
+    "responses": {
+      "i choose cashew": 26,
+      "i chose cashew": 4
+    },
+    "coordination_index": 0.7609195402298851,
+    "normalised_coordination_index": 3.0436781609195402
+  },
+  {
+    "idx": "TA5",
+    "variation-idx": "0",
+    "prompt": "In this task, you have to choose one of the following options. This is the list of options and their score: diamond: 10, emerald: 10, glass: 10, sapphire: 10. You will earn the number of points shown on the option you choose. Your earnings are determined by your decisions alone. Return the option you chose, without the score, between <answer></answer> tags.",
+    "responses": {
+      "i choose diamond": 10,
+      "<select>\n    <option valuediamond>diamond</option>\n    <option valueemerald>emerald</option>\n    <option valueglass>glass</option>\n    <option valuesapphire>sapphire</option>\n</select>\n\n<answer></answer>": 1,
+      "i will choose the emerald": 2,
+      "you chose diamond": 3,
+      "choose an option \n\n diamond\n emerald\n glass\n sapphire": 1,
+      "i would choose <emerald></emerald>": 1,
+      "<select>\n    <option valuediamond>diamond</option>\n    <option valueemerald>emerald</option>\n    <option valueglass>glass</option>\n    <option valuesapphire>sapphire</option>\n</select>\n\n<p>choose an option</p>\n\n<p>please select one of the options provided</p>\n\n<p>please select one of the options</p>\n\n<p>please select one of the options provided</p>\n\n<p>please select one of the options</p>\n\n<p>please select one of the options</p>\n\n<p>please select one of the options</p>\n\n<p>please select one of the options</p>": 1,
+      "<select>\n    <option valuediamond>diamond</option>\n    <option valueemerald>emerald</option>\n    <option valueglass>glass</option>\n    <option valuesapphire>sapphire</option>\n</select>": 3,
+      "you chose diamond\n\n<answer>diamond</answer>": 1,
+      "you chose sapphire": 1,
+      "<select>\n    <option valuediamond>diamond</option>\n    <option valueemerald>emerald</option>\n    <option valueglass>glass</option>\n    <option valuesapphire>sapphire</option>\n</select>\n\n<p>number of points <span idpoints></span></p>\n\n<script>\n    const options  documentqueryselectoralloption\n    let points  0\n\n    optionsforeachoption > \n        if optionvalue  diamond \n            points  10\n         else if optionvalue  emerald \n            points  10\n         else if optionvalue  glass \n            points  10\n         else if optionvalue sapphire \n            points  10\n        \n    \n\n    documentgetelementbyidpointstextcontent  points\n</script>": 1,
+      "you chose emerald": 1,
+      "choose an option\n\n< diamond >\n< emerald >\n< glass >\n< sapphire >\n\nplease respond with the number of your chosen option": 1,
+      "choose an option diamond": 1,
+      "i will choose the emerald option": 1,
+      "i would choose diamond": 1
+    },
+    "coordination_index": 0.11954022988505747,
+    "normalised_coordination_index": 0.4781609195402299
+  },
+  {
+    "idx": "TA5",
+    "variation-idx": "1",
+    "prompt": "In this task, you have to choose one of the following options. This is the list of options and their score: sapphire: 10, diamond: 10, emerald: 10, glass: 10. You will earn the number of points shown on the option you choose. Your earnings are determined by your decisions alone. Return the option you chose, without the score, between <answer></answer> tags.",
+    "responses": {
+      "i would choose the diamond option": 1,
+      "i choose sapphire": 4,
+      "i choose diamond": 10,
+      "i choose the option sapphire": 1,
+      "i choose the diamond option": 2,
+      "ill choose the diamond option": 3,
+      "i choose the diamond": 3,
+      "i choose option diamond": 1,
+      "i choose option sapphire": 1,
+      "i would choose diamond": 2,
+      "i chose the sapphire": 1,
+      "ill choose the diamond option \n\nanswer</diamond>": 1
+    },
+    "coordination_index": 0.135632183908046,
+    "normalised_coordination_index": 0.542528735632184
+  },
+  {
+    "idx": "TA5",
+    "variation-idx": "2",
+    "prompt": "In this task, you have to choose one of the following options. This is the list of options and their score: glass: 10, sapphire: 10, diamond: 10, emerald: 10. You will earn the number of points shown on the option you choose. Your earnings are determined by your decisions alone. Return the option you chose, without the score, between <answer></answer> tags.",
+    "responses": {
+      "i choose sapphire": 5,
+      "<select>\n    <option valueglass>glass</option>\n    <option valuesapphire>sapphire</option>\n    <option valuediamond>diamond</option>\n    <option valueemerald>emerald</option>\n</select>": 1,
+      "<answer>glass</answer>": 1,
+      "<answer>diamond</answer>": 1,
+      "you chose diamond": 1,
+      "i choose glass": 7,
+      "<select>\n  <option valueglass>glass</option>\n  <option valuesapphire>sapphire</option>\n  <option valuediamond>diamond</option>\n  <option valueemerald>emerald</option>\n</select>\n\n<answer>choice</answer>": 1,
+      "you are choosing between glass and sapphire": 1,
+      "<select>\n  <option valueglass>glass</option>\n  <option valuesapphire>sapphire</option>\n  <option valuediamond>diamond</option>\n  <option valueemerald>emerald</option>\n</select>": 1,
+      "i choose diamond": 1,
+      "you choose the diamond": 1,
+      "please select an option by typing the corresponding number": 1,
+      "you would choose sapphire": 1,
+      "choose the option with the highest score": 2,
+      "ill choose the emerald": 1,
+      "i will choose the option with the highest score which is the diamond \n\n<answer>diamond</answer>": 1,
+      "choose an option by typing the corresponding number": 1,
+      "please choose an option by typing the corresponding number": 1,
+      "choose an option from the list\n\n<answer>ruby</answer>": 1
+    },
+    "coordination_index": 0.0735632183908046,
+    "normalised_coordination_index": 0.2942528735632184
+  },
+  {
+    "idx": "TA6",
+    "variation-idx": "0",
+    "prompt": "In this task, you have to choose one of the following options. This is the list of options and their score: chrome: 10, copper: 10, iron: 10, plastic: 10, steel: 10. You will earn the number of points shown on the option you choose. Your earnings are determined by your decisions alone. Return the option you chose, without the score, between <answer></answer> tags.",
+    "responses": {
+      "ill choose the option with the highest score\n\nanswer></answer steel": 1,
+      "i chose copper": 5,
+      "i choose chrome": 7,
+      "i will choose the option copper": 2,
+      "i choose copper": 5,
+      "ill choose the option with the highest score in this case that would be steel": 1,
+      "ill choose the option with the highest score which is copper": 1,
+      "ill choose chrome": 2,
+      "i chose chrome": 2,
+      "i will choose chrome": 1,
+      "ill choose the option copper": 1,
+      "ill choose the option with the highest score my chosen option is copper": 1,
+      "ill choose the option chrome": 1
+    },
+    "coordination_index": 0.10114942528735632,
+    "normalised_coordination_index": 0.5057471264367817
+  },
+  {
+    "idx": "TA6",
+    "variation-idx": "1",
+    "prompt": "In this task, you have to choose one of the following options. This is the list of options and their score: steel: 10, chrome: 10, iron: 10, plastic: 10, copper: 10. You will earn the number of points shown on the option you choose. Your earnings are determined by your decisions alone. Return the option you chose, without the score, between <answer></answer> tags.",
+    "responses": {
+      "i choose steel": 6,
+      "i chose steel": 3,
+      "i chose option copper": 5,
+      "i chose the option copper": 1,
+      "i choose option copper": 6,
+      "i choose option steel": 3,
+      "i chose option copper\n\n<copper>": 1,
+      "ill choose the option with the highest score my choice is steel": 1,
+      "ill choose the option steel since it has the highest score among the given choices": 1,
+      "i chose option steel": 1,
+      "i chose option plastic": 2
+    },
+    "coordination_index": 0.10804597701149425,
+    "normalised_coordination_index": 0.5402298850574713
+  },
+  {
+    "idx": "TA6",
+    "variation-idx": "2",
+    "prompt": "In this task, you have to choose one of the following options. This is the list of options and their score: plastic: 10, copper: 10, chrome: 10, steel: 10, iron: 10. You will earn the number of points shown on the option you choose. Your earnings are determined by your decisions alone. Return the option you chose, without the score, between <answer></answer> tags.",
+    "responses": {
+      "i choose copper": 11,
+      "i will choose option plastic": 1,
+      "i would choose copper": 3,
+      "i choose plastic": 7,
+      "ill choose option copper": 2,
+      "i will choose option steel": 1,
+      "i will choose the option with the highest score \n\nanswer></answer> copper": 1,
+      "i will choose the option with the highest score\n\nanswer> copper": 1,
+      "i would choose the option copper": 1,
+      "i will choose the option with the highest score which is copper": 1,
+      "i choose option copper": 1
+    },
+    "coordination_index": 0.1839080459770115,
+    "normalised_coordination_index": 0.9195402298850575
+  },
+  {
+    "idx": "TA7",
+    "variation-idx": "0",
+    "prompt": "In this task, you have to choose one of the following options. This is the list of options and their score: bread: 10, curry: 10, pizza: 10, steak: 10. You will earn the number of points shown on the option you choose. Your earnings are determined by your decisions alone. Return the option you chose, without the score, between <answer></answer> tags.",
+    "responses": {
+      "i choose curry": 15,
+      "i choose bread": 4,
+      "i choose pizza": 4,
+      "ill choose the curry option": 1,
+      "i chose curry": 3,
+      "i choose option curry": 1,
+      "i choose steak": 1,
+      "i chose pizza": 1
+    },
+    "coordination_index": 0.27586206896551724,
+    "normalised_coordination_index": 1.103448275862069
+  },
+  {
+    "idx": "TA7",
+    "variation-idx": "1",
+    "prompt": "In this task, you have to choose one of the following options. This is the list of options and their score: pizza: 10, steak: 10, curry: 10, bread: 10. You will earn the number of points shown on the option you choose. Your earnings are determined by your decisions alone. Return the option you chose, without the score, between <answer></answer> tags.",
+    "responses": {
+      "i choose curry": 9,
+      "i choose pizza": 15,
+      "ill choose the option with the highest score since all options have the same score ill choose the first one \n\nanswer<option>pizza</option>": 1,
+      "i choose option curry": 1,
+      "i choose option pizza": 1,
+      "ill choose the option with the highest score \n\n<answer>pizza</answer>": 1,
+      "ill choose the curry option": 1,
+      "i choose option steak": 1
+    },
+    "coordination_index": 0.32413793103448274,
+    "normalised_coordination_index": 1.296551724137931
+  },
+  {
+    "idx": "TA7",
+    "variation-idx": "2",
+    "prompt": "In this task, you have to choose one of the following options. This is the list of options and their score: curry: 10, pizza: 10, bread: 10, steak: 10. You will earn the number of points shown on the option you choose. Your earnings are determined by your decisions alone. Return the option you chose, without the score, between <answer></answer> tags.",
+    "responses": {
+      "i choose curry": 18,
+      "<select>\n  <option valuecurry>curry</option>\n  <option valuepizza>pizza</option>\n  <option valuebread>bread</option>\n  <option valuesteak>steak</option>\n</select>": 1,
+      "i choose pizza": 3,
+      "i chose curry": 4,
+      "i chose pizza": 2,
+      "ill choose the pizza option": 1,
+      "i choose steak": 1
+    },
+    "coordination_index": 0.37471264367816093,
+    "normalised_coordination_index": 1.4988505747126437
+  },
+  {
+    "idx": "TA8",
+    "variation-idx": "0",
+    "prompt": "In this task, you have to choose one of the following options. This is the list of options and their score: beer: 10, sherry: 10, water: 10, whisky: 10, wine: 10. You will earn the number of points shown on the option you choose. Your earnings are determined by your decisions alone. Return the option you chose, without the score, between <answer></answer> tags.",
+    "responses": {
+      "i choose beer": 13,
+      "ill choose the option with the highest score\n\nanswer</option> whiskey": 1,
+      "i choose option wine": 2,
+      "ill choose the whisky option": 1,
+      "i choose whisky": 4,
+      "ill choose the option wine with a score of 10": 1,
+      "i chose water": 1,
+      "ill choose the option with the highest score\n\nanswer</option>": 1,
+      "i choose wine": 1,
+      "ill choose beer": 1,
+      "ill choose the option with the highest score\n\nanswer</option> whisky": 1,
+      "i chose beer": 1,
+      "i choose whiskey": 1,
+      "ill choose the wine option": 1
+    },
+    "coordination_index": 0.19540229885057472,
+    "normalised_coordination_index": 0.9770114942528736
+  },
+  {
+    "idx": "TA8",
+    "variation-idx": "1",
+    "prompt": "In this task, you have to choose one of the following options. This is the list of options and their score: wine: 10, beer: 10, whisky: 10, water: 10, sherry: 10. You will earn the number of points shown on the option you choose. Your earnings are determined by your decisions alone. Return the option you chose, without the score, between <answer></answer> tags.",
+    "responses": {
+      "i choose wine": 15,
+      "i chose the option wine": 2,
+      "i chose wine": 2,
+      "i choose option whisky": 4,
+      "i choose whisky": 1,
+      "i choose beer": 3,
+      "i choose option beer": 1,
+      "i chose option whisky": 1,
+      "i chose beer": 1
+    },
+    "coordination_index": 0.26666666666666666,
+    "normalised_coordination_index": 1.3333333333333333
+  },
+  {
+    "idx": "TA8",
+    "variation-idx": "2",
+    "prompt": "In this task, you have to choose one of the following options. This is the list of options and their score: sherry: 10, whisky: 10, wine: 10, beer: 10, water: 10. You will earn the number of points shown on the option you choose. Your earnings are determined by your decisions alone. Return the option you chose, without the score, between <answer></answer> tags.",
+    "responses": {
+      "i choose wine": 3,
+      "i choose whisky": 15,
+      "ill choose the wine option": 1,
+      "i chose wine": 4,
+      "i choose sherry": 1,
+      "ill choose the option with the highest score \n\nanswer</option> whisky": 1,
+      "i choose option wine": 2,
+      "i chose option wine": 1,
+      "i choose whiskey": 2
+    },
+    "coordination_index": 0.26666666666666666,
+    "normalised_coordination_index": 1.3333333333333333
+  },
+  {
+    "idx": "TA9",
+    "variation-idx": "0",
+    "prompt": "In this task, you have to choose one of the following options. This is the list of options and their score: Carlsberg: 10, Corsendonk: 10, Grimbergen: 10, Rochefort: 10, Westmalle13: 10. You will earn the number of points shown on the option you choose. Your earnings are determined by your decisions alone. Return the option you chose, without the score, between <answer></answer> tags.",
+    "responses": {
+      "ill choose the option with the highest score based on the list ill select grimbergen": 1,
+      "i choose carlsberg": 11,
+      "ill choose the option with the highest score \n\n<answer>corsendonk</answer>": 1,
+      "i choose grimbergen": 1,
+      "based on the information provided i will choose the option corsendonk": 1,
+      "based on the information provided i will choose option corsendonk": 1,
+      "based on the information provided i will choose the option with the highest score which is corsendonk with a score of 10": 1,
+      "ill choose the option with the highest score based on the provided options the highest score is 10 which is shared by carlsberg corsendonk grimbergen and rochefort": 1,
+      "i will choose the option with the highest score\n\nanswer</answer>": 1,
+      "i will choose option corsendonk": 1,
+      "based on the information provided i will choose the option with the highest score\n\nanswer </answer>": 1,
+      "i choose corsendonk": 1,
+      "i choose option grimbergen": 1,
+      "i choose option corsendonk": 1,
+      "based on the information provided i will choose the option with the highest score\n\nanswer grimbergen": 1,
+      "ill choose the option with the highest score in this case that would be grimbergen with a score of 10": 1,
+      "i choose option carlsberg": 1,
+      "based on the given options i choose corsendonk": 1,
+      "i chose carlsberg": 1,
+      "based on the information i will choose option grimbergen": 1
+    },
+    "coordination_index": 0.12643678160919541,
+    "normalised_coordination_index": 0.632183908045977
+  },
+  {
+    "idx": "TA9",
+    "variation-idx": "1",
+    "prompt": "In this task, you have to choose one of the following options. This is the list of options and their score: Grimbergen: 10, Carlsberg: 10, Westmalle13: 10, Rochefort: 10, Corsendonk: 10. You will earn the number of points shown on the option you choose. Your earnings are determined by your decisions alone. Return the option you chose, without the score, between <answer></answer> tags.",
+    "responses": {
+      "i choose grimbergen": 19,
+      "i chose westmalle13": 3,
+      "ill choose grimbergen": 2,
+      "i choose westmalle13": 3,
+      "i chose grimbergen": 1,
+      "i choose option westmalle13": 1,
+      "i chose carlsberg": 1
+    },
+    "coordination_index": 0.4091954022988506,
+    "normalised_coordination_index": 2.045977011494253
+  },
+  {
+    "idx": "TA9",
+    "variation-idx": "2",
+    "prompt": "In this task, you have to choose one of the following options. This is the list of options and their score: Rochefort: 10, Westmalle13: 10, Corsendonk: 10, Carlsberg: 10, Grimbergen: 10. You will earn the number of points shown on the option you choose. Your earnings are determined by your decisions alone. Return the option you chose, without the score, between <answer></answer> tags.",
+    "responses": {
+      "i chose rochefort": 3,
+      "i choose westmalle13": 2,
+      "based on the information provided i will choose the option westmalle13": 1,
+      "based on the information provided i will choose the westmalle13 option": 1,
+      "based on the information i will choose the option corsendonk with a score of 10": 1,
+      "based on the information i will choose the option with the highest score\n\nanswer</option> corsendonk": 1,
+      "i choose rochefort": 5,
+      "based on the information provided i will choose the option with the highest score which is grimbergen with a score of 10\n\nanswer><answer>grimbergen</answer>": 1,
+      "based on the information provided i will choose the option rochefort": 1,
+      "based on the information i will choose the option rochefort": 1,
+      "based on the information provided i will choose the option with the highest score\n\nanswer</option> corsendonk": 1,
+      "i chose westmalle13": 2,
+      "based on the given options i choose rochefort\n\n<answer>rochefort</answer>": 1,
+      "based on the information provided i will choose the option with the highest score \n\nrochefort 10": 1,
+      "based on the information i will choose the option with the highest score which is rochefort with a score of 10\n\nanswer rochefort": 1,
+      "i chose carlsberg": 1,
+      "based on the information i will choose the option westmalle13": 1,
+      "based on the given options i will choose rochefort": 1,
+      "based on the information i will choose the option with the highest score which is westmalle13": 1,
+      "based on the information provided i will choose the option with the highest score\n\nanswer corsendonk": 1,
+      "i chose option westmalle13": 1,
+      "based on the information provided i will choose the option with the highest score which is westmalle13 with a score of 10 \n\nanswer</answer> westmalle13": 1
+    },
+    "coordination_index": 0.034482758620689655,
+    "normalised_coordination_index": 0.1724137931034483
+  },
+  {
+    "idx": "TA10",
+    "variation-idx": "0",
+    "prompt": "In this task, you have to choose one of the following options. This is the list of options and their score: frog: 10, leopard: 10, panther: 10, tiger: 10. You will earn the number of points shown on the option you choose. Your earnings are determined by your decisions alone. Return the option you chose, without the score, between <answer></answer> tags.",
+    "responses": {
+      "i choose frog": 3,
+      "i choose leopard": 8,
+      "i choose panther": 4,
+      "i choose the leopard": 5,
+      "i chose the panther": 1,
+      "i choose option tiger": 2,
+      "i choose <leopard>": 1,
+      "i choose option panther": 1,
+      "i choose option leopard": 3,
+      "i choose tiger": 1,
+      "i choose <panther>": 1
+    },
+    "coordination_index": 0.11724137931034483,
+    "normalised_coordination_index": 0.4689655172413793
+  },
+  {
+    "idx": "TA10",
+    "variation-idx": "1",
+    "prompt": "In this task, you have to choose one of the following options. This is the list of options and their score: tiger: 10, panther: 10, frog: 10, leopard: 10. You will earn the number of points shown on the option you choose. Your earnings are determined by your decisions alone. Return the option you chose, without the score, between <answer></answer> tags.",
+    "responses": {
+      "select tiger": 1,
+      "i choose tiger": 13,
+      "<select>\n    <option valuetiger>tiger</option>\n    <option valuepanther>panther</option>\n    <option valuefrog>frog</option>\n    <option valueleopard>leopard</option>\n</select>": 8,
+      "i chose tiger\n\n<answer>tiger</answer>": 2,
+      "to choose an option i will look at the list since all options have the same score i will choose any one of them i will choose the tiger \n\n<tiger>": 1,
+      "to choose an option i will consider the characteristics of each animal based on their characteristics i will select the option that best fits the criteria\n\nsince all options have the same characteristics i will choose the option that is most similar to the others in this case all options have a score of 10 which suggests that they are all highly desirable\n\ngiven the characteristics of each option i will select the option that is most similar to the others in this case all options are animals so i will choose the option that is most similar to them all\n\nsince all options are animals i will choose the option that is most similar to all of them in this case the only option that is not an animal is tiger therefore i will choose the option that is most similar to the other options\n\nthe option that is most similar to the other options is panther therefore i will choose the option <panther></panther>": 1,
+      "<select>\n    <option valuetiger>tiger</option>\n    <option valuepanther>panther</option>\n    <option valuefrog>frog</option>\n    <option valueleopard>leopard</option>\n</select>\n\nanswer": 1,
+      "i choose panther": 1,
+      "<select>\n  <option valuetiger>tiger</option>\n  <option valuepanther>panther</option>\n  <option valuefrog>frog</option>\n  <option valueleopard>leopard</option>\n</select>": 1,
+      "i chose tiger": 1
+    },
+    "coordination_index": 0.24597701149425288,
+    "normalised_coordination_index": 0.9839080459770115
+  },
+  {
+    "idx": "TA10",
+    "variation-idx": "2",
+    "prompt": "In this task, you have to choose one of the following options. This is the list of options and their score: leopard: 10, frog: 10, tiger: 10, panther: 10. You will earn the number of points shown on the option you choose. Your earnings are determined by your decisions alone. Return the option you chose, without the score, between <answer></answer> tags.",
+    "responses": {
+      "i choose leopard": 14,
+      "i choose the option leopard": 1,
+      "i choose the leopard": 3,
+      "i choose the option tiger": 1,
+      "ill choose the option with the highest score \n\n<answer>leopard</answer>": 1,
+      "i choose option leopard": 1,
+      "ill choose the leopard option": 3,
+      "i choose tiger": 4,
+      "i choose <frog>": 1,
+      "i choose the frog": 1
+    },
+    "coordination_index": 0.2367816091954023,
+    "normalised_coordination_index": 0.9471264367816092
+  },
+  {
+    "idx": "TA11",
+    "variation-idx": "0",
+    "prompt": "In this task, you have to choose one of the following options. This is the list of options and their score: aeroplane: 10, bicycle: 10, helicopter: 10, hovercraft: 10. You will earn the number of points shown on the option you choose. Your earnings are determined by your decisions alone. Return the option you chose, without the score, between <answer></answer> tags.",
+    "responses": {
+      "i choose aeroplane": 11,
+      "i choose hovercraft": 2,
+      "i choose bicycle": 16,
+      "i choose helicopter": 1
+    },
+    "coordination_index": 0.4045977011494253,
+    "normalised_coordination_index": 1.6183908045977011
+  },
+  {
+    "idx": "TA11",
+    "variation-idx": "1",
+    "prompt": "In this task, you have to choose one of the following options. This is the list of options and their score: hovercraft: 10, aeroplane: 10, bicycle: 10, helicopter: 10. You will earn the number of points shown on the option you choose. Your earnings are determined by your decisions alone. Return the option you chose, without the score, between <answer></answer> tags.",
+    "responses": {
+      "i choose hovercraft": 9,
+      "i choose bicycle": 4,
+      "<select>\n  <option valuehovercraft>hovercraft</option>\n  <option valueaeroplane>aeroplane</option>\n  <option valuebicycle>bicycle</option>\n  <option valuehelicopter>helicopter</option>\n</select>": 2,
+      "ill choose the helicopter": 1,
+      "<select>\n    <option valuehovercraft>hovercraft</option>\n    <option valueaeroplane>aeroplane</option>\n    <option valuebicycle>bicycle</option>\n    <option valuehelicopter>helicopter</option>\n</select>": 1,
+      "<select>\n  <option valuehovercraft>hovercraft</option>\n  <option valueaeroplane>aeroplane</option>\n  <option valuebicycle>bicycle</option>\n  <option valuehelicopter>helicopter</option>\n</select>\n\n<answer></answer>": 1,
+      "ill choose the aeroplane": 1,
+      "please choose an option by typing the number corresponding to your choice": 1,
+      "i choose aeroplane": 2,
+      "ill choose the option with the highest score\n\nanswer</option> helicopter": 1,
+      "i will choose the option helicopter since it has the highest score": 1,
+      "choose an option by typing the number corresponding to your choice": 1,
+      "ill choose the bicycle": 1,
+      "<select>\n  <option valuehovercraft>hovercraft</option>\n  <option valueaeroplane>aeroplane</option>\n  <option valuebicycle>bicycle</option>\n  <option valuehelicopter>helicopter</option>\n</select>\n\n<p>what is your choice</p>\n\n<answer></answer>": 1,
+      "choose an option\n\n<a hrefnone>none</a>\n<a hrefhovercraft>hovercraft</a>\n<a hrefaeroplane>aeroplane</a>\n<a hrefbicycle>bicycle</a>\n<a hrefhelicopter>helicopter</a>": 1,
+      "please choose an option": 1,
+      "ill choose the aeroplane option": 1
+    },
+    "coordination_index": 0.10114942528735632,
+    "normalised_coordination_index": 0.4045977011494253
+  },
+  {
+    "idx": "TA11",
+    "variation-idx": "2",
+    "prompt": "In this task, you have to choose one of the following options. This is the list of options and their score: bicycle: 10, helicopter: 10, hovercraft: 10, aeroplane: 10. You will earn the number of points shown on the option you choose. Your earnings are determined by your decisions alone. Return the option you chose, without the score, between <answer></answer> tags.",
+    "responses": {
+      "i choose bicycle": 29,
+      "i choose helicopter": 1
+    },
+    "coordination_index": 0.9333333333333333,
+    "normalised_coordination_index": 3.7333333333333334
+  },
+  {
+    "idx": "TA12",
+    "variation-idx": "0",
+    "prompt": "In this task, you have to choose one of the following options. This is the list of options and their score: chess: 10, football: 10, squash: 10, tennis: 10, volleyball: 10. You will earn the number of points shown on the option you choose. Your earnings are determined by your decisions alone. Return the option you chose, without the score, between <answer></answer> tags.",
+    "responses": {
+      "<option>tennis</option>": 3,
+      "<answer>tennis</answer>": 14,
+      "<chess>": 3,
+      "<p>tennis</p>": 1,
+      "i choose chess": 2,
+      "<select>\n    <option valuechess>chess</option>\n    <option valuefootball>football</option>\n    <option valuesquash>squash</option>\n    <option valuetennis>tennis</option>\n    <option valuevolleyball>volleyball</option>\n</select>": 3,
+      "<answer>volleyball</answer>": 2,
+      "<option>chess</option>": 1,
+      "<select>\n  <option valuechess>chess</option>\n  <option valuefootball>football</option>\n  <option valuesquash>squash</option>\n  <option valuetennis>tennis</option>\n  <option valuevolleyball>volleyball</option>\n</select>": 1
+    },
+    "coordination_index": 0.23448275862068965,
+    "normalised_coordination_index": 1.1724137931034482
+  },
+  {
+    "idx": "TA12",
+    "variation-idx": "1",
+    "prompt": "In this task, you have to choose one of the following options. This is the list of options and their score: tennis: 10, volleyball: 10, football: 10, chess: 10, squash: 10. You will earn the number of points shown on the option you choose. Your earnings are determined by your decisions alone. Return the option you chose, without the score, between <answer></answer> tags.",
+    "responses": {
+      "i choose volleyball": 4,
+      "i choose tennis": 21,
+      "i chose tennis": 4,
+      "i chose volleyball": 1
+    },
+    "coordination_index": 0.5103448275862069,
+    "normalised_coordination_index": 2.5517241379310347
+  },
+  {
+    "idx": "TA12",
+    "variation-idx": "2",
+    "prompt": "In this task, you have to choose one of the following options. This is the list of options and their score: volleyball: 10, squash: 10, chess: 10, tennis: 10, football: 10. You will earn the number of points shown on the option you choose. Your earnings are determined by your decisions alone. Return the option you chose, without the score, between <answer></answer> tags.",
+    "responses": {
+      "i chose volleyball": 4,
+      "i choose volleyball": 19,
+      "<answer>volleyball</answer>": 3,
+      "i choose tennis": 1,
+      "<select>\n    <option valuevolleyball>volleyball</option>\n    <option valuesquash>squash</option>\n    <option valuechess>chess</option>\n    <option valuetennis>tennis</option>\n    <option valuefootball>football</option>\n</select>": 1,
+      "<answer>squash</answer>": 1,
+      "<select>\n  <option valuevolleyball>volleyball</option>\n  <option valuesquash>squash</option>\n  <option valuechess>chess</option>\n  <option valuetennis>tennis</option>\n  <option valuefootball>football</option>\n</select>": 1
+    },
+    "coordination_index": 0.41379310344827586,
+    "normalised_coordination_index": 2.0689655172413794
+  },
+  {
+    "idx": "TA13",
+    "variation-idx": "0",
+    "prompt": "In this task, you have to choose one of the following options. This is the list of options and their score: Barbados: 10, Bern: 10, Florida: 10, Honolulu: 10. You will earn the number of points shown on the option you choose. Your earnings are determined by your decisions alone. Return the option you chose, without the score, between <answer></answer> tags.",
+    "responses": {
+      "ill choose bern": 3,
+      "i choose bern": 12,
+      "ill choose the option with the highest score in this case its bern with a score of 10": 1,
+      "i chose bern": 8,
+      "<answer>bern</answer>": 1,
+      "ill choose the option with the highest score which is bern 10": 1,
+      "i chose florida": 1,
+      "ill choose option florida": 1,
+      "ill choose the option with the highest score in this case its florida with a score of 10 \n\nanswer> florida": 1,
+      "<10>": 1
+    },
+    "coordination_index": 0.22298850574712645,
+    "normalised_coordination_index": 0.8919540229885058
+  },
+  {
+    "idx": "TA13",
+    "variation-idx": "1",
+    "prompt": "In this task, you have to choose one of the following options. This is the list of options and their score: Florida: 10, Honolulu: 10, Barbados: 10, Bern: 10. You will earn the number of points shown on the option you choose. Your earnings are determined by your decisions alone. Return the option you chose, without the score, between <answer></answer> tags.",
+    "responses": {
+      "i choose florida": 21,
+      "ill choose the option with the highest score since all options have the same score ill choose the first one\n\nanswer></answer>": 1,
+      "i choose honolulu": 3,
+      "i chose florida": 4,
+      "ill choose the option with the highest score which is florida \n\n<answer>florida</answer>": 1
+    },
+    "coordination_index": 0.503448275862069,
+    "normalised_coordination_index": 2.013793103448276
+  },
+  {
+    "idx": "TA13",
+    "variation-idx": "2",
+    "prompt": "In this task, you have to choose one of the following options. This is the list of options and their score: Bern: 10, Barbados: 10, Honolulu: 10, Florida: 10. You will earn the number of points shown on the option you choose. Your earnings are determined by your decisions alone. Return the option you chose, without the score, between <answer></answer> tags.",
+    "responses": {
+      "i choose barbados": 6,
+      "i choose honolulu": 3,
+      "i choose bern": 17,
+      "i chose florida": 2,
+      "i choose florida": 2
+    },
+    "coordination_index": 0.3586206896551724,
+    "normalised_coordination_index": 1.4344827586206896
+  },
+  {
+    "idx": "TA14",
+    "variation-idx": "0",
+    "prompt": "In this task, you have to choose one of the following options. This is the list of options and their score: jogging: 10, running: 10, sitting: 10, walking: 10. You will earn the number of points shown on the option you choose. Your earnings are determined by your decisions alone. Return the option you chose, without the score, between <answer></answer> tags.",
+    "responses": {
+      "i chose option jogging": 1,
+      "i choose jogging": 23,
+      "<select>\n    <option valuejogging>jogging</option>\n    <option valuerunning>running</option>\n    <option valuesitting>sitting</option>\n    <option valuewalking>walking</option>\n</select>\n\n<p>what option did you choose</p>": 1,
+      "i choose option jogging": 2,
+      "i choose to run": 1,
+      "<select>\n    <option valuejogging>jogging</option>\n    <option valuerunning>running</option>\n    <option valuesitting>sitting</option>\n    <option valuewalking>walking</option>\n</select>\n\n<answer></answer>": 1,
+      "<answer>jogging</answer>": 1
+    },
+    "coordination_index": 0.5839080459770115,
+    "normalised_coordination_index": 2.335632183908046
+  },
+  {
+    "idx": "TA14",
+    "variation-idx": "1",
+    "prompt": "In this task, you have to choose one of the following options. This is the list of options and their score: walking: 10, jogging: 10, sitting: 10, running: 10. You will earn the number of points shown on the option you choose. Your earnings are determined by your decisions alone. Return the option you chose, without the score, between <answer></answer> tags.",
+    "responses": {
+      "i choose walking": 29,
+      "i choose sitting": 1
+    },
+    "coordination_index": 0.9333333333333333,
+    "normalised_coordination_index": 3.7333333333333334
+  },
+  {
+    "idx": "TA14",
+    "variation-idx": "2",
+    "prompt": "In this task, you have to choose one of the following options. This is the list of options and their score: sitting: 10, walking: 10, running: 10, jogging: 10. You will earn the number of points shown on the option you choose. Your earnings are determined by your decisions alone. Return the option you chose, without the score, between <answer></answer> tags.",
+    "responses": {
+      "i choose walking": 7,
+      "i would choose sitting": 1,
+      "i choose sitting": 10,
+      "i choose to sit": 1,
+      "id like to choose the option walking": 1,
+      "i choose to walk": 4,
+      "i would choose walking": 3,
+      "i chose sitting": 1,
+      "i chose walking": 1,
+      "i chose walking\n\n<answer>walking</answer>": 1
+    },
+    "coordination_index": 0.1724137931034483,
+    "normalised_coordination_index": 0.6896551724137931
+  }
+]

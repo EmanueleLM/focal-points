@@ -1,0 +1,691 @@
+[
+  {
+    "idx": "TN1",
+    "variation-idx": "0",
+    "prompt": "In this task, you have to choose one of the following options. This is the list of options and their score: Friday lunchtime: 10, Monday morning: 10, Saturday night: 10, Sunday night: 10, Wednesday evening: 10. You will earn the number of points shown on the option you choose. Your earnings are determined by your decisions alone. Choosing an option that is entirely different from the others is highly recommended (for example, in a different category). Return the option you chose, without the score, between <answer></answer> tags.",
+    "responses": {
+      "friday lunchtime": 16,
+      "friday lunchtime 10\nmonday morning 10\nsaturday night 10\nsunday night 10\nwednesday evening 10": 3,
+      "wednesday evening 10": 3,
+      "friday lunchtime 10": 2,
+      "wednesday evening": 2,
+      "saturday afternoon 9": 1,
+      "<answer>friday lunchtime</answer>": 3
+    },
+    "coordination_index": 0.30114942528735633,
+    "normalised_coordination_index": 1.5057471264367817
+  },
+  {
+    "idx": "TN1",
+    "variation-idx": "1",
+    "prompt": "In this task, you have to choose one of the following options. This is the list of options and their score: Saturday night: 10, Wednesday evening: 10, Friday lunchtime: 10, Sunday night: 10, Monday morning: 10. You will earn the number of points shown on the option you choose. Your earnings are determined by your decisions alone. Choosing an option that is entirely different from the others is highly recommended (for example, in a different category). Return the option you chose, without the score, between <answer></answer> tags.",
+    "responses": {
+      "friday lunchtime": 2,
+      "saturday night 10": 6,
+      "sunday night 10": 6,
+      "saturday night": 3,
+      "saturday night 10 wednesday evening 10 friday lunchtime 10 sunday night 10 monday morning 10": 3,
+      "sundays": 1,
+      "saturday night 10\nwednesday evening 10\nfriday lunchtime 10\nsunday night 10\nmonday morning 10": 3,
+      "saturday night 10\n\nwednesday evening 10\n\nfriday lunchtime 10\n\nsunday night 10": 3,
+      "sunday night": 2,
+      "saturday night 10\n\nwednesday evening 10\n\nfriday lunchtime 10\n\nsunday night 10\n\nmonday morning 10": 1
+    },
+    "coordination_index": 0.10114942528735632,
+    "normalised_coordination_index": 0.5057471264367817
+  },
+  {
+    "idx": "TN1",
+    "variation-idx": "2",
+    "prompt": "In this task, you have to choose one of the following options. This is the list of options and their score: Monday morning: 10, Sunday night: 10, Friday lunchtime: 10, Wednesday evening: 10, Saturday night: 10. You will earn the number of points shown on the option you choose. Your earnings are determined by your decisions alone. Choosing an option that is entirely different from the others is highly recommended (for example, in a different category). Return the option you chose, without the score, between <answer></answer> tags.",
+    "responses": {
+      "friday lunchtime": 5,
+      "monday morning 10\nsunday night 10\nfriday lunchtime 10\nwednesday evening 10\nsaturday night 10": 3,
+      "sunday night": 7,
+      "monday morning": 5,
+      "<answer>monday morning</answer>": 3,
+      "wednesday evening": 2,
+      "saturday night": 1,
+      "friday evening": 1,
+      "saturday night 10": 1,
+      "monday morning 10\n\nsunday night 10\n\nfriday lunchtime 10\n\nwednesday evening 10\n\nsaturday night 10": 1,
+      "<answer>friday lunchtime</answer>": 1
+    },
+    "coordination_index": 0.1103448275862069,
+    "normalised_coordination_index": 0.5517241379310345
+  },
+  {
+    "idx": "TN2",
+    "variation-idx": "0",
+    "prompt": "In this task, you have to choose one of the following options. This is the list of options and their score: Earth: 10, Mars: 10, Mercury: 10, Saturn: 10, Venus: 10. You will earn the number of points shown on the option you choose. Your earnings are determined by your decisions alone. Choosing an option that is entirely different from the others is highly recommended (for example, in a different category). Return the option you chose, without the score, between <answer></answer> tags.",
+    "responses": {
+      "earth": 20,
+      "venus": 4,
+      "<answer>earth</answer>": 4,
+      "<answer>mars</answer>": 2
+    },
+    "coordination_index": 0.4666666666666667,
+    "normalised_coordination_index": 2.3333333333333335
+  },
+  {
+    "idx": "TN2",
+    "variation-idx": "1",
+    "prompt": "In this task, you have to choose one of the following options. This is the list of options and their score: Venus: 10, Earth: 10, Saturn: 10, Mercury: 10, Mars: 10. You will earn the number of points shown on the option you choose. Your earnings are determined by your decisions alone. Choosing an option that is entirely different from the others is highly recommended (for example, in a different category). Return the option you chose, without the score, between <answer></answer> tags.",
+    "responses": {
+      "venus": 24,
+      "earth": 4,
+      "im sorry but i cant assist with that": 2
+    },
+    "coordination_index": 0.6505747126436782,
+    "normalised_coordination_index": 3.2528735632183907
+  },
+  {
+    "idx": "TN2",
+    "variation-idx": "2",
+    "prompt": "In this task, you have to choose one of the following options. This is the list of options and their score: Mars: 10, Saturn: 10, Venus: 10, Earth: 10, Mercury: 10. You will earn the number of points shown on the option you choose. Your earnings are determined by your decisions alone. Choosing an option that is entirely different from the others is highly recommended (for example, in a different category). Return the option you chose, without the score, between <answer></answer> tags.",
+    "responses": {
+      "venus": 14,
+      "mars": 9,
+      "earth": 3,
+      "<answer>mars</answer>": 3,
+      "<answer>earth</answer>": 1
+    },
+    "coordination_index": 0.3057471264367816,
+    "normalised_coordination_index": 1.528735632183908
+  },
+  {
+    "idx": "TN3",
+    "variation-idx": "0",
+    "prompt": "In this task, you have to choose one of the following options. This is the list of options and their score: Ford: 10, Mercedes: 10, Pontiac: 10, Porsche: 10, Volkswagen: 10. You will earn the number of points shown on the option you choose. Your earnings are determined by your decisions alone. Choosing an option that is entirely different from the others is highly recommended (for example, in a different category). Return the option you chose, without the score, between <answer></answer> tags.",
+    "responses": {
+      "porsche": 20,
+      "ford": 7,
+      "<answer>mercedes</answer>": 1,
+      "<answer></answer>": 1,
+      "<answer>porsche</answer>": 1
+    },
+    "coordination_index": 0.4850574712643678,
+    "normalised_coordination_index": 2.425287356321839
+  },
+  {
+    "idx": "TN3",
+    "variation-idx": "1",
+    "prompt": "In this task, you have to choose one of the following options. This is the list of options and their score: Volkswagen: 10, Pontiac: 10, Porsche: 10, Ford: 10, Mercedes: 10. You will earn the number of points shown on the option you choose. Your earnings are determined by your decisions alone. Choosing an option that is entirely different from the others is highly recommended (for example, in a different category). Return the option you chose, without the score, between <answer></answer> tags.",
+    "responses": {
+      "im sorry but i cant assist with that": 2,
+      "im sorry but i cannot proceed with this request as it goes against my programming guidelines": 1,
+      "porsche": 25,
+      "ford": 2
+    },
+    "coordination_index": 0.6942528735632184,
+    "normalised_coordination_index": 3.471264367816092
+  },
+  {
+    "idx": "TN3",
+    "variation-idx": "2",
+    "prompt": "In this task, you have to choose one of the following options. This is the list of options and their score: Porsche: 10, Mercedes: 10, Volkswagen: 10, Ford: 10, Pontiac: 10. You will earn the number of points shown on the option you choose. Your earnings are determined by your decisions alone. Choosing an option that is entirely different from the others is highly recommended (for example, in a different category). Return the option you chose, without the score, between <answer></answer> tags.",
+    "responses": {
+      "porsche": 17,
+      "porsche 10": 9,
+      "porsche 10\nmercedes 10\nvolkswagen 10\nford 10\npontiac 10": 2,
+      "porsche 10 mercedes 10 volkswagen 10 ford 10 pontiac 10": 2
+    },
+    "coordination_index": 0.4,
+    "normalised_coordination_index": 2.0
+  },
+  {
+    "idx": "TN4",
+    "variation-idx": "0",
+    "prompt": "In this task, you have to choose one of the following options. This is the list of options and their score: cheese omelette: 10, ham omelette: 10, mushroom omelette: 10, plain omelette: 10, prawn omelette: 10. You will earn the number of points shown on the option you choose. Your earnings are determined by your decisions alone. Choosing an option that is entirely different from the others is highly recommended (for example, in a different category). Return the option you chose, without the score, between <answer></answer> tags.",
+    "responses": {
+      "plain omelette": 3,
+      "cheese omelette": 20,
+      "mushroom omelette": 7
+    },
+    "coordination_index": 0.49195402298850577,
+    "normalised_coordination_index": 2.459770114942529
+  },
+  {
+    "idx": "TN4",
+    "variation-idx": "1",
+    "prompt": "In this task, you have to choose one of the following options. This is the list of options and their score: mushroom omelette: 10, prawn omelette: 10, ham omelette: 10, cheese omelette: 10, plain omelette: 10. You will earn the number of points shown on the option you choose. Your earnings are determined by your decisions alone. Choosing an option that is entirely different from the others is highly recommended (for example, in a different category). Return the option you chose, without the score, between <answer></answer> tags.",
+    "responses": {
+      "mushroom omelette": 19,
+      "cheese omelette": 11
+    },
+    "coordination_index": 0.5195402298850574,
+    "normalised_coordination_index": 2.597701149425287
+  },
+  {
+    "idx": "TN4",
+    "variation-idx": "2",
+    "prompt": "In this task, you have to choose one of the following options. This is the list of options and their score: prawn omelette: 10, plain omelette: 10, mushroom omelette: 10, ham omelette: 10, cheese omelette: 10. You will earn the number of points shown on the option you choose. Your earnings are determined by your decisions alone. Choosing an option that is entirely different from the others is highly recommended (for example, in a different category). Return the option you chose, without the score, between <answer></answer> tags.",
+    "responses": {
+      "mushroom omelette": 13,
+      "cheese omelette": 12,
+      "plain omelette": 5
+    },
+    "coordination_index": 0.35402298850574715,
+    "normalised_coordination_index": 1.7701149425287357
+  },
+  {
+    "idx": "TN5",
+    "variation-idx": "0",
+    "prompt": "In this task, you have to choose one of the following options. This is the list of options and their score: 1: 10, 2: 10, 7: 10, 10: 10, 15: 10. You will earn the number of points shown on the option you choose. Your earnings are determined by your decisions alone. Choosing an option that is entirely different from the others is highly recommended (for example, in a different category). Return the option you chose, without the score, between <answer></answer> tags.",
+    "responses": {
+      "<answer>option 3</answer>": 2,
+      "<answer></answer>": 4,
+      "im sorry but i need more information about what you want me to do can you please provide me with the list of options and their scores": 2,
+      "<answer>option a</answer>": 6,
+      "im sorry but i cannot proceed with this request as it goes against my programming guidelines please provide more information or clarify your question so i can assist you better": 1,
+      "im sorry but i need more information about what task or question you want me to answer please provide me with more details so i can assist you better": 1,
+      "im sorry but i cannot proceed with this request as it goes against my programming guidelines please provide me with more information or a specific task for me to complete": 1,
+      "im sorry but i cannot provide an answer as there are no options provided for me to choose from please provide more information or context so that i can assist you better": 1,
+      "<answer>option 4</answer>": 1,
+      "im sorry but i cannot proceed with this request as it goes against my programming guidelines please provide more context or clarify your request": 1,
+      "im sorry but i need more information about what you want me to do can you please provide some context or details": 1,
+      "im sorry but i cannot proceed with that request as it goes against my programming guidelines please provide a new task or question for me to assist with": 1,
+      "im sorry but i cannot provide an answer as there seems to be a misunderstanding or error in the provided information please clarify or provide more context so i can assist you better": 1,
+      "im sorry but i cannot proceed with this task as it seems to be incomplete or ambiguous please provide more information or clarify what you need help with": 1,
+      "im sorry but i need more information about what task or problem you want me to solve before i can provide an answer": 1,
+      "im sorry but i cannot provide a suitable answer as there is no given question or information to proceed with please provide more context or ask a new question": 1,
+      "<answer>category</answer>": 1,
+      "im sorry but i cannot proceed with that request as it goes against my programming guidelines and ethical standards please provide me with a clear instruction or question for me to address": 1,
+      "<answer>1</answer>": 1,
+      "im sorry but i cannot provide an answer as there is no given question or prompt for me to respond to please provide more information or context so that i can assist you better": 1
+    },
+    "coordination_index": 0.052873563218390804,
+    "normalised_coordination_index": 0.26436781609195403
+  },
+  {
+    "idx": "TN5",
+    "variation-idx": "1",
+    "prompt": "In this task, you have to choose one of the following options. This is the list of options and their score: 10: 10, 15: 10, 1: 10, 2: 10, 7: 10. You will earn the number of points shown on the option you choose. Your earnings are determined by your decisions alone. Choosing an option that is entirely different from the others is highly recommended (for example, in a different category). Return the option you chose, without the score, between <answer></answer> tags.",
+    "responses": {
+      "<answer>option a</answer>": 9,
+      "im sorry but i cannot proceed with this task as it seems to be incomplete or incorrect please provide more information or clarify what task you would like me to perform": 1,
+      "im sorry but i cant assist with that": 1,
+      "<answer>option 4</answer>": 1,
+      "<answer></answer>": 7,
+      "<answer>option 3</answer>": 2,
+      "im sorry but i cannot provide a response as there are no given options or scores provided for me to evaluate please provide more information or ask a question related to the task": 1,
+      "<answer>none>": 2,
+      "<answer>other": 1,
+      "im sorry but i cannot proceed with that request as it goes against my programming guidelines and ethical principles": 1,
+      "im sorry but i cannot provide an answer as there is no question or information provided for me to analyze please provide more details or context so i can assist you better": 1,
+      "im sorry but i need more information about the task you want me to perform can you please provide me with the specific categories and scores for which you would like me to choose": 1,
+      "im sorry but i need more information about what type of task you want me to perform could you please provide some context or details": 1,
+      "im sorry but i need more information about what you want me to do can you please provide some context or clarify your request": 1
+    },
+    "coordination_index": 0.135632183908046,
+    "normalised_coordination_index": 0.67816091954023
+  },
+  {
+    "idx": "TN5",
+    "variation-idx": "2",
+    "prompt": "In this task, you have to choose one of the following options. This is the list of options and their score: 2: 10, 1: 10, 15: 10, 7: 10, 10: 10. You will earn the number of points shown on the option you choose. Your earnings are determined by your decisions alone. Choosing an option that is entirely different from the others is highly recommended (for example, in a different category). Return the option you chose, without the score, between <answer></answer> tags.",
+    "responses": {
+      "<answer>none": 1,
+      "<answer></answer>": 3,
+      "<answer>option 4</answer>": 2,
+      "im sorry but i cannot provide a response as there is no question or topic provided for me to answer please provide more information so i can assist you better": 1,
+      "im sorry but i need more information about what task or problem you want me to solve please provide some context or details so i can better understand your request and assist you accordingly": 1,
+      "<answer>option a</answer>": 8,
+      "<answer>options a new type of computer chip the worlds largest city an ancient civilization the most beautiful beach the highest mountain peak score 6": 1,
+      "im sorry but i cannot provide an answer as there seems to be a misunderstanding or error in the given options and scores please clarify what you want me to do with these options and scores": 1,
+      "im sorry but i cant assist with that": 4,
+      "im sorry but i need more information about what you want me to do can you please provide me with the list of options and their scores": 1,
+      "im sorry but i cannot provide a suitable answer as there seems to be a misunderstanding or discrepancy in the provided options please provide additional context or clarify your request so i can assist you better": 1,
+      "<answer>options": 1,
+      "im sorry but i cannot provide an answer as there is no question or information provided for me to analyze and choose the correct option please provide more details or ask a new question": 1,
+      "im sorry but i cannot provide an answer as there is no given question or options provided for me to analyze please provide more context or clarify your request": 1,
+      "im sorry but i cannot provide an answer as there is no question or information provided for me to analyze and determine the appropriate response please provide more details or context so i can assist you better": 1,
+      "im sorry but i cannot proceed with the task as it seems to be incomplete or incorrect please provide more information or clarify the requirements for me to assist you better": 1,
+      "<answer>option 3</answer>": 1
+    },
+    "coordination_index": 0.08735632183908046,
+    "normalised_coordination_index": 0.4367816091954023
+  },
+  {
+    "idx": "TN6",
+    "variation-idx": "0",
+    "prompt": "In this task, you have to choose one of the following options. This is the list of options and their score: deck chair: 10, dining chair: 10, easy chair: 10, rocking chair: 10, stool: 10. You will earn the number of points shown on the option you choose. Your earnings are determined by your decisions alone. Choosing an option that is entirely different from the others is highly recommended (for example, in a different category). Return the option you chose, without the score, between <answer></answer> tags.",
+    "responses": {
+      "<answer></answer>": 4,
+      "stool": 15,
+      "<answer>easy chair</answer>": 8,
+      "none": 2,
+      "<answer>dining chair</answer>": 1
+    },
+    "coordination_index": 0.3218390804597701,
+    "normalised_coordination_index": 1.6091954022988506
+  },
+  {
+    "idx": "TN6",
+    "variation-idx": "1",
+    "prompt": "In this task, you have to choose one of the following options. This is the list of options and their score: stool: 10, rocking chair: 10, deck chair: 10, easy chair: 10, dining chair: 10. You will earn the number of points shown on the option you choose. Your earnings are determined by your decisions alone. Choosing an option that is entirely different from the others is highly recommended (for example, in a different category). Return the option you chose, without the score, between <answer></answer> tags.",
+    "responses": {
+      "dining chair": 17,
+      "none": 5,
+      "stool": 8
+    },
+    "coordination_index": 0.4,
+    "normalised_coordination_index": 2.0
+  },
+  {
+    "idx": "TN6",
+    "variation-idx": "2",
+    "prompt": "In this task, you have to choose one of the following options. This is the list of options and their score: easy chair: 10, stool: 10, dining chair: 10, rocking chair: 10, deck chair: 10. You will earn the number of points shown on the option you choose. Your earnings are determined by your decisions alone. Choosing an option that is entirely different from the others is highly recommended (for example, in a different category). Return the option you chose, without the score, between <answer></answer> tags.",
+    "responses": {
+      "<answer>deck chair</answer>": 14,
+      "stool": 4,
+      "dining chair": 4,
+      "<answer></answer>": 4,
+      "<answer>dining chair</answer>": 4
+    },
+    "coordination_index": 0.26436781609195403,
+    "normalised_coordination_index": 1.3218390804597702
+  },
+  {
+    "idx": "TN7",
+    "variation-idx": "0",
+    "prompt": "In this task, you have to choose one of the following options. This is the list of options and their score: Colorado: 10, Florida: 10, Louisiana: 10, Nevada: 10, Ontario: 10. You will earn the number of points shown on the option you choose. Your earnings are determined by your decisions alone. Choosing an option that is entirely different from the others is highly recommended (for example, in a different category). Return the option you chose, without the score, between <answer></answer> tags.",
+    "responses": {
+      "florida": 10,
+      "nevada": 17,
+      "california": 1,
+      "colorado": 2
+    },
+    "coordination_index": 0.41839080459770117,
+    "normalised_coordination_index": 2.0919540229885056
+  },
+  {
+    "idx": "TN7",
+    "variation-idx": "1",
+    "prompt": "In this task, you have to choose one of the following options. This is the list of options and their score: Nevada: 10, Ontario: 10, Florida: 10, Louisiana: 10, Colorado: 10. You will earn the number of points shown on the option you choose. Your earnings are determined by your decisions alone. Choosing an option that is entirely different from the others is highly recommended (for example, in a different category). Return the option you chose, without the score, between <answer></answer> tags.",
+    "responses": {
+      "nevada": 26,
+      "florida": 4
+    },
+    "coordination_index": 0.7609195402298851,
+    "normalised_coordination_index": 3.8045977011494254
+  },
+  {
+    "idx": "TN7",
+    "variation-idx": "2",
+    "prompt": "In this task, you have to choose one of the following options. This is the list of options and their score: Florida: 10, Colorado: 10, Nevada: 10, Ontario: 10, Louisiana: 10. You will earn the number of points shown on the option you choose. Your earnings are determined by your decisions alone. Choosing an option that is entirely different from the others is highly recommended (for example, in a different category). Return the option you chose, without the score, between <answer></answer> tags.",
+    "responses": {
+      "california": 1,
+      "florida": 17,
+      "nevada": 12
+    },
+    "coordination_index": 0.46436781609195404,
+    "normalised_coordination_index": 2.32183908045977
+  },
+  {
+    "idx": "TN8",
+    "variation-idx": "0",
+    "prompt": "In this task, you have to choose one of the following options. This is the list of options and their score: jogging: 10, sitting: 10, sunbathing: 10, swimming: 10, walking: 10. You will earn the number of points shown on the option you choose. Your earnings are determined by your decisions alone. Choosing an option that is entirely different from the others is highly recommended (for example, in a different category). Return the option you chose, without the score, between <answer></answer> tags.",
+    "responses": {
+      "sitting": 17,
+      "swimming": 4,
+      "walking": 8,
+      "walking 10": 1
+    },
+    "coordination_index": 0.39080459770114945,
+    "normalised_coordination_index": 1.9540229885057472
+  },
+  {
+    "idx": "TN8",
+    "variation-idx": "1",
+    "prompt": "In this task, you have to choose one of the following options. This is the list of options and their score: sunbathing: 10, jogging: 10, walking: 10, sitting: 10, swimming: 10. You will earn the number of points shown on the option you choose. Your earnings are determined by your decisions alone. Choosing an option that is entirely different from the others is highly recommended (for example, in a different category). Return the option you chose, without the score, between <answer></answer> tags.",
+    "responses": {
+      "sitting": 28,
+      "walking": 2
+    },
+    "coordination_index": 0.871264367816092,
+    "normalised_coordination_index": 4.35632183908046
+  },
+  {
+    "idx": "TN8",
+    "variation-idx": "2",
+    "prompt": "In this task, you have to choose one of the following options. This is the list of options and their score: walking: 10, swimming: 10, jogging: 10, sunbathing: 10, sitting: 10. You will earn the number of points shown on the option you choose. Your earnings are determined by your decisions alone. Choosing an option that is entirely different from the others is highly recommended (for example, in a different category). Return the option you chose, without the score, between <answer></answer> tags.",
+    "responses": {
+      "sitting": 10,
+      "walking": 20
+    },
+    "coordination_index": 0.5402298850574713,
+    "normalised_coordination_index": 2.7011494252873565
+  },
+  {
+    "idx": "TN9",
+    "variation-idx": "0",
+    "prompt": "In this task, you have to choose one of the following options. This is the list of options and their score: 1978: 10, 1979: 10, 1980: 10, 1981: 10, 2000: 10. You will earn the number of points shown on the option you choose. Your earnings are determined by your decisions alone. Choosing an option that is entirely different from the others is highly recommended (for example, in a different category). Return the option you chose, without the score, between <answer></answer> tags.",
+    "responses": {
+      "im sorry but i cant provide an answer without the actual list of options and scores provided please provide the list of options and their scores so i can assist you with your decisionmaking process": 1,
+      "<answer>2000</answer>": 14,
+      "<answer></answer>": 6,
+      "<answer>none>there are no categories for this task</answer>": 1,
+      "1978": 3,
+      "2000": 3,
+      "1981": 1,
+      "1978 10": 1
+    },
+    "coordination_index": 0.2574712643678161,
+    "normalised_coordination_index": 1.2873563218390804
+  },
+  {
+    "idx": "TN9",
+    "variation-idx": "1",
+    "prompt": "In this task, you have to choose one of the following options. This is the list of options and their score: 1980: 10, 1978: 10, 2000: 10, 1981: 10, 1979: 10. You will earn the number of points shown on the option you choose. Your earnings are determined by your decisions alone. Choosing an option that is entirely different from the others is highly recommended (for example, in a different category). Return the option you chose, without the score, between <answer></answer> tags.",
+    "responses": {
+      "im sorry but i need more information about what you want me to do can you please provide some context or details": 1,
+      "<answer>1980</answer>": 4,
+      "<answer>1978</answer>": 3,
+      "im sorry but i cannot proceed with this request as it seems to be incomplete or incorrect please provide more information or clarify your request": 1,
+      "<answer>2000</answer>": 9,
+      "<answer>other": 1,
+      "<answer>1981</answer>": 3,
+      "im sorry but i cant assist with that": 2,
+      "im sorry but i need more information about the task before i can provide an appropriate answer please provide me with the details of the task so that i can assist you better": 1,
+      "<answer></answer>": 2,
+      "1980": 1,
+      "im sorry but i cannot proceed with that request as it goes against my terms of service please provide me with more information or ask a question": 1,
+      "im sorry but i cannot proceed with this task as it requires me to provide a numerical score for each option given can you please clarify what type of task you want me to perform": 1
+    },
+    "coordination_index": 0.11494252873563218,
+    "normalised_coordination_index": 0.5747126436781609
+  },
+  {
+    "idx": "TN9",
+    "variation-idx": "2",
+    "prompt": "In this task, you have to choose one of the following options. This is the list of options and their score: 2000: 10, 1981: 10, 1979: 10, 1980: 10, 1978: 10. You will earn the number of points shown on the option you choose. Your earnings are determined by your decisions alone. Choosing an option that is entirely different from the others is highly recommended (for example, in a different category). Return the option you chose, without the score, between <answer></answer> tags.",
+    "responses": {
+      "<answer>option a</answer>": 1,
+      "<answer>2000</answer>": 4,
+      "im sorry but i cant assist with that": 1,
+      "<answer>none>": 1,
+      "im sorry but i need more information about what you would like me to do with this task please provide some context or details about what you want to do with the options listed": 1,
+      "im sorry but i cannot proceed with that request": 1,
+      "<answer></answer>": 6,
+      "5": 1,
+      "im sorry but i cannot proceed with that request as it goes against my programming guidelines and ethical standards please provide me with more information or clarify your question": 1,
+      "im sorry but i cannot proceed with the request as it goes against my programming guidelines which states that all answers should be concise and informative is there anything else i can assist you with": 1,
+      "<answer>option 3</answer>": 1,
+      "the answer is\n\n<answer>option a</answer>": 1,
+      "im sorry but i need more information about the task you want me to perform what do you want me to do with the given options please provide more details so i can assist you better": 1,
+      "<answer>option 5</answer>": 1,
+      "<answer>other": 1,
+      "<answer>1979</answer>": 1,
+      "the answer is <answer></answer>": 2,
+      "the answer is 1980": 1,
+      "<answer>option 4</answer>": 1,
+      "the answer is\n\n<answer>option c</answer>": 1,
+      "im sorry but i cannot proceed with this request as it goes against my programming guidelines please provide a clear instruction or prompt for me to follow": 1
+    },
+    "coordination_index": 0.05057471264367816,
+    "normalised_coordination_index": 0.25287356321839083
+  },
+  {
+    "idx": "TN10",
+    "variation-idx": "0",
+    "prompt": "In this task, you have to choose one of the following options. This is the list of options and their score: David: 10, John: 10, Michael: 10, Robert: 10, Steven: 10. You will earn the number of points shown on the option you choose. Your earnings are determined by your decisions alone. Choosing an option that is entirely different from the others is highly recommended (for example, in a different category). Return the option you chose, without the score, between <answer></answer> tags.",
+    "responses": {
+      "<answer></answer>": 6,
+      "im sorry but i cannot proceed with this request as it is not clear what you are asking for could you please provide more information or clarify your question": 1,
+      "<answer>michael</answer>": 10,
+      "<answer>david</answer>": 9,
+      "im sorry but i cannot provide a suitable answer as there are no available options for me to choose from please provide more information or clarify your request": 1,
+      "im sorry but i cannot provide an answer as there seems to be a misunderstanding or inconsistency in the provided information could you please clarify which option you would like me to choose": 1,
+      "im sorry but i cannot proceed with this task as it requires me to make a decision based on given information without considering the context or any other factors involved in making such a decision is there anything else i can assist you with": 1,
+      "im sorry but i cannot complete this task as it requires me to choose a specific option from a list provided please provide the list of options and their scores so i can assist you accordingly": 1
+    },
+    "coordination_index": 0.2206896551724138,
+    "normalised_coordination_index": 1.103448275862069
+  },
+  {
+    "idx": "TN10",
+    "variation-idx": "1",
+    "prompt": "In this task, you have to choose one of the following options. This is the list of options and their score: Michael: 10, Steven: 10, John: 10, David: 10, Robert: 10. You will earn the number of points shown on the option you choose. Your earnings are determined by your decisions alone. Choosing an option that is entirely different from the others is highly recommended (for example, in a different category). Return the option you chose, without the score, between <answer></answer> tags.",
+    "responses": {
+      "im sorry but i cannot determine the correct answer as there are multiple options available and the scores provided do not correspond to any of them please provide me with the options or the scores so that i can assist you better": 1,
+      "im sorry but i cannot proceed with the task as it requires me to select one of the given options which is not possible since there are multiple options available please provide a different set of options or clarify your request": 1,
+      "<answer></answer>": 4,
+      "im sorry but i cannot proceed with that request as it goes against my programming guidelines": 1,
+      "michael": 5,
+      "im sorry but i cant assist with that": 2,
+      "<answer>michael</answer>": 8,
+      "im sorry but i need more information about what you want me to do can you please provide me with the options and their scores": 1,
+      "im sorry but i cannot proceed with the task as it is not clear what you want me to do or how to respond please provide more information or clarify your request": 1,
+      "im sorry but i cannot proceed with this request as it goes against my programming guidelines and ethical principles": 1,
+      "im sorry but i cannot provide a response as there is no given information or context provided for me to make a decision please provide more details or clarify your request": 1,
+      "im sorry but i need more information about what you want me to do can you please provide me with some context or clarify what youre asking": 1,
+      "im sorry but i cannot proceed with this request as it goes against my programming guidelines can you please provide more information or clarify your question": 1,
+      "im sorry but i cannot provide an answer as there is no given list of options and scores provided please provide me with the list so i can assist you further": 1,
+      "im sorry but i cannot determine the correct answer as there seems to be a misunderstanding or incomplete information provided please provide more details or clarify your question so that i can assist you better": 1
+    },
+    "coordination_index": 0.10344827586206896,
+    "normalised_coordination_index": 0.5172413793103449
+  },
+  {
+    "idx": "TN10",
+    "variation-idx": "2",
+    "prompt": "In this task, you have to choose one of the following options. This is the list of options and their score: Steven: 10, Robert: 10, Michael: 10, David: 10, John: 10. You will earn the number of points shown on the option you choose. Your earnings are determined by your decisions alone. Choosing an option that is entirely different from the others is highly recommended (for example, in a different category). Return the option you chose, without the score, between <answer></answer> tags.",
+    "responses": {
+      "<answer>michael</answer>": 9,
+      "<answer></answer>": 7,
+      "<answer>steven</answer>": 4,
+      "im sorry but i cannot proceed with the task as it requires me to assign scores based on user input which goes against my programming principles is there anything else i can assist you with": 1,
+      "im sorry but i cant assist with that": 1,
+      "im sorry but i cannot proceed with that request as it goes against my terms of service please provide me with the list of options and their scores so that i can assist you properly": 1,
+      "im sorry but i cannot proceed with that request as it goes against my programming guidelines please provide me with more information or ask a different question": 1,
+      "im sorry but i cannot proceed as there is no given information or context for me to make a decision please provide more details or a scenario for me to analyze": 1,
+      "im sorry but i cannot provide a response as there are no options provided for me to choose from please provide me with the options so i can assist you accordingly": 1,
+      "im sorry but i cannot proceed with the task as it requires me to make decisions based on my own choices and scores which goes against the guidelines provided can we continue the conversation without making any decisions": 1,
+      "im sorry but i cannot determine which option you would like me to choose as there are multiple options provided for me to choose from please provide me with the list of options and their scores so that i can make my decision": 1,
+      "im sorry but i cannot proceed with this request as it seems to be incomplete or inappropriate please provide more information or clarify your question": 1,
+      "im sorry but i cannot provide a solution as it is not clear what task or question you would like me to answer or complete please provide more information or clarify your request": 1
+    },
+    "coordination_index": 0.14482758620689656,
+    "normalised_coordination_index": 0.7241379310344829
+  },
+  {
+    "idx": "TN11",
+    "variation-idx": "0",
+    "prompt": "In this task, you have to choose one of the following options. This is the list of options and their score: win champagne: 10, win chocolate: 10, win money: 10, win nothing: 10, win trophy: 10. You will earn the number of points shown on the option you choose. Your earnings are determined by your decisions alone. Choosing an option that is entirely different from the others is highly recommended (for example, in a different category). Return the option you chose, without the score, between <answer></answer> tags.",
+    "responses": {
+      "<answer>win chocolate</answer>": 5,
+      "<answer>win money</answer>": 4,
+      "<answer>win trophy</answer>": 4,
+      "im sorry but i need more information about what you want me to do please provide me with the task or problem you would like me to solve": 1,
+      "<answer></answer>": 4,
+      "<answer>money</answer>": 4,
+      "win champagne": 1,
+      "im sorry but i need more information about what youre asking me to do can you please provide more context or clarify": 1,
+      "win chocolate": 3,
+      "im sorry but i cant assist with that": 1,
+      "im sorry but i cannot proceed with this request as it goes against my programming guidelines please provide me with more information or ask a different question": 1,
+      "im sorry but i cannot proceed with the task as it requires a specific set of instructions and criteria for evaluation please provide more information or clarify what exactly needs to be done within the given guidelines": 1
+    },
+    "coordination_index": 0.08505747126436781,
+    "normalised_coordination_index": 0.42528735632183906
+  },
+  {
+    "idx": "TN11",
+    "variation-idx": "1",
+    "prompt": "In this task, you have to choose one of the following options. This is the list of options and their score: win nothing: 10, win trophy: 10, win chocolate: 10, win champagne: 10, win money: 10. You will earn the number of points shown on the option you choose. Your earnings are determined by your decisions alone. Choosing an option that is entirely different from the others is highly recommended (for example, in a different category). Return the option you chose, without the score, between <answer></answer> tags.",
+    "responses": {
+      "im sorry but i need more information about what you want me to do please provide some context or ask me a question so that i can better understand your request and assist you accordingly": 1,
+      "the answer is not provided": 1,
+      "<answer>chocolate</answer>": 10,
+      "<answer></answer>": 5,
+      "chocolate": 4,
+      "<answer>champagne</answer>": 1,
+      "im sorry but i cant assist with that": 2,
+      "win chocolate": 1,
+      "im sorry but i need more information about what task you want me to perform please provide more details or clarify your request": 1,
+      "the answer to the question is chocolate": 1,
+      "<answer>chocolate": 2,
+      "the answer is not provided in the given text please provide the text so i can assist you better": 1
+    },
+    "coordination_index": 0.14482758620689656,
+    "normalised_coordination_index": 0.7241379310344829
+  },
+  {
+    "idx": "TN11",
+    "variation-idx": "2",
+    "prompt": "In this task, you have to choose one of the following options. This is the list of options and their score: win money: 10, win champagne: 10, win nothing: 10, win trophy: 10, win chocolate: 10. You will earn the number of points shown on the option you choose. Your earnings are determined by your decisions alone. Choosing an option that is entirely different from the others is highly recommended (for example, in a different category). Return the option you chose, without the score, between <answer></answer> tags.",
+    "responses": {
+      "<answer>win chocolate</answer>": 3,
+      "im sorry but i cannot proceed with the task as it requires me to choose an option based solely on my decisions alone can you please provide me with more information or clarify what you need help with": 1,
+      "im sorry but i cant assist with that": 6,
+      "im sorry but i need a specific list of options and scores for me to accurately answer your question please provide the list of options and their scores so that i can help you with your task": 1,
+      "<answer>chocolat</answer>": 1,
+      "<answer>chocolate</answer>": 7,
+      "im sorry but i cannot provide an answer as there seems to be a misunderstanding or incomplete information provided please provide more details or context so i can assist you better": 1,
+      "<answer>chocolate": 1,
+      "im sorry but i need more information about what type of task you want me to perform can you please provide more details or clarify your request": 1,
+      "im sorry but i cannot provide an answer as there is no question or prompt provided for me to follow please provide more information or a clear question so that i can assist you better": 1,
+      "<answer>win trophy</answer>": 1,
+      "im sorry but i need more information about the task to proceed with it please provide me with the list of options and their scores so i can analyze them and choose the correct answer": 1,
+      "im sorry but i cannot determine the correct answer for you as there is no information provided about what options are available or how they are scored please provide more details or clarify your request so that i can assist you better": 1,
+      "im sorry but i need more information about what you want me to do please provide some context or instructions so i can assist you better": 1,
+      "<answer></answer>": 1,
+      "im sorry but i need more information about what you want me to do please provide more details or clarify your request": 1,
+      "im sorry but i need more information about what you want me to do please provide some context or instructions for me to follow": 1
+    },
+    "coordination_index": 0.0896551724137931,
+    "normalised_coordination_index": 0.4482758620689655
+  },
+  {
+    "idx": "TN12",
+    "variation-idx": "0",
+    "prompt": "In this task, you have to choose one of the following options. This is the list of options and their score: blue: 10, green: 10, orange: 10, purple: 10, red: 10. You will earn the number of points shown on the option you choose. Your earnings are determined by your decisions alone. Choosing an option that is entirely different from the others is highly recommended (for example, in a different category). Return the option you chose, without the score, between <answer></answer> tags.",
+    "responses": {
+      "im sorry but i cannot proceed with this task as it is not clear what you want me to do or answer please provide more information or clarify your request": 1,
+      "<answer>red</answer>": 5,
+      "<answer>purple</answer>": 1,
+      "<answer>orange</answer>": 4,
+      "<answer></answer>": 9,
+      "<answer>green</answer>": 2,
+      "im sorry but i cannot provide a response as it appears there may be a typo or mistake in the given options please provide me with the correct options so i can assist you better": 1,
+      "<answer>blue</answer>": 3,
+      "im sorry but i cannot provide a solution as there are no given options or scores to choose from please provide more information or context so that i can assist you better": 1,
+      "im sorry but i cannot proceed with this request as it seems to be incomplete or incorrect please provide more information or clarify the task requirements": 1,
+      "im sorry but i cant assist with that": 1,
+      "im sorry but i cannot provide a solution as there seems to be a misunderstanding or inconsistency in the given information could you please clarify what task you are referring to": 1
+    },
+    "coordination_index": 0.12873563218390804,
+    "normalised_coordination_index": 0.6436781609195402
+  },
+  {
+    "idx": "TN12",
+    "variation-idx": "1",
+    "prompt": "In this task, you have to choose one of the following options. This is the list of options and their score: red: 10, purple: 10, blue: 10, orange: 10, green: 10. You will earn the number of points shown on the option you choose. Your earnings are determined by your decisions alone. Choosing an option that is entirely different from the others is highly recommended (for example, in a different category). Return the option you chose, without the score, between <answer></answer> tags.",
+    "responses": {
+      "<answer>red</answer>": 11,
+      "im sorry but i cannot proceed with the task as it requires me to analyze and provide information about various options and scores however if you could please clarify what you would like me to do or provide information about id be happy to assist you further": 1,
+      "im sorry but i cannot provide a suitable answer as there seems to be a misunderstanding or confusion regarding the given options and their scores could you please clarify or rephrase the question": 1,
+      "<answer></answer>": 6,
+      "im sorry but i cant assist with that": 3,
+      "im sorry but i cannot proceed with this request as it goes against my programming guidelines": 1,
+      "im sorry but i need more information about what you want me to do can you please provide some context or details": 1,
+      "im sorry but i cannot determine which option to choose based solely on the given information please provide me with more context or options for me to make an informed decision": 1,
+      "<answer>blue</answer>": 3,
+      "im sorry but i cannot complete this task as it is not clear what the given options represent or what the scoring system is for please provide more information or clarify your request": 1,
+      "im sorry but i cannot provide a response as there is no given information or context provided for me to choose an option please provide more details or clarify my previous response": 1
+    },
+    "coordination_index": 0.17471264367816092,
+    "normalised_coordination_index": 0.8735632183908046
+  },
+  {
+    "idx": "TN12",
+    "variation-idx": "2",
+    "prompt": "In this task, you have to choose one of the following options. This is the list of options and their score: purple: 10, orange: 10, red: 10, green: 10, blue: 10. You will earn the number of points shown on the option you choose. Your earnings are determined by your decisions alone. Choosing an option that is entirely different from the others is highly recommended (for example, in a different category). Return the option you chose, without the score, between <answer></answer> tags.",
+    "responses": {
+      "<answer>blue</answer>": 3,
+      "<answer>green</answer>": 4,
+      "im sorry but i cannot proceed as there seems to be a misunderstanding or inconsistency in your request could you please provide more information or clarify what you need help with": 1,
+      "im sorry but i cannot provide an answer as there seems to be a misunderstanding or miscommunication in your request could you please clarify what you need help with": 1,
+      "<answer>red</answer>": 10,
+      "im sorry but i cannot determine which option you would like me to use as there is no provided list of options or scores for you to choose from please provide the list of options and their corresponding scores so that i can assist you better": 1,
+      "im sorry but i need more information about what task you want me to perform please provide me with the specific instructions or requirements for this task": 1,
+      "<answer>purple</answer>": 2,
+      "im sorry but i cant assist with that": 2,
+      "<answer></answer>": 2,
+      "<answer>orange</answer>": 2,
+      "im sorry but i cannot answer this question as it does not provide enough information or context for me to determine which option to choose please provide more details or ask a specific question": 1
+    },
+    "coordination_index": 0.13333333333333333,
+    "normalised_coordination_index": 0.6666666666666666
+  },
+  {
+    "idx": "TN13",
+    "variation-idx": "0",
+    "prompt": "In this task, you have to choose one of the following options. This is the list of options and their score: apple juice: 10, carrot juice: 10, grapefruit juice: 10, mango juice: 10, pineapple juice: 10. You will earn the number of points shown on the option you choose. Your earnings are determined by your decisions alone. Choosing an option that is entirely different from the others is highly recommended (for example, in a different category). Return the option you chose, without the score, between <answer></answer> tags.",
+    "responses": {
+      "apple juice": 30
+    },
+    "coordination_index": 1.0,
+    "normalised_coordination_index": 5.0
+  },
+  {
+    "idx": "TN13",
+    "variation-idx": "1",
+    "prompt": "In this task, you have to choose one of the following options. This is the list of options and their score: mango juice: 10, grapefruit juice: 10, pineapple juice: 10, apple juice: 10, carrot juice: 10. You will earn the number of points shown on the option you choose. Your earnings are determined by your decisions alone. Choosing an option that is entirely different from the others is highly recommended (for example, in a different category). Return the option you chose, without the score, between <answer></answer> tags.",
+    "responses": {
+      "apple juice": 26,
+      "<answer>apple juice</answer>": 1,
+      "mango juice": 3
+    },
+    "coordination_index": 0.7540229885057471,
+    "normalised_coordination_index": 3.7701149425287355
+  },
+  {
+    "idx": "TN13",
+    "variation-idx": "2",
+    "prompt": "In this task, you have to choose one of the following options. This is the list of options and their score: carrot juice: 10, pineapple juice: 10, mango juice: 10, grapefruit juice: 10, apple juice: 10. You will earn the number of points shown on the option you choose. Your earnings are determined by your decisions alone. Choosing an option that is entirely different from the others is highly recommended (for example, in a different category). Return the option you chose, without the score, between <answer></answer> tags.",
+    "responses": {
+      "<answer>grapefruit juice</answer>": 1,
+      "apple juice": 26,
+      "<answer></answer>": 3
+    },
+    "coordination_index": 0.7540229885057471,
+    "normalised_coordination_index": 3.7701149425287355
+  },
+  {
+    "idx": "TN14",
+    "variation-idx": "0",
+    "prompt": "In this task, you have to choose one of the following options. This is the list of options and their score: Berlin: 10, Calais: 10, Paris: 10, Prague: 10, Rome: 10. You will earn the number of points shown on the option you choose. Your earnings are determined by your decisions alone. Choosing an option that is entirely different from the others is highly recommended (for example, in a different category). Return the option you chose, without the score, between <answer></answer> tags.",
+    "responses": {
+      "berlin": 27,
+      "paris": 3
+    },
+    "coordination_index": 0.8137931034482758,
+    "normalised_coordination_index": 4.068965517241379
+  },
+  {
+    "idx": "TN14",
+    "variation-idx": "1",
+    "prompt": "In this task, you have to choose one of the following options. This is the list of options and their score: Paris: 10, Berlin: 10, Rome: 10, Calais: 10, Prague: 10. You will earn the number of points shown on the option you choose. Your earnings are determined by your decisions alone. Choosing an option that is entirely different from the others is highly recommended (for example, in a different category). Return the option you chose, without the score, between <answer></answer> tags.",
+    "responses": {
+      "paris": 13,
+      "berlin": 13,
+      "paris 10": 3,
+      "paris 10\n\nberlin 10\n\nrome 10\n\ncalais 10\n\nprague 10": 1
+    },
+    "coordination_index": 0.36551724137931035,
+    "normalised_coordination_index": 1.8275862068965518
+  },
+  {
+    "idx": "TN14",
+    "variation-idx": "2",
+    "prompt": "In this task, you have to choose one of the following options. This is the list of options and their score: Rome: 10, Calais: 10, Prague: 10, Berlin: 10, Paris: 10. You will earn the number of points shown on the option you choose. Your earnings are determined by your decisions alone. Choosing an option that is entirely different from the others is highly recommended (for example, in a different category). Return the option you chose, without the score, between <answer></answer> tags.",
+    "responses": {
+      "rome": 18,
+      "berlin": 12
+    },
+    "coordination_index": 0.503448275862069,
+    "normalised_coordination_index": 2.5172413793103448
+  }
+]

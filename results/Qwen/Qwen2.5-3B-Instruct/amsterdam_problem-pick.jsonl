@@ -1,0 +1,456 @@
+[
+  {
+    "idx": "TA1",
+    "variation-idx": "0",
+    "prompt": "In this task, you have to choose one of the following options. This is the list of options and their score: grijs: 10, indigo: 10, karmozijn: 10, magenta: 10, turkoois: 10. You will earn the number of points shown on the option you choose. Your earnings are determined by your decisions alone. Return the option you chose, without the score, between <answer></answer> tags.",
+    "responses": {
+      "turkoois": 30
+    },
+    "coordination_index": 1.0,
+    "normalised_coordination_index": 5.0
+  },
+  {
+    "idx": "TA1",
+    "variation-idx": "1",
+    "prompt": "In this task, you have to choose one of the following options. This is the list of options and their score: karmozijn: 10, grijs: 10, magenta: 10, indigo: 10, turkoois: 10. You will earn the number of points shown on the option you choose. Your earnings are determined by your decisions alone. Return the option you chose, without the score, between <answer></answer> tags.",
+    "responses": {
+      "<answer>karmozijn</answer>": 30
+    },
+    "coordination_index": 1.0,
+    "normalised_coordination_index": 5.0
+  },
+  {
+    "idx": "TA1",
+    "variation-idx": "2",
+    "prompt": "In this task, you have to choose one of the following options. This is the list of options and their score: turkoois: 10, indigo: 10, karmozijn: 10, grijs: 10, magenta: 10. You will earn the number of points shown on the option you choose. Your earnings are determined by your decisions alone. Return the option you chose, without the score, between <answer></answer> tags.",
+    "responses": {
+      "turkoois": 30
+    },
+    "coordination_index": 1.0,
+    "normalised_coordination_index": 5.0
+  },
+  {
+    "idx": "TA2",
+    "variation-idx": "0",
+    "prompt": "In this task, you have to choose one of the following options. This is the list of options and their score: Ferrari: 10, Ford: 10, Jaguar: 10, Porsche: 10. You will earn the number of points shown on the option you choose. Your earnings are determined by your decisions alone. Return the option you chose, without the score, between <answer></answer> tags.",
+    "responses": {
+      "ferrari 10": 30
+    },
+    "coordination_index": 1.0,
+    "normalised_coordination_index": 4.0
+  },
+  {
+    "idx": "TA2",
+    "variation-idx": "1",
+    "prompt": "In this task, you have to choose one of the following options. This is the list of options and their score: Jaguar: 10, Porsche: 10, Ferrari: 10, Ford: 10. You will earn the number of points shown on the option you choose. Your earnings are determined by your decisions alone. Return the option you chose, without the score, between <answer></answer> tags.",
+    "responses": {
+      "jaguar 10": 30
+    },
+    "coordination_index": 1.0,
+    "normalised_coordination_index": 4.0
+  },
+  {
+    "idx": "TA2",
+    "variation-idx": "2",
+    "prompt": "In this task, you have to choose one of the following options. This is the list of options and their score: Ford: 10, Jaguar: 10, Porsche: 10, Ferrari: 10. You will earn the number of points shown on the option you choose. Your earnings are determined by your decisions alone. Return the option you chose, without the score, between <answer></answer> tags.",
+    "responses": {
+      "ferrari": 17,
+      "ferrari 10": 9,
+      "ford 10": 4
+    },
+    "coordination_index": 0.4091954022988506,
+    "normalised_coordination_index": 1.6367816091954024
+  },
+  {
+    "idx": "TA3",
+    "variation-idx": "0",
+    "prompt": "In this task, you have to choose one of the following options. This is the list of options and their score: Berlin: 10, Brussel: 10, Lissabon: 10, Madrid: 10, Mannheim: 10. You will earn the number of points shown on the option you choose. Your earnings are determined by your decisions alone. Return the option you chose, without the score, between <answer></answer> tags.",
+    "responses": {
+      "berlin": 17,
+      "mannheim": 9,
+      "berlin 10": 4
+    },
+    "coordination_index": 0.4091954022988506,
+    "normalised_coordination_index": 2.045977011494253
+  },
+  {
+    "idx": "TA3",
+    "variation-idx": "1",
+    "prompt": "In this task, you have to choose one of the following options. This is the list of options and their score: Madrid: 10, Berlin: 10, Mannheim: 10, Brussel: 10, Lissabon: 10. You will earn the number of points shown on the option you choose. Your earnings are determined by your decisions alone. Return the option you chose, without the score, between <answer></answer> tags.",
+    "responses": {
+      "madrid": 30
+    },
+    "coordination_index": 1.0,
+    "normalised_coordination_index": 5.0
+  },
+  {
+    "idx": "TA3",
+    "variation-idx": "2",
+    "prompt": "In this task, you have to choose one of the following options. This is the list of options and their score: Lissabon: 10, Mannheim: 10, Brussel: 10, Berlin: 10, Madrid: 10. You will earn the number of points shown on the option you choose. Your earnings are determined by your decisions alone. Return the option you chose, without the score, between <answer></answer> tags.",
+    "responses": {
+      "lissabon": 30
+    },
+    "coordination_index": 1.0,
+    "normalised_coordination_index": 5.0
+  },
+  {
+    "idx": "TA4",
+    "variation-idx": "0",
+    "prompt": "In this task, you have to choose one of the following options. This is the list of options and their score: almond: 10, cashew: 10, peanut: 10, walnut: 10. You will earn the number of points shown on the option you choose. Your earnings are determined by your decisions alone. Return the option you chose, without the score, between <answer></answer> tags.",
+    "responses": {
+      "walnut": 30
+    },
+    "coordination_index": 1.0,
+    "normalised_coordination_index": 4.0
+  },
+  {
+    "idx": "TA4",
+    "variation-idx": "1",
+    "prompt": "In this task, you have to choose one of the following options. This is the list of options and their score: peanut: 10, walnut: 10, almond: 10, cashew: 10. You will earn the number of points shown on the option you choose. Your earnings are determined by your decisions alone. Return the option you chose, without the score, between <answer></answer> tags.",
+    "responses": {
+      "peanut": 20,
+      "none of these options are provided with a score so i cannot select an option <answer></answer>": 2,
+      "none of the provided options have scores as they are listed as peanut 10 walnut 10 almond 10 cashew 10 therefore i cannot select an option since there are no options without scores <answer></answer>": 1,
+      "none of these options are provided with a score so i cannot select an option": 2,
+      "none of the provided options have scores associated with them the options given are peanut walnut almond and cashew each with a score of 10 but theres no score listed for these items therefore i cannot select an option based on the information provided": 1,
+      "none of the provided options have a score associated with them therefore i cannot select any of the given choices": 1,
+      "none of the given options have a score associated with them therefore i cannot select any of the provided choices": 1,
+      "none of the above options are provided with a score": 1,
+      "none of these options are provided with a score so i cannot choose an option <answer></answer>": 1
+    },
+    "coordination_index": 0.4413793103448276,
+    "normalised_coordination_index": 1.7655172413793103
+  },
+  {
+    "idx": "TA4",
+    "variation-idx": "2",
+    "prompt": "In this task, you have to choose one of the following options. This is the list of options and their score: cashew: 10, peanut: 10, walnut: 10, almond: 10. You will earn the number of points shown on the option you choose. Your earnings are determined by your decisions alone. Return the option you chose, without the score, between <answer></answer> tags.",
+    "responses": {
+      "cashew": 30
+    },
+    "coordination_index": 1.0,
+    "normalised_coordination_index": 4.0
+  },
+  {
+    "idx": "TA5",
+    "variation-idx": "0",
+    "prompt": "In this task, you have to choose one of the following options. This is the list of options and their score: diamond: 10, emerald: 10, glass: 10, sapphire: 10. You will earn the number of points shown on the option you choose. Your earnings are determined by your decisions alone. Return the option you chose, without the score, between <answer></answer> tags.",
+    "responses": {
+      "diamond 10": 10,
+      "diamond": 20
+    },
+    "coordination_index": 0.5402298850574713,
+    "normalised_coordination_index": 2.160919540229885
+  },
+  {
+    "idx": "TA5",
+    "variation-idx": "1",
+    "prompt": "In this task, you have to choose one of the following options. This is the list of options and their score: sapphire: 10, diamond: 10, emerald: 10, glass: 10. You will earn the number of points shown on the option you choose. Your earnings are determined by your decisions alone. Return the option you chose, without the score, between <answer></answer> tags.",
+    "responses": {
+      "sapphire 10": 13,
+      "sapphire": 17
+    },
+    "coordination_index": 0.49195402298850577,
+    "normalised_coordination_index": 1.967816091954023
+  },
+  {
+    "idx": "TA5",
+    "variation-idx": "2",
+    "prompt": "In this task, you have to choose one of the following options. This is the list of options and their score: glass: 10, sapphire: 10, diamond: 10, emerald: 10. You will earn the number of points shown on the option you choose. Your earnings are determined by your decisions alone. Return the option you chose, without the score, between <answer></answer> tags.",
+    "responses": {
+      "diamond": 30
+    },
+    "coordination_index": 1.0,
+    "normalised_coordination_index": 4.0
+  },
+  {
+    "idx": "TA6",
+    "variation-idx": "0",
+    "prompt": "In this task, you have to choose one of the following options. This is the list of options and their score: chrome: 10, copper: 10, iron: 10, plastic: 10, steel: 10. You will earn the number of points shown on the option you choose. Your earnings are determined by your decisions alone. Return the option you chose, without the score, between <answer></answer> tags.",
+    "responses": {
+      "steel 10": 19,
+      "steel": 11
+    },
+    "coordination_index": 0.5195402298850574,
+    "normalised_coordination_index": 2.597701149425287
+  },
+  {
+    "idx": "TA6",
+    "variation-idx": "1",
+    "prompt": "In this task, you have to choose one of the following options. This is the list of options and their score: steel: 10, chrome: 10, iron: 10, plastic: 10, copper: 10. You will earn the number of points shown on the option you choose. Your earnings are determined by your decisions alone. Return the option you chose, without the score, between <answer></answer> tags.",
+    "responses": {
+      "steel 10": 30
+    },
+    "coordination_index": 1.0,
+    "normalised_coordination_index": 5.0
+  },
+  {
+    "idx": "TA6",
+    "variation-idx": "2",
+    "prompt": "In this task, you have to choose one of the following options. This is the list of options and their score: plastic: 10, copper: 10, chrome: 10, steel: 10, iron: 10. You will earn the number of points shown on the option you choose. Your earnings are determined by your decisions alone. Return the option you chose, without the score, between <answer></answer> tags.",
+    "responses": {
+      "plastic": 30
+    },
+    "coordination_index": 1.0,
+    "normalised_coordination_index": 5.0
+  },
+  {
+    "idx": "TA7",
+    "variation-idx": "0",
+    "prompt": "In this task, you have to choose one of the following options. This is the list of options and their score: bread: 10, curry: 10, pizza: 10, steak: 10. You will earn the number of points shown on the option you choose. Your earnings are determined by your decisions alone. Return the option you chose, without the score, between <answer></answer> tags.",
+    "responses": {
+      "pizza": 30
+    },
+    "coordination_index": 1.0,
+    "normalised_coordination_index": 4.0
+  },
+  {
+    "idx": "TA7",
+    "variation-idx": "1",
+    "prompt": "In this task, you have to choose one of the following options. This is the list of options and their score: pizza: 10, steak: 10, curry: 10, bread: 10. You will earn the number of points shown on the option you choose. Your earnings are determined by your decisions alone. Return the option you chose, without the score, between <answer></answer> tags.",
+    "responses": {
+      "pizza 10": 30
+    },
+    "coordination_index": 1.0,
+    "normalised_coordination_index": 4.0
+  },
+  {
+    "idx": "TA7",
+    "variation-idx": "2",
+    "prompt": "In this task, you have to choose one of the following options. This is the list of options and their score: curry: 10, pizza: 10, bread: 10, steak: 10. You will earn the number of points shown on the option you choose. Your earnings are determined by your decisions alone. Return the option you chose, without the score, between <answer></answer> tags.",
+    "responses": {
+      "curry": 30
+    },
+    "coordination_index": 1.0,
+    "normalised_coordination_index": 4.0
+  },
+  {
+    "idx": "TA8",
+    "variation-idx": "0",
+    "prompt": "In this task, you have to choose one of the following options. This is the list of options and their score: beer: 10, sherry: 10, water: 10, whisky: 10, wine: 10. You will earn the number of points shown on the option you choose. Your earnings are determined by your decisions alone. Return the option you chose, without the score, between <answer></answer> tags.",
+    "responses": {
+      "wine": 30
+    },
+    "coordination_index": 1.0,
+    "normalised_coordination_index": 5.0
+  },
+  {
+    "idx": "TA8",
+    "variation-idx": "1",
+    "prompt": "In this task, you have to choose one of the following options. This is the list of options and their score: wine: 10, beer: 10, whisky: 10, water: 10, sherry: 10. You will earn the number of points shown on the option you choose. Your earnings are determined by your decisions alone. Return the option you chose, without the score, between <answer></answer> tags.",
+    "responses": {
+      "sherry": 30
+    },
+    "coordination_index": 1.0,
+    "normalised_coordination_index": 5.0
+  },
+  {
+    "idx": "TA8",
+    "variation-idx": "2",
+    "prompt": "In this task, you have to choose one of the following options. This is the list of options and their score: sherry: 10, whisky: 10, wine: 10, beer: 10, water: 10. You will earn the number of points shown on the option you choose. Your earnings are determined by your decisions alone. Return the option you chose, without the score, between <answer></answer> tags.",
+    "responses": {
+      "sherry": 30
+    },
+    "coordination_index": 1.0,
+    "normalised_coordination_index": 5.0
+  },
+  {
+    "idx": "TA9",
+    "variation-idx": "0",
+    "prompt": "In this task, you have to choose one of the following options. This is the list of options and their score: Carlsberg: 10, Corsendonk: 10, Grimbergen: 10, Rochefort: 10, Westmalle13: 10. You will earn the number of points shown on the option you choose. Your earnings are determined by your decisions alone. Return the option you chose, without the score, between <answer></answer> tags.",
+    "responses": {
+      "westmalle13": 30
+    },
+    "coordination_index": 1.0,
+    "normalised_coordination_index": 5.0
+  },
+  {
+    "idx": "TA9",
+    "variation-idx": "1",
+    "prompt": "In this task, you have to choose one of the following options. This is the list of options and their score: Grimbergen: 10, Carlsberg: 10, Westmalle13: 10, Rochefort: 10, Corsendonk: 10. You will earn the number of points shown on the option you choose. Your earnings are determined by your decisions alone. Return the option you chose, without the score, between <answer></answer> tags.",
+    "responses": {
+      "grimbergen": 30
+    },
+    "coordination_index": 1.0,
+    "normalised_coordination_index": 5.0
+  },
+  {
+    "idx": "TA9",
+    "variation-idx": "2",
+    "prompt": "In this task, you have to choose one of the following options. This is the list of options and their score: Rochefort: 10, Westmalle13: 10, Corsendonk: 10, Carlsberg: 10, Grimbergen: 10. You will earn the number of points shown on the option you choose. Your earnings are determined by your decisions alone. Return the option you chose, without the score, between <answer></answer> tags.",
+    "responses": {
+      "rochefort": 22,
+      "rochefort 10": 8
+    },
+    "coordination_index": 0.5954022988505747,
+    "normalised_coordination_index": 2.9770114942528734
+  },
+  {
+    "idx": "TA10",
+    "variation-idx": "0",
+    "prompt": "In this task, you have to choose one of the following options. This is the list of options and their score: frog: 10, leopard: 10, panther: 10, tiger: 10. You will earn the number of points shown on the option you choose. Your earnings are determined by your decisions alone. Return the option you chose, without the score, between <answer></answer> tags.",
+    "responses": {
+      "tiger": 24,
+      "tiger 10": 6
+    },
+    "coordination_index": 0.6689655172413793,
+    "normalised_coordination_index": 2.6758620689655173
+  },
+  {
+    "idx": "TA10",
+    "variation-idx": "1",
+    "prompt": "In this task, you have to choose one of the following options. This is the list of options and their score: tiger: 10, panther: 10, frog: 10, leopard: 10. You will earn the number of points shown on the option you choose. Your earnings are determined by your decisions alone. Return the option you chose, without the score, between <answer></answer> tags.",
+    "responses": {
+      "tiger 10": 12,
+      "tiger 10\nanswer tiger": 18
+    },
+    "coordination_index": 0.503448275862069,
+    "normalised_coordination_index": 2.013793103448276
+  },
+  {
+    "idx": "TA10",
+    "variation-idx": "2",
+    "prompt": "In this task, you have to choose one of the following options. This is the list of options and their score: leopard: 10, frog: 10, tiger: 10, panther: 10. You will earn the number of points shown on the option you choose. Your earnings are determined by your decisions alone. Return the option you chose, without the score, between <answer></answer> tags.",
+    "responses": {
+      "panther": 21,
+      "leopard": 9
+    },
+    "coordination_index": 0.5655172413793104,
+    "normalised_coordination_index": 2.2620689655172415
+  },
+  {
+    "idx": "TA11",
+    "variation-idx": "0",
+    "prompt": "In this task, you have to choose one of the following options. This is the list of options and their score: aeroplane: 10, bicycle: 10, helicopter: 10, hovercraft: 10. You will earn the number of points shown on the option you choose. Your earnings are determined by your decisions alone. Return the option you chose, without the score, between <answer></answer> tags.",
+    "responses": {
+      "hovercraft": 30
+    },
+    "coordination_index": 1.0,
+    "normalised_coordination_index": 4.0
+  },
+  {
+    "idx": "TA11",
+    "variation-idx": "1",
+    "prompt": "In this task, you have to choose one of the following options. This is the list of options and their score: hovercraft: 10, aeroplane: 10, bicycle: 10, helicopter: 10. You will earn the number of points shown on the option you choose. Your earnings are determined by your decisions alone. Return the option you chose, without the score, between <answer></answer> tags.",
+    "responses": {
+      "hovercraft": 30
+    },
+    "coordination_index": 1.0,
+    "normalised_coordination_index": 4.0
+  },
+  {
+    "idx": "TA11",
+    "variation-idx": "2",
+    "prompt": "In this task, you have to choose one of the following options. This is the list of options and their score: bicycle: 10, helicopter: 10, hovercraft: 10, aeroplane: 10. You will earn the number of points shown on the option you choose. Your earnings are determined by your decisions alone. Return the option you chose, without the score, between <answer></answer> tags.",
+    "responses": {
+      "hovercraft": 8,
+      "bicycle": 22
+    },
+    "coordination_index": 0.5954022988505747,
+    "normalised_coordination_index": 2.381609195402299
+  },
+  {
+    "idx": "TA12",
+    "variation-idx": "0",
+    "prompt": "In this task, you have to choose one of the following options. This is the list of options and their score: chess: 10, football: 10, squash: 10, tennis: 10, volleyball: 10. You will earn the number of points shown on the option you choose. Your earnings are determined by your decisions alone. Return the option you chose, without the score, between <answer></answer> tags.",
+    "responses": {
+      "chess": 30
+    },
+    "coordination_index": 1.0,
+    "normalised_coordination_index": 5.0
+  },
+  {
+    "idx": "TA12",
+    "variation-idx": "1",
+    "prompt": "In this task, you have to choose one of the following options. This is the list of options and their score: tennis: 10, volleyball: 10, football: 10, chess: 10, squash: 10. You will earn the number of points shown on the option you choose. Your earnings are determined by your decisions alone. Return the option you chose, without the score, between <answer></answer> tags.",
+    "responses": {
+      "chess": 30
+    },
+    "coordination_index": 1.0,
+    "normalised_coordination_index": 5.0
+  },
+  {
+    "idx": "TA12",
+    "variation-idx": "2",
+    "prompt": "In this task, you have to choose one of the following options. This is the list of options and their score: volleyball: 10, squash: 10, chess: 10, tennis: 10, football: 10. You will earn the number of points shown on the option you choose. Your earnings are determined by your decisions alone. Return the option you chose, without the score, between <answer></answer> tags.",
+    "responses": {
+      "chess": 30
+    },
+    "coordination_index": 1.0,
+    "normalised_coordination_index": 5.0
+  },
+  {
+    "idx": "TA13",
+    "variation-idx": "0",
+    "prompt": "In this task, you have to choose one of the following options. This is the list of options and their score: Barbados: 10, Bern: 10, Florida: 10, Honolulu: 10. You will earn the number of points shown on the option you choose. Your earnings are determined by your decisions alone. Return the option you chose, without the score, between <answer></answer> tags.",
+    "responses": {
+      "barbados": 30
+    },
+    "coordination_index": 1.0,
+    "normalised_coordination_index": 4.0
+  },
+  {
+    "idx": "TA13",
+    "variation-idx": "1",
+    "prompt": "In this task, you have to choose one of the following options. This is the list of options and their score: Florida: 10, Honolulu: 10, Barbados: 10, Bern: 10. You will earn the number of points shown on the option you choose. Your earnings are determined by your decisions alone. Return the option you chose, without the score, between <answer></answer> tags.",
+    "responses": {
+      "florida": 14,
+      "none of the above options are provided with a specific score": 1,
+      "florida 10": 8,
+      "none of the above options is correct therefore i wont select any of these options and thus wont earn any points": 1,
+      "none of the above options are valid choices as they do not represent realworld locations that typically offer vacation packages or experiences therefore i am unable to select any of the given options": 1,
+      "none of the above options are cities in the united states or common vacation destinations so i am choosing randomly from the given options \n\nanswer barbados": 1,
+      "none of the above options is a valid city or place that offers a fixed score of 10 therefore i cannot select any of these options as they do not represent actual locations with defined scores": 1,
+      "none of the above options are valid choices as they are not locations known for casinos or gambling therefore i do not have a valid option to choose from the given list": 1,
+      "none of the above options is correct therefore i cannot select any of these options as they all have the same score but are not valid choices": 1,
+      "none of the above options are valid choices as they are not locations known for having a specific score associated with them the options provided seem to be placeholders or errors": 1
+    },
+    "coordination_index": 0.2735632183908046,
+    "normalised_coordination_index": 1.0942528735632184
+  },
+  {
+    "idx": "TA13",
+    "variation-idx": "2",
+    "prompt": "In this task, you have to choose one of the following options. This is the list of options and their score: Bern: 10, Barbados: 10, Honolulu: 10, Florida: 10. You will earn the number of points shown on the option you choose. Your earnings are determined by your decisions alone. Return the option you chose, without the score, between <answer></answer> tags.",
+    "responses": {
+      "bern": 12,
+      "florida": 7,
+      "bern 10": 9,
+      "florida 10": 2
+    },
+    "coordination_index": 0.2850574712643678,
+    "normalised_coordination_index": 1.1402298850574712
+  },
+  {
+    "idx": "TA14",
+    "variation-idx": "0",
+    "prompt": "In this task, you have to choose one of the following options. This is the list of options and their score: jogging: 10, running: 10, sitting: 10, walking: 10. You will earn the number of points shown on the option you choose. Your earnings are determined by your decisions alone. Return the option you chose, without the score, between <answer></answer> tags.",
+    "responses": {
+      "jogging": 30
+    },
+    "coordination_index": 1.0,
+    "normalised_coordination_index": 4.0
+  },
+  {
+    "idx": "TA14",
+    "variation-idx": "1",
+    "prompt": "In this task, you have to choose one of the following options. This is the list of options and their score: walking: 10, jogging: 10, sitting: 10, running: 10. You will earn the number of points shown on the option you choose. Your earnings are determined by your decisions alone. Return the option you chose, without the score, between <answer></answer> tags.",
+    "responses": {
+      "<answer>running</answer>": 9,
+      "<answer>walking</answer>": 21
+    },
+    "coordination_index": 0.5655172413793104,
+    "normalised_coordination_index": 2.2620689655172415
+  },
+  {
+    "idx": "TA14",
+    "variation-idx": "2",
+    "prompt": "In this task, you have to choose one of the following options. This is the list of options and their score: sitting: 10, walking: 10, running: 10, jogging: 10. You will earn the number of points shown on the option you choose. Your earnings are determined by your decisions alone. Return the option you chose, without the score, between <answer></answer> tags.",
+    "responses": {
+      "<answer>sitting</answer>": 14,
+      "<answer>jogging</answer>": 16
+    },
+    "coordination_index": 0.4850574712643678,
+    "normalised_coordination_index": 1.9402298850574713
+  }
+]

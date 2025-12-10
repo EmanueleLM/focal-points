@@ -1,0 +1,621 @@
+[
+  {
+    "idx": "TA1",
+    "variation-idx": "0",
+    "prompt": "In this task, you have to choose one of the following options. This is the list of options and their score: grijs: 10, indigo: 10, karmozijn: 10, magenta: 10, turkoois: 10. You will earn the number of points shown on the option you choose. Your earnings are determined by your decisions alone. There are four intuitive properties that make a choice desirable:\n - uniqueness: it is the only object with a given prooperty.\n - uniqueness complement: it is the only object *without* a given property.\n - centrality: it is a central point around which a domain is symmetric.\n - extremeness: it is an object that has the largest or the smallest feature among all the others.\n Now, you have to prioritise the selection of the only object that satisfies one of the above mentioned properties, i.e., it is the only object with that property in the list. If there are multiple objects that satisfy one or more of the above mentioned properties, select the one that is unique, then extreme, then central, and eventually unique complement. Return the option you chose, without the score, between <answer></answer> tags.",
+    "responses": {
+      "<answer></answer>": 4,
+      "karmoois": 1,
+      "turkoois": 1,
+      "<answer>unique</answer>": 2,
+      "<answer>centered</answer>": 1,
+      "im sorry but i cant assist with that": 2,
+      "karmozijn": 1,
+      "<answer>grijs</answer>": 1,
+      "<answer>turkoois</answer>": 2,
+      "the answer is magenta": 1,
+      "the answer is\n\nturkoois": 3,
+      "the answer is <karmozijn>": 1,
+      "please provide me with the list of options and their scores so i can choose the correct answer": 1,
+      "please provide the task description or problem statement so i can assist you in choosing the best option": 1,
+      "im sorry but i cannot provide an answer as it is not clear what task or criteria you want me to follow please provide more information or clarify your request so i can assist you better": 1,
+      "the answer is <turkoois>": 1,
+      "please provide me with the list of options and their scores so i can proceed with the task": 1,
+      "the answer is\n\nindigo": 1,
+      "the answer is\n\nkarmozijn": 1,
+      "<answer>indigo</answer>": 1,
+      "im sorry but i cannot provide an answer as there is no question provided for me to address please provide a question or prompt for me to assist you with": 1,
+      "please provide me with the list of options and their scores before i can help you with the prioritization": 1
+    },
+    "coordination_index": 0.027586206896551724,
+    "normalised_coordination_index": 0.13793103448275862
+  },
+  {
+    "idx": "TA1",
+    "variation-idx": "1",
+    "prompt": "In this task, you have to choose one of the following options. This is the list of options and their score: karmozijn: 10, grijs: 10, magenta: 10, indigo: 10, turkoois: 10. You will earn the number of points shown on the option you choose. Your earnings are determined by your decisions alone. There are four intuitive properties that make a choice desirable:\n - uniqueness: it is the only object with a given prooperty.\n - uniqueness complement: it is the only object *without* a given property.\n - centrality: it is a central point around which a domain is symmetric.\n - extremeness: it is an object that has the largest or the smallest feature among all the others.\n Now, you have to prioritise the selection of the only object that satisfies one of the above mentioned properties, i.e., it is the only object with that property in the list. If there are multiple objects that satisfy one or more of the above mentioned properties, select the one that is unique, then extreme, then central, and eventually unique complement. Return the option you chose, without the score, between <answer></answer> tags.",
+    "responses": {
+      "turkoois": 22,
+      "<answer>karmozijn</answer>": 2,
+      "<answer>turkoois</answer>": 2,
+      "<answer></answer>": 3,
+      "<answer>unique</answer>": 1
+    },
+    "coordination_index": 0.542528735632184,
+    "normalised_coordination_index": 2.71264367816092
+  },
+  {
+    "idx": "TA1",
+    "variation-idx": "2",
+    "prompt": "In this task, you have to choose one of the following options. This is the list of options and their score: turkoois: 10, indigo: 10, karmozijn: 10, grijs: 10, magenta: 10. You will earn the number of points shown on the option you choose. Your earnings are determined by your decisions alone. There are four intuitive properties that make a choice desirable:\n - uniqueness: it is the only object with a given prooperty.\n - uniqueness complement: it is the only object *without* a given property.\n - centrality: it is a central point around which a domain is symmetric.\n - extremeness: it is an object that has the largest or the smallest feature among all the others.\n Now, you have to prioritise the selection of the only object that satisfies one of the above mentioned properties, i.e., it is the only object with that property in the list. If there are multiple objects that satisfy one or more of the above mentioned properties, select the one that is unique, then extreme, then central, and eventually unique complement. Return the option you chose, without the score, between <answer></answer> tags.",
+    "responses": {
+      "<answer>\nturkoois\n</answer>": 1,
+      "turkoois": 22,
+      "<answer>turkoois</answer>": 6,
+      "<answer></answer>": 1
+    },
+    "coordination_index": 0.5655172413793104,
+    "normalised_coordination_index": 2.8275862068965516
+  },
+  {
+    "idx": "TA2",
+    "variation-idx": "0",
+    "prompt": "In this task, you have to choose one of the following options. This is the list of options and their score: Ferrari: 10, Ford: 10, Jaguar: 10, Porsche: 10. You will earn the number of points shown on the option you choose. Your earnings are determined by your decisions alone. There are four intuitive properties that make a choice desirable:\n - uniqueness: it is the only object with a given prooperty.\n - uniqueness complement: it is the only object *without* a given property.\n - centrality: it is a central point around which a domain is symmetric.\n - extremeness: it is an object that has the largest or the smallest feature among all the others.\n Now, you have to prioritise the selection of the only object that satisfies one of the above mentioned properties, i.e., it is the only object with that property in the list. If there are multiple objects that satisfy one or more of the above mentioned properties, select the one that is unique, then extreme, then central, and eventually unique complement. Return the option you chose, without the score, between <answer></answer> tags.",
+    "responses": {
+      "porsche": 30
+    },
+    "coordination_index": 1.0,
+    "normalised_coordination_index": 4.0
+  },
+  {
+    "idx": "TA2",
+    "variation-idx": "1",
+    "prompt": "In this task, you have to choose one of the following options. This is the list of options and their score: Jaguar: 10, Porsche: 10, Ferrari: 10, Ford: 10. You will earn the number of points shown on the option you choose. Your earnings are determined by your decisions alone. There are four intuitive properties that make a choice desirable:\n - uniqueness: it is the only object with a given prooperty.\n - uniqueness complement: it is the only object *without* a given property.\n - centrality: it is a central point around which a domain is symmetric.\n - extremeness: it is an object that has the largest or the smallest feature among all the others.\n Now, you have to prioritise the selection of the only object that satisfies one of the above mentioned properties, i.e., it is the only object with that property in the list. If there are multiple objects that satisfy one or more of the above mentioned properties, select the one that is unique, then extreme, then central, and eventually unique complement. Return the option you chose, without the score, between <answer></answer> tags.",
+    "responses": {
+      "porsche": 30
+    },
+    "coordination_index": 1.0,
+    "normalised_coordination_index": 4.0
+  },
+  {
+    "idx": "TA2",
+    "variation-idx": "2",
+    "prompt": "In this task, you have to choose one of the following options. This is the list of options and their score: Ford: 10, Jaguar: 10, Porsche: 10, Ferrari: 10. You will earn the number of points shown on the option you choose. Your earnings are determined by your decisions alone. There are four intuitive properties that make a choice desirable:\n - uniqueness: it is the only object with a given prooperty.\n - uniqueness complement: it is the only object *without* a given property.\n - centrality: it is a central point around which a domain is symmetric.\n - extremeness: it is an object that has the largest or the smallest feature among all the others.\n Now, you have to prioritise the selection of the only object that satisfies one of the above mentioned properties, i.e., it is the only object with that property in the list. If there are multiple objects that satisfy one or more of the above mentioned properties, select the one that is unique, then extreme, then central, and eventually unique complement. Return the option you chose, without the score, between <answer></answer> tags.",
+    "responses": {
+      "porsche": 25,
+      "ford": 5
+    },
+    "coordination_index": 0.7126436781609196,
+    "normalised_coordination_index": 2.8505747126436782
+  },
+  {
+    "idx": "TA3",
+    "variation-idx": "0",
+    "prompt": "In this task, you have to choose one of the following options. This is the list of options and their score: Berlin: 10, Brussel: 10, Lissabon: 10, Madrid: 10, Mannheim: 10. You will earn the number of points shown on the option you choose. Your earnings are determined by your decisions alone. There are four intuitive properties that make a choice desirable:\n - uniqueness: it is the only object with a given prooperty.\n - uniqueness complement: it is the only object *without* a given property.\n - centrality: it is a central point around which a domain is symmetric.\n - extremeness: it is an object that has the largest or the smallest feature among all the others.\n Now, you have to prioritise the selection of the only object that satisfies one of the above mentioned properties, i.e., it is the only object with that property in the list. If there are multiple objects that satisfy one or more of the above mentioned properties, select the one that is unique, then extreme, then central, and eventually unique complement. Return the option you chose, without the score, between <answer></answer> tags.",
+    "responses": {
+      "berlin": 26,
+      "brussel": 4
+    },
+    "coordination_index": 0.7609195402298851,
+    "normalised_coordination_index": 3.8045977011494254
+  },
+  {
+    "idx": "TA3",
+    "variation-idx": "1",
+    "prompt": "In this task, you have to choose one of the following options. This is the list of options and their score: Madrid: 10, Berlin: 10, Mannheim: 10, Brussel: 10, Lissabon: 10. You will earn the number of points shown on the option you choose. Your earnings are determined by your decisions alone. There are four intuitive properties that make a choice desirable:\n - uniqueness: it is the only object with a given prooperty.\n - uniqueness complement: it is the only object *without* a given property.\n - centrality: it is a central point around which a domain is symmetric.\n - extremeness: it is an object that has the largest or the smallest feature among all the others.\n Now, you have to prioritise the selection of the only object that satisfies one of the above mentioned properties, i.e., it is the only object with that property in the list. If there are multiple objects that satisfy one or more of the above mentioned properties, select the one that is unique, then extreme, then central, and eventually unique complement. Return the option you chose, without the score, between <answer></answer> tags.",
+    "responses": {
+      "berlin": 24,
+      "mannheim": 3,
+      "madrid": 3
+    },
+    "coordination_index": 0.6482758620689655,
+    "normalised_coordination_index": 3.2413793103448274
+  },
+  {
+    "idx": "TA3",
+    "variation-idx": "2",
+    "prompt": "In this task, you have to choose one of the following options. This is the list of options and their score: Lissabon: 10, Mannheim: 10, Brussel: 10, Berlin: 10, Madrid: 10. You will earn the number of points shown on the option you choose. Your earnings are determined by your decisions alone. There are four intuitive properties that make a choice desirable:\n - uniqueness: it is the only object with a given prooperty.\n - uniqueness complement: it is the only object *without* a given property.\n - centrality: it is a central point around which a domain is symmetric.\n - extremeness: it is an object that has the largest or the smallest feature among all the others.\n Now, you have to prioritise the selection of the only object that satisfies one of the above mentioned properties, i.e., it is the only object with that property in the list. If there are multiple objects that satisfy one or more of the above mentioned properties, select the one that is unique, then extreme, then central, and eventually unique complement. Return the option you chose, without the score, between <answer></answer> tags.",
+    "responses": {
+      "berlin": 16,
+      "lissabon": 6,
+      "brussel": 3,
+      "brussel 10": 3,
+      "brussel 10 berlin 10 madrid 10": 1,
+      "brussel 10 mannheim 10 berlin 10": 1
+    },
+    "coordination_index": 0.32413793103448274,
+    "normalised_coordination_index": 1.6206896551724137
+  },
+  {
+    "idx": "TA4",
+    "variation-idx": "0",
+    "prompt": "In this task, you have to choose one of the following options. This is the list of options and their score: almond: 10, cashew: 10, peanut: 10, walnut: 10. You will earn the number of points shown on the option you choose. Your earnings are determined by your decisions alone. There are four intuitive properties that make a choice desirable:\n - uniqueness: it is the only object with a given prooperty.\n - uniqueness complement: it is the only object *without* a given property.\n - centrality: it is a central point around which a domain is symmetric.\n - extremeness: it is an object that has the largest or the smallest feature among all the others.\n Now, you have to prioritise the selection of the only object that satisfies one of the above mentioned properties, i.e., it is the only object with that property in the list. If there are multiple objects that satisfy one or more of the above mentioned properties, select the one that is unique, then extreme, then central, and eventually unique complement. Return the option you chose, without the score, between <answer></answer> tags.",
+    "responses": {
+      "<answer>cashew</answer>": 11,
+      "<answer>almond</answer>": 12,
+      "<answer>\nalmond</answer>": 2,
+      "cashew": 3,
+      "almond": 2
+    },
+    "coordination_index": 0.2896551724137931,
+    "normalised_coordination_index": 1.1586206896551725
+  },
+  {
+    "idx": "TA4",
+    "variation-idx": "1",
+    "prompt": "In this task, you have to choose one of the following options. This is the list of options and their score: peanut: 10, walnut: 10, almond: 10, cashew: 10. You will earn the number of points shown on the option you choose. Your earnings are determined by your decisions alone. There are four intuitive properties that make a choice desirable:\n - uniqueness: it is the only object with a given prooperty.\n - uniqueness complement: it is the only object *without* a given property.\n - centrality: it is a central point around which a domain is symmetric.\n - extremeness: it is an object that has the largest or the smallest feature among all the others.\n Now, you have to prioritise the selection of the only object that satisfies one of the above mentioned properties, i.e., it is the only object with that property in the list. If there are multiple objects that satisfy one or more of the above mentioned properties, select the one that is unique, then extreme, then central, and eventually unique complement. Return the option you chose, without the score, between <answer></answer> tags.",
+    "responses": {
+      "cashew": 13,
+      "<answer>cashew</answer>": 5,
+      "<answer>peanut</answer>": 12
+    },
+    "coordination_index": 0.35402298850574715,
+    "normalised_coordination_index": 1.4160919540229886
+  },
+  {
+    "idx": "TA4",
+    "variation-idx": "2",
+    "prompt": "In this task, you have to choose one of the following options. This is the list of options and their score: cashew: 10, peanut: 10, walnut: 10, almond: 10. You will earn the number of points shown on the option you choose. Your earnings are determined by your decisions alone. There are four intuitive properties that make a choice desirable:\n - uniqueness: it is the only object with a given prooperty.\n - uniqueness complement: it is the only object *without* a given property.\n - centrality: it is a central point around which a domain is symmetric.\n - extremeness: it is an object that has the largest or the smallest feature among all the others.\n Now, you have to prioritise the selection of the only object that satisfies one of the above mentioned properties, i.e., it is the only object with that property in the list. If there are multiple objects that satisfy one or more of the above mentioned properties, select the one that is unique, then extreme, then central, and eventually unique complement. Return the option you chose, without the score, between <answer></answer> tags.",
+    "responses": {
+      "cashew": 27,
+      "cashews": 2,
+      "cashews almonds peanut walnut": 1
+    },
+    "coordination_index": 0.8091954022988506,
+    "normalised_coordination_index": 3.2367816091954023
+  },
+  {
+    "idx": "TA5",
+    "variation-idx": "0",
+    "prompt": "In this task, you have to choose one of the following options. This is the list of options and their score: diamond: 10, emerald: 10, glass: 10, sapphire: 10. You will earn the number of points shown on the option you choose. Your earnings are determined by your decisions alone. There are four intuitive properties that make a choice desirable:\n - uniqueness: it is the only object with a given prooperty.\n - uniqueness complement: it is the only object *without* a given property.\n - centrality: it is a central point around which a domain is symmetric.\n - extremeness: it is an object that has the largest or the smallest feature among all the others.\n Now, you have to prioritise the selection of the only object that satisfies one of the above mentioned properties, i.e., it is the only object with that property in the list. If there are multiple objects that satisfy one or more of the above mentioned properties, select the one that is unique, then extreme, then central, and eventually unique complement. Return the option you chose, without the score, between <answer></answer> tags.",
+    "responses": {
+      "diamond": 5,
+      "<answer>diamond</answer>": 11,
+      "<answer>emerald</answer>": 6,
+      "please provide me with the list of options and their scores so i can prioritize the selection based on these criteria": 1,
+      "<answer>\ndiamond</answer>": 2,
+      "sapphire": 2,
+      "please provide me with the list of options and their scores so i can help you decide on the optimal solution": 1,
+      "im sorry but i cant assist with that": 1,
+      "please provide me with the list of options and their scores": 1
+    },
+    "coordination_index": 0.18850574712643678,
+    "normalised_coordination_index": 0.7540229885057471
+  },
+  {
+    "idx": "TA5",
+    "variation-idx": "1",
+    "prompt": "In this task, you have to choose one of the following options. This is the list of options and their score: sapphire: 10, diamond: 10, emerald: 10, glass: 10. You will earn the number of points shown on the option you choose. Your earnings are determined by your decisions alone. There are four intuitive properties that make a choice desirable:\n - uniqueness: it is the only object with a given prooperty.\n - uniqueness complement: it is the only object *without* a given property.\n - centrality: it is a central point around which a domain is symmetric.\n - extremeness: it is an object that has the largest or the smallest feature among all the others.\n Now, you have to prioritise the selection of the only object that satisfies one of the above mentioned properties, i.e., it is the only object with that property in the list. If there are multiple objects that satisfy one or more of the above mentioned properties, select the one that is unique, then extreme, then central, and eventually unique complement. Return the option you chose, without the score, between <answer></answer> tags.",
+    "responses": {
+      "sapphire": 14,
+      "im sorry but i cant assist with that": 3,
+      "<answer>\nsapphire</answer>": 1,
+      "<answer>diamond</answer>": 2,
+      "diamond": 2,
+      "<answer>emerald</answer>": 7,
+      "the answer is sapphire": 1
+    },
+    "coordination_index": 0.2689655172413793,
+    "normalised_coordination_index": 1.0758620689655172
+  },
+  {
+    "idx": "TA5",
+    "variation-idx": "2",
+    "prompt": "In this task, you have to choose one of the following options. This is the list of options and their score: glass: 10, sapphire: 10, diamond: 10, emerald: 10. You will earn the number of points shown on the option you choose. Your earnings are determined by your decisions alone. There are four intuitive properties that make a choice desirable:\n - uniqueness: it is the only object with a given prooperty.\n - uniqueness complement: it is the only object *without* a given property.\n - centrality: it is a central point around which a domain is symmetric.\n - extremeness: it is an object that has the largest or the smallest feature among all the others.\n Now, you have to prioritise the selection of the only object that satisfies one of the above mentioned properties, i.e., it is the only object with that property in the list. If there are multiple objects that satisfy one or more of the above mentioned properties, select the one that is unique, then extreme, then central, and eventually unique complement. Return the option you chose, without the score, between <answer></answer> tags.",
+    "responses": {
+      "diamond": 5,
+      "<answer>emerald</answer>": 11,
+      "<answer>diamond</answer>": 7,
+      "<answer></answer>": 1,
+      "<answer>sapphire</answer>": 2,
+      "<answer>\nsapphire</answer>": 1,
+      "<answer>\ndiamond</answer>": 2,
+      "<answer>\n10\n</answer>": 1
+    },
+    "coordination_index": 0.20229885057471264,
+    "normalised_coordination_index": 0.8091954022988506
+  },
+  {
+    "idx": "TA6",
+    "variation-idx": "0",
+    "prompt": "In this task, you have to choose one of the following options. This is the list of options and their score: chrome: 10, copper: 10, iron: 10, plastic: 10, steel: 10. You will earn the number of points shown on the option you choose. Your earnings are determined by your decisions alone. There are four intuitive properties that make a choice desirable:\n - uniqueness: it is the only object with a given prooperty.\n - uniqueness complement: it is the only object *without* a given property.\n - centrality: it is a central point around which a domain is symmetric.\n - extremeness: it is an object that has the largest or the smallest feature among all the others.\n Now, you have to prioritise the selection of the only object that satisfies one of the above mentioned properties, i.e., it is the only object with that property in the list. If there are multiple objects that satisfy one or more of the above mentioned properties, select the one that is unique, then extreme, then central, and eventually unique complement. Return the option you chose, without the score, between <answer></answer> tags.",
+    "responses": {
+      "<answer>chrome</answer>": 3,
+      "copper": 16,
+      "<answer>plastic</answer>": 3,
+      "plastic": 4,
+      "<answer>copper</answer>": 2,
+      "please provide me with the list of options and scores so i can help you choose the correct option": 1,
+      "please provide me with the list of options and their scores so i can choose the best option for the task": 1
+    },
+    "coordination_index": 0.3057471264367816,
+    "normalised_coordination_index": 1.528735632183908
+  },
+  {
+    "idx": "TA6",
+    "variation-idx": "1",
+    "prompt": "In this task, you have to choose one of the following options. This is the list of options and their score: steel: 10, chrome: 10, iron: 10, plastic: 10, copper: 10. You will earn the number of points shown on the option you choose. Your earnings are determined by your decisions alone. There are four intuitive properties that make a choice desirable:\n - uniqueness: it is the only object with a given prooperty.\n - uniqueness complement: it is the only object *without* a given property.\n - centrality: it is a central point around which a domain is symmetric.\n - extremeness: it is an object that has the largest or the smallest feature among all the others.\n Now, you have to prioritise the selection of the only object that satisfies one of the above mentioned properties, i.e., it is the only object with that property in the list. If there are multiple objects that satisfy one or more of the above mentioned properties, select the one that is unique, then extreme, then central, and eventually unique complement. Return the option you chose, without the score, between <answer></answer> tags.",
+    "responses": {
+      "<answer>chrome</answer>": 4,
+      "plastic": 2,
+      "<answer>plastic</answer>": 6,
+      "im sorry but i cant assist with that": 3,
+      "<answer>steel</answer>": 5,
+      "steel": 5,
+      "please provide the list of options and their scores so i can help you with your question": 1,
+      "please provide the list of options and their scores for me to determine the best choice": 1,
+      "please provide the list of options and their scores so i can help you prioritize the selection of the only object that satisfies one of the above mentioned properties": 1,
+      "<answer>copper</answer>": 1,
+      "<answer></answer>": 1
+    },
+    "coordination_index": 0.10344827586206896,
+    "normalised_coordination_index": 0.5172413793103449
+  },
+  {
+    "idx": "TA6",
+    "variation-idx": "2",
+    "prompt": "In this task, you have to choose one of the following options. This is the list of options and their score: plastic: 10, copper: 10, chrome: 10, steel: 10, iron: 10. You will earn the number of points shown on the option you choose. Your earnings are determined by your decisions alone. There are four intuitive properties that make a choice desirable:\n - uniqueness: it is the only object with a given prooperty.\n - uniqueness complement: it is the only object *without* a given property.\n - centrality: it is a central point around which a domain is symmetric.\n - extremeness: it is an object that has the largest or the smallest feature among all the others.\n Now, you have to prioritise the selection of the only object that satisfies one of the above mentioned properties, i.e., it is the only object with that property in the list. If there are multiple objects that satisfy one or more of the above mentioned properties, select the one that is unique, then extreme, then central, and eventually unique complement. Return the option you chose, without the score, between <answer></answer> tags.",
+    "responses": {
+      "plastic": 20,
+      "<answer>chrome</answer>": 4,
+      "<answer>steel</answer>": 1,
+      "<answer>plastic</answer>": 2,
+      "please provide me with the list of options and their scores so i can help you prioritize the selection of the object that satisfies one of the above mentioned properties": 1,
+      "<answer>\nplastic</answer>": 1,
+      "please provide me with the list of options and their scores so i can prioritize the selection": 1
+    },
+    "coordination_index": 0.4528735632183908,
+    "normalised_coordination_index": 2.264367816091954
+  },
+  {
+    "idx": "TA7",
+    "variation-idx": "0",
+    "prompt": "In this task, you have to choose one of the following options. This is the list of options and their score: bread: 10, curry: 10, pizza: 10, steak: 10. You will earn the number of points shown on the option you choose. Your earnings are determined by your decisions alone. There are four intuitive properties that make a choice desirable:\n - uniqueness: it is the only object with a given prooperty.\n - uniqueness complement: it is the only object *without* a given property.\n - centrality: it is a central point around which a domain is symmetric.\n - extremeness: it is an object that has the largest or the smallest feature among all the others.\n Now, you have to prioritise the selection of the only object that satisfies one of the above mentioned properties, i.e., it is the only object with that property in the list. If there are multiple objects that satisfy one or more of the above mentioned properties, select the one that is unique, then extreme, then central, and eventually unique complement. Return the option you chose, without the score, between <answer></answer> tags.",
+    "responses": {
+      "steak": 30
+    },
+    "coordination_index": 1.0,
+    "normalised_coordination_index": 4.0
+  },
+  {
+    "idx": "TA7",
+    "variation-idx": "1",
+    "prompt": "In this task, you have to choose one of the following options. This is the list of options and their score: pizza: 10, steak: 10, curry: 10, bread: 10. You will earn the number of points shown on the option you choose. Your earnings are determined by your decisions alone. There are four intuitive properties that make a choice desirable:\n - uniqueness: it is the only object with a given prooperty.\n - uniqueness complement: it is the only object *without* a given property.\n - centrality: it is a central point around which a domain is symmetric.\n - extremeness: it is an object that has the largest or the smallest feature among all the others.\n Now, you have to prioritise the selection of the only object that satisfies one of the above mentioned properties, i.e., it is the only object with that property in the list. If there are multiple objects that satisfy one or more of the above mentioned properties, select the one that is unique, then extreme, then central, and eventually unique complement. Return the option you chose, without the score, between <answer></answer> tags.",
+    "responses": {
+      "steak": 26,
+      "pizza": 4
+    },
+    "coordination_index": 0.7609195402298851,
+    "normalised_coordination_index": 3.0436781609195402
+  },
+  {
+    "idx": "TA7",
+    "variation-idx": "2",
+    "prompt": "In this task, you have to choose one of the following options. This is the list of options and their score: curry: 10, pizza: 10, bread: 10, steak: 10. You will earn the number of points shown on the option you choose. Your earnings are determined by your decisions alone. There are four intuitive properties that make a choice desirable:\n - uniqueness: it is the only object with a given prooperty.\n - uniqueness complement: it is the only object *without* a given property.\n - centrality: it is a central point around which a domain is symmetric.\n - extremeness: it is an object that has the largest or the smallest feature among all the others.\n Now, you have to prioritise the selection of the only object that satisfies one of the above mentioned properties, i.e., it is the only object with that property in the list. If there are multiple objects that satisfy one or more of the above mentioned properties, select the one that is unique, then extreme, then central, and eventually unique complement. Return the option you chose, without the score, between <answer></answer> tags.",
+    "responses": {
+      "steak": 26,
+      "<answer>steak</answer>": 4
+    },
+    "coordination_index": 0.7609195402298851,
+    "normalised_coordination_index": 3.0436781609195402
+  },
+  {
+    "idx": "TA8",
+    "variation-idx": "0",
+    "prompt": "In this task, you have to choose one of the following options. This is the list of options and their score: beer: 10, sherry: 10, water: 10, whisky: 10, wine: 10. You will earn the number of points shown on the option you choose. Your earnings are determined by your decisions alone. There are four intuitive properties that make a choice desirable:\n - uniqueness: it is the only object with a given prooperty.\n - uniqueness complement: it is the only object *without* a given property.\n - centrality: it is a central point around which a domain is symmetric.\n - extremeness: it is an object that has the largest or the smallest feature among all the others.\n Now, you have to prioritise the selection of the only object that satisfies one of the above mentioned properties, i.e., it is the only object with that property in the list. If there are multiple objects that satisfy one or more of the above mentioned properties, select the one that is unique, then extreme, then central, and eventually unique complement. Return the option you chose, without the score, between <answer></answer> tags.",
+    "responses": {
+      "<answer>beer</answer>": 13,
+      "<answer>sherry</answer>": 1,
+      "<answer>whisky</answer>": 5,
+      "beer": 4,
+      "sherry": 4,
+      "water": 2,
+      "<answer></answer>": 1
+    },
+    "coordination_index": 0.23218390804597702,
+    "normalised_coordination_index": 1.160919540229885
+  },
+  {
+    "idx": "TA8",
+    "variation-idx": "1",
+    "prompt": "In this task, you have to choose one of the following options. This is the list of options and their score: wine: 10, beer: 10, whisky: 10, water: 10, sherry: 10. You will earn the number of points shown on the option you choose. Your earnings are determined by your decisions alone. There are four intuitive properties that make a choice desirable:\n - uniqueness: it is the only object with a given prooperty.\n - uniqueness complement: it is the only object *without* a given property.\n - centrality: it is a central point around which a domain is symmetric.\n - extremeness: it is an object that has the largest or the smallest feature among all the others.\n Now, you have to prioritise the selection of the only object that satisfies one of the above mentioned properties, i.e., it is the only object with that property in the list. If there are multiple objects that satisfy one or more of the above mentioned properties, select the one that is unique, then extreme, then central, and eventually unique complement. Return the option you chose, without the score, between <answer></answer> tags.",
+    "responses": {
+      "<answer>beer</answer>": 11,
+      "<answer></answer>": 2,
+      "sherry": 6,
+      "<answer>wine</answer>": 2,
+      "water": 5,
+      "im sorry but i cant assist with that": 2,
+      "<answer>whisky</answer>": 1,
+      "im sorry but i cannot determine the correct answer without knowing the specific questions or instructions provided for me to follow please provide me with the necessary information so i can assist you better": 1
+    },
+    "coordination_index": 0.19080459770114944,
+    "normalised_coordination_index": 0.9540229885057472
+  },
+  {
+    "idx": "TA8",
+    "variation-idx": "2",
+    "prompt": "In this task, you have to choose one of the following options. This is the list of options and their score: sherry: 10, whisky: 10, wine: 10, beer: 10, water: 10. You will earn the number of points shown on the option you choose. Your earnings are determined by your decisions alone. There are four intuitive properties that make a choice desirable:\n - uniqueness: it is the only object with a given prooperty.\n - uniqueness complement: it is the only object *without* a given property.\n - centrality: it is a central point around which a domain is symmetric.\n - extremeness: it is an object that has the largest or the smallest feature among all the others.\n Now, you have to prioritise the selection of the only object that satisfies one of the above mentioned properties, i.e., it is the only object with that property in the list. If there are multiple objects that satisfy one or more of the above mentioned properties, select the one that is unique, then extreme, then central, and eventually unique complement. Return the option you chose, without the score, between <answer></answer> tags.",
+    "responses": {
+      "sherry": 21,
+      "water": 4,
+      "<answer>sherry</answer>": 3,
+      "<answer>whisky</answer>": 2
+    },
+    "coordination_index": 0.5057471264367817,
+    "normalised_coordination_index": 2.528735632183908
+  },
+  {
+    "idx": "TA9",
+    "variation-idx": "0",
+    "prompt": "In this task, you have to choose one of the following options. This is the list of options and their score: Carlsberg: 10, Corsendonk: 10, Grimbergen: 10, Rochefort: 10, Westmalle13: 10. You will earn the number of points shown on the option you choose. Your earnings are determined by your decisions alone. There are four intuitive properties that make a choice desirable:\n - uniqueness: it is the only object with a given prooperty.\n - uniqueness complement: it is the only object *without* a given property.\n - centrality: it is a central point around which a domain is symmetric.\n - extremeness: it is an object that has the largest or the smallest feature among all the others.\n Now, you have to prioritise the selection of the only object that satisfies one of the above mentioned properties, i.e., it is the only object with that property in the list. If there are multiple objects that satisfy one or more of the above mentioned properties, select the one that is unique, then extreme, then central, and eventually unique complement. Return the option you chose, without the score, between <answer></answer> tags.",
+    "responses": {
+      "crisp cognizance": 1,
+      "rochefort": 5,
+      "carlsberg": 7,
+      "crisp riesling 95": 1,
+      "<answer>corsendonk</answer>": 2,
+      "corsendonk": 3,
+      "<answer>carlsberg</answer>": 4,
+      "crimson": 2,
+      "crispen": 1,
+      "<answer>westmalle13</answer>": 2,
+      "<answer>rochefort</answer>": 1,
+      "<answer>\nrochefort\n</answer>": 1
+    },
+    "coordination_index": 0.09885057471264368,
+    "normalised_coordination_index": 0.4942528735632184
+  },
+  {
+    "idx": "TA9",
+    "variation-idx": "1",
+    "prompt": "In this task, you have to choose one of the following options. This is the list of options and their score: Grimbergen: 10, Carlsberg: 10, Westmalle13: 10, Rochefort: 10, Corsendonk: 10. You will earn the number of points shown on the option you choose. Your earnings are determined by your decisions alone. There are four intuitive properties that make a choice desirable:\n - uniqueness: it is the only object with a given prooperty.\n - uniqueness complement: it is the only object *without* a given property.\n - centrality: it is a central point around which a domain is symmetric.\n - extremeness: it is an object that has the largest or the smallest feature among all the others.\n Now, you have to prioritise the selection of the only object that satisfies one of the above mentioned properties, i.e., it is the only object with that property in the list. If there are multiple objects that satisfy one or more of the above mentioned properties, select the one that is unique, then extreme, then central, and eventually unique complement. Return the option you chose, without the score, between <answer></answer> tags.",
+    "responses": {
+      "rochefort": 24,
+      "crossette 9": 1,
+      "crosby": 1,
+      "grimbergen": 4
+    },
+    "coordination_index": 0.6482758620689655,
+    "normalised_coordination_index": 3.2413793103448274
+  },
+  {
+    "idx": "TA9",
+    "variation-idx": "2",
+    "prompt": "In this task, you have to choose one of the following options. This is the list of options and their score: Rochefort: 10, Westmalle13: 10, Corsendonk: 10, Carlsberg: 10, Grimbergen: 10. You will earn the number of points shown on the option you choose. Your earnings are determined by your decisions alone. There are four intuitive properties that make a choice desirable:\n - uniqueness: it is the only object with a given prooperty.\n - uniqueness complement: it is the only object *without* a given property.\n - centrality: it is a central point around which a domain is symmetric.\n - extremeness: it is an object that has the largest or the smallest feature among all the others.\n Now, you have to prioritise the selection of the only object that satisfies one of the above mentioned properties, i.e., it is the only object with that property in the list. If there are multiple objects that satisfy one or more of the above mentioned properties, select the one that is unique, then extreme, then central, and eventually unique complement. Return the option you chose, without the score, between <answer></answer> tags.",
+    "responses": {
+      "rochefort": 30
+    },
+    "coordination_index": 1.0,
+    "normalised_coordination_index": 5.0
+  },
+  {
+    "idx": "TA10",
+    "variation-idx": "0",
+    "prompt": "In this task, you have to choose one of the following options. This is the list of options and their score: frog: 10, leopard: 10, panther: 10, tiger: 10. You will earn the number of points shown on the option you choose. Your earnings are determined by your decisions alone. There are four intuitive properties that make a choice desirable:\n - uniqueness: it is the only object with a given prooperty.\n - uniqueness complement: it is the only object *without* a given property.\n - centrality: it is a central point around which a domain is symmetric.\n - extremeness: it is an object that has the largest or the smallest feature among all the others.\n Now, you have to prioritise the selection of the only object that satisfies one of the above mentioned properties, i.e., it is the only object with that property in the list. If there are multiple objects that satisfy one or more of the above mentioned properties, select the one that is unique, then extreme, then central, and eventually unique complement. Return the option you chose, without the score, between <answer></answer> tags.",
+    "responses": {
+      "leopard": 9,
+      "panther": 4,
+      "<answer>leopard</answer>": 4,
+      "the answer is not provided please provide the question for me to solve": 1,
+      "tiger": 6,
+      "the answer is not provided in the prompt please provide the prompt so i can assist you better": 1,
+      "the answer is <leopard> with score 10 the score for each option is as follows\n\n uniqueness 10 the only object with the property leopard in the list\n centrality 10 the only object with the property leopard in the list\n extremality 10 the only object with the property leopard in the list\n\ntherefore the best choice would be the leopard with a score of 10": 1,
+      "the answer is <leopard> the unique property is the only object with the property leopard the other options do not have any properties that are unique to the leopard category": 1,
+      "the answer is not provided in the question please provide the question so i can assist you": 1,
+      "im sorry but i cannot determine what the correct answer is without additional context please provide me with the list of options and their scores so i can assist you better": 1,
+      "im sorry but i cant assist with that": 1
+    },
+    "coordination_index": 0.14482758620689656,
+    "normalised_coordination_index": 0.5793103448275863
+  },
+  {
+    "idx": "TA10",
+    "variation-idx": "1",
+    "prompt": "In this task, you have to choose one of the following options. This is the list of options and their score: tiger: 10, panther: 10, frog: 10, leopard: 10. You will earn the number of points shown on the option you choose. Your earnings are determined by your decisions alone. There are four intuitive properties that make a choice desirable:\n - uniqueness: it is the only object with a given prooperty.\n - uniqueness complement: it is the only object *without* a given property.\n - centrality: it is a central point around which a domain is symmetric.\n - extremeness: it is an object that has the largest or the smallest feature among all the others.\n Now, you have to prioritise the selection of the only object that satisfies one of the above mentioned properties, i.e., it is the only object with that property in the list. If there are multiple objects that satisfy one or more of the above mentioned properties, select the one that is unique, then extreme, then central, and eventually unique complement. Return the option you chose, without the score, between <answer></answer> tags.",
+    "responses": {
+      "im sorry but i cant assist with that": 3,
+      "<answer>leopard</answer>": 7,
+      "tiger": 7,
+      "im sorry but i cannot determine the answer as there is no information provided about the properties or criteria used for selecting the best option please provide me with the necessary details so that i can assist you better": 1,
+      "leopard": 7,
+      "the answer is tiger": 4,
+      "the task requires choosing an object from the provided options based on its uniqueness centrality and extremeness properties the score for each property is as follows\n\n uniqueness 10\n centrality 5\n extremeness 5\n\nto prioritize the selection we need to consider the first three properties uniqueness centrality and extremeness\n\nbased on these properties we can rank the options\n\n tiger 10\n panther 10\n frog 10\n leopard 10\n\nnow we need to select the object with the highest score among these options which is the tiger\n\ntherefore the answer to this task would be tiger": 1
+    },
+    "coordination_index": 0.16551724137931034,
+    "normalised_coordination_index": 0.6620689655172414
+  },
+  {
+    "idx": "TA10",
+    "variation-idx": "2",
+    "prompt": "In this task, you have to choose one of the following options. This is the list of options and their score: leopard: 10, frog: 10, tiger: 10, panther: 10. You will earn the number of points shown on the option you choose. Your earnings are determined by your decisions alone. There are four intuitive properties that make a choice desirable:\n - uniqueness: it is the only object with a given prooperty.\n - uniqueness complement: it is the only object *without* a given property.\n - centrality: it is a central point around which a domain is symmetric.\n - extremeness: it is an object that has the largest or the smallest feature among all the others.\n Now, you have to prioritise the selection of the only object that satisfies one of the above mentioned properties, i.e., it is the only object with that property in the list. If there are multiple objects that satisfy one or more of the above mentioned properties, select the one that is unique, then extreme, then central, and eventually unique complement. Return the option you chose, without the score, between <answer></answer> tags.",
+    "responses": {
+      "leopard": 17,
+      "<answer>leopard</answer>": 6,
+      "panther": 6,
+      "tiger": 1
+    },
+    "coordination_index": 0.3816091954022989,
+    "normalised_coordination_index": 1.5264367816091955
+  },
+  {
+    "idx": "TA11",
+    "variation-idx": "0",
+    "prompt": "In this task, you have to choose one of the following options. This is the list of options and their score: aeroplane: 10, bicycle: 10, helicopter: 10, hovercraft: 10. You will earn the number of points shown on the option you choose. Your earnings are determined by your decisions alone. There are four intuitive properties that make a choice desirable:\n - uniqueness: it is the only object with a given prooperty.\n - uniqueness complement: it is the only object *without* a given property.\n - centrality: it is a central point around which a domain is symmetric.\n - extremeness: it is an object that has the largest or the smallest feature among all the others.\n Now, you have to prioritise the selection of the only object that satisfies one of the above mentioned properties, i.e., it is the only object with that property in the list. If there are multiple objects that satisfy one or more of the above mentioned properties, select the one that is unique, then extreme, then central, and eventually unique complement. Return the option you chose, without the score, between <answer></answer> tags.",
+    "responses": {
+      "<answer>aeroplane</answer>": 2,
+      "aeroplane": 9,
+      "hovercraft": 6,
+      "<answer>hovercraft</answer>": 5,
+      "<answer>helicopter</answer>": 2,
+      "<answer></answer>": 5,
+      "<answer>\nhovercraft</answer>": 1
+    },
+    "coordination_index": 0.167816091954023,
+    "normalised_coordination_index": 0.671264367816092
+  },
+  {
+    "idx": "TA11",
+    "variation-idx": "1",
+    "prompt": "In this task, you have to choose one of the following options. This is the list of options and their score: hovercraft: 10, aeroplane: 10, bicycle: 10, helicopter: 10. You will earn the number of points shown on the option you choose. Your earnings are determined by your decisions alone. There are four intuitive properties that make a choice desirable:\n - uniqueness: it is the only object with a given prooperty.\n - uniqueness complement: it is the only object *without* a given property.\n - centrality: it is a central point around which a domain is symmetric.\n - extremeness: it is an object that has the largest or the smallest feature among all the others.\n Now, you have to prioritise the selection of the only object that satisfies one of the above mentioned properties, i.e., it is the only object with that property in the list. If there are multiple objects that satisfy one or more of the above mentioned properties, select the one that is unique, then extreme, then central, and eventually unique complement. Return the option you chose, without the score, between <answer></answer> tags.",
+    "responses": {
+      "hovercraft": 12,
+      "<answer>helicopter</answer>": 1,
+      "helicopter": 8,
+      "<answer>hovercraft</answer>": 4,
+      "<answer>\naeroplane</answer>": 1,
+      "aeroplane": 4
+    },
+    "coordination_index": 0.24367816091954023,
+    "normalised_coordination_index": 0.9747126436781609
+  },
+  {
+    "idx": "TA11",
+    "variation-idx": "2",
+    "prompt": "In this task, you have to choose one of the following options. This is the list of options and their score: bicycle: 10, helicopter: 10, hovercraft: 10, aeroplane: 10. You will earn the number of points shown on the option you choose. Your earnings are determined by your decisions alone. There are four intuitive properties that make a choice desirable:\n - uniqueness: it is the only object with a given prooperty.\n - uniqueness complement: it is the only object *without* a given property.\n - centrality: it is a central point around which a domain is symmetric.\n - extremeness: it is an object that has the largest or the smallest feature among all the others.\n Now, you have to prioritise the selection of the only object that satisfies one of the above mentioned properties, i.e., it is the only object with that property in the list. If there are multiple objects that satisfy one or more of the above mentioned properties, select the one that is unique, then extreme, then central, and eventually unique complement. Return the option you chose, without the score, between <answer></answer> tags.",
+    "responses": {
+      "bicycle": 15,
+      "aeroplane": 5,
+      "hovercraft": 6,
+      "<answer>hovercraft</answer>": 3,
+      "<answer></answer>": 1
+    },
+    "coordination_index": 0.3057471264367816,
+    "normalised_coordination_index": 1.2229885057471264
+  },
+  {
+    "idx": "TA12",
+    "variation-idx": "0",
+    "prompt": "In this task, you have to choose one of the following options. This is the list of options and their score: chess: 10, football: 10, squash: 10, tennis: 10, volleyball: 10. You will earn the number of points shown on the option you choose. Your earnings are determined by your decisions alone. There are four intuitive properties that make a choice desirable:\n - uniqueness: it is the only object with a given prooperty.\n - uniqueness complement: it is the only object *without* a given property.\n - centrality: it is a central point around which a domain is symmetric.\n - extremeness: it is an object that has the largest or the smallest feature among all the others.\n Now, you have to prioritise the selection of the only object that satisfies one of the above mentioned properties, i.e., it is the only object with that property in the list. If there are multiple objects that satisfy one or more of the above mentioned properties, select the one that is unique, then extreme, then central, and eventually unique complement. Return the option you chose, without the score, between <answer></answer> tags.",
+    "responses": {
+      "<answer>football</answer>": 14,
+      "football": 11,
+      "<answer></answer>": 4,
+      "<answer>volleyball</answer>": 1
+    },
+    "coordination_index": 0.34942528735632183,
+    "normalised_coordination_index": 1.7471264367816093
+  },
+  {
+    "idx": "TA12",
+    "variation-idx": "1",
+    "prompt": "In this task, you have to choose one of the following options. This is the list of options and their score: tennis: 10, volleyball: 10, football: 10, chess: 10, squash: 10. You will earn the number of points shown on the option you choose. Your earnings are determined by your decisions alone. There are four intuitive properties that make a choice desirable:\n - uniqueness: it is the only object with a given prooperty.\n - uniqueness complement: it is the only object *without* a given property.\n - centrality: it is a central point around which a domain is symmetric.\n - extremeness: it is an object that has the largest or the smallest feature among all the others.\n Now, you have to prioritise the selection of the only object that satisfies one of the above mentioned properties, i.e., it is the only object with that property in the list. If there are multiple objects that satisfy one or more of the above mentioned properties, select the one that is unique, then extreme, then central, and eventually unique complement. Return the option you chose, without the score, between <answer></answer> tags.",
+    "responses": {
+      "chess": 11,
+      "im sorry but i cannot provide an answer as i am not able to determine which property is unique extremal central or if any other property exists please let me know if theres anything else i can help with": 1,
+      "football": 5,
+      "<answer>football</answer>": 4,
+      "<answer>chess</answer>": 5,
+      "im sorry but i cannot provide a correct answer as i am not able to determine the properties of the objects listed please provide me with the properties of the objects so that i can assist you better": 1,
+      "<answer></answer>": 2,
+      "im sorry but i cant assist with that": 1
+    },
+    "coordination_index": 0.18850574712643678,
+    "normalised_coordination_index": 0.9425287356321839
+  },
+  {
+    "idx": "TA12",
+    "variation-idx": "2",
+    "prompt": "In this task, you have to choose one of the following options. This is the list of options and their score: volleyball: 10, squash: 10, chess: 10, tennis: 10, football: 10. You will earn the number of points shown on the option you choose. Your earnings are determined by your decisions alone. There are four intuitive properties that make a choice desirable:\n - uniqueness: it is the only object with a given prooperty.\n - uniqueness complement: it is the only object *without* a given property.\n - centrality: it is a central point around which a domain is symmetric.\n - extremeness: it is an object that has the largest or the smallest feature among all the others.\n Now, you have to prioritise the selection of the only object that satisfies one of the above mentioned properties, i.e., it is the only object with that property in the list. If there are multiple objects that satisfy one or more of the above mentioned properties, select the one that is unique, then extreme, then central, and eventually unique complement. Return the option you chose, without the score, between <answer></answer> tags.",
+    "responses": {
+      "football": 20,
+      "<answer>chess</answer>": 3,
+      "chess": 5,
+      "squash": 2
+    },
+    "coordination_index": 0.4689655172413793,
+    "normalised_coordination_index": 2.3448275862068964
+  },
+  {
+    "idx": "TA13",
+    "variation-idx": "0",
+    "prompt": "In this task, you have to choose one of the following options. This is the list of options and their score: Barbados: 10, Bern: 10, Florida: 10, Honolulu: 10. You will earn the number of points shown on the option you choose. Your earnings are determined by your decisions alone. There are four intuitive properties that make a choice desirable:\n - uniqueness: it is the only object with a given prooperty.\n - uniqueness complement: it is the only object *without* a given property.\n - centrality: it is a central point around which a domain is symmetric.\n - extremeness: it is an object that has the largest or the smallest feature among all the others.\n Now, you have to prioritise the selection of the only object that satisfies one of the above mentioned properties, i.e., it is the only object with that property in the list. If there are multiple objects that satisfy one or more of the above mentioned properties, select the one that is unique, then extreme, then central, and eventually unique complement. Return the option you chose, without the score, between <answer></answer> tags.",
+    "responses": {
+      "barbados": 7,
+      "<answer>bern</answer>": 10,
+      "bern": 2,
+      "bahrain 10 new zealand 10 australia 10 united states 10": 1,
+      "<answer>barbados</answer>": 5,
+      "bahrain": 2,
+      "<answer>florida</answer>": 3
+    },
+    "coordination_index": 0.18620689655172415,
+    "normalised_coordination_index": 0.7448275862068966
+  },
+  {
+    "idx": "TA13",
+    "variation-idx": "1",
+    "prompt": "In this task, you have to choose one of the following options. This is the list of options and their score: Florida: 10, Honolulu: 10, Barbados: 10, Bern: 10. You will earn the number of points shown on the option you choose. Your earnings are determined by your decisions alone. There are four intuitive properties that make a choice desirable:\n - uniqueness: it is the only object with a given prooperty.\n - uniqueness complement: it is the only object *without* a given property.\n - centrality: it is a central point around which a domain is symmetric.\n - extremeness: it is an object that has the largest or the smallest feature among all the others.\n Now, you have to prioritise the selection of the only object that satisfies one of the above mentioned properties, i.e., it is the only object with that property in the list. If there are multiple objects that satisfy one or more of the above mentioned properties, select the one that is unique, then extreme, then central, and eventually unique complement. Return the option you chose, without the score, between <answer></answer> tags.",
+    "responses": {
+      "uniqueness extremeness unique complement central": 1,
+      "florida": 7,
+      "barbados": 2,
+      "<answer>barbados</answer>": 9,
+      "the answer is honolulu": 1,
+      "im sorry but i cannot provide a correct answer as there are no options provided for me to choose from please provide me with the required information so that i can assist you better": 1,
+      "im sorry but i cant assist with that": 1,
+      "uniqueness 10 extremeness 10 central 10 unique 10": 1,
+      "the answer is honolulu the other options do not satisfy any of the given properties": 1,
+      "im sorry but i cannot determine the correct answer as there is no clear set of criteria provided for selecting the best option from the given list please provide additional information or clarify the question so i can assist you better": 1,
+      "the answer is <option>barbados</option>": 1,
+      "barcelona 9 madrid 9 paris 8 tokyo 8": 1,
+      "uniqueness extremeness unique complement": 1,
+      "barcelona 9": 1,
+      "im sorry but i cannot provide a solution as there is no question provided for me to answer please provide a question or task for me to solve": 1
+    },
+    "coordination_index": 0.13333333333333333,
+    "normalised_coordination_index": 0.5333333333333333
+  },
+  {
+    "idx": "TA13",
+    "variation-idx": "2",
+    "prompt": "In this task, you have to choose one of the following options. This is the list of options and their score: Bern: 10, Barbados: 10, Honolulu: 10, Florida: 10. You will earn the number of points shown on the option you choose. Your earnings are determined by your decisions alone. There are four intuitive properties that make a choice desirable:\n - uniqueness: it is the only object with a given prooperty.\n - uniqueness complement: it is the only object *without* a given property.\n - centrality: it is a central point around which a domain is symmetric.\n - extremeness: it is an object that has the largest or the smallest feature among all the others.\n Now, you have to prioritise the selection of the only object that satisfies one of the above mentioned properties, i.e., it is the only object with that property in the list. If there are multiple objects that satisfy one or more of the above mentioned properties, select the one that is unique, then extreme, then central, and eventually unique complement. Return the option you chose, without the score, between <answer></answer> tags.",
+    "responses": {
+      "bern": 9,
+      "<answer>florida</answer>": 3,
+      "barbados": 4,
+      "florida": 3,
+      "<answer>barbados</answer>": 7,
+      "<answer>bern</answer>": 4
+    },
+    "coordination_index": 0.1724137931034483,
+    "normalised_coordination_index": 0.6896551724137931
+  },
+  {
+    "idx": "TA14",
+    "variation-idx": "0",
+    "prompt": "In this task, you have to choose one of the following options. This is the list of options and their score: jogging: 10, running: 10, sitting: 10, walking: 10. You will earn the number of points shown on the option you choose. Your earnings are determined by your decisions alone. There are four intuitive properties that make a choice desirable:\n - uniqueness: it is the only object with a given prooperty.\n - uniqueness complement: it is the only object *without* a given property.\n - centrality: it is a central point around which a domain is symmetric.\n - extremeness: it is an object that has the largest or the smallest feature among all the others.\n Now, you have to prioritise the selection of the only object that satisfies one of the above mentioned properties, i.e., it is the only object with that property in the list. If there are multiple objects that satisfy one or more of the above mentioned properties, select the one that is unique, then extreme, then central, and eventually unique complement. Return the option you chose, without the score, between <answer></answer> tags.",
+    "responses": {
+      "sitting": 25,
+      "running": 5
+    },
+    "coordination_index": 0.7126436781609196,
+    "normalised_coordination_index": 2.8505747126436782
+  },
+  {
+    "idx": "TA14",
+    "variation-idx": "1",
+    "prompt": "In this task, you have to choose one of the following options. This is the list of options and their score: walking: 10, jogging: 10, sitting: 10, running: 10. You will earn the number of points shown on the option you choose. Your earnings are determined by your decisions alone. There are four intuitive properties that make a choice desirable:\n - uniqueness: it is the only object with a given prooperty.\n - uniqueness complement: it is the only object *without* a given property.\n - centrality: it is a central point around which a domain is symmetric.\n - extremeness: it is an object that has the largest or the smallest feature among all the others.\n Now, you have to prioritise the selection of the only object that satisfies one of the above mentioned properties, i.e., it is the only object with that property in the list. If there are multiple objects that satisfy one or more of the above mentioned properties, select the one that is unique, then extreme, then central, and eventually unique complement. Return the option you chose, without the score, between <answer></answer> tags.",
+    "responses": {
+      "walking": 11,
+      "sitting": 16,
+      "running": 3
+    },
+    "coordination_index": 0.4091954022988506,
+    "normalised_coordination_index": 1.6367816091954024
+  },
+  {
+    "idx": "TA14",
+    "variation-idx": "2",
+    "prompt": "In this task, you have to choose one of the following options. This is the list of options and their score: sitting: 10, walking: 10, running: 10, jogging: 10. You will earn the number of points shown on the option you choose. Your earnings are determined by your decisions alone. There are four intuitive properties that make a choice desirable:\n - uniqueness: it is the only object with a given prooperty.\n - uniqueness complement: it is the only object *without* a given property.\n - centrality: it is a central point around which a domain is symmetric.\n - extremeness: it is an object that has the largest or the smallest feature among all the others.\n Now, you have to prioritise the selection of the only object that satisfies one of the above mentioned properties, i.e., it is the only object with that property in the list. If there are multiple objects that satisfy one or more of the above mentioned properties, select the one that is unique, then extreme, then central, and eventually unique complement. Return the option you chose, without the score, between <answer></answer> tags.",
+    "responses": {
+      "sitting": 20,
+      "running": 2,
+      "walking": 6,
+      "im sorry but i cant assist with that": 1,
+      "im sorry but i cannot proceed with this request as it seems to be a programming question rather than a task for me to perform could you please provide more information or clarify your request": 1
+    },
+    "coordination_index": 0.4735632183908046,
+    "normalised_coordination_index": 1.8942528735632185
+  }
+]

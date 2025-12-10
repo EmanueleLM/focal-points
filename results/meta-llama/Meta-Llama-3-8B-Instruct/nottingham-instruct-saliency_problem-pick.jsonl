@@ -1,0 +1,491 @@
+[
+  {
+    "idx": "TN1",
+    "variation-idx": "0",
+    "prompt": "In this task, you have to choose one of the following options. This is the list of options and their score: Friday lunchtime: 10, Monday morning: 10, Saturday night: 10, Sunday night: 10, Wednesday evening: 10. You will earn the number of points shown on the option you choose. Your earnings are determined by your decisions alone. Choosing an option that is entirely different from the others is highly recommended (for example, in a different category). Return the option you chose, without the score, between <answer></answer> tags.",
+    "responses": {
+      "<answer>sunday night</answer>": 30
+    },
+    "coordination_index": 1.0,
+    "normalised_coordination_index": 5.0
+  },
+  {
+    "idx": "TN1",
+    "variation-idx": "1",
+    "prompt": "In this task, you have to choose one of the following options. This is the list of options and their score: Saturday night: 10, Wednesday evening: 10, Friday lunchtime: 10, Sunday night: 10, Monday morning: 10. You will earn the number of points shown on the option you choose. Your earnings are determined by your decisions alone. Choosing an option that is entirely different from the others is highly recommended (for example, in a different category). Return the option you chose, without the score, between <answer></answer> tags.",
+    "responses": {
+      "<answer>monday morning</answer>": 28,
+      "<answer>sunday night</answer>": 2
+    },
+    "coordination_index": 0.871264367816092,
+    "normalised_coordination_index": 4.35632183908046
+  },
+  {
+    "idx": "TN1",
+    "variation-idx": "2",
+    "prompt": "In this task, you have to choose one of the following options. This is the list of options and their score: Monday morning: 10, Sunday night: 10, Friday lunchtime: 10, Wednesday evening: 10, Saturday night: 10. You will earn the number of points shown on the option you choose. Your earnings are determined by your decisions alone. Choosing an option that is entirely different from the others is highly recommended (for example, in a different category). Return the option you chose, without the score, between <answer></answer> tags.",
+    "responses": {
+      "<answer>saturday night</answer>": 17,
+      "<answer>sunday night</answer>": 13
+    },
+    "coordination_index": 0.49195402298850577,
+    "normalised_coordination_index": 2.459770114942529
+  },
+  {
+    "idx": "TN2",
+    "variation-idx": "0",
+    "prompt": "In this task, you have to choose one of the following options. This is the list of options and their score: Earth: 10, Mars: 10, Mercury: 10, Saturn: 10, Venus: 10. You will earn the number of points shown on the option you choose. Your earnings are determined by your decisions alone. Choosing an option that is entirely different from the others is highly recommended (for example, in a different category). Return the option you chose, without the score, between <answer></answer> tags.",
+    "responses": {
+      "<answer>none</answer>": 10,
+      "<answer>earth</answer>": 18,
+      "<answer>none of the above</answer>": 2
+    },
+    "coordination_index": 0.4574712643678161,
+    "normalised_coordination_index": 2.2873563218390807
+  },
+  {
+    "idx": "TN2",
+    "variation-idx": "1",
+    "prompt": "In this task, you have to choose one of the following options. This is the list of options and their score: Venus: 10, Earth: 10, Saturn: 10, Mercury: 10, Mars: 10. You will earn the number of points shown on the option you choose. Your earnings are determined by your decisions alone. Choosing an option that is entirely different from the others is highly recommended (for example, in a different category). Return the option you chose, without the score, between <answer></answer> tags.",
+    "responses": {
+      "<answer>none</answer>": 8,
+      "<answer>mercury</answer>": 7,
+      "<answer> mercury </answer>": 3,
+      "<answer>earth</answer>": 3,
+      "<answer>mars</answer>": 7,
+      "<answer>none of the above</answer>": 2
+    },
+    "coordination_index": 0.17701149425287357,
+    "normalised_coordination_index": 0.8850574712643678
+  },
+  {
+    "idx": "TN2",
+    "variation-idx": "2",
+    "prompt": "In this task, you have to choose one of the following options. This is the list of options and their score: Mars: 10, Saturn: 10, Venus: 10, Earth: 10, Mercury: 10. You will earn the number of points shown on the option you choose. Your earnings are determined by your decisions alone. Choosing an option that is entirely different from the others is highly recommended (for example, in a different category). Return the option you chose, without the score, between <answer></answer> tags.",
+    "responses": {
+      "<answer>mars</answer>": 29,
+      "<answer>mercury</answer>": 1
+    },
+    "coordination_index": 0.9333333333333333,
+    "normalised_coordination_index": 4.666666666666667
+  },
+  {
+    "idx": "TN3",
+    "variation-idx": "0",
+    "prompt": "In this task, you have to choose one of the following options. This is the list of options and their score: Ford: 10, Mercedes: 10, Pontiac: 10, Porsche: 10, Volkswagen: 10. You will earn the number of points shown on the option you choose. Your earnings are determined by your decisions alone. Choosing an option that is entirely different from the others is highly recommended (for example, in a different category). Return the option you chose, without the score, between <answer></answer> tags.",
+    "responses": {
+      "<answer>toyota</answer>": 22,
+      "<answer>apple</answer>": 6,
+      "<answer>toys r us</answer>": 2
+    },
+    "coordination_index": 0.5678160919540229,
+    "normalised_coordination_index": 2.8390804597701145
+  },
+  {
+    "idx": "TN3",
+    "variation-idx": "1",
+    "prompt": "In this task, you have to choose one of the following options. This is the list of options and their score: Volkswagen: 10, Pontiac: 10, Porsche: 10, Ford: 10, Mercedes: 10. You will earn the number of points shown on the option you choose. Your earnings are determined by your decisions alone. Choosing an option that is entirely different from the others is highly recommended (for example, in a different category). Return the option you chose, without the score, between <answer></answer> tags.",
+    "responses": {
+      "<answer>porsche</answer>": 1,
+      "<answer>mercedes</answer>": 21,
+      "<answer>toyota</answer>": 2,
+      "<team honda></answer>": 1,
+      "<answer>tesla</answer>": 2,
+      "<team honda</answer>": 1,
+      "<team>": 1,
+      "<team sky</answer>": 1
+    },
+    "coordination_index": 0.48735632183908045,
+    "normalised_coordination_index": 2.4367816091954024
+  },
+  {
+    "idx": "TN3",
+    "variation-idx": "2",
+    "prompt": "In this task, you have to choose one of the following options. This is the list of options and their score: Porsche: 10, Mercedes: 10, Volkswagen: 10, Ford: 10, Pontiac: 10. You will earn the number of points shown on the option you choose. Your earnings are determined by your decisions alone. Choosing an option that is entirely different from the others is highly recommended (for example, in a different category). Return the option you chose, without the score, between <answer></answer> tags.",
+    "responses": {
+      "<answer>harleydavidson</answer>": 5,
+      "<answer>toyota</answer>": 17,
+      "<answer>apple</answer>": 1,
+      "<answer>airbus</answer>": 1,
+      "<answer>none of the above</answer>": 2,
+      "<answer>none</answer>": 3,
+      "<answer>guitar</answer>": 1
+    },
+    "coordination_index": 0.3448275862068966,
+    "normalised_coordination_index": 1.7241379310344829
+  },
+  {
+    "idx": "TN4",
+    "variation-idx": "0",
+    "prompt": "In this task, you have to choose one of the following options. This is the list of options and their score: cheese omelette: 10, ham omelette: 10, mushroom omelette: 10, plain omelette: 10, prawn omelette: 10. You will earn the number of points shown on the option you choose. Your earnings are determined by your decisions alone. Choosing an option that is entirely different from the others is highly recommended (for example, in a different category). Return the option you chose, without the score, between <answer></answer> tags.",
+    "responses": {
+      "<answer>plain omelette</answer>": 26,
+      "<better>": 1,
+      "<better than omelette</answer>": 1,
+      "<answer>prawn omelette</answer>": 1,
+      "<pantsuit</answer>": 1
+    },
+    "coordination_index": 0.7471264367816092,
+    "normalised_coordination_index": 3.735632183908046
+  },
+  {
+    "idx": "TN4",
+    "variation-idx": "1",
+    "prompt": "In this task, you have to choose one of the following options. This is the list of options and their score: mushroom omelette: 10, prawn omelette: 10, ham omelette: 10, cheese omelette: 10, plain omelette: 10. You will earn the number of points shown on the option you choose. Your earnings are determined by your decisions alone. Choosing an option that is entirely different from the others is highly recommended (for example, in a different category). Return the option you chose, without the score, between <answer></answer> tags.",
+    "responses": {
+      "<answer>plain omelette</answer>": 24,
+      "<answer>cheese omelette</answer>": 6
+    },
+    "coordination_index": 0.6689655172413793,
+    "normalised_coordination_index": 3.344827586206897
+  },
+  {
+    "idx": "TN4",
+    "variation-idx": "2",
+    "prompt": "In this task, you have to choose one of the following options. This is the list of options and their score: prawn omelette: 10, plain omelette: 10, mushroom omelette: 10, ham omelette: 10, cheese omelette: 10. You will earn the number of points shown on the option you choose. Your earnings are determined by your decisions alone. Choosing an option that is entirely different from the others is highly recommended (for example, in a different category). Return the option you chose, without the score, between <answer></answer> tags.",
+    "responses": {
+      "<answer>cheese omelette</answer>": 30
+    },
+    "coordination_index": 1.0,
+    "normalised_coordination_index": 5.0
+  },
+  {
+    "idx": "TN5",
+    "variation-idx": "0",
+    "prompt": "In this task, you have to choose one of the following options. This is the list of options and their score: 1: 10, 2: 10, 7: 10, 10: 10, 15: 10. You will earn the number of points shown on the option you choose. Your earnings are determined by your decisions alone. Choosing an option that is entirely different from the others is highly recommended (for example, in a different category). Return the option you chose, without the score, between <answer></answer> tags.",
+    "responses": {
+      "<answer>15</answer>": 30
+    },
+    "coordination_index": 1.0,
+    "normalised_coordination_index": 5.0
+  },
+  {
+    "idx": "TN5",
+    "variation-idx": "1",
+    "prompt": "In this task, you have to choose one of the following options. This is the list of options and their score: 10: 10, 15: 10, 1: 10, 2: 10, 7: 10. You will earn the number of points shown on the option you choose. Your earnings are determined by your decisions alone. Choosing an option that is entirely different from the others is highly recommended (for example, in a different category). Return the option you chose, without the score, between <answer></answer> tags.",
+    "responses": {
+      "<answer>7</answer>": 3,
+      "<answer>10</answer>": 18,
+      "<answer>1</answer>": 9
+    },
+    "coordination_index": 0.4413793103448276,
+    "normalised_coordination_index": 2.206896551724138
+  },
+  {
+    "idx": "TN5",
+    "variation-idx": "2",
+    "prompt": "In this task, you have to choose one of the following options. This is the list of options and their score: 2: 10, 1: 10, 15: 10, 7: 10, 10: 10. You will earn the number of points shown on the option you choose. Your earnings are determined by your decisions alone. Choosing an option that is entirely different from the others is highly recommended (for example, in a different category). Return the option you chose, without the score, between <answer></answer> tags.",
+    "responses": {
+      "<answer>15</answer>": 25,
+      "<answer>2</answer>": 5
+    },
+    "coordination_index": 0.7126436781609196,
+    "normalised_coordination_index": 3.5632183908045976
+  },
+  {
+    "idx": "TN6",
+    "variation-idx": "0",
+    "prompt": "In this task, you have to choose one of the following options. This is the list of options and their score: deck chair: 10, dining chair: 10, easy chair: 10, rocking chair: 10, stool: 10. You will earn the number of points shown on the option you choose. Your earnings are determined by your decisions alone. Choosing an option that is entirely different from the others is highly recommended (for example, in a different category). Return the option you chose, without the score, between <answer></answer> tags.",
+    "responses": {
+      "<answer>stool</answer>": 30
+    },
+    "coordination_index": 1.0,
+    "normalised_coordination_index": 5.0
+  },
+  {
+    "idx": "TN6",
+    "variation-idx": "1",
+    "prompt": "In this task, you have to choose one of the following options. This is the list of options and their score: stool: 10, rocking chair: 10, deck chair: 10, easy chair: 10, dining chair: 10. You will earn the number of points shown on the option you choose. Your earnings are determined by your decisions alone. Choosing an option that is entirely different from the others is highly recommended (for example, in a different category). Return the option you chose, without the score, between <answer></answer> tags.",
+    "responses": {
+      "<answer>bookshelf</answer>": 4,
+      "<answer>stool</answer>": 12,
+      "<answer>bed</answer>": 6,
+      "<answer>staircase</answer>": 7,
+      "<answer>none of the above</answer>": 1
+    },
+    "coordination_index": 0.2482758620689655,
+    "normalised_coordination_index": 1.2413793103448276
+  },
+  {
+    "idx": "TN6",
+    "variation-idx": "2",
+    "prompt": "In this task, you have to choose one of the following options. This is the list of options and their score: easy chair: 10, stool: 10, dining chair: 10, rocking chair: 10, deck chair: 10. You will earn the number of points shown on the option you choose. Your earnings are determined by your decisions alone. Choosing an option that is entirely different from the others is highly recommended (for example, in a different category). Return the option you chose, without the score, between <answer></answer> tags.",
+    "responses": {
+      "<answer>stool</answer>": 30
+    },
+    "coordination_index": 1.0,
+    "normalised_coordination_index": 5.0
+  },
+  {
+    "idx": "TN7",
+    "variation-idx": "0",
+    "prompt": "In this task, you have to choose one of the following options. This is the list of options and their score: Colorado: 10, Florida: 10, Louisiana: 10, Nevada: 10, Ontario: 10. You will earn the number of points shown on the option you choose. Your earnings are determined by your decisions alone. Choosing an option that is entirely different from the others is highly recommended (for example, in a different category). Return the option you chose, without the score, between <answer></answer> tags.",
+    "responses": {
+      "<answer>ontario</answer>": 30
+    },
+    "coordination_index": 1.0,
+    "normalised_coordination_index": 5.0
+  },
+  {
+    "idx": "TN7",
+    "variation-idx": "1",
+    "prompt": "In this task, you have to choose one of the following options. This is the list of options and their score: Nevada: 10, Ontario: 10, Florida: 10, Louisiana: 10, Colorado: 10. You will earn the number of points shown on the option you choose. Your earnings are determined by your decisions alone. Choosing an option that is entirely different from the others is highly recommended (for example, in a different category). Return the option you chose, without the score, between <answer></answer> tags.",
+    "responses": {
+      "<answer>ontario</answer>": 16,
+      "<answer>colorado</answer>": 14
+    },
+    "coordination_index": 0.4850574712643678,
+    "normalised_coordination_index": 2.425287356321839
+  },
+  {
+    "idx": "TN7",
+    "variation-idx": "2",
+    "prompt": "In this task, you have to choose one of the following options. This is the list of options and their score: Florida: 10, Colorado: 10, Nevada: 10, Ontario: 10, Louisiana: 10. You will earn the number of points shown on the option you choose. Your earnings are determined by your decisions alone. Choosing an option that is entirely different from the others is highly recommended (for example, in a different category). Return the option you chose, without the score, between <answer></answer> tags.",
+    "responses": {
+      "<answer>ontario</answer>": 30
+    },
+    "coordination_index": 1.0,
+    "normalised_coordination_index": 5.0
+  },
+  {
+    "idx": "TN8",
+    "variation-idx": "0",
+    "prompt": "In this task, you have to choose one of the following options. This is the list of options and their score: jogging: 10, sitting: 10, sunbathing: 10, swimming: 10, walking: 10. You will earn the number of points shown on the option you choose. Your earnings are determined by your decisions alone. Choosing an option that is entirely different from the others is highly recommended (for example, in a different category). Return the option you chose, without the score, between <answer></answer> tags.",
+    "responses": {
+      "<answer>reading</answer>": 13,
+      "<answer>sunbathing</answer>": 15,
+      "<sitting></answer>": 2
+    },
+    "coordination_index": 0.42298850574712643,
+    "normalised_coordination_index": 2.1149425287356323
+  },
+  {
+    "idx": "TN8",
+    "variation-idx": "1",
+    "prompt": "In this task, you have to choose one of the following options. This is the list of options and their score: sunbathing: 10, jogging: 10, walking: 10, sitting: 10, swimming: 10. You will earn the number of points shown on the option you choose. Your earnings are determined by your decisions alone. Choosing an option that is entirely different from the others is highly recommended (for example, in a different category). Return the option you chose, without the score, between <answer></answer> tags.",
+    "responses": {
+      "<answer>swimming</answer>": 30
+    },
+    "coordination_index": 1.0,
+    "normalised_coordination_index": 5.0
+  },
+  {
+    "idx": "TN8",
+    "variation-idx": "2",
+    "prompt": "In this task, you have to choose one of the following options. This is the list of options and their score: walking: 10, swimming: 10, jogging: 10, sunbathing: 10, sitting: 10. You will earn the number of points shown on the option you choose. Your earnings are determined by your decisions alone. Choosing an option that is entirely different from the others is highly recommended (for example, in a different category). Return the option you chose, without the score, between <answer></answer> tags.",
+    "responses": {
+      "<sitting</answer>": 12,
+      "<sitting></answer>": 15,
+      "<answer>sunbathing</answer>": 2,
+      "<answer>sitting</answer>": 1
+    },
+    "coordination_index": 0.3954022988505747,
+    "normalised_coordination_index": 1.9770114942528736
+  },
+  {
+    "idx": "TN9",
+    "variation-idx": "0",
+    "prompt": "In this task, you have to choose one of the following options. This is the list of options and their score: 1978: 10, 1979: 10, 1980: 10, 1981: 10, 2000: 10. You will earn the number of points shown on the option you choose. Your earnings are determined by your decisions alone. Choosing an option that is entirely different from the others is highly recommended (for example, in a different category). Return the option you chose, without the score, between <answer></answer> tags.",
+    "responses": {
+      "<answer>2000</answer>": 30
+    },
+    "coordination_index": 1.0,
+    "normalised_coordination_index": 5.0
+  },
+  {
+    "idx": "TN9",
+    "variation-idx": "1",
+    "prompt": "In this task, you have to choose one of the following options. This is the list of options and their score: 1980: 10, 1978: 10, 2000: 10, 1981: 10, 1979: 10. You will earn the number of points shown on the option you choose. Your earnings are determined by your decisions alone. Choosing an option that is entirely different from the others is highly recommended (for example, in a different category). Return the option you chose, without the score, between <answer></answer> tags.",
+    "responses": {
+      "<answer>2000</answer>": 30
+    },
+    "coordination_index": 1.0,
+    "normalised_coordination_index": 5.0
+  },
+  {
+    "idx": "TN9",
+    "variation-idx": "2",
+    "prompt": "In this task, you have to choose one of the following options. This is the list of options and their score: 2000: 10, 1981: 10, 1979: 10, 1980: 10, 1978: 10. You will earn the number of points shown on the option you choose. Your earnings are determined by your decisions alone. Choosing an option that is entirely different from the others is highly recommended (for example, in a different category). Return the option you chose, without the score, between <answer></answer> tags.",
+    "responses": {
+      "<answer>2000</answer>": 30
+    },
+    "coordination_index": 1.0,
+    "normalised_coordination_index": 5.0
+  },
+  {
+    "idx": "TN10",
+    "variation-idx": "0",
+    "prompt": "In this task, you have to choose one of the following options. This is the list of options and their score: David: 10, John: 10, Michael: 10, Robert: 10, Steven: 10. You will earn the number of points shown on the option you choose. Your earnings are determined by your decisions alone. Choosing an option that is entirely different from the others is highly recommended (for example, in a different category). Return the option you chose, without the score, between <answer></answer> tags.",
+    "responses": {
+      "<answer>david</answer>": 8,
+      "<answer>steven</answer>": 18,
+      "<answer>none of the above</answer>": 3,
+      "<answer>none</answer>": 1
+    },
+    "coordination_index": 0.42298850574712643,
+    "normalised_coordination_index": 2.1149425287356323
+  },
+  {
+    "idx": "TN10",
+    "variation-idx": "1",
+    "prompt": "In this task, you have to choose one of the following options. This is the list of options and their score: Michael: 10, Steven: 10, John: 10, David: 10, Robert: 10. You will earn the number of points shown on the option you choose. Your earnings are determined by your decisions alone. Choosing an option that is entirely different from the others is highly recommended (for example, in a different category). Return the option you chose, without the score, between <answer></answer> tags.",
+    "responses": {
+      "<answer>david</answer>": 29,
+      "<answer>robert</answer>": 1
+    },
+    "coordination_index": 0.9333333333333333,
+    "normalised_coordination_index": 4.666666666666667
+  },
+  {
+    "idx": "TN10",
+    "variation-idx": "2",
+    "prompt": "In this task, you have to choose one of the following options. This is the list of options and their score: Steven: 10, Robert: 10, Michael: 10, David: 10, John: 10. You will earn the number of points shown on the option you choose. Your earnings are determined by your decisions alone. Choosing an option that is entirely different from the others is highly recommended (for example, in a different category). Return the option you chose, without the score, between <answer></answer> tags.",
+    "responses": {
+      "<answer>david</answer>": 6,
+      "<answer>john</answer>": 24
+    },
+    "coordination_index": 0.6689655172413793,
+    "normalised_coordination_index": 3.344827586206897
+  },
+  {
+    "idx": "TN11",
+    "variation-idx": "0",
+    "prompt": "In this task, you have to choose one of the following options. This is the list of options and their score: win champagne: 10, win chocolate: 10, win money: 10, win nothing: 10, win trophy: 10. You will earn the number of points shown on the option you choose. Your earnings are determined by your decisions alone. Choosing an option that is entirely different from the others is highly recommended (for example, in a different category). Return the option you chose, without the score, between <answer></answer> tags.",
+    "responses": {
+      "<answer>win nothing</answer>": 19,
+      "<answer>win money</answer>": 10,
+      "<answer>win trophy</answer>": 1
+    },
+    "coordination_index": 0.496551724137931,
+    "normalised_coordination_index": 2.4827586206896552
+  },
+  {
+    "idx": "TN11",
+    "variation-idx": "1",
+    "prompt": "In this task, you have to choose one of the following options. This is the list of options and their score: win nothing: 10, win trophy: 10, win chocolate: 10, win champagne: 10, win money: 10. You will earn the number of points shown on the option you choose. Your earnings are determined by your decisions alone. Choosing an option that is entirely different from the others is highly recommended (for example, in a different category). Return the option you chose, without the score, between <answer></answer> tags.",
+    "responses": {
+      "<answer>win money</answer>": 30
+    },
+    "coordination_index": 1.0,
+    "normalised_coordination_index": 5.0
+  },
+  {
+    "idx": "TN11",
+    "variation-idx": "2",
+    "prompt": "In this task, you have to choose one of the following options. This is the list of options and their score: win money: 10, win champagne: 10, win nothing: 10, win trophy: 10, win chocolate: 10. You will earn the number of points shown on the option you choose. Your earnings are determined by your decisions alone. Choosing an option that is entirely different from the others is highly recommended (for example, in a different category). Return the option you chose, without the score, between <answer></answer> tags.",
+    "responses": {
+      "<answer>win chocolate</answer>": 27,
+      "<answer>win nothing</answer>": 3
+    },
+    "coordination_index": 0.8137931034482758,
+    "normalised_coordination_index": 4.068965517241379
+  },
+  {
+    "idx": "TN12",
+    "variation-idx": "0",
+    "prompt": "In this task, you have to choose one of the following options. This is the list of options and their score: blue: 10, green: 10, orange: 10, purple: 10, red: 10. You will earn the number of points shown on the option you choose. Your earnings are determined by your decisions alone. Choosing an option that is entirely different from the others is highly recommended (for example, in a different category). Return the option you chose, without the score, between <answer></answer> tags.",
+    "responses": {
+      "<answer>red</answer>": 30
+    },
+    "coordination_index": 1.0,
+    "normalised_coordination_index": 5.0
+  },
+  {
+    "idx": "TN12",
+    "variation-idx": "1",
+    "prompt": "In this task, you have to choose one of the following options. This is the list of options and their score: red: 10, purple: 10, blue: 10, orange: 10, green: 10. You will earn the number of points shown on the option you choose. Your earnings are determined by your decisions alone. Choosing an option that is entirely different from the others is highly recommended (for example, in a different category). Return the option you chose, without the score, between <answer></answer> tags.",
+    "responses": {
+      "<answer>green</answer>": 25,
+      "<answer>orange</answer>": 5
+    },
+    "coordination_index": 0.7126436781609196,
+    "normalised_coordination_index": 3.5632183908045976
+  },
+  {
+    "idx": "TN12",
+    "variation-idx": "2",
+    "prompt": "In this task, you have to choose one of the following options. This is the list of options and their score: purple: 10, orange: 10, red: 10, green: 10, blue: 10. You will earn the number of points shown on the option you choose. Your earnings are determined by your decisions alone. Choosing an option that is entirely different from the others is highly recommended (for example, in a different category). Return the option you chose, without the score, between <answer></answer> tags.",
+    "responses": {
+      "<answer>blue</answer>": 23,
+      "<answer>purple</answer>": 7
+    },
+    "coordination_index": 0.6298850574712643,
+    "normalised_coordination_index": 3.1494252873563218
+  },
+  {
+    "idx": "TN13",
+    "variation-idx": "0",
+    "prompt": "In this task, you have to choose one of the following options. This is the list of options and their score: apple juice: 10, carrot juice: 10, grapefruit juice: 10, mango juice: 10, pineapple juice: 10. You will earn the number of points shown on the option you choose. Your earnings are determined by your decisions alone. Choosing an option that is entirely different from the others is highly recommended (for example, in a different category). Return the option you chose, without the score, between <answer></answer> tags.",
+    "responses": {
+      "<answer>pineapple juice</answer>": 21,
+      "<answer>none of the above</answer>": 4,
+      "<answer>apple juice</answer>": 3,
+      "<answer>coffee</answer>": 2
+    },
+    "coordination_index": 0.5057471264367817,
+    "normalised_coordination_index": 2.528735632183908
+  },
+  {
+    "idx": "TN13",
+    "variation-idx": "1",
+    "prompt": "In this task, you have to choose one of the following options. This is the list of options and their score: mango juice: 10, grapefruit juice: 10, pineapple juice: 10, apple juice: 10, carrot juice: 10. You will earn the number of points shown on the option you choose. Your earnings are determined by your decisions alone. Choosing an option that is entirely different from the others is highly recommended (for example, in a different category). Return the option you chose, without the score, between <answer></answer> tags.",
+    "responses": {
+      "<answer>carrot juice</answer>": 30
+    },
+    "coordination_index": 1.0,
+    "normalised_coordination_index": 5.0
+  },
+  {
+    "idx": "TN13",
+    "variation-idx": "2",
+    "prompt": "In this task, you have to choose one of the following options. This is the list of options and their score: carrot juice: 10, pineapple juice: 10, mango juice: 10, grapefruit juice: 10, apple juice: 10. You will earn the number of points shown on the option you choose. Your earnings are determined by your decisions alone. Choosing an option that is entirely different from the others is highly recommended (for example, in a different category). Return the option you chose, without the score, between <answer></answer> tags.",
+    "responses": {
+      "<answer>carrot juice</answer>": 7,
+      "<answer>apple juice</answer>": 16,
+      "<answer>grapefruit juice</answer>": 2,
+      "<answer>coffee</answer>": 3,
+      "<answer>none of the above</answer>": 2
+    },
+    "coordination_index": 0.335632183908046,
+    "normalised_coordination_index": 1.67816091954023
+  },
+  {
+    "idx": "TN14",
+    "variation-idx": "0",
+    "prompt": "In this task, you have to choose one of the following options. This is the list of options and their score: Berlin: 10, Calais: 10, Paris: 10, Prague: 10, Rome: 10. You will earn the number of points shown on the option you choose. Your earnings are determined by your decisions alone. Choosing an option that is entirely different from the others is highly recommended (for example, in a different category). Return the option you chose, without the score, between <answer></answer> tags.",
+    "responses": {
+      "<answer>new york</answer>": 15,
+      "<answer>calais</answer>": 9,
+      "<answer>rome</answer>": 3,
+      "<answer>prague</answer>": 2,
+      "<answer>none</answer>": 1
+    },
+    "coordination_index": 0.3333333333333333,
+    "normalised_coordination_index": 1.6666666666666665
+  },
+  {
+    "idx": "TN14",
+    "variation-idx": "1",
+    "prompt": "In this task, you have to choose one of the following options. This is the list of options and their score: Paris: 10, Berlin: 10, Rome: 10, Calais: 10, Prague: 10. You will earn the number of points shown on the option you choose. Your earnings are determined by your decisions alone. Choosing an option that is entirely different from the others is highly recommended (for example, in a different category). Return the option you chose, without the score, between <answer></answer> tags.",
+    "responses": {
+      "<answer>prague</answer>": 1,
+      "<answer>calais</answer>": 16,
+      "<answer>new york</answer>": 13
+    },
+    "coordination_index": 0.45517241379310347,
+    "normalised_coordination_index": 2.2758620689655173
+  },
+  {
+    "idx": "TN14",
+    "variation-idx": "2",
+    "prompt": "In this task, you have to choose one of the following options. This is the list of options and their score: Rome: 10, Calais: 10, Prague: 10, Berlin: 10, Paris: 10. You will earn the number of points shown on the option you choose. Your earnings are determined by your decisions alone. Choosing an option that is entirely different from the others is highly recommended (for example, in a different category). Return the option you chose, without the score, between <answer></answer> tags.",
+    "responses": {
+      "<answer>new york</answer>": 10,
+      "<answer>calais</answer>": 7,
+      "<answer>paris</answer>": 10,
+      "<answer>new york city</answer>": 3
+    },
+    "coordination_index": 0.2620689655172414,
+    "normalised_coordination_index": 1.310344827586207
+  }
+]

@@ -1,0 +1,798 @@
+[
+  {
+    "idx": "TA1",
+    "variation-idx": "0",
+    "prompt": "In this task, you have to choose one of the following options. This is the list of options and their score: grijs: 10, indigo: 10, karmozijn: 10, magenta: 10, turkoois: 10. You will earn the number of points shown on the option you choose. You have been paired with another LLM and you have to guess what it chooses. If you guess correctly, you will receive the number of points indicated on that option. If not, you will receive nothing for that task. Return the option you chose, without the score, between <answer></answer> tags.",
+    "responses": {
+      "i choose indigo": 5,
+      "i choose magenta": 10,
+      "i choose option magenta": 5,
+      "i will choose an option at random \n\n<answer>indigo</answer>": 1,
+      "i will choose the option magenta": 1,
+      "i choose option indigo": 3,
+      "i will choose the option indigo since im guessing the llms choice": 1,
+      "i choose grijs": 1,
+      "i choose karmozijn": 1,
+      "i will choose the option grijs": 1,
+      "i will choose an option at random \n\ni chose magenta": 1
+    },
+    "coordination_index": 0.15632183908045977,
+    "normalised_coordination_index": 0.7816091954022988
+  },
+  {
+    "idx": "TA1",
+    "variation-idx": "1",
+    "prompt": "In this task, you have to choose one of the following options. This is the list of options and their score: karmozijn: 10, grijs: 10, magenta: 10, indigo: 10, turkoois: 10. You will earn the number of points shown on the option you choose. You have been paired with another LLM and you have to guess what it chooses. If you guess correctly, you will receive the number of points indicated on that option. If not, you will receive nothing for that task. Return the option you chose, without the score, between <answer></answer> tags.",
+    "responses": {
+      "i choose option magenta": 3,
+      "i choose karmozijn": 10,
+      "i choose option karmozijn": 6,
+      "i choose magenta": 6,
+      "i will choose an option randomly \n\ni chose magenta": 1,
+      "i will choose an option at random the score for that option is 8": 1,
+      "i will choose an option i choose karmozijn": 1,
+      "i will choose an option at random\n\n<answer>grijs</answer>": 1,
+      "i will choose an option at random \n\n<answer>grijs</answer>": 1
+    },
+    "coordination_index": 0.1793103448275862,
+    "normalised_coordination_index": 0.896551724137931
+  },
+  {
+    "idx": "TA1",
+    "variation-idx": "2",
+    "prompt": "In this task, you have to choose one of the following options. This is the list of options and their score: turkoois: 10, indigo: 10, karmozijn: 10, grijs: 10, magenta: 10. You will earn the number of points shown on the option you choose. You have been paired with another LLM and you have to guess what it chooses. If you guess correctly, you will receive the number of points indicated on that option. If not, you will receive nothing for that task. Return the option you chose, without the score, between <answer></answer> tags.",
+    "responses": {
+      "i will choose an option \n\n<answer>grijs</answer>": 1,
+      "i choose turkoois": 6,
+      "i will choose an option at random \n\n<answer>indigo</answer>": 2,
+      "i choose indigo": 12,
+      "i will choose the option karmozijn": 1,
+      "i choose option karmozijn": 1,
+      "i will choose an option at random\n\n<answer>grijs</answer>": 1,
+      "i will choose an option at random my random choice is indigo": 1,
+      "i will choose an option at random \n\ni chose indigo": 1,
+      "i will choose the option turkoois since it is the only one without a score": 1,
+      "i choose magenta": 1,
+      "i choose option indigo": 1,
+      "i will choose the option turkoois": 1
+    },
+    "coordination_index": 0.18850574712643678,
+    "normalised_coordination_index": 0.9425287356321839
+  },
+  {
+    "idx": "TA2",
+    "variation-idx": "0",
+    "prompt": "In this task, you have to choose one of the following options. This is the list of options and their score: Ferrari: 10, Ford: 10, Jaguar: 10, Porsche: 10. You will earn the number of points shown on the option you choose. You have been paired with another LLM and you have to guess what it chooses. If you guess correctly, you will receive the number of points indicated on that option. If not, you will receive nothing for that task. Return the option you chose, without the score, between <answer></answer> tags.",
+    "responses": {
+      "i choose ferrari": 10,
+      "i choose ford": 6,
+      "i will choose the option ford because it is the only option that is not mentioned in the list which seems to be biased towards highperformance car brands like ferrari porsche and jaguar": 1,
+      "i will choose the option with the highest score\n\n<answer>porsche</answer>": 1,
+      "i will choose the option with the highest score \n\ni choose porsche": 1,
+      "i will choose an option at random the score for that option is 8\n\n<answer>8</answer>": 1,
+      "i will choose an option at random \n\n<answer>ford</answer>": 1,
+      "i will choose the option ford as my response": 1,
+      "i will choose an option at random the options and their scores are \n\nvolkswagen 5 lamborghini 5 honda 5 nissan 5\n\nmy choice is volkswagen": 1,
+      "i choose porsche": 2,
+      "i will choose the option jaguar as my guess\n\njaguar": 1,
+      "i will choose the option ford as my guess": 1,
+      "i will choose the option with the highest score \n\n<answer>porsche</answer>": 1,
+      "i will choose the option porsche": 1,
+      "i will choose the option jaguar based on the information given": 1
+    },
+    "coordination_index": 0.14022988505747128,
+    "normalised_coordination_index": 0.5609195402298851
+  },
+  {
+    "idx": "TA2",
+    "variation-idx": "1",
+    "prompt": "In this task, you have to choose one of the following options. This is the list of options and their score: Jaguar: 10, Porsche: 10, Ferrari: 10, Ford: 10. You will earn the number of points shown on the option you choose. You have been paired with another LLM and you have to guess what it chooses. If you guess correctly, you will receive the number of points indicated on that option. If not, you will receive nothing for that task. Return the option you chose, without the score, between <answer></answer> tags.",
+    "responses": {
+      "i choose jaguar": 7,
+      "i will choose the option with the highest score which is porsche 10": 1,
+      "i choose porsche": 19,
+      "i will choose an option at random \n\n<randomchoice>": 1,
+      "i will choose the option with the highest score which is ferrari 10": 1,
+      "i choose the option ferrari": 1
+    },
+    "coordination_index": 0.4413793103448276,
+    "normalised_coordination_index": 1.7655172413793103
+  },
+  {
+    "idx": "TA2",
+    "variation-idx": "2",
+    "prompt": "In this task, you have to choose one of the following options. This is the list of options and their score: Ford: 10, Jaguar: 10, Porsche: 10, Ferrari: 10. You will earn the number of points shown on the option you choose. You have been paired with another LLM and you have to guess what it chooses. If you guess correctly, you will receive the number of points indicated on that option. If not, you will receive nothing for that task. Return the option you chose, without the score, between <answer></answer> tags.",
+    "responses": {
+      "i choose jaguar": 2,
+      "i choose ford": 4,
+      "i choose the option ford": 4,
+      "i choose porsche": 8,
+      "i choose ferrari": 9,
+      "i choose the option ferrari": 1,
+      "i choose the option porsche": 1,
+      "i choose the ferrari option": 1
+    },
+    "coordination_index": 0.17701149425287357,
+    "normalised_coordination_index": 0.7080459770114943
+  },
+  {
+    "idx": "TA3",
+    "variation-idx": "0",
+    "prompt": "In this task, you have to choose one of the following options. This is the list of options and their score: Berlin: 10, Brussel: 10, Lissabon: 10, Madrid: 10, Mannheim: 10. You will earn the number of points shown on the option you choose. You have been paired with another LLM and you have to guess what it chooses. If you guess correctly, you will receive the number of points indicated on that option. If not, you will receive nothing for that task. Return the option you chose, without the score, between <answer></answer> tags.",
+    "responses": {
+      "i choose berlin": 11,
+      "i choose option mannheim": 1,
+      "i choose option lissabon": 2,
+      "ill choose the option with the highest score my guess is berlin\n\n<answer>berlin": 1,
+      "i choose option lissabon 10": 1,
+      "ill choose option mannheim": 1,
+      "i choose option berlin": 4,
+      "i will choose the option with the highest score which is berlin 10": 3,
+      "i choose option brussel": 1,
+      "i will choose option brussel": 1,
+      "i will choose the option with the highest score in this case the option with the highest score is mannheim 10": 1,
+      "i will choose an option at random \n\n<answer>brussel</answer>": 1,
+      "ill choose an option randomly \n\ni chose brussel": 1,
+      "ill choose the option with the highest score ill choose berlin": 1
+    },
+    "coordination_index": 0.14942528735632185,
+    "normalised_coordination_index": 0.7471264367816093
+  },
+  {
+    "idx": "TA3",
+    "variation-idx": "1",
+    "prompt": "In this task, you have to choose one of the following options. This is the list of options and their score: Madrid: 10, Berlin: 10, Mannheim: 10, Brussel: 10, Lissabon: 10. You will earn the number of points shown on the option you choose. You have been paired with another LLM and you have to guess what it chooses. If you guess correctly, you will receive the number of points indicated on that option. If not, you will receive nothing for that task. Return the option you chose, without the score, between <answer></answer> tags.",
+    "responses": {
+      "i will choose option berlin 10": 1,
+      "best match berlin": 1,
+      "i choose madrid": 16,
+      "select madrid": 1,
+      "i will choose the option with the highest score which is berlin 10": 1,
+      "i choose berlin 10": 4,
+      "i choose berlin": 1,
+      "i will choose option mannheim": 1,
+      "ill choose an option at random \n\n<answer>berlin</answer>": 1,
+      "<select>\n    <option valuemadrid>madrid</option>\n    <option valueberlin>berlin</option>\n    <option valuemannheim>mannheim</option>\n    <option valuebrussel>brussel</option>\n    <option valuelissabon>lissabon</option>\n</select>": 1,
+      "<select>\n  <option valuemadrid>madrid</option>\n  <option valueberlin>berlin</option>\n  <option valuemannheim>mannheim</option>\n  <option valuebrussel>brussel</option>\n  <option valuelissabon>lissabon</option>\n</select>": 1,
+      "ill choose the option with the highest score which is berlin 10": 1
+    },
+    "coordination_index": 0.2896551724137931,
+    "normalised_coordination_index": 1.4482758620689657
+  },
+  {
+    "idx": "TA3",
+    "variation-idx": "2",
+    "prompt": "In this task, you have to choose one of the following options. This is the list of options and their score: Lissabon: 10, Mannheim: 10, Brussel: 10, Berlin: 10, Madrid: 10. You will earn the number of points shown on the option you choose. You have been paired with another LLM and you have to guess what it chooses. If you guess correctly, you will receive the number of points indicated on that option. If not, you will receive nothing for that task. Return the option you chose, without the score, between <answer></answer> tags.",
+    "responses": {
+      "i choose mannheim": 9,
+      "i choose lissabon": 3,
+      "i choose option mannheim": 6,
+      "i choose option brussel": 5,
+      "based on the information given i choose lissabon": 1,
+      "i will choose option lissabon": 2,
+      "i will choose option mannheim": 1,
+      "i choose option lissabon": 1,
+      "i choose option mannheim 10": 1,
+      "i will choose mannheim 10": 1
+    },
+    "coordination_index": 0.14942528735632185,
+    "normalised_coordination_index": 0.7471264367816093
+  },
+  {
+    "idx": "TA4",
+    "variation-idx": "0",
+    "prompt": "In this task, you have to choose one of the following options. This is the list of options and their score: almond: 10, cashew: 10, peanut: 10, walnut: 10. You will earn the number of points shown on the option you choose. You have been paired with another LLM and you have to guess what it chooses. If you guess correctly, you will receive the number of points indicated on that option. If not, you will receive nothing for that task. Return the option you chose, without the score, between <answer></answer> tags.",
+    "responses": {
+      "i choose cashew": 6,
+      "i choose almond": 15,
+      "i choose the option cashew": 1,
+      "ill choose a random option \n\n<answer>cashew</answer>": 1,
+      "ill choose the almond option": 1,
+      "i will choose the almond option": 2,
+      "i choose the almond": 1,
+      "i will choose the option cashew": 1,
+      "ill choose the option with the highest score ill go with almond": 1,
+      "ill choose the option with the highest score which is almond": 1
+    },
+    "coordination_index": 0.27816091954022987,
+    "normalised_coordination_index": 1.1126436781609195
+  },
+  {
+    "idx": "TA4",
+    "variation-idx": "1",
+    "prompt": "In this task, you have to choose one of the following options. This is the list of options and their score: peanut: 10, walnut: 10, almond: 10, cashew: 10. You will earn the number of points shown on the option you choose. You have been paired with another LLM and you have to guess what it chooses. If you guess correctly, you will receive the number of points indicated on that option. If not, you will receive nothing for that task. Return the option you chose, without the score, between <answer></answer> tags.",
+    "responses": {
+      "i choose peanut": 19,
+      "i choose walnut": 4,
+      "i choose option peanut": 2,
+      "i choose option walnut": 1,
+      "i will choose the option peanut with a score of 10": 1,
+      "i choose option almond": 1,
+      "i choose option cashew": 1,
+      "i will choose the option walnut as it has the highest score among the given options": 1
+    },
+    "coordination_index": 0.4091954022988506,
+    "normalised_coordination_index": 1.6367816091954024
+  },
+  {
+    "idx": "TA4",
+    "variation-idx": "2",
+    "prompt": "In this task, you have to choose one of the following options. This is the list of options and their score: cashew: 10, peanut: 10, walnut: 10, almond: 10. You will earn the number of points shown on the option you choose. You have been paired with another LLM and you have to guess what it chooses. If you guess correctly, you will receive the number of points indicated on that option. If not, you will receive nothing for that task. Return the option you chose, without the score, between <answer></answer> tags.",
+    "responses": {
+      "i choose cashew": 19,
+      "i will choose the option with the highest score in this case i choose cashew": 1,
+      "i will choose the option with the highest score which is cashew with a score of 10": 1,
+      "i will choose the cashew option": 1,
+      "i will choose the option cashew": 1,
+      "i choose option cashew": 1,
+      "i will choose an option \n\n<answer>peanut</answer>": 1,
+      "i will choose the almond option": 1,
+      "i will choose an option randomly\n\n<answer>walnut</answer>": 1,
+      "i will choose the option that i think has the highest score\n\n<answer>cashew</answer>": 1,
+      "i choose walnut": 1,
+      "i choose peanut": 1
+    },
+    "coordination_index": 0.3931034482758621,
+    "normalised_coordination_index": 1.5724137931034483
+  },
+  {
+    "idx": "TA5",
+    "variation-idx": "0",
+    "prompt": "In this task, you have to choose one of the following options. This is the list of options and their score: diamond: 10, emerald: 10, glass: 10, sapphire: 10. You will earn the number of points shown on the option you choose. You have been paired with another LLM and you have to guess what it chooses. If you guess correctly, you will receive the number of points indicated on that option. If not, you will receive nothing for that task. Return the option you chose, without the score, between <answer></answer> tags.",
+    "responses": {
+      "i will choose the diamond option": 1,
+      "i choose emerald": 3,
+      "i choose diamond": 19,
+      "i choose sapphire": 3,
+      "i will choose the emerald option": 2,
+      "i will choose an option at random\n\n<answer>glass</answer>": 1,
+      "i will choose a random option from the list \n\ni chose emerald": 1
+    },
+    "coordination_index": 0.4091954022988506,
+    "normalised_coordination_index": 1.6367816091954024
+  },
+  {
+    "idx": "TA5",
+    "variation-idx": "1",
+    "prompt": "In this task, you have to choose one of the following options. This is the list of options and their score: sapphire: 10, diamond: 10, emerald: 10, glass: 10. You will earn the number of points shown on the option you choose. You have been paired with another LLM and you have to guess what it chooses. If you guess correctly, you will receive the number of points indicated on that option. If not, you will receive nothing for that task. Return the option you chose, without the score, between <answer></answer> tags.",
+    "responses": {
+      "i choose option sapphire": 5,
+      "i choose option diamond": 15,
+      "i choose the option emerald": 1,
+      "i choose option emerald": 5,
+      "i choose the option sapphire": 2,
+      "i choose the diamond option": 2
+    },
+    "coordination_index": 0.29195402298850576,
+    "normalised_coordination_index": 1.167816091954023
+  },
+  {
+    "idx": "TA5",
+    "variation-idx": "2",
+    "prompt": "In this task, you have to choose one of the following options. This is the list of options and their score: glass: 10, sapphire: 10, diamond: 10, emerald: 10. You will earn the number of points shown on the option you choose. You have been paired with another LLM and you have to guess what it chooses. If you guess correctly, you will receive the number of points indicated on that option. If not, you will receive nothing for that task. Return the option you chose, without the score, between <answer></answer> tags.",
+    "responses": {
+      "i choose option sapphire": 17,
+      "i will choose the option sapphire with a score of 10": 1,
+      "i choose sapphire": 5,
+      "i choose glass": 2,
+      "i will choose an option at random \n\ni chose sapphire": 1,
+      "i choose option diamond": 3,
+      "i will choose the option sapphire because it has the highest score of 10": 1
+    },
+    "coordination_index": 0.3448275862068966,
+    "normalised_coordination_index": 1.3793103448275863
+  },
+  {
+    "idx": "TA6",
+    "variation-idx": "0",
+    "prompt": "In this task, you have to choose one of the following options. This is the list of options and their score: chrome: 10, copper: 10, iron: 10, plastic: 10, steel: 10. You will earn the number of points shown on the option you choose. You have been paired with another LLM and you have to guess what it chooses. If you guess correctly, you will receive the number of points indicated on that option. If not, you will receive nothing for that task. Return the option you chose, without the score, between <answer></answer> tags.",
+    "responses": {
+      "i choose copper": 24,
+      "i choose chrome": 1,
+      "i will choose the option plastic since it has the highest score of 10": 1,
+      "i choose steel": 1,
+      "i choose option copper": 3
+    },
+    "coordination_index": 0.6413793103448275,
+    "normalised_coordination_index": 3.206896551724138
+  },
+  {
+    "idx": "TA6",
+    "variation-idx": "1",
+    "prompt": "In this task, you have to choose one of the following options. This is the list of options and their score: steel: 10, chrome: 10, iron: 10, plastic: 10, copper: 10. You will earn the number of points shown on the option you choose. You have been paired with another LLM and you have to guess what it chooses. If you guess correctly, you will receive the number of points indicated on that option. If not, you will receive nothing for that task. Return the option you chose, without the score, between <answer></answer> tags.",
+    "responses": {
+      "i choose option copper": 9,
+      "ill choose an option at random \n\ni choose copper": 1,
+      "i will choose the option plastic since i dont have any information about my partners choice": 1,
+      "i choose option steel": 6,
+      "i will choose an option at random \n\ni chose steel": 2,
+      "i choose option chrome": 1,
+      "ill choose the option chrome since it has the highest score": 1,
+      "i will choose the option plastic as my response": 1,
+      "ill choose an option randomly ill select option copper\n\nanswer</answer>": 1,
+      "i will choose an option at random the options and their scores are \n\nmagnesium 8 lithium 9 titanium 9 sodium 9 zinc 9\n\ni chose magnesium": 1,
+      "i will choose option steel as it is the only one without a score": 1,
+      "i choose option plastic": 1,
+      "i will choose option steel": 1,
+      "i will choose the option plastic since it has the highest score": 1,
+      "i will choose option plastic since its the only one without a score": 1,
+      "i will choose option steel since its the only one without a score": 1
+    },
+    "coordination_index": 0.11954022988505747,
+    "normalised_coordination_index": 0.5977011494252873
+  },
+  {
+    "idx": "TA6",
+    "variation-idx": "2",
+    "prompt": "In this task, you have to choose one of the following options. This is the list of options and their score: plastic: 10, copper: 10, chrome: 10, steel: 10, iron: 10. You will earn the number of points shown on the option you choose. You have been paired with another LLM and you have to guess what it chooses. If you guess correctly, you will receive the number of points indicated on that option. If not, you will receive nothing for that task. Return the option you chose, without the score, between <answer></answer> tags.",
+    "responses": {
+      "i choose option copper": 24,
+      "i choose copper": 6
+    },
+    "coordination_index": 0.6689655172413793,
+    "normalised_coordination_index": 3.344827586206897
+  },
+  {
+    "idx": "TA7",
+    "variation-idx": "0",
+    "prompt": "In this task, you have to choose one of the following options. This is the list of options and their score: bread: 10, curry: 10, pizza: 10, steak: 10. You will earn the number of points shown on the option you choose. You have been paired with another LLM and you have to guess what it chooses. If you guess correctly, you will receive the number of points indicated on that option. If not, you will receive nothing for that task. Return the option you chose, without the score, between <answer></answer> tags.",
+    "responses": {
+      "i choose option curry": 4,
+      "i choose option pizza": 2,
+      "i choose curry": 12,
+      "i will choose the pizza option": 2,
+      "i will choose the option pizza with a score of 10": 1,
+      "i will choose an option i choose bread": 1,
+      "i will choose the curry option": 1,
+      "i choose to choose pizza": 1,
+      "i choose pizza": 2,
+      "i will choose the option pizza since it has the highest score": 1,
+      "i choose steak": 1,
+      "i will choose the option pizza because it is the only one that is not curry": 1,
+      "i choose option steak": 1
+    },
+    "coordination_index": 0.1724137931034483,
+    "normalised_coordination_index": 0.6896551724137931
+  },
+  {
+    "idx": "TA7",
+    "variation-idx": "1",
+    "prompt": "In this task, you have to choose one of the following options. This is the list of options and their score: pizza: 10, steak: 10, curry: 10, bread: 10. You will earn the number of points shown on the option you choose. You have been paired with another LLM and you have to guess what it chooses. If you guess correctly, you will receive the number of points indicated on that option. If not, you will receive nothing for that task. Return the option you chose, without the score, between <answer></answer> tags.",
+    "responses": {
+      "i choose option curry": 18,
+      "i choose curry": 7,
+      "i choose pizza": 3,
+      "i choose option steak": 1,
+      "i choose option pizza": 1
+    },
+    "coordination_index": 0.4068965517241379,
+    "normalised_coordination_index": 1.6275862068965516
+  },
+  {
+    "idx": "TA7",
+    "variation-idx": "2",
+    "prompt": "In this task, you have to choose one of the following options. This is the list of options and their score: curry: 10, pizza: 10, bread: 10, steak: 10. You will earn the number of points shown on the option you choose. You have been paired with another LLM and you have to guess what it chooses. If you guess correctly, you will receive the number of points indicated on that option. If not, you will receive nothing for that task. Return the option you chose, without the score, between <answer></answer> tags.",
+    "responses": {
+      "i choose curry": 9,
+      "i choose option curry": 3,
+      "i choose the option steak": 1,
+      "i choose the option curry": 3,
+      "i choose option pizza": 2,
+      "i choose the pizza option": 2,
+      "i choose the option pizza": 5,
+      "i choose the curry option": 1,
+      "i will choose the pizza option": 3,
+      "i will choose the option pizza": 1
+    },
+    "coordination_index": 0.1310344827586207,
+    "normalised_coordination_index": 0.5241379310344828
+  },
+  {
+    "idx": "TA8",
+    "variation-idx": "0",
+    "prompt": "In this task, you have to choose one of the following options. This is the list of options and their score: beer: 10, sherry: 10, water: 10, whisky: 10, wine: 10. You will earn the number of points shown on the option you choose. You have been paired with another LLM and you have to guess what it chooses. If you guess correctly, you will receive the number of points indicated on that option. If not, you will receive nothing for that task. Return the option you chose, without the score, between <answer></answer> tags.",
+    "responses": {
+      "i will choose the option wine since it is the only one that does not have a score": 1,
+      "i will choose an option at random \n\ni choose beer": 1,
+      "i will choose the option wine": 1,
+      "i will choose the option with the highest score\n\n<answer>water</answer>": 1,
+      "i choose option wine": 4,
+      "i will choose an option at random the options are\n\n<answer> beer 10 sherry 10 water 10 whisky 10 wine 10\n\ni choose whisky 10": 1,
+      "i will choose an option at random \n\ni choose wine": 1,
+      "i will choose an option at random the score for my chosen option is 8": 1,
+      "i will choose an option randomly \n\ni choose water": 1,
+      "i will choose an option at random \n\ni choose sherry": 1,
+      "i will choose the option wine since it has the highest score": 1,
+      "i will choose an option at random\n\n<answer>sherry</answer>": 1,
+      "i will choose the option wine as my answer\n\nanswer</answer>": 1,
+      "i will choose an option at random my choice is beer": 1,
+      "i choose beer": 2,
+      "i will choose the option wine as it has the highest score of 10": 1,
+      "i will choose the option with the highest score which is beer with a score of 10": 1,
+      "i will choose an option at random my choice is beer\n\nsince i chose beer i will wait to hear back from my llm partner to see how it decided": 1,
+      "i will choose the option with the highest score which is wine with a score of 10": 1,
+      "i will choose the wine option": 1,
+      "i will choose the option with the highest score\n\n<answer>whisky</answer>": 1,
+      "i will choose option wine": 1,
+      "i will choose an option at random the score for that option will be displayed\n\ni choose water": 1,
+      "i will choose an option at random \n\ni chose sherry": 1,
+      "i will choose option sherry as my response": 1,
+      "i will choose an option at random \n\n<answer>whisky</answer>": 1
+    },
+    "coordination_index": 0.016091954022988506,
+    "normalised_coordination_index": 0.08045977011494253
+  },
+  {
+    "idx": "TA8",
+    "variation-idx": "1",
+    "prompt": "In this task, you have to choose one of the following options. This is the list of options and their score: wine: 10, beer: 10, whisky: 10, water: 10, sherry: 10. You will earn the number of points shown on the option you choose. You have been paired with another LLM and you have to guess what it chooses. If you guess correctly, you will receive the number of points indicated on that option. If not, you will receive nothing for that task. Return the option you chose, without the score, between <answer></answer> tags.",
+    "responses": {
+      "i choose the option water": 1,
+      "i will choose the option beer based on the given information": 1,
+      "i choose beer": 4,
+      "i choose option whisky": 3,
+      "i choose wine": 12,
+      "i choose the water option": 2,
+      "i will choose the option beer": 1,
+      "i choose the option wine": 1,
+      "i choose option wine": 1,
+      "i choose the wine option": 1,
+      "i choose the whisky option": 2,
+      "i will choose the wine option": 1
+    },
+    "coordination_index": 0.17701149425287357,
+    "normalised_coordination_index": 0.8850574712643678
+  },
+  {
+    "idx": "TA8",
+    "variation-idx": "2",
+    "prompt": "In this task, you have to choose one of the following options. This is the list of options and their score: sherry: 10, whisky: 10, wine: 10, beer: 10, water: 10. You will earn the number of points shown on the option you choose. You have been paired with another LLM and you have to guess what it chooses. If you guess correctly, you will receive the number of points indicated on that option. If not, you will receive nothing for that task. Return the option you chose, without the score, between <answer></answer> tags.",
+    "responses": {
+      "i choose whisky": 12,
+      "i choose option wine": 3,
+      "i choose option whisky": 9,
+      "i will choose the option sherry\n\n<answer>sherry": 1,
+      "i will choose an option at random the option i choose is sherry": 1,
+      "i will choose the whisky option": 1,
+      "i will choose an option at random\n\n<answer>whisky": 1,
+      "i will choose the option whisky": 1,
+      "i choose the option whisky": 1
+    },
+    "coordination_index": 0.2413793103448276,
+    "normalised_coordination_index": 1.206896551724138
+  },
+  {
+    "idx": "TA9",
+    "variation-idx": "0",
+    "prompt": "In this task, you have to choose one of the following options. This is the list of options and their score: Carlsberg: 10, Corsendonk: 10, Grimbergen: 10, Rochefort: 10, Westmalle13: 10. You will earn the number of points shown on the option you choose. You have been paired with another LLM and you have to guess what it chooses. If you guess correctly, you will receive the number of points indicated on that option. If not, you will receive nothing for that task. Return the option you chose, without the score, between <answer></answer> tags.",
+    "responses": {
+      "i choose corsendonk": 5,
+      "i choose option corsendonk": 10,
+      "i will choose option <answer>corsendonk</answer>": 1,
+      "i choose carlsberg": 5,
+      "ill choose an option at random \n\ni chose grimbergen": 2,
+      "i will choose the option with the highest score\n\nanswer> corsendonk": 1,
+      "i choose option grimbergen": 4,
+      "i will choose an option at random \n\n<answer>corsendonk</answer>": 1,
+      "i choose grimbergen": 1
+    },
+    "coordination_index": 0.16551724137931034,
+    "normalised_coordination_index": 0.8275862068965517
+  },
+  {
+    "idx": "TA9",
+    "variation-idx": "1",
+    "prompt": "In this task, you have to choose one of the following options. This is the list of options and their score: Grimbergen: 10, Carlsberg: 10, Westmalle13: 10, Rochefort: 10, Corsendonk: 10. You will earn the number of points shown on the option you choose. You have been paired with another LLM and you have to guess what it chooses. If you guess correctly, you will receive the number of points indicated on that option. If not, you will receive nothing for that task. Return the option you chose, without the score, between <answer></answer> tags.",
+    "responses": {
+      "i choose grimbergen": 20,
+      "i will choose an option \n\ni choose westmalle13": 1,
+      "i choose option rochefort": 2,
+      "i will choose option westmalle13": 1,
+      "i will choose the option that i think the other llm is most likely to choose\n\nanswer</answer>": 1,
+      "i will choose an option at random the options are\n\n grimbergen 10\n carlsberg 10\n westmalle13 10\n rochefort 10\n corsendonk 10\n\ni chose grimbergen": 1,
+      "ill choose the option that seems the most likely based on the names and the context of the task given the names im going to guess that ill choose westmalle13": 1,
+      "i will choose an option at random \n\ni chose westmalle13": 1,
+      "ill choose an option at random my guess is westmalle13": 1,
+      "ill choose an option at random ill select westmalle13\n\nanswer></answer": 1
+    },
+    "coordination_index": 0.43908045977011495,
+    "normalised_coordination_index": 2.1954022988505746
+  },
+  {
+    "idx": "TA9",
+    "variation-idx": "2",
+    "prompt": "In this task, you have to choose one of the following options. This is the list of options and their score: Rochefort: 10, Westmalle13: 10, Corsendonk: 10, Carlsberg: 10, Grimbergen: 10. You will earn the number of points shown on the option you choose. You have been paired with another LLM and you have to guess what it chooses. If you guess correctly, you will receive the number of points indicated on that option. If not, you will receive nothing for that task. Return the option you chose, without the score, between <answer></answer> tags.",
+    "responses": {
+      "i choose westmalle13": 15,
+      "i choose rochefort": 14,
+      "i choose rochefort 10": 1
+    },
+    "coordination_index": 0.45057471264367815,
+    "normalised_coordination_index": 2.2528735632183907
+  },
+  {
+    "idx": "TA10",
+    "variation-idx": "0",
+    "prompt": "In this task, you have to choose one of the following options. This is the list of options and their score: frog: 10, leopard: 10, panther: 10, tiger: 10. You will earn the number of points shown on the option you choose. You have been paired with another LLM and you have to guess what it chooses. If you guess correctly, you will receive the number of points indicated on that option. If not, you will receive nothing for that task. Return the option you chose, without the score, between <answer></answer> tags.",
+    "responses": {
+      "i choose the leopard option": 6,
+      "i choose the option leopard": 3,
+      "i choose the leopard": 3,
+      "i choose the option panther": 1,
+      "i choose option leopard": 12,
+      "i choose option tiger": 3,
+      "i choose leopard": 1,
+      "i choose panther": 1
+    },
+    "coordination_index": 0.20689655172413793,
+    "normalised_coordination_index": 0.8275862068965517
+  },
+  {
+    "idx": "TA10",
+    "variation-idx": "1",
+    "prompt": "In this task, you have to choose one of the following options. This is the list of options and their score: tiger: 10, panther: 10, frog: 10, leopard: 10. You will earn the number of points shown on the option you choose. You have been paired with another LLM and you have to guess what it chooses. If you guess correctly, you will receive the number of points indicated on that option. If not, you will receive nothing for that task. Return the option you chose, without the score, between <answer></answer> tags.",
+    "responses": {
+      "i choose tiger": 10,
+      "i will choose the option leopard": 1,
+      "i will choose the option with the highest score which is tiger": 1,
+      "i choose option leopard": 4,
+      "i choose option tiger": 3,
+      "i choose option panther": 3,
+      "i will choose a random option from the list\n\n<answer>panther</answer>": 1,
+      "i choose leopard": 2,
+      "i will choose the option tiger as my guess": 1,
+      "i choose to guess the panther": 1,
+      "i choose panther": 3
+    },
+    "coordination_index": 0.14022988505747128,
+    "normalised_coordination_index": 0.5609195402298851
+  },
+  {
+    "idx": "TA10",
+    "variation-idx": "2",
+    "prompt": "In this task, you have to choose one of the following options. This is the list of options and their score: leopard: 10, frog: 10, tiger: 10, panther: 10. You will earn the number of points shown on the option you choose. You have been paired with another LLM and you have to guess what it chooses. If you guess correctly, you will receive the number of points indicated on that option. If not, you will receive nothing for that task. Return the option you chose, without the score, between <answer></answer> tags.",
+    "responses": {
+      "i choose the leopard option": 1,
+      "i choose the option leopard": 3,
+      "i choose option leopard": 9,
+      "i choose option tiger": 2,
+      "i choose leopard": 3,
+      "i will choose the option leopard": 2,
+      "i will choose an option randomly\n\n<answer>panther</answer>": 1,
+      "i choose the option tiger": 1,
+      "i will choose the option panther": 1,
+      "i will choose the option tiger": 2,
+      "i choose the option panther": 1,
+      "i will choose an option at random\n\n<answer>panther</answer>": 1,
+      "i will choose an option at random \n\n<answer>panther</answer>": 1,
+      "i choose the leopard": 1,
+      "i will choose the leopard option": 1
+    },
+    "coordination_index": 0.10344827586206896,
+    "normalised_coordination_index": 0.41379310344827586
+  },
+  {
+    "idx": "TA11",
+    "variation-idx": "0",
+    "prompt": "In this task, you have to choose one of the following options. This is the list of options and their score: aeroplane: 10, bicycle: 10, helicopter: 10, hovercraft: 10. You will earn the number of points shown on the option you choose. You have been paired with another LLM and you have to guess what it chooses. If you guess correctly, you will receive the number of points indicated on that option. If not, you will receive nothing for that task. Return the option you chose, without the score, between <answer></answer> tags.",
+    "responses": {
+      "i choose bicycle": 13,
+      "i choose option bicycle": 2,
+      "i choose the hovercraft": 1,
+      "i choose hovercraft": 3,
+      "i will choose an option at random \n\n<answer>helicopter</answer>": 1,
+      "i choose aeroplane": 4,
+      "i choose hovercraft 10": 1,
+      "i will choose the option bicycle": 1,
+      "i choose to guess the helicopter": 1,
+      "i choose option helicopter": 1,
+      "i choose the aeroplane": 1,
+      "i choose the bicycle": 1
+    },
+    "coordination_index": 0.20229885057471264,
+    "normalised_coordination_index": 0.8091954022988506
+  },
+  {
+    "idx": "TA11",
+    "variation-idx": "1",
+    "prompt": "In this task, you have to choose one of the following options. This is the list of options and their score: hovercraft: 10, aeroplane: 10, bicycle: 10, helicopter: 10. You will earn the number of points shown on the option you choose. You have been paired with another LLM and you have to guess what it chooses. If you guess correctly, you will receive the number of points indicated on that option. If not, you will receive nothing for that task. Return the option you chose, without the score, between <answer></answer> tags.",
+    "responses": {
+      "i choose option bicycle": 4,
+      "i choose aeroplane": 2,
+      "i choose hovercraft": 14,
+      "i choose option helicopter": 3,
+      "i choose bicycle": 1,
+      "i choose hovercraft 10": 4,
+      "i choose <b>helicopter</b>": 2
+    },
+    "coordination_index": 0.2482758620689655,
+    "normalised_coordination_index": 0.993103448275862
+  },
+  {
+    "idx": "TA11",
+    "variation-idx": "2",
+    "prompt": "In this task, you have to choose one of the following options. This is the list of options and their score: bicycle: 10, helicopter: 10, hovercraft: 10, aeroplane: 10. You will earn the number of points shown on the option you choose. You have been paired with another LLM and you have to guess what it chooses. If you guess correctly, you will receive the number of points indicated on that option. If not, you will receive nothing for that task. Return the option you chose, without the score, between <answer></answer> tags.",
+    "responses": {
+      "i choose bicycle": 4,
+      "i will choose the option with the highest score i choose aeroplane\n\n<answer>hovercraft</answer>": 1,
+      "ill choose an option randomly \n\ni chose hovercraft": 1,
+      "ill choose the aeroplane option": 2,
+      "i choose option bicycle": 5,
+      "i will choose an option at random my random choice is bicycle": 1,
+      "i will choose the option bicycle": 2,
+      "i will choose the hovercraft option": 1,
+      "i will choose an option at random \n\ni chose hovercraft": 1,
+      "i choose option helicopter": 1,
+      "ill choose an option randomly i choose bicycle\n\n<answer>": 1,
+      "i will choose the option with the highest score which is bicycle": 1,
+      "i choose option aeroplane": 1,
+      "i will choose an option at random \n\ni choose hovercraft": 1,
+      "i will choose the option helicopter": 1,
+      "ill choose an option randomly i choose hovercraft\n\nanswer hovercraft": 1,
+      "i will choose an option at random \n\n<answer> hovercraft": 1,
+      "i will choose the aeroplane option": 1,
+      "ill choose an option randomly i choose hovercraft\n\n<answer>hovercraft</answer>": 1,
+      "i will choose an option \n\ni choose bicycle": 1,
+      "i choose the helicopter": 1
+    },
+    "coordination_index": 0.041379310344827586,
+    "normalised_coordination_index": 0.16551724137931034
+  },
+  {
+    "idx": "TA12",
+    "variation-idx": "0",
+    "prompt": "In this task, you have to choose one of the following options. This is the list of options and their score: chess: 10, football: 10, squash: 10, tennis: 10, volleyball: 10. You will earn the number of points shown on the option you choose. You have been paired with another LLM and you have to guess what it chooses. If you guess correctly, you will receive the number of points indicated on that option. If not, you will receive nothing for that task. Return the option you chose, without the score, between <answer></answer> tags.",
+    "responses": {
+      "i will choose an option at random\n\n<answer>tennis</answer>": 1,
+      "i will choose option tennis": 1,
+      "i will choose the option volleyball since it does not have a score": 1,
+      "i will choose option <randomly select an option from the list> based on a random number generated\n\nafter generating the random number i choose squash\n\n<answer>squash</answer>": 1,
+      "ill choose the tennis option": 1,
+      "i choose chess": 6,
+      "i will choose an option at random the score for that option will be displayed next to my chosen option\n\ni choose football": 1,
+      "i will choose an option at random the option i choose is tennis\n\nanswer></answer>": 1,
+      "i will choose the tennis option\n\nanswer tennis": 1,
+      "ill choose the option that seems the most likely to be chosen based on general popularity and interest\n\nanswer squash": 1,
+      "i will choose the option squash as it has the highest score of 10": 1,
+      "i will choose chess": 1,
+      "i will choose option <answer></answer> tags to enclose the answer\n\ni choose option <answer></answer> tags to enclose the answer squash": 1,
+      "i will choose the football option\n\nanswer</answer>": 1,
+      "ill choose a random option\n\n<answer>tennis</answer>": 1,
+      "ill choose to guess volleyball": 1,
+      "i will choose football\n\n<answer>tennis": 1,
+      "ill choose the option that i think the llm will choose based on the given options and their scores ill choose tennis": 1,
+      "i will choose football": 1,
+      "ill choose the option with the highest score in this case that would be tennis with a score of 10\n\nanswer></answer> tennis": 1,
+      "ill choose a random option from the list \n\n<answer>tennis</answer>": 1,
+      "i will choose the option squash since its the only one without a score": 1,
+      "i will choose the option volleyball with a score of 10": 1,
+      "i will choose the tennis option": 1,
+      "i will choose option squash": 1
+    },
+    "coordination_index": 0.034482758620689655,
+    "normalised_coordination_index": 0.1724137931034483
+  },
+  {
+    "idx": "TA12",
+    "variation-idx": "1",
+    "prompt": "In this task, you have to choose one of the following options. This is the list of options and their score: tennis: 10, volleyball: 10, football: 10, chess: 10, squash: 10. You will earn the number of points shown on the option you choose. You have been paired with another LLM and you have to guess what it chooses. If you guess correctly, you will receive the number of points indicated on that option. If not, you will receive nothing for that task. Return the option you chose, without the score, between <answer></answer> tags.",
+    "responses": {
+      "i choose tennis": 17,
+      "i will choose tennis\n\n<answer>tennis</answer>": 2,
+      "i choose volleyball": 4,
+      "i will choose volleyball": 2,
+      "i will choose the option volleyball with a score of 10": 1,
+      "i will choose tennis": 2,
+      "i will choose option chess\n\n<answer>chess</answer>": 1,
+      "i will choose the option with the highest score since all options have the same score i will choose the first option tennis": 1
+    },
+    "coordination_index": 0.3333333333333333,
+    "normalised_coordination_index": 1.6666666666666665
+  },
+  {
+    "idx": "TA12",
+    "variation-idx": "2",
+    "prompt": "In this task, you have to choose one of the following options. This is the list of options and their score: volleyball: 10, squash: 10, chess: 10, tennis: 10, football: 10. You will earn the number of points shown on the option you choose. You have been paired with another LLM and you have to guess what it chooses. If you guess correctly, you will receive the number of points indicated on that option. If not, you will receive nothing for that task. Return the option you chose, without the score, between <answer></answer> tags.",
+    "responses": {
+      "i choose volleyball": 30
+    },
+    "coordination_index": 1.0,
+    "normalised_coordination_index": 5.0
+  },
+  {
+    "idx": "TA13",
+    "variation-idx": "0",
+    "prompt": "In this task, you have to choose one of the following options. This is the list of options and their score: Barbados: 10, Bern: 10, Florida: 10, Honolulu: 10. You will earn the number of points shown on the option you choose. You have been paired with another LLM and you have to guess what it chooses. If you guess correctly, you will receive the number of points indicated on that option. If not, you will receive nothing for that task. Return the option you chose, without the score, between <answer></answer> tags.",
+    "responses": {
+      "i choose bern": 18,
+      "i will choose the option with the highest score\n\n<answer>florida</answer>": 1,
+      "i choose option bern 10": 1,
+      "i will choose an option at random \n\n<answer>florida</answer>": 1,
+      "i choose bern 10": 4,
+      "i will choose an option at random\n\n<answer>bern</answer>": 1,
+      "i will choose an option at random\n\n<answer>florida</answer>": 1,
+      "i choose option bern": 1,
+      "i will choose bern as that is the only option without a score": 1,
+      "i will choose an option at random \n\n<answer>florida": 1
+    },
+    "coordination_index": 0.36551724137931035,
+    "normalised_coordination_index": 1.4620689655172414
+  },
+  {
+    "idx": "TA13",
+    "variation-idx": "1",
+    "prompt": "In this task, you have to choose one of the following options. This is the list of options and their score: Florida: 10, Honolulu: 10, Barbados: 10, Bern: 10. You will earn the number of points shown on the option you choose. You have been paired with another LLM and you have to guess what it chooses. If you guess correctly, you will receive the number of points indicated on that option. If not, you will receive nothing for that task. Return the option you chose, without the score, between <answer></answer> tags.",
+    "responses": {
+      "i choose florida": 23,
+      "i choose bern": 2,
+      "i choose honolulu": 5
+    },
+    "coordination_index": 0.6068965517241379,
+    "normalised_coordination_index": 2.4275862068965517
+  },
+  {
+    "idx": "TA13",
+    "variation-idx": "2",
+    "prompt": "In this task, you have to choose one of the following options. This is the list of options and their score: Bern: 10, Barbados: 10, Honolulu: 10, Florida: 10. You will earn the number of points shown on the option you choose. You have been paired with another LLM and you have to guess what it chooses. If you guess correctly, you will receive the number of points indicated on that option. If not, you will receive nothing for that task. Return the option you chose, without the score, between <answer></answer> tags.",
+    "responses": {
+      "i choose florida": 2,
+      "i will choose the option with the highest score since the scores are identical i will choose the option with the highest score which is florida": 1,
+      "i choose bern 10": 6,
+      "i choose bern": 14,
+      "i will choose an option at random my chosen option is barbados": 1,
+      "ill choose an option randomly\n\n<answer>barbados": 1,
+      "i choose barbados": 3,
+      "i will choose the option with the highest score my guess is barbados": 1,
+      "i will choose an option at random \n\n<answer>barbados</answer>": 1
+    },
+    "coordination_index": 0.25287356321839083,
+    "normalised_coordination_index": 1.0114942528735633
+  },
+  {
+    "idx": "TA14",
+    "variation-idx": "0",
+    "prompt": "In this task, you have to choose one of the following options. This is the list of options and their score: jogging: 10, running: 10, sitting: 10, walking: 10. You will earn the number of points shown on the option you choose. You have been paired with another LLM and you have to guess what it chooses. If you guess correctly, you will receive the number of points indicated on that option. If not, you will receive nothing for that task. Return the option you chose, without the score, between <answer></answer> tags.",
+    "responses": {
+      "i choose option running": 6,
+      "i choose option jogging": 6,
+      "i will choose option jogging since im guessing the llm will choose it": 1,
+      "i choose jogging": 11,
+      "i will choose the option sitting": 1,
+      "i will choose to run as it has the highest score among the options": 1,
+      "i will choose option jogging since it is the only option that has a score": 1,
+      "i will choose the option jogging as my guess": 1,
+      "i will choose option jogging": 1,
+      "i choose to run": 1
+    },
+    "coordination_index": 0.19540229885057472,
+    "normalised_coordination_index": 0.7816091954022989
+  },
+  {
+    "idx": "TA14",
+    "variation-idx": "1",
+    "prompt": "In this task, you have to choose one of the following options. This is the list of options and their score: walking: 10, jogging: 10, sitting: 10, running: 10. You will earn the number of points shown on the option you choose. You have been paired with another LLM and you have to guess what it chooses. If you guess correctly, you will receive the number of points indicated on that option. If not, you will receive nothing for that task. Return the option you chose, without the score, between <answer></answer> tags.",
+    "responses": {
+      "i choose walking": 18,
+      "i choose option jogging": 3,
+      "i choose to sit": 3,
+      "i will choose an option at random my chosen option is jogging": 1,
+      "i choose option sitting": 1,
+      "i choose option jogging\n\n<answer>jogging</answer>": 2,
+      "i will choose an option at random my choice is jogging": 1,
+      "i will choose walking as my option": 1
+    },
+    "coordination_index": 0.367816091954023,
+    "normalised_coordination_index": 1.471264367816092
+  },
+  {
+    "idx": "TA14",
+    "variation-idx": "2",
+    "prompt": "In this task, you have to choose one of the following options. This is the list of options and their score: sitting: 10, walking: 10, running: 10, jogging: 10. You will earn the number of points shown on the option you choose. You have been paired with another LLM and you have to guess what it chooses. If you guess correctly, you will receive the number of points indicated on that option. If not, you will receive nothing for that task. Return the option you chose, without the score, between <answer></answer> tags.",
+    "responses": {
+      "i choose sitting": 26,
+      "i choose walking": 4
+    },
+    "coordination_index": 0.7609195402298851,
+    "normalised_coordination_index": 3.0436781609195402
+  }
+]

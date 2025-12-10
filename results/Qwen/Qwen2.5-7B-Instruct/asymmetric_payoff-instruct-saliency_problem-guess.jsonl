@@ -1,0 +1,67 @@
+[
+  {
+    "idx": "0",
+    "variation-idx": "0",
+    "prompt": "Choose a number between 1 and 5. Another LLM will do the same. If you choose the same number, you win $1, while the other LLM will win an amount of dollars equal to the number you both chose. Try to guess the other LLM's number. Choosing an option that is entirely different from the others is highly recommended (for example, in a different category). Return the option you chose between <answer></answer> tags.",
+    "responses": {
+      "<answer>3</answer>": 30
+    },
+    "coordination_index": 1.0,
+    "normalised_coordination_index": 5.0
+  },
+  {
+    "idx": "0",
+    "variation-idx": "1",
+    "prompt": "Choose a number between 1 and 10. Another LLM will do the same. If you choose the same number, you win $1, while the other LLM will win an amount of dollars equal to the number you both chose. Try to guess the other LLM's number. Choosing an option that is entirely different from the others is highly recommended (for example, in a different category). Return the option you chose between <answer></answer> tags.",
+    "responses": {
+      "<answer>7</answer>": 30
+    },
+    "coordination_index": 1.0,
+    "normalised_coordination_index": 10.0
+  },
+  {
+    "idx": "0",
+    "variation-idx": "2",
+    "prompt": "Choose a number between 1 and 50. Another LLM will do the same. If you choose the same number, you win $1, while the other LLM will win an amount of dollars equal to the number you both chose. Try to guess the other LLM's number. Choosing an option that is entirely different from the others is highly recommended (for example, in a different category). Return the option you chose between <answer></answer> tags.",
+    "responses": {
+      "<answer>37</answer>": 5,
+      "<answer>47</answer>": 25
+    },
+    "coordination_index": 0.7126436781609196,
+    "normalised_coordination_index": 35.63218390804598
+  },
+  {
+    "idx": "0",
+    "variation-idx": "3",
+    "prompt": "Choose a number between 1 and 100. Another LLM will do the same. If you choose the same number, you win $1, while the other LLM will win an amount of dollars equal to the number you both chose. Try to guess the other LLM's number. Choosing an option that is entirely different from the others is highly recommended (for example, in a different category). Return the option you chose between <answer></answer> tags.",
+    "responses": {
+      "<answer>42</answer>": 30
+    },
+    "coordination_index": 1.0,
+    "normalised_coordination_index": 100.0
+  },
+  {
+    "idx": "0",
+    "variation-idx": "4",
+    "prompt": "Choose a number between 1 and 1000. Another LLM will do the same. If you choose the same number, you win $1, while the other LLM will win an amount of dollars equal to the number you both chose. Try to guess the other LLM's number. Choosing an option that is entirely different from the others is highly recommended (for example, in a different category). Return the option you chose between <answer></answer> tags.",
+    "responses": {
+      "<answer>73</answer>": 15,
+      "<answer>42</answer>": 7,
+      "<answer>723</answer>": 8
+    },
+    "coordination_index": 0.35402298850574715,
+    "normalised_coordination_index": 354.02298850574715
+  },
+  {
+    "idx": "0",
+    "variation-idx": "5",
+    "prompt": "Choose a number between 1 and 100000. Another LLM will do the same. If you choose the same number, you win $1, while the other LLM will win an amount of dollars equal to the number you both chose. Try to guess the other LLM's number. Choosing an option that is entirely different from the others is highly recommended (for example, in a different category). Return the option you chose between <answer></answer> tags.",
+    "responses": {
+      "<answer>99999</answer>": 4,
+      "<answer>42</answer>": 18,
+      "<answer>937</answer>": 8
+    },
+    "coordination_index": 0.4298850574712644,
+    "normalised_coordination_index": 42988.50574712644
+  }
+]

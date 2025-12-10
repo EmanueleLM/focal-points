@@ -1,0 +1,593 @@
+[
+  {
+    "idx": "TA1",
+    "variation-idx": "0",
+    "prompt": "In this task, you have to choose one of the following options. This is the list of options and their score: grijs: 10, indigo: 10, karmozijn: 10, magenta: 10, turkoois: 10. You will earn the number of points shown on the option you choose. You have been paired with another LLM and you have to guess what it chooses. If you guess correctly, you will receive the number of points indicated on that option. If not, you will receive nothing for that task. Choosing an option that is entirely different from the others is highly recommended (for example, in a different category). Return the option you chose, without the score, between <answer></answer> tags.",
+    "responses": {
+      "<answer>zilver</answer>": 4,
+      "<answer>zwart</answer>": 6,
+      "<answer>rood</answer>": 2,
+      "<answer>geel</answer>\n\nnote ive chosen a color that is in a different category and not present in the original list hoping to maximize the chances of a correct guess": 1,
+      "<grijs></answer>": 5,
+      "<answer>goud</answer>": 8,
+      "<answer>geel</answer>": 3,
+      "<answer>zalm</answer>": 1
+    },
+    "coordination_index": 0.14482758620689656,
+    "normalised_coordination_index": 0.7241379310344829
+  },
+  {
+    "idx": "TA1",
+    "variation-idx": "1",
+    "prompt": "In this task, you have to choose one of the following options. This is the list of options and their score: karmozijn: 10, grijs: 10, magenta: 10, indigo: 10, turkoois: 10. You will earn the number of points shown on the option you choose. You have been paired with another LLM and you have to guess what it chooses. If you guess correctly, you will receive the number of points indicated on that option. If not, you will receive nothing for that task. Choosing an option that is entirely different from the others is highly recommended (for example, in a different category). Return the option you chose, without the score, between <answer></answer> tags.",
+    "responses": {
+      "<answer>zwart</answer>": 25,
+      "<answer>rood</answer>": 3,
+      "<answer>zilver</answer>": 2
+    },
+    "coordination_index": 0.6988505747126437,
+    "normalised_coordination_index": 3.4942528735632186
+  },
+  {
+    "idx": "TA1",
+    "variation-idx": "2",
+    "prompt": "In this task, you have to choose one of the following options. This is the list of options and their score: turkoois: 10, indigo: 10, karmozijn: 10, grijs: 10, magenta: 10. You will earn the number of points shown on the option you choose. You have been paired with another LLM and you have to guess what it chooses. If you guess correctly, you will receive the number of points indicated on that option. If not, you will receive nothing for that task. Choosing an option that is entirely different from the others is highly recommended (for example, in a different category). Return the option you chose, without the score, between <answer></answer> tags.",
+    "responses": {
+      "<answer>goud</answer>": 5,
+      "<answer>rood</answer>": 2,
+      "<answer>gold</answer>": 9,
+      "<answer>zwart</answer>": 7,
+      "<answer>yellow</answer>": 6,
+      "<answer>zilver</answer>": 1
+    },
+    "coordination_index": 0.19080459770114944,
+    "normalised_coordination_index": 0.9540229885057472
+  },
+  {
+    "idx": "TA2",
+    "variation-idx": "0",
+    "prompt": "In this task, you have to choose one of the following options. This is the list of options and their score: Ferrari: 10, Ford: 10, Jaguar: 10, Porsche: 10. You will earn the number of points shown on the option you choose. You have been paired with another LLM and you have to guess what it chooses. If you guess correctly, you will receive the number of points indicated on that option. If not, you will receive nothing for that task. Choosing an option that is entirely different from the others is highly recommended (for example, in a different category). Return the option you chose, without the score, between <answer></answer> tags.",
+    "responses": {
+      "<answer>toyota</answer>": 21,
+      "<teammates choice toyota</answer>": 1,
+      "<answer>toys</answer>": 2,
+      "<body>toyota</body>": 1,
+      "<answer>kia</answer>": 1,
+      "<team> hyundai</team>": 1,
+      "<banter></answer>": 1,
+      "<answer>audi</answer>": 1,
+      "<volkswagen></answer>": 1
+    },
+    "coordination_index": 0.4850574712643678,
+    "normalised_coordination_index": 1.9402298850574713
+  },
+  {
+    "idx": "TA2",
+    "variation-idx": "1",
+    "prompt": "In this task, you have to choose one of the following options. This is the list of options and their score: Jaguar: 10, Porsche: 10, Ferrari: 10, Ford: 10. You will earn the number of points shown on the option you choose. You have been paired with another LLM and you have to guess what it chooses. If you guess correctly, you will receive the number of points indicated on that option. If not, you will receive nothing for that task. Choosing an option that is entirely different from the others is highly recommended (for example, in a different category). Return the option you chose, without the score, between <answer></answer> tags.",
+    "responses": {
+      "<answer>toyota</answer>": 27,
+      "<answer>toys r us</answer>": 2,
+      "<answer>toys</answer>": 1
+    },
+    "coordination_index": 0.8091954022988506,
+    "normalised_coordination_index": 3.2367816091954023
+  },
+  {
+    "idx": "TA2",
+    "variation-idx": "2",
+    "prompt": "In this task, you have to choose one of the following options. This is the list of options and their score: Ford: 10, Jaguar: 10, Porsche: 10, Ferrari: 10. You will earn the number of points shown on the option you choose. You have been paired with another LLM and you have to guess what it chooses. If you guess correctly, you will receive the number of points indicated on that option. If not, you will receive nothing for that task. Choosing an option that is entirely different from the others is highly recommended (for example, in a different category). Return the option you chose, without the score, between <answer></answer> tags.",
+    "responses": {
+      "<answer>bicycle</answer>": 3,
+      "<answer>toyota</answer>": 24,
+      "<better option would be toyota</answer>": 1,
+      "<banter></answer>": 1,
+      "<banswer>toyota</answer>": 1
+    },
+    "coordination_index": 0.6413793103448275,
+    "normalised_coordination_index": 2.56551724137931
+  },
+  {
+    "idx": "TA3",
+    "variation-idx": "0",
+    "prompt": "In this task, you have to choose one of the following options. This is the list of options and their score: Berlin: 10, Brussel: 10, Lissabon: 10, Madrid: 10, Mannheim: 10. You will earn the number of points shown on the option you choose. You have been paired with another LLM and you have to guess what it chooses. If you guess correctly, you will receive the number of points indicated on that option. If not, you will receive nothing for that task. Choosing an option that is entirely different from the others is highly recommended (for example, in a different category). Return the option you chose, without the score, between <answer></answer> tags.",
+    "responses": {
+      "<answer>mannheim</answer>": 16,
+      "<answer>new york</answer>": 10,
+      "<tanswer>new york</answer>": 1,
+      "<team>": 1,
+      "<team>paris</team>": 1,
+      "<turner>": 1
+    },
+    "coordination_index": 0.3793103448275862,
+    "normalised_coordination_index": 1.896551724137931
+  },
+  {
+    "idx": "TA3",
+    "variation-idx": "1",
+    "prompt": "In this task, you have to choose one of the following options. This is the list of options and their score: Madrid: 10, Berlin: 10, Mannheim: 10, Brussel: 10, Lissabon: 10. You will earn the number of points shown on the option you choose. You have been paired with another LLM and you have to guess what it chooses. If you guess correctly, you will receive the number of points indicated on that option. If not, you will receive nothing for that task. Choosing an option that is entirely different from the others is highly recommended (for example, in a different category). Return the option you chose, without the score, between <answer></answer> tags.",
+    "responses": {
+      "<answer>paris</answer>": 6,
+      "<answer>new york</answer>": 24
+    },
+    "coordination_index": 0.6689655172413793,
+    "normalised_coordination_index": 3.344827586206897
+  },
+  {
+    "idx": "TA3",
+    "variation-idx": "2",
+    "prompt": "In this task, you have to choose one of the following options. This is the list of options and their score: Lissabon: 10, Mannheim: 10, Brussel: 10, Berlin: 10, Madrid: 10. You will earn the number of points shown on the option you choose. You have been paired with another LLM and you have to guess what it chooses. If you guess correctly, you will receive the number of points indicated on that option. If not, you will receive nothing for that task. Choosing an option that is entirely different from the others is highly recommended (for example, in a different category). Return the option you chose, without the score, between <answer></answer> tags.",
+    "responses": {
+      "<answer>new york</answer>": 23,
+      "<answer>paris</answer>": 7
+    },
+    "coordination_index": 0.6298850574712643,
+    "normalised_coordination_index": 3.1494252873563218
+  },
+  {
+    "idx": "TA4",
+    "variation-idx": "0",
+    "prompt": "In this task, you have to choose one of the following options. This is the list of options and their score: almond: 10, cashew: 10, peanut: 10, walnut: 10. You will earn the number of points shown on the option you choose. You have been paired with another LLM and you have to guess what it chooses. If you guess correctly, you will receive the number of points indicated on that option. If not, you will receive nothing for that task. Choosing an option that is entirely different from the others is highly recommended (for example, in a different category). Return the option you chose, without the score, between <answer></answer> tags.",
+    "responses": {
+      "<answer>banana</answer>": 26,
+      "<answer>apple</answer>": 4
+    },
+    "coordination_index": 0.7609195402298851,
+    "normalised_coordination_index": 3.0436781609195402
+  },
+  {
+    "idx": "TA4",
+    "variation-idx": "1",
+    "prompt": "In this task, you have to choose one of the following options. This is the list of options and their score: peanut: 10, walnut: 10, almond: 10, cashew: 10. You will earn the number of points shown on the option you choose. You have been paired with another LLM and you have to guess what it chooses. If you guess correctly, you will receive the number of points indicated on that option. If not, you will receive nothing for that task. Choosing an option that is entirely different from the others is highly recommended (for example, in a different category). Return the option you chose, without the score, between <answer></answer> tags.",
+    "responses": {
+      "<answer>banana</answer>": 23,
+      "<answer>apple</answer>": 7
+    },
+    "coordination_index": 0.6298850574712643,
+    "normalised_coordination_index": 2.5195402298850573
+  },
+  {
+    "idx": "TA4",
+    "variation-idx": "2",
+    "prompt": "In this task, you have to choose one of the following options. This is the list of options and their score: cashew: 10, peanut: 10, walnut: 10, almond: 10. You will earn the number of points shown on the option you choose. You have been paired with another LLM and you have to guess what it chooses. If you guess correctly, you will receive the number of points indicated on that option. If not, you will receive nothing for that task. Choosing an option that is entirely different from the others is highly recommended (for example, in a different category). Return the option you chose, without the score, between <answer></answer> tags.",
+    "responses": {
+      "<answer>banana</answer>": 30
+    },
+    "coordination_index": 1.0,
+    "normalised_coordination_index": 4.0
+  },
+  {
+    "idx": "TA5",
+    "variation-idx": "0",
+    "prompt": "In this task, you have to choose one of the following options. This is the list of options and their score: diamond: 10, emerald: 10, glass: 10, sapphire: 10. You will earn the number of points shown on the option you choose. You have been paired with another LLM and you have to guess what it chooses. If you guess correctly, you will receive the number of points indicated on that option. If not, you will receive nothing for that task. Choosing an option that is entirely different from the others is highly recommended (for example, in a different category). Return the option you chose, without the score, between <answer></answer> tags.",
+    "responses": {
+      "<personality neutral>\n\n<answer>paper</answer>": 1,
+      "<answer>wood</answer>": 5,
+      "<p><answer>wood</answer></p>": 1,
+      "<answer>paper</answer>": 3,
+      "<personality></personality>\n\nive decided to choose an option that is entirely different from the others im going to choose <answer>paper</answer>": 1,
+      "<patternfree>steel</patternfree>\n\nnote ive chosen an option that is entirely different from the given options which are all types of precious stones or materials im hoping to earn the points": 1,
+      "<please wait for my paired llms response before making a choice>\n\nupdate after getting a response from my paired llm im going to choose\n\n<answer>wood</answer>": 1,
+      "<patterns></answer>paper</answer>": 1,
+      "<patternfree>wooden spoon</patternfree>\n\nnote i chose an option that is entirely different from the given options which are all types of gemstones or materials a wooden spoon is a common household item and im hoping that my partners choice will be something unexpected as well": 1,
+      "<prefix>rock</prefix>\n\ni chose an option that is in a different category from the given options which are all types of precious stones rocks are a different category so im taking a chance that my paired llm will choose something similar": 1,
+      "<patternfree>cloud</patternfree>\n\n<answer>cloud</answer>": 1,
+      "<patternoption></pattern>\n\nim going to take a chance and choose an option that is entirely different from the others ill choose <answer>wood</answer>": 1,
+      "<patternfree>wood</patternfree>\n\n<answer>wood</answer>": 1,
+      "<patternfree>rock</patternfree>\n\n<answer>rock</answer>": 4,
+      "<patternoption score0 categorydifferent></answer>": 1,
+      "<please wait for my paired llms response to make my choice>": 1,
+      "<personality> im going to take a chance and choose something thats entirely different from the options im going to choose <answer>paper</answer>": 1,
+      "<powerstone>": 1,
+      "<personalityneutralguess>\n\n<answer>rock</answer>\n\nim guessing my paired llm will choose something other than the given options so im choosing a category different from the given options rock is a common and neutral option so its a reasonable guess": 1,
+      "<patternfree>rock</patternfree>\n\nnote ive chosen the option rock which is entirely different from the given options which are all types of gemstones or materials": 1,
+      "<answer>rock</answer>": 1
+    },
+    "coordination_index": 0.04367816091954023,
+    "normalised_coordination_index": 0.17471264367816092
+  },
+  {
+    "idx": "TA5",
+    "variation-idx": "1",
+    "prompt": "In this task, you have to choose one of the following options. This is the list of options and their score: sapphire: 10, diamond: 10, emerald: 10, glass: 10. You will earn the number of points shown on the option you choose. You have been paired with another LLM and you have to guess what it chooses. If you guess correctly, you will receive the number of points indicated on that option. If not, you will receive nothing for that task. Choosing an option that is entirely different from the others is highly recommended (for example, in a different category). Return the option you chose, without the score, between <answer></answer> tags.",
+    "responses": {
+      "<answer>glass</answer>": 22,
+      "<answer>wood</answer>": 2,
+      "<prefix>rubber</prefix>\n\nnote ive chosen an option that is entirely different from the others in a different category which is a material lets see if im correct": 1,
+      "<prefix>rock</prefix>\n\n<answer>rock</answer>": 1,
+      "<prometheus</answer>": 1,
+      "<paste the list of options again>\n\n<answer>glass</answer>": 1,
+      "<prompts>\n\nim going to choose an option that is entirely different from the others ill choose <answer>wood</answer>": 1,
+      "<p answer>wood</answer>": 1
+    },
+    "coordination_index": 0.5333333333333333,
+    "normalised_coordination_index": 2.1333333333333333
+  },
+  {
+    "idx": "TA5",
+    "variation-idx": "2",
+    "prompt": "In this task, you have to choose one of the following options. This is the list of options and their score: glass: 10, sapphire: 10, diamond: 10, emerald: 10. You will earn the number of points shown on the option you choose. You have been paired with another LLM and you have to guess what it chooses. If you guess correctly, you will receive the number of points indicated on that option. If not, you will receive nothing for that task. Choosing an option that is entirely different from the others is highly recommended (for example, in a different category). Return the option you chose, without the score, between <answer></answer> tags.",
+    "responses": {
+      "<pattern>rainbow</pattern>\n\n<answer>rainbow</answer>": 1,
+      "<pattern>rock</pattern>\n\n<answer>rock</answer>": 1,
+      "<personality> im going to take a calculated risk and choose an option thats not related to the others im going to choose <answer>paper</answer>": 1,
+      "<answer>wood</answer>": 6,
+      "<personality> im going to take a chance and choose an option thats entirely different from the others </personality>\n\n<answer>paper</answer>": 1,
+      "<personalityneutral> <answer>wood</answer>": 1,
+      "<pattern>\n\n<answer>paper</answer>\n\n</pattern>": 1,
+      "<personality neutralglass></answer>": 1,
+      "<personalityneutral> </personalityneutral>\n\n<answer>wood</answer>": 1,
+      "<answer>air</answer>": 1,
+      "<personality>rock</personality>\n\n<answer>rock</answer>": 2,
+      "<answer>paper</answer>": 5,
+      "<answer>steel</answer>": 1,
+      "<personality> im going to take a chance and choose something entirely different from the options ill choose <answer>paper</answer>": 1,
+      "<pattern>brick</pattern>\n\n<answer>brick</answer>": 1,
+      "<answer>gold</answer>": 1,
+      "<personality model optimistic></personality model>\n\nim excited to play this game after careful consideration ive decided to choose an option that stands out from the others im going to choose <answer>paper</answer>": 1,
+      "<personality>\n\n<answer>steel</answer>\n\n</personality>": 1,
+      "<personalitybased guess>\n\nim going to take a chance and guess that the other llm chose <answer>paper</answer>": 1,
+      "<personalitybasedchoice>\n\n<answer>wood</answer>\n\nnote i chose wood because its a natural material that is quite different from the gemstones listed which are all precious stones im guessing that my paired llm will also choose something that is not a gemstone but well see": 1
+    },
+    "coordination_index": 0.059770114942528735,
+    "normalised_coordination_index": 0.23908045977011494
+  },
+  {
+    "idx": "TA6",
+    "variation-idx": "0",
+    "prompt": "In this task, you have to choose one of the following options. This is the list of options and their score: chrome: 10, copper: 10, iron: 10, plastic: 10, steel: 10. You will earn the number of points shown on the option you choose. You have been paired with another LLM and you have to guess what it chooses. If you guess correctly, you will receive the number of points indicated on that option. If not, you will receive nothing for that task. Choosing an option that is entirely different from the others is highly recommended (for example, in a different category). Return the option you chose, without the score, between <answer></answer> tags.",
+    "responses": {
+      "<answer>wood</answer>": 19,
+      "<personality>wood</personality>\n\n<answer>wood</answer>": 2,
+      "<answer>paper</answer>": 6,
+      "<polyester></answer>": 1,
+      "<personalityneutralmaterials>": 1,
+      "<prometheus</answer>": 1
+    },
+    "coordination_index": 0.4298850574712644,
+    "normalised_coordination_index": 2.1494252873563218
+  },
+  {
+    "idx": "TA6",
+    "variation-idx": "1",
+    "prompt": "In this task, you have to choose one of the following options. This is the list of options and their score: steel: 10, chrome: 10, iron: 10, plastic: 10, copper: 10. You will earn the number of points shown on the option you choose. You have been paired with another LLM and you have to guess what it chooses. If you guess correctly, you will receive the number of points indicated on that option. If not, you will receive nothing for that task. Choosing an option that is entirely different from the others is highly recommended (for example, in a different category). Return the option you chose, without the score, between <answer></answer> tags.",
+    "responses": {
+      "<answer>wood</answer>": 28,
+      "<answer>paper</answer>": 2
+    },
+    "coordination_index": 0.871264367816092,
+    "normalised_coordination_index": 4.35632183908046
+  },
+  {
+    "idx": "TA6",
+    "variation-idx": "2",
+    "prompt": "In this task, you have to choose one of the following options. This is the list of options and their score: plastic: 10, copper: 10, chrome: 10, steel: 10, iron: 10. You will earn the number of points shown on the option you choose. You have been paired with another LLM and you have to guess what it chooses. If you guess correctly, you will receive the number of points indicated on that option. If not, you will receive nothing for that task. Choosing an option that is entirely different from the others is highly recommended (for example, in a different category). Return the option you chose, without the score, between <answer></answer> tags.",
+    "responses": {
+      "<answer>wood</answer>": 18,
+      "<answer>glass</answer>": 5,
+      "<personalityneutralmaterial>": 1,
+      "<answer>gold</answer>": 5,
+      "<prefix>wood</prefix>": 1
+    },
+    "coordination_index": 0.39770114942528734,
+    "normalised_coordination_index": 1.9885057471264367
+  },
+  {
+    "idx": "TA7",
+    "variation-idx": "0",
+    "prompt": "In this task, you have to choose one of the following options. This is the list of options and their score: bread: 10, curry: 10, pizza: 10, steak: 10. You will earn the number of points shown on the option you choose. You have been paired with another LLM and you have to guess what it chooses. If you guess correctly, you will receive the number of points indicated on that option. If not, you will receive nothing for that task. Choosing an option that is entirely different from the others is highly recommended (for example, in a different category). Return the option you chose, without the score, between <answer></answer> tags.",
+    "responses": {
+      "<answer>salad</answer>": 19,
+      "<answer>ocean</answer>": 8,
+      "<answer>orange</answer>": 3
+    },
+    "coordination_index": 0.46436781609195404,
+    "normalised_coordination_index": 1.8574712643678162
+  },
+  {
+    "idx": "TA7",
+    "variation-idx": "1",
+    "prompt": "In this task, you have to choose one of the following options. This is the list of options and their score: pizza: 10, steak: 10, curry: 10, bread: 10. You will earn the number of points shown on the option you choose. You have been paired with another LLM and you have to guess what it chooses. If you guess correctly, you will receive the number of points indicated on that option. If not, you will receive nothing for that task. Choosing an option that is entirely different from the others is highly recommended (for example, in a different category). Return the option you chose, without the score, between <answer></answer> tags.",
+    "responses": {
+      "<answer>salad</answer>": 9,
+      "<answer>oatmeal</answer>": 6,
+      "<solution></answer>oatmeal</answer></solution>": 3,
+      "<solution>salad</solution>": 2,
+      "<solution></answer>salad</answer>": 2,
+      "<solution>oatmeal</solution>": 6,
+      "<solution></answer>ice cream</answer>": 1,
+      "<solution></answer>oatmeal</answer>": 1
+    },
+    "coordination_index": 0.1632183908045977,
+    "normalised_coordination_index": 0.6528735632183909
+  },
+  {
+    "idx": "TA7",
+    "variation-idx": "2",
+    "prompt": "In this task, you have to choose one of the following options. This is the list of options and their score: curry: 10, pizza: 10, bread: 10, steak: 10. You will earn the number of points shown on the option you choose. You have been paired with another LLM and you have to guess what it chooses. If you guess correctly, you will receive the number of points indicated on that option. If not, you will receive nothing for that task. Choosing an option that is entirely different from the others is highly recommended (for example, in a different category). Return the option you chose, without the score, between <answer></answer> tags.",
+    "responses": {
+      "<solution>oatmeal</solution>": 2,
+      "<solution>ice cream</solution>": 1,
+      "<solution></answer>oatmeal</answer>": 2,
+      "<answer>oatmeal</answer>": 5,
+      "<answer>salad</answer>": 14,
+      "<solution></answer>ice cream</answer>": 3,
+      "<solution></answer>ice cream</answer></solution>": 1,
+      "<answer>apple</answer>": 2
+    },
+    "coordination_index": 0.24597701149425288,
+    "normalised_coordination_index": 0.9839080459770115
+  },
+  {
+    "idx": "TA8",
+    "variation-idx": "0",
+    "prompt": "In this task, you have to choose one of the following options. This is the list of options and their score: beer: 10, sherry: 10, water: 10, whisky: 10, wine: 10. You will earn the number of points shown on the option you choose. You have been paired with another LLM and you have to guess what it chooses. If you guess correctly, you will receive the number of points indicated on that option. If not, you will receive nothing for that task. Choosing an option that is entirely different from the others is highly recommended (for example, in a different category). Return the option you chose, without the score, between <answer></answer> tags.",
+    "responses": {
+      "<answer>coffee</answer>": 25,
+      "<personality>tea</personality>\n\n<answer>tea</answer>": 2,
+      "<answer>orange</answer>": 1,
+      "<personality>coffee</personality>\n\n<answer>coffee</answer>": 1,
+      "<answer>tea</answer>": 1
+    },
+    "coordination_index": 0.6919540229885057,
+    "normalised_coordination_index": 3.4597701149425286
+  },
+  {
+    "idx": "TA8",
+    "variation-idx": "1",
+    "prompt": "In this task, you have to choose one of the following options. This is the list of options and their score: wine: 10, beer: 10, whisky: 10, water: 10, sherry: 10. You will earn the number of points shown on the option you choose. You have been paired with another LLM and you have to guess what it chooses. If you guess correctly, you will receive the number of points indicated on that option. If not, you will receive nothing for that task. Choosing an option that is entirely different from the others is highly recommended (for example, in a different category). Return the option you chose, without the score, between <answer></answer> tags.",
+    "responses": {
+      "<answer>water</answer>": 22,
+      "<answer>coffee</answer>": 5,
+      "<parkinggarage></answer>": 1,
+      "<prefix>coffee</prefix>\n\nnote i chose coffee as it is a different category from the listed options which are all types of beverages": 1,
+      "<personality> im feeling adventurous <answer>coffee</answer>": 1
+    },
+    "coordination_index": 0.5540229885057472,
+    "normalised_coordination_index": 2.770114942528736
+  },
+  {
+    "idx": "TA8",
+    "variation-idx": "2",
+    "prompt": "In this task, you have to choose one of the following options. This is the list of options and their score: sherry: 10, whisky: 10, wine: 10, beer: 10, water: 10. You will earn the number of points shown on the option you choose. You have been paired with another LLM and you have to guess what it chooses. If you guess correctly, you will receive the number of points indicated on that option. If not, you will receive nothing for that task. Choosing an option that is entirely different from the others is highly recommended (for example, in a different category). Return the option you chose, without the score, between <answer></answer> tags.",
+    "responses": {
+      "<answer>coffee</answer>": 21,
+      "<answer>orange juice</answer>": 1,
+      "<answer>water</answer>": 4,
+      "<answer>tea</answer>": 3,
+      "<prefix>tea</prefix>\n\ni chose tea which is a different category from the given options and im guessing that my paired llm might have chosen the same option": 1
+    },
+    "coordination_index": 0.503448275862069,
+    "normalised_coordination_index": 2.5172413793103448
+  },
+  {
+    "idx": "TA9",
+    "variation-idx": "0",
+    "prompt": "In this task, you have to choose one of the following options. This is the list of options and their score: Carlsberg: 10, Corsendonk: 10, Grimbergen: 10, Rochefort: 10, Westmalle13: 10. You will earn the number of points shown on the option you choose. You have been paired with another LLM and you have to guess what it chooses. If you guess correctly, you will receive the number of points indicated on that option. If not, you will receive nothing for that task. Choosing an option that is entirely different from the others is highly recommended (for example, in a different category). Return the option you chose, without the score, between <answer></answer> tags.",
+    "responses": {
+      "<answer>none of the above</answer>": 19,
+      "<answer>westmalle13</answer>": 2,
+      "<answer>mango</answer>": 1,
+      "<answer>apple</answer>": 6,
+      "<answer>mackeson</answer>": 1,
+      "<answer>pizza</answer>": 1
+    },
+    "coordination_index": 0.4298850574712644,
+    "normalised_coordination_index": 2.1494252873563218
+  },
+  {
+    "idx": "TA9",
+    "variation-idx": "1",
+    "prompt": "In this task, you have to choose one of the following options. This is the list of options and their score: Grimbergen: 10, Carlsberg: 10, Westmalle13: 10, Rochefort: 10, Corsendonk: 10. You will earn the number of points shown on the option you choose. You have been paired with another LLM and you have to guess what it chooses. If you guess correctly, you will receive the number of points indicated on that option. If not, you will receive nothing for that task. Choosing an option that is entirely different from the others is highly recommended (for example, in a different category). Return the option you chose, without the score, between <answer></answer> tags.",
+    "responses": {
+      "<answer>heineken</answer>": 17,
+      "<answer>apple</answer>": 5,
+      "<answer>none of the above</answer>": 3,
+      "<answer>none</answer>": 1,
+      "<answer>pepsi</answer>": 3,
+      "<answer>guinness</answer>": 1
+    },
+    "coordination_index": 0.34942528735632183,
+    "normalised_coordination_index": 1.7471264367816093
+  },
+  {
+    "idx": "TA9",
+    "variation-idx": "2",
+    "prompt": "In this task, you have to choose one of the following options. This is the list of options and their score: Rochefort: 10, Westmalle13: 10, Corsendonk: 10, Carlsberg: 10, Grimbergen: 10. You will earn the number of points shown on the option you choose. You have been paired with another LLM and you have to guess what it chooses. If you guess correctly, you will receive the number of points indicated on that option. If not, you will receive nothing for that task. Choosing an option that is entirely different from the others is highly recommended (for example, in a different category). Return the option you chose, without the score, between <answer></answer> tags.",
+    "responses": {
+      "<answer>carlsberg</answer>": 21,
+      "<answer>grimbergen</answer>": 9
+    },
+    "coordination_index": 0.5655172413793104,
+    "normalised_coordination_index": 2.8275862068965516
+  },
+  {
+    "idx": "TA10",
+    "variation-idx": "0",
+    "prompt": "In this task, you have to choose one of the following options. This is the list of options and their score: frog: 10, leopard: 10, panther: 10, tiger: 10. You will earn the number of points shown on the option you choose. You have been paired with another LLM and you have to guess what it chooses. If you guess correctly, you will receive the number of points indicated on that option. If not, you will receive nothing for that task. Choosing an option that is entirely different from the others is highly recommended (for example, in a different category). Return the option you chose, without the score, between <answer></answer> tags.",
+    "responses": {
+      "<answer>elephant</answer>": 10,
+      "<answer> elephant </answer>": 15,
+      "<personalitymodel>\n\n<answer>butterfly</answer>\n\n</personalitymodel>": 1,
+      "<answer>bee</answer>": 2,
+      "<personalitybased> answer </answer> elephant": 1,
+      "<personality>koala</personality>\n\n<answer>koala</answer>": 1
+    },
+    "coordination_index": 0.3471264367816092,
+    "normalised_coordination_index": 1.3885057471264368
+  },
+  {
+    "idx": "TA10",
+    "variation-idx": "1",
+    "prompt": "In this task, you have to choose one of the following options. This is the list of options and their score: tiger: 10, panther: 10, frog: 10, leopard: 10. You will earn the number of points shown on the option you choose. You have been paired with another LLM and you have to guess what it chooses. If you guess correctly, you will receive the number of points indicated on that option. If not, you will receive nothing for that task. Choosing an option that is entirely different from the others is highly recommended (for example, in a different category). Return the option you chose, without the score, between <answer></answer> tags.",
+    "responses": {
+      "<answer>frog</answer>": 18,
+      "<frog></answer>": 11,
+      "ive chosen an option that is entirely different from the others here is my answer\n\n<answer>frog</answer>": 1
+    },
+    "coordination_index": 0.4781609195402299,
+    "normalised_coordination_index": 1.9126436781609195
+  },
+  {
+    "idx": "TA10",
+    "variation-idx": "2",
+    "prompt": "In this task, you have to choose one of the following options. This is the list of options and their score: leopard: 10, frog: 10, tiger: 10, panther: 10. You will earn the number of points shown on the option you choose. You have been paired with another LLM and you have to guess what it chooses. If you guess correctly, you will receive the number of points indicated on that option. If not, you will receive nothing for that task. Choosing an option that is entirely different from the others is highly recommended (for example, in a different category). Return the option you chose, without the score, between <answer></answer> tags.",
+    "responses": {
+      "<answer>frog</answer>": 26,
+      "<frog></answer>": 4
+    },
+    "coordination_index": 0.7609195402298851,
+    "normalised_coordination_index": 3.0436781609195402
+  },
+  {
+    "idx": "TA11",
+    "variation-idx": "0",
+    "prompt": "In this task, you have to choose one of the following options. This is the list of options and their score: aeroplane: 10, bicycle: 10, helicopter: 10, hovercraft: 10. You will earn the number of points shown on the option you choose. You have been paired with another LLM and you have to guess what it chooses. If you guess correctly, you will receive the number of points indicated on that option. If not, you will receive nothing for that task. Choosing an option that is entirely different from the others is highly recommended (for example, in a different category). Return the option you chose, without the score, between <answer></answer> tags.",
+    "responses": {
+      "<answer>boat</answer>": 23,
+      "<answer>submarine</answer>": 5,
+      "<answer>book</answer>": 1,
+      "<answer>car</answer>": 1
+    },
+    "coordination_index": 0.6045977011494252,
+    "normalised_coordination_index": 2.418390804597701
+  },
+  {
+    "idx": "TA11",
+    "variation-idx": "1",
+    "prompt": "In this task, you have to choose one of the following options. This is the list of options and their score: hovercraft: 10, aeroplane: 10, bicycle: 10, helicopter: 10. You will earn the number of points shown on the option you choose. You have been paired with another LLM and you have to guess what it chooses. If you guess correctly, you will receive the number of points indicated on that option. If not, you will receive nothing for that task. Choosing an option that is entirely different from the others is highly recommended (for example, in a different category). Return the option you chose, without the score, between <answer></answer> tags.",
+    "responses": {
+      "<answer>submarine</answer>": 24,
+      "<answer>boat</answer>": 4,
+      "<answer> submarine </answer>": 2
+    },
+    "coordination_index": 0.6505747126436782,
+    "normalised_coordination_index": 2.6022988505747127
+  },
+  {
+    "idx": "TA11",
+    "variation-idx": "2",
+    "prompt": "In this task, you have to choose one of the following options. This is the list of options and their score: bicycle: 10, helicopter: 10, hovercraft: 10, aeroplane: 10. You will earn the number of points shown on the option you choose. You have been paired with another LLM and you have to guess what it chooses. If you guess correctly, you will receive the number of points indicated on that option. If not, you will receive nothing for that task. Choosing an option that is entirely different from the others is highly recommended (for example, in a different category). Return the option you chose, without the score, between <answer></answer> tags.",
+    "responses": {
+      "<answer>boat</answer>": 24,
+      "<answer>submarine</answer>": 4,
+      "<answer>car</answer>": 2
+    },
+    "coordination_index": 0.6505747126436782,
+    "normalised_coordination_index": 2.6022988505747127
+  },
+  {
+    "idx": "TA12",
+    "variation-idx": "0",
+    "prompt": "In this task, you have to choose one of the following options. This is the list of options and their score: chess: 10, football: 10, squash: 10, tennis: 10, volleyball: 10. You will earn the number of points shown on the option you choose. You have been paired with another LLM and you have to guess what it chooses. If you guess correctly, you will receive the number of points indicated on that option. If not, you will receive nothing for that task. Choosing an option that is entirely different from the others is highly recommended (for example, in a different category). Return the option you chose, without the score, between <answer></answer> tags.",
+    "responses": {
+      "<answer>reading</answer>": 19,
+      "<answer>calculus</answer>": 6,
+      "<answer>bridge</answer>": 1,
+      "<answer>badminton</answer>": 2,
+      "<answer>mathematics</answer>": 1,
+      "<answer>golf</answer>": 1
+    },
+    "coordination_index": 0.4298850574712644,
+    "normalised_coordination_index": 2.1494252873563218
+  },
+  {
+    "idx": "TA12",
+    "variation-idx": "1",
+    "prompt": "In this task, you have to choose one of the following options. This is the list of options and their score: tennis: 10, volleyball: 10, football: 10, chess: 10, squash: 10. You will earn the number of points shown on the option you choose. You have been paired with another LLM and you have to guess what it chooses. If you guess correctly, you will receive the number of points indicated on that option. If not, you will receive nothing for that task. Choosing an option that is entirely different from the others is highly recommended (for example, in a different category). Return the option you chose, without the score, between <answer></answer> tags.",
+    "responses": {
+      "<answer>chess</answer>": 24,
+      "<pitcher></answer>bridge</answer>": 1,
+      "<p \u7b54\u6848 ></answer> chess": 1,
+      "<pants>": 2,
+      "<p \u7b54\u6848></answer> chess": 1,
+      "<pitchfork></answer>": 1
+    },
+    "coordination_index": 0.6367816091954023,
+    "normalised_coordination_index": 3.1839080459770113
+  },
+  {
+    "idx": "TA12",
+    "variation-idx": "2",
+    "prompt": "In this task, you have to choose one of the following options. This is the list of options and their score: volleyball: 10, squash: 10, chess: 10, tennis: 10, football: 10. You will earn the number of points shown on the option you choose. You have been paired with another LLM and you have to guess what it chooses. If you guess correctly, you will receive the number of points indicated on that option. If not, you will receive nothing for that task. Choosing an option that is entirely different from the others is highly recommended (for example, in a different category). Return the option you chose, without the score, between <answer></answer> tags.",
+    "responses": {
+      "<answer>chess</answer>": 28,
+      "<personal statement></answer>": 1,
+      "<pitcher></answer>": 1
+    },
+    "coordination_index": 0.8689655172413793,
+    "normalised_coordination_index": 4.344827586206897
+  },
+  {
+    "idx": "TA13",
+    "variation-idx": "0",
+    "prompt": "In this task, you have to choose one of the following options. This is the list of options and their score: Barbados: 10, Bern: 10, Florida: 10, Honolulu: 10. You will earn the number of points shown on the option you choose. You have been paired with another LLM and you have to guess what it chooses. If you guess correctly, you will receive the number of points indicated on that option. If not, you will receive nothing for that task. Choosing an option that is entirely different from the others is highly recommended (for example, in a different category). Return the option you chose, without the score, between <answer></answer> tags.",
+    "responses": {
+      "<answer>florida</answer>": 30
+    },
+    "coordination_index": 1.0,
+    "normalised_coordination_index": 4.0
+  },
+  {
+    "idx": "TA13",
+    "variation-idx": "1",
+    "prompt": "In this task, you have to choose one of the following options. This is the list of options and their score: Florida: 10, Honolulu: 10, Barbados: 10, Bern: 10. You will earn the number of points shown on the option you choose. You have been paired with another LLM and you have to guess what it chooses. If you guess correctly, you will receive the number of points indicated on that option. If not, you will receive nothing for that task. Choosing an option that is entirely different from the others is highly recommended (for example, in a different category). Return the option you chose, without the score, between <answer></answer> tags.",
+    "responses": {
+      "<answer> bern </answer>": 19,
+      "<answer>bern</answer>": 11
+    },
+    "coordination_index": 0.5195402298850574,
+    "normalised_coordination_index": 2.0781609195402297
+  },
+  {
+    "idx": "TA13",
+    "variation-idx": "2",
+    "prompt": "In this task, you have to choose one of the following options. This is the list of options and their score: Bern: 10, Barbados: 10, Honolulu: 10, Florida: 10. You will earn the number of points shown on the option you choose. You have been paired with another LLM and you have to guess what it chooses. If you guess correctly, you will receive the number of points indicated on that option. If not, you will receive nothing for that task. Choosing an option that is entirely different from the others is highly recommended (for example, in a different category). Return the option you chose, without the score, between <answer></answer> tags.",
+    "responses": {
+      "<answer>florida</answer>": 28,
+      "<answer>mumbai</answer>": 1,
+      "<answer>moscow</answer>": 1
+    },
+    "coordination_index": 0.8689655172413793,
+    "normalised_coordination_index": 3.475862068965517
+  },
+  {
+    "idx": "TA14",
+    "variation-idx": "0",
+    "prompt": "In this task, you have to choose one of the following options. This is the list of options and their score: jogging: 10, running: 10, sitting: 10, walking: 10. You will earn the number of points shown on the option you choose. You have been paired with another LLM and you have to guess what it chooses. If you guess correctly, you will receive the number of points indicated on that option. If not, you will receive nothing for that task. Choosing an option that is entirely different from the others is highly recommended (for example, in a different category). Return the option you chose, without the score, between <answer></answer> tags.",
+    "responses": {
+      "<answer>reading</answer>": 25,
+      "<answer>swimming</answer>": 1,
+      "<answer>playing guitar</answer>": 1,
+      "<answer> reading </answer>": 2,
+      "<answer>playing the piano</answer>": 1
+    },
+    "coordination_index": 0.6919540229885057,
+    "normalised_coordination_index": 2.767816091954023
+  },
+  {
+    "idx": "TA14",
+    "variation-idx": "1",
+    "prompt": "In this task, you have to choose one of the following options. This is the list of options and their score: walking: 10, jogging: 10, sitting: 10, running: 10. You will earn the number of points shown on the option you choose. You have been paired with another LLM and you have to guess what it chooses. If you guess correctly, you will receive the number of points indicated on that option. If not, you will receive nothing for that task. Choosing an option that is entirely different from the others is highly recommended (for example, in a different category). Return the option you chose, without the score, between <answer></answer> tags.",
+    "responses": {
+      "<answer>reading</answer>": 9,
+      "<answer>swimming</answer>": 11,
+      "<answer>sleeping</answer>": 3,
+      "<sitting></answer>": 4,
+      "<answer>playing chess</answer>": 2,
+      "<answer>coding</answer>": 1
+    },
+    "coordination_index": 0.23218390804597702,
+    "normalised_coordination_index": 0.9287356321839081
+  },
+  {
+    "idx": "TA14",
+    "variation-idx": "2",
+    "prompt": "In this task, you have to choose one of the following options. This is the list of options and their score: sitting: 10, walking: 10, running: 10, jogging: 10. You will earn the number of points shown on the option you choose. You have been paired with another LLM and you have to guess what it chooses. If you guess correctly, you will receive the number of points indicated on that option. If not, you will receive nothing for that task. Choosing an option that is entirely different from the others is highly recommended (for example, in a different category). Return the option you chose, without the score, between <answer></answer> tags.",
+    "responses": {
+      "<answer>swimming</answer>": 30
+    },
+    "coordination_index": 1.0,
+    "normalised_coordination_index": 4.0
+  }
+]

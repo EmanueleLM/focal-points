@@ -28,9 +28,9 @@ OPENAI_MODELS=(
   "/openai/gpt-oss-120b_low"
   "/openai/gpt-oss-120b_medium"
   "/openai/gpt-oss-120b_high"
-#   "/openai/gpt-oss-20b_low"
-#   "/openai/gpt-oss-20b_medium"
-#   "/openai/gpt-oss-20b_high"
+  "/openai/gpt-oss-20b_low"
+  "/openai/gpt-oss-20b_medium"
+  "/openai/gpt-oss-20b_high"
 )
 
 REQUIRED_FILES_VANILLA=(

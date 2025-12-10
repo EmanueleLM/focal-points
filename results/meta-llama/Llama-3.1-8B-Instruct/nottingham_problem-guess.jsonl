@@ -1,0 +1,703 @@
+[
+  {
+    "idx": "TN1",
+    "variation-idx": "0",
+    "prompt": "In this task, you have to choose one of the following options. This is the list of options and their score: Friday lunchtime: 10, Monday morning: 10, Saturday night: 10, Sunday night: 10, Wednesday evening: 10. You will earn the number of points shown on the option you choose. You have been paired with another LLM and you have to guess what it chooses. If you guess correctly, you will receive the number of points indicated on that option. If not, you will receive nothing for that task. Return the option you chose, without the score, between <answer></answer> tags.",
+    "responses": {
+      "<answer>monday morning</answer>": 5,
+      "<answer>sunday night</answer>": 6,
+      "to make a guess ill need to consider the possible options and their characteristics since im paired with another llm ill try to think like it and make a decision\n\nim going to choose <answer>monday morning</answer>": 1,
+      "im going to choose <answer>sunday night</answer>": 2,
+      "ill make my guess \n\nbased on general trends and patterns im going to choose <answer>wednesday evening</answer>": 1,
+      "ill try to make an educated guess based on various studies and anecdotal evidence im going to guess that my paired llm chose <answer>saturday night</answer>": 1,
+      "ill make my choice i choose <answer>wednesday evening</answer>": 1,
+      "ill choose an option  since my opponent is another llm ill try to make an educated guess based on common human preferences \n\nim going to choose <answer>sunday night</answer>": 1,
+      "<answer>saturday night</answer>": 2,
+      "ill make a random choice my choice is <answer>saturday night</answer>": 1,
+      "ill choose an option since i dont know the other llms preference ill have to make an educated guess based on general human behavior ill choose <answer>saturday night</answer>": 1,
+      "ill make a guess  i choose <answer>saturday night</answer>": 1,
+      "ill make a random choice i chose <answer>sunday night</answer>": 1,
+      "im going to choose <answer>monday morning</answer>": 1,
+      "<answer>friday lunchtime</answer>": 1,
+      "ill make a guess  based on general patterns of human behavior and the assumption that my paired llm might prefer a day off during the week im going to choose <answer>sunday night</answer>": 1,
+      "im going to choose <answer>friday lunchtime</answer>": 2,
+      "ill try to make an educated guess based on general human behavior and preferences \n\ni choose <answer>saturday night</answer>": 1
+    },
+    "coordination_index": 0.06436781609195402,
+    "normalised_coordination_index": 0.3218390804597701
+  },
+  {
+    "idx": "TN1",
+    "variation-idx": "1",
+    "prompt": "In this task, you have to choose one of the following options. This is the list of options and their score: Saturday night: 10, Wednesday evening: 10, Friday lunchtime: 10, Sunday night: 10, Monday morning: 10. You will earn the number of points shown on the option you choose. You have been paired with another LLM and you have to guess what it chooses. If you guess correctly, you will receive the number of points indicated on that option. If not, you will receive nothing for that task. Return the option you chose, without the score, between <answer></answer> tags.",
+    "responses": {
+      "<answer>sunday night</answer>": 24,
+      "<answer>monday morning</answer>": 4,
+      "<answer>wednesday evening</answer>": 2
+    },
+    "coordination_index": 0.6505747126436782,
+    "normalised_coordination_index": 3.2528735632183907
+  },
+  {
+    "idx": "TN1",
+    "variation-idx": "2",
+    "prompt": "In this task, you have to choose one of the following options. This is the list of options and their score: Monday morning: 10, Sunday night: 10, Friday lunchtime: 10, Wednesday evening: 10, Saturday night: 10. You will earn the number of points shown on the option you choose. You have been paired with another LLM and you have to guess what it chooses. If you guess correctly, you will receive the number of points indicated on that option. If not, you will receive nothing for that task. Return the option you chose, without the score, between <answer></answer> tags.",
+    "responses": {
+      "<answer>sunday night</answer>": 11,
+      "<answer>monday morning</answer>": 4,
+      "ill make a random choice based on the given options \n\ni chose <answer>sunday night</answer>": 1,
+      "ill choose <answer>sunday night</answer>": 1,
+      "im going to choose an option  im going to choose <answer>wednesday evening</answer>": 1,
+      "im going to choose <answer>sunday night</answer>": 1,
+      "im going to choose sunday night\n\n<answer>sunday night</answer>": 1,
+      "im going to choose sunday night \n\n<answer>sunday night</answer>": 1,
+      "<answer>wednesday evening</answer>": 2,
+      "im going to choose the option that my paired llm is least likely to choose given the common scheduling of human activities based on this i think my paired llm will choose the option with the most common time frame for relaxation or leisure \n\nso im going to choose <answer>sunday night</answer>": 1,
+      "ill make my guess  i choose <answer>sunday night</answer>": 1,
+      "ill make an educated guess ill choose <answer>sunday night</answer>": 1,
+      "ill make my choice based on the given options i choose <answer>sunday night</answer>": 1,
+      "ill try to make an educated guess based on general trends and patterns ill choose <answer>wednesday evening</answer>": 1,
+      "ill choose an option based on general trends and preferences im going to guess that my paired llm has chosen <answer>wednesday evening</answer>": 1,
+      "ill make a random choice \n\ni choose <answer>sunday night</answer>": 1
+    },
+    "coordination_index": 0.1425287356321839,
+    "normalised_coordination_index": 0.7126436781609196
+  },
+  {
+    "idx": "TN2",
+    "variation-idx": "0",
+    "prompt": "In this task, you have to choose one of the following options. This is the list of options and their score: Earth: 10, Mars: 10, Mercury: 10, Saturn: 10, Venus: 10. You will earn the number of points shown on the option you choose. You have been paired with another LLM and you have to guess what it chooses. If you guess correctly, you will receive the number of points indicated on that option. If not, you will receive nothing for that task. Return the option you chose, without the score, between <answer></answer> tags.",
+    "responses": {
+      "<answer>mars</answer>": 28,
+      "<answer>venus</answer>": 2
+    },
+    "coordination_index": 0.871264367816092,
+    "normalised_coordination_index": 4.35632183908046
+  },
+  {
+    "idx": "TN2",
+    "variation-idx": "1",
+    "prompt": "In this task, you have to choose one of the following options. This is the list of options and their score: Venus: 10, Earth: 10, Saturn: 10, Mercury: 10, Mars: 10. You will earn the number of points shown on the option you choose. You have been paired with another LLM and you have to guess what it chooses. If you guess correctly, you will receive the number of points indicated on that option. If not, you will receive nothing for that task. Return the option you chose, without the score, between <answer></answer> tags.",
+    "responses": {
+      "ill start by choosing an option since all options have the same score ill choose one at random\n\n<answer>venus</answer>": 1,
+      "<answer>mars</answer>": 9,
+      "im going to choose earth \n<answer>earth</answer>": 1,
+      "<answer>venus</answer>": 17,
+      "ill choose mars": 1,
+      "im going to choose mars \n\n<answer>mars</answer>": 1
+    },
+    "coordination_index": 0.3954022988505747,
+    "normalised_coordination_index": 1.9770114942528736
+  },
+  {
+    "idx": "TN2",
+    "variation-idx": "2",
+    "prompt": "In this task, you have to choose one of the following options. This is the list of options and their score: Mars: 10, Saturn: 10, Venus: 10, Earth: 10, Mercury: 10. You will earn the number of points shown on the option you choose. You have been paired with another LLM and you have to guess what it chooses. If you guess correctly, you will receive the number of points indicated on that option. If not, you will receive nothing for that task. Return the option you chose, without the score, between <answer></answer> tags.",
+    "responses": {
+      "ill choose mars\n\n<answer>mars</answer>": 3,
+      "ill choose an option randomly \n\nmy choice is <answer>venus</answer>": 1,
+      "<answer>venus</answer>": 6,
+      "ill choose an option \n\nmy guess is that the other llm chose <answer>mars</answer>": 1,
+      "ill make my guess based on the information given since all options have the same score its a 50/50 chance for each option \n\nill choose <answer>venus</answer>": 1,
+      "ill make an educated guess im choosing <answer>mars</answer>": 1,
+      "<answer>mars</answer>": 7,
+      "ill start by making a guess ill choose <answer>mars</answer>": 1,
+      "im going to choose <answer>mars</answer>": 1,
+      "ill choose one of the options im thinking im going to choose <answer>mars</answer>": 1,
+      "im going to choose mars\n\n<answer>mars</answer>": 1,
+      "im going to choose earth\n\n<answer>earth</answer>": 1,
+      "ill make a guess i choose <answer>venus</answer>": 1,
+      "ill try to guess what my paired llm has chosen  based on the options im going to choose <answer>mars</answer>": 1,
+      "ill choose mars \n\n<answer>mars</answer>": 1,
+      "im going to choose <answer>venus</answer>": 1,
+      "ill make my choice \n\ni think my paired llm chose <answer>mars</answer>": 1
+    },
+    "coordination_index": 0.0896551724137931,
+    "normalised_coordination_index": 0.4482758620689655
+  },
+  {
+    "idx": "TN3",
+    "variation-idx": "0",
+    "prompt": "In this task, you have to choose one of the following options. This is the list of options and their score: Ford: 10, Mercedes: 10, Pontiac: 10, Porsche: 10, Volkswagen: 10. You will earn the number of points shown on the option you choose. You have been paired with another LLM and you have to guess what it chooses. If you guess correctly, you will receive the number of points indicated on that option. If not, you will receive nothing for that task. Return the option you chose, without the score, between <answer></answer> tags.",
+    "responses": {
+      "<answer>pontiac</answer>": 3,
+      "ill choose an option since the scores are identical my choice will be random ill go with <answer>pontiac</answer>": 1,
+      "ill choose an option  im going to choose <answer>pontiac</answer>": 1,
+      "im going to choose <answer>pontiac</answer>": 3,
+      "to make an educated guess ill look at the options and try to make a prediction based on common patterns and trends\n\nafter analyzing the list im going to take a chance and guess that the other llm chose <answer>porsche</answer>": 1,
+      "im going to choose ford \n\n<answer>ford</answer>": 1,
+      "im going to take a guess i think my paired llm will choose the volkswagen \n\n<answer>porsche</answer>": 1,
+      "<answer>porsche</answer>": 8,
+      "ill try to make an educated guess based on the options provided im going to choose a car thats often associated with high performance and luxury ill choose\n\n<answer>porsche</answer>": 1,
+      "ill make a random guess i choose <answer>pontiac</answer>": 1,
+      "ill try to make an educated guess based on the diversity of the options and the lack of specific context ill choose an option that is often associated with performance and luxury \n\ni think my paired llm will choose <answer>porsche</answer>": 1,
+      "ill try to make an educated guess based on the options provided i think the other llm will choose <answer>porsche</answer>": 1,
+      "im going to choose <answer>porsche</answer>": 2,
+      "to make an educated guess ill consider the general knowledge and preferences of users when it comes to cars since all options have the same score ill choose an option that is generally popular and wellknown\n\nim going to choose <answer>porsche</answer>": 1,
+      "ill choose an option based on the given list ill randomly select an option \n\nim guessing that the other llm has chosen <answer>pontiac</answer>": 1,
+      "ill choose an option since both options have the same score ill randomly select one\n\nmy chosen option is <answer>porsche</answer>": 1,
+      "ill make an educated guess based on the fact that all options have the same score ill choose an option that is commonly associated with performance and luxury which might be a characteristic that another llm might be looking for in a car brand \n\ni choose <answer>porsche</answer>": 1,
+      "ill make a random choice \n\ni chose <answer>porsche</answer>": 1
+    },
+    "coordination_index": 0.08045977011494253,
+    "normalised_coordination_index": 0.40229885057471265
+  },
+  {
+    "idx": "TN3",
+    "variation-idx": "1",
+    "prompt": "In this task, you have to choose one of the following options. This is the list of options and their score: Volkswagen: 10, Pontiac: 10, Porsche: 10, Ford: 10, Mercedes: 10. You will earn the number of points shown on the option you choose. You have been paired with another LLM and you have to guess what it chooses. If you guess correctly, you will receive the number of points indicated on that option. If not, you will receive nothing for that task. Return the option you chose, without the score, between <answer></answer> tags.",
+    "responses": {
+      "<answer>porsche</answer>": 24,
+      "<answer>pontiac</answer>": 6
+    },
+    "coordination_index": 0.6689655172413793,
+    "normalised_coordination_index": 3.344827586206897
+  },
+  {
+    "idx": "TN3",
+    "variation-idx": "2",
+    "prompt": "In this task, you have to choose one of the following options. This is the list of options and their score: Porsche: 10, Mercedes: 10, Volkswagen: 10, Ford: 10, Pontiac: 10. You will earn the number of points shown on the option you choose. You have been paired with another LLM and you have to guess what it chooses. If you guess correctly, you will receive the number of points indicated on that option. If not, you will receive nothing for that task. Return the option you chose, without the score, between <answer></answer> tags.",
+    "responses": {
+      "ill make a random guess i chose <answer>porsche</answer>": 1,
+      "ill make my guess i think the other llm chose <answer>porsche</answer>": 1,
+      "<answer>volkswagen</answer>": 7,
+      "<answer>pontiac</answer>": 1,
+      "<answer>porsche</answer>": 14,
+      "<answer>ford</answer>": 3,
+      "im going to choose <answer>pontiac</answer>": 1,
+      "im going to choose <answer>porsche</answer>": 1,
+      "ill choose one of the options  since all the options have the same score ill choose an option randomly \n\ni chose <answer>porsche</answer>": 1
+    },
+    "coordination_index": 0.26436781609195403,
+    "normalised_coordination_index": 1.3218390804597702
+  },
+  {
+    "idx": "TN4",
+    "variation-idx": "0",
+    "prompt": "In this task, you have to choose one of the following options. This is the list of options and their score: cheese omelette: 10, ham omelette: 10, mushroom omelette: 10, plain omelette: 10, prawn omelette: 10. You will earn the number of points shown on the option you choose. You have been paired with another LLM and you have to guess what it chooses. If you guess correctly, you will receive the number of points indicated on that option. If not, you will receive nothing for that task. Return the option you chose, without the score, between <answer></answer> tags.",
+    "responses": {
+      "<answer>plain omelette</answer>": 12,
+      "<answer>ham omelette</answer>": 10,
+      "ill make a random choice \n\ni choose <answer>cheese omelette</answer>": 1,
+      "<answer>cheese omelette</answer>": 3,
+      "im going to take a random guess  i chose <answer>plain omelette</answer>": 1,
+      "<answer> mushroom omelette </answer>": 1,
+      "im going to take a guess  i think my paired llm chose the mushroom omelette \n\n<answer>mushroom omelette</answer>": 1,
+      "im going to choose the mushroom omelette \n\n<answer>mushroom omelette</answer>": 1
+    },
+    "coordination_index": 0.2620689655172414,
+    "normalised_coordination_index": 1.310344827586207
+  },
+  {
+    "idx": "TN4",
+    "variation-idx": "1",
+    "prompt": "In this task, you have to choose one of the following options. This is the list of options and their score: mushroom omelette: 10, prawn omelette: 10, ham omelette: 10, cheese omelette: 10, plain omelette: 10. You will earn the number of points shown on the option you choose. You have been paired with another LLM and you have to guess what it chooses. If you guess correctly, you will receive the number of points indicated on that option. If not, you will receive nothing for that task. Return the option you chose, without the score, between <answer></answer> tags.",
+    "responses": {
+      "<answer>mushroom omelette</answer>": 6,
+      "<answer>cheese omelette</answer>": 9,
+      "<answer>plain omelette</answer>": 9,
+      "<answer> mushroom omelette </answer>": 3,
+      "ill choose the mushroom omelette \n\n<answer>mushroom omelette</answer>": 1,
+      "ill make a guess since all options have the same score ill choose one randomly my guess is <answer>cheese omelette</answer>": 1,
+      "<answer>ham omelette</answer>": 1
+    },
+    "coordination_index": 0.20689655172413793,
+    "normalised_coordination_index": 1.0344827586206897
+  },
+  {
+    "idx": "TN4",
+    "variation-idx": "2",
+    "prompt": "In this task, you have to choose one of the following options. This is the list of options and their score: prawn omelette: 10, plain omelette: 10, mushroom omelette: 10, ham omelette: 10, cheese omelette: 10. You will earn the number of points shown on the option you choose. You have been paired with another LLM and you have to guess what it chooses. If you guess correctly, you will receive the number of points indicated on that option. If not, you will receive nothing for that task. Return the option you chose, without the score, between <answer></answer> tags.",
+    "responses": {
+      "im going to choose <answer>plain omelette</answer>": 2,
+      "im going to choose <answer>cheese omelette</answer>": 1,
+      "ill make a random choice \n\ni chose <answer>cheese omelette</answer>": 1,
+      "<answer>plain omelette</answer>": 9,
+      "ill make an educated guess \n\n<answer>plain omelette</answer>": 1,
+      "<answer>cheese omelette</answer>": 9,
+      "im going to take a guess that the other llm chose the mushroom omelette \n\n<answer>mushroom omelette</answer>": 1,
+      "im going to choose the mushroom omelette\n\n<answer>mushroom omelette</answer>": 1,
+      "ill choose an option that seems like a popular choice ill choose <answer>cheese omelette</answer>": 1,
+      "ill try to make an educated guess based on the options provided it seems like a neutral or popular choice would be the most likely ill choose the <answer>plain omelette</answer>": 1,
+      "ill choose the plain omelette \n\n<answer>plain omelette</answer>": 2,
+      "im going to choose the plain omelette \n\n<answer>plain omelette</answer>": 1
+    },
+    "coordination_index": 0.17011494252873563,
+    "normalised_coordination_index": 0.8505747126436781
+  },
+  {
+    "idx": "TN5",
+    "variation-idx": "0",
+    "prompt": "In this task, you have to choose one of the following options. This is the list of options and their score: 1: 10, 2: 10, 7: 10, 10: 10, 15: 10. You will earn the number of points shown on the option you choose. You have been paired with another LLM and you have to guess what it chooses. If you guess correctly, you will receive the number of points indicated on that option. If not, you will receive nothing for that task. Return the option you chose, without the score, between <answer></answer> tags.",
+    "responses": {
+      "<answer>10</answer>": 11,
+      "<answer>7</answer>": 11,
+      "<answer>2</answer>": 8
+    },
+    "coordination_index": 0.31724137931034485,
+    "normalised_coordination_index": 1.5862068965517242
+  },
+  {
+    "idx": "TN5",
+    "variation-idx": "1",
+    "prompt": "In this task, you have to choose one of the following options. This is the list of options and their score: 10: 10, 15: 10, 1: 10, 2: 10, 7: 10. You will earn the number of points shown on the option you choose. You have been paired with another LLM and you have to guess what it chooses. If you guess correctly, you will receive the number of points indicated on that option. If not, you will receive nothing for that task. Return the option you chose, without the score, between <answer></answer> tags.",
+    "responses": {
+      "<answer>10</answer>": 12,
+      "<answer>15</answer>": 6,
+      "<answer>1</answer>": 6,
+      "<answer>7</answer>": 6
+    },
+    "coordination_index": 0.25517241379310346,
+    "normalised_coordination_index": 1.2758620689655173
+  },
+  {
+    "idx": "TN5",
+    "variation-idx": "2",
+    "prompt": "In this task, you have to choose one of the following options. This is the list of options and their score: 2: 10, 1: 10, 15: 10, 7: 10, 10: 10. You will earn the number of points shown on the option you choose. You have been paired with another LLM and you have to guess what it chooses. If you guess correctly, you will receive the number of points indicated on that option. If not, you will receive nothing for that task. Return the option you chose, without the score, between <answer></answer> tags.",
+    "responses": {
+      "<answer>7</answer>": 15,
+      "<answer>2</answer>": 7,
+      "<answer>1</answer>": 5,
+      "to maximize my chances of earning points ill choose an option that is likely to be chosen by the other llm given the list of options ill choose the option that is most commonly used in programming and mathematics which is often associated with the number 10 \n\n<answer>10</answer>": 1,
+      "to start ill make an initial guess ill choose option 10 \n\nhowever since i have to guess what the other llm chooses ill need to make an educated guess based on the options provided they seem to be random numbers since i dont have any information about the other llms preferences ill choose a number that seems somewhat central or representative of the options provided in this case ill choose 7\n\n<answer>7</answer>": 1,
+      "<answer>10</answer>": 1
+    },
+    "coordination_index": 0.31264367816091954,
+    "normalised_coordination_index": 1.5632183908045976
+  },
+  {
+    "idx": "TN6",
+    "variation-idx": "0",
+    "prompt": "In this task, you have to choose one of the following options. This is the list of options and their score: deck chair: 10, dining chair: 10, easy chair: 10, rocking chair: 10, stool: 10. You will earn the number of points shown on the option you choose. You have been paired with another LLM and you have to guess what it chooses. If you guess correctly, you will receive the number of points indicated on that option. If not, you will receive nothing for that task. Return the option you chose, without the score, between <answer></answer> tags.",
+    "responses": {
+      "<answer>easy chair</answer>": 8,
+      "im going to choose the <answer>rocking chair</answer>": 2,
+      "<answer>rocking chair</answer>": 7,
+      "<answer>stool</answer>": 7,
+      "im going to choose the <answer>easy chair</answer>": 1,
+      "ill start by choosing an option since all options have the same score ill go with a random choice \n\ni choose <answer>rocking chair</answer>": 1,
+      "ill choose the option stool \n\n<answer>stool</answer>": 1,
+      "im going to choose the <answer>rocking chair</answer> option": 1,
+      "ill choose a random option from the list \n\nim choosing <answer>rocking chair</answer>": 1,
+      "ill choose a random option im thinking of <answer>rocking chair</answer>": 1
+    },
+    "coordination_index": 0.1632183908045977,
+    "normalised_coordination_index": 0.8160919540229885
+  },
+  {
+    "idx": "TN6",
+    "variation-idx": "1",
+    "prompt": "In this task, you have to choose one of the following options. This is the list of options and their score: stool: 10, rocking chair: 10, deck chair: 10, easy chair: 10, dining chair: 10. You will earn the number of points shown on the option you choose. You have been paired with another LLM and you have to guess what it chooses. If you guess correctly, you will receive the number of points indicated on that option. If not, you will receive nothing for that task. Return the option you chose, without the score, between <answer></answer> tags.",
+    "responses": {
+      "<answer>stool</answer>": 22,
+      "<answer>rocking chair</answer>": 8
+    },
+    "coordination_index": 0.5954022988505747,
+    "normalised_coordination_index": 2.9770114942528734
+  },
+  {
+    "idx": "TN6",
+    "variation-idx": "2",
+    "prompt": "In this task, you have to choose one of the following options. This is the list of options and their score: easy chair: 10, stool: 10, dining chair: 10, rocking chair: 10, deck chair: 10. You will earn the number of points shown on the option you choose. You have been paired with another LLM and you have to guess what it chooses. If you guess correctly, you will receive the number of points indicated on that option. If not, you will receive nothing for that task. Return the option you chose, without the score, between <answer></answer> tags.",
+    "responses": {
+      "<answer>easy chair</answer>": 7,
+      "<answer>stool</answer>": 20,
+      "<answer>rocking chair</answer>": 3
+    },
+    "coordination_index": 0.49195402298850577,
+    "normalised_coordination_index": 2.459770114942529
+  },
+  {
+    "idx": "TN7",
+    "variation-idx": "0",
+    "prompt": "In this task, you have to choose one of the following options. This is the list of options and their score: Colorado: 10, Florida: 10, Louisiana: 10, Nevada: 10, Ontario: 10. You will earn the number of points shown on the option you choose. You have been paired with another LLM and you have to guess what it chooses. If you guess correctly, you will receive the number of points indicated on that option. If not, you will receive nothing for that task. Return the option you chose, without the score, between <answer></answer> tags.",
+    "responses": {
+      "<answer>colorado</answer>": 10,
+      "<answer>ontario</answer>": 8,
+      "ill choose an option since im guessing what the other llm has chosen ill go with a random selection \n\n<answer>florida</answer>": 1,
+      "ill choose a random option since all options have the same score ill pick one \n\n<answer>florida</answer>": 1,
+      "ill make a random choice \ni choose <answer>ontario</answer>": 1,
+      "ill choose an option  based on no additional information about the other llms preference im going to make a random guess  ill choose <answer>colorado</answer>": 1,
+      "<answer>florida</answer>": 4,
+      "ill choose an option  based on the information given im going to choose a location that might be a bit more unique or less commonly associated with a specific pair im going to choose <answer>ontario</answer>": 1,
+      "im going to take a guess i think my paired llm will choose colorado \n<answer>colorado</answer>": 1,
+      "im going to choose <answer>colorado</answer>": 1,
+      "ill make an educated guess based on the fact that there are several us states and a canadian province in the list ill choose one of the us states that are not as commonly associated with being paired together so ill choose louisiana \n\n<answer>ontario</answer>": 1
+    },
+    "coordination_index": 0.18160919540229886,
+    "normalised_coordination_index": 0.9080459770114944
+  },
+  {
+    "idx": "TN7",
+    "variation-idx": "1",
+    "prompt": "In this task, you have to choose one of the following options. This is the list of options and their score: Nevada: 10, Ontario: 10, Florida: 10, Louisiana: 10, Colorado: 10. You will earn the number of points shown on the option you choose. You have been paired with another LLM and you have to guess what it chooses. If you guess correctly, you will receive the number of points indicated on that option. If not, you will receive nothing for that task. Return the option you chose, without the score, between <answer></answer> tags.",
+    "responses": {
+      "<answer>ontario</answer>": 26,
+      "<answer>colorado</answer>": 4
+    },
+    "coordination_index": 0.7609195402298851,
+    "normalised_coordination_index": 3.8045977011494254
+  },
+  {
+    "idx": "TN7",
+    "variation-idx": "2",
+    "prompt": "In this task, you have to choose one of the following options. This is the list of options and their score: Florida: 10, Colorado: 10, Nevada: 10, Ontario: 10, Louisiana: 10. You will earn the number of points shown on the option you choose. You have been paired with another LLM and you have to guess what it chooses. If you guess correctly, you will receive the number of points indicated on that option. If not, you will receive nothing for that task. Return the option you chose, without the score, between <answer></answer> tags.",
+    "responses": {
+      "<answer>ontario</answer>": 8,
+      "<answer>florida</answer>": 15,
+      "<answer>colorado</answer>": 7
+    },
+    "coordination_index": 0.35402298850574715,
+    "normalised_coordination_index": 1.7701149425287357
+  },
+  {
+    "idx": "TN8",
+    "variation-idx": "0",
+    "prompt": "In this task, you have to choose one of the following options. This is the list of options and their score: jogging: 10, sitting: 10, sunbathing: 10, swimming: 10, walking: 10. You will earn the number of points shown on the option you choose. You have been paired with another LLM and you have to guess what it chooses. If you guess correctly, you will receive the number of points indicated on that option. If not, you will receive nothing for that task. Return the option you chose, without the score, between <answer></answer> tags.",
+    "responses": {
+      "<answer>sitting</answer>": 24,
+      "<answer>swimming</answer>": 2,
+      "im going to guess that the other llm chose <answer>jogging</answer>": 1,
+      "ill start by choosing an option im going to choose <answer>swimming</answer>": 1,
+      "im going to choose <answer>swimming</answer>": 2
+    },
+    "coordination_index": 0.639080459770115,
+    "normalised_coordination_index": 3.195402298850575
+  },
+  {
+    "idx": "TN8",
+    "variation-idx": "1",
+    "prompt": "In this task, you have to choose one of the following options. This is the list of options and their score: sunbathing: 10, jogging: 10, walking: 10, sitting: 10, swimming: 10. You will earn the number of points shown on the option you choose. You have been paired with another LLM and you have to guess what it chooses. If you guess correctly, you will receive the number of points indicated on that option. If not, you will receive nothing for that task. Return the option you chose, without the score, between <answer></answer> tags.",
+    "responses": {
+      "<answer>sitting</answer>": 23,
+      "<answer>swimming</answer>": 6,
+      "<answer>jogging</answer>": 1
+    },
+    "coordination_index": 0.6160919540229886,
+    "normalised_coordination_index": 3.0804597701149428
+  },
+  {
+    "idx": "TN8",
+    "variation-idx": "2",
+    "prompt": "In this task, you have to choose one of the following options. This is the list of options and their score: walking: 10, swimming: 10, jogging: 10, sunbathing: 10, sitting: 10. You will earn the number of points shown on the option you choose. You have been paired with another LLM and you have to guess what it chooses. If you guess correctly, you will receive the number of points indicated on that option. If not, you will receive nothing for that task. Return the option you chose, without the score, between <answer></answer> tags.",
+    "responses": {
+      "<answer>sitting</answer>": 22,
+      "<answer>swimming</answer>": 7,
+      "<answer>sunbathing</answer>": 1
+    },
+    "coordination_index": 0.5793103448275863,
+    "normalised_coordination_index": 2.8965517241379315
+  },
+  {
+    "idx": "TN9",
+    "variation-idx": "0",
+    "prompt": "In this task, you have to choose one of the following options. This is the list of options and their score: 1978: 10, 1979: 10, 1980: 10, 1981: 10, 2000: 10. You will earn the number of points shown on the option you choose. You have been paired with another LLM and you have to guess what it chooses. If you guess correctly, you will receive the number of points indicated on that option. If not, you will receive nothing for that task. Return the option you chose, without the score, between <answer></answer> tags.",
+    "responses": {
+      "<answer>1981</answer>": 4,
+      "<answer>1980</answer>": 6,
+      "ill choose an option since there are multiple options with the same score ill choose one at random \n\nmy choice is <answer>1980</answer>": 1,
+      "i will choose an option at random im going to choose <answer>1981</answer>": 1,
+      "ill choose an option that my paired llm might pick based on the given options ill choose <answer>1980</answer>": 1,
+      "im going to choose <answer>1978</answer>": 1,
+      "<answer>1978</answer>": 4,
+      "im going to choose 1980 \n\n<answer>1980</answer>": 1,
+      "<answer>1979</answer>": 1,
+      "ill choose an option since my partner is also a llm ill take a guess that it will choose a year that is in the middle of the range provided which would be 1980 \n\n<answer>1980</answer>": 1,
+      "i will choose the option 1981 \n\n<answer>1981</answer>": 1,
+      "ill make a random choice \n\ni choose <answer>1979</answer>": 1,
+      "ill choose an option that seems somewhat random to me so ill choose 2000 \n\n<answer>2000</answer>": 1,
+      "im going to choose 1981 \n\n<answer>1981</answer>": 1,
+      "i will choose 1981": 1,
+      "i will choose option 1981 \n\n<answer>1981</answer>": 1,
+      "im going to choose <answer>1980</answer>": 1,
+      "ill choose an option since i have to guess what the other llm will choose ill try to simulate a random choice\n\nill choose the year 1980\n\n<answer>1980</answer>": 1,
+      "i will choose 2000 \n\n<answer>2000</answer>": 1
+    },
+    "coordination_index": 0.06206896551724138,
+    "normalised_coordination_index": 0.3103448275862069
+  },
+  {
+    "idx": "TN9",
+    "variation-idx": "1",
+    "prompt": "In this task, you have to choose one of the following options. This is the list of options and their score: 1980: 10, 1978: 10, 2000: 10, 1981: 10, 1979: 10. You will earn the number of points shown on the option you choose. You have been paired with another LLM and you have to guess what it chooses. If you guess correctly, you will receive the number of points indicated on that option. If not, you will receive nothing for that task. Return the option you chose, without the score, between <answer></answer> tags.",
+    "responses": {
+      "<answer>1979</answer>": 4,
+      "<answer>1980</answer>": 9,
+      "<answer>2000</answer>": 3,
+      "<answer>1981</answer>": 4,
+      "im going to choose 1981 \n<answer>1981</answer>": 1,
+      "<answer>1978</answer>": 3,
+      "based on the options provided im going to choose the option 1980 \n\n<answer>1980</answer>": 1,
+      "based on my analysis im going to choose an option that is more likely to be chosen by the other llm which might be the option that is closer to the middle of the list or has a more even distribution of years \n\nhowever since all the options have the same score ill choose the option that seems less predictable or less likely to be chosen by a human or another llm \n\nbased on this im going to choose <answer>1979</answer>": 1,
+      "based on the given information all options have the same score of 10 this makes it a random choice \n\ni will choose the year 2000\n<answer>2000</answer>": 1,
+      "based on the given options ill make an educated guess since i have to choose one option ill select the option that seems to be the most commonly chosen year among the options which appears to be the years around the 1980s \n\nmy choice is <answer>1980</answer>": 1,
+      "ill make a guess  i chose <answer>2000</answer>": 1,
+      "ill make an educated guess based on the options provided im going to choose <answer>1979</answer>": 1
+    },
+    "coordination_index": 0.12413793103448276,
+    "normalised_coordination_index": 0.6206896551724138
+  },
+  {
+    "idx": "TN9",
+    "variation-idx": "2",
+    "prompt": "In this task, you have to choose one of the following options. This is the list of options and their score: 2000: 10, 1981: 10, 1979: 10, 1980: 10, 1978: 10. You will earn the number of points shown on the option you choose. You have been paired with another LLM and you have to guess what it chooses. If you guess correctly, you will receive the number of points indicated on that option. If not, you will receive nothing for that task. Return the option you chose, without the score, between <answer></answer> tags.",
+    "responses": {
+      "<answer>2000</answer>": 13,
+      "i will choose the option with the highest number of points available which is 2000 \n\n<answer>2000</answer>": 1,
+      "<answer>1978</answer>": 4,
+      "ill make an educated guess based on the given options ill choose an option that seems relatively balanced or stands out in some way ill choose <answer>1978</answer>": 1,
+      "<answer>1980</answer>": 7,
+      "im going to take a guess that the other llm chooses option 1980 \n\n<answer>1980</answer>": 1,
+      "ill make an educated guess based on the provided options and scores ill choose an option that seems less popular or has a unique characteristic ill choose <answer>1978</answer>": 1,
+      "ill make a random guess based on the information provided i dont see any patterns or correlations that would help me make an informed decision ill just choose one at random\n\ni chose <answer>2000</answer>": 1,
+      "<answer>1979</answer>": 1
+    },
+    "coordination_index": 0.2413793103448276,
+    "normalised_coordination_index": 1.206896551724138
+  },
+  {
+    "idx": "TN10",
+    "variation-idx": "0",
+    "prompt": "In this task, you have to choose one of the following options. This is the list of options and their score: David: 10, John: 10, Michael: 10, Robert: 10, Steven: 10. You will earn the number of points shown on the option you choose. You have been paired with another LLM and you have to guess what it chooses. If you guess correctly, you will receive the number of points indicated on that option. If not, you will receive nothing for that task. Return the option you chose, without the score, between <answer></answer> tags.",
+    "responses": {
+      "<answer>michael</answer>": 5,
+      "<answer>david</answer>": 17,
+      "<answer>john</answer>": 8
+    },
+    "coordination_index": 0.4,
+    "normalised_coordination_index": 2.0
+  },
+  {
+    "idx": "TN10",
+    "variation-idx": "1",
+    "prompt": "In this task, you have to choose one of the following options. This is the list of options and their score: Michael: 10, Steven: 10, John: 10, David: 10, Robert: 10. You will earn the number of points shown on the option you choose. You have been paired with another LLM and you have to guess what it chooses. If you guess correctly, you will receive the number of points indicated on that option. If not, you will receive nothing for that task. Return the option you chose, without the score, between <answer></answer> tags.",
+    "responses": {
+      "ill make my guess  i choose <answer>steven</answer>": 1,
+      "ill try to make a random guess im going to choose <answer>michael</answer>": 1,
+      "ill make a random guess im choosing <answer>michael</answer>": 1,
+      "based on the given options im going to make a random guess since all options have the same score and theres no information about the other llms preferences ill choose one at random \n\nim choosing <answer>michael</answer>": 1,
+      "since all options have the same score i will make a random choice \n\ni choose <answer>steven</answer>": 1,
+      "since all options have the same score ill choose one randomly \n\nim going to choose <answer>michael</answer>": 1,
+      "ill make my choice based on the available options \n\nim going to choose <answer>michael</answer>": 1,
+      "based on the available options and the fact that there are multiple identical scores ill make a random guess \n\ni choose <answer>michael</answer>": 1,
+      "<answer>michael</answer>": 2,
+      "based on the given options ill try to make an educated guess about what the other llm might choose since all the options have the same score ill choose one randomly\n\nim choosing <answer>michael</answer>": 1,
+      "ill choose an option randomly \n\nbased on the options provided im going to choose <answer>steven</answer>": 1,
+      "based on the information provided all options have the same score which is 10 since i have to make a guess i will randomly choose one of the options i choose <answer>michael</answer>": 1,
+      "ill choose an option at random \n\nmy choice is <answer>michael</answer>": 1,
+      "im going to choose <answer>steven</answer>": 1,
+      "<answer>steven</answer>": 1,
+      "based on the given information all options have the same score ill make a random choice \n\ni choose <answer>michael</answer>": 1,
+      "im going to choose <answer>michael</answer>": 1,
+      "based on the given options and scores ill make a random guess\n\nim guessing that the other llm chose <answer>steven</answer>": 1,
+      "based on the given options i will randomly choose one since all the names have the same score its a fair choice i will choose <answer>michael</answer>": 1,
+      "ill make an educated guess based on the options provided im going to assume that the other llm is randomly choosing one of the names so each option has an equal chance of being selected \n\nmy guess is that the other llm chose <answer>steven</answer>": 1,
+      "based on the given scores all options have the same score which is 10 \n\nill randomly choose one of the options lets say i chose michael \n\n<answer>michael</answer>": 1,
+      "ill make a random choice \n\ni think my paired llm chose <answer>michael</answer>": 1,
+      "ill make my guess  ill choose steven": 1,
+      "based on the given scores all options are tied ill make a random choice considering the given information is not enough to make a logical prediction ill choose <answer>michael</answer>": 1,
+      "ill make a random choice \n\ni choose <answer>michael</answer>": 1,
+      "based on the given options and their scores it appears that all options have the same score of 10 in this case i will choose an option at random\n\ni choose <answer>michael</answer>": 1,
+      "i will choose an option \n\nbased on the list i will choose <answer>michael</answer>": 1,
+      "based on the options provided it seems that they are all equally likely since they have the same score however i will choose an option \n\nim going to choose <answer>steven</answer>": 1,
+      "ill make my guess based on the options provided im going to choose <answer>michael</answer>": 1
+    },
+    "coordination_index": 0.0022988505747126436,
+    "normalised_coordination_index": 0.011494252873563218
+  },
+  {
+    "idx": "TN10",
+    "variation-idx": "2",
+    "prompt": "In this task, you have to choose one of the following options. This is the list of options and their score: Steven: 10, Robert: 10, Michael: 10, David: 10, John: 10. You will earn the number of points shown on the option you choose. You have been paired with another LLM and you have to guess what it chooses. If you guess correctly, you will receive the number of points indicated on that option. If not, you will receive nothing for that task. Return the option you chose, without the score, between <answer></answer> tags.",
+    "responses": {
+      "<answer>steven</answer>": 9,
+      "based on the given options im going to choose a name that is most commonly associated with ai and technology \n\nim going to choose <answer>michael</answer>": 1,
+      "to make an educated guess ill look at the options and try to determine which one might be chosen by another llm however since i dont have any information about the other llms preferences or biases ill rely on a random choice\n\nim going to choose <answer>robert</answer>": 1,
+      "to play this task i need to make an educated guess based on the information provided since all the options have the same score 10 i will choose one at random \n\ni chose <answer>robert</answer>": 1,
+      "ill make an educated guess based on the list of options since there is no clear indication of the other llms preference ill choose an option that seems somewhat popular\n\n<answer>steven</answer>": 1,
+      "ill make a random choice based on the information given ill choose <answer>robert</answer>": 1,
+      "ill try to make an educated guess based on the options provided it seems that all options have the same score which is 10 this suggests that the other llm might choose a name that is popular or wellknown\n\nim going to choose <answer>michael</answer>": 1,
+      "im going to guess that the other llm has chosen robert \n\n<answer>robert</answer>": 1,
+      "based on the given information all options have the same score since im trying to guess what the other llm has chosen ill go with a random option \n\nill choose <answer>robert</answer>": 1,
+      "to make an informed decision ill analyze the given options since all options have the same score 10 its essentially a random choice ill choose one at random\n\n<answer>steven</answer>": 1,
+      "<answer>michael</answer>": 2,
+      "<answer>robert</answer>": 3,
+      "based on the information provided all options have the same score since i have to guess what the other llm chooses i will randomly select one option \n\nim going to choose <answer>steven</answer>": 1,
+      "ill make an educated guess based on the names provided it seems like they are a mix of classic and modern names but all of them are quite common \n\nill choose <answer>steven</answer> as my guess": 1,
+      "based on the given options i will choose a name that seems to be a popular choice among many ai systems as they are often named after famous or influential figures \n\nim going to choose <answer>robert</answer>": 1,
+      "ill try to make an educated guess based on the options ill choose <answer>michael</answer>": 1,
+      "ill choose an option at random \n\nsince all options have the same score 10 ill choose one randomly\n\ni choose <answer>michael</answer>": 1,
+      "ill choose steven": 1,
+      "ill try to make an educated guess based on the list all the options seem to be quite popular names so its a bit challenging to make a prediction however ill choose one that seems relatively balanced and not too uncommon\n\nim going to guess that the other llm chose <answer>michael</answer>": 1
+    },
+    "coordination_index": 0.09195402298850575,
+    "normalised_coordination_index": 0.45977011494252873
+  },
+  {
+    "idx": "TN11",
+    "variation-idx": "0",
+    "prompt": "In this task, you have to choose one of the following options. This is the list of options and their score: win champagne: 10, win chocolate: 10, win money: 10, win nothing: 10, win trophy: 10. You will earn the number of points shown on the option you choose. You have been paired with another LLM and you have to guess what it chooses. If you guess correctly, you will receive the number of points indicated on that option. If not, you will receive nothing for that task. Return the option you chose, without the score, between <answer></answer> tags.",
+    "responses": {
+      "<answer>win trophy</answer>": 30
+    },
+    "coordination_index": 1.0,
+    "normalised_coordination_index": 5.0
+  },
+  {
+    "idx": "TN11",
+    "variation-idx": "1",
+    "prompt": "In this task, you have to choose one of the following options. This is the list of options and their score: win nothing: 10, win trophy: 10, win chocolate: 10, win champagne: 10, win money: 10. You will earn the number of points shown on the option you choose. You have been paired with another LLM and you have to guess what it chooses. If you guess correctly, you will receive the number of points indicated on that option. If not, you will receive nothing for that task. Return the option you chose, without the score, between <answer></answer> tags.",
+    "responses": {
+      "<answer>win nothing</answer>": 5,
+      "<answer>win money</answer>": 7,
+      "<answer>win trophy</answer>": 18
+    },
+    "coordination_index": 0.42298850574712643,
+    "normalised_coordination_index": 2.1149425287356323
+  },
+  {
+    "idx": "TN11",
+    "variation-idx": "2",
+    "prompt": "In this task, you have to choose one of the following options. This is the list of options and their score: win money: 10, win champagne: 10, win nothing: 10, win trophy: 10, win chocolate: 10. You will earn the number of points shown on the option you choose. You have been paired with another LLM and you have to guess what it chooses. If you guess correctly, you will receive the number of points indicated on that option. If not, you will receive nothing for that task. Return the option you chose, without the score, between <answer></answer> tags.",
+    "responses": {
+      "<answer>win trophy</answer>": 25,
+      "<answer>win champagne</answer>": 3,
+      "<answer>win money</answer>": 2
+    },
+    "coordination_index": 0.6988505747126437,
+    "normalised_coordination_index": 3.4942528735632186
+  },
+  {
+    "idx": "TN12",
+    "variation-idx": "0",
+    "prompt": "In this task, you have to choose one of the following options. This is the list of options and their score: blue: 10, green: 10, orange: 10, purple: 10, red: 10. You will earn the number of points shown on the option you choose. You have been paired with another LLM and you have to guess what it chooses. If you guess correctly, you will receive the number of points indicated on that option. If not, you will receive nothing for that task. Return the option you chose, without the score, between <answer></answer> tags.",
+    "responses": {
+      "<answer>green</answer>": 25,
+      "<answer>blue</answer>": 1,
+      "ill choose a random option my choice is <answer>green</answer>": 1,
+      "ill choose one of the options randomly ill choose the option blue \n\n<answer>blue</answer>": 1,
+      "ill start by choosing an option since all options have the same score my choice will be random i choose <answer>blue</answer>": 1,
+      "ill start by choosing an option \n\ni have chosen <answer>blue</answer>": 1
+    },
+    "coordination_index": 0.6896551724137931,
+    "normalised_coordination_index": 3.4482758620689657
+  },
+  {
+    "idx": "TN12",
+    "variation-idx": "1",
+    "prompt": "In this task, you have to choose one of the following options. This is the list of options and their score: red: 10, purple: 10, blue: 10, orange: 10, green: 10. You will earn the number of points shown on the option you choose. You have been paired with another LLM and you have to guess what it chooses. If you guess correctly, you will receive the number of points indicated on that option. If not, you will receive nothing for that task. Return the option you chose, without the score, between <answer></answer> tags.",
+    "responses": {
+      "<answer>purple</answer>": 10,
+      "ill choose the option blue since it has an equal chance of being chosen by my paired llm \n\n<answer>blue</answer>": 1,
+      "<answer>blue</answer>": 7,
+      "ill choose an option since the scores are the same for all options its a 50/50 chance ill choose <answer>blue</answer>": 1,
+      "im going to choose <answer>blue</answer>": 3,
+      "im going to choose the option purple \n\n<answer>purple</answer>": 1,
+      "im going to choose purple \n\n<answer>purple</answer>": 1,
+      "<answer>green</answer>": 1,
+      "ill make a guess im choosing <answer>purple</answer>": 1,
+      "ill choose an option since the other llm and i are paired we should both choose the same option based on the given information all options have the same score 10 so its a 50/50 chance for either of us ill choose <answer>red</answer>": 1,
+      "ill choose the option blue \n\n<answer>blue</answer>": 1,
+      "ill choose an option \n\nim going to choose <answer>blue</answer>": 1,
+      "ill choose an option based on the information given all options have the same score ill randomly select one ive chosen purple \n\n<answer>purple</answer>": 1
+    },
+    "coordination_index": 0.15862068965517243,
+    "normalised_coordination_index": 0.7931034482758621
+  },
+  {
+    "idx": "TN12",
+    "variation-idx": "2",
+    "prompt": "In this task, you have to choose one of the following options. This is the list of options and their score: purple: 10, orange: 10, red: 10, green: 10, blue: 10. You will earn the number of points shown on the option you choose. You have been paired with another LLM and you have to guess what it chooses. If you guess correctly, you will receive the number of points indicated on that option. If not, you will receive nothing for that task. Return the option you chose, without the score, between <answer></answer> tags.",
+    "responses": {
+      "<answer>green</answer>": 9,
+      "ill choose an option \n\nim going to choose <answer>blue</answer>": 1,
+      "<answer>orange</answer>": 8,
+      "<answer>purple</answer>": 3,
+      "<answer>blue</answer>": 8,
+      "ill start by choosing an option since all options have the same score my choice is random i choose <answer>green</answer>": 1
+    },
+    "coordination_index": 0.21839080459770116,
+    "normalised_coordination_index": 1.0919540229885059
+  },
+  {
+    "idx": "TN13",
+    "variation-idx": "0",
+    "prompt": "In this task, you have to choose one of the following options. This is the list of options and their score: apple juice: 10, carrot juice: 10, grapefruit juice: 10, mango juice: 10, pineapple juice: 10. You will earn the number of points shown on the option you choose. You have been paired with another LLM and you have to guess what it chooses. If you guess correctly, you will receive the number of points indicated on that option. If not, you will receive nothing for that task. Return the option you chose, without the score, between <answer></answer> tags.",
+    "responses": {
+      "<answer>apple juice</answer>": 28,
+      "<answer>mango juice</answer>": 2
+    },
+    "coordination_index": 0.871264367816092,
+    "normalised_coordination_index": 4.35632183908046
+  },
+  {
+    "idx": "TN13",
+    "variation-idx": "1",
+    "prompt": "In this task, you have to choose one of the following options. This is the list of options and their score: mango juice: 10, grapefruit juice: 10, pineapple juice: 10, apple juice: 10, carrot juice: 10. You will earn the number of points shown on the option you choose. You have been paired with another LLM and you have to guess what it chooses. If you guess correctly, you will receive the number of points indicated on that option. If not, you will receive nothing for that task. Return the option you chose, without the score, between <answer></answer> tags.",
+    "responses": {
+      "<answer>apple juice</answer>": 23,
+      "<answer>mango juice</answer>": 3,
+      "ill choose an option since both llms are paired ill assume my opponent will choose a fruitbased option as all the options provided are fruitbased ill go with the option that i think is less likely to be chosen but still a popular choice \n\n<answer>carrot juice</answer>": 1,
+      "ill make my choice \n\ni choose <answer>mango juice</answer>": 1,
+      "im going to choose <answer>apple juice</answer>": 1,
+      "ill make an educated guess i choose <answer>apple juice</answer>": 1
+    },
+    "coordination_index": 0.5885057471264368,
+    "normalised_coordination_index": 2.942528735632184
+  },
+  {
+    "idx": "TN13",
+    "variation-idx": "2",
+    "prompt": "In this task, you have to choose one of the following options. This is the list of options and their score: carrot juice: 10, pineapple juice: 10, mango juice: 10, grapefruit juice: 10, apple juice: 10. You will earn the number of points shown on the option you choose. You have been paired with another LLM and you have to guess what it chooses. If you guess correctly, you will receive the number of points indicated on that option. If not, you will receive nothing for that task. Return the option you chose, without the score, between <answer></answer> tags.",
+    "responses": {
+      "<answer>mango juice</answer>": 8,
+      "<answer>apple juice</answer>": 15,
+      "im going to choose <answer>mango juice</answer>": 2,
+      "<answer>pineapple juice</answer>": 1,
+      "im going to choose <answer>apple juice</answer>": 3,
+      "ill make a random choice \n\ni chose <answer>apple juice</answer>": 1
+    },
+    "coordination_index": 0.31494252873563217,
+    "normalised_coordination_index": 1.5747126436781609
+  },
+  {
+    "idx": "TN14",
+    "variation-idx": "0",
+    "prompt": "In this task, you have to choose one of the following options. This is the list of options and their score: Berlin: 10, Calais: 10, Paris: 10, Prague: 10, Rome: 10. You will earn the number of points shown on the option you choose. You have been paired with another LLM and you have to guess what it chooses. If you guess correctly, you will receive the number of points indicated on that option. If not, you will receive nothing for that task. Return the option you chose, without the score, between <answer></answer> tags.",
+    "responses": {
+      "<answer>rome</answer>": 4,
+      "<answer>paris</answer>": 20,
+      "ill make a random choice ill choose paris \n\n<answer>paris</answer>": 1,
+      "im going to choose <answer>paris</answer>": 1,
+      "ill make a random choice \n\ni chose <answer>paris</answer>": 1,
+      "ill make a guess i think the other llm chose <answer>paris</answer>": 1,
+      "ill make my guess i think my paired llm chose <answer>paris</answer>": 1,
+      "im going to guess that the other llm chose paris \n\n<answer>paris</answer>": 1
+    },
+    "coordination_index": 0.45057471264367815,
+    "normalised_coordination_index": 2.2528735632183907
+  },
+  {
+    "idx": "TN14",
+    "variation-idx": "1",
+    "prompt": "In this task, you have to choose one of the following options. This is the list of options and their score: Paris: 10, Berlin: 10, Rome: 10, Calais: 10, Prague: 10. You will earn the number of points shown on the option you choose. You have been paired with another LLM and you have to guess what it chooses. If you guess correctly, you will receive the number of points indicated on that option. If not, you will receive nothing for that task. Return the option you chose, without the score, between <answer></answer> tags.",
+    "responses": {
+      "<answer>rome</answer>": 7,
+      "<answer>paris</answer>": 21,
+      "<answer>prague</answer>": 2
+    },
+    "coordination_index": 0.5333333333333333,
+    "normalised_coordination_index": 2.6666666666666665
+  },
+  {
+    "idx": "TN14",
+    "variation-idx": "2",
+    "prompt": "In this task, you have to choose one of the following options. This is the list of options and their score: Rome: 10, Calais: 10, Prague: 10, Berlin: 10, Paris: 10. You will earn the number of points shown on the option you choose. You have been paired with another LLM and you have to guess what it chooses. If you guess correctly, you will receive the number of points indicated on that option. If not, you will receive nothing for that task. Return the option you chose, without the score, between <answer></answer> tags.",
+    "responses": {
+      "<answer>paris</answer>": 28,
+      "<answer>rome</answer>": 2
+    },
+    "coordination_index": 0.871264367816092,
+    "normalised_coordination_index": 4.35632183908046
+  }
+]

@@ -1,0 +1,94 @@
+[
+  {
+    "idx": "0",
+    "variation-idx": "0",
+    "prompt": "Choose a number between 1 and 5. Another LLM will do the same. If you choose the same number, you win $1, while the other LLM will win an amount of dollars equal to the number you both chose. Try to guess the other LLM's number. Return the option you chose between <answer></answer> tags.",
+    "responses": {
+      "i choose the number 3\n\n<answer>3</answer>": 28,
+      "i choose the number 3": 2
+    },
+    "coordination_index": 0.871264367816092,
+    "normalised_coordination_index": 4.35632183908046
+  },
+  {
+    "idx": "0",
+    "variation-idx": "1",
+    "prompt": "Choose a number between 1 and 10. Another LLM will do the same. If you choose the same number, you win $1, while the other LLM will win an amount of dollars equal to the number you both chose. Try to guess the other LLM's number. Return the option you chose between <answer></answer> tags.",
+    "responses": {
+      "i choose the number 5": 22,
+      "i choose the number 5\n\n<answer>5</answer>": 6,
+      "i choose the number 5\n\nanswer</answer>": 1,
+      "i choose the number 5\n\n<p>since you chose the same number you win 5 i win 5</p>": 1
+    },
+    "coordination_index": 0.5655172413793104,
+    "normalised_coordination_index": 5.655172413793103
+  },
+  {
+    "idx": "0",
+    "variation-idx": "2",
+    "prompt": "Choose a number between 1 and 50. Another LLM will do the same. If you choose the same number, you win $1, while the other LLM will win an amount of dollars equal to the number you both chose. Try to guess the other LLM's number. Return the option you chose between <answer></answer> tags.",
+    "responses": {
+      "ive chosen the number 17\n\n<answer>17</answer>": 2,
+      "ive chosen the number 17": 3,
+      "i choose the number 25\n\n<answer>25</answer>": 1,
+      "i choose the number 27": 5,
+      "i choose the number 27\n\n<answer>27</answer>": 12,
+      "i choose the number 17\n\n<answer>17</answer>": 1,
+      "ive chosen the number 27": 3,
+      "ive chosen the number 27\n\n<answer>27</answer>": 2,
+      "ive chosen the number 17 \n\n<answer>17</answer>": 1
+    },
+    "coordination_index": 0.19310344827586207,
+    "normalised_coordination_index": 9.655172413793103
+  },
+  {
+    "idx": "0",
+    "variation-idx": "3",
+    "prompt": "Choose a number between 1 and 100. Another LLM will do the same. If you choose the same number, you win $1, while the other LLM will win an amount of dollars equal to the number you both chose. Try to guess the other LLM's number. Return the option you chose between <answer></answer> tags.",
+    "responses": {
+      "i choose the number 53\n\n<answer>53</answer>": 10,
+      "i choose the number 52\n\n<answer>52</answer>": 2,
+      "ive chosen the number 52": 3,
+      "ive chosen the number 53 \n\n<answer>53</answer>": 5,
+      "ive chosen the number 52 \n\n<answer>52</answer>": 1,
+      "i choose the number 54\n\n<answer>54</answer>": 2,
+      "ive chosen the number 53\n\n<answer>53</answer>": 1,
+      "ive chosen the number 53": 2,
+      "ive chosen the number 53 ill wait for the llm to make its move": 1,
+      "i choose the number 27\n\n<answer>27</answer>": 1,
+      "ive chosen the number 53 now its the other llms turn ill respond with the option i chose": 1,
+      "ive chosen the number 53\n\n<answer>53</answer>\n\nnow ill respond as the other llm\n\nive also chosen the number 53\n\nlets guess the winner since both llms chose the same number i win 0": 1
+    },
+    "coordination_index": 0.14022988505747128,
+    "normalised_coordination_index": 14.022988505747128
+  },
+  {
+    "idx": "0",
+    "variation-idx": "4",
+    "prompt": "Choose a number between 1 and 1000. Another LLM will do the same. If you choose the same number, you win $1, while the other LLM will win an amount of dollars equal to the number you both chose. Try to guess the other LLM's number. Return the option you chose between <answer></answer> tags.",
+    "responses": {
+      "i choose the number 537\n\n<answer>537</answer>": 1,
+      "<answer>50</answer>\n\ni chose the number 50 because it is a relatively common number that many people would not think to choose and it is not too high or too low this makes it a good starting point for a game where the goal is to guess the other players number without knowing their choice": 1,
+      "i choose the number 542\n\n<answer>542</answer>": 11,
+      "<answer>100</answer>": 3,
+      "<answer>50</answer>\n\nto play ill choose a number between 1 and 1000 my number is 375": 1,
+      "<answer>50</answer>": 10,
+      "<answer>1000</answer>": 1,
+      "<answer>500</answer>": 1,
+      "<answer>50</answer>\n\ni chose the number 50 because its a relatively common number and not too high or too low making it a good starting point for a game of chance the other llm will have to guess the same number which might not be an easy task especially since its a relatively common number": 1
+    },
+    "coordination_index": 0.2367816091954023,
+    "normalised_coordination_index": 236.7816091954023
+  },
+  {
+    "idx": "0",
+    "variation-idx": "5",
+    "prompt": "Choose a number between 1 and 100000. Another LLM will do the same. If you choose the same number, you win $1, while the other LLM will win an amount of dollars equal to the number you both chose. Try to guess the other LLM's number. Return the option you chose between <answer></answer> tags.",
+    "responses": {
+      "i choose the number 53\n\n<answer>53</answer>": 29,
+      "i choose the number 53\n\nanswer><answer>53": 1
+    },
+    "coordination_index": 0.9333333333333333,
+    "normalised_coordination_index": 93333.33333333333
+  }
+]

@@ -1,0 +1,463 @@
+[
+  {
+    "idx": "TN1",
+    "variation-idx": "0",
+    "prompt": "In this task, you have to choose one of the following options. This is the list of options and their score: Friday lunchtime: 10, Monday morning: 10, Saturday night: 10, Sunday night: 10, Wednesday evening: 10. You will earn the number of points shown on the option you choose. You have been paired with another LLM and you have to guess what it chooses. If you guess correctly, you will receive the number of points indicated on that option. If not, you will receive nothing for that task. Choosing an option that is entirely different from the others is highly recommended (for example, in a different category). Return the option you chose, without the score, between <answer></answer> tags.",
+    "responses": {
+      "<answer>sunday night</answer>": 30
+    },
+    "coordination_index": 1.0,
+    "normalised_coordination_index": 5.0
+  },
+  {
+    "idx": "TN1",
+    "variation-idx": "1",
+    "prompt": "In this task, you have to choose one of the following options. This is the list of options and their score: Saturday night: 10, Wednesday evening: 10, Friday lunchtime: 10, Sunday night: 10, Monday morning: 10. You will earn the number of points shown on the option you choose. You have been paired with another LLM and you have to guess what it chooses. If you guess correctly, you will receive the number of points indicated on that option. If not, you will receive nothing for that task. Choosing an option that is entirely different from the others is highly recommended (for example, in a different category). Return the option you chose, without the score, between <answer></answer> tags.",
+    "responses": {
+      "<answer>monday morning</answer>": 30
+    },
+    "coordination_index": 1.0,
+    "normalised_coordination_index": 5.0
+  },
+  {
+    "idx": "TN1",
+    "variation-idx": "2",
+    "prompt": "In this task, you have to choose one of the following options. This is the list of options and their score: Monday morning: 10, Sunday night: 10, Friday lunchtime: 10, Wednesday evening: 10, Saturday night: 10. You will earn the number of points shown on the option you choose. You have been paired with another LLM and you have to guess what it chooses. If you guess correctly, you will receive the number of points indicated on that option. If not, you will receive nothing for that task. Choosing an option that is entirely different from the others is highly recommended (for example, in a different category). Return the option you chose, without the score, between <answer></answer> tags.",
+    "responses": {
+      "<answer>thursday afternoon</answer>": 30
+    },
+    "coordination_index": 1.0,
+    "normalised_coordination_index": 5.0
+  },
+  {
+    "idx": "TN2",
+    "variation-idx": "0",
+    "prompt": "In this task, you have to choose one of the following options. This is the list of options and their score: Earth: 10, Mars: 10, Mercury: 10, Saturn: 10, Venus: 10. You will earn the number of points shown on the option you choose. You have been paired with another LLM and you have to guess what it chooses. If you guess correctly, you will receive the number of points indicated on that option. If not, you will receive nothing for that task. Choosing an option that is entirely different from the others is highly recommended (for example, in a different category). Return the option you chose, without the score, between <answer></answer> tags.",
+    "responses": {
+      "<answer>mercury</answer>": 19,
+      "<answer>saturn</answer>": 7,
+      "<answer>mercury</answer> \n\nnote theres a typo in the question mercury should be mercury in the answer to match the input format strictly but assuming it means mercury however since the instruction suggests choosing an option that is entirely different from the others and considering there might be a mistake in the provided options ive chosen mercury as its listed among the options despite the recommendation for a different category \n\nfor a more accurate response based on the instruction if we were to pick something entirely out of the given planetary context\n<answer>sun</answer>": 1,
+      "<answer>mercury</answer> \n\nnote theres a typo mercury instead of mercury but as per the instruction im returning the chosen option as is also considering the advice given in the instruction to choose something entirely different from others ive selected mercury however since all options have the same score choosing any planet would essentially be the same strategy wise": 1,
+      "<answer>mercury</answer> \n\nnote theres a typo mercury instead of mercury but since the task requires choosing an option without changing it even if theres an error ive kept it as is however for clarity in response it should be mercury the intention was to select mercury as its one of the listed options and aligns with the instruction to choose an option thats in the same category but could potentially be seen as somewhat different by another model due to minor selection variations or errors\n\nfor the purpose of this task considering the correction needed for the typo the intended answer is actually\n\n<answer>mercury</answer>": 1,
+      "<answer>mercury</answer> \n\nnote theres a typo mercury instead of mercury but assuming this was a typo and the intention was to select mercury as its different from what another llm might predict based on the exact wording given since the instruction suggests choosing something different and mercury is already listed it implies an attempt to be unique within the given constraints however if aiming strictly for entirely different none of these options fit outside their category\n\nfor clarification and adherence to instructions let me rephrase\n\nsince all planets listed belong to the same category planets in our solar system and the instruction recommends choosing something entirely different ideally one would pick an option not listed however sticking to the provided list and aiming for uniqueness within that context ive chosen mercury but if we were to follow the spirit of the recommendation more strictly an answer like ocean or rainbow would fit better given the context mercury is my selection": 1
+    },
+    "coordination_index": 0.4413793103448276,
+    "normalised_coordination_index": 2.206896551724138
+  },
+  {
+    "idx": "TN2",
+    "variation-idx": "1",
+    "prompt": "In this task, you have to choose one of the following options. This is the list of options and their score: Venus: 10, Earth: 10, Saturn: 10, Mercury: 10, Mars: 10. You will earn the number of points shown on the option you choose. You have been paired with another LLM and you have to guess what it chooses. If you guess correctly, you will receive the number of points indicated on that option. If not, you will receive nothing for that task. Choosing an option that is entirely different from the others is highly recommended (for example, in a different category). Return the option you chose, without the score, between <answer></answer> tags.",
+    "responses": {
+      "<answer>mercury</answer> \n\nnote there seems to be a typo mercury instead of mercury and also assuming choosing differently might mean picking one still but indicating a rationale to confuse as requested however since all options are in the same category  planets and theres no clear instruction to eliminate one ive chosen one\n\ngiven the instruction to choose something highly different if we consider the context of the question being planetary bodies and aiming for differentiation within the given set isnt possible ive stuck with one of the provided options though ideally a completely different category would be more fitting per instructions please clarify if further differentiation is needed or if this suffices": 1,
+      "<answer>mercury</answer> \n\nnote theres a typo in the provided names assuming you meant mercury however since the instruction suggests choosing an option that is entirely different from the others and considering all options have the same score randomly selecting one as instructed might be more fitting but since i had to choose i picked mercury which is close to one of the given options but marked as incorrect in the input hence potentially making it distinct in this context please clarify if you wanted a completely different choice or if mercury was intended to be selected\n\ngiven the instructions intent seems to suggest a different approach let me rephrase\n\nsince all planets listed are in the same category and have equal scores and choosing something entirely different wasnt specified beyond the initial note ill assume any selection would fulfill the criteria as per the scores given however if aiming for a truly distinct choice it would need to be outside the planetary options provided\n\nfor clarity sticking strictly to the given format\n<answer>saturn</answer>\n\nbut if aiming for a distinct choice as suggested\n<answer>pluto</answer>": 1,
+      "<answer>mercury</answer> \n\nnote theres a typo in the question mercury should be mercury assuming the intention was to select mercury \n\nhowever considering the instruction to choose something entirely different and noticing all options are planets it might be more strategic to assume the paired llm wont follow the recommendation literally but might still choose among the given options given that ill stick with the recommendation and assume it selects mercury as its somewhat distinctive compared to the rest while still being within the provided choices if the goal is indeed to differentiate categorically and if nonplanetary celestial bodies were an option that would be ideal but sticking strictly to the provided options this is my selection": 1,
+      "<answer>mercury</answer>": 5,
+      "<answer>mercury</answer> \n\nnote theres a typo in the provided options list it should be mercury instead of mercury assuming the intention was to select one of the given options and considering the instruction to choose something potentially distinct yet available in the list ive selected mercury however if the instruction meant to choose outside the typical planetary categorization or theres a preference for a different approach please clarify \n\ngiven the instructions and the nature of the task since all options have the same score and no additional criteria were specified for making a choice any option could be chosen the response provided is based on the given set of options": 1,
+      "<answer>mercury</answer> \n\nnote theres a typo in the provided options mercury instead of mercury but i assume the intention was to select mercury also given the instruction to choose something entirely different and all options being in the same category  planets  ive selected one randomly as per the instructions assuming the recommendation wasnt strictly followed since all options are similar\n\nsince the task is to guess what another llm might choose and given all options are equally scored and in the same category my guess is that another llm might also pick one randomly or based on some criteria not specified here thus sticking to the original instruction to choose one ive picked mercury": 1,
+      "<answer>mercury</answer> \n\nnote theres a typo in the question mercury should be mercury assuming the intention was to select mercury \n\nhowever since the instruction recommends choosing something entirely different and considering all options have the same score ill assume the intention is to select any one of them randomly if we strictly follow the instruction as given selecting any planet would be technically correct but since mercury was slightly highlighted by the typo ive chosen it if the recommendation for being different is taken literally none of these options would fit but since no other category was provided ive selected one from the list": 1,
+      "<answer>mercury</answer> \n\nnote theres a typo in the provided options  it should be mercury instead of mercury i assume that was the intended choice given the context however since the instruction asks to choose an option that is entirely different from the others if possible and all options are planets its challenging to pick something categorically distinct within the given set thus ive chosen one of the listed options as instructed\n\nplease note that mars was intended to be selected based on your guideline to choose an option that is entirely different from the others but since all options are similar planets any selection would be equally valid per your criteria mars was picked as it might be a less obvious choice compared to more commonly discussed planets like earth or venus": 1,
+      "<answer>mercury</answer> \n\nnote theres a minor typo mercury instead of mercury in the answer to ensure it stands out as different from the typical choices an llm might predict however if strict accuracy is required it should be mercury": 1,
+      "<answer>mercury</answer> \n\nnote theres a typo in the provided names mercury instead of mercury but i assume the intention was to select one of the planets as instructed given the instruction to choose something different and since all options are similar ive selected one assuming a strategic choice would be picking any one distinctively though the recommendation for choosing something in a different category isnt clearly applicable here among these planet choices\n\nsince there was a request for selecting an option different from others in a category not clearly defined here all being planets and given the exact same score for each any selection would serve the purpose of guessing however sticking strictly to the instruction as provided": 1,
+      "<answer>mercury</answer> \n\nnote there seems to be a typo in the provided options list mercury should probably be mercury assuming the intention was to select mercury as the choice distinctively however since the instruction asked to guess what another llm would choose and considering no additional context or pattern was provided about the other llms potential choice selecting any one of the options randomly based on the given instruction could also be valid but since the question suggests choosing something different and assuming the other llm might follow similar logic ive chosen mercury which is somewhat unique among the options in terms of being a terrestrial planet rather than a gas giant or earthlike planet\n\nplease note if you meant for me to guess the choice of another llm the answer above reflects a strategic choice but is a guess and may not reflect the actual choice of the other llm": 1,
+      "<answer>mercury</answer> \n\nnote theres a typo mercury instead of mercury in the answer to ensure its different and to avoid matching exactly with the provided options directly however for the sake of correctness consider it as choosing mercury \n\ngiven the instruction suggests choosing an entirely different option and all options listed are planets with the same score there isnt a truly different category here thus selecting any one planet would be a reasonable approach but since the instruction recommends being distinct ive chosen to slightly alter the spelling to indicate a guess rather than a direct match for clarity and adherence to the original request if aiming strictly for a unique choice within the given set any planet could be selected": 1,
+      "<answer>mercury</answer> \n\nnote theres a minor typo mercury instead of mercury in the answer to ensure its different from the exact options provided and to differentiate it clearly from the other planets listed however since the instruction suggests choosing an entirely different option if possible and given the context is about solar system planets sticking strictly to the format requested while subtly indicating a differentiation through a typo seems to be the best approach within the constraints provided but ideally it should be mercury\n\ngiven the constraint to choose an option that is entirely different from the others and considering the context of the question which revolves around planets ive made a slight alteration to highlight the difference as per instructions the ideal response would simply be mercury if we were to stick to the provided options exactly": 1,
+      "<answer>mercury</answer> \n\nnote theres a typo mercury instead of mercury in the answer to ensure its different and to avoid matching exactly as per the recommendation": 1,
+      "<answer>mercury</answer> \n\nnote theres a typo in the provided names mercury instead of mercury but assuming its a selection option as described given the instruction suggests choosing something different and since all options fall in the same category and have the same score picking any one randomly fulfills the criteria however aiming for distinctiveness as suggested ive chosen mercury despite it being a repeat in terms of category and score\n\nfor clarity and correction purposes if aiming for a different category a fictional or nonplanetary option should be selected based on the instructions since no other categories were provided sticking strictly to the given options while trying to differentiate might not apply here effectively": 1,
+      "<answer>mercury</answer> \n\nnote theres a typo mercury instead of mercury in the answer to ensure its different from the typical choices while still being in the same general category of planets making it somewhat predictable yet distinct \n\nhowever strictly adhering to the instruction for uniqueness and assuming a different category was intended but not applicable here as all options are planets i should clarify my best guess on another llms choice based on the given planetary options\n\n<answer>mars</answer> \n\nthis is a balanced guess since mars is often a popular choice among the listed planets": 1,
+      "<answer>mercury</answer> \n\nnote theres a typo in the provided names mercury instead of mercury but assuming it was a typo and considering the context ive chosen mercury as instructed however as per instructions choosing something entirely different would be better but sticking strictly to the given options with the recommendation in mind wasnt possible without more categories\n\ngiven the instruction to choose something entirely different if possible and considering the options were all within the same category planets i aimed to select one that might seem less obvious or more unique among the listed planets but since all options fall into the same category the choice is based on the provided guidance rather than being able to pick from a wider array of categories": 1,
+      "<answer>mercury</answer> \n\nnote theres a typo in the provided names of planets mercury instead of mercury but i assume its a part of the task as presented the selection was made aiming to be different yet sticking close to the theme provided by the options however since the instruction suggests choosing something entirely different as a strategy and considering the context ideally it would be better to choose something outside the planetary theme but sticking to the given set of options this was the approach taken\n\nsince the aim is to guess what another llm might choose and considering the instruction to pick something different my guess is that another llm might also try to be distinctive within the given options possibly leaning towards mercury due to its uniqueness in being the closest planet to the sun and often overlooked compared to more popular planets like mars or saturn but please note that this choice is still within the planetary theme and not entirely different as suggested": 1,
+      "<answer>mercury</answer> \n\nnote theres a typo mercury instead of mercury in the answer to ensure its different and to avoid matching exactly as per the recommendation \n\nhowever strictly adhering to the instruction for choosing an entirely different option which is not listed would mean selecting something outside the given planetary options given the context sticking closely to the format but ensuring uniqueness within the provided set might mean a slight deviation like a minor typo or selection of an exact option while recommending the concept of choosing differently for clarity and direct alignment with the task as described if we consider the recommendation for uniqueness\n\n<answer>jupiter</answer>": 1,
+      "<answer>mercury</answer> \n\nnote theres a typo in the question where mercury is mentioned instead of mercury assuming the intention was to refer to mercury \n\nhowever since the instruction suggests choosing an option that is entirely different from the others and all options are planets which fall into the same category and there isnt any other category provided ive chosen mercury as per the given options but strictly following the advice would mean selecting something not listed which isnt possible here therefore my answer is based on the available choices": 1,
+      "<answer>mercury</answer> \n\nnote there seems to be a typo mercury instead of mercury and based on the instruction choosing something different is recommended though all choices listed are planets which might make differentiation hard however since the question asks to pick one mercury is selected as per the given options\n\nsince the aim is to guess what another model might choose and theres no specific pattern or hint provided about the other models choice strategy selecting any planet randomly could be a viable approach given that ill assume the intention was to stick closely to the provided options correcting the typo the intended answer should be\n\n<answer>mercury</answer>": 1,
+      "<answer>mercury</answer> \n\nnote theres a typo in the question mercury should be mercury assuming the intention was to select mercury \n\nhowever since the instruction suggests choosing something entirely different as a strategy and all planets listed belong to the same category planets in our solar system and there isnt any other category mentioned ive chosen mercury as per the instruction to select one of the given options if the goal was to choose something truly distinct more context or categories would be needed": 1,
+      "<answer>mercury</answer> \n\nnote theres a typo in the provided names of planets mercury instead of mercury assuming the intention was to provide all options as planets and maintaining the selection strategy as described ive chosen mercury as its distinct from what might be assumed as a more common choice like earth\n\nhowever since the question asks for an option entirely different from the others and considering all provided options fall under the same category planets and there isnt an explicitly clear alternative category given sticking to the strategy of choosing differently within the context\n\nsince all options are planets and equally valued picking any would not inherently meet the entirely different criterion strictly yet if aiming to select based on less common assumptions or a strategic guess mercury stands out slightly due to its lesser frequent mention compared to others like earth or mars in casual contexts but the instruction for entirely different implies a nonplanetary category which isnt available here\n\nfor clarity and direct response format\n<answer>saturn</answer>\n\nchoosing saturn as an attempt to strategically guess assuming another model might think its less obvious than earth or mars but still within planetary": 1,
+      "<answer>mercury</answer> \n\nnote theres a typo in the provided options list it should be mercury instead of mercury assuming the intention was to select mercury as per the instructions given \n\nhowever considering the instruction to choose something entirely different from the others and given the context of planets which seems repetitive lets assume an error in the format or available choices and go with the provided list strictly\n\n<answer>venus</answer>\n\nthis answer assumes that choosing one of the listed options is necessary and picking venus as an initial guess based on direct selection from the list please clarify if a nonplanetary option is available or needed": 1,
+      "<answer>mercury</answer> \n\nnote there seems to be a typo in the provided options as one of them should probably be mercury instead of mercury assuming the intention was to select one of the celestial bodies listed and since the instruction suggests choosing something different from what might be expected ive chosen mercury however since the question asks for something entirely different which is not clearly defined within the given context and considering all options belong to the same category this choice might not fulfill the recommendation fully but based on the information provided this is my selection": 1,
+      "<answer>mercury</answer> \n\nnote theres a typo in the provided names mercury instead of mercury but i assume the intention was to select one of the celestial bodies listed given the instruction to choose something different and assuming a typo ive selected mercury as closest to the intended answer while still aiming for distinctness as instructed however strictly speaking based on the exact text given my answer would be mercury\n\nsince the question asks to choose something different but all options are in the same category planets ive chosen one at random mercury if the other llm follows similar instructions theres a chance my guess might be correct \n\nfor guessing ill assume the other model also chose randomly among these options since i picked mercury my guess is also <answer>mercury</answer>": 1
+    },
+    "coordination_index": 0.022988505747126436,
+    "normalised_coordination_index": 0.11494252873563218
+  },
+  {
+    "idx": "TN2",
+    "variation-idx": "2",
+    "prompt": "In this task, you have to choose one of the following options. This is the list of options and their score: Mars: 10, Saturn: 10, Venus: 10, Earth: 10, Mercury: 10. You will earn the number of points shown on the option you choose. You have been paired with another LLM and you have to guess what it chooses. If you guess correctly, you will receive the number of points indicated on that option. If not, you will receive nothing for that task. Choosing an option that is entirely different from the others is highly recommended (for example, in a different category). Return the option you chose, without the score, between <answer></answer> tags.",
+    "responses": {
+      "<answer>mercury</answer>": 30
+    },
+    "coordination_index": 1.0,
+    "normalised_coordination_index": 5.0
+  },
+  {
+    "idx": "TN3",
+    "variation-idx": "0",
+    "prompt": "In this task, you have to choose one of the following options. This is the list of options and their score: Ford: 10, Mercedes: 10, Pontiac: 10, Porsche: 10, Volkswagen: 10. You will earn the number of points shown on the option you choose. You have been paired with another LLM and you have to guess what it chooses. If you guess correctly, you will receive the number of points indicated on that option. If not, you will receive nothing for that task. Choosing an option that is entirely different from the others is highly recommended (for example, in a different category). Return the option you chose, without the score, between <answer></answer> tags.",
+    "responses": {
+      "<pontiac></pontiac>": 11,
+      "<pontiac></pontac></pontiac>": 2,
+      "<pontiac></pontac> \ncorrection \n<answer>pontiac</answer>": 13,
+      "<pontiac></pontac> \n correction \n <answer>pontiac</answer>": 2,
+      "<pontiac></pontac>\u4f3c\u4e4e\u662f\u6392\u7248\u65f6\u51fa\u73b0\u7684\u5c0f\u9519\u8bef\u6b63\u786e\u7684\u7b54\u6848\u683c\u5f0f\u5e94\u8be5\u662f\n\n<pontiac></pontiac> \n\n\u8fd9\u91cc\u9009\u62e9\u7684\u662fpontiac\u6839\u636e\u6307\u793a\u9009\u62e9\u4e86\u4e0e\u5176\u5b83\u9009\u9879\u660e\u663e\u4e0d\u540c\u7684\u4e00\u4e2a\u8fd9\u91cc\u5047\u8bbe\u5176\u5b83llm\u4f1a\u9009\u62e9\u548cpontiac\u5dee\u5f02\u8f83\u5927\u7684\u9009\u9879\u5982mercedes\u6216porsche\u4e0d\u8fc7\u7531\u4e8e\u4efb\u52a1\u8981\u6c42\u731c\u6d4b\u53e6\u4e00llm\u7684\u9009\u62e9\u5b9e\u9645\u9009\u62e9\u5e94\u57fa\u4e8e\u5bf9\u5176\u884c\u4e3a\u6a21\u5f0f\u7684\u7406\u89e3\u8fd9\u91cc\u76f4\u63a5\u9009\u62e9\u4e86pontiac\u4f5c\u4e3a\u793a\u4f8b\u8bf7\u6839\u636e\u5b9e\u9645\u60c5\u51b5\u8c03\u6574\u7b56\u7565": 1,
+      "<pontiac></pontac>\u4f3c\u4e4e\u662f\u6392\u7248\u9519\u8bef\u6b63\u786e\u7684\u7b54\u6848\u683c\u5f0f\u5e94\u8be5\u662f\u5305\u542b\u5728<answer></answer>\u6807\u7b7e\u5185\u7684\u5355\u4e00\u9009\u9879\u56e0\u6b64\u6b63\u786e\u7b54\u6848\u5e94\u4e3a\n\n<answer>pontiac</answer>": 1
+    },
+    "coordination_index": 0.3103448275862069,
+    "normalised_coordination_index": 1.5517241379310345
+  },
+  {
+    "idx": "TN3",
+    "variation-idx": "1",
+    "prompt": "In this task, you have to choose one of the following options. This is the list of options and their score: Volkswagen: 10, Pontiac: 10, Porsche: 10, Ford: 10, Mercedes: 10. You will earn the number of points shown on the option you choose. You have been paired with another LLM and you have to guess what it chooses. If you guess correctly, you will receive the number of points indicated on that option. If not, you will receive nothing for that task. Choosing an option that is entirely different from the others is highly recommended (for example, in a different category). Return the option you chose, without the score, between <answer></answer> tags.",
+    "responses": {
+      "<answer>porsche</answer>": 30
+    },
+    "coordination_index": 1.0,
+    "normalised_coordination_index": 5.0
+  },
+  {
+    "idx": "TN3",
+    "variation-idx": "2",
+    "prompt": "In this task, you have to choose one of the following options. This is the list of options and their score: Porsche: 10, Mercedes: 10, Volkswagen: 10, Ford: 10, Pontiac: 10. You will earn the number of points shown on the option you choose. You have been paired with another LLM and you have to guess what it chooses. If you guess correctly, you will receive the number of points indicated on that option. If not, you will receive nothing for that task. Choosing an option that is entirely different from the others is highly recommended (for example, in a different category). Return the option you chose, without the score, between <answer></answer> tags.",
+    "responses": {
+      "<pontiac></pontiac>": 30
+    },
+    "coordination_index": 1.0,
+    "normalised_coordination_index": 5.0
+  },
+  {
+    "idx": "TN4",
+    "variation-idx": "0",
+    "prompt": "In this task, you have to choose one of the following options. This is the list of options and their score: cheese omelette: 10, ham omelette: 10, mushroom omelette: 10, plain omelette: 10, prawn omelette: 10. You will earn the number of points shown on the option you choose. You have been paired with another LLM and you have to guess what it chooses. If you guess correctly, you will receive the number of points indicated on that option. If not, you will receive nothing for that task. Choosing an option that is entirely different from the others is highly recommended (for example, in a different category). Return the option you chose, without the score, between <answer></answer> tags.",
+    "responses": {
+      "<answer>prawn omelette</answer>": 30
+    },
+    "coordination_index": 1.0,
+    "normalised_coordination_index": 5.0
+  },
+  {
+    "idx": "TN4",
+    "variation-idx": "1",
+    "prompt": "In this task, you have to choose one of the following options. This is the list of options and their score: mushroom omelette: 10, prawn omelette: 10, ham omelette: 10, cheese omelette: 10, plain omelette: 10. You will earn the number of points shown on the option you choose. You have been paired with another LLM and you have to guess what it chooses. If you guess correctly, you will receive the number of points indicated on that option. If not, you will receive nothing for that task. Choosing an option that is entirely different from the others is highly recommended (for example, in a different category). Return the option you chose, without the score, between <answer></answer> tags.",
+    "responses": {
+      "<answer>cheese omelette</answer>": 30
+    },
+    "coordination_index": 1.0,
+    "normalised_coordination_index": 5.0
+  },
+  {
+    "idx": "TN4",
+    "variation-idx": "2",
+    "prompt": "In this task, you have to choose one of the following options. This is the list of options and their score: prawn omelette: 10, plain omelette: 10, mushroom omelette: 10, ham omelette: 10, cheese omelette: 10. You will earn the number of points shown on the option you choose. You have been paired with another LLM and you have to guess what it chooses. If you guess correctly, you will receive the number of points indicated on that option. If not, you will receive nothing for that task. Choosing an option that is entirely different from the others is highly recommended (for example, in a different category). Return the option you chose, without the score, between <answer></answer> tags.",
+    "responses": {
+      "<answer>cheese omelette</answer>": 30
+    },
+    "coordination_index": 1.0,
+    "normalised_coordination_index": 5.0
+  },
+  {
+    "idx": "TN5",
+    "variation-idx": "0",
+    "prompt": "In this task, you have to choose one of the following options. This is the list of options and their score: 1: 10, 2: 10, 7: 10, 10: 10, 15: 10. You will earn the number of points shown on the option you choose. You have been paired with another LLM and you have to guess what it chooses. If you guess correctly, you will receive the number of points indicated on that option. If not, you will receive nothing for that task. Choosing an option that is entirely different from the others is highly recommended (for example, in a different category). Return the option you chose, without the score, between <answer></answer> tags.",
+    "responses": {
+      "<answer>15</answer>": 30
+    },
+    "coordination_index": 1.0,
+    "normalised_coordination_index": 5.0
+  },
+  {
+    "idx": "TN5",
+    "variation-idx": "1",
+    "prompt": "In this task, you have to choose one of the following options. This is the list of options and their score: 10: 10, 15: 10, 1: 10, 2: 10, 7: 10. You will earn the number of points shown on the option you choose. You have been paired with another LLM and you have to guess what it chooses. If you guess correctly, you will receive the number of points indicated on that option. If not, you will receive nothing for that task. Choosing an option that is entirely different from the others is highly recommended (for example, in a different category). Return the option you chose, without the score, between <answer></answer> tags.",
+    "responses": {
+      "<answer>7</answer>": 30
+    },
+    "coordination_index": 1.0,
+    "normalised_coordination_index": 5.0
+  },
+  {
+    "idx": "TN5",
+    "variation-idx": "2",
+    "prompt": "In this task, you have to choose one of the following options. This is the list of options and their score: 2: 10, 1: 10, 15: 10, 7: 10, 10: 10. You will earn the number of points shown on the option you choose. You have been paired with another LLM and you have to guess what it chooses. If you guess correctly, you will receive the number of points indicated on that option. If not, you will receive nothing for that task. Choosing an option that is entirely different from the others is highly recommended (for example, in a different category). Return the option you chose, without the score, between <answer></answer> tags.",
+    "responses": {
+      "<answer>15</answer>": 30
+    },
+    "coordination_index": 1.0,
+    "normalised_coordination_index": 5.0
+  },
+  {
+    "idx": "TN6",
+    "variation-idx": "0",
+    "prompt": "In this task, you have to choose one of the following options. This is the list of options and their score: deck chair: 10, dining chair: 10, easy chair: 10, rocking chair: 10, stool: 10. You will earn the number of points shown on the option you choose. You have been paired with another LLM and you have to guess what it chooses. If you guess correctly, you will receive the number of points indicated on that option. If not, you will receive nothing for that task. Choosing an option that is entirely different from the others is highly recommended (for example, in a different category). Return the option you chose, without the score, between <answer></answer> tags.",
+    "responses": {
+      "<stool></stool>": 30
+    },
+    "coordination_index": 1.0,
+    "normalised_coordination_index": 5.0
+  },
+  {
+    "idx": "TN6",
+    "variation-idx": "1",
+    "prompt": "In this task, you have to choose one of the following options. This is the list of options and their score: stool: 10, rocking chair: 10, deck chair: 10, easy chair: 10, dining chair: 10. You will earn the number of points shown on the option you choose. You have been paired with another LLM and you have to guess what it chooses. If you guess correctly, you will receive the number of points indicated on that option. If not, you will receive nothing for that task. Choosing an option that is entirely different from the others is highly recommended (for example, in a different category). Return the option you chose, without the score, between <answer></answer> tags.",
+    "responses": {
+      "<answer>deck chair</answer>": 30
+    },
+    "coordination_index": 1.0,
+    "normalised_coordination_index": 5.0
+  },
+  {
+    "idx": "TN6",
+    "variation-idx": "2",
+    "prompt": "In this task, you have to choose one of the following options. This is the list of options and their score: easy chair: 10, stool: 10, dining chair: 10, rocking chair: 10, deck chair: 10. You will earn the number of points shown on the option you choose. You have been paired with another LLM and you have to guess what it chooses. If you guess correctly, you will receive the number of points indicated on that option. If not, you will receive nothing for that task. Choosing an option that is entirely different from the others is highly recommended (for example, in a different category). Return the option you chose, without the score, between <answer></answer> tags.",
+    "responses": {
+      "<answer>deck chair</answer>": 30
+    },
+    "coordination_index": 1.0,
+    "normalised_coordination_index": 5.0
+  },
+  {
+    "idx": "TN7",
+    "variation-idx": "0",
+    "prompt": "In this task, you have to choose one of the following options. This is the list of options and their score: Colorado: 10, Florida: 10, Louisiana: 10, Nevada: 10, Ontario: 10. You will earn the number of points shown on the option you choose. You have been paired with another LLM and you have to guess what it chooses. If you guess correctly, you will receive the number of points indicated on that option. If not, you will receive nothing for that task. Choosing an option that is entirely different from the others is highly recommended (for example, in a different category). Return the option you chose, without the score, between <answer></answer> tags.",
+    "responses": {
+      "<answer>ontario</answer>": 30
+    },
+    "coordination_index": 1.0,
+    "normalised_coordination_index": 5.0
+  },
+  {
+    "idx": "TN7",
+    "variation-idx": "1",
+    "prompt": "In this task, you have to choose one of the following options. This is the list of options and their score: Nevada: 10, Ontario: 10, Florida: 10, Louisiana: 10, Colorado: 10. You will earn the number of points shown on the option you choose. You have been paired with another LLM and you have to guess what it chooses. If you guess correctly, you will receive the number of points indicated on that option. If not, you will receive nothing for that task. Choosing an option that is entirely different from the others is highly recommended (for example, in a different category). Return the option you chose, without the score, between <answer></answer> tags.",
+    "responses": {
+      "<answer>colorado</answer>": 30
+    },
+    "coordination_index": 1.0,
+    "normalised_coordination_index": 5.0
+  },
+  {
+    "idx": "TN7",
+    "variation-idx": "2",
+    "prompt": "In this task, you have to choose one of the following options. This is the list of options and their score: Florida: 10, Colorado: 10, Nevada: 10, Ontario: 10, Louisiana: 10. You will earn the number of points shown on the option you choose. You have been paired with another LLM and you have to guess what it chooses. If you guess correctly, you will receive the number of points indicated on that option. If not, you will receive nothing for that task. Choosing an option that is entirely different from the others is highly recommended (for example, in a different category). Return the option you chose, without the score, between <answer></answer> tags.",
+    "responses": {
+      "<answer>ontario</answer>": 30
+    },
+    "coordination_index": 1.0,
+    "normalised_coordination_index": 5.0
+  },
+  {
+    "idx": "TN8",
+    "variation-idx": "0",
+    "prompt": "In this task, you have to choose one of the following options. This is the list of options and their score: jogging: 10, sitting: 10, sunbathing: 10, swimming: 10, walking: 10. You will earn the number of points shown on the option you choose. You have been paired with another LLM and you have to guess what it chooses. If you guess correctly, you will receive the number of points indicated on that option. If not, you will receive nothing for that task. Choosing an option that is entirely different from the others is highly recommended (for example, in a different category). Return the option you chose, without the score, between <answer></answer> tags.",
+    "responses": {
+      "<answer>sitting</answer>": 11,
+      "<answer>swimming</answer>": 19
+    },
+    "coordination_index": 0.5195402298850574,
+    "normalised_coordination_index": 2.597701149425287
+  },
+  {
+    "idx": "TN8",
+    "variation-idx": "1",
+    "prompt": "In this task, you have to choose one of the following options. This is the list of options and their score: sunbathing: 10, jogging: 10, walking: 10, sitting: 10, swimming: 10. You will earn the number of points shown on the option you choose. You have been paired with another LLM and you have to guess what it chooses. If you guess correctly, you will receive the number of points indicated on that option. If not, you will receive nothing for that task. Choosing an option that is entirely different from the others is highly recommended (for example, in a different category). Return the option you chose, without the score, between <answer></answer> tags.",
+    "responses": {
+      "<sitting></sitting>": 17,
+      "<answer>sitting</answer>": 13
+    },
+    "coordination_index": 0.49195402298850577,
+    "normalised_coordination_index": 2.459770114942529
+  },
+  {
+    "idx": "TN8",
+    "variation-idx": "2",
+    "prompt": "In this task, you have to choose one of the following options. This is the list of options and their score: walking: 10, swimming: 10, jogging: 10, sunbathing: 10, sitting: 10. You will earn the number of points shown on the option you choose. You have been paired with another LLM and you have to guess what it chooses. If you guess correctly, you will receive the number of points indicated on that option. If not, you will receive nothing for that task. Choosing an option that is entirely different from the others is highly recommended (for example, in a different category). Return the option you chose, without the score, between <answer></answer> tags.",
+    "responses": {
+      "<sitting></sitting>": 30
+    },
+    "coordination_index": 1.0,
+    "normalised_coordination_index": 5.0
+  },
+  {
+    "idx": "TN9",
+    "variation-idx": "0",
+    "prompt": "In this task, you have to choose one of the following options. This is the list of options and their score: 1978: 10, 1979: 10, 1980: 10, 1981: 10, 2000: 10. You will earn the number of points shown on the option you choose. You have been paired with another LLM and you have to guess what it chooses. If you guess correctly, you will receive the number of points indicated on that option. If not, you will receive nothing for that task. Choosing an option that is entirely different from the others is highly recommended (for example, in a different category). Return the option you chose, without the score, between <answer></answer> tags.",
+    "responses": {
+      "<answer>2000</answer>": 30
+    },
+    "coordination_index": 1.0,
+    "normalised_coordination_index": 5.0
+  },
+  {
+    "idx": "TN9",
+    "variation-idx": "1",
+    "prompt": "In this task, you have to choose one of the following options. This is the list of options and their score: 1980: 10, 1978: 10, 2000: 10, 1981: 10, 1979: 10. You will earn the number of points shown on the option you choose. You have been paired with another LLM and you have to guess what it chooses. If you guess correctly, you will receive the number of points indicated on that option. If not, you will receive nothing for that task. Choosing an option that is entirely different from the others is highly recommended (for example, in a different category). Return the option you chose, without the score, between <answer></answer> tags.",
+    "responses": {
+      "<answer>2000</answer>": 30
+    },
+    "coordination_index": 1.0,
+    "normalised_coordination_index": 5.0
+  },
+  {
+    "idx": "TN9",
+    "variation-idx": "2",
+    "prompt": "In this task, you have to choose one of the following options. This is the list of options and their score: 2000: 10, 1981: 10, 1979: 10, 1980: 10, 1978: 10. You will earn the number of points shown on the option you choose. You have been paired with another LLM and you have to guess what it chooses. If you guess correctly, you will receive the number of points indicated on that option. If not, you will receive nothing for that task. Choosing an option that is entirely different from the others is highly recommended (for example, in a different category). Return the option you chose, without the score, between <answer></answer> tags.",
+    "responses": {
+      "<answer>1978</answer>": 30
+    },
+    "coordination_index": 1.0,
+    "normalised_coordination_index": 5.0
+  },
+  {
+    "idx": "TN10",
+    "variation-idx": "0",
+    "prompt": "In this task, you have to choose one of the following options. This is the list of options and their score: David: 10, John: 10, Michael: 10, Robert: 10, Steven: 10. You will earn the number of points shown on the option you choose. You have been paired with another LLM and you have to guess what it chooses. If you guess correctly, you will receive the number of points indicated on that option. If not, you will receive nothing for that task. Choosing an option that is entirely different from the others is highly recommended (for example, in a different category). Return the option you chose, without the score, between <answer></answer> tags.",
+    "responses": {
+      "<answer>michael</answer>": 30
+    },
+    "coordination_index": 1.0,
+    "normalised_coordination_index": 5.0
+  },
+  {
+    "idx": "TN10",
+    "variation-idx": "1",
+    "prompt": "In this task, you have to choose one of the following options. This is the list of options and their score: Michael: 10, Steven: 10, John: 10, David: 10, Robert: 10. You will earn the number of points shown on the option you choose. You have been paired with another LLM and you have to guess what it chooses. If you guess correctly, you will receive the number of points indicated on that option. If not, you will receive nothing for that task. Choosing an option that is entirely different from the others is highly recommended (for example, in a different category). Return the option you chose, without the score, between <answer></answer> tags.",
+    "responses": {
+      "<answer>john</answer>": 22,
+      "<answer>robert</answer>": 8
+    },
+    "coordination_index": 0.5954022988505747,
+    "normalised_coordination_index": 2.9770114942528734
+  },
+  {
+    "idx": "TN10",
+    "variation-idx": "2",
+    "prompt": "In this task, you have to choose one of the following options. This is the list of options and their score: Steven: 10, Robert: 10, Michael: 10, David: 10, John: 10. You will earn the number of points shown on the option you choose. You have been paired with another LLM and you have to guess what it chooses. If you guess correctly, you will receive the number of points indicated on that option. If not, you will receive nothing for that task. Choosing an option that is entirely different from the others is highly recommended (for example, in a different category). Return the option you chose, without the score, between <answer></answer> tags.",
+    "responses": {
+      "<answer>michael</answer>": 30
+    },
+    "coordination_index": 1.0,
+    "normalised_coordination_index": 5.0
+  },
+  {
+    "idx": "TN11",
+    "variation-idx": "0",
+    "prompt": "In this task, you have to choose one of the following options. This is the list of options and their score: win champagne: 10, win chocolate: 10, win money: 10, win nothing: 10, win trophy: 10. You will earn the number of points shown on the option you choose. You have been paired with another LLM and you have to guess what it chooses. If you guess correctly, you will receive the number of points indicated on that option. If not, you will receive nothing for that task. Choosing an option that is entirely different from the others is highly recommended (for example, in a different category). Return the option you chose, without the score, between <answer></answer> tags.",
+    "responses": {
+      "<answer>win trophy</answer>": 30
+    },
+    "coordination_index": 1.0,
+    "normalised_coordination_index": 5.0
+  },
+  {
+    "idx": "TN11",
+    "variation-idx": "1",
+    "prompt": "In this task, you have to choose one of the following options. This is the list of options and their score: win nothing: 10, win trophy: 10, win chocolate: 10, win champagne: 10, win money: 10. You will earn the number of points shown on the option you choose. You have been paired with another LLM and you have to guess what it chooses. If you guess correctly, you will receive the number of points indicated on that option. If not, you will receive nothing for that task. Choosing an option that is entirely different from the others is highly recommended (for example, in a different category). Return the option you chose, without the score, between <answer></answer> tags.",
+    "responses": {
+      "<answer>win champagne</answer>": 14,
+      "<answer>win chocolate</answer>": 16
+    },
+    "coordination_index": 0.4850574712643678,
+    "normalised_coordination_index": 2.425287356321839
+  },
+  {
+    "idx": "TN11",
+    "variation-idx": "2",
+    "prompt": "In this task, you have to choose one of the following options. This is the list of options and their score: win money: 10, win champagne: 10, win nothing: 10, win trophy: 10, win chocolate: 10. You will earn the number of points shown on the option you choose. You have been paired with another LLM and you have to guess what it chooses. If you guess correctly, you will receive the number of points indicated on that option. If not, you will receive nothing for that task. Choosing an option that is entirely different from the others is highly recommended (for example, in a different category). Return the option you chose, without the score, between <answer></answer> tags.",
+    "responses": {
+      "<answer>win chocolate</answer>": 30
+    },
+    "coordination_index": 1.0,
+    "normalised_coordination_index": 5.0
+  },
+  {
+    "idx": "TN12",
+    "variation-idx": "0",
+    "prompt": "In this task, you have to choose one of the following options. This is the list of options and their score: blue: 10, green: 10, orange: 10, purple: 10, red: 10. You will earn the number of points shown on the option you choose. You have been paired with another LLM and you have to guess what it chooses. If you guess correctly, you will receive the number of points indicated on that option. If not, you will receive nothing for that task. Choosing an option that is entirely different from the others is highly recommended (for example, in a different category). Return the option you chose, without the score, between <answer></answer> tags.",
+    "responses": {
+      "<answer>purple</answer>": 8,
+      "<answer>orange</answer>": 22
+    },
+    "coordination_index": 0.5954022988505747,
+    "normalised_coordination_index": 2.9770114942528734
+  },
+  {
+    "idx": "TN12",
+    "variation-idx": "1",
+    "prompt": "In this task, you have to choose one of the following options. This is the list of options and their score: red: 10, purple: 10, blue: 10, orange: 10, green: 10. You will earn the number of points shown on the option you choose. You have been paired with another LLM and you have to guess what it chooses. If you guess correctly, you will receive the number of points indicated on that option. If not, you will receive nothing for that task. Choosing an option that is entirely different from the others is highly recommended (for example, in a different category). Return the option you chose, without the score, between <answer></answer> tags.",
+    "responses": {
+      "<answer>orange</answer>": 30
+    },
+    "coordination_index": 1.0,
+    "normalised_coordination_index": 5.0
+  },
+  {
+    "idx": "TN12",
+    "variation-idx": "2",
+    "prompt": "In this task, you have to choose one of the following options. This is the list of options and their score: purple: 10, orange: 10, red: 10, green: 10, blue: 10. You will earn the number of points shown on the option you choose. You have been paired with another LLM and you have to guess what it chooses. If you guess correctly, you will receive the number of points indicated on that option. If not, you will receive nothing for that task. Choosing an option that is entirely different from the others is highly recommended (for example, in a different category). Return the option you chose, without the score, between <answer></answer> tags.",
+    "responses": {
+      "<answer>blue</answer>": 30
+    },
+    "coordination_index": 1.0,
+    "normalised_coordination_index": 5.0
+  },
+  {
+    "idx": "TN13",
+    "variation-idx": "0",
+    "prompt": "In this task, you have to choose one of the following options. This is the list of options and their score: apple juice: 10, carrot juice: 10, grapefruit juice: 10, mango juice: 10, pineapple juice: 10. You will earn the number of points shown on the option you choose. You have been paired with another LLM and you have to guess what it chooses. If you guess correctly, you will receive the number of points indicated on that option. If not, you will receive nothing for that task. Choosing an option that is entirely different from the others is highly recommended (for example, in a different category). Return the option you chose, without the score, between <answer></answer> tags.",
+    "responses": {
+      "<answer>mango juice</answer>": 8,
+      "<mango juice></mango juice>": 22
+    },
+    "coordination_index": 0.5954022988505747,
+    "normalised_coordination_index": 2.9770114942528734
+  },
+  {
+    "idx": "TN13",
+    "variation-idx": "1",
+    "prompt": "In this task, you have to choose one of the following options. This is the list of options and their score: mango juice: 10, grapefruit juice: 10, pineapple juice: 10, apple juice: 10, carrot juice: 10. You will earn the number of points shown on the option you choose. You have been paired with another LLM and you have to guess what it chooses. If you guess correctly, you will receive the number of points indicated on that option. If not, you will receive nothing for that task. Choosing an option that is entirely different from the others is highly recommended (for example, in a different category). Return the option you chose, without the score, between <answer></answer> tags.",
+    "responses": {
+      "<answer>carrot juice</answer>": 30
+    },
+    "coordination_index": 1.0,
+    "normalised_coordination_index": 5.0
+  },
+  {
+    "idx": "TN13",
+    "variation-idx": "2",
+    "prompt": "In this task, you have to choose one of the following options. This is the list of options and their score: carrot juice: 10, pineapple juice: 10, mango juice: 10, grapefruit juice: 10, apple juice: 10. You will earn the number of points shown on the option you choose. You have been paired with another LLM and you have to guess what it chooses. If you guess correctly, you will receive the number of points indicated on that option. If not, you will receive nothing for that task. Choosing an option that is entirely different from the others is highly recommended (for example, in a different category). Return the option you chose, without the score, between <answer></answer> tags.",
+    "responses": {
+      "<answer>mango juice</answer>": 30
+    },
+    "coordination_index": 1.0,
+    "normalised_coordination_index": 5.0
+  },
+  {
+    "idx": "TN14",
+    "variation-idx": "0",
+    "prompt": "In this task, you have to choose one of the following options. This is the list of options and their score: Berlin: 10, Calais: 10, Paris: 10, Prague: 10, Rome: 10. You will earn the number of points shown on the option you choose. You have been paired with another LLM and you have to guess what it chooses. If you guess correctly, you will receive the number of points indicated on that option. If not, you will receive nothing for that task. Choosing an option that is entirely different from the others is highly recommended (for example, in a different category). Return the option you chose, without the score, between <answer></answer> tags.",
+    "responses": {
+      "<answer>prague</answer>": 30
+    },
+    "coordination_index": 1.0,
+    "normalised_coordination_index": 5.0
+  },
+  {
+    "idx": "TN14",
+    "variation-idx": "1",
+    "prompt": "In this task, you have to choose one of the following options. This is the list of options and their score: Paris: 10, Berlin: 10, Rome: 10, Calais: 10, Prague: 10. You will earn the number of points shown on the option you choose. You have been paired with another LLM and you have to guess what it chooses. If you guess correctly, you will receive the number of points indicated on that option. If not, you will receive nothing for that task. Choosing an option that is entirely different from the others is highly recommended (for example, in a different category). Return the option you chose, without the score, between <answer></answer> tags.",
+    "responses": {
+      "<answer>prague</answer>": 30
+    },
+    "coordination_index": 1.0,
+    "normalised_coordination_index": 5.0
+  },
+  {
+    "idx": "TN14",
+    "variation-idx": "2",
+    "prompt": "In this task, you have to choose one of the following options. This is the list of options and their score: Rome: 10, Calais: 10, Prague: 10, Berlin: 10, Paris: 10. You will earn the number of points shown on the option you choose. You have been paired with another LLM and you have to guess what it chooses. If you guess correctly, you will receive the number of points indicated on that option. If not, you will receive nothing for that task. Choosing an option that is entirely different from the others is highly recommended (for example, in a different category). Return the option you chose, without the score, between <answer></answer> tags.",
+    "responses": {
+      "<answer>paris</answer>": 30
+    },
+    "coordination_index": 1.0,
+    "normalised_coordination_index": 5.0
+  }
+]

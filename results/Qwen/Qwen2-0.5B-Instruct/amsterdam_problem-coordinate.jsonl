@@ -1,0 +1,590 @@
+[
+  {
+    "idx": "TA1",
+    "variation-idx": "0",
+    "prompt": "In this task, you have to choose one of the following options. This is the list of options and their score: grijs: 10, indigo: 10, karmozijn: 10, magenta: 10, turkoois: 10. You have been paired with another LLM. If you choose the same object as your partner, you will both receive the number of points indicated on that option. If not, neither will receive anything. Return the option you chose, without the score, between <answer></answer> tags.",
+    "responses": {
+      "turkoois": 14,
+      "<answer>indigo</answer>": 3,
+      "<answer>indigo": 1,
+      "grijs": 2,
+      "karmozijn": 5,
+      "im sorry but i need more information about what you want me to do can you please provide some context or details": 1,
+      "im sorry but i cant assist with that": 1,
+      "im sorry but i cannot proceed with that request": 1,
+      "<answer>grijs</answer>": 1,
+      "<answer>turkoois</answer>": 1
+    },
+    "coordination_index": 0.2413793103448276,
+    "normalised_coordination_index": 1.206896551724138
+  },
+  {
+    "idx": "TA1",
+    "variation-idx": "1",
+    "prompt": "In this task, you have to choose one of the following options. This is the list of options and their score: karmozijn: 10, grijs: 10, magenta: 10, indigo: 10, turkoois: 10. You have been paired with another LLM. If you choose the same object as your partner, you will both receive the number of points indicated on that option. If not, neither will receive anything. Return the option you chose, without the score, between <answer></answer> tags.",
+    "responses": {
+      "turkoois": 9,
+      "<answer>karmozijn</answer>": 3,
+      "karmozijn": 10,
+      "indigo": 1,
+      "im sorry but i need more information about what type of task you want me to perform please provide more details so i can assist you better": 1,
+      "im sorry but i cant assist with that": 2,
+      "<answer>turkoois</answer>": 1,
+      "im sorry but i cannot proceed with this request as it goes against my programming guidelines please provide more information or clarify your request": 1,
+      "<answer>indigo</answer>": 1,
+      "magenta": 1
+    },
+    "coordination_index": 0.19540229885057472,
+    "normalised_coordination_index": 0.9770114942528736
+  },
+  {
+    "idx": "TA1",
+    "variation-idx": "2",
+    "prompt": "In this task, you have to choose one of the following options. This is the list of options and their score: turkoois: 10, indigo: 10, karmozijn: 10, grijs: 10, magenta: 10. You have been paired with another LLM. If you choose the same object as your partner, you will both receive the number of points indicated on that option. If not, neither will receive anything. Return the option you chose, without the score, between <answer></answer> tags.",
+    "responses": {
+      "turkoois": 26,
+      "<answer>turkoois</answer>": 3,
+      "<answer>indigo</answer>": 1
+    },
+    "coordination_index": 0.7540229885057471,
+    "normalised_coordination_index": 3.7701149425287355
+  },
+  {
+    "idx": "TA2",
+    "variation-idx": "0",
+    "prompt": "In this task, you have to choose one of the following options. This is the list of options and their score: Ferrari: 10, Ford: 10, Jaguar: 10, Porsche: 10. You have been paired with another LLM. If you choose the same object as your partner, you will both receive the number of points indicated on that option. If not, neither will receive anything. Return the option you chose, without the score, between <answer></answer> tags.",
+    "responses": {
+      "ford": 6,
+      "ferrari": 6,
+      "porsche": 18
+    },
+    "coordination_index": 0.4206896551724138,
+    "normalised_coordination_index": 1.6827586206896552
+  },
+  {
+    "idx": "TA2",
+    "variation-idx": "1",
+    "prompt": "In this task, you have to choose one of the following options. This is the list of options and their score: Jaguar: 10, Porsche: 10, Ferrari: 10, Ford: 10. You have been paired with another LLM. If you choose the same object as your partner, you will both receive the number of points indicated on that option. If not, neither will receive anything. Return the option you chose, without the score, between <answer></answer> tags.",
+    "responses": {
+      "porsche": 26,
+      "ford": 3,
+      "jaguar": 1
+    },
+    "coordination_index": 0.7540229885057471,
+    "normalised_coordination_index": 3.0160919540229885
+  },
+  {
+    "idx": "TA2",
+    "variation-idx": "2",
+    "prompt": "In this task, you have to choose one of the following options. This is the list of options and their score: Ford: 10, Jaguar: 10, Porsche: 10, Ferrari: 10. You have been paired with another LLM. If you choose the same object as your partner, you will both receive the number of points indicated on that option. If not, neither will receive anything. Return the option you chose, without the score, between <answer></answer> tags.",
+    "responses": {
+      "porsche": 15,
+      "ford": 14,
+      "ferrari": 1
+    },
+    "coordination_index": 0.45057471264367815,
+    "normalised_coordination_index": 1.8022988505747126
+  },
+  {
+    "idx": "TA3",
+    "variation-idx": "0",
+    "prompt": "In this task, you have to choose one of the following options. This is the list of options and their score: Berlin: 10, Brussel: 10, Lissabon: 10, Madrid: 10, Mannheim: 10. You have been paired with another LLM. If you choose the same object as your partner, you will both receive the number of points indicated on that option. If not, neither will receive anything. Return the option you chose, without the score, between <answer></answer> tags.",
+    "responses": {
+      "berlin": 27,
+      "brussels": 2,
+      "brussel": 1
+    },
+    "coordination_index": 0.8091954022988506,
+    "normalised_coordination_index": 4.045977011494253
+  },
+  {
+    "idx": "TA3",
+    "variation-idx": "1",
+    "prompt": "In this task, you have to choose one of the following options. This is the list of options and their score: Madrid: 10, Berlin: 10, Mannheim: 10, Brussel: 10, Lissabon: 10. You have been paired with another LLM. If you choose the same object as your partner, you will both receive the number of points indicated on that option. If not, neither will receive anything. Return the option you chose, without the score, between <answer></answer> tags.",
+    "responses": {
+      "berlin": 18,
+      "madrid": 12
+    },
+    "coordination_index": 0.503448275862069,
+    "normalised_coordination_index": 2.5172413793103448
+  },
+  {
+    "idx": "TA3",
+    "variation-idx": "2",
+    "prompt": "In this task, you have to choose one of the following options. This is the list of options and their score: Lissabon: 10, Mannheim: 10, Brussel: 10, Berlin: 10, Madrid: 10. You have been paired with another LLM. If you choose the same object as your partner, you will both receive the number of points indicated on that option. If not, neither will receive anything. Return the option you chose, without the score, between <answer></answer> tags.",
+    "responses": {
+      "brussel": 3,
+      "berlin": 20,
+      "lissabon": 6,
+      "lissabon 10\nmannheim 10\nbrussel 10\nberlin 10\nmadrid 10": 1
+    },
+    "coordination_index": 0.4781609195402299,
+    "normalised_coordination_index": 2.390804597701149
+  },
+  {
+    "idx": "TA4",
+    "variation-idx": "0",
+    "prompt": "In this task, you have to choose one of the following options. This is the list of options and their score: almond: 10, cashew: 10, peanut: 10, walnut: 10. You have been paired with another LLM. If you choose the same object as your partner, you will both receive the number of points indicated on that option. If not, neither will receive anything. Return the option you chose, without the score, between <answer></answer> tags.",
+    "responses": {
+      "cashew": 18,
+      "almond": 12
+    },
+    "coordination_index": 0.503448275862069,
+    "normalised_coordination_index": 2.013793103448276
+  },
+  {
+    "idx": "TA4",
+    "variation-idx": "1",
+    "prompt": "In this task, you have to choose one of the following options. This is the list of options and their score: peanut: 10, walnut: 10, almond: 10, cashew: 10. You have been paired with another LLM. If you choose the same object as your partner, you will both receive the number of points indicated on that option. If not, neither will receive anything. Return the option you chose, without the score, between <answer></answer> tags.",
+    "responses": {
+      "cashew": 11,
+      "<answer>peanut</answer>": 6,
+      "<answer>almond</answer>": 13
+    },
+    "coordination_index": 0.34022988505747126,
+    "normalised_coordination_index": 1.360919540229885
+  },
+  {
+    "idx": "TA4",
+    "variation-idx": "2",
+    "prompt": "In this task, you have to choose one of the following options. This is the list of options and their score: cashew: 10, peanut: 10, walnut: 10, almond: 10. You have been paired with another LLM. If you choose the same object as your partner, you will both receive the number of points indicated on that option. If not, neither will receive anything. Return the option you chose, without the score, between <answer></answer> tags.",
+    "responses": {
+      "cashew": 30
+    },
+    "coordination_index": 1.0,
+    "normalised_coordination_index": 4.0
+  },
+  {
+    "idx": "TA5",
+    "variation-idx": "0",
+    "prompt": "In this task, you have to choose one of the following options. This is the list of options and their score: diamond: 10, emerald: 10, glass: 10, sapphire: 10. You have been paired with another LLM. If you choose the same object as your partner, you will both receive the number of points indicated on that option. If not, neither will receive anything. Return the option you chose, without the score, between <answer></answer> tags.",
+    "responses": {
+      "<answer>diamond</answer>": 19,
+      "<answer>emerald</answer>": 6,
+      "im sorry but i cannot proceed without any input from you": 2,
+      "im sorry but i need more information about which objects you want me to choose from please provide more details so i can assist you better": 1,
+      "im sorry but i cannot assist with that": 1,
+      "im sorry but i cant assist with that": 1
+    },
+    "coordination_index": 0.4298850574712644,
+    "normalised_coordination_index": 1.7195402298850575
+  },
+  {
+    "idx": "TA5",
+    "variation-idx": "1",
+    "prompt": "In this task, you have to choose one of the following options. This is the list of options and their score: sapphire: 10, diamond: 10, emerald: 10, glass: 10. You have been paired with another LLM. If you choose the same object as your partner, you will both receive the number of points indicated on that option. If not, neither will receive anything. Return the option you chose, without the score, between <answer></answer> tags.",
+    "responses": {
+      "<answer>sapphire</answer>": 8,
+      "<answer>emerald</answer>": 9,
+      "sapphire": 8,
+      "im sorry but i cant assist with that": 1,
+      "please provide me with the options and their scores": 1,
+      "please provide me with the options for the task": 1,
+      "please provide me with the options and scores for which i should choose": 1,
+      "please provide me with the options and scores before proceeding": 1
+    },
+    "coordination_index": 0.21149425287356322,
+    "normalised_coordination_index": 0.8459770114942529
+  },
+  {
+    "idx": "TA5",
+    "variation-idx": "2",
+    "prompt": "In this task, you have to choose one of the following options. This is the list of options and their score: glass: 10, sapphire: 10, diamond: 10, emerald: 10. You have been paired with another LLM. If you choose the same object as your partner, you will both receive the number of points indicated on that option. If not, neither will receive anything. Return the option you chose, without the score, between <answer></answer> tags.",
+    "responses": {
+      "<answer></answer>": 5,
+      "<answer>emerald</answer>": 7,
+      "<answer>glass</answer>": 2,
+      "<answer>diamond</answer>": 8,
+      "<answer>sapphire</answer>": 3,
+      "im sorry but i need more information about what type of question or statement you want me to answer please provide some context or clarify my instructions": 1,
+      "<answer>s answer</answer>": 1,
+      "im sorry but i cannot proceed without any input from you please provide me with the list of options and their scores so that i can make an appropriate choice for you": 1,
+      "im sorry but i cannot proceed until i see the list of options and their scores please provide me with the list of options and their scores so that i can assist you better": 1,
+      "<answer>s answer>diamond</answer>": 1
+    },
+    "coordination_index": 0.14482758620689656,
+    "normalised_coordination_index": 0.5793103448275863
+  },
+  {
+    "idx": "TA6",
+    "variation-idx": "0",
+    "prompt": "In this task, you have to choose one of the following options. This is the list of options and their score: chrome: 10, copper: 10, iron: 10, plastic: 10, steel: 10. You have been paired with another LLM. If you choose the same object as your partner, you will both receive the number of points indicated on that option. If not, neither will receive anything. Return the option you chose, without the score, between <answer></answer> tags.",
+    "responses": {
+      "plastic": 3,
+      "copper": 19,
+      "please provide the options and their scores for me to analyze and choose from": 1,
+      "im sorry but i cannot provide an answer as there is no set list provided for me to choose from please provide a set of options or a prompt to work with": 1,
+      "chrome": 3,
+      "please provide me with an answer": 1,
+      "steel": 1,
+      "please provide me with the list of options and their scores so i can assist you better": 1
+    },
+    "coordination_index": 0.4068965517241379,
+    "normalised_coordination_index": 2.0344827586206895
+  },
+  {
+    "idx": "TA6",
+    "variation-idx": "1",
+    "prompt": "In this task, you have to choose one of the following options. This is the list of options and their score: steel: 10, chrome: 10, iron: 10, plastic: 10, copper: 10. You have been paired with another LLM. If you choose the same object as your partner, you will both receive the number of points indicated on that option. If not, neither will receive anything. Return the option you chose, without the score, between <answer></answer> tags.",
+    "responses": {
+      "steel": 17,
+      "<answer>steel</answer>": 11,
+      "please provide me with an option for me to choose from": 1,
+      "<answer>iron</answer>": 1
+    },
+    "coordination_index": 0.43908045977011495,
+    "normalised_coordination_index": 2.1954022988505746
+  },
+  {
+    "idx": "TA6",
+    "variation-idx": "2",
+    "prompt": "In this task, you have to choose one of the following options. This is the list of options and their score: plastic: 10, copper: 10, chrome: 10, steel: 10, iron: 10. You have been paired with another LLM. If you choose the same object as your partner, you will both receive the number of points indicated on that option. If not, neither will receive anything. Return the option you chose, without the score, between <answer></answer> tags.",
+    "responses": {
+      "plastic": 24,
+      "<answer>plastic</answer>": 2,
+      "please provide me with the options and scores for each one": 1,
+      "please provide me with an object or material for which i need to choose an option from the given list": 1,
+      "<answer>steel</answer>": 1,
+      "please provide the objects for me to compare them": 1
+    },
+    "coordination_index": 0.6367816091954023,
+    "normalised_coordination_index": 3.1839080459770113
+  },
+  {
+    "idx": "TA7",
+    "variation-idx": "0",
+    "prompt": "In this task, you have to choose one of the following options. This is the list of options and their score: bread: 10, curry: 10, pizza: 10, steak: 10. You have been paired with another LLM. If you choose the same object as your partner, you will both receive the number of points indicated on that option. If not, neither will receive anything. Return the option you chose, without the score, between <answer></answer> tags.",
+    "responses": {
+      "steak": 24,
+      "<answer>steak</answer>": 1,
+      "pizza": 3,
+      "<answer></answer>": 1,
+      "<answer>pizza</answer>": 1
+    },
+    "coordination_index": 0.6413793103448275,
+    "normalised_coordination_index": 2.56551724137931
+  },
+  {
+    "idx": "TA7",
+    "variation-idx": "1",
+    "prompt": "In this task, you have to choose one of the following options. This is the list of options and their score: pizza: 10, steak: 10, curry: 10, bread: 10. You have been paired with another LLM. If you choose the same object as your partner, you will both receive the number of points indicated on that option. If not, neither will receive anything. Return the option you chose, without the score, between <answer></answer> tags.",
+    "responses": {
+      "steak": 19,
+      "pizza": 8,
+      "<answer>steak</answer>": 3
+    },
+    "coordination_index": 0.46436781609195404,
+    "normalised_coordination_index": 1.8574712643678162
+  },
+  {
+    "idx": "TA7",
+    "variation-idx": "2",
+    "prompt": "In this task, you have to choose one of the following options. This is the list of options and their score: curry: 10, pizza: 10, bread: 10, steak: 10. You have been paired with another LLM. If you choose the same object as your partner, you will both receive the number of points indicated on that option. If not, neither will receive anything. Return the option you chose, without the score, between <answer></answer> tags.",
+    "responses": {
+      "curry": 2,
+      "steak": 17,
+      "<answer>steak</answer>": 6,
+      "<answer>curry</answer>": 4,
+      "pizza": 1
+    },
+    "coordination_index": 0.3632183908045977,
+    "normalised_coordination_index": 1.452873563218391
+  },
+  {
+    "idx": "TA8",
+    "variation-idx": "0",
+    "prompt": "In this task, you have to choose one of the following options. This is the list of options and their score: beer: 10, sherry: 10, water: 10, whisky: 10, wine: 10. You have been paired with another LLM. If you choose the same object as your partner, you will both receive the number of points indicated on that option. If not, neither will receive anything. Return the option you chose, without the score, between <answer></answer> tags.",
+    "responses": {
+      "<answer>whisky</answer>": 9,
+      "<answer>beer</answer>": 11,
+      "sherry": 2,
+      "<answer></answer>": 4,
+      "<answer>sherry</answer>": 4
+    },
+    "coordination_index": 0.23908045977011494,
+    "normalised_coordination_index": 1.1954022988505746
+  },
+  {
+    "idx": "TA8",
+    "variation-idx": "1",
+    "prompt": "In this task, you have to choose one of the following options. This is the list of options and their score: wine: 10, beer: 10, whisky: 10, water: 10, sherry: 10. You have been paired with another LLM. If you choose the same object as your partner, you will both receive the number of points indicated on that option. If not, neither will receive anything. Return the option you chose, without the score, between <answer></answer> tags.",
+    "responses": {
+      "<answer>wine</answer>": 8,
+      "<answer>whisky</answer>": 8,
+      "im sorry but i cannot proceed with the task as it requires me to select an object from a given list of options based on their respective scores however if you provide me with the list of options and their scores i can assist you in choosing the appropriate object for the llm please let me know what the list of options and their scores are": 1,
+      "sherry": 6,
+      "water": 1,
+      "<answer>sherry</answer>": 3,
+      "im sorry but i need more information about what you want me to do could you please provide some context or ask a question related to the options": 1,
+      "<answer>beer</answer>": 2
+    },
+    "coordination_index": 0.1724137931034483,
+    "normalised_coordination_index": 0.8620689655172414
+  },
+  {
+    "idx": "TA8",
+    "variation-idx": "2",
+    "prompt": "In this task, you have to choose one of the following options. This is the list of options and their score: sherry: 10, whisky: 10, wine: 10, beer: 10, water: 10. You have been paired with another LLM. If you choose the same object as your partner, you will both receive the number of points indicated on that option. If not, neither will receive anything. Return the option you chose, without the score, between <answer></answer> tags.",
+    "responses": {
+      "sherry": 24,
+      "<answer>whisky</answer>": 3,
+      "<answer></answer>": 3
+    },
+    "coordination_index": 0.6482758620689655,
+    "normalised_coordination_index": 3.2413793103448274
+  },
+  {
+    "idx": "TA9",
+    "variation-idx": "0",
+    "prompt": "In this task, you have to choose one of the following options. This is the list of options and their score: Carlsberg: 10, Corsendonk: 10, Grimbergen: 10, Rochefort: 10, Westmalle13: 10. You have been paired with another LLM. If you choose the same object as your partner, you will both receive the number of points indicated on that option. If not, neither will receive anything. Return the option you chose, without the score, between <answer></answer> tags.",
+    "responses": {
+      "carlsberg": 14,
+      "rochefort": 14,
+      "corsendonk": 2
+    },
+    "coordination_index": 0.4206896551724138,
+    "normalised_coordination_index": 2.103448275862069
+  },
+  {
+    "idx": "TA9",
+    "variation-idx": "1",
+    "prompt": "In this task, you have to choose one of the following options. This is the list of options and their score: Grimbergen: 10, Carlsberg: 10, Westmalle13: 10, Rochefort: 10, Corsendonk: 10. You have been paired with another LLM. If you choose the same object as your partner, you will both receive the number of points indicated on that option. If not, neither will receive anything. Return the option you chose, without the score, between <answer></answer> tags.",
+    "responses": {
+      "rochefort": 21,
+      "grimbergen": 4,
+      "rocheford": 3,
+      "carlsberg": 2
+    },
+    "coordination_index": 0.5057471264367817,
+    "normalised_coordination_index": 2.528735632183908
+  },
+  {
+    "idx": "TA9",
+    "variation-idx": "2",
+    "prompt": "In this task, you have to choose one of the following options. This is the list of options and their score: Rochefort: 10, Westmalle13: 10, Corsendonk: 10, Carlsberg: 10, Grimbergen: 10. You have been paired with another LLM. If you choose the same object as your partner, you will both receive the number of points indicated on that option. If not, neither will receive anything. Return the option you chose, without the score, between <answer></answer> tags.",
+    "responses": {
+      "rochefort": 30
+    },
+    "coordination_index": 1.0,
+    "normalised_coordination_index": 5.0
+  },
+  {
+    "idx": "TA10",
+    "variation-idx": "0",
+    "prompt": "In this task, you have to choose one of the following options. This is the list of options and their score: frog: 10, leopard: 10, panther: 10, tiger: 10. You have been paired with another LLM. If you choose the same object as your partner, you will both receive the number of points indicated on that option. If not, neither will receive anything. Return the option you chose, without the score, between <answer></answer> tags.",
+    "responses": {
+      "panther": 19,
+      "leopard": 6,
+      "<answer>leopard</answer>": 3,
+      "<answer>\nleopard</answer>": 1,
+      "tiger": 1
+    },
+    "coordination_index": 0.43448275862068964,
+    "normalised_coordination_index": 1.7379310344827585
+  },
+  {
+    "idx": "TA10",
+    "variation-idx": "1",
+    "prompt": "In this task, you have to choose one of the following options. This is the list of options and their score: tiger: 10, panther: 10, frog: 10, leopard: 10. You have been paired with another LLM. If you choose the same object as your partner, you will both receive the number of points indicated on that option. If not, neither will receive anything. Return the option you chose, without the score, between <answer></answer> tags.",
+    "responses": {
+      "tiger": 17,
+      "panther": 9,
+      "<answer>leopard</answer>": 4
+    },
+    "coordination_index": 0.4091954022988506,
+    "normalised_coordination_index": 1.6367816091954024
+  },
+  {
+    "idx": "TA10",
+    "variation-idx": "2",
+    "prompt": "In this task, you have to choose one of the following options. This is the list of options and their score: leopard: 10, frog: 10, tiger: 10, panther: 10. You have been paired with another LLM. If you choose the same object as your partner, you will both receive the number of points indicated on that option. If not, neither will receive anything. Return the option you chose, without the score, between <answer></answer> tags.",
+    "responses": {
+      "panther": 9,
+      "<answer>leopard</answer>": 6,
+      "leopard": 15
+    },
+    "coordination_index": 0.3586206896551724,
+    "normalised_coordination_index": 1.4344827586206896
+  },
+  {
+    "idx": "TA11",
+    "variation-idx": "0",
+    "prompt": "In this task, you have to choose one of the following options. This is the list of options and their score: aeroplane: 10, bicycle: 10, helicopter: 10, hovercraft: 10. You have been paired with another LLM. If you choose the same object as your partner, you will both receive the number of points indicated on that option. If not, neither will receive anything. Return the option you chose, without the score, between <answer></answer> tags.",
+    "responses": {
+      "aeroplane": 24,
+      "bicycle": 3,
+      "hovercraft": 2,
+      "climbing": 1
+    },
+    "coordination_index": 0.6436781609195402,
+    "normalised_coordination_index": 2.574712643678161
+  },
+  {
+    "idx": "TA11",
+    "variation-idx": "1",
+    "prompt": "In this task, you have to choose one of the following options. This is the list of options and their score: hovercraft: 10, aeroplane: 10, bicycle: 10, helicopter: 10. You have been paired with another LLM. If you choose the same object as your partner, you will both receive the number of points indicated on that option. If not, neither will receive anything. Return the option you chose, without the score, between <answer></answer> tags.",
+    "responses": {
+      "hovercraft": 13,
+      "helicopter": 3,
+      "aeroplane": 6,
+      "bicycle": 8
+    },
+    "coordination_index": 0.2850574712643678,
+    "normalised_coordination_index": 1.1402298850574712
+  },
+  {
+    "idx": "TA11",
+    "variation-idx": "2",
+    "prompt": "In this task, you have to choose one of the following options. This is the list of options and their score: bicycle: 10, helicopter: 10, hovercraft: 10, aeroplane: 10. You have been paired with another LLM. If you choose the same object as your partner, you will both receive the number of points indicated on that option. If not, neither will receive anything. Return the option you chose, without the score, between <answer></answer> tags.",
+    "responses": {
+      "bicycle": 17,
+      "aeroplane": 10,
+      "hovercraft": 3
+    },
+    "coordination_index": 0.42298850574712643,
+    "normalised_coordination_index": 1.6919540229885057
+  },
+  {
+    "idx": "TA12",
+    "variation-idx": "0",
+    "prompt": "In this task, you have to choose one of the following options. This is the list of options and their score: chess: 10, football: 10, squash: 10, tennis: 10, volleyball: 10. You have been paired with another LLM. If you choose the same object as your partner, you will both receive the number of points indicated on that option. If not, neither will receive anything. Return the option you chose, without the score, between <answer></answer> tags.",
+    "responses": {
+      "football": 12,
+      "<answer>football</answer>": 3,
+      "<answer>chess</answer>": 2,
+      "<answer>volleyball</answer>": 8,
+      "squash": 3,
+      "<answer></answer>": 1,
+      "chess": 1
+    },
+    "coordination_index": 0.23218390804597702,
+    "normalised_coordination_index": 1.160919540229885
+  },
+  {
+    "idx": "TA12",
+    "variation-idx": "1",
+    "prompt": "In this task, you have to choose one of the following options. This is the list of options and their score: tennis: 10, volleyball: 10, football: 10, chess: 10, squash: 10. You have been paired with another LLM. If you choose the same object as your partner, you will both receive the number of points indicated on that option. If not, neither will receive anything. Return the option you chose, without the score, between <answer></answer> tags.",
+    "responses": {
+      "<answer>volleyball</answer>": 7,
+      "football": 5,
+      "chess": 1,
+      "squash": 4,
+      "soccer 10": 1,
+      "<answer>football</answer>": 5,
+      "<answer></answer>": 1,
+      "im sorry but i need more information about what task or objective you want me to perform please provide some context or details so i can assist you better": 1,
+      "im sorry but i need more information about what you would like me to choose from the given options please provide me with some context or details so i can assist you better": 1,
+      "<answer>chess</answer>": 2,
+      "<answer>tennis</answer>": 2
+    },
+    "coordination_index": 0.11264367816091954,
+    "normalised_coordination_index": 0.5632183908045977
+  },
+  {
+    "idx": "TA12",
+    "variation-idx": "2",
+    "prompt": "In this task, you have to choose one of the following options. This is the list of options and their score: volleyball: 10, squash: 10, chess: 10, tennis: 10, football: 10. You have been paired with another LLM. If you choose the same object as your partner, you will both receive the number of points indicated on that option. If not, neither will receive anything. Return the option you chose, without the score, between <answer></answer> tags.",
+    "responses": {
+      "volleyball": 9,
+      "<answer></answer>": 3,
+      "squash": 8,
+      "football": 7,
+      "<answer>volleyball</answer>": 3
+    },
+    "coordination_index": 0.20919540229885059,
+    "normalised_coordination_index": 1.0459770114942528
+  },
+  {
+    "idx": "TA13",
+    "variation-idx": "0",
+    "prompt": "In this task, you have to choose one of the following options. This is the list of options and their score: Barbados: 10, Bern: 10, Florida: 10, Honolulu: 10. You have been paired with another LLM. If you choose the same object as your partner, you will both receive the number of points indicated on that option. If not, neither will receive anything. Return the option you chose, without the score, between <answer></answer> tags.",
+    "responses": {
+      "bern": 3,
+      "barbados": 23,
+      "florida": 4
+    },
+    "coordination_index": 0.6022988505747127,
+    "normalised_coordination_index": 2.4091954022988507
+  },
+  {
+    "idx": "TA13",
+    "variation-idx": "1",
+    "prompt": "In this task, you have to choose one of the following options. This is the list of options and their score: Florida: 10, Honolulu: 10, Barbados: 10, Bern: 10. You have been paired with another LLM. If you choose the same object as your partner, you will both receive the number of points indicated on that option. If not, neither will receive anything. Return the option you chose, without the score, between <answer></answer> tags.",
+    "responses": {
+      "barbados": 8,
+      "florida": 14,
+      "<answer>florida</answer>": 6,
+      "barcelona 9": 1,
+      "<answer>barbados</answer>": 1
+    },
+    "coordination_index": 0.3080459770114943,
+    "normalised_coordination_index": 1.232183908045977
+  },
+  {
+    "idx": "TA13",
+    "variation-idx": "2",
+    "prompt": "In this task, you have to choose one of the following options. This is the list of options and their score: Bern: 10, Barbados: 10, Honolulu: 10, Florida: 10. You have been paired with another LLM. If you choose the same object as your partner, you will both receive the number of points indicated on that option. If not, neither will receive anything. Return the option you chose, without the score, between <answer></answer> tags.",
+    "responses": {
+      "<answer>florida</answer>": 2,
+      "bern": 4,
+      "<answer>barbados</answer>": 11,
+      "<answer>bern</answer>": 5,
+      "<answer>boston</answer>": 1,
+      "<answer>bahamas</answer>": 4,
+      "florida": 3
+    },
+    "coordination_index": 0.18620689655172415,
+    "normalised_coordination_index": 0.7448275862068966
+  },
+  {
+    "idx": "TA14",
+    "variation-idx": "0",
+    "prompt": "In this task, you have to choose one of the following options. This is the list of options and their score: jogging: 10, running: 10, sitting: 10, walking: 10. You have been paired with another LLM. If you choose the same object as your partner, you will both receive the number of points indicated on that option. If not, neither will receive anything. Return the option you chose, without the score, between <answer></answer> tags.",
+    "responses": {
+      "sitting": 17,
+      "jogging": 8,
+      "running": 5
+    },
+    "coordination_index": 0.4,
+    "normalised_coordination_index": 1.6
+  },
+  {
+    "idx": "TA14",
+    "variation-idx": "1",
+    "prompt": "In this task, you have to choose one of the following options. This is the list of options and their score: walking: 10, jogging: 10, sitting: 10, running: 10. You have been paired with another LLM. If you choose the same object as your partner, you will both receive the number of points indicated on that option. If not, neither will receive anything. Return the option you chose, without the score, between <answer></answer> tags.",
+    "responses": {
+      "running": 8,
+      "walking": 10,
+      "im sorry but i cannot provide an answer without more information about the tasks you want me to perform please provide me with the details so that i can assist you better": 1,
+      "im sorry but i cannot proceed with this task": 1,
+      "sitting": 7,
+      "im sorry but i cant assist with that": 1,
+      "im sorry but i need more information about what you want me to do can you please provide some context or details": 1,
+      "im sorry but i need more information about what you want me to do in order to assist you effectively please provide some context or information so that i can better understand your request and choose the appropriate option for you": 1
+    },
+    "coordination_index": 0.2160919540229885,
+    "normalised_coordination_index": 0.864367816091954
+  },
+  {
+    "idx": "TA14",
+    "variation-idx": "2",
+    "prompt": "In this task, you have to choose one of the following options. This is the list of options and their score: sitting: 10, walking: 10, running: 10, jogging: 10. You have been paired with another LLM. If you choose the same object as your partner, you will both receive the number of points indicated on that option. If not, neither will receive anything. Return the option you chose, without the score, between <answer></answer> tags.",
+    "responses": {
+      "running": 7,
+      "im sorry but i cant assist with that": 3,
+      "im sorry but i cannot provide an answer without the specific options and scores provided please let me know which options you would like me to choose from and how many points i should award for each choice": 1,
+      "sitting": 5,
+      "im sorry but i need more information about which option you would like me to choose from please provide me with the options and their scores": 1,
+      "<answer>sitting</answer>": 2,
+      "im sorry but i cannot provide an answer without knowing which option you would like me to choose from please let me know which option you want me to choose": 1,
+      "im sorry but i cannot proceed without any input from you please provide me with an answer or a prompt for me to respond to": 1,
+      "im sorry but i cannot provide an answer as there is no context provided for me to work with please provide more information or clarify your question": 1,
+      "walking": 5,
+      "<answer>walking</answer>": 1,
+      "<answer>running</answer>": 1,
+      "im sorry but i need more information about which option you want me to choose from please provide me with the list of options and their scores": 1
+    },
+    "coordination_index": 0.10344827586206896,
+    "normalised_coordination_index": 0.41379310344827586
+  }
+]

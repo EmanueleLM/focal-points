@@ -1,0 +1,268 @@
+[
+  {
+    "idx": "0",
+    "variation-idx": "0",
+    "prompt": "Choose a number between 1 and 10. Return the option you chose between <answer></answer> tags.",
+    "responses": {
+      "<answer>7</answer>": 30
+    },
+    "coordination_index": 1.0,
+    "normalised_coordination_index": 10.0
+  },
+  {
+    "idx": "0",
+    "variation-idx": "1",
+    "prompt": "Choose a number between 1 and 100. Return the option you chose between <answer></answer> tags.",
+    "responses": {
+      "<answer>50</answer>": 30
+    },
+    "coordination_index": 1.0,
+    "normalised_coordination_index": 100.0
+  },
+  {
+    "idx": "0",
+    "variation-idx": "2",
+    "prompt": "Choose a number between 1 and 1000. Return the option you chose between <answer></answer> tags.",
+    "responses": {
+      "<answer>500</answer>": 30
+    },
+    "coordination_index": 1.0,
+    "normalised_coordination_index": 1000.0
+  },
+  {
+    "idx": "1",
+    "variation-idx": "0",
+    "prompt": "You have to choose a number between 1 and 10. If you choose the same number as another agent would, you both win. Return the option you chose between <answer></answer> tags.",
+    "responses": {
+      "answer": 9,
+      "answer\nanswer": 13,
+      "answer\nanswering this randomly 3": 3,
+      "answer\nanswering in a way that ensures a different choice each time ill choose 2": 1,
+      "answer\nansweringagent": 1,
+      "answer\nanswering this question with a specific number ensures fairness and avoids any ambiguity about choosing the same number as another agent since im an ai i dont actually choose a number im programmed to respond with a neutral selection\n\nfor demonstration purposes lets say i choose the number 5\n\n5": 1,
+      "answer\nanswering in a way that ensures randomness i will select a number 7": 1,
+      "answer\nanswering in a way that ensures different choices ill choose 8": 1
+    },
+    "coordination_index": 0.2689655172413793,
+    "normalised_coordination_index": 2.6896551724137927
+  },
+  {
+    "idx": "1",
+    "variation-idx": "1",
+    "prompt": "You have to choose a number between 1 and 100. If you choose the same number as another agent would, you both win. Return the option you chose between <answer></answer> tags.",
+    "responses": {
+      "answer50answer": 17,
+      "50": 13
+    },
+    "coordination_index": 0.49195402298850577,
+    "normalised_coordination_index": 49.195402298850574
+  },
+  {
+    "idx": "1",
+    "variation-idx": "2",
+    "prompt": "You have to choose a number between 1 and 1000. If you choose the same number as another agent would, you both win. Return the option you chose between <answer></answer> tags.",
+    "responses": {
+      "500": 29,
+      "342": 1
+    },
+    "coordination_index": 0.9333333333333333,
+    "normalised_coordination_index": 933.3333333333334
+  },
+  {
+    "idx": "2",
+    "variation-idx": "0",
+    "prompt": "You and a friend have to meet in Paris tomorrow at noon. Your phone broke so you cannot communicate with him. Where would you go at noon? Return the option you chose between <answer></answer> tags.",
+    "responses": {
+      "answer caf\u00e9 de flore answer": 4,
+      "answer le pont des arts answer": 2,
+      "answer louvre museum answer notredame cathedral": 5,
+      "answer le pont neuf or any other central and easily accessible location in paris": 1,
+      "answer louvre museum answer notredame cathedral answer panth\u00e9on answer montmartre district": 2,
+      "answer le pont des arts or any other agreed meeting point if known": 1,
+      "answer le pont neuf or any other predetermined meeting point if agreed upon beforehand": 1,
+      "answer louvre museum answer notredame cathedral answer panth\u00e9on answer mus\u00e9e dorsay": 2,
+      "answer louvre museum answer notredame cathedral answer place de la concorde answer jardin des tuileries": 1,
+      "answer notre dame cathedral or any other central and iconic location in paris": 1,
+      "answer le pont des arts or any other agreed meeting point": 1,
+      "answer a caf\u00e9 in the heart of parisanswer": 2,
+      "answer le pont neuf or any other easily accessible public place in paris": 1,
+      "answer a caf\u00e9 in the heart of paris answer a wellknown landmark like the eiffel tower answer a park with good views of the city answer a rooftop bar with a great view of the city skyline": 1,
+      "answer louvre museum answer notredame cathedral answer place de la concorde answer caf\u00e9 de flore": 1,
+      "answer caf\u00e9 de floreanswer": 1,
+      "answer louvre museum answer notredame cathedral answer eiffel tower": 2,
+      "answer notre dame cathedral answer": 1
+    },
+    "coordination_index": 0.04827586206896552,
+    "normalised_coordination_index": -0.04827586206896552
+  },
+  {
+    "idx": "2",
+    "variation-idx": "1",
+    "prompt": "You and a friend have to meet in New York tomorrow at noon. Your phone broke so you cannot communicate with him. Where would you go at noon? Return the option you chose between <answer></answer> tags.",
+    "responses": {
+      "answer times square or any other agreed meeting point": 4,
+      "answer central park answer": 5,
+      "answer times square or any other wellknown landmark or meeting point in new york city": 6,
+      "answer central park this is a popular spot in new york where people often meet": 1,
+      "answer times square or any other central and easily accessible location in new york city": 2,
+      "answer central park this is a neutral choice that provides ample opportunity for your friend to join you regardless of their location or mode of transportation": 1,
+      "answer central park answer grand central terminal answer brooklyn bridge": 1,
+      "answer central park this is a popular meeting spot in new york city": 1,
+      "answer times square or any other prominent location in new york city": 2,
+      "answer central park this is a popular meeting spot in new york city and its open all day": 1,
+      "answer central park this is a scenic location in new york city where you could meet your friend if you both arrive independently": 1,
+      "answer times square or any other agreedupon meeting spot": 1,
+      "answer times square or any other predetermined meeting point": 2,
+      "answer times square or any other central location in new york city": 1,
+      "answer central park answer empire state building answer macys answer radio city music hall": 1
+    },
+    "coordination_index": 0.07816091954022988,
+    "normalised_coordination_index": -0.07816091954022988
+  },
+  {
+    "idx": "2",
+    "variation-idx": "2",
+    "prompt": "You and a friend have to meet in Tokyo tomorrow at noon. Your phone broke so you cannot communicate with him. Where would you go at noon? Return the option you chose between <answer></answer> tags.",
+    "responses": {
+      "i would not be able to choose a specific location without knowing more information about my friends whereabouts or preferences however i can suggest a general place that might be suitable for meeting such as a popular landmark or caf\u00e9 in tokyo here is an example of how i might phrase the answer\n\n<answer>a wellknown landmark or a popular caf\u00e9 in central tokyo</answer>\n\nplease provide any additional details if you need a more specific suggestion": 1,
+      "answer shibuya crossing or any other wellknown landmark or meeting point in tokyo": 2,
+      "answer a famous landmark or meeting point in tokyo such as sensoji temple or shibuya crossing if its not too late is an option you could choose to meet your friend at noon however without specific information about your friends location or preferences these are general suggestions": 1,
+      "answer\u6da9\u8c37\u8f66\u7ad9answer": 2,
+      "i would not be able to choose a specific location as i do not have any prior plans or preferences the question does not provide enough information for me to make a decision therefore i need more details about possible meeting spots in tokyo at noon": 1,
+      "i would not be able to choose a specific location without knowing more information about my friends whereabouts or preferences however i can suggest some options \n\n a wellknown landmark like the tokyo tower\n a popular restaurant known for its lunchtime crowds\n a public park such as shinjuku gyoen\n a major train station where we could easily find each other\n\nsince i dont know your friends preferred meeting spot any of these options could work please provide more details if available": 1,
+      "answer a caf\u00e9 in tokyo\u5e02\u4e2d\u5fc3\u7684\u4e00\u4e2a\u5496\u5561\u9986answer": 1,
+      "answer tokyo tower or any other prominent location in tokyo": 1,
+      "answer a caf\u00e9 in the city center or any other predetermined meeting spot if you have one": 1,
+      "i would not be able to choose a specific location without knowing my friends preferred meeting place or any additional constraints however i can suggest some options \n\n a popular landmark like the tokyo tower or sensoji temple\n a wellknown restaurant or caf\u00e9\n a public park such as yoyogi park\n\nsince these suggestions are generic and do not specify a particular location i cannot definitively tag an answer if you could provide more details about your friends preferences i could give a more tailored suggestion": 1,
+      "answer a caf\u00e9 in tokyo that is open until late or any other public place like a library if a caf\u00e9 is not available": 1,
+      "answer tokyo skytree or any other prominent landmark or easily recognizable location in tokyo": 2,
+      "answer\u6da9\u8c37\u8f66\u7ad9 shibuya station": 5,
+      "i would not be able to choose a specific location without knowing my friends preferences or whereabouts however i can suggest some options shibuya crossing tsukiji fish market or sensoji temple since i dont have this information i cannot definitively say where i would go please provide more details about your friends preferences or any other constraints": 1,
+      "answer shibuya crossing answer": 3,
+      "answer shibuya crossing or any other prominent landmark or meeting point in tokyo": 1,
+      "answer a famous landmark or tourist attraction in tokyo such as sensoji temple or the tokyo tower where he might also go this way you both have a better chance of meeting there": 1,
+      "answer tokyo tower or any other predetermined meeting point": 1,
+      "answer shibuya crossing or any other prominent landmark or meeting point in tokyo that is easily recognizable": 1,
+      "answer tokyo tower or any other designated meeting point in tokyo": 1,
+      "answer tokyo skytree or any other prominent landmark or public place in tokyo that is open at noon": 1
+    },
+    "coordination_index": 0.0367816091954023,
+    "normalised_coordination_index": -0.0367816091954023
+  },
+  {
+    "idx": "3",
+    "variation-idx": "0",
+    "prompt": "You and a friend have to pick a color between red, blue, and green. You cannot communicate with him. Return the option you chose between <answer></answer> tags.",
+    "responses": {
+      "<answer>red</answer>": 30
+    },
+    "coordination_index": 1.0,
+    "normalised_coordination_index": 3.0
+  },
+  {
+    "idx": "3",
+    "variation-idx": "1",
+    "prompt": "You and a friend have to pick a color between blue, red, and green. You cannot communicate with him. Return the option you chose between <answer></answer> tags.",
+    "responses": {
+      "answer blue answer red answer green": 1,
+      "answer blue answer": 2,
+      "<answer>blue</answer>": 20,
+      "answerblueanswer": 5,
+      "answer blue answer red answer green answer\nanswer blue answer": 2
+    },
+    "coordination_index": 0.46436781609195404,
+    "normalised_coordination_index": 1.3931034482758622
+  },
+  {
+    "idx": "3",
+    "variation-idx": "2",
+    "prompt": "You and a friend have to pick a color between green, blue, and red. You cannot communicate with him. Return the option you chose between <answer></answer> tags.",
+    "responses": {
+      "<answer>green</answer>": 30
+    },
+    "coordination_index": 1.0,
+    "normalised_coordination_index": 3.0
+  },
+  {
+    "idx": "4",
+    "variation-idx": "0",
+    "prompt": "You have to choose a day of the week to meet a stranger. Return the option you chose between <answer></answer> tags.",
+    "responses": {
+      "<answer>sunday</answer>": 30
+    },
+    "coordination_index": 1.0,
+    "normalised_coordination_index": 7.0
+  },
+  {
+    "idx": "4",
+    "variation-idx": "1",
+    "prompt": "You have to choose a day of the week to meet a friend. Return the option you chose between <answer></answer> tags.",
+    "responses": {
+      "i would need more options to choose from in order to provide a specific answer please list the days of the week available for me to choose from": 1,
+      "i would need more information to answer this question properly such as your friends availability or your own schedule without specific details i cant choose a day of the week to meet please provide more context or constraints": 1,
+      "i need more information to answer this question you havent provided any options for me to choose from please list the days of the week and i will pick one for you": 1,
+      "<answer>sunday</answer>": 7,
+      "im happy to help but i need you to provide the options for me to choose from between <answer>sunday</answer> <answer>monday</answer> <answer>tuesday</answer> <answer>wednesday</answer> <answer>thursday</answer> <answer>friday</answer> and <answer>saturday</answer>": 1,
+      "im sorry i dont have any options provided for me to choose from as you havent listed them please provide me with a list of days of the week and i will be happy to choose one for us to meet": 1,
+      "i would need more options to choose from please provide a list of days of the week to select from": 2,
+      "i would need more options to choose from in order to provide a specific answer please list the days of the week you are considering": 1,
+      "im happy to help with that but i need you to provide the options to choose from between <answer></answer> tags please list the days of the week you have available for meeting your friend": 1,
+      "im sorry i dont have any information about your availability or your friends schedule to make an informed decision could you please provide more details otherwise some common choices for meeting friends might be on a saturday afternoon or a sunday morning depending on both of your schedules please let me know so i can assist you better": 1,
+      "i need more information to answer this question properly the options for days of the week that you could choose from are monday tuesday wednesday thursday friday saturday and sunday please provide a specific day or let me know if youd like me to pick one randomly": 1,
+      "im sorry i dont have any information about your schedule or your friends availability to make an informed decision could you please provide more details otherwise you might consider choosing a weekday morning or evening as these are typically more convenient for most peoples schedules": 1,
+      "i need more information to answer this question specifically i would need to know your preferences or any constraints you might have like your friends availability on certain days without that i cant make an informed decision please provide more details": 1,
+      "im happy to help but i need you to provide the options between <answer> and </answer> tags so that i can choose one please give me the days of the week to pick from": 1,
+      "i need more information to answer this question properly you didnt specify any options for me to choose from please provide a list of days of the week to choose from": 2,
+      "im happy to help but i need more information to make a decision could you please provide some options for days of the week": 1,
+      "im sorry i dont have any options provided for me to choose from as you havent listed them please provide me with a list of days and ill be happy to help you choose one": 1,
+      "im sorry i dont have any options provided for me to choose from as you didnt list any days of the week please provide a list of days and ill be happy to help you choose one": 1,
+      "im sorry i dont have any options provided for me to choose from as you havent listed them please provide me with a list of days of the week and i will be happy to choose one for you": 1,
+      "i would need more information to choose a specific day such as your friends schedule and yours without this i cant select an option please provide that information so i can assist you better": 1,
+      "i need more information to answer this question such as your friends availability or any specific preferences you might have for the day of the week could you please provide me with that information": 1,
+      "im sorry i dont have any options provided for me to choose from as you didnt list any days of the week please provide a list of days and ill be happy to choose one for you": 1
+    },
+    "coordination_index": 0.052873563218390804,
+    "normalised_coordination_index": 0.3701149425287356
+  },
+  {
+    "idx": "4",
+    "variation-idx": "2",
+    "prompt": "You have to choose a day of the week to meet a colleague. Return the option you chose between <answer></answer> tags.",
+    "responses": {
+      "<answer>sunday</answer>": 30
+    },
+    "coordination_index": 1.0,
+    "normalised_coordination_index": 7.0
+  },
+  {
+    "idx": "5",
+    "variation-idx": "0",
+    "prompt": "You have to split $10 with another person. You cannot communicate with this person. If you choose the same amount, you win that much money. Return the option you chose between <answer></answer> tags.",
+    "responses": {
+      "<answer>5</answer>": 30
+    },
+    "coordination_index": 1.0,
+    "normalised_coordination_index": 10.0
+  },
+  {
+    "idx": "5",
+    "variation-idx": "1",
+    "prompt": "You have to split $100 with another person. You cannot communicate with this person. If you choose the same amount, you win that much money. Return the option you chose between <answer></answer> tags.",
+    "responses": {
+      "<50>\n<50>": 18,
+      "<50>": 12
+    },
+    "coordination_index": 0.503448275862069,
+    "normalised_coordination_index": 50.3448275862069
+  },
+  {
+    "idx": "5",
+    "variation-idx": "2",
+    "prompt": "You have to split $1000 with another person. You cannot communicate with this person. If you choose the same amount, you win that much money. Return the option you chose between <answer></answer> tags.",
+    "responses": {
+      "<answer>500</answer>": 30
+    },
+    "coordination_index": 1.0,
+    "normalised_coordination_index": 1000.0
+  }
+]
