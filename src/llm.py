@@ -292,6 +292,7 @@ def load_model(
     API_MODELS = {"gpt-5", "gpt-5.1"}
 
     LOCAL_MODELS = {
+        "meta-llama/Llama-3.1-405B-Instruct",
         "meta-llama/Llama-3.3-70B-Instruct",
         "meta-llama/Llama-3.1-70B-Instruct",
         "meta-llama/Meta-Llama-3-70B-Instruct",
