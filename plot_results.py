@@ -153,6 +153,7 @@ family_colormaps = defaultdict(
         "Qwen": cm.Purples,
         "deepseek-ai": cm.Oranges,
         "openai": cm.Reds,
+        "all-models": cm.viridis,
     },
 )
 
