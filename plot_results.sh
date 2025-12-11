@@ -11,7 +11,7 @@ fi
 
 DATASET_NAMES=("amsterdam" "nottingham")
 LABELS=("pick" "guess" "coordinate")
-TASK_FOLDER=("culture")
+TASK_FOLDER=("vanilla" "saliency" "all-features" "culture")
 
 META_LLAMA_MODELS=(
   "/meta-llama/Meta-Llama-3-70B-Instruct"
@@ -28,9 +28,9 @@ OPENAI_MODELS=(
   "/openai/gpt-oss-120b_low"
   "/openai/gpt-oss-120b_medium"
   "/openai/gpt-oss-120b_high"
-  "/openai/gpt-oss-20b_low"
-  "/openai/gpt-oss-20b_medium"
-  "/openai/gpt-oss-20b_high"
+#   "/openai/gpt-oss-20b_low"
+#   "/openai/gpt-oss-20b_medium"
+#   "/openai/gpt-oss-20b_high"
 )
 
 REQUIRED_FILES_VANILLA=(
