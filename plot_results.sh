@@ -5,7 +5,7 @@ set -o pipefail
 
 # Configure which model families to plot (default: meta-llama). You can also pass families as CLI args.
 # MODELS=("meta-llama" "Qwen" "openai" "all-models")
-MODELS=("all-models")
+MODELS=("openai" "all-models")
 if [ $# -gt 0 ]; then
     MODELS=("$@")
 fi
