@@ -5,7 +5,7 @@ set -o pipefail
 
 # Configure which model families to plot (default: meta-llama). You can also pass families as CLI args.
 # MODELS=("meta-llama" "Qwen" "openai" "all-models")
-MODELS=("openai" "all-models")
+MODELS=("openai-120b" "openai-20b" "all-models")
 if [ $# -gt 0 ]; then
     MODELS=("$@")
 fi
@@ -25,13 +25,16 @@ QWEN_MODELS=(
   "/Qwen/Qwen2.5-72B-Instruct"
 )
 
-OPENAI_MODELS=(
+OPENAI_120B_MODELS=(
   "/openai/gpt-oss-120b_low"
   "/openai/gpt-oss-120b_medium"
   "/openai/gpt-oss-120b_high"
-#   "/openai/gpt-oss-20b_low"
-#   "/openai/gpt-oss-20b_medium"
-#   "/openai/gpt-oss-20b_high"
+)
+
+OPENAI_20B_MODELS=(
+  "/openai/gpt-oss-20b_low"
+  "/openai/gpt-oss-20b_medium"
+  "/openai/gpt-oss-20b_high"
 )
 
 META_LLAMA_MODELS=(
@@ -106,8 +109,11 @@ for MODEL in "${MODELS[@]}"; do
         "qwen")
             SELECTED_MODELS=("${QWEN_MODELS[@]}")
             ;;
-        "openai")
-            SELECTED_MODELS=("${OPENAI_MODELS[@]}")
+        "openai-120b")
+            SELECTED_MODELS=("${OPENAI_120B_MODELS[@]}")
+            ;;
+        "openai-20b")
+            SELECTED_MODELS=("${OPENAI_20B_MODELS[@]}")
             ;;
         "all-models")
             SELECTED_MODELS=("${ALL_MODELS[@]}")
