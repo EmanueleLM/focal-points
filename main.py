@@ -52,6 +52,14 @@ def parse_arguments() -> argparse.Namespace:
         help="Responses per single prompt.",
     )
     parser.add_argument(
+        "-x",
+        "--max-new-tokens",
+        dest="max_new_tokens",
+        type=int,
+        default=None,
+        help="Maximum number of new tokens to generate per response.",
+    )
+    parser.add_argument(
         "-q",
         "--quantization",
         dest="quantization",
@@ -309,6 +317,7 @@ def run_single_job(
             model = load_model(
                 model_id=model_name,
                 num_return_sequences=args.sequences,
+                max_new_tokens=args.max_new_tokens,
                 quantization=args.quantization,
                 reasoning=reasoning_arg,
             )

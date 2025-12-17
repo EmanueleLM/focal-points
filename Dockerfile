@@ -31,7 +31,7 @@ ENV PATH="/opt/venv/bin:${PATH}"
 RUN python -m pip install --upgrade pip setuptools wheel
 
 # Workdirs
-RUN mkdir -p /workspace /cache /logs /results && chmod -R 777 /workspace /cache /logs /results
+RUN mkdir -p /workspace /cache /logs /results /plots && chmod -R 777 /workspace /cache /logs /results /plots
 WORKDIR /workspace
 
 # Install Python deps

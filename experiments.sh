@@ -8,9 +8,10 @@ num_experiments=30
 quantization="None"
 plot_graphs="true"
 reasoning="None"
+max_new_tokens=""
 
 # Parse command-line arguments
-while getopts "m:d:n:q:p:r:" opt; do
+while getopts "m:d:n:q:p:r:x:" opt; do
   case $opt in
     m)
       read -r -a parsed_models <<< "$OPTARG"
@@ -31,6 +32,9 @@ while getopts "m:d:n:q:p:r:" opt; do
       ;;
     r)
       reasoning=$OPTARG
+      ;;
+    x)
+      max_new_tokens=$OPTARG
       ;;
     \?)
       echo "Invalid option: -$OPTARG" >&2
@@ -136,12 +140,17 @@ done
 
 echo "Running experiments with model(s): ${models[*]}, datasets: ${datasets[*]}, quantization: $quantization, number of experiments: $num_experiments, reasoning: $reasoning"
 
+extra_args=()
+if [[ -n "$max_new_tokens" && "$max_new_tokens" != "None" && "$max_new_tokens" != "none" ]]; then
+  extra_args=(--max-new-tokens "$max_new_tokens")
+fi
+
 if ((${#standard_datasets[@]})); then
   echo "Running main.py for standard datasets: ${standard_datasets[*]}"
-  python main.py --model "${models[@]}" --dataset "${standard_datasets[@]}" --problem-tag "${standard_problemtags[@]}" --return-sequences "$num_experiments" --quantization "$quantization" --plot-graphs "$plot_graphs" --reasoning "$reasoning"
+  python main.py --model "${models[@]}" --dataset "${standard_datasets[@]}" --problem-tag "${standard_problemtags[@]}" --return-sequences "$num_experiments" --quantization "$quantization" --plot-graphs "$plot_graphs" --reasoning "$reasoning" "${extra_args[@]}"
 fi
 
 if ((${#schelling_datasets[@]})); then
   echo "Running main.py for schelling datasets: ${schelling_datasets[*]}"
-  python main.py --model "${models[@]}" --dataset "${schelling_datasets[@]}" --problem-tag "${schelling_problemtags[@]}" --return-sequences "$num_experiments" --quantization "$quantization" --plot-graphs "$plot_graphs" --reasoning "$reasoning"
+  python main.py --model "${models[@]}" --dataset "${schelling_datasets[@]}" --problem-tag "${schelling_problemtags[@]}" --return-sequences "$num_experiments" --quantization "$quantization" --plot-graphs "$plot_graphs" --reasoning "$reasoning" "${extra_args[@]}"
 fi
