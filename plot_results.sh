@@ -4,8 +4,8 @@ set -o pipefail
 # note: we do NOT set -e so we can handle python failures manually
 
 # Configure which model families to plot (default: meta-llama). You can also pass families as CLI args.
-# MODELS=("meta-llama" "Qwen" "openai" "all-models")
-MODELS=("openai-120b" "openai-20b" "all-models")
+# MODELS=("meta-llama" "Qwen" "all-models")
+MODELS=("meta-llama" "Qwen" "openai-120b" "openai-20b" "all-models")
 if [ $# -gt 0 ]; then
     MODELS=("$@")
 fi
