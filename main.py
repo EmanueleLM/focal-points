@@ -254,8 +254,12 @@ def build_log_json(
 
 
 def run_single_job(
-    model_name: str, dataset: str, problem_tag: str, args: argparse.Namespace
-) -> None:
+    model_name: str,
+    dataset: str,
+    problem_tag: str,
+    args: argparse.Namespace,
+    cached_model: LLM | None,
+) -> LLM | None:
     start = time.time()
 
     # filesystem prep
@@ -287,26 +291,27 @@ def run_single_job(
 
     all_complete = completed_prompts == total_prompts and total_prompts > 0
     responses_by_prompt: Dict[Tuple[int, str], List[str]] = dict(existing_responses)
-    model: LLM | None = None
+    model = cached_model
     new_data_generated = False
 
     # load model if additional work is required
     if not all_complete:
         if total_prompts == 0:
             print("[WARNING] No prompts generated from dataset; exiting early.")
-            return
+            return model
 
-        # load model
-        reasoning_arg = args.reasoning
-        if reasoning_arg and reasoning_arg.lower() == "none":
-            reasoning_arg = None
+        # load model once per model_name and reuse for subsequent jobs
+        if model is None:
+            reasoning_arg = args.reasoning
+            if reasoning_arg and reasoning_arg.lower() == "none":
+                reasoning_arg = None
 
-        model = load_model(
-            model_id=model_name,
-            num_return_sequences=args.sequences,
-            quantization=args.quantization,
-            reasoning=reasoning_arg,
-        )
+            model = load_model(
+                model_id=model_name,
+                num_return_sequences=args.sequences,
+                quantization=args.quantization,
+                reasoning=reasoning_arg,
+            )
 
         # generate
         responses_by_prompt, new_data_generated = generate_batch_responses(
@@ -344,20 +349,23 @@ def run_single_job(
                 f"[INFO] Results already exist at {results_path}; skipping recomputation."
             )
 
-    # cleanup
-    if model and hasattr(model, "clear_cache"):
-        model.clear_cache()
+    return model
 
 
 def run_job(args: argparse.Namespace) -> None:
     for model in ensure_list(args.model_names):
+        cached_model: LLM | None = None
         for dataset in ensure_list(args.datasets):
             for problem_tag in ensure_list(args.problem_tags):
                 print(
                     f"[INFO] Running model={model} dataset={dataset} "
                     f"problem_tag={problem_tag}"
                 )
-                run_single_job(model, dataset, problem_tag, args)
+                cached_model = run_single_job(
+                    model, dataset, problem_tag, args, cached_model
+                )
+        if cached_model and hasattr(cached_model, "clear_cache"):
+            cached_model.clear_cache()
 
 
 def compute_metrics(
