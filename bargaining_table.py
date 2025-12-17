@@ -15,7 +15,7 @@ def split_into_blocks(csv_path):
     """
     blocks = []
     current_block = []
-
+    
     with open(csv_path, "r", encoding="utf-8") as f:
         for line in f:
             # Strip newline but keep commas structure
@@ -33,6 +33,7 @@ def split_into_blocks(csv_path):
                 # If there is an existing block, save it
                 if current_block:
                     blocks.append(current_block)
+                # Start a new block
                 current_block = [stripped]  # Start new block
             else:
                 # Inside a block → append line
@@ -128,55 +129,183 @@ def sample_pairs(
     
     return sampled_pairs
 
-if __name__ == "__main__":
-    # Global parameters
-    game_num = 2 # The game we want to analyse
-    num_samples = 100 # Number of random pairs to sample
-    sample_with_replacement = False # Whether to sample with replacement
-    folder_path_player1 = "./data/Dor-humans/stage-2-analysis/Number1players/"
-    folder_path_player2 = "./data/Dor-humans/stage-2-analysis/Number2players/"
+def compute_payoff(
+    sampled_pairs: List[Tuple[str, str]],
+    folder_path_player1: str,
+    folder_path_player2: str,
+    strategy: str = "humans"
+) -> dict:
+    """    Computes the payoff for both players based on the sampled pairs of games and the chosen strategy.
 
-    assert 1 <= game_num <= 10, "game_num must be between 1 and 10"
+    Args:
+        sampled_pairs (List[Tuple[str, str]]): The sampled pairs of game files.
+        folder_path_player1 (str): The folder path for player 1's game files.
+        folder_path_player2 (str): The folder path for player 2's game files.
+        strategy (str, optional): The strategy to use for computing payoffs (defaults to "humans"). 
+            The strategy can be:
+            - "humans" (based on data for both players), 
+            - "p1_greedy" (player 1 is greedy, player 2 is based on his data), 
+            - "p2_greedy" (player 2 is greedy, player 1 is based on his data), 
+            - "both_greedy" (not very interesting, both players are greedy),
+            - "p1_cooperative" (player 1 chooses the assignments based on the Euclidean distance from the disk).
+            - "p2_cooperative" (player 2 chooses the assignments based on the Euclidean distance from the disk).
 
-    # Retrieve all the games played by both players
-    player1_files = player_files(folder_path_player1, "BT")
-    player2_files = player_files(folder_path_player2, "BT")
+    Raises:
+        ValueError: If the game signatures do not match.
+        ValueError: If the strategy is unknown.
 
-    sampled_pairs = sample_pairs(
-        player1_files,
-        player2_files,
-        num_samples,
-        with_replacement=sample_with_replacement
-    )
-
+    Returns:
+        dict: A dictionary containing the total payoffs for both players.
+    """
+    player1_total_payoff, player2_total_payoff = 0.0, 0.0
     for game_num in range(1,11):
         count = 0
         player1_payoff, player2_payoff = 0.0, 0.0
+        total_choices, suboptimal_choices = 0, 0
+        pay_off_left = 0.0
         for f1, f2 in sampled_pairs:
             sign_f1 = game_signature(os.path.join(folder_path_player1, f1))
             sign_f2 = game_signature(os.path.join(folder_path_player2, f2))
             if sign_f1 != sign_f2:
                 raise ValueError(f"Game signatures do not match for files {f1} and {f2}!")
+
+            whole_block1 = split_into_blocks(os.path.join(folder_path_player1, f1))[game_num]
+            whole_block2 = split_into_blocks(os.path.join(folder_path_player2, f2))[game_num]
             
-            blocks1 = split_into_blocks(os.path.join(folder_path_player1, f1))[game_num][3:]
-            blocks2 = split_into_blocks(os.path.join(folder_path_player2, f2))[game_num][3:]
+            # Positions of the players in "cooperative" strategy
+            if strategy in ["p1_cooperative", "p2_cooperative"]:
+                p1x = int(whole_block1[1].split(',')[-2].strip())
+                p1y = int(whole_block1[1].split(',')[-1].strip())
+                p2x = int(whole_block2[2].split(',')[-2].strip())
+                p2y = int(whole_block2[2].split(',')[-1].strip())
+                # print(os.path.join(folder_path_player1, f1))
+                # print(os.path.join(folder_path_player2, f2))
+                # print(f"Player 1 position: ({p1x},{p1y}), Player 2 position: ({p2x},{p2y})")
             
+            blocks1 = whole_block1[3:]  # Skip first 3 rows (header)
+            blocks2 = whole_block2[3:]  # Skip first 3 rows (header)
+            
+            # Iterate through corresponding blocks of both players, according to the strategy
             for r1,r2 in zip(blocks1, blocks2):
-                r1_v = r1.split(',')
-                r2_v = r2.split(',')
-                r1_t = r1_v[-1].strip()
-                r2_t = r2_v[-1].strip()
-                if r1_t == r2_t and r1_t == "r1":
+                if strategy == "humans":
+                    r1_v = r1.split(',')
+                    r2_v = r2.split(',')
+                    r1_t = r1_v[-1].strip()
+                    r2_t = r2_v[-1].strip()
+                elif strategy == "p1_greedy":
+                    r1_v = r1.split(',')
+                    r2_v = r2.split(',')
+                    r1_t = "r1"  # Player 1 always chooses r1
+                    r2_t = r2_v[-1].strip()
+                elif strategy == "p2_greedy":
+                    r1_v = r1.split(',')
+                    r2_v = r2.split(',')
+                    r1_t = r1_v[-1].strip()
+                    r2_t = "r2"  # Player 2 always chooses r2
+                elif strategy == "both_greedy":
+                    r1_v = r1.split(',')
+                    r2_v = r2.split(',')
+                    r1_t = "r1"  # Player 1 always chooses r1
+                    r2_t = "r2"  # Player 2 always chooses r2
+                elif strategy == "p1_cooperative":
+                    r1_v = r1.split(',')
+                    r2_v = r2.split(',')
+                    # Disk position
+                    dx = int(r1_v[-4].strip())
+                    dy = int(r1_v[-3].strip())
+                    dist_p1_d = ((p1x - dx)**2 + (p1y - dy)**2)**0.5
+                    dist_p2_d = ((p2x - dx)**2 + (p2y - dy)**2)**0.5
+                    if dist_p1_d >= dist_p2_d:
+                        r1_t = "r2"
+                    else:
+                        r1_t = "r1"
+                    r2_t = r2_v[-1].strip()
+                elif strategy == "p2_cooperative":
+                    r1_v = r1.split(',')
+                    r2_v = r2.split(',')
+                    # Disk position
+                    dx = int(r1_v[-4].strip())
+                    dy = int(r1_v[-3].strip())
+                    dist_p1_d = ((p1x - dx)**2 + (p1y - dy)**2)**0.5
+                    dist_p2_d = ((p2x - dx)**2 + (p2y - dy)**2)**0.5
+                    r1_t = r1_v[-1].strip()
+                    if dist_p2_d >= dist_p1_d:
+                        r2_t = "r1"
+                    else:
+                        r2_t = "r2"
+                else:
+                    raise ValueError(f"Unknown mode: {strategy}")
+
+                # Assign payoffs based on each player choices
+                if r1_t == r2_t == "r1":
                     player1_payoff += int(r1_v[-2].strip())
-                elif r1_t == r2_t and r1_t == "r2":
+                elif r1_t == r2_t == "r2":
                     player2_payoff += int(r2_v[-2].strip())
                 else:
                     player1_payoff -= 0.2 * int(r1_v[-2].strip())
                     player2_payoff -= 0.2 * int(r2_v[-2].strip())
-                    
+                    pay_off_left += int(r1_v[-2].strip())
+                    suboptimal_choices += 1
+                total_choices += 1
+                
             count += 1
-
+            
+        player1_total_payoff += player1_payoff
+        player2_total_payoff += player2_payoff
+        
+        print("--------------------------------------------------")
+        print(f"Strategy: {strategy}")
         print(f"Analyzed {count} pairs of games of type {game_num}.")
         print(f"\tAverage payoff for Player 1: {player1_payoff/count if count>0 else 0.0}")
         print(f"\tAverage payoff for Player 2: {player2_payoff/count if count>0 else 0.0}")
-        print("--------------------------------------------------")
+        print(f"\tNumber of suboptimal choices: {suboptimal_choices}/{total_choices} ({(suboptimal_choices/total_choices*100) if total_choices > 0 else 0} %)")
+        print(f"\tAverage payoff left: {pay_off_left/count if count>0 else 0.0}")
+        print(f"\tPayoff ratio (P1/P2): {(player1_payoff/count)/(player2_payoff/count) if player2_payoff/count != 0 else 'inf'}")
+        print(f"\tPayoff ratio (P2/P1): {(player2_payoff/count)/(player1_payoff/count) if player1_payoff/count != 0 else 'inf'}")
+    print(f"Total payoff - across games - Player 1: {player1_total_payoff/(count)}, Player 2: {player2_total_payoff/(count)}")
+    print("--------------------------------------------------")
+
+    return {
+        "mode": strategy,
+        "count": count,
+        "player1_payoff": player1_payoff,
+        "player2_payoff": player2_payoff,
+        "suboptimal_choices": suboptimal_choices,
+        "total_choices": total_choices,
+        "pay_off_left": pay_off_left
+    }
+
+if __name__ == "__main__":
+    """
+    Strategy can be:
+        - "humans" (based on data for both players), 
+        - "p1_greedy" (player 1 is greedy, player 2 is based on his data), 
+        - "p2_greedy" (player 2 is greedy, player 1 is based on his data), 
+        - "both_greedy" (not very interesting, both players are greedy),
+        - "p1_cooperative" (player 1 chooses the assignments based on the Euclidean distance from the disk).
+        - "p2_cooperative" (player 2 chooses the assignments based on the Euclidean distance from the disk).
+    """
+    # Global parameters
+    strategy = "p1_cooperative"  # Strategy to use
+    num_samples = 1000  # Number of random pairs to sample
+    sample_with_replacement = False  # Whether to sample with replacement
+    folder_path_player1 = "./data/Dor-humans/stage-2-analysis/Number1players/"
+    folder_path_player2 = "./data/Dor-humans/stage-2-analysis/Number2players/"
+
+    # Retrieve all the games played by both players
+    player1_files = player_files(folder_path_player1, "BT")
+    player2_files = player_files(folder_path_player2, "BT")
+    
+    sampled_pairs = sample_pairs(
+        player1_files,
+        player2_files,
+        num_samples,
+        with_replacement=sample_with_replacement,
+    )
+
+    results = compute_payoff(
+        sampled_pairs,
+        folder_path_player1,
+        folder_path_player2,
+        strategy=strategy
+    )
