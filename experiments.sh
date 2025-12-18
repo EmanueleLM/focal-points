@@ -145,12 +145,16 @@ if [[ -n "$max_new_tokens" && "$max_new_tokens" != "None" && "$max_new_tokens" !
   extra_args=(--max-new-tokens "$max_new_tokens")
 fi
 
-if ((${#standard_datasets[@]})); then
-  echo "Running main.py for standard datasets: ${standard_datasets[*]}"
-  python main.py --model "${models[@]}" --dataset "${standard_datasets[@]}" --problem-tag "${standard_problemtags[@]}" --return-sequences "$num_experiments" --quantization "$quantization" --plot-graphs "$plot_graphs" --reasoning "$reasoning" "${extra_args[@]}"
-fi
+for model in "${models[@]}"; do
+  echo "Running experiments for model: $model"
 
-if ((${#schelling_datasets[@]})); then
-  echo "Running main.py for schelling datasets: ${schelling_datasets[*]}"
-  python main.py --model "${models[@]}" --dataset "${schelling_datasets[@]}" --problem-tag "${schelling_problemtags[@]}" --return-sequences "$num_experiments" --quantization "$quantization" --plot-graphs "$plot_graphs" --reasoning "$reasoning" "${extra_args[@]}"
-fi
+  if ((${#standard_datasets[@]})); then
+    echo "Running main.py for standard datasets: ${standard_datasets[*]}"
+    python main.py --model "$model" --dataset "${standard_datasets[@]}" --problem-tag "${standard_problemtags[@]}" --return-sequences "$num_experiments" --quantization "$quantization" --plot-graphs "$plot_graphs" --reasoning "$reasoning" "${extra_args[@]}"
+  fi
+
+  if ((${#schelling_datasets[@]})); then
+    echo "Running main.py for schelling datasets: ${schelling_datasets[*]}"
+    python main.py --model "$model" --dataset "${schelling_datasets[@]}" --problem-tag "${schelling_problemtags[@]}" --return-sequences "$num_experiments" --quantization "$quantization" --plot-graphs "$plot_graphs" --reasoning "$reasoning" "${extra_args[@]}"
+  fi
+done
