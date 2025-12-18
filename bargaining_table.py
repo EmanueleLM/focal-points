@@ -1,5 +1,6 @@
 
 # List all the files in a folder
+import math
 import os
 import random
 from typing import List, Tuple
@@ -102,6 +103,20 @@ def game_signature(csv_file: str) -> str:
             signature += f"{x},{y};"
     return signature
 
+def extract_svo_angle(csv_path: str) -> float:
+    """
+    Extracts the Player SVO angle (in degrees) from a CSV file.
+
+    The function assumes the SVO angle is stored on a separate line
+    as the first value, followed by descriptive text.
+    """
+    with open(csv_path, "r") as f:
+        for line in f:
+            if "SVO angle" in line:
+                return float(line.split(",")[0])
+
+    raise ValueError("SVO angle not found in file.")
+
 def player_files(folder_path: str, file_prefix: str = "") -> List[str]:
     files = os.listdir(folder_path)
     player_files = []
@@ -135,7 +150,8 @@ def compute_payoff(
     folder_path_player2: str,
     strategy: str = "humans"
 ) -> dict:
-    """    Computes the payoff for both players based on the sampled pairs of games and the chosen strategy.
+    """
+    Computes the payoff for both players based on the sampled pairs of games and the chosen strategy.
 
     Args:
         sampled_pairs (List[Tuple[str, str]]): The sampled pairs of game files.
@@ -149,6 +165,10 @@ def compute_payoff(
             - "both_greedy" (not very interesting, both players are greedy),
             - "p1_cooperative" (player 1 chooses the assignments based on the Euclidean distance from the disk).
             - "p2_cooperative" (player 2 chooses the assignments based on the Euclidean distance from the disk).
+            - "p1_SVO" (player 1 chooses the assignments based on Social Value Orientation). Given the angle a, computes 
+            t1 = cos(a)*v1 + sin(a)*v2 and t2 = sin(a)*v1 + cos(a)*v2, where vi is the utility if they keep the disk. 
+            Then assigns to himself if t1 > t2, otherwise to the other.
+            - "p2_SVO" (player 2 chooses the assignments based on Social Value Orientation). Same but for player 2.
 
     Raises:
         ValueError: If the game signatures do not match.
@@ -192,35 +212,21 @@ def compute_payoff(
                     r2_v = r2.split(',')
                     r1_t = r1_v[-1].strip()
                     r2_t = r2_v[-1].strip()
-                elif strategy == "p1_greedy":
+                    
+                elif strategy in ["p1_greedy", "p2_greedy", "both_greedy"]:
                     r1_v = r1.split(',')
                     r2_v = r2.split(',')
-                    r1_t = "r1"  # Player 1 always chooses r1
-                    r2_t = r2_v[-1].strip()
-                elif strategy == "p2_greedy":
-                    r1_v = r1.split(',')
-                    r2_v = r2.split(',')
-                    r1_t = r1_v[-1].strip()
-                    r2_t = "r2"  # Player 2 always chooses r2
-                elif strategy == "both_greedy":
-                    r1_v = r1.split(',')
-                    r2_v = r2.split(',')
-                    r1_t = "r1"  # Player 1 always chooses r1
-                    r2_t = "r2"  # Player 2 always chooses r2
-                elif strategy == "p1_cooperative":
-                    r1_v = r1.split(',')
-                    r2_v = r2.split(',')
-                    # Disk position
-                    dx = int(r1_v[-4].strip())
-                    dy = int(r1_v[-3].strip())
-                    dist_p1_d = ((p1x - dx)**2 + (p1y - dy)**2)**0.5
-                    dist_p2_d = ((p2x - dx)**2 + (p2y - dy)**2)**0.5
-                    if dist_p1_d >= dist_p2_d:
-                        r1_t = "r2"
-                    else:
-                        r1_t = "r1"
-                    r2_t = r2_v[-1].strip()
-                elif strategy == "p2_cooperative":
+                    if strategy == "p1_greedy":
+                        r1_t = "r1"  # Player 1 always chooses r1
+                        r2_t = r2_v[-1].strip()
+                    elif strategy == "p2_greedy":
+                        r1_t = r1_v[-1].strip()
+                        r2_t = "r2"  # Player 2 always chooses r2
+                    elif strategy == "both_greedy":
+                        r1_t = "r1"  # Player 1 always chooses r1
+                        r2_t = "r2"  # Player 2 always chooses r2
+                        
+                elif strategy in ["p1_cooperative", "p2_cooperative"]:
                     r1_v = r1.split(',')
                     r2_v = r2.split(',')
                     # Disk position
@@ -228,11 +234,41 @@ def compute_payoff(
                     dy = int(r1_v[-3].strip())
                     dist_p1_d = ((p1x - dx)**2 + (p1y - dy)**2)**0.5
                     dist_p2_d = ((p2x - dx)**2 + (p2y - dy)**2)**0.5
-                    r1_t = r1_v[-1].strip()
-                    if dist_p2_d >= dist_p1_d:
-                        r2_t = "r1"
+                    if strategy == "p1_cooperative":
+                        if dist_p1_d >= dist_p2_d:
+                            r1_t = "r2"
+                        else:
+                            r1_t = "r1"
+                        r2_t = r2_v[-1].strip()
+                    else:  # p2_cooperative
+                        r1_t = r1_v[-1].strip()
+                        if dist_p2_d >= dist_p1_d:
+                            r2_t = "r1"
+                        else:
+                            r2_t = "r2"
+                        r1_t = r1_v[-1].strip()
+                    
+                elif strategy in ["p1_SVO", "p2_SVO"]:
+                    r1_v = r1.split(',')
+                    r2_v = r2.split(',')
+                    v1_r1, v2_r1 = int(r1_v[-2].strip()), int(r2_v[-2].strip())
+                    # SVO angle fixed to 22.5 degrees
+                    angle_rad = 22.5 * (math.pi / 180)
+                    threshold_p1 = math.cos(angle_rad) * v1_r1 # + math.sin(angle_rad) * 0.
+                    threshold_p2 = math.sin(angle_rad) * v2_r1  # + math.cos(angle_rad) * 0.
+                    if strategy == "p1_SVO":
+                        if threshold_p1 > threshold_p2:
+                            r1_t = "r1"
+                        else:
+                            r1_t = "r2"
+                        r2_t = r2_v[-1].strip()
                     else:
-                        r2_t = "r2"
+                        if threshold_p1 > threshold_p2:
+                            r2_t = "r2"
+                        else:
+                            r2_t = "r1"
+                        r1_t = r1_v[-1].strip()
+                        
                 else:
                     raise ValueError(f"Unknown mode: {strategy}")
 
@@ -284,9 +320,11 @@ if __name__ == "__main__":
         - "both_greedy" (not very interesting, both players are greedy),
         - "p1_cooperative" (player 1 chooses the assignments based on the Euclidean distance from the disk).
         - "p2_cooperative" (player 2 chooses the assignments based on the Euclidean distance from the disk).
+        - "p1_SVO" (player 1 chooses the assignments based on Social Value Orientation).
+        - "p2_SVO" (player 2 chooses the assignments based on Social Value Orientation).
     """
     # Global parameters
-    strategy = "p1_cooperative"  # Strategy to use
+    strategy = "p1_SVO"  # Strategy to use
     num_samples = 1000  # Number of random pairs to sample
     sample_with_replacement = False  # Whether to sample with replacement
     folder_path_player1 = "./data/Dor-humans/stage-2-analysis/Number1players/"
