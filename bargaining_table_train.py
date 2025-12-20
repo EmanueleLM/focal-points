@@ -111,27 +111,34 @@ def probabilities_to_labels(probabilities: np.ndarray, threshold: float) -> np.n
 def load_dataset(
     path: Path, sample_size: int, random_state: int
 ) -> Tuple[np.ndarray, np.ndarray]:
-    """Load the dataset from disk and sample 380 observations for CV."""
+    """Load the dataset from disk and sample observations for CV."""
     if not path.exists():
         raise FileNotFoundError(f"Dataset not found: {path}")
 
     df = pd.read_csv(path)
+
     target_col = "y"
+    drop_cols = ["game_number"]  # columns to exclude from features
+
     if target_col not in df.columns:
         raise ValueError(f"Target column '{target_col}' not found in {path}")
+
+    # Drop non-feature columns if present
+    df = df.drop(columns=[c for c in drop_cols if c in df.columns])
 
     if sample_size is not None:
         if sample_size <= 0:
             raise ValueError("Sample size must be positive.")
         if sample_size % 5 != 0:
             raise ValueError(
-                "Sample size must be divisible by 5 to ensure folds of equal size (76 observations)."
+                "Sample size must be divisible by 5 to ensure folds of equal size."
             )
         if sample_size < len(df):
             df = df.sample(n=sample_size, random_state=random_state).reset_index(drop=True)
 
     features = df.drop(columns=[target_col]).to_numpy()
     target = df[target_col].to_numpy(dtype=int)
+
     return features, target
 
 

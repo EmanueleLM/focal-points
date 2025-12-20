@@ -1,9 +1,13 @@
 
 # List all the files in a folder
+import joblib
 import math
+import numpy as np
 import os
+import pandas as pd
 import random
 from typing import List, Tuple
+
 
 def split_into_blocks(csv_path):
     """Splits a CSV file into blocks based on game numbers.
@@ -117,6 +121,17 @@ def extract_svo_angle(csv_path: str) -> float:
 
     raise ValueError("SVO angle not found in file.")
 
+def adaptive_agent_from_file(
+    model_path: str = "./models/adaptive_agent_model.joblib", 
+    X: np.ndarray = None
+    ) -> int:
+    model = joblib.load(model_path)
+
+    probabilities = model.predict_proba(X)
+    # label = (probabilities[:, 1] >= 0.5).astype(int)  # 50% threshold
+
+    return probabilities[0][1]
+
 def player_files(folder_path: str, file_prefix: str = "") -> List[str]:
     files = os.listdir(folder_path)
     player_files = []
@@ -169,6 +184,7 @@ def compute_payoff(
             t1 = cos(a)*v1 + sin(a)*v2 and t2 = sin(a)*v1 + cos(a)*v2, where vi is the utility if they keep the disk. 
             Then assigns to himself if t1 > t2, otherwise to the other.
             - "p2_SVO" (player 2 chooses the assignments based on Social Value Orientation). Same but for player 2.
+            - "p1_adaptive" (player 1 uses an adaptive agent based on a trained model, player 2 is based on his data).
 
     Raises:
         ValueError: If the game signatures do not match.
@@ -193,7 +209,7 @@ def compute_payoff(
             whole_block2 = split_into_blocks(os.path.join(folder_path_player2, f2))[game_num]
             
             # Positions of the players in "cooperative" strategy
-            if strategy in ["p1_cooperative", "p2_cooperative"]:
+            if strategy in ["p1_cooperative", "p2_cooperative", "p1_adaptive"]:
                 p1x = int(whole_block1[1].split(',')[-2].strip())
                 p1y = int(whole_block1[1].split(',')[-1].strip())
                 p2x = int(whole_block2[2].split(',')[-2].strip())
@@ -206,7 +222,7 @@ def compute_payoff(
             blocks2 = whole_block2[3:]  # Skip first 3 rows (header)
             
             # Iterate through corresponding blocks of both players, according to the strategy
-            for r1,r2 in zip(blocks1, blocks2):
+            for (i,r1),r2 in zip(enumerate(blocks1), blocks2):
                 if strategy == "humans":
                     r1_v = r1.split(',')
                     r2_v = r2.split(',')
@@ -269,6 +285,30 @@ def compute_payoff(
                             r2_t = "r1"
                         r1_t = r1_v[-1].strip()
                         
+                elif strategy == "p1_adaptive":
+                    r1_v = r1.split(',')
+                    r2_v = r2.split(',')
+                    
+                    df = pd.read_csv("./data/Dor-humans/bargaining_games_player_blue.csv")
+                    game_match_row = df.loc[df["game_number"] == f2].iloc[i]
+                    adaptive_X = game_match_row[["x1", "x2", "x3", "x4", "x5", "x6"]].to_numpy().flatten().reshape(1, -1)
+                    adaptive_Y = adaptive_agent_from_file("./data/Dor-humans/bargaining_table_rf.joblib", adaptive_X)
+                    r = random.random()
+                    if adaptive_Y > r:
+                        # Disk position
+                        dx = int(r1_v[-4].strip())
+                        dy = int(r1_v[-3].strip())
+                        dist_p1_d = ((p1x - dx)**2 + (p1y - dy)**2)**0.5
+                        dist_p2_d = ((p2x - dx)**2 + (p2y - dy)**2)**0.5
+                        if dist_p1_d >= dist_p2_d:
+                            r1_t = "r2"
+                        else:
+                            r1_t = "r1"
+                        r2_t = r2_v[-1].strip()
+                    else:
+                        r1_t = "r1"
+                    r2_t = r2_v[-1].strip()
+                        
                 else:
                     raise ValueError(f"Unknown mode: {strategy}")
 
@@ -322,10 +362,11 @@ if __name__ == "__main__":
         - "p2_cooperative" (player 2 chooses the assignments based on the Euclidean distance from the disk).
         - "p1_SVO" (player 1 chooses the assignments based on Social Value Orientation).
         - "p2_SVO" (player 2 chooses the assignments based on Social Value Orientation).
+        - "p1_adaptive" (player 1 uses an adaptive agent based on a trained model, player 2 is based on his data).
     """
     # Global parameters
-    strategy = "p1_SVO"  # Strategy to use
-    num_samples = 1000  # Number of random pairs to sample
+    strategy = "p1_adaptive"  # Strategy to use
+    num_samples = 100  # Number of random pairs to sample
     sample_with_replacement = False  # Whether to sample with replacement
     folder_path_player1 = "./data/Dor-humans/stage-2-analysis/Number1players/"
     folder_path_player2 = "./data/Dor-humans/stage-2-analysis/Number2players/"
