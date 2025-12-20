@@ -366,7 +366,7 @@ if __name__ == "__main__":
     """
     # Global parameters
     strategy = "p1_adaptive"  # Strategy to use
-    num_samples = 100  # Number of random pairs to sample
+    num_samples = 50  # Number of random pairs to sample
     sample_with_replacement = False  # Whether to sample with replacement
     folder_path_player1 = "./data/Dor-humans/stage-2-analysis/Number1players/"
     folder_path_player2 = "./data/Dor-humans/stage-2-analysis/Number2players/"
