@@ -286,8 +286,8 @@ def run_single_job(
     log_file = logs_dir / f"{dataset}_responses_{problem_tag}.jsonl"
 
     # load dataset
-    if dataset == "bargaining_table-vanilla":
-        ds_path = dataset_dir / "bargaining_table_llms" / "bargaining_table-vanilla.json"
+    if dataset in ("bargaining_table-vanilla", "bargaining_table_realdata-vanilla"):
+        ds_path = dataset_dir / "bargaining_table_llms" / f"{dataset}.json"
         problems, norm_factors = load_bargaining_table_prompts(
             ds_path, args.bargaining_player
         )

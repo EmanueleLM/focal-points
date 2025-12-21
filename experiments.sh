@@ -108,6 +108,7 @@ all_datasets=(
   "schelling-instruct-saliency"
   # bargaining table
   "bargaining_table-vanilla"
+  "bargaining_table_realdata-vanilla"
   )
 
 # Apply defaults if none provided
@@ -140,7 +141,7 @@ for data in "${datasets[@]}"; do
     "schelling"|"schelling-instruct-all-features"|"schelling-instruct-saliency")
       schelling_datasets+=("$data")
       ;;
-    "bargaining_table-vanilla")
+    "bargaining_table-vanilla"|"bargaining_table_realdata-vanilla")
       bargaining_datasets+=("$data")
       ;;
     *)

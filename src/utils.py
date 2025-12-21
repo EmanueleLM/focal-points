@@ -157,26 +157,48 @@ def load_bargaining_table_prompts(path: str, player_key: str):
 
     game = data.get("game", "")
     task = data.get("task", "")
-    players = data.get("players", {})
-    states = data.get("states", {})
-
-    if not isinstance(players, dict):
-        raise ValueError("Expected 'players' to be a dictionary.")
-    if not isinstance(states, dict):
-        raise ValueError("Expected 'states' to be a dictionary.")
 
     player_key = player_key.lower()
-    if player_key not in players:
-        raise ValueError(
-            f"Unknown player '{player_key}'. Available players: {list(players.keys())}"
-        )
-
-    base_prompt = f"{game}{task}" if game.endswith("\n") else f"{game}\n{task}"
-    player_text = players[player_key]
+    base_prompt = (
+        f"{game}{task}" if not game or game.endswith("\n") else f"{game}\n{task}"
+    )
 
     problems, normalization_factors = {}, {}
+    if "states" in data:
+        players = data.get("players", {})
+        states = data.get("states", {})
+
+        if not isinstance(players, dict):
+            raise ValueError("Expected 'players' to be a dictionary.")
+        if not isinstance(states, dict):
+            raise ValueError("Expected 'states' to be a dictionary.")
+        if player_key not in players:
+            raise ValueError(
+                f"Unknown player '{player_key}'. Available players: {list(players.keys())}"
+            )
+
+        player_text = players[player_key]
+        for state_key, state_text in states.items():
+            prompt = base_prompt.replace("@player@", player_text).replace(
+                "@state@", state_text
+            )
+            problems[state_key] = [prompt]
+            normalization_factors[state_key] = [1]
+        return problems, normalization_factors
+
+    states_key = f"states_{player_key}"
+    if states_key not in data:
+        raise ValueError(f"Missing '{states_key}' in dataset.")
+    states = data.get(states_key, {})
+    if not isinstance(states, dict):
+        raise ValueError(f"Expected '{states_key}' to be a dictionary.")
+    if "@player@" in base_prompt:
+        raise ValueError(
+            "Dataset includes '@player@' but no 'players' mapping was provided."
+        )
+
     for state_key, state_text in states.items():
-        prompt = base_prompt.replace("@player@", player_text).replace("@state@", state_text)
+        prompt = base_prompt.replace("@state@", state_text)
         problems[state_key] = [prompt]
         normalization_factors[state_key] = [1]
 
