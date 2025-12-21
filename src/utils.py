@@ -151,6 +151,38 @@ def iterate_data(data: dict, problem_tag: str):
     return problems, normalization_factors
 
 
+def load_bargaining_table_prompts(path: str, player_key: str):
+    with open(path, "r") as f:
+        data = json.load(f)
+
+    game = data.get("game", "")
+    task = data.get("task", "")
+    players = data.get("players", {})
+    states = data.get("states", {})
+
+    if not isinstance(players, dict):
+        raise ValueError("Expected 'players' to be a dictionary.")
+    if not isinstance(states, dict):
+        raise ValueError("Expected 'states' to be a dictionary.")
+
+    player_key = player_key.lower()
+    if player_key not in players:
+        raise ValueError(
+            f"Unknown player '{player_key}'. Available players: {list(players.keys())}"
+        )
+
+    base_prompt = f"{game}{task}" if game.endswith("\n") else f"{game}\n{task}"
+    player_text = players[player_key]
+
+    problems, normalization_factors = {}, {}
+    for state_key, state_text in states.items():
+        prompt = base_prompt.replace("@player@", player_text).replace("@state@", state_text)
+        problems[state_key] = [prompt]
+        normalization_factors[state_key] = [1]
+
+    return problems, normalization_factors
+
+
 def compute_coordination_index(items: dict, normalization_factor: float = 1.0):
     freq_counter = Counter(items)
     total = sum(freq_counter.values())

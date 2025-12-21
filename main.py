@@ -6,7 +6,7 @@ from pathlib import Path
 from typing import Dict, List, Tuple
 from src.llm import LLM, load_model
 from src.prompt import Level0
-from src.utils import iterate_data, plot_block_frequencies
+from src.utils import iterate_data, load_bargaining_table_prompts, plot_block_frequencies
 
 
 def parse_arguments() -> argparse.Namespace:
@@ -80,6 +80,14 @@ def parse_arguments() -> argparse.Namespace:
         dest="reasoning",
         default=None,
         help='Reasoning effort for API models (e.g., "low", "medium").',
+    )
+    parser.add_argument(
+        "--bargaining-player",
+        dest="bargaining_player",
+        default="blue",
+        type=lambda s: s.lower(),
+        choices=["blue", "yellow"],
+        help="Player role for bargaining table datasets.",
     )
     return parser.parse_args()
 
@@ -221,11 +229,14 @@ def generate_batch_responses(
                 f"({len(prompt_responses)}/{target_per_prompt} done, "
                 f"+{batch_size} requested)"
             )
+            print("[PROMPT]")
+            print(entry["prompt"])
             texts = model.generate_batch(
                 [entry["prompt"]], num_return_sequences=batch_size
             )[0]
             prompt_responses.extend(texts[:batch_size])
             new_data_generated = True
+            print("[RESPONSES]")
             print("\n".join(texts[:batch_size]))
 
             save_jsonl(log_path, assemble_log_entries(prompt_plan, responses_by_prompt))
@@ -275,10 +286,16 @@ def run_single_job(
     log_file = logs_dir / f"{dataset}_responses_{problem_tag}.jsonl"
 
     # load dataset
-    ds_path = dataset_dir / f"{dataset}.jsonl"
-    with open(ds_path) as f:
-        raw_data = json.load(f)
-    problems, norm_factors = iterate_data(raw_data, problem_tag)
+    if dataset == "bargaining_table-vanilla":
+        ds_path = dataset_dir / "bargaining_table_llms" / "bargaining_table-vanilla.json"
+        problems, norm_factors = load_bargaining_table_prompts(
+            ds_path, args.bargaining_player
+        )
+    else:
+        ds_path = dataset_dir / f"{dataset}.jsonl"
+        with open(ds_path) as f:
+            raw_data = json.load(f)
+        problems, norm_factors = iterate_data(raw_data, problem_tag)
 
     # build prompt plan and check existing progress before loading the model
     prompt_plan = build_prompt_plan(problems, norm_factors)
