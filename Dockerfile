@@ -8,9 +8,9 @@ ENV DEBIAN_FRONTEND=noninteractive \
     OMP_NUM_THREADS=1 \
     TRANSFORMERS_NO_TORCHVISION=1 \
     TORCH_COMPILE_DISABLE=1 \
-    HF_HOME=/cache \
-    HF_DATASETS_CACHE=/cache \
-    HUGGINGFACE_HUB_CACHE=/cache \
+    HF_HOME=/hf \
+    HF_DATASETS_CACHE=/hf \
+    HUGGINGFACE_HUB_CACHE=/hf \
     TORCH_HOME=/cache \
     TRITON_CACHE_DIR=/cache \
     TORCHINDUCTOR_CACHE_DIR=/cache \
@@ -31,7 +31,7 @@ ENV PATH="/opt/venv/bin:${PATH}"
 RUN python -m pip install --upgrade pip setuptools wheel
 
 # Workdirs
-RUN mkdir -p /workspace /cache /logs /results /plots && chmod -R 777 /workspace /cache /logs /results /plots
+RUN mkdir -p /workspace /hf /cache /logs /results /plots && chmod -R 777 /workspace /cache /logs /results /plots /hf
 WORKDIR /workspace
 
 # Install Python deps
