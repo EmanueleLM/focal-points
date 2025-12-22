@@ -164,6 +164,29 @@ def load_bargaining_table_prompts(path: str, player_key: str):
     )
 
     problems, normalization_factors = {}, {}
+    player_state_keys = {
+        key[len("states_") :]: key for key in data.keys() if key.startswith("states_")
+    }
+    if player_state_keys:
+        if "@player@" in base_prompt:
+            raise ValueError(
+                f"Dataset at {path} uses player-specific states but includes '@player@' in the prompt."
+            )
+        if player_key not in player_state_keys:
+            raise ValueError(
+                f"Unknown player '{player_key}'. Available players: {list(player_state_keys.keys())}"
+            )
+        states = data.get(player_state_keys[player_key], {})
+        if not isinstance(states, dict):
+            raise ValueError(
+                f"Expected '{player_state_keys[player_key]}' to be a dictionary."
+            )
+        for state_key, state_text in states.items():
+            prompt = base_prompt.replace("@state@", state_text)
+            problems[state_key] = [prompt]
+            normalization_factors[state_key] = [1]
+        return problems, normalization_factors
+
     if "states" in data:
         players = data.get("players", {})
         states = data.get("states", {})
@@ -194,23 +217,9 @@ def load_bargaining_table_prompts(path: str, player_key: str):
             normalization_factors[state_key] = [1]
         return problems, normalization_factors
 
-    states_key = f"states_{player_key}"
-    if states_key not in data:
-        raise ValueError(f"Missing '{states_key}' in dataset.")
-    states = data.get(states_key, {})
-    if not isinstance(states, dict):
-        raise ValueError(f"Expected '{states_key}' to be a dictionary.")
-    if "@player@" in base_prompt:
-        raise ValueError(
-            f"Dataset at {path} includes '@player@' but no 'players' mapping was provided."
-        )
-
-    for state_key, state_text in states.items():
-        prompt = base_prompt.replace("@state@", state_text)
-        problems[state_key] = [prompt]
-        normalization_factors[state_key] = [1]
-
-    return problems, normalization_factors
+    raise ValueError(
+        f"Dataset at {path} must include either 'states' or 'states_<player>' keys."
+    )
 
 
 def compute_coordination_index(items: dict, normalization_factor: float = 1.0):

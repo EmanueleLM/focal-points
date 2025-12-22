@@ -75,6 +75,12 @@ available_models=(
   "microsoft/Phi-4-mini-instruct"
   "openai/gpt-oss-120b"
   "openai/gpt-oss-20b"
+  "deepseek-ai/DeepSeek-R1-Distill-Llama-70B"
+  "deepseek-ai/DeepSeek-R1-Distill-Llama-8B"
+  "deepseek-ai/DeepSeek-R1-Distill-Qwen-32B"
+  "deepseek-ai/DeepSeek-R1-Distill-Qwen-14B"
+  "deepseek-ai/DeepSeek-R1-Distill-Qwen-7B"
+  "deepseek-ai/DeepSeek-R1-Distill-Qwen-1.5B"
 )
 
 all_datasets=(

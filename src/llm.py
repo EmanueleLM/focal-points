@@ -97,7 +97,8 @@ class LocalLLM(LLM):
         if bnb_config is not None:
             model_kwargs["quantization_config"] = bnb_config
         else:
-            model_kwargs["dtype"] = torch.bfloat16
+            default_dtype = torch.bfloat16 if torch.cuda.is_available() else torch.float32
+            model_kwargs["dtype"] = default_dtype
 
         # Load the model once
         self.model = AutoModelForCausalLM.from_pretrained(
@@ -292,6 +293,12 @@ def load_model(
     API_MODELS = {"gpt-5", "gpt-5.1"}
 
     LOCAL_MODELS = {
+        "deepseek-ai/DeepSeek-R1-Distill-Llama-70B",
+        "deepseek-ai/DeepSeek-R1-Distill-Llama-8B",
+        "deepseek-ai/DeepSeek-R1-Distill-Qwen-32B",
+        "deepseek-ai/DeepSeek-R1-Distill-Qwen-14B",
+        "deepseek-ai/DeepSeek-R1-Distill-Qwen-7B",
+        "deepseek-ai/DeepSeek-R1-Distill-Qwen-1.5B",
         "meta-llama/Llama-3.1-405B-Instruct",
         "meta-llama/Llama-3.3-70B-Instruct",
         "meta-llama/Llama-3.1-70B-Instruct",
