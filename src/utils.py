@@ -167,17 +167,25 @@ def load_bargaining_table_prompts(path: str, player_key: str):
     if "states" in data:
         players = data.get("players", {})
         states = data.get("states", {})
+        requires_player = "@player@" in base_prompt
 
         if not isinstance(players, dict):
             raise ValueError("Expected 'players' to be a dictionary.")
         if not isinstance(states, dict):
             raise ValueError("Expected 'states' to be a dictionary.")
-        if player_key not in players:
-            raise ValueError(
-                f"Unknown player '{player_key}'. Available players: {list(players.keys())}"
-            )
+        if requires_player:
+            if not players:
+                raise ValueError(
+                    f"Dataset at {path} includes '@player@' but has no 'players' mapping."
+                )
+            if player_key not in players:
+                raise ValueError(
+                    f"Unknown player '{player_key}'. Available players: {list(players.keys())}"
+                )
+            player_text = players[player_key]
+        else:
+            player_text = ""
 
-        player_text = players[player_key]
         for state_key, state_text in states.items():
             prompt = base_prompt.replace("@player@", player_text).replace(
                 "@state@", state_text
@@ -194,7 +202,7 @@ def load_bargaining_table_prompts(path: str, player_key: str):
         raise ValueError(f"Expected '{states_key}' to be a dictionary.")
     if "@player@" in base_prompt:
         raise ValueError(
-            "Dataset includes '@player@' but no 'players' mapping was provided."
+            f"Dataset at {path} includes '@player@' but no 'players' mapping was provided."
         )
 
     for state_key, state_text in states.items():
