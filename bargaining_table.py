@@ -1,11 +1,13 @@
 
 # List all the files in a folder
+import json
 import joblib
 import math
 import numpy as np
 import os
 import pandas as pd
 import random
+import re
 from typing import List, Tuple
 
 
@@ -132,6 +134,26 @@ def adaptive_agent_from_file(
 
     return probabilities[0][1]
 
+def extract_assignments(response: str) -> List[Tuple[List[int], str]]:
+    blue_str = ("b", "r1")  # Blue
+    yellow_str = ("y", "r2")  # Yellow
+    results = []
+    for ic, c in enumerate(response.lower().strip()):
+        if c == yellow_str[0]:
+            try:
+                x, y = int(response[ic-2]), int(response[ic-1])
+                results.append((f"{x},{y}", yellow_str[1]))
+            except:
+                pass
+        elif c == blue_str[0]:
+            try:
+                x, y = int(response[ic-2]), int(response[ic-1])
+                results.append((f"{x},{y}", blue_str[1]))
+            except:
+                pass
+
+    return results
+
 def player_files(folder_path: str, file_prefix: str = "") -> List[str]:
     files = os.listdir(folder_path)
     player_files = []
@@ -185,7 +207,7 @@ def compute_payoff(
             Then assigns to himself if t1 > t2, otherwise to the other.
             - "p2_SVO" (player 2 chooses the assignments based on Social Value Orientation). Same but for player 2.
             - "p1_adaptive" (player 1 uses an adaptive agent based on a trained model, player 2 is based on his data).
-
+            - "p1_llm": use the json of the LLM as player 1.
     Raises:
         ValueError: If the game signatures do not match.
         ValueError: If the strategy is unknown.
@@ -193,6 +215,18 @@ def compute_payoff(
     Returns:
         dict: A dictionary containing the total payoffs for both players.
     """
+    # Load additional data if needed
+    if strategy == "p1_adaptive":
+        df_adaptive = pd.read_csv("./data/Dor-humans/bargaining_games_player_blue.csv")
+    elif strategy == "p1_llm":
+        with open("./data/bargaining_table_llms/blue/gpt-oss-120b/bargaining_table_realdata-vanilla_responses_problem.jsonl", "r") as f:
+            data_llm = json.load(f)
+    elif strategy == "p2_llm":
+        with open("./data/bargaining_table_llms/orange/gpt-oss-120b/bargaining_table_realdata-vanilla_responses_problem.jsonl", "r") as f:
+            data_llm = json.load(f)
+    
+    
+    llm_missing_match_exception = 0  # Debug for when an llm is employed 
     player1_total_payoff, player2_total_payoff = 0.0, 0.0
     for game_num in range(1,11):
         count = 0
@@ -289,8 +323,7 @@ def compute_payoff(
                     r1_v = r1.split(',')
                     r2_v = r2.split(',')
                     
-                    df = pd.read_csv("./data/Dor-humans/bargaining_games_player_blue.csv")
-                    game_match_row = df.loc[df["game_number"] == f2].iloc[i]
+                    game_match_row = df_adaptive.loc[df_adaptive["game_number"] == f2].iloc[i]
                     adaptive_X = game_match_row[["x1", "x2", "x3", "x4", "x5", "x6"]].to_numpy().flatten().reshape(1, -1)
                     adaptive_Y = adaptive_agent_from_file("./data/Dor-humans/bargaining_table_rf.joblib", adaptive_X)
                     r = random.random()
@@ -307,6 +340,38 @@ def compute_payoff(
                         r2_t = r2_v[-1].strip()
                     else:
                         r1_t = "r1"
+                    r2_t = r2_v[-1].strip()
+                    
+                elif strategy == "p1_llm":
+                    r1_v = r1.split(',')
+                    r2_v = r2.split(',')
+                    
+                    response = random.choice(data_llm[game_num-1]["responses"])
+                    answer_reg = re.compile(r"<answer>(.*?)</answer>", re.DOTALL)
+                    match = answer_reg.search(response)
+                    
+                    try:
+                        llm_answers = extract_assignments(match.group(1).strip())
+                        r1_t = llm_answers[i][1].strip()
+                    except:
+                        r1_t = "r1"
+                        llm_missing_match_exception += 1
+                    r2_t = r2_v[-1].strip()
+                    
+                elif strategy == "p2_llm":
+                    r1_v = r1.split(',')
+                    r2_v = r2.split(',')
+                    
+                    response = random.choice(data_llm[game_num-1]["responses"])
+                    answer_reg = re.compile(r"<answer>(.*?)</answer>", re.DOTALL)
+                    match = answer_reg.search(response)
+                    
+                    try:
+                        llm_answers = extract_assignments(match.group(1).strip())
+                        r1_t = llm_answers[i][1].strip()
+                    except:
+                        r1_t = "r2"
+                        llm_missing_match_exception += 1
                     r2_t = r2_v[-1].strip()
                         
                 else:
@@ -338,6 +403,7 @@ def compute_payoff(
         print(f"\tAverage payoff left: {pay_off_left/count if count>0 else 0.0}")
         print(f"\tPayoff ratio (P1/P2): {(player1_payoff/count)/(player2_payoff/count) if player2_payoff/count != 0 else 'inf'}")
         print(f"\tPayoff ratio (P2/P1): {(player2_payoff/count)/(player1_payoff/count) if player1_payoff/count != 0 else 'inf'}")
+        print(f"[Debug] Missing match with LLMs: {llm_missing_match_exception}")
     print(f"Total payoff - across games - Player 1: {player1_total_payoff/(count)}, Player 2: {player2_total_payoff/(count)}")
     print("--------------------------------------------------")
 
@@ -363,10 +429,11 @@ if __name__ == "__main__":
         - "p1_SVO" (player 1 chooses the assignments based on Social Value Orientation).
         - "p2_SVO" (player 2 chooses the assignments based on Social Value Orientation).
         - "p1_adaptive" (player 1 uses an adaptive agent based on a trained model, player 2 is based on his data).
+        - "p1_llm": use the json of the LLM as player 1.
     """
     # Global parameters
-    strategy = "p1_adaptive"  # Strategy to use
-    num_samples = 50  # Number of random pairs to sample
+    strategy = "p2_llm"  # Strategy to use
+    num_samples = 1000  # Number of random pairs to sample
     sample_with_replacement = False  # Whether to sample with replacement
     folder_path_player1 = "./data/Dor-humans/stage-2-analysis/Number1players/"
     folder_path_player2 = "./data/Dor-humans/stage-2-analysis/Number2players/"
