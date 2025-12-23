@@ -151,17 +151,43 @@ def iterate_data(data: dict, problem_tag: str):
     return problems, normalization_factors
 
 
-def load_bargaining_table_prompts(path: str, player_key: str):
+def load_bargaining_table_prompts(
+    path: str, player_key: str, variant_tag: str | None = None
+):
     with open(path, "r") as f:
         data = json.load(f)
 
     game = data.get("game", "")
     task = data.get("task", "")
+    variants = data.get("variants", None)
 
     player_key = player_key.lower()
     base_prompt = (
         f"{game}{task}" if not game or game.endswith("\n") else f"{game}\n{task}"
     )
+    if "@variant@" in base_prompt:
+        if not isinstance(variants, dict) or not variants:
+            raise ValueError(
+                f"Dataset at {path} includes '@variant@' but has no 'variants' mapping."
+            )
+        if variant_tag is None:
+            raise ValueError(
+                f"Dataset at {path} includes '@variant@' but no variant tag was provided."
+            )
+        if variant_tag not in variants:
+            raise ValueError(
+                f"Unknown variant '{variant_tag}'. Available variants: {list(variants.keys())}"
+            )
+        variant_text = variants[variant_tag]
+        if variant_text is None:
+            variant_text = ""
+        if not isinstance(variant_text, str):
+            raise ValueError(
+                f"Unexpected variant type for '{variant_tag}': {type(variant_text)}"
+            )
+        if variant_text and not variant_text[0].isspace():
+            variant_text = f" {variant_text}"
+        base_prompt = base_prompt.replace("@variant@", variant_text)
 
     problems, normalization_factors = {}, {}
     player_state_keys = {

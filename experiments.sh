@@ -9,7 +9,7 @@ quantization="None"
 plot_graphs="true"
 reasoning="None"
 max_new_tokens=""
-bargaining_player="blue"
+bargaining_players=("blue" "yellow")
 
 # Parse command-line arguments
 while getopts "m:d:n:q:p:r:x:b:" opt; do
@@ -38,7 +38,8 @@ while getopts "m:d:n:q:p:r:x:b:" opt; do
       max_new_tokens=$OPTARG
       ;;
     b)
-      bargaining_player=$OPTARG
+      read -r -a parsed_players <<< "$OPTARG"
+      bargaining_players=("${parsed_players[@]}")
       ;;
     \?)
       echo "Invalid option: -$OPTARG" >&2
@@ -113,8 +114,8 @@ all_datasets=(
   "schelling-instruct-all-features"
   "schelling-instruct-saliency"
   # bargaining table
-  "bargaining_table-vanilla"
-  "bargaining_table_realdata-vanilla"
+  "bargaining_table"
+  "bargaining_table_realdata"
   )
 
 # Apply defaults if none provided
@@ -137,7 +138,7 @@ fi
 
 standard_problemtags=("problem-pick" "problem-guess" "problem-coordinate")
 schelling_problemtags=("problem")
-bargaining_problemtags=("problem")
+bargaining_problemtags=("greedy" "cooperative" "all-features" "saliency" "vanilla")
 standard_datasets=()
 schelling_datasets=()
 bargaining_datasets=()
@@ -147,7 +148,7 @@ for data in "${datasets[@]}"; do
     "schelling"|"schelling-instruct-all-features"|"schelling-instruct-saliency")
       schelling_datasets+=("$data")
       ;;
-    "bargaining_table-vanilla"|"bargaining_table_realdata-vanilla")
+    "bargaining_table"|"bargaining_table_realdata")
       bargaining_datasets+=("$data")
       ;;
     *)
@@ -156,7 +157,7 @@ for data in "${datasets[@]}"; do
   esac
 done
 
-echo "Running experiments with model(s): ${models[*]}, datasets: ${datasets[*]}, quantization: $quantization, number of experiments: $num_experiments, reasoning: $reasoning, bargaining player: $bargaining_player"
+echo "Running experiments with model(s): ${models[*]}, datasets: ${datasets[*]}, quantization: $quantization, number of experiments: $num_experiments, reasoning: $reasoning, bargaining players: ${bargaining_players[*]}"
 
 extra_args=()
 if [[ -n "$max_new_tokens" && "$max_new_tokens" != "None" && "$max_new_tokens" != "none" ]]; then
@@ -177,7 +178,9 @@ for model in "${models[@]}"; do
   fi
 
   if ((${#bargaining_datasets[@]})); then
-    echo "Running main.py for bargaining table datasets: ${bargaining_datasets[*]}"
-    python main.py --model "$model" --dataset "${bargaining_datasets[@]}" --problem-tag "${bargaining_problemtags[@]}" --return-sequences "$num_experiments" --quantization "$quantization" --plot-graphs "$plot_graphs" --reasoning "$reasoning" --bargaining-player "$bargaining_player" "${extra_args[@]}"
+    for bargaining_player in "${bargaining_players[@]}"; do
+      echo "Running main.py for bargaining table datasets: ${bargaining_datasets[*]} (player: $bargaining_player)"
+      python main.py --model "$model" --dataset "${bargaining_datasets[@]}" --problem-tag "${bargaining_problemtags[@]}" --return-sequences "$num_experiments" --quantization "$quantization" --plot-graphs "$plot_graphs" --reasoning "$reasoning" --bargaining-player "$bargaining_player" "${extra_args[@]}"
+    done
   fi
 done

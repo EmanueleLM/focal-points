@@ -283,13 +283,16 @@ def run_single_job(
 
     # filesystem prep
     dataset_dir, logs_dir = prepare_directories(model_name)
-    log_file = logs_dir / f"{dataset}_responses_{problem_tag}.jsonl"
+    log_suffix = problem_tag
+    if dataset in ("bargaining_table", "bargaining_table_realdata"):
+        log_suffix = f"{problem_tag}_{args.bargaining_player}"
+    log_file = logs_dir / f"{dataset}_responses_{log_suffix}.jsonl"
 
     # load dataset
-    if dataset in ("bargaining_table-vanilla", "bargaining_table_realdata-vanilla"):
+    if dataset in ("bargaining_table", "bargaining_table_realdata"):
         ds_path = dataset_dir / "bargaining_table_llms" / f"{dataset}.json"
         problems, norm_factors = load_bargaining_table_prompts(
-            ds_path, args.bargaining_player
+            ds_path, args.bargaining_player, problem_tag
         )
     else:
         ds_path = dataset_dir / f"{dataset}.jsonl"
@@ -364,12 +367,15 @@ def run_single_job(
     )
 
     # Plot graphs and create result folders
+    output_dataset = dataset
+    if dataset in ("bargaining_table", "bargaining_table_realdata"):
+        output_dataset = f"{dataset}_{args.bargaining_player}"
     results_path = Path(
-        f"./results/{model_name}/{dataset}_{problem_tag}.jsonl"
+        f"./results/{model_name}/{output_dataset}_{problem_tag}.jsonl"
     )
     if args.plot_graph:
         if new_data_generated or not results_path.exists():
-            compute_metrics(model_name, dataset, jsonl_logs, problem_tag)
+            compute_metrics(model_name, output_dataset, jsonl_logs, problem_tag)
         else:
             print(
                 f"[INFO] Results already exist at {results_path}; skipping recomputation."
@@ -382,7 +388,21 @@ def run_job(args: argparse.Namespace) -> None:
     for model in ensure_list(args.model_names):
         cached_model: LLM | None = None
         for dataset in ensure_list(args.datasets):
-            for problem_tag in ensure_list(args.problem_tags):
+            problem_tags = ensure_list(args.problem_tags)
+            if (
+                dataset in ("bargaining_table", "bargaining_table_realdata")
+                and problem_tags == ["problem"]
+            ):
+                ds_path = Path("./data") / "bargaining_table_llms" / f"{dataset}.json"
+                with open(ds_path, "r") as f:
+                    data = json.load(f)
+                variants = data.get("variants", {})
+                if not isinstance(variants, dict) or not variants:
+                    raise ValueError(
+                        f"Dataset at {ds_path} must include a non-empty 'variants' mapping."
+                    )
+                problem_tags = list(variants.keys())
+            for problem_tag in problem_tags:
                 print(
                     f"[INFO] Running model={model} dataset={dataset} "
                     f"problem_tag={problem_tag}"
