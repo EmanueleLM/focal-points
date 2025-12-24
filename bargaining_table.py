@@ -1,8 +1,10 @@
 
 # List all the files in a folder
+import argparse
 import json
 import joblib
 import math
+from matplotlib import rcParams
 import matplotlib.pyplot as plt
 import numpy as np
 import os
@@ -189,61 +191,81 @@ def plot_pretty_boxplot(
     label2: str = "Player 2",
     save_path: str = ""
 ):
+    # --- Font setup ---
+    rcParams['font.family'] = 'Times New Roman'
+
     data1 = np.asarray(data1)
     data2 = np.asarray(data2)
 
-    fig, ax = plt.subplots(figsize=(8, 3))
+    # --- Figure and style setup ---
+    fig, ax = plt.subplots(figsize=(9, 3.5))
+    fig.patch.set_facecolor("white")
+    ax.set_facecolor("#f9f9f9")
 
-    # Combine both datasets into one call (two boxes)
+    # Custom rich colors for the bars
+    box_colors = ["#0D53AA", "#D45105"]  # Blue & Purple, elegant, strong
+
     bp = ax.boxplot(
         [data1, data2],
         vert=False,
         patch_artist=True,
         widths=0.5,
-        boxprops=dict(facecolor="white", edgecolor="blue", linewidth=1.5),
-        whiskerprops=dict(color="black", linewidth=1),
-        capprops=dict(color="black", linewidth=1),
+        boxprops=dict(edgecolor="#000000", linewidth=1.6),
+        whiskerprops=dict(color="#000000", linewidth=1.1),
+        capprops=dict(color="#1B2631", linewidth=1.1),
         medianprops=dict(color="none"),  # we’ll draw our own
         flierprops=dict(marker="", linestyle="none")
     )
 
-    # For each box, add mean/median inside
-    for i, data in enumerate([data1, data2]):
-        box_patch = bp['boxes'][i]
-        verts = box_patch.get_path().vertices
-        y_min = verts[:, 1].min()
-        y_max = verts[:, 1].max()
+    # --- Fill boxes and draw mean/median lines ---
+    for i, (data, color) in enumerate(zip([data1, data2], box_colors)):
+        box = bp['boxes'][i]
+        box.set_facecolor(color)
+        box.set_alpha(0.7)
+        box.set_linewidth(1.8)
+
+        verts = box.get_path().vertices
+        y_min, y_max = verts[:, 1].min(), verts[:, 1].max()
         box_height = y_max - y_min
         pad = 0.08 * box_height
 
         mean_v = np.mean(data)
         median_v = np.median(data)
 
+        # Strong mean and median markers
         ax.plot([mean_v, mean_v], [y_min + pad, y_max - pad],
-                color="lime", linewidth=2, zorder=5)
+                color="#57EB3D", linewidth=2.6, zorder=5)
         ax.plot([median_v, median_v], [y_min + pad, y_max - pad],
-                color="red", linewidth=2, zorder=6)
+                color="red", linewidth=2.6, zorder=6)
 
-    # Y-axis labels (top = Player 1, bottom = Player 2)
-    ax.set_yticklabels([label1, label2])
-    ax.set_title("Bargaining Table – Payoff Statistics", pad=10)
-    ax.grid(True, linestyle="--", linewidth=0.5, alpha=0.6)
+        # Add a subtle marker (dot) for mean
+        ax.scatter(mean_v, (y_min + y_max)/2, color="#57EB3D", edgecolor="black", zorder=7, s=40)
 
-    # Padding on x-axis so bars don’t hit the edges
-    all_data = np.concatenate([data1, data2])
-    min_v, max_v = np.min(all_data), np.max(all_data)
+    # --- Axis styling ---
+    ax.set_yticks([1, 2])
+    ax.set_yticklabels([label1, label2], fontsize=12, fontweight="bold")
+    ax.tick_params(axis="x", labelsize=11)
+    ax.set_title("Bargaining Table – Payoff Statistics", fontsize=14, fontweight="bold", pad=12)
+
+    # --- Grid ---
+    ax.grid(True, linestyle="--", linewidth=0.6, color="#b0b0b0", alpha=0.7)
+
+    # --- X-limits with padding ---
+    # all_data = np.concatenate([data1, data2])
+    # min_v, max_v = np.min(all_data), np.max(all_data)
+    min_v, max_v = -30., 80.
     rng = max_v - min_v if max_v > min_v else 1
     ax.set_xlim(min_v - 0.1 * rng, max_v + 0.1 * rng)
 
-    # Legend (mean/median once for both)
-    ax.plot([], [], color="lime", linewidth=2, label="Mean")
-    ax.plot([], [], color="red", linewidth=2, label="Median")
-    ax.legend(loc="upper right", frameon=False)
+    # --- Legend ---
+    ax.plot([], [], color="#57EB3D", linewidth=2.5, label="Mean")
+    ax.plot([], [], color="red", linewidth=2.5, label="Median")
+    ax.legend(loc="upper right", frameon=False, fontsize=11)
 
     plt.tight_layout()
 
     if save_path:
-        plt.savefig(save_path, dpi=215, bbox_inches="tight")
+        plt.savefig(save_path, dpi=300, bbox_inches="tight", facecolor=fig.get_facecolor())
         plt.close()
     else:
         plt.show()
@@ -283,14 +305,17 @@ def compute_payoff(
     Returns:
         dict: A dictionary containing the total payoffs for both players.
     """
+    global DATAFRAME_P1_ADAPTIVE, LLM_AS_P1, LLM_AS_P2
+    global ADAPTIVE_PLAYER1_JOBLIB
+    global SVO_ANGLE
     # Load additional data if needed
     if strategy == "p1_adaptive":
-        df_adaptive = pd.read_csv("./data/Dor-humans/bargaining_games_player_blue.csv")
+        df_adaptive = pd.read_csv(DATAFRAME_P1_ADAPTIVE)
     elif strategy == "p1_llm":
-        with open("./data/bargaining_table_llms/blue/gpt-oss-120b/bargaining_table_realdata-vanilla_responses_problem.jsonl", "r") as f:
+        with open(LLM_AS_P1, "r") as f:
             data_llm = json.load(f)
     elif strategy == "p2_llm":
-        with open("./data/bargaining_table_llms/orange/gpt-oss-120b/bargaining_table_realdata-vanilla_responses_problem.jsonl", "r") as f:
+        with open(LLM_AS_P2, "r") as f:
             data_llm = json.load(f)
     
     
@@ -374,8 +399,8 @@ def compute_payoff(
                     r1_v = r1.split(',')
                     r2_v = r2.split(',')
                     v1_r1, v2_r1 = int(r1_v[-2].strip()), int(r2_v[-2].strip())
-                    # SVO angle fixed to 22.5 degrees
-                    angle_rad = 22.5 * (math.pi / 180)
+                    # SVO angle fixed to SVO_ANGLE degrees
+                    angle_rad = SVO_ANGLE * (math.pi / 180)
                     threshold_p1 = math.cos(angle_rad) * v1_r1 # + math.sin(angle_rad) * 0.
                     threshold_p2 = math.sin(angle_rad) * v2_r1  # + math.cos(angle_rad) * 0.
                     if strategy == "p1_SVO":
@@ -397,7 +422,7 @@ def compute_payoff(
                     
                     game_match_row = df_adaptive.loc[df_adaptive["game_number"] == f2].iloc[i]
                     adaptive_X = game_match_row[["x1", "x2", "x3", "x4", "x5", "x6"]].to_numpy().flatten().reshape(1, -1)
-                    adaptive_Y = adaptive_agent_from_file("./data/Dor-humans/bargaining_table_rf.joblib", adaptive_X)
+                    adaptive_Y = adaptive_agent_from_file(ADAPTIVE_PLAYER1_JOBLIB, adaptive_X)
                     r = random.random()
                     if adaptive_Y > r:
                         # Disk position
@@ -473,13 +498,14 @@ def compute_payoff(
 
         player1_total_payoff += player1_payoff
         player2_total_payoff += player2_payoff
+        percentage_suboptimal_choices = (suboptimal_choices / total_choices * 100) if total_choices > 0 else 0
         
         print("--------------------------------------------------")
         print(f"Strategy: {strategy}")
         print(f"Analyzed {count} pairs of games of type {game_num}.")
         print(f"\tAverage payoff for Player 1: {player1_payoff/count if count>0 else 0.0}")
         print(f"\tAverage payoff for Player 2: {player2_payoff/count if count>0 else 0.0}")
-        print(f"\tNumber of suboptimal choices: {suboptimal_choices}/{total_choices} ({(suboptimal_choices/total_choices*100) if total_choices > 0 else 0} %)")
+        print(f"\tNumber of suboptimal choices: {suboptimal_choices}/{total_choices} ({percentage_suboptimal_choices} %)")
         print(f"\tAverage payoff left: {pay_off_left/count if count>0 else 0.0}")
         print(f"\tPayoff ratio (P1/P2): {(player1_payoff/count)/(player2_payoff/count) if player2_payoff/count != 0 else 'inf'}")
         print(f"\tPayoff ratio (P2/P1): {(player2_payoff/count)/(player1_payoff/count) if player1_payoff/count != 0 else 'inf'}")
@@ -489,15 +515,43 @@ def compute_payoff(
 
     return {
         "mode": strategy,
-        "count": count,
+        "samples_per_game": count,
         "player1_payoff": player1_payoff,
         "player2_payoff": player2_payoff,
         "suboptimal_choices": suboptimal_choices,
+        "percentage_suboptimal_choices": percentage_suboptimal_choices,
         "total_choices": total_choices,
         "pay_off_left": pay_off_left,
         "overall_payoff_p1": overall_player1_payoff,
         "overall_payoff_p2": overall_player2_payoff
     }
+
+def parse_args():
+    parser = argparse.ArgumentParser(description="Run sampling strategy")
+
+    parser.add_argument(
+        "--strategy",
+        type=str,
+        default="humans",
+        help="Strategy to use (default: p1_adaptive)",
+    )
+
+    parser.add_argument(
+        "--num-samples",
+        type=int,
+        default=30,
+        help="Number of random pairs to sample (default: 30)",
+    )
+
+    parser.add_argument(
+        "--sample-with-replacement",
+        type=bool,
+        default=False,
+        help="Sample with replacement (default: False)",
+    )
+
+    return parser.parse_args()
+
 
 if __name__ == "__main__":
     """
@@ -515,15 +569,27 @@ if __name__ == "__main__":
         - "p2_llm": use the json of the LLM as player 2.
     """
     # Global parameters
-    strategy = "p1_adaptive"  # Strategy to use
-    num_samples = 30  # Number of random pairs to sample
-    sample_with_replacement = False  # Whether to sample with replacement
-    folder_path_player1 = "./data/Dor-humans/stage-2-analysis/Number1players/"
-    folder_path_player2 = "./data/Dor-humans/stage-2-analysis/Number2players/"
+    DATAFRAME_P1_ADAPTIVE = "./data/Dor-humans/bargaining_games_player_blue.csv"
+    LLM_AS_P1 = "./data/bargaining_table_llms/blue/gpt-oss-120b/bargaining_table_realdata-vanilla_responses_problem.jsonl"
+    LLM_AS_P2 = "./data/bargaining_table_llms/orange/gpt-oss-120b/bargaining_table_realdata-vanilla_responses_problem.jsonl"
+    SVO_ANGLE = 22.5  # Angle of the SVO agent 
+    FOLDER_PLAYER1_DATA = "./data/Dor-humans/stage-2-analysis/Number1players/"
+    FOLDER_PLAYER2_DATA = "./data/Dor-humans/stage-2-analysis/Number2players/"
+    PLOT_FOLDER = "./plots/bargaining_table"
+    RESULTS_FOLDER = "./results/bargaining_table"
+    ADAPTIVE_PLAYER1_JOBLIB = "./data/Dor-humans/bargaining_table_rf.joblib"
+    
+    args = parse_args()
+
+    strategy = args.strategy
+    num_samples = args.num_samples
+    sample_with_replacement = args.sample_with_replacement
+    
+    print(f"Running sampling with strategy={strategy}, num_samples={num_samples}, sample_with_replacement={sample_with_replacement}")
 
     # Retrieve all the games played by both players
-    player1_files = player_files(folder_path_player1, "BT")
-    player2_files = player_files(folder_path_player2, "BT")
+    player1_files = player_files(FOLDER_PLAYER1_DATA, "BT")
+    player2_files = player_files(FOLDER_PLAYER2_DATA, "BT")
     
     sampled_pairs = sample_pairs(
         player1_files,
@@ -534,15 +600,28 @@ if __name__ == "__main__":
 
     results = compute_payoff(
         sampled_pairs,
-        folder_path_player1,
-        folder_path_player2,
+        FOLDER_PLAYER1_DATA,
+        FOLDER_PLAYER2_DATA,
         strategy=strategy
     )
 
-    # Order games by (type, sample_number)
+    # Save results in JSON format
+    os.makedirs(RESULTS_FOLDER, exist_ok=True)
+    with open(f"{RESULTS_FOLDER}/{strategy}.json", "w") as f:
+        json.dump(results, f)
+
+    # Plot and save
+    # Order games by (game_type, sample_number)
     games_p1 = np.array([v for v in results["overall_payoff_p1"].values()])
     games_p2 = np.array([v for v in results["overall_payoff_p2"].values()])
+    
+    # Reduce over the game_type axis
     sum_games_p1 = games_p1.sum(axis=0)
     sum_games_p2 = games_p2.sum(axis=0)
-
-    plot_pretty_boxplot(sum_games_p1, sum_games_p2, strategy, save_path=f"./plots/bargaining_table/{strategy}.png")
+    
+    os.makedirs(PLOT_FOLDER, exist_ok=True)
+    plot_pretty_boxplot(sum_games_p1, 
+                        sum_games_p2,
+                        label1="Player 1: " + strategy,
+                        label2="Player 2",
+                        save_path=f"{PLOT_FOLDER}/{strategy}.png")

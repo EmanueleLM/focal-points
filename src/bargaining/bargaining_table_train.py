@@ -23,8 +23,8 @@ from sklearn.model_selection import RandomizedSearchCV, StratifiedKFold
 
 
 CLASSIFICATION_THRESHOLD = 0.5
-DEFAULT_DATA_PATH = Path("data/Dor-humans/bargaining_games_player_blue.csv")
-DEFAULT_MODEL_PATH = Path("logs/bargaining_table_rf.joblib")
+DEFAULT_DATA_PATH = Path("./../data/Dor-humans/bargaining_games_player_blue.csv")
+DEFAULT_MODEL_PATH = Path("./../logs/bargaining_table_rf.joblib")
 DEFAULT_SAMPLE_SIZE = 380
 DEFAULT_RANDOM_STATE = 42
 DEFAULT_SEARCH_ITERATIONS = 200
