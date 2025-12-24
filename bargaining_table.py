@@ -3,6 +3,7 @@
 import json
 import joblib
 import math
+import matplotlib.pyplot as plt
 import numpy as np
 import os
 import pandas as pd
@@ -181,6 +182,72 @@ def sample_pairs(
     
     return sampled_pairs
 
+def plot_pretty_boxplot(
+    data1: List[float],
+    data2: List[float],
+    label1: str = "Player 1",
+    label2: str = "Player 2",
+    save_path: str = ""
+):
+    data1 = np.asarray(data1)
+    data2 = np.asarray(data2)
+
+    fig, ax = plt.subplots(figsize=(8, 3))
+
+    # Combine both datasets into one call (two boxes)
+    bp = ax.boxplot(
+        [data1, data2],
+        vert=False,
+        patch_artist=True,
+        widths=0.5,
+        boxprops=dict(facecolor="white", edgecolor="blue", linewidth=1.5),
+        whiskerprops=dict(color="black", linewidth=1),
+        capprops=dict(color="black", linewidth=1),
+        medianprops=dict(color="none"),  # we’ll draw our own
+        flierprops=dict(marker="", linestyle="none")
+    )
+
+    # For each box, add mean/median inside
+    for i, data in enumerate([data1, data2]):
+        box_patch = bp['boxes'][i]
+        verts = box_patch.get_path().vertices
+        y_min = verts[:, 1].min()
+        y_max = verts[:, 1].max()
+        box_height = y_max - y_min
+        pad = 0.08 * box_height
+
+        mean_v = np.mean(data)
+        median_v = np.median(data)
+
+        ax.plot([mean_v, mean_v], [y_min + pad, y_max - pad],
+                color="lime", linewidth=2, zorder=5)
+        ax.plot([median_v, median_v], [y_min + pad, y_max - pad],
+                color="red", linewidth=2, zorder=6)
+
+    # Y-axis labels (top = Player 1, bottom = Player 2)
+    ax.set_yticklabels([label1, label2])
+    ax.set_title("Bargaining Table – Payoff Statistics", pad=10)
+    ax.grid(True, linestyle="--", linewidth=0.5, alpha=0.6)
+
+    # Padding on x-axis so bars don’t hit the edges
+    all_data = np.concatenate([data1, data2])
+    min_v, max_v = np.min(all_data), np.max(all_data)
+    rng = max_v - min_v if max_v > min_v else 1
+    ax.set_xlim(min_v - 0.1 * rng, max_v + 0.1 * rng)
+
+    # Legend (mean/median once for both)
+    ax.plot([], [], color="lime", linewidth=2, label="Mean")
+    ax.plot([], [], color="red", linewidth=2, label="Median")
+    ax.legend(loc="upper right", frameon=False)
+
+    plt.tight_layout()
+
+    if save_path:
+        plt.savefig(save_path, dpi=215, bbox_inches="tight")
+        plt.close()
+    else:
+        plt.show()
+
 def compute_payoff(
     sampled_pairs: List[Tuple[str, str]],
     folder_path_player1: str,
@@ -208,6 +275,7 @@ def compute_payoff(
             - "p2_SVO" (player 2 chooses the assignments based on Social Value Orientation). Same but for player 2.
             - "p1_adaptive" (player 1 uses an adaptive agent based on a trained model, player 2 is based on his data).
             - "p1_llm": use the json of the LLM as player 1.
+            - "p2_llm": use the json of the LLM as player 2.
     Raises:
         ValueError: If the game signatures do not match.
         ValueError: If the strategy is unknown.
@@ -228,6 +296,8 @@ def compute_payoff(
     
     llm_missing_match_exception = 0  # Debug for when an llm is employed 
     player1_total_payoff, player2_total_payoff = 0.0, 0.0
+    overall_player1_payoff = {i:[] for i in range(1,11)}  # Store payoffs per game type
+    overall_player2_payoff = {i:[] for i in range(1,11)}  # Store payoffs per game type
     for game_num in range(1,11):
         count = 0
         player1_payoff, player2_payoff = 0.0, 0.0
@@ -255,6 +325,8 @@ def compute_payoff(
             blocks1 = whole_block1[3:]  # Skip first 3 rows (header)
             blocks2 = whole_block2[3:]  # Skip first 3 rows (header)
             
+            game_payoff_p1 = 0.
+            game_payoff_p2 = 0.
             # Iterate through corresponding blocks of both players, according to the strategy
             for (i,r1),r2 in zip(enumerate(blocks1), blocks2):
                 if strategy == "humans":
@@ -380,17 +452,25 @@ def compute_payoff(
                 # Assign payoffs based on each player choices
                 if r1_t == r2_t == "r1":
                     player1_payoff += int(r1_v[-2].strip())
+                    game_payoff_p1 += int(r1_v[-2].strip())
+                    game_payoff_p2 += 0.
                 elif r1_t == r2_t == "r2":
                     player2_payoff += int(r2_v[-2].strip())
+                    game_payoff_p1 += 0.
+                    game_payoff_p2 += int(r2_v[-2].strip())
                 else:
                     player1_payoff -= 0.2 * int(r1_v[-2].strip())
                     player2_payoff -= 0.2 * int(r2_v[-2].strip())
                     pay_off_left += int(r1_v[-2].strip())
                     suboptimal_choices += 1
+                    game_payoff_p1 -= 0.2 * int(r1_v[-2].strip())
+                    game_payoff_p2 -= 0.2 * int(r2_v[-2].strip())
                 total_choices += 1
                 
+            overall_player1_payoff[game_num].append(game_payoff_p1)
+            overall_player2_payoff[game_num].append(game_payoff_p2)
             count += 1
-            
+
         player1_total_payoff += player1_payoff
         player2_total_payoff += player2_payoff
         
@@ -414,7 +494,9 @@ def compute_payoff(
         "player2_payoff": player2_payoff,
         "suboptimal_choices": suboptimal_choices,
         "total_choices": total_choices,
-        "pay_off_left": pay_off_left
+        "pay_off_left": pay_off_left,
+        "overall_payoff_p1": overall_player1_payoff,
+        "overall_payoff_p2": overall_player2_payoff
     }
 
 if __name__ == "__main__":
@@ -430,10 +512,11 @@ if __name__ == "__main__":
         - "p2_SVO" (player 2 chooses the assignments based on Social Value Orientation).
         - "p1_adaptive" (player 1 uses an adaptive agent based on a trained model, player 2 is based on his data).
         - "p1_llm": use the json of the LLM as player 1.
+        - "p2_llm": use the json of the LLM as player 2.
     """
     # Global parameters
-    strategy = "p2_llm"  # Strategy to use
-    num_samples = 1000  # Number of random pairs to sample
+    strategy = "p1_adaptive"  # Strategy to use
+    num_samples = 30  # Number of random pairs to sample
     sample_with_replacement = False  # Whether to sample with replacement
     folder_path_player1 = "./data/Dor-humans/stage-2-analysis/Number1players/"
     folder_path_player2 = "./data/Dor-humans/stage-2-analysis/Number2players/"
@@ -455,3 +538,11 @@ if __name__ == "__main__":
         folder_path_player2,
         strategy=strategy
     )
+
+    # Order games by (type, sample_number)
+    games_p1 = np.array([v for v in results["overall_payoff_p1"].values()])
+    games_p2 = np.array([v for v in results["overall_payoff_p2"].values()])
+    sum_games_p1 = games_p1.sum(axis=0)
+    sum_games_p2 = games_p2.sum(axis=0)
+
+    plot_pretty_boxplot(sum_games_p1, sum_games_p2, strategy, save_path=f"./plots/bargaining_table/{strategy}.png")
