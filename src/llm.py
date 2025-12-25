@@ -97,8 +97,8 @@ class LocalLLM(LLM):
         if bnb_config is not None:
             model_kwargs["quantization_config"] = bnb_config
         else:
-            default_dtype = torch.bfloat16 if torch.cuda.is_available() else torch.float32
-            model_kwargs["dtype"] = default_dtype
+            use_cuda = torch.cuda.is_available()
+            model_kwargs["torch_dtype"] = torch.bfloat16 if use_cuda else torch.float32
 
         # Load the model once
         self.model = AutoModelForCausalLM.from_pretrained(
