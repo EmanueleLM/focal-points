@@ -1,54 +1,79 @@
 #!/bin/bash
-# GAMES=(
-# "humans" 
-# "p1_greedy"
-# "p2_greedy"
-# "both_greedy"  # may break the plots limits!
-# "p1_cooperative"
-# "p2_cooperative"
-# "p1_SVO"
-# "p2_SVO"
-# "p1_adaptive"
-# "p2_adaptive"
-# "p1_llm"
-# "p2_llm"
-# )
 
-# NUM_SAMPLES=100
-# SAMPLE_WITH_REPLACEMENT=False
-# for STRATEGY in "${GAMES[@]}"; do
-#     echo "[bash] Running bargaining table analysis for strategy: $STRATEGY, num_samples: $NUM_SAMPLES, sample_with_replacement: $SAMPLE_WITH_REPLACEMENT"
-#     python3 bargaining_table.py --strategy "$STRATEGY" --num-samples "$NUM_SAMPLES" --sample-with-replacement "$SAMPLE_WITH_REPLACEMENT"
-# done
-
-FILES=(
-"./data/bargaining_table_llms/orange/gpt-oss-20b-low/bargaining_table_realdata_responses_vanilla_yellow.jsonl"
-"./data/bargaining_table_llms/orange/gpt-oss-20b-low/bargaining_table_realdata_responses_saliency_yellow.jsonl"
-"./data/bargaining_table_llms/orange/gpt-oss-20b-low/bargaining_table_realdata_responses_greedy_yellow.jsonl"
-"./data/bargaining_table_llms/orange/gpt-oss-20b-low/bargaining_table_realdata_responses_cooperative_yellow.jsonl"
-"./data/bargaining_table_llms/orange/gpt-oss-20b-low/bargaining_table_realdata_responses_all-features_yellow.jsonl"
-"./data/bargaining_table_llms/orange/gpt-oss-20b-high/bargaining_table_realdata_responses_vanilla_yellow.jsonl"
-"./data/bargaining_table_llms/orange/gpt-oss-20b-high/bargaining_table_realdata_responses_saliency_yellow.jsonl"
-"./data/bargaining_table_llms/orange/gpt-oss-20b-high/bargaining_table_realdata_responses_greedy_yellow.jsonl"
-"./data/bargaining_table_llms/orange/gpt-oss-20b-high/bargaining_table_realdata_responses_cooperative_yellow.jsonl"
-"./data/bargaining_table_llms/orange/gpt-oss-20b-high/bargaining_table_realdata_responses_all-features_yellow.jsonl"
-"./data/bargaining_table_llms/orange/gpt-oss-120b-low/bargaining_table_realdata_responses_vanilla_yellow.jsonl"
-"./data/bargaining_table_llms/orange/gpt-oss-120b-low/bargaining_table_realdata_responses_saliency_yellow.jsonl"
-"./data/bargaining_table_llms/orange/gpt-oss-120b-low/bargaining_table_realdata_responses_greedy_yellow.jsonl"
-"./data/bargaining_table_llms/orange/gpt-oss-120b-low/bargaining_table_realdata_responses_cooperative_yellow.jsonl"
-"./data/bargaining_table_llms/orange/gpt-oss-120b-low/bargaining_table_realdata_responses_all-features_yellow.jsonl"
-"./data/bargaining_table_llms/orange/gpt-oss-120b-high/bargaining_table_realdata_responses_vanilla_yellow.jsonl"
-"./data/bargaining_table_llms/orange/gpt-oss-120b-high/bargaining_table_realdata_responses_saliency_yellow.jsonl"
-"./data/bargaining_table_llms/orange/gpt-oss-120b-high/bargaining_table_realdata_responses_greedy_yellow.jsonl"
-"./data/bargaining_table_llms/orange/gpt-oss-120b-high/bargaining_table_realdata_responses_cooperative_yellow.jsonl"
-"./data/bargaining_table_llms/orange/gpt-oss-120b-high/bargaining_table_realdata_responses_all-features_yellow.jsonl"
+# Traditional strategy experiments
+STRATEGIES=(
+"humans" 
+"p1_greedy"
+"p2_greedy"
+"both_greedy"  # may break the plots limits!
+"p1_cooperative"
+"p2_cooperative"
+"p1_SVO"
+"p2_SVO"
+"p1_adaptive"
+"p2_adaptive"
 )
-
-STRATEGY="p2_llm"
 
 NUM_SAMPLES=100
 SAMPLE_WITH_REPLACEMENT=False
-for FILE in "${FILES[@]}"; do
-    echo "[bash] Running bargaining table analysis for strategy: $STRATEGY, num_samples: $NUM_SAMPLES, sample_with_replacement: $SAMPLE_WITH_REPLACEMENT, --file-player-as-llm $FILE"
-    python3 bargaining_table.py --strategy "$STRATEGY" --num-samples "$NUM_SAMPLES" --sample-with-replacement "$SAMPLE_WITH_REPLACEMENT" --file-player-as-llm "$FILE"
+for STRATEGY in "${STRATEGIES[@]}"; do
+    echo "[bash] Running bargaining table analysis for strategy: $STRATEGY, num_samples: $NUM_SAMPLES, sample_with_replacement: $SAMPLE_WITH_REPLACEMENT"
+    python3 bargaining_table.py --strategy "$STRATEGY" --num-samples "$NUM_SAMPLES" --sample-with-replacement "$SAMPLE_WITH_REPLACEMENT"
+done
+
+
+# LLM experiments
+REASONING=(
+  "low"
+  "medium"
+  "high"
+)
+
+MODELS=(
+  "gpt-oss-20b"
+  "gpt-oss-120b"
+)
+
+COLORS=(
+  "blue"
+  "yellow"
+)
+
+FILES=(
+  "bargaining_table_realdata_responses_vanilla"
+  "bargaining_table_realdata_responses_saliency"
+  "bargaining_table_realdata_responses_greedy"
+  "bargaining_table_realdata_responses_cooperative"
+  "bargaining_table_realdata_responses_all-features"
+)
+
+declare -A COLOR_TO_STRATEGY=(
+  [blue]="p1_llm"
+  [yellow]="p2_llm"
+)
+
+for color in "${COLORS[@]}"; do
+  strategy="${COLOR_TO_STRATEGY[$color]}"
+
+  echo "COLOR=$color STRATEGY=$strategy"
+done
+
+STRATEGY="p2_llm"
+NUM_SAMPLES=100
+SAMPLE_WITH_REPLACEMENT=False
+
+# Create folders for results
+mkdir -p "./data/bargaining_table_llms/${color}/${model}-${reasoning}"
+mkdir -p "./data/bargaining_table_llms/${color}/${model}-${reasoning}"
+
+for color in "${COLORS[@]}"; do
+    STRATEGY="${COLOR_TO_STRATEGY[$color]}"
+    for model in "${MODELS[@]}"; do
+        for reasoning in "${REASONING[@]}"; do
+            for file in "${FILES[@]}"; do
+            PATH_FILE="./data/bargaining_table_llms/${color}/${model}-${reasoning}/${file}_${color}.jsonl"
+            python3 bargaining_table.py --strategy "$STRATEGY" --num-samples "$NUM_SAMPLES" --sample-with-replacement "$SAMPLE_WITH_REPLACEMENT" --file-player-as-llm "$PATH_FILE"
+            done
+        done
+    done
 done

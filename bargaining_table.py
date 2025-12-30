@@ -641,9 +641,9 @@ if __name__ == "__main__":
         # "./data/bargaining_table_llms/blue/gpt-oss-120b-high/bargaining_table_realdata-vanilla_responses_problem.jsonl"
         if "blue" in LLM_AS_P1:
             filename_results += "_blue"
-        elif "orange" in LLM_AS_P1:
-            filename_results += "_orange"
-            
+        elif "yellow" in LLM_AS_P1:
+            filename_results += "_yellow"
+
         if "gpt-oss" in LLM_AS_P1:
             if "120b" in LLM_AS_P1:
                 filename_results += "_gpt-oss-120b"
@@ -652,13 +652,15 @@ if __name__ == "__main__":
                 
             if "high" in LLM_AS_P1:
                 filename_results += "-high"
+            elif "medium" in LLM_AS_P1:
+                filename_results += "-medium"
             elif "low" in LLM_AS_P1:
                 filename_results += "-low"
                 
             filename_results += "_" + LLM_AS_P1.split('/')[-1].split('.jsonl')[0]
 
-    os.makedirs(RESULTS_FOLDER, exist_ok=True)
-    with open(f"{RESULTS_FOLDER}/{filename_results}.json", "w") as f:
+    os.makedirs(f"{RESULTS_FOLDER}/{strategy}", exist_ok=True)
+    with open(f"{RESULTS_FOLDER}/{strategy}/{filename_results}.json", "w") as f:
         json.dump(results, f)
 
     # Plot and save
@@ -669,10 +671,10 @@ if __name__ == "__main__":
     # Reduce over the game_type axis
     sum_games_p1 = games_p1.sum(axis=0)
     sum_games_p2 = games_p2.sum(axis=0)
-    
-    os.makedirs(PLOT_FOLDER, exist_ok=True)
+
+    os.makedirs(f"{PLOT_FOLDER}/{strategy}", exist_ok=True)
     plot_pretty_boxplot(sum_games_p1, 
                         sum_games_p2,
                         label1=strategy_to_label[strategy][1] + ": ",
                         label2=strategy_to_label[strategy][0] + ": ",
-                        save_path=f"{PLOT_FOLDER}/{filename_results}.png")
+                        save_path=f"{PLOT_FOLDER}/{strategy}/{filename_results}.png")
