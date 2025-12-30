@@ -372,8 +372,8 @@ if __name__ == "__main__":
     #                 plt.bar(x + width*(idx), current_data_llm, width, label=model_name, color=color, edgecolor="black")
 
     #             plt.xticks(x, tasks)
-    #             plt.title(f"Coordination Index Comparison: {d_name.capitalize()}-{l}")
-    #             plt.ylabel("Normalised Coordination Index")
+    #             plt.title(f"{d_name.capitalize()} {l.capitalize()}")
+    #             plt.ylabel("Normalised Coordination Index (NCI)")
     #             plt.legend(bbox_to_anchor=(1., 1.))
     #             plt.tight_layout()
     #             plt.grid(axis='y', alpha=0.3)
@@ -456,9 +456,9 @@ if __name__ == "__main__":
                     plt.bar(x + width*(idx), current_data_llm, width, label=model_name, color=color, edgecolor="black")
 
                 plt.xticks(x, tasks)
-                plt.title(f"Coordination Index Comparison: {d_name.capitalize()}-{l}")
-                plt.ylabel("Normalised Coordination Index")
-                plt.legend(bbox_to_anchor=(1., 1.))
+                plt.title(f"{d_name.capitalize()} {l.capitalize()}")
+                plt.ylabel("Normalised Coordination Index (NCI)")
+                # plt.legend(bbox_to_anchor=(1., 1.))
                 plt.tight_layout()
                 plt.grid(axis='y', alpha=0.3)
                 plt.savefig(SAVEDIR + BEST_MODELS_COORDINATION_INDEX_FOLDER + f"/{d_name}-{l}{suffix}.png")
@@ -611,9 +611,9 @@ if __name__ == "__main__":
                 )
 
                 plt.xticks(x, tasks)
-                plt.title(f"Coordination Index Comparison: {d_name.capitalize()}-{l}")
-                plt.ylabel("Normalised Coordination Index")
-                plt.legend(bbox_to_anchor=(1.0, 1.0))
+                plt.title(f"{d_name.capitalize()} {l.capitalize()}")
+                plt.ylabel("Normalised Coordination Index (NCI)")
+                # plt.legend(bbox_to_anchor=(1.0, 1.0))
                 plt.tight_layout()
                 plt.grid(axis="y", alpha=0.3)
                 plt.savefig(

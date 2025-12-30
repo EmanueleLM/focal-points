@@ -209,10 +209,10 @@ def plot_pretty_boxplot(
         [data1, data2],
         vert=False,
         patch_artist=True,
-        widths=0.5,
+        widths=0.3,
         boxprops=dict(edgecolor="#000000", linewidth=1.6),
         whiskerprops=dict(color="#000000", linewidth=1.1),
-        capprops=dict(color="#1B2631", linewidth=1.1),
+        capprops=dict(color="#000000", linewidth=1.8),
         medianprops=dict(color="none"),  # we’ll draw our own
         flierprops=dict(marker="", linestyle="none")
     )
@@ -227,7 +227,7 @@ def plot_pretty_boxplot(
         verts = box.get_path().vertices
         y_min, y_max = verts[:, 1].min(), verts[:, 1].max()
         box_height = y_max - y_min
-        pad = 0.08 * box_height
+        pad = 0.0 * box_height
 
         mean_v = np.mean(data)
         median_v = np.median(data)
@@ -239,13 +239,17 @@ def plot_pretty_boxplot(
                 color="red", linewidth=2.6, zorder=6)
 
         # Add a subtle marker (dot) for mean
-        ax.scatter(mean_v, (y_min + y_max)/2, color="#57EB3D", edgecolor="black", zorder=7, s=40)
+        ax.scatter(mean_v, (y_min + y_max)/2, 
+                   color="#57EB3D", 
+                   edgecolor="black", 
+                   zorder=7, 
+                   s=40)
 
     # --- Axis styling ---
     ax.set_yticks([1, 2])
     ax.set_yticklabels([label1, label2], fontsize=12, fontweight="bold")
     ax.tick_params(axis="x", labelsize=11)
-    ax.set_title("Bargaining Table – Payoff Statistics", fontsize=14, fontweight="bold", pad=12)
+    # ax.set_title("Bargaining Table – Payoff Statistics", fontsize=14, fontweight="bold", pad=12)
 
     # --- Grid ---
     ax.grid(True, linestyle="--", linewidth=0.6, color="#b0b0b0", alpha=0.7)
@@ -260,7 +264,7 @@ def plot_pretty_boxplot(
     # --- Legend ---
     ax.plot([], [], color="#57EB3D", linewidth=2.5, label="Mean")
     ax.plot([], [], color="red", linewidth=2.5, label="Median")
-    ax.legend(loc="upper right", frameon=False, fontsize=11)
+    ax.legend(loc="upper right", frameon=True, fontsize=11)
 
     plt.tight_layout()
 
@@ -549,6 +553,13 @@ def parse_args():
         default=False,
         help="Sample with replacement (default: False)",
     )
+    
+    parser.add_argument(
+        "--file-player-as-llm",
+        type=str,
+        default="",
+        help="The folder where LLM data is.",
+    )
 
     return parser.parse_args()
 
@@ -570,21 +581,38 @@ if __name__ == "__main__":
     """
     # Global parameters
     DATAFRAME_P1_ADAPTIVE = "./data/Dor-humans/bargaining_games_player_blue.csv"
-    LLM_AS_P1 = "./data/bargaining_table_llms/blue/gpt-oss-120b/bargaining_table_realdata-vanilla_responses_problem.jsonl"
-    LLM_AS_P2 = "./data/bargaining_table_llms/orange/gpt-oss-120b/bargaining_table_realdata-vanilla_responses_problem.jsonl"
     SVO_ANGLE = 22.5  # Angle of the SVO agent 
     FOLDER_PLAYER1_DATA = "./data/Dor-humans/stage-2-analysis/Number1players/"
     FOLDER_PLAYER2_DATA = "./data/Dor-humans/stage-2-analysis/Number2players/"
     PLOT_FOLDER = "./plots/bargaining_table"
     RESULTS_FOLDER = "./results/bargaining_table"
     ADAPTIVE_PLAYER1_JOBLIB = "./data/Dor-humans/bargaining_table_rf.joblib"
+    # LLM_AS_P1 = "./data/bargaining_table_llms/blue/gpt-oss-120b/bargaining_table_realdata-vanilla_responses_problem.jsonl"
+    # LLM_AS_P2 = "./data/bargaining_table_llms/orange/gpt-oss-120b/bargaining_table_realdata-vanilla_responses_problem.jsonl"
+
+    
+    strategy_to_label = {
+        "humans": ["Orange Human", "Blue Human"],
+        "p1_greedy": ["Orange Human", "Blue Greedy"],
+        "p2_greedy": ["Orange Greedy", "Blue Human"],
+        "both_greedy": ["Orange Greedy", "Blue Greedy"],
+        "p1_cooperative": ["Orange Human", "Blue Cooperative"],
+        "p2_cooperative": ["Orange Cooperative", "Blue Human"],
+        "p1_SVO": ["Orange Human", "Blue SVO"],
+        "p2_SVO": ["Orange SVO", "Blue Human"],
+        "p1_adaptive": ["Orange Human", "Blue Adaptive"],
+        "p1_llm": ["Orange Human", "Blue LLM"],
+        "p2_llm": ["Orange LLM", "Blue Human"],
+    }
     
     args = parse_args()
 
     strategy = args.strategy
     num_samples = args.num_samples
     sample_with_replacement = args.sample_with_replacement
-    
+
+    LLM_AS_P1 = LLM_AS_P2 = args.file_player_as_llm
+
     print(f"Running sampling with strategy={strategy}, num_samples={num_samples}, sample_with_replacement={sample_with_replacement}")
 
     # Retrieve all the games played by both players
@@ -606,8 +634,31 @@ if __name__ == "__main__":
     )
 
     # Save results in JSON format
+    if strategy not in ["p1_llm", "p2_llm"]:
+        filename_results = strategy
+    else:
+        filename_results = strategy
+        # "./data/bargaining_table_llms/blue/gpt-oss-120b-high/bargaining_table_realdata-vanilla_responses_problem.jsonl"
+        if "blue" in LLM_AS_P1:
+            filename_results += "_blue"
+        elif "orange" in LLM_AS_P1:
+            filename_results += "_orange"
+            
+        if "gpt-oss" in LLM_AS_P1:
+            if "120b" in LLM_AS_P1:
+                filename_results += "_gpt-oss-120b"
+            elif "20b" in LLM_AS_P1:
+                filename_results += "_gpt-oss-20b"
+                
+            if "high" in LLM_AS_P1:
+                filename_results += "-high"
+            elif "low" in LLM_AS_P1:
+                filename_results += "-low"
+                
+            filename_results += "_" + LLM_AS_P1.split('/')[-1].split('.jsonl')[0]
+
     os.makedirs(RESULTS_FOLDER, exist_ok=True)
-    with open(f"{RESULTS_FOLDER}/{strategy}.json", "w") as f:
+    with open(f"{RESULTS_FOLDER}/{filename_results}.json", "w") as f:
         json.dump(results, f)
 
     # Plot and save
@@ -622,6 +673,6 @@ if __name__ == "__main__":
     os.makedirs(PLOT_FOLDER, exist_ok=True)
     plot_pretty_boxplot(sum_games_p1, 
                         sum_games_p2,
-                        label1="Player 1: " + strategy,
-                        label2="Player 2",
-                        save_path=f"{PLOT_FOLDER}/{strategy}.png")
+                        label1=strategy_to_label[strategy][1] + ": ",
+                        label2=strategy_to_label[strategy][0] + ": ",
+                        save_path=f"{PLOT_FOLDER}/{filename_results}.png")
