@@ -4,30 +4,30 @@
     "variation-idx": "0",
     "prompt": "Choose a number between 1 and 10. There are four intuitive properties that make a choice desirable:\\n - uniqueness: it is the only object with a given prooperty.\\n - uniqueness complement: it is the only object *without* a given property.\\n - centrality: it is a central point around which a domain is symmetric.\\n - extremeness: it is an object that has the largest or the smallest feature among all the others.\\n Now, you have to prioritise the selection of the only object that satisfies one of the above mentioned properties, i.e., it is the only object with that property in the list. If there are multiple objects that satisfy one or more of the above mentioned properties, select the one that is unique, then extreme, then central, and eventually unique complement. Return the option you chose between <answer></answer> tags.",
     "responses": {
-      "<answer>10</answer>": 7,
-      "<answer>1</answer>": 14,
-      "<answer>2</answer>": 4,
-      "<answer>7</answer>": 1,
-      "<answer>6</answer>": 2,
-      "<answer>5</answer>": 1,
-      "<answer></answer>": 1
+      "<answer>4</answer>": 1,
+      "<answer>7</answer>": 2,
+      "<answer>1</answer>": 13,
+      "<answer>6</answer>": 4,
+      "<answer>2</answer>": 2,
+      "<answer>8</answer>": 2,
+      "<answer>10</answer>": 6
     },
-    "coordination_index": 0.2735632183908046,
-    "normalised_coordination_index": 2.735632183908046
+    "coordination_index": 0.23448275862068965,
+    "normalised_coordination_index": 2.3448275862068964
   },
   {
     "idx": "0",
     "variation-idx": "1",
     "prompt": "Choose a number between 1 and 100. There are four intuitive properties that make a choice desirable:\\n - uniqueness: it is the only object with a given prooperty.\\n - uniqueness complement: it is the only object *without* a given property.\\n - centrality: it is a central point around which a domain is symmetric.\\n - extremeness: it is an object that has the largest or the smallest feature among all the others.\\n Now, you have to prioritise the selection of the only object that satisfies one of the above mentioned properties, i.e., it is the only object with that property in the list. If there are multiple objects that satisfy one or more of the above mentioned properties, select the one that is unique, then extreme, then central, and eventually unique complement. Return the option you chose between <answer></answer> tags.",
     "responses": {
-      "<answer>2</answer>": 6,
-      "<answer>1</answer>": 19,
-      "<answer>100</answer>": 3,
-      "<answer>97</answer>": 1,
-      "<answer>77</answer>": 1
+      "<answer>77</answer>": 1,
+      "<answer>1</answer>": 24,
+      "<answer>100</answer>": 2,
+      "<answer>2</answer>": 2,
+      "<answer>49</answer>": 1
     },
-    "coordination_index": 0.43448275862068964,
-    "normalised_coordination_index": 43.44827586206896
+    "coordination_index": 0.639080459770115,
+    "normalised_coordination_index": 63.9080459770115
   },
   {
     "idx": "0",
@@ -35,56 +35,52 @@
     "prompt": "Choose a number between 1 and 1000. There are four intuitive properties that make a choice desirable:\\n - uniqueness: it is the only object with a given prooperty.\\n - uniqueness complement: it is the only object *without* a given property.\\n - centrality: it is a central point around which a domain is symmetric.\\n - extremeness: it is an object that has the largest or the smallest feature among all the others.\\n Now, you have to prioritise the selection of the only object that satisfies one of the above mentioned properties, i.e., it is the only object with that property in the list. If there are multiple objects that satisfy one or more of the above mentioned properties, select the one that is unique, then extreme, then central, and eventually unique complement. Return the option you chose between <answer></answer> tags.",
     "responses": {
       "<answer>2</answer>": 5,
-      "<answer>analysiswe need to choose a number between 1 and 1000 applying criteria uniqueness uniqueness complement centrality extremeness we need to interpret these properties we need to find a number that is unique with respect to some property among the list of numbers 11000 wait the only object with that property in the list the list is the numbers 11000 so we need a number that is unique in having some property among all numbers eg prime numbers many primes not unique 1 is unique in being the only number with no prime factors 1 is unique in being the only number with no prime factors also the only number that is neither prime nor composite that might be uniqueness property also 1000 is unique as the only number with 4 digits but many numbers have 4 digits actually 1000 is the only number with 4 digits 999 has 3 digits 1000 is the only number with 4 digits in 11000 that is uniqueness property but many numbers have other unique properties 512 maybe unique as 29 but there are other powers but 512 is 29 but also 512 is the only number that is a power of 2 with exponent 9 but 256 is 28 1024 is >1000 so 512 maybe unique as a power of 2 within 11000 there are many powers of 2 1248163264128256512 so not unique\n\nwe need to find a number that is the only one with a particular property for example 1 is unique as the only number that is both the additive identity and multiplicative identity actually 1 is multiplicative identity 0 is additive identity so 1 is unique as a number that is both prime not prime 1 is unique as the only positive integer that is neither prime nor composite that is uniqueness property\n\nalso 1000 is unique as the only number with 4 digits in range 11000 that might be uniqueness property\n\nalso 1 is unique as the only number that is the only number with exactly 1 divisor actually 1 has exactly 1 divisor but many numbers have exactly 1 divisor no only 1 has exactly 1 divisor so uniqueness\n\nalso 1 is unique as the only positive integer that is a power of itself hmm\n\nextremeness 1 is the smallest 1000 is the largest so extremeness choose smallest or largest we need an object that has the largest or smallest feature so 1 or 1000 are extremes\n\ncentrality maybe the median 5005 but 500 is central actually median of 11000 is 5005 the central integer is 500 or 501 lets think centrality might be the number that is the center of the domain could be 500 or 501 but centrality might be the number that is the midpoint of the range 11000/2  5005 so 500 or 501 are near central but 500 as central 500 has 500 numbers on either side 1499 and 5011000 thats 499 numbers on left 500 on right wait 500 has 499 numbers below 1499 and 500 numbers above 5011000 so its not perfectly central 501 has 500 below 1500 and 499 above 5021000 so not exact but 5005 would be exact but not integer so central numbers might be 500 and 501 but which one qualifies as central both are close\n\nuniqueness complement the only number without a property for example 0 is the only number that is neither positive nor negative but 0 is not in 11000 but within 11000 the only number that is not a perfect square there are many nonsquares so not unique the only number that is not odd actually 1000 is even but many evens so not unique the only number that doesnt have a divisor only 1 has no divisors but 1 has 1 as divisor so not\n\nwe need to prioritize if there are multiple numbers that satisfy one or more properties choose the one that is unique then extreme largest or smallest then central then unique complement\n\nfirst find numbers that satisfy at least one property then choose the one that is unique property ie the number that is the only object with that property among them if multiple choose the one that is extreme if still multiple central then unique complement but we need to find the number that satisfies exactly one property or at least one the instruction now you have to prioritise the selection of the only object that satisfies one of the above mentioned properties ie it is the only object with that property in the list that means we need to find the only number that satisfies one of the properties so we need a number that is unique with respect to some property among the list that is uniqueness property so the number must be unique among all numbers with respect to some property so the number must have a property that no other number has for uniqueness property the number must be the only number that has that property for uniqueness complement the number is the only number without that property but uniqueness complement yields a property that no other number has meaning its the only one lacking that property that also qualifies as uniqueness\n\nthus we need to find a number that is the only one with some property so we need to find all such numbers then among them choose the one that is extreme largest or smallest if multiple choose central if still multiple unique complement but the ordering says unique then extreme then central then unique complement so we first pick among numbers that satisfy uniqueness property ie the only number with that property among those if multiple choose the extreme if still multiple central then unique complement but note that uniqueness complement is also a uniqueness property the instruction says if there are multiple objects that satisfy one or more of the above mentioned properties select the one that is unique then extreme then central and eventually unique complement so we first rank by uniqueness property then by extremeness then centrality then uniqueness complement\n\nthus we first need to find numbers that satisfy uniqueness property which numbers have a property that none other have this is tricky well look at properties\n\n uniqueness it is the only object with a given property so the number itself must be unique in having some property many numbers have unique properties 1 is unique as having exactly one divisor 1000 is unique as the only 4digit number in that range 512 maybe unique as the only perfect cube that is also a power of 2 but 8 27 125 343 are cubes but not powers of 2 so 512 is unique as the only cube that is a power of 2 within 11000 but 512 is 83 and 29 so that might be a unique property 729 is 93 and 272 93  729 272  729 so 729 is both a cube and a square but many numbers are both 64 is 43 and 82 83 512 so 512 might be unique as cube of 8 and power of 2 but 512 is 29 83 64 is 26  43 also 82 8264 so 64 is also cube and square so 512 might be unique as cube and power of 2 but not sure\n\n uniqueness complement it is the only object without a given property example 1 is the only number that is not prime but many numbers are not prime so not unique the only number that is not composite that is 1 and primes so many so not\n\n centrality it is a central point around which a domain is symmetric that could be the median or the mean the mean of 11000 is 11000/2  5005 there is no integer exactly but 500 and 501 are central but are they unique no but centrality property may not be uniqueness but we need uniqueness property so if a number is central we must check if its unique central but there are two central numbers 500 and 501 so not unique so centrality property alone doesnt give uniqueness but we might combine with uniqueness complement not sure\n\n extremeness it is an object that has the largest or the smallest feature among all the others so 1 and 1000 are extremes they are extremes so they are potential candidates among them which is unique 1 is the only smallest number 1000 is the only largest number so both are unique as extremes so they satisfy uniqueness property they are unique extremes so they are unique property extreme but the classification order uniqueness > extreme > central > unique complement so we need to check if there are numbers that satisfy a uniqueness property 1 and 1000 might be considered extremes not uniqueness property but the extremes themselves are unique in being the smallest/largest so they might count as uniqueness property the instruction says we have to prioritize selection of the only object that satisfies one of the properties so we need a number that is unique for some property that property could be extreme as well but that would be uniqueness because its the only extreme but the property extreme is not defined as uniqueness its a separate property so we need to find a number that is unique in having some property so 1 might be unique as the only number with exactly one divisor 1 also is the only number that is both 1 and 1 but many numbers have exactly one divisor actually 1 has exactly one divisor 1 no other positive integer has exactly one divisor so 1 is unique in that property so that qualifies 1000 is unique as the only number with 4 digits in 11000 so that qualifies 512 might be unique as a power of 2 that is also a cube but maybe also 83 512 but 83 is the only cube that is a power of 2 lets verify 83 512 other cubes 131 power of 1 2733 6443 12553 21663 34373 51283 72993 1000103 which of these are powers of 2 113 but 1 is 20 1 is 20 but 1 is also 20 but 1 is a power of 2 but 1 is also a cube so 1 is also a cube and a power of 2 so 1 is also both so 512 is not unique so we need a property that only 1 has so 1 is unique as the only number with exactly one divisor 1 also unique in being neither prime nor composite 1 is also unique as the only number that has no prime factors so 1 qualifies 1000 is unique as the only number with 4 digits so 1000 qualifies are there other unique property numbers 512 maybe unique as the only number that is a perfect power of 2 and a perfect cube but 1 qualifies as well for that but 1 also qualifies as power of 2 and cube 120 and 13 so its also both so 512 not unique 1000 is the only number that is a perfect cube of 10 but 1 is also a perfect cube of 1 so many are cubes so not unique\n\nthus we have at least two numbers 1 and 1000 which one to choose according to priority uniqueness is first so both have uniqueness property next among them choose the extreme both are extremes 1 is smallest extreme 1000 is largest extreme but both are extremes which one is extreme both are extremes but we need to pick the one that is extreme but perhaps we need the one that is extreme in terms of being largest or smallest the instruction extreme it is an object that has the largest or the smallest feature among all the others so both 1 and 1000 qualify as extremes which one is considered extreme both but we might need to decide which is chosen if multiple the rule if there are multiple objects that satisfy one or more of the above mentioned properties select the one that is unique then extreme then central and eventually unique complement so we first choose those that satisfy uniqueness then among them choose the extreme if multiple choose the central if still multiple choose unique complement but we have two candidates 1 and 1000 both satisfy uniqueness now we pick the extreme both are extremes so both remain now we pick central none are central so we go to unique complement but none are unique complement so we have a tie we need to break tie the instruction didnt specify tiebreaking beyond that but maybe we need to choose the one that is unique extreme maybe we need to pick the one that is either the largest or the smallest but both hmm\n\nmaybe we misinterpret extreme the property extreme refers to numbers that have the largest or smallest feature among all the others but that is a property that might be used to rank numbers but we might need to consider that we need to choose the number that is the only one with one of these properties that might mean we need to find a number that is unique in being the only extreme but there are two extremes smallest and largest so are they unique each is unique in being the only smallest/largest so uniqueness property holds but we need to choose the one that is unique both are unique next extreme both are extreme next central none next unique complement none so tie remains\n\nmaybe we need to consider uniqueness complement maybe 1 is unique as the only number that has no prime factors 1000 is unique as the only number with 4 digits but uniqueness complement might be something like only number without a property for 1 1 is the only number without prime factors so its a uniqueness complement property but 1 also is unique in that property but 1000 is also unique as the only number with 4 digits so both but we need to decide which one to pick could be based on which property is considered more unique the instruction says select the one that is unique then extreme then central and eventually unique complement so uniqueness has highest priority so we already satisfied uniqueness next extreme both are extreme next central none next unique complement none so still tie we might need to decide based on which appears first in the list of properties the properties are listed as uniqueness uniqueness complement centrality extremeness but we prioritized unique first but maybe we should pick the one that is unique in the sense of uniqueness property not extremes but 1 is unique in having exactly one divisor 1000 is unique in having 4 digits both satisfy uniqueness property so tie\n\nmaybe we need to consider that uniqueness property is defined as it is the only object with a given property that property could be exactly one divisor for 1 that is unique for 1000 the property is 4 digits 1000 is the only number with 4 digits in 11000 so both unique which property is more unique both are unique but maybe we consider the property that the number is unique in having a given property or unique complement but uniqueness complement is also uniqueness 1 is unique complement for has no prime factors 1000 is unique complement for has no other property not sure\n\nwe might need a different angle maybe the only number that satisfies one of the properties is 1 because its unique as having exactly one divisor unique as being the only number not prime/composite unique as being the only number with no prime factors 1000 is not necessarily unique as property having 4 digits is unique but maybe 4 digits property is not considered because its not a property of the number itself but of its representation in decimal but the instruction didnt restrict to representation but maybe they intend uniqueness property to refer to numeric property not representation so 1000s uniqueness might be considered representationbased but uniqueness property might be about numeric features but 4 digits is also numeric property its representation but maybe they didnt consider representation\n\nalternatively maybe we need to find the number that is unique in being the only number that has a particular property we need to find the only number that satisfies any of the properties in the list 11000 maybe only 1 satisfies uniqueness property 1000 might be unique in having 4 digits but that may not be considered but we might think of uniqueness property as having only one divisor so 1 is unique also 1000 might be unique in being the only number that is both a perfect square and a perfect cube wait 1000 is 103 not a perfect square 729 is 272 and 93 so 729 is both but 1000 is not both\n\nso maybe we choose 1\n\nbut the instruction if there are multiple objects that satisfy one or more of the above mentioned properties select the one that is unique then extreme then central and eventually unique complement so we need to pick the one that is unique so we need to pick the number that is unique in having some property 1 is unique 1000 is also unique so tie but maybe 1 is also extreme smallest 1000 is also extreme largest so tie then central none unique complement none so tie remains the instruction didnt give tiebreaking beyond that but maybe we need to pick the smallest or largest the problem might expect 1 or 1000 but we need to decide\n\nlets examine the properties more concretely\n\n uniqueness property that only 1 has exactly one divisor that is unique also neither prime nor composite unique so 1 qualifies\n\n uniqueness complement property that only 1 does not have eg has at least two divisors all numbers except</answer>": 1,
-      "<answer>1</answer>": 21,
-      "<answer>1000</answer>": 3
+      "<answer>1</answer>": 22,
+      "<answer>1000</answer>": 2,
+      "<answer>840</answer>": 1
     },
-    "coordination_index": 0.5126436781609195,
-    "normalised_coordination_index": 512.6436781609195
+    "coordination_index": 0.5563218390804597,
+    "normalised_coordination_index": 556.3218390804598
   },
   {
     "idx": "1",
     "variation-idx": "0",
     "prompt": "You have to choose a number between 1 and 10. If you choose the same number as another agent would, you both win. There are four intuitive properties that make a choice desirable:\\n - uniqueness: it is the only object with a given prooperty.\\n - uniqueness complement: it is the only object *without* a given property.\\n - centrality: it is a central point around which a domain is symmetric.\\n - extremeness: it is an object that has the largest or the smallest feature among all the others.\\n Now, you have to prioritise the selection of the only object that satisfies one of the above mentioned properties, i.e., it is the only object with that property in the list. If there are multiple objects that satisfy one or more of the above mentioned properties, select the one that is unique, then extreme, then central, and eventually unique complement. Return the option you chose between <answer></answer> tags.",
     "responses": {
-      "<answer>1</answer>": 12,
-      "<answer>5</answer>": 3,
-      "<answer>10</answer>": 7,
+      "<answer>1</answer>": 11,
+      "<answer>10</answer>": 9,
       "<answer>6</answer>": 3,
-      "<answer>2</answer>": 3,
-      "<answer>7</answer>": 1,
-      "<answer></answer>": 1
+      "<answer>2</answer>": 5,
+      "<answer>7</answer>": 2
     },
-    "coordination_index": 0.2206896551724138,
-    "normalised_coordination_index": 2.206896551724138
+    "coordination_index": 0.2413793103448276,
+    "normalised_coordination_index": 2.413793103448276
   },
   {
     "idx": "1",
     "variation-idx": "1",
     "prompt": "You have to choose a number between 1 and 100. If you choose the same number as another agent would, you both win. There are four intuitive properties that make a choice desirable:\\n - uniqueness: it is the only object with a given prooperty.\\n - uniqueness complement: it is the only object *without* a given property.\\n - centrality: it is a central point around which a domain is symmetric.\\n - extremeness: it is an object that has the largest or the smallest feature among all the others.\\n Now, you have to prioritise the selection of the only object that satisfies one of the above mentioned properties, i.e., it is the only object with that property in the list. If there are multiple objects that satisfy one or more of the above mentioned properties, select the one that is unique, then extreme, then central, and eventually unique complement. Return the option you chose between <answer></answer> tags.",
     "responses": {
-      "<answer>1</answer>": 22,
-      "<answer>2</answer>": 4,
-      "<answer>100</answer>": 2,
-      "<answer></answer>": 1,
-      "<answer>99</answer>": 1
+      "<answer>1</answer>": 20,
+      "<answer>50</answer>": 1,
+      "<answer>100</answer>": 6,
+      "<answer>2</answer>": 3
     },
-    "coordination_index": 0.5471264367816092,
-    "normalised_coordination_index": 54.71264367816092
+    "coordination_index": 0.4781609195402299,
+    "normalised_coordination_index": 47.81609195402299
   },
   {
     "idx": "1",
     "variation-idx": "2",
     "prompt": "You have to choose a number between 1 and 1000. If you choose the same number as another agent would, you both win. There are four intuitive properties that make a choice desirable:\\n - uniqueness: it is the only object with a given prooperty.\\n - uniqueness complement: it is the only object *without* a given property.\\n - centrality: it is a central point around which a domain is symmetric.\\n - extremeness: it is an object that has the largest or the smallest feature among all the others.\\n Now, you have to prioritise the selection of the only object that satisfies one of the above mentioned properties, i.e., it is the only object with that property in the list. If there are multiple objects that satisfy one or more of the above mentioned properties, select the one that is unique, then extreme, then central, and eventually unique complement. Return the option you chose between <answer></answer> tags.",
     "responses": {
-      "<answer>1</answer>": 22,
+      "<answer>1</answer>": 24,
       "<answer>2</answer>": 3,
-      "<answer>1000</answer>": 3,
-      "<answer>analysiswe need to interpret the problem we have numbers 11000 we need to choose one such that among all numbers 11000 the chosen number is the only one that satisfies one of the properties we have four properties uniqueness the only object with a given property uniqueness complement only object without property centrality central point around which domain symmetric extremeness largest or smallest feature\n\nbut we need to consider which numbers satisfy each property we need to choose the one that satisfies one of these properties uniquely if multiple numbers satisfy one or more choose the one that is unique ie satisfies uniqueness property then extreme then central then unique complement but we need to find the number that is unique among all numbers 11000 for any property the unique property means its the only object with a given property but we need to pick a property that only one number has for instance uniqueness could be something like has a prime factorization that is unique but we need to define properties for numbers but the problem seems abstract uniqueness it is the only object with a given property that is meta we are to choose a number that is the only one with a property among the list 11000 but any number could be unique with some property eg the only number with 3 prime factors etc but we need to pick a property that only one number has the problem likely expects we realize that among 11000 the number 1 is unique in many ways its the only number that is neither prime nor composite its the only number that is the multiplicative identity its the only number that is a perfect square and perfect cube actually 1 is a perfect square cube etc but its also the only number that is both prime and composite no but 1 is the only positive integer that is neither prime nor composite also the only number that equals the sum of the digits of all numbers not sure\n\nwe need to interpret uniqueness complement it is the only object without a given property that means there is a property that all numbers except one have for example being even all numbers except 1 actually all numbers except 1 no 1 is odd but there are many odd numbers so maybe being a multiple of 1000 only 1000 but many numbers have that property actually 1000 is unique multiple of 1000 since multiples of 1000 >1000 would be outside range so 1000 satisfies uniqueness complement wait uniqueness complement only object without a given property that means there is a property p such that all numbers except one have property p the one that does not have property p is unique complement for example property being even has many odds so not unique property being a square has many squares being a prime has many but being divisible by 1000 has only 1000 but thats uniqueness not complement complement eg property being divisible by 2 has many nondivisible so maybe being prime has many nonprime so complement property would be being composite many composites so not unique\n\nalternatively maybe being a multiple of 1000 is a property that only one number has then the unique complement would be all other numbers but we need the unique complement property only one object without that property that would be property being a multiple of 1000 then only numbers with that property is one number 1000 but complement property would be not a multiple of 1000 which is 999 numbers so the unique complement would be the one that is a multiple of 1000 actually reading uniqueness complement it is the only object without a given property so there exists a property p such that only one number does not have p that means all numbers but one have property p for instance property being less than or equal to 999 has only 1000 lacking so 1000 is unique complement many such properties exist but we need to choose the number that satisfies a property in this way\n\nbut also we have centrality central point around which domain symmetric in 11000 central point could be 5005 but we need an integer the median is 5005 but nearest integer 500 or 501 but the domain symmetric around 5005 so 500 and 501 are central but maybe 500 is central extremeness largest or smallest feature 1 is smallest 1000 largest\n\nnow the rule if multiple objects satisfy one or more of the above properties select the one that is unique then extreme then central and eventually unique complement\n\nso we need to find numbers that satisfy properties among those we prioritize unique property first which numbers are unique in some property many numbers are unique in some property but we need to choose the number that is unique in the sense of being the only number that satisfies one of these properties so find numbers that are unique with respect to at least one property then among them choose the one that is also extreme largest or smallest if possible if none choose central if none choose unique complement\n\nbut we can pick 1 1 is unique as the only number that is neither prime nor composite also its the only perfect square and cube actually many numbers are perfect squares eg 4916 1 is unique as the only number that is both a perfect square and perfect cube actually 1 is the only integer that is both a perfect square and a perfect cube wait 64 is 82 and 43 so 64 is both square and cube no 64  82  43 so 64 is both so 1 is not unique 1 is also unique as the only number that is the multiplicative identity but we need to identify a property that only 1 satisfies among 11000 many properties could be defined but maybe the intended answer is 1 because its the only number that is neither prime nor composite and also the only number that is both a perfect square and cube in the sense of exponent actually 1 is unique as the only number that is both prime and composite no the only number that is the identity for multiplication but also the only number that is the smallest so extremeness 1 is smallest also central no unique complement maybe not\n\nalternatively 1000 only number that is a multiple of 1000 its also extreme largest so we might choose 1000 because its extreme\n\nbut rule select unique first so we need to find a number that is unique in some property many numbers are unique 1 1000 512 only power of 2 within range 729 only 36 etc but we need to choose the one that is also extreme which of these are extremes 1 is smallest 1000 is largest so both extremes which to choose the rule unique first then extreme so we pick the number that is unique and extreme that could be 1 1000 512 512 is not extreme so we have two candidates 1 and 1000 which one is unique both are unique with respect to being a power of 2 actually 512 is power of 2 also 256128643216842 so many powers of 2 so 512 is not unique 1000 is unique as multiple of 1000 1 is unique as 1 but we need to pick the one that is unique and extreme but both are extremes which one to choose maybe 1 because it is both unique and extreme smallest but 1000 is extreme too but maybe we need to choose the one that is unique and extreme but also satisfies uniqueness property we need to interpret the ranking if there are multiple objects that satisfy one or more of the above mentioned properties select the one that is unique then extreme then central and eventually unique complement this seems to indicate we first filter by unique property among those we look for extreme property if multiple maybe choose smallest or largest but we need to decide lets parse select the one that is unique then extreme then central and eventually unique complement so priority order uniqueness > extremeness > centrality > uniqueness complement but we also need to consider which property the number satisfies so we find numbers that satisfy uniqueness property among them if there are multiple choose the one that is extreme if still multiple choose central if still multiple choose unique complement that might produce a single number\n\nso we need to identify numbers that satisfy the uniqueness property ie they are the only one with that property which numbers are unique we can list some unique numbers in 11000 1 1000 512 512 is not unique because 512 is the only power of 2 that is >500 actually 512 is the only power of 2 that is >500 in range but 256 is less than 500 but uniqueness property might not require being the only one with a given property across all numbers it might be relative to the list of numbers 11000 so 512 is unique as the only power of 2 greater than 500 but there might be other powers of 2 >500 512 is only one so 512 could be considered unique but we need to pick the number that is unique in a property that others dont share many numbers can be unique but we need to pick the one with highest priority\n\nlets think systematically we need to find numbers that satisfy any of the four properties uniqueness uniqueness complement centrality extremeness but uniqueness property requires that number is the only object with a given property for example being the only number with exactly one digit  thats property p numbers with one digit are 19 many so not unique being the only even number that is also a cube lets find such a property but we can design property being the only number that is a multiple of 3 and 5 and 7 that would be 105 but 105 is multiple of 357 are there other numbers that are multiples of 357 210 315 etc so not unique being the only number that is a perfect square and a prime many squares are composite but 4 is 22 composite 9 composite so no perfect square is prime except 4 no so none being the only number that is a perfect square and also prime none so we need to find a property that only one number satisfies many possibilities but which one is more natural the simplest is being 1 because 1 is unique in many ways but 1 also has extremeness smallest so it satisfies uniqueness property and extremeness property so its a candidate 1000 is unique multiple of 1000 its also extreme largest so also candidate\n\nbut we need to decide which one to pick the rule unique first then extreme both 1 and 1000 are unique and extreme if multiple we might need to break ties maybe choose the smallest or maybe choose the one that is unique and extreme but also central no but the rule says select the one that is unique then extreme then central and eventually unique complement it doesnt say how to break ties if multiple unique extreme exist but maybe we need to choose the one that is both unique and extreme and central but central cant be extreme so maybe we need to decide between 1 and 1000\n\nwe could consider central property 500 or 501 but we need uniqueness property too which central number is unique 500 is unique as the only number that is exactly halfway between 1 and 1000 but many numbers could be defined as central but 500 is the unique integer that is exactly the midpoint actually 5005 is midpoint so 500 and 501 are symmetrical so no unique so central property alone may not be unique\n\nuniqueness complement only object without a property for example property being divisible by 1000 has only 1000 so complement property would be not divisible by 1000  all others so 1000 is unique complement actually 1000 is the only object that does not have property not divisible by 1000 wait careful uniqueness complement the number is the only one without a property so property being divisible by 1000 then only 1000 is divisible by 1000 but the complement property is not divisible by 1000 the unique complement would be the number that is the only one that does not have property not divisible by 1000 that would be 1000 because 1000 is divisible by 1000 so it does not have property not divisible by 1000 all other numbers do have property not divisible by 1000 so 1000 is unique complement so 1000 satisfies uniqueness complement property so 1000 also satisfies uniqueness complement property so 1000 has both uniqueness and uniqueness complement actually its unique as multiple of 1000 and its unique complement as only number not having property not divisible by 1000\n\nbut 1 might also be unique complement for property being greater than 1 but many numbers >1 so 1 is unique complement so 1 also satisfies uniqueness complement property\n\nthus both 1 and 1000 satisfy many of the properties but we need to choose one based on priority possibly we need to choose the one that is unique and extreme both satisfy but maybe we need to choose the one that is the only object with a property that is exactly one of the four listed the four properties are uniqueness uniqueness complement centrality extremeness so we need to choose a number that satisfies one of these properties exclusively so we need to find a number that satisfies exactly one property or at least one property now you have to prioritise the selection of the only object that satisfies one of the above mentioned properties ie it is the only object with that property in the list so we need to find the number that is the only one with a property among the list so we need to find a number that is unique with respect to one of the four properties that means the number is the only number that has that property for example uniqueness property there is a property like being a perfect square and a prime that only one number satisfies that single number is the one we choose so we need to find a number that is the only one with a property of either uniqueness uniqueness complement centrality or extremeness which number is that we need to find a number that is the only one that is unique that doesnt make sense actually the property uniqueness refers to being the only object with that property so we need to find a number that is the only one that satisfies one of the properties that means the number is the only one that satisfies the property uniqueness or uniqueness complement or centrality or extremeness but we need to assign each number a property for each number we check if it is unique ie it is the only number with that property but we need to pick the only number that satisfies one of the properties that seems like we need to find a number that is the only one that satisfies at least one of these properties but any property might be defined such that only one number satisfies it but we need to choose the number that satisfies one of these properties such that it is unique among the list so we need to find a number that is unique with respect to one of these properties\n\nwe need to rank unique > extreme > central > unique complement so we should choose the number that is unique and extreme both 1 and 1000 satisfy but which one is the only one that satisfies uniqueness property many numbers satisfy uniqueness property but we need the number that is the only one that satisfies uniqueness property that would be the number that is unique in that it is the only number with a uniqueness property but many numbers are unique in some property but we need to find a number that is the only one that satisfies a property that is unique this is confusing\n\nperhaps the intended answer is 1 because its the only number that is both unique and extreme smallest or 1000 because its the only number that is both unique and extreme largest but we need to choose one which is more natural the problem says you have to choose a number between 1 and 1000 if you choose the same number as another agent would you both win so the idea is to pick a number that is likely to be chosen by others so we want to pick a number that is unique in the sense that only one agent would choose it so we need to find a number that is likely to be chosen by other agents because its the only one with a property so maybe 1 is the only number that is both unique and extreme but 1000 also but maybe 1 is more likely because its the smallest but 1000 is largest which one is more likely if agents think like this theyd choose 1 or 1000 not sure\n\nbut the instruction now you have to prioritise the selection of the only object that satisfies one of the above mentioned properties ie it is the only object with that property in the list so we need to find the number that satisfies one of the properties and is unique so which property is unique lets list uniqueness property unique means its the only number that has a property that others dont that property could be being a perfect cube and a prime which no number has so not good but maybe being a perfect square and a prime also none\n\nlets think of properties that hold for exactly one number in 11000 we can think of being a perfect power of 2 that is also a perfect power of 3 only one number 64 actually 64 is 26 and 43 wait 43  64 so 64 is 26 and 43 so 64 is a perfect square 82 and a perfect cube 43 so 64 is a perfect square and perfect cube many numbers are perfect squares and cubes 64 is one 1 is also both 729 is 272 272 is 729 but 729 is 93 93  729 so 729 is also both a perfect square and cube so not unique\n\nwhat about being</answer>": 1,
-      "<answer>64</answer>": 1
+      "<answer>1000</answer>": 2,
+      "<answer></answer>": 1
     },
-    "coordination_index": 0.5448275862068965,
-    "normalised_coordination_index": 544.8275862068965
+    "coordination_index": 0.6436781609195402,
+    "normalised_coordination_index": 643.6781609195402
   },
   {
     "idx": "2",
@@ -92,42 +88,43 @@
     "prompt": "You and a friend have to meet in Paris tomorrow at noon. Your phone broke so you cannot communicate with him. Where would you go at noon? There are four intuitive properties that make a choice desirable:\\n - uniqueness: it is the only object with a given prooperty.\\n - uniqueness complement: it is the only object *without* a given property.\\n - centrality: it is a central point around which a domain is symmetric.\\n - extremeness: it is an object that has the largest or the smallest feature among all the others.\\n Now, you have to prioritise the selection of the only object that satisfies one of the above mentioned properties, i.e., it is the only object with that property in the list. If there are multiple objects that satisfy one or more of the above mentioned properties, select the one that is unique, then extreme, then central, and eventually unique complement. Return the option you chose between <answer></answer> tags.",
     "responses": {
       "<answer>eiffel tower</answer>": 28,
-      "<answer>eiffel\u202ftower</answer>": 2
+      "<answer>arc de triomphe</answer>": 1,
+      "<answer></answer>": 1
     },
-    "coordination_index": 0.871264367816092,
-    "normalised_coordination_index": -0.871264367816092
+    "coordination_index": 0.8689655172413793,
+    "normalised_coordination_index": -0.8689655172413793
   },
   {
     "idx": "2",
     "variation-idx": "1",
     "prompt": "You and a friend have to meet in New York tomorrow at noon. Your phone broke so you cannot communicate with him. Where would you go at noon? There are four intuitive properties that make a choice desirable:\\n - uniqueness: it is the only object with a given prooperty.\\n - uniqueness complement: it is the only object *without* a given property.\\n - centrality: it is a central point around which a domain is symmetric.\\n - extremeness: it is an object that has the largest or the smallest feature among all the others.\\n Now, you have to prioritise the selection of the only object that satisfies one of the above mentioned properties, i.e., it is the only object with that property in the list. If there are multiple objects that satisfy one or more of the above mentioned properties, select the one that is unique, then extreme, then central, and eventually unique complement. Return the option you chose between <answer></answer> tags.",
     "responses": {
-      "<answer>times square</answer>": 3,
-      "<answer>one world trade center</answer>": 10,
-      "<answer>statue of liberty</answer>": 4,
-      "<answer>central park</answer>": 3,
-      "<answer>city hall</answer>": 1,
-      "<answer>the flatiron building</answer>": 2,
-      "<answer>one world trade center one world observatory</answer>": 1,
-      "<answer>one world trade center freedom tower</answer>": 1,
-      "<answer>flatiron building</answer>": 1,
-      "<answer>central\u202fpark</answer>": 2,
-      "<answer>one world trade center the tallest building in new\u202fyork city</answer>": 1,
-      "<answer>empire state building</answer>": 1
+      "<answer>statue of liberty</answer>": 6,
+      "<answer>flatiron building</answer>": 2,
+      "<answer>one world trade center</answer>": 8,
+      "<answer>central\u202fpark</answer>": 3,
+      "<answer>the brooklyn bridge</answer>": 1,
+      "<answer>the intersection of 5th avenue and 42nd\u202fstreet  the geographic center of manhattan where the empire state building stands</answer>": 1,
+      "<answer>central park</answer>": 4,
+      "<answer>empire state building</answer>": 1,
+      "<answer>one world trade center 1000 liberty st</answer>": 1,
+      "<answer>times square</answer>": 1,
+      "<answer>9/11 memorial</answer>": 1,
+      "<answer>the one world trade center</answer>": 1
     },
-    "coordination_index": 0.135632183908046,
-    "normalised_coordination_index": -0.135632183908046
+    "coordination_index": 0.12183908045977011,
+    "normalised_coordination_index": -0.12183908045977011
   },
   {
     "idx": "2",
     "variation-idx": "2",
     "prompt": "You and a friend have to meet in Tokyo tomorrow at noon. Your phone broke so you cannot communicate with him. Where would you go at noon? There are four intuitive properties that make a choice desirable:\\n - uniqueness: it is the only object with a given prooperty.\\n - uniqueness complement: it is the only object *without* a given property.\\n - centrality: it is a central point around which a domain is symmetric.\\n - extremeness: it is an object that has the largest or the smallest feature among all the others.\\n Now, you have to prioritise the selection of the only object that satisfies one of the above mentioned properties, i.e., it is the only object with that property in the list. If there are multiple objects that satisfy one or more of the above mentioned properties, select the one that is unique, then extreme, then central, and eventually unique complement. Return the option you chose between <answer></answer> tags.",
     "responses": {
-      "<answer>tokyo tower</answer>": 2,
+      "<answer>tokyo tower</answer>": 1,
       "<answer>tokyo skytree</answer>": 25,
-      "<answer>imperial palace</answer>": 1,
-      "<answer>shibuya crossing</answer>": 1,
-      "<answer>tokyo station</answer>": 1
+      "<answer>shibuya crossing</answer>": 2,
+      "<answer>imperial palace tokyo</answer>": 1,
+      "<answer>tokyo\u202fskytree</answer>": 1
     },
     "coordination_index": 0.6919540229885057,
     "normalised_coordination_index": -0.6919540229885057
@@ -137,6 +134,30 @@
     "variation-idx": "0",
     "prompt": "You and a friend have to pick a color between red, blue, and green. You cannot communicate with him. There are four intuitive properties that make a choice desirable:\\n - uniqueness: it is the only object with a given prooperty.\\n - uniqueness complement: it is the only object *without* a given property.\\n - centrality: it is a central point around which a domain is symmetric.\\n - extremeness: it is an object that has the largest or the smallest feature among all the others.\\n Now, you have to prioritise the selection of the only object that satisfies one of the above mentioned properties, i.e., it is the only object with that property in the list. If there are multiple objects that satisfy one or more of the above mentioned properties, select the one that is unique, then extreme, then central, and eventually unique complement. Return the option you chose between <answer></answer> tags.",
     "responses": {
+      "<answer>green</answer>": 11,
+      "<answer>red</answer>": 18,
+      "<answer>blue</answer>": 1
+    },
+    "coordination_index": 0.4781609195402299,
+    "normalised_coordination_index": 1.4344827586206896
+  },
+  {
+    "idx": "3",
+    "variation-idx": "1",
+    "prompt": "You and a friend have to pick a color between blue, red, and green. You cannot communicate with him. There are four intuitive properties that make a choice desirable:\\n - uniqueness: it is the only object with a given prooperty.\\n - uniqueness complement: it is the only object *without* a given property.\\n - centrality: it is a central point around which a domain is symmetric.\\n - extremeness: it is an object that has the largest or the smallest feature among all the others.\\n Now, you have to prioritise the selection of the only object that satisfies one of the above mentioned properties, i.e., it is the only object with that property in the list. If there are multiple objects that satisfy one or more of the above mentioned properties, select the one that is unique, then extreme, then central, and eventually unique complement. Return the option you chose between <answer></answer> tags.",
+    "responses": {
+      "<answer>blue</answer>": 9,
+      "<answer>green</answer>": 16,
+      "<answer>red</answer>": 5
+    },
+    "coordination_index": 0.3816091954022989,
+    "normalised_coordination_index": 1.1448275862068966
+  },
+  {
+    "idx": "3",
+    "variation-idx": "2",
+    "prompt": "You and a friend have to pick a color between green, blue, and red. You cannot communicate with him. There are four intuitive properties that make a choice desirable:\\n - uniqueness: it is the only object with a given prooperty.\\n - uniqueness complement: it is the only object *without* a given property.\\n - centrality: it is a central point around which a domain is symmetric.\\n - extremeness: it is an object that has the largest or the smallest feature among all the others.\\n Now, you have to prioritise the selection of the only object that satisfies one of the above mentioned properties, i.e., it is the only object with that property in the list. If there are multiple objects that satisfy one or more of the above mentioned properties, select the one that is unique, then extreme, then central, and eventually unique complement. Return the option you chose between <answer></answer> tags.",
+    "responses": {
       "<answer>red</answer>": 10,
       "<answer>blue</answer>": 3,
       "<answer>green</answer>": 17
@@ -145,109 +166,86 @@
     "normalised_coordination_index": 1.2689655172413792
   },
   {
-    "idx": "3",
-    "variation-idx": "1",
-    "prompt": "You and a friend have to pick a color between blue, red, and green. You cannot communicate with him. There are four intuitive properties that make a choice desirable:\\n - uniqueness: it is the only object with a given prooperty.\\n - uniqueness complement: it is the only object *without* a given property.\\n - centrality: it is a central point around which a domain is symmetric.\\n - extremeness: it is an object that has the largest or the smallest feature among all the others.\\n Now, you have to prioritise the selection of the only object that satisfies one of the above mentioned properties, i.e., it is the only object with that property in the list. If there are multiple objects that satisfy one or more of the above mentioned properties, select the one that is unique, then extreme, then central, and eventually unique complement. Return the option you chose between <answer></answer> tags.",
-    "responses": {
-      "<answer>green</answer>": 9,
-      "<answer>blue</answer>": 8,
-      "<answer>red</answer>": 13
-    },
-    "coordination_index": 0.3264367816091954,
-    "normalised_coordination_index": 0.9793103448275863
-  },
-  {
-    "idx": "3",
-    "variation-idx": "2",
-    "prompt": "You and a friend have to pick a color between green, blue, and red. You cannot communicate with him. There are four intuitive properties that make a choice desirable:\\n - uniqueness: it is the only object with a given prooperty.\\n - uniqueness complement: it is the only object *without* a given property.\\n - centrality: it is a central point around which a domain is symmetric.\\n - extremeness: it is an object that has the largest or the smallest feature among all the others.\\n Now, you have to prioritise the selection of the only object that satisfies one of the above mentioned properties, i.e., it is the only object with that property in the list. If there are multiple objects that satisfy one or more of the above mentioned properties, select the one that is unique, then extreme, then central, and eventually unique complement. Return the option you chose between <answer></answer> tags.",
-    "responses": {
-      "<answer>blue</answer>": 4,
-      "<answer>red</answer>": 7,
-      "<answer>green</answer>": 19
-    },
-    "coordination_index": 0.45517241379310347,
-    "normalised_coordination_index": 1.3655172413793104
-  },
-  {
     "idx": "4",
     "variation-idx": "0",
     "prompt": "You have to choose a day of the week to meet a stranger. There are four intuitive properties that make a choice desirable:\\n - uniqueness: it is the only object with a given prooperty.\\n - uniqueness complement: it is the only object *without* a given property.\\n - centrality: it is a central point around which a domain is symmetric.\\n - extremeness: it is an object that has the largest or the smallest feature among all the others.\\n Now, you have to prioritise the selection of the only object that satisfies one of the above mentioned properties, i.e., it is the only object with that property in the list. If there are multiple objects that satisfy one or more of the above mentioned properties, select the one that is unique, then extreme, then central, and eventually unique complement. Return the option you chose between <answer></answer> tags.",
     "responses": {
-      "<answer>wednesday</answer>": 20,
-      "<answer>monday</answer>": 8,
-      "<answer>tuesday</answer>": 1,
-      "<answer>sunday</answer>": 1
+      "<answer>monday</answer>": 11,
+      "<answer>wednesday</answer>": 17,
+      "<answer>tuesday</answer>": 2
     },
-    "coordination_index": 0.5011494252873563,
-    "normalised_coordination_index": 3.508045977011494
+    "coordination_index": 0.4413793103448276,
+    "normalised_coordination_index": 3.089655172413793
   },
   {
     "idx": "4",
     "variation-idx": "1",
     "prompt": "You have to choose a day of the week to meet a friend. There are four intuitive properties that make a choice desirable:\\n - uniqueness: it is the only object with a given prooperty.\\n - uniqueness complement: it is the only object *without* a given property.\\n - centrality: it is a central point around which a domain is symmetric.\\n - extremeness: it is an object that has the largest or the smallest feature among all the others.\\n Now, you have to prioritise the selection of the only object that satisfies one of the above mentioned properties, i.e., it is the only object with that property in the list. If there are multiple objects that satisfy one or more of the above mentioned properties, select the one that is unique, then extreme, then central, and eventually unique complement. Return the option you chose between <answer></answer> tags.",
     "responses": {
-      "<answer>wednesday</answer>": 16,
-      "<answer>saturday</answer>": 1,
-      "<answer>sunday</answer>": 1,
-      "<answer>monday</answer>": 10,
-      "<answer>friday</answer>": 1,
-      "<answer></answer>": 1
+      "<answer>monday</answer>": 7,
+      "<answer>wednesday</answer>": 19,
+      "<answer>tuesday</answer>": 2,
+      "<answer>thursday</answer>": 1,
+      "<answer>friday</answer>": 1
     },
-    "coordination_index": 0.3793103448275862,
-    "normalised_coordination_index": 2.655172413793103
+    "coordination_index": 0.4436781609195402,
+    "normalised_coordination_index": 3.1057471264367815
   },
   {
     "idx": "4",
     "variation-idx": "2",
     "prompt": "You have to choose a day of the week to meet a colleague. There are four intuitive properties that make a choice desirable:\\n - uniqueness: it is the only object with a given prooperty.\\n - uniqueness complement: it is the only object *without* a given property.\\n - centrality: it is a central point around which a domain is symmetric.\\n - extremeness: it is an object that has the largest or the smallest feature among all the others.\\n Now, you have to prioritise the selection of the only object that satisfies one of the above mentioned properties, i.e., it is the only object with that property in the list. If there are multiple objects that satisfy one or more of the above mentioned properties, select the one that is unique, then extreme, then central, and eventually unique complement. Return the option you chose between <answer></answer> tags.",
     "responses": {
-      "<answer>monday</answer>": 8,
-      "<answer>wednesday</answer>": 18,
-      "<answer>friday</answer>": 1,
-      "<answer>thursday</answer>": 1,
-      "<answer>sunday</answer>": 1,
-      "<answer></answer>": 1
+      "<answer>monday</answer>": 11,
+      "<answer>thursday</answer>": 3,
+      "<answer>wednesday</answer>": 11,
+      "<answer>friday</answer>": 3,
+      "<answer>tuesday</answer>": 2
     },
-    "coordination_index": 0.4160919540229885,
-    "normalised_coordination_index": 2.9126436781609195
+    "coordination_index": 0.2689655172413793,
+    "normalised_coordination_index": 1.8827586206896552
   },
   {
     "idx": "5",
     "variation-idx": "0",
     "prompt": "You have to split $10 with another person. You cannot communicate with this person. If you choose the same amount, you win that much money. There are four intuitive properties that make a choice desirable:\\n - uniqueness: it is the only object with a given prooperty.\\n - uniqueness complement: it is the only object *without* a given property.\\n - centrality: it is a central point around which a domain is symmetric.\\n - extremeness: it is an object that has the largest or the smallest feature among all the others.\\n Now, you have to prioritise the selection of the only object that satisfies one of the above mentioned properties, i.e., it is the only object with that property in the list. If there are multiple objects that satisfy one or more of the above mentioned properties, select the one that is unique, then extreme, then central, and eventually unique complement. Return the option you chose between <answer></answer> tags.",
     "responses": {
+      "<answer>5</answer>": 18,
       "<answer>10</answer>": 6,
-      "<answer>5</answer>": 23,
+      "<answer>7</answer>": 1,
+      "<answer>0</answer>": 2,
+      "<answer>1</answer>": 2,
       "<answer>2</answer>": 1
     },
-    "coordination_index": 0.6160919540229886,
-    "normalised_coordination_index": 6.1609195402298855
+    "coordination_index": 0.39080459770114945,
+    "normalised_coordination_index": 3.9080459770114944
   },
   {
     "idx": "5",
     "variation-idx": "1",
     "prompt": "You have to split $100 with another person. You cannot communicate with this person. If you choose the same amount, you win that much money. There are four intuitive properties that make a choice desirable:\\n - uniqueness: it is the only object with a given prooperty.\\n - uniqueness complement: it is the only object *without* a given property.\\n - centrality: it is a central point around which a domain is symmetric.\\n - extremeness: it is an object that has the largest or the smallest feature among all the others.\\n Now, you have to prioritise the selection of the only object that satisfies one of the above mentioned properties, i.e., it is the only object with that property in the list. If there are multiple objects that satisfy one or more of the above mentioned properties, select the one that is unique, then extreme, then central, and eventually unique complement. Return the option you chose between <answer></answer> tags.",
     "responses": {
-      "<answer>50</answer>": 22,
-      "<answer>0</answer>": 2,
-      "<answer>100</answer>": 5,
-      "<answer>2</answer>": 1
+      "<answer>50</answer>": 18,
+      "<answer>77</answer>": 1,
+      "<answer>2</answer>": 2,
+      "<answer>0</answer>": 4,
+      "<answer>100</answer>": 5
     },
-    "coordination_index": 0.5563218390804597,
-    "normalised_coordination_index": 55.632183908045974
+    "coordination_index": 0.39080459770114945,
+    "normalised_coordination_index": 39.08045977011494
   },
   {
     "idx": "5",
     "variation-idx": "2",
     "prompt": "You have to split $1000 with another person. You cannot communicate with this person. If you choose the same amount, you win that much money. There are four intuitive properties that make a choice desirable:\\n - uniqueness: it is the only object with a given prooperty.\\n - uniqueness complement: it is the only object *without* a given property.\\n - centrality: it is a central point around which a domain is symmetric.\\n - extremeness: it is an object that has the largest or the smallest feature among all the others.\\n Now, you have to prioritise the selection of the only object that satisfies one of the above mentioned properties, i.e., it is the only object with that property in the list. If there are multiple objects that satisfy one or more of the above mentioned properties, select the one that is unique, then extreme, then central, and eventually unique complement. Return the option you chose between <answer></answer> tags.",
     "responses": {
+      "<answer>0</answer>": 1,
+      "<answer>500</answer>": 20,
       "<answer>1000</answer>": 6,
-      "<answer>0</answer>": 2,
-      "<answer>1</answer>": 2,
-      "<answer>500</answer>": 19,
-      "<answer>2</answer>": 1
+      "<answer>2</answer>": 2,
+      "<answer></answer>": 1
     },
-    "coordination_index": 0.432183908045977,
-    "normalised_coordination_index": 432.183908045977
+    "coordination_index": 0.4735632183908046,
+    "normalised_coordination_index": 473.5632183908046
   }
 ]

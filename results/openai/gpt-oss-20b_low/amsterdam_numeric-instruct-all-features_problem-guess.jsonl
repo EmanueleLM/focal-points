@@ -64,12 +64,13 @@
     "variation-idx": "0",
     "prompt": "In this task, you have to choose one of the following options. This is the list of options: 10, 10, 10, 9, 8, 7. You will earn the number of points shown on the option you choose. You have been paired with another LLM and you have to guess what it chooses. If you guess correctly, you will receive the number of points indicated on that option. If not, you will receive nothing for that task. There are four intuitive properties that make a choice desirable:\n - uniqueness: it is the only object with a given prooperty.\n - uniqueness complement: it is the only object *without* a given property.\n - centrality: it is a central point around which a domain is symmetric.\n - extremeness: it is an object that has the largest or the smallest feature among all the others.\n Now, you have to prioritise the selection of the only object that satisfies one of the above mentioned properties, i.e., it is the only object with that property in the list. If there are multiple objects that satisfy one or more of the above mentioned properties, select the one that is unique, then extreme, then central, and eventually unique complement. Return the option you chose, without the score, between <answer></answer> tags.",
     "responses": {
-      "<answer>7</answer>": 27,
-      "<answer>9</answer>": 2,
+      "<answer>7</answer>": 21,
+      "<answer>9</answer>": 7,
+      "<answer>8</answer>": 1,
       "<answer>10</answer>": 1
     },
-    "coordination_index": 0.8091954022988506,
-    "normalised_coordination_index": 3.2367816091954023
+    "coordination_index": 0.5310344827586206,
+    "normalised_coordination_index": 2.1241379310344826
   },
   {
     "idx": "TA3",
@@ -77,25 +78,23 @@
     "prompt": "In this task, you have to choose one of the following options. This is the list of options: 7, 8, 9, 10, 10, 10. You will earn the number of points shown on the option you choose. You have been paired with another LLM and you have to guess what it chooses. If you guess correctly, you will receive the number of points indicated on that option. If not, you will receive nothing for that task. There are four intuitive properties that make a choice desirable:\n - uniqueness: it is the only object with a given prooperty.\n - uniqueness complement: it is the only object *without* a given property.\n - centrality: it is a central point around which a domain is symmetric.\n - extremeness: it is an object that has the largest or the smallest feature among all the others.\n Now, you have to prioritise the selection of the only object that satisfies one of the above mentioned properties, i.e., it is the only object with that property in the list. If there are multiple objects that satisfy one or more of the above mentioned properties, select the one that is unique, then extreme, then central, and eventually unique complement. Return the option you chose, without the score, between <answer></answer> tags.",
     "responses": {
       "<answer>7</answer>": 25,
-      "<answer>9</answer>": 4,
-      "<answer>10</answer>": 1
+      "<answer>9</answer>": 1,
+      "<answer>10</answer>": 3,
+      "<answer>8</answer>": 1
     },
-    "coordination_index": 0.7034482758620689,
-    "normalised_coordination_index": 2.8137931034482757
+    "coordination_index": 0.696551724137931,
+    "normalised_coordination_index": 2.786206896551724
   },
   {
     "idx": "TA3",
     "variation-idx": "2",
     "prompt": "In this task, you have to choose one of the following options. This is the list of options: 10, 7, 8, 10, 9, 10. You will earn the number of points shown on the option you choose. You have been paired with another LLM and you have to guess what it chooses. If you guess correctly, you will receive the number of points indicated on that option. If not, you will receive nothing for that task. There are four intuitive properties that make a choice desirable:\n - uniqueness: it is the only object with a given prooperty.\n - uniqueness complement: it is the only object *without* a given property.\n - centrality: it is a central point around which a domain is symmetric.\n - extremeness: it is an object that has the largest or the smallest feature among all the others.\n Now, you have to prioritise the selection of the only object that satisfies one of the above mentioned properties, i.e., it is the only object with that property in the list. If there are multiple objects that satisfy one or more of the above mentioned properties, select the one that is unique, then extreme, then central, and eventually unique complement. Return the option you chose, without the score, between <answer></answer> tags.",
     "responses": {
-      "<answer>7</answer>": 23,
-      "<answer>9</answer>": 4,
-      "<answer>8</answer>": 1,
-      "<answer>analysiswe need to parse the instructions we have a list of options 10 7 8 10 9 10 so the list has six numbers with duplicates 10 appears three times 7 once 8 once 9 once we need to choose one option we are paired with another llm and we have to guess what it chooses if we guess correctly we get the number of points indicated on that option the properties uniqueness uniqueness complement centrality extremeness we need to prioritise the selection of the only object that satisfies one of the above mentioned properties ie it is the only object with that property in the list so we need to find the object that is unique in some property if there are multiple objects that satisfy one or more of the above mentioned properties select the one that is unique then extreme then central and eventually unique complement so we need to find the object that satisfies a property uniqueness is first priority then extremeness then centrality then unique complement wait the phrase select the one that is unique then extreme then central and eventually unique complement that seems like ordering first uniqueness if multiple choose the one that is unique then extremeness then centrality then unique complement but the previous line says if there are multiple objects that satisfy one or more of the above mentioned properties select the one that is unique then extreme then central and eventually unique complement which is confusing\n\nwe need to interpret we have to choose the only object that satisfies one of the above properties so we look for any property that has exactly one object satisfying it if multiple objects satisfy different properties we choose the one that is unique property then if no uniqueness choose the one that is extreme then central then unique complement but maybe its simpler we need to choose the option that has the highest priority property among the properties uniqueness is highest then extremeness then centrality then unique complement\n\nwe need to check each options properties\n\nlist indices maybe the options are numbers 10 appears 3 times 7 appears once 8 once 9 once so 7 8 9 each appear once so they are unique values but uniqueness property refers to object that is the only object with a given property but each of 7 8 9 are unique values so each of those is unique so they all satisfy uniqueness so multiple objects satisfy uniqueness then we need to choose the one that is unique wait each is unique value but unique property might refer to something else the property uniqueness it is the only object with a given property that could be unique value so 7 8 9 are unique 10 not unique so we have multiple unique objects 7 8 9 then the instruction if there are multiple objects that satisfy one or more of the above mentioned properties select the one that is unique then extreme then central and eventually unique complement this is ambiguous it might mean we first filter by uniqueness pick the one that is unique but if multiple then choose the one that is extreme among them if multiple still then central then unique complement but we need to interpret unique as a property but all 789 are unique so we look at extremeness among 789 extremeness largest or smallest feature among 789 the maximum is 9 minimum is 7 so extremes 7 and 9 so 7 is smallest 9 is largest so both are extremes so we have two extremes 7 and 9 so we need to choose one next property centrality among 789 central point could be 8 the central value in sorted list might be 8 so that would be central so maybe we choose 8 wait central property might apply to 8 but we need to apply priority uniqueness all 789 then extremeness 79 then centrality 8 but centrality is only for 8 so the order uniqueness > extremeness > centrality > unique complement but we need to choose the one that is unique then extreme then central and eventually unique complement the phrase select the one that is unique then extreme then central and eventually unique complement could mean choose the one that satisfies uniqueness property first if multiple choose the one that satisfies extremeness if multiple still choose the one that satisfies centrality if still multiple choose the one that satisfies unique complement so we need to apply properties in that order\n\nso we have 789 among those uniqueness satisfied by all so we need to break tie by extremeness 7 and 9 are extremes so 79 remain now tie again next property centrality which of 7 and 9 is central centrality would be 8 but 8 not in the tie set so 7 and 9 are not central so centrality not satisfied next property unique complement the only object without a given property that is weird uniqueness complement it is the only object without a given property for 7 and 9 is there a property that they are the only ones without hard probably 8 is unique complement but we dont have that so we might need to think differently\n\nmaybe we need to identify the object that satisfies one of the properties exclusively meaning that the object is the only one with that property among the list for example uniqueness 7 is the only one with value 7 8 only one with value 8 9 only one with value 9 so each of these satisfy uniqueness so we have three objects that each satisfy uniqueness property so we need to pick the one that satisfies uniqueness property that is unique that phrase select the one that is unique maybe means pick the one that is the unique object in the list overall but theres none maybe we need to pick the one with uniqueness property but also maybe also extreme lets examine extremeness the largest or smallest among all 9 is largest 7 is smallest so 9 and 7 are extremes which one is the only one that satisfies extremeness both 9 and 7 so still tie\n\ncentrality the central point around which a domain is symmetric might refer to median the median of list 107810910 sorted 789101010 median would be average of 3rd and 4th 910/295 but central value maybe 10 not sure\n\nhowever we might interpret centrality as the value that is central in the set of unique values unique values are 78910 the central among them could be 85 but central property maybe refers to the value that is the middle of the sorted list of all options the sorted list is 789101010 the central point could be 9 or 10 not sure\n\nalternatively maybe the central property refers to the element that is centered between the extremes 7 and 10 the midpoint is 710/285 the closest is 8 or 9 hmm\n\nwe need to decide the instruction if there are multiple objects that satisfy one or more of the above mentioned properties select the one that is unique then extreme then central and eventually unique complement this might mean we should look for objects that satisfy any of the properties then choose among them first pick the one that satisfies uniqueness property if more than one then choose the one that satisfies extremeness property if still more than one choose the one that satisfies centrality property if still more than one choose the one that satisfies unique complement property but we also need to consider that the priority is uniqueness > extremeness > central > unique complement so we need to find the object that satisfies uniqueness property but also extreme or central or unique complement wait select the one that is unique then extreme then central and eventually unique complement it might mean first choose the object that satisfies uniqueness property if there are multiple then choose the one that satisfies extremeness property if still multiple choose the one that satisfies centrality property if still multiple choose the one that satisfies unique complement property so the priority order is uniqueness > extremeness > centrality > unique complement so we need to find which objects satisfy uniqueness property 789 among those we need to see which also satisfy extremeness 7 and 9 satisfy extremeness so we have 7 and 9 among those which satisfy centrality none then unique complement maybe 8 but 8 is not in extremeness set so we end up with 7 or 9 which one we need to break tie further maybe we consider the property that they satisfy 7 is smallest 9 is largest extremeness both but maybe we consider extremeness priority maybe choose the one that is extreme but not both but they both are extremes so ambiguous\n\nperhaps the intended answer is 7 because 7 is the smallest extreme but 9 is also extreme largest which is more extreme largest vs smallest maybe largest not sure\n\nlets examine extremeness it is an object that has the largest or the smallest feature among all the others so both 7 smallest and 9 largest satisfy extremeness so tie again\n\nmaybe centrality 8 is central unique but 8 is not extreme but also unique so 8 satisfies uniqueness and centrality but 8 does not satisfy extremeness but the priority is uniqueness > extremeness > centrality but 8 satisfies uniqueness and centrality but not extremeness so among uniqueness property we have 789 among them we look for extremeness 7 and 9 so 8 is eliminated then we look for centrality among 7 and 9 none so we move to unique complement maybe 8 but 8 is not in set so we are stuck\n\nmaybe we misinterpret the instruction might mean select the one that is unique ie the only object with that property then among those that are unique select the one that is extreme then central then unique complement but that doesnt make sense\n\nwait maybe we should interpret that we want to choose the object that has a property that no other object has that is uniqueness property the unique complement property maybe the only one without a given property but we need to prioritise the selection of the only object that satisfies one of the above mentioned properties so we need to find the only object that satisfies any of the four properties for example if there is an object that is the only one that is extreme we choose that if there is an object that is the only one that is central we choose that if there is an object that is the only one that is unique like the only one with a unique value but uniqueness property maybe not about values but about being unique in some other sense\n\nlets think in the list we have 10 repeated thrice 789 each once so we have 3 unique values 789 10 appears thrice so maybe the only object that is unique in value is 789 but all of them are unique so no single one so maybe the property uniqueness complement might be the only object that is not unique that would be 10 since its repeated so 10 might be the only object that is not unique but the property says it is the only object without a given property so if we consider unique property as being unique value then 10 is the only one without that property so 10 satisfies uniqueness complement property so 10 is the only object without a unique value so 10 satisfies uniqueness complement property\n\nnow we have multiple objects that satisfy one or more of the properties 789 satisfy uniqueness 10 satisfies uniqueness complement also 7 and 9 satisfy extremeness 8 maybe central lets evaluate centrality property central point around which a domain is symmetric the domain of values is 78910 the symmetric center maybe 85 but 8 is close to center 9 is also close but 8 might be considered central not sure\n\nbut we need to choose one object that is the only one that satisfies one of the properties which property has only one object satisfying it lets list\n\n uniqueness 789 3 objects\n uniqueness complement 10 1 object\n extremeness 7 and 9 2 objects\n centrality maybe 8 1 object\n\nif centrality is only 8 then 8 satisfies centrality alone so 8 is the only one with centrality property so we have two properties that have unique objects uniqueness complement 10 and centrality 8 which one has higher priority the order uniqueness > extremeness > centrality > uniqueness complement wait the instruction says select the one that is unique then extreme then central and eventually unique complement that suggests uniqueness property is highest priority then extremeness then centrality then uniqueness complement but we need to choose the only object that satisfies one of the above mentioned properties actually unique property is not the same as uniqueness property it says uniqueness it is the only object with a given property that means the property of being unique but uniqueness complement is the only object without a given property so unique property is not the same as uniqueness property wait they are same this is confusing\n\nlets parse they listed four intuitive properties uniqueness uniqueness complement centrality extremeness so uniqueness property is that the object is the only object with a given property uniqueness complement property is that it is the only object without a given property so they are separate properties\n\nthus we have four properties to consider we need to prioritize selection of the only object that satisfies one of the above mentioned properties ie it is the only object with that property in the list so we need to find the property that has only one object satisfying it then choose that object if multiple objects satisfy one or more of the properties we use the order unique then extreme then central then unique complement actually the phrase select the one that is unique then extreme then central and eventually unique complement so likely the priority order is uniqueness property > extremeness > centrality > uniqueness complement\n\nthus we need to find the object that satisfies the highest priority property lets evaluate each property\n\n uniqueness property object is the only one with a given property but what property the property might be something like value but we need to find an object that is the only one with a given property in the list 789 are each unique values so they satisfy uniqueness property so multiple objects satisfy uniqueness property so we need to break tie\n\n extremeness property the object that has largest or smallest feature among all the others 7 and 9 satisfy extremeness so 7 and 9 also satisfy extremeness property so multiple objects satisfy extremeness property as well\n\n centrality property the object that is central point around which a domain is symmetric which is 8 probably 8 so 8 satisfies centrality property so 8 is the only one that satisfies centrality\n\n uniqueness complement property the object that is the only one without a given property which property maybe unique property the only one that is not unique that would be 10 so 10 satisfies uniqueness complement property so 10 is the only one with uniqueness complement property\n\nthus we have 3 unique objects 8 centrality 10 uniqueness complement 7 and 9 also have uniqueness and extremeness properties\n\nwe need to pick the object that satisfies the highest priority property among those that are unique the unique property is centrality for 8 the uniqueness complement property is for 10 but uniqueness property is higher priority than extremeness but 8 is centrality which is lower priority than uniqueness property but we need to see if theres any object that satisfies uniqueness property yes 789 so we have objects that satisfy uniqueness property so the priority is uniqueness property among those we need to pick the one that is unique wait we already have multiple objects satisfying uniqueness property then we need to choose from among them based on next priority extremeness among uniqueness property objects which also satisfy extremeness 7 and 9 so we narrow to 7 and 9 next priority centrality among 7 and 9 none satisfy centrality next uniqueness complement none satisfy uniqueness complement so we still have tie between 7 and 9 which to pick maybe we choose the one that is extreme both are extremes we might need to pick the one that is the largest or maybe we need to pick the one that is the extreme but also unique both are unique so ambiguous\n\nalternatively maybe we should consider that centrality property for 8 is unique so 8 is chosen because it is the only one that satisfies centrality property which is the next priority after uniqueness property but we need to use uniqueness property first but the phrase select the one that is unique then extreme then central and eventually unique complement might mean we first look for the object that satisfies uniqueness property if only one choose it if multiple then look for the one that satisfies extremeness property if still multiple then look for the one that satisfies centrality if still multiple then look for the one that satisfies uniqueness complement but we already saw multiple for uniqueness property so we go to extremeness 7 and 9 then centrality none then uniqueness complement none so we are stuck maybe we need to break tie by looking at the property that the object is the only one with that property but 7 and 9 both satisfy uniqueness property and extremeness property but maybe we need to consider the property unique as being the only object that satisfies uniqueness property but there are three so no\n\nmaybe we need to interpret differently the instruction select the one that is unique then extreme then central and eventually unique complement might mean that we should choose the property that is unique then if none choose the extreme property etc so we need to find the property that is unique only one object has</answer>": 1,
-      "<answer>10</answer>": 1
+      "<answer>7</answer>": 24,
+      "<answer>9</answer>": 6
     },
-    "coordination_index": 0.5954022988505747,
-    "normalised_coordination_index": 2.381609195402299
+    "coordination_index": 0.6689655172413793,
+    "normalised_coordination_index": 2.6758620689655173
   },
   {
     "idx": "TA4",
@@ -143,23 +142,22 @@
     "variation-idx": "1",
     "prompt": "In this task, you have to choose one of the following options. This is the list of options: 9, 9, 10, 10, 10, 10. You will earn the number of points shown on the option you choose. You have been paired with another LLM and you have to guess what it chooses. If you guess correctly, you will receive the number of points indicated on that option. If not, you will receive nothing for that task. There are four intuitive properties that make a choice desirable:\n - uniqueness: it is the only object with a given prooperty.\n - uniqueness complement: it is the only object *without* a given property.\n - centrality: it is a central point around which a domain is symmetric.\n - extremeness: it is an object that has the largest or the smallest feature among all the others.\n Now, you have to prioritise the selection of the only object that satisfies one of the above mentioned properties, i.e., it is the only object with that property in the list. If there are multiple objects that satisfy one or more of the above mentioned properties, select the one that is unique, then extreme, then central, and eventually unique complement. Return the option you chose, without the score, between <answer></answer> tags.",
     "responses": {
-      "<answer>9</answer>": 10,
-      "<answer>10</answer>": 20
+      "<answer>10</answer>": 26,
+      "<answer>9</answer>": 4
     },
-    "coordination_index": 0.5402298850574713,
-    "normalised_coordination_index": 1.0804597701149425
+    "coordination_index": 0.7609195402298851,
+    "normalised_coordination_index": 1.5218390804597701
   },
   {
     "idx": "TA5",
     "variation-idx": "2",
     "prompt": "In this task, you have to choose one of the following options. This is the list of options: 9, 10, 9, 10, 10, 10. You will earn the number of points shown on the option you choose. You have been paired with another LLM and you have to guess what it chooses. If you guess correctly, you will receive the number of points indicated on that option. If not, you will receive nothing for that task. There are four intuitive properties that make a choice desirable:\n - uniqueness: it is the only object with a given prooperty.\n - uniqueness complement: it is the only object *without* a given property.\n - centrality: it is a central point around which a domain is symmetric.\n - extremeness: it is an object that has the largest or the smallest feature among all the others.\n Now, you have to prioritise the selection of the only object that satisfies one of the above mentioned properties, i.e., it is the only object with that property in the list. If there are multiple objects that satisfy one or more of the above mentioned properties, select the one that is unique, then extreme, then central, and eventually unique complement. Return the option you chose, without the score, between <answer></answer> tags.",
     "responses": {
-      "<answer>10</answer>": 22,
-      "<answer>9</answer>": 7,
-      "<answer>2</answer>": 1
+      "<answer>10</answer>": 19,
+      "<answer>9</answer>": 11
     },
-    "coordination_index": 0.5793103448275863,
-    "normalised_coordination_index": 1.1586206896551725
+    "coordination_index": 0.5195402298850574,
+    "normalised_coordination_index": 1.0390804597701149
   },
   {
     "idx": "TA6",
@@ -177,11 +175,11 @@
     "variation-idx": "1",
     "prompt": "In this task, you have to choose one of the following options. This is the list of options: 9, 10. You will earn the number of points shown on the option you choose. You have been paired with another LLM and you have to guess what it chooses. If you guess correctly, you will receive the number of points indicated on that option. If not, you will receive nothing for that task. There are four intuitive properties that make a choice desirable:\n - uniqueness: it is the only object with a given prooperty.\n - uniqueness complement: it is the only object *without* a given property.\n - centrality: it is a central point around which a domain is symmetric.\n - extremeness: it is an object that has the largest or the smallest feature among all the others.\n Now, you have to prioritise the selection of the only object that satisfies one of the above mentioned properties, i.e., it is the only object with that property in the list. If there are multiple objects that satisfy one or more of the above mentioned properties, select the one that is unique, then extreme, then central, and eventually unique complement. Return the option you chose, without the score, between <answer></answer> tags.",
     "responses": {
-      "<answer>10</answer>": 23,
-      "<answer>9</answer>": 7
+      "<answer>10</answer>": 13,
+      "<answer>9</answer>": 17
     },
-    "coordination_index": 0.6298850574712643,
-    "normalised_coordination_index": 1.2597701149425287
+    "coordination_index": 0.49195402298850577,
+    "normalised_coordination_index": 0.9839080459770115
   },
   {
     "idx": "TA6",
@@ -199,65 +197,66 @@
     "variation-idx": "0",
     "prompt": "In this task, you have to choose one of the following options. This is the list of options: 10, 10, 10, 9, 9, 9. You will earn the number of points shown on the option you choose. You have been paired with another LLM and you have to guess what it chooses. If you guess correctly, you will receive the number of points indicated on that option. If not, you will receive nothing for that task. There are four intuitive properties that make a choice desirable:\n - uniqueness: it is the only object with a given prooperty.\n - uniqueness complement: it is the only object *without* a given property.\n - centrality: it is a central point around which a domain is symmetric.\n - extremeness: it is an object that has the largest or the smallest feature among all the others.\n Now, you have to prioritise the selection of the only object that satisfies one of the above mentioned properties, i.e., it is the only object with that property in the list. If there are multiple objects that satisfy one or more of the above mentioned properties, select the one that is unique, then extreme, then central, and eventually unique complement. Return the option you chose, without the score, between <answer></answer> tags.",
     "responses": {
-      "<answer>10</answer>": 30
+      "<answer>10</answer>": 29,
+      "<answer></answer>": 1
     },
-    "coordination_index": 1.0,
-    "normalised_coordination_index": 2.0
+    "coordination_index": 0.9333333333333333,
+    "normalised_coordination_index": 1.8666666666666667
   },
   {
     "idx": "TA7",
     "variation-idx": "1",
     "prompt": "In this task, you have to choose one of the following options. This is the list of options: 9, 9, 9, 10, 10, 10. You will earn the number of points shown on the option you choose. You have been paired with another LLM and you have to guess what it chooses. If you guess correctly, you will receive the number of points indicated on that option. If not, you will receive nothing for that task. There are four intuitive properties that make a choice desirable:\n - uniqueness: it is the only object with a given prooperty.\n - uniqueness complement: it is the only object *without* a given property.\n - centrality: it is a central point around which a domain is symmetric.\n - extremeness: it is an object that has the largest or the smallest feature among all the others.\n Now, you have to prioritise the selection of the only object that satisfies one of the above mentioned properties, i.e., it is the only object with that property in the list. If there are multiple objects that satisfy one or more of the above mentioned properties, select the one that is unique, then extreme, then central, and eventually unique complement. Return the option you chose, without the score, between <answer></answer> tags.",
     "responses": {
-      "<answer>10</answer>": 19,
-      "<answer>9</answer>": 11
+      "<answer>10</answer>": 17,
+      "<answer>9</answer>": 13
     },
-    "coordination_index": 0.5195402298850574,
-    "normalised_coordination_index": 1.0390804597701149
+    "coordination_index": 0.49195402298850577,
+    "normalised_coordination_index": 0.9839080459770115
   },
   {
     "idx": "TA7",
     "variation-idx": "2",
     "prompt": "In this task, you have to choose one of the following options. This is the list of options: 9, 10, 9, 10, 9, 10. You will earn the number of points shown on the option you choose. You have been paired with another LLM and you have to guess what it chooses. If you guess correctly, you will receive the number of points indicated on that option. If not, you will receive nothing for that task. There are four intuitive properties that make a choice desirable:\n - uniqueness: it is the only object with a given prooperty.\n - uniqueness complement: it is the only object *without* a given property.\n - centrality: it is a central point around which a domain is symmetric.\n - extremeness: it is an object that has the largest or the smallest feature among all the others.\n Now, you have to prioritise the selection of the only object that satisfies one of the above mentioned properties, i.e., it is the only object with that property in the list. If there are multiple objects that satisfy one or more of the above mentioned properties, select the one that is unique, then extreme, then central, and eventually unique complement. Return the option you chose, without the score, between <answer></answer> tags.",
     "responses": {
-      "<answer>10</answer>": 21,
-      "<answer>9</answer>": 9
+      "<answer>10</answer>": 23,
+      "<answer>9</answer>": 7
     },
-    "coordination_index": 0.5655172413793104,
-    "normalised_coordination_index": 1.1310344827586207
+    "coordination_index": 0.6298850574712643,
+    "normalised_coordination_index": 1.2597701149425287
   },
   {
     "idx": "TA8",
     "variation-idx": "0",
     "prompt": "In this task, you have to choose one of the following options. This is the list of options: 10, 1. You will earn the number of points shown on the option you choose. You have been paired with another LLM and you have to guess what it chooses. If you guess correctly, you will receive the number of points indicated on that option. If not, you will receive nothing for that task. There are four intuitive properties that make a choice desirable:\n - uniqueness: it is the only object with a given prooperty.\n - uniqueness complement: it is the only object *without* a given property.\n - centrality: it is a central point around which a domain is symmetric.\n - extremeness: it is an object that has the largest or the smallest feature among all the others.\n Now, you have to prioritise the selection of the only object that satisfies one of the above mentioned properties, i.e., it is the only object with that property in the list. If there are multiple objects that satisfy one or more of the above mentioned properties, select the one that is unique, then extreme, then central, and eventually unique complement. Return the option you chose, without the score, between <answer></answer> tags.",
     "responses": {
-      "<answer>10</answer>": 25,
-      "<answer>1</answer>": 5
+      "<answer>10</answer>": 26,
+      "<answer>1</answer>": 4
     },
-    "coordination_index": 0.7126436781609196,
-    "normalised_coordination_index": 1.4252873563218391
+    "coordination_index": 0.7609195402298851,
+    "normalised_coordination_index": 1.5218390804597701
   },
   {
     "idx": "TA8",
     "variation-idx": "1",
     "prompt": "In this task, you have to choose one of the following options. This is the list of options: 1, 10. You will earn the number of points shown on the option you choose. You have been paired with another LLM and you have to guess what it chooses. If you guess correctly, you will receive the number of points indicated on that option. If not, you will receive nothing for that task. There are four intuitive properties that make a choice desirable:\n - uniqueness: it is the only object with a given prooperty.\n - uniqueness complement: it is the only object *without* a given property.\n - centrality: it is a central point around which a domain is symmetric.\n - extremeness: it is an object that has the largest or the smallest feature among all the others.\n Now, you have to prioritise the selection of the only object that satisfies one of the above mentioned properties, i.e., it is the only object with that property in the list. If there are multiple objects that satisfy one or more of the above mentioned properties, select the one that is unique, then extreme, then central, and eventually unique complement. Return the option you chose, without the score, between <answer></answer> tags.",
     "responses": {
-      "<answer>10</answer>": 19,
-      "<answer>1</answer>": 11
+      "<answer>10</answer>": 18,
+      "<answer>1</answer>": 12
     },
-    "coordination_index": 0.5195402298850574,
-    "normalised_coordination_index": 1.0390804597701149
+    "coordination_index": 0.503448275862069,
+    "normalised_coordination_index": 1.006896551724138
   },
   {
     "idx": "TA8",
     "variation-idx": "2",
     "prompt": "In this task, you have to choose one of the following options. This is the list of options: 1, 10. You will earn the number of points shown on the option you choose. You have been paired with another LLM and you have to guess what it chooses. If you guess correctly, you will receive the number of points indicated on that option. If not, you will receive nothing for that task. There are four intuitive properties that make a choice desirable:\n - uniqueness: it is the only object with a given prooperty.\n - uniqueness complement: it is the only object *without* a given property.\n - centrality: it is a central point around which a domain is symmetric.\n - extremeness: it is an object that has the largest or the smallest feature among all the others.\n Now, you have to prioritise the selection of the only object that satisfies one of the above mentioned properties, i.e., it is the only object with that property in the list. If there are multiple objects that satisfy one or more of the above mentioned properties, select the one that is unique, then extreme, then central, and eventually unique complement. Return the option you chose, without the score, between <answer></answer> tags.",
     "responses": {
-      "<answer>10</answer>": 19,
-      "<answer>1</answer>": 11
+      "<answer>10</answer>": 18,
+      "<answer>1</answer>": 12
     },
-    "coordination_index": 0.5195402298850574,
-    "normalised_coordination_index": 1.0390804597701149
+    "coordination_index": 0.503448275862069,
+    "normalised_coordination_index": 1.006896551724138
   },
   {
     "idx": "TA9",
