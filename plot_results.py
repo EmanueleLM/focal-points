@@ -372,8 +372,8 @@ if __name__ == "__main__":
     #                 plt.bar(x + width*(idx), current_data_llm, width, label=model_name, color=color, edgecolor="black")
 
     #             plt.xticks(x, tasks)
-    #             plt.title(f"{d_name.capitalize()} {l.capitalize()}")
-    #             plt.ylabel("Normalised Coordination Index (NCI)")
+    #             plt.title(f"{d_name.capitalize()} {l.capitalize()}", fontsize=14)
+    #             plt.ylabel("Normalised Coordination Index (NCI)", fontsize=12)
     #             plt.legend(bbox_to_anchor=(1., 1.))
     #             plt.tight_layout()
     #             plt.grid(axis='y', alpha=0.3)
@@ -456,8 +456,8 @@ if __name__ == "__main__":
                     plt.bar(x + width*(idx), current_data_llm, width, label=model_name, color=color, edgecolor="black")
 
                 plt.xticks(x, tasks)
-                plt.title(f"{d_name.capitalize()} {l.capitalize()}")
-                plt.ylabel("Normalised Coordination Index (NCI)")
+                plt.title(f"{d_name.capitalize()} {l.capitalize()}", fontsize=14)
+                plt.ylabel("Normalised Coordination Index (NCI)", fontsize=12)
                 # plt.legend(bbox_to_anchor=(1., 1.))
                 plt.tight_layout()
                 plt.grid(axis='y', alpha=0.3)
@@ -611,8 +611,8 @@ if __name__ == "__main__":
                 )
 
                 plt.xticks(x, tasks)
-                plt.title(f"{d_name.capitalize()} {l.capitalize()}")
-                plt.ylabel("Normalised Coordination Index (NCI)")
+                plt.title(f"{d_name.capitalize()} {l.capitalize()}", fontsize=14)
+                plt.ylabel("Normalised Coordination Index (NCI)", fontsize=12)
                 # plt.legend(bbox_to_anchor=(1.0, 1.0))
                 plt.tight_layout()
                 plt.grid(axis="y", alpha=0.3)
