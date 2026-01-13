@@ -327,11 +327,13 @@ def compute_payoff(
     player1_total_payoff, player2_total_payoff = 0.0, 0.0
     overall_player1_payoff = {i:[] for i in range(1,11)}  # Store payoffs per game type
     overall_player2_payoff = {i:[] for i in range(1,11)}  # Store payoffs per game type
+    overall_assignments = {}
     for game_num in range(1,11):
         count = 0
         player1_payoff, player2_payoff = 0.0, 0.0
         total_choices, suboptimal_choices = 0, 0
         pay_off_left = 0.0
+        overall_assignments[game_num] = []
         for f1, f2 in sampled_pairs:
             sign_f1 = game_signature(os.path.join(folder_path_player1, f1))
             sign_f2 = game_signature(os.path.join(folder_path_player2, f2))
@@ -496,6 +498,9 @@ def compute_payoff(
                     game_payoff_p2 -= 0.2 * int(r2_v[-2].strip())
                 total_choices += 1
                 
+                # Overall assignments
+                overall_assignments[game_num].append((r1_t, r2_t))
+                
             overall_player1_payoff[game_num].append(game_payoff_p1)
             overall_player2_payoff[game_num].append(game_payoff_p2)
             count += 1
@@ -514,7 +519,24 @@ def compute_payoff(
         print(f"\tPayoff ratio (P1/P2): {(player1_payoff/count)/(player2_payoff/count) if player2_payoff/count != 0 else 'inf'}")
         print(f"\tPayoff ratio (P2/P1): {(player2_payoff/count)/(player1_payoff/count) if player1_payoff/count != 0 else 'inf'}")
         print(f"[Debug] Missing match with LLMs: {llm_missing_match_exception}")
+    
+    # Compute the normalised coordination index (NCI) of each game and the average NCI
+    ncis = []
+    for game_num in range(1,11):
+        denominator = len(overall_assignments[game_num]) * (len(overall_assignments[game_num]) - 1)
+        m1 = m2 = m3 = 0
+        for assign in overall_assignments[game_num]:
+            a1, a2 = assign
+            if a1 == a2 == "r1":
+                m1 += 1
+            elif a1 == a2 == "r2":
+                m2 += 1
+                
+        nci = 2 * (m1 * (m1 - 1) + m2 * (m2 - 1) + m3 * (m3 - 1)) / denominator if denominator > 0 else -1.
+        ncis.append(nci)
+
     print(f"Total payoff - across games - Player 1: {player1_total_payoff/(count)}, Player 2: {player2_total_payoff/(count)}")
+    print(f"Average NCI across games: {np.mean(ncis)} ± {np.std(ncis)}")
     print("--------------------------------------------------")
 
     return {
@@ -526,6 +548,8 @@ def compute_payoff(
         "percentage_suboptimal_choices": percentage_suboptimal_choices,
         "total_choices": total_choices,
         "pay_off_left": pay_off_left,
+        "NCI-per-game": ncis,
+        "NCI": f"{np.mean(ncis)} ± {np.std(ncis)}",
         "overall_payoff_p1": overall_player1_payoff,
         "overall_payoff_p2": overall_player2_payoff
     }
