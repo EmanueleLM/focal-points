@@ -163,7 +163,7 @@ def player_files(folder_path: str, file_prefix: str = "") -> List[str]:
     for f in files:
         if file_prefix in f:
             player_files.append(f)
-    return player_files
+    return sorted(player_files)
 
 def sample_pairs(
     player1_files: List[str], 
@@ -189,7 +189,9 @@ def plot_pretty_boxplot(
     data2: List[float],
     label1: str = "Player 1",
     label2: str = "Player 2",
-    save_path: str = ""
+    save_path: str = "",
+    annotate_stats: bool = True,
+    stats_decimals: int = 2,
 ):
     # --- Font setup ---
     rcParams['font.family'] = 'Times New Roman'
@@ -234,9 +236,9 @@ def plot_pretty_boxplot(
 
         # Strong mean and median markers
         ax.plot([mean_v, mean_v], [y_min + pad, y_max - pad],
-                color="#57EB3D", linewidth=2.6, zorder=5)
+                color="#57EB3D", linewidth=1.3, zorder=5)
         ax.plot([median_v, median_v], [y_min + pad, y_max - pad],
-                color="red", linewidth=2.6, zorder=6)
+                color="red", linewidth=1.3, zorder=6)
 
         # Add a subtle marker (dot) for mean
         ax.scatter(mean_v, (y_min + y_max)/2, 
@@ -244,6 +246,28 @@ def plot_pretty_boxplot(
                    edgecolor="black", 
                    zorder=7, 
                    s=40)
+        if annotate_stats:
+            text_margin = 0.2 * box_height
+            mean_text = f"{mean_v:.{stats_decimals}f}"
+            median_text = f"{median_v:.{stats_decimals}f}"
+            ax.text(
+                mean_v,
+                y_max + text_margin,
+                mean_text,
+                color="#57EB3D",
+                fontsize=9,
+                ha="center",
+                va="bottom",
+            )
+            ax.text(
+                median_v,
+                y_min - text_margin,
+                median_text,
+                color="red",
+                fontsize=9,
+                ha="center",
+                va="top",
+            )
 
     # --- Axis styling ---
     ax.set_yticks([1, 2])
@@ -262,8 +286,8 @@ def plot_pretty_boxplot(
     ax.set_xlim(min_v - 0.1 * rng, max_v + 0.1 * rng)
 
     # --- Legend ---
-    ax.plot([], [], color="#57EB3D", linewidth=2.5, label="Mean")
-    ax.plot([], [], color="red", linewidth=2.5, label="Median")
+    ax.plot([], [], color="#57EB3D", linewidth=1.3, label="Mean")
+    ax.plot([], [], color="red", linewidth=1.3, label="Median")
     ax.legend(loc="upper right", frameon=True, fontsize=11)
 
     plt.tight_layout()
@@ -553,6 +577,13 @@ def parse_args():
         default=False,
         help="Sample with replacement (default: False)",
     )
+
+    parser.add_argument(
+        "--seed",
+        type=int,
+        default=None,
+        help="Random seed for reproducibility (default: None)",
+    )
     
     parser.add_argument(
         "--file-player-as-llm",
@@ -610,10 +641,15 @@ if __name__ == "__main__":
     strategy = args.strategy
     num_samples = args.num_samples
     sample_with_replacement = args.sample_with_replacement
+    seed = args.seed
 
     LLM_AS_P1 = LLM_AS_P2 = args.file_player_as_llm
 
-    print(f"Running sampling with strategy={strategy}, num_samples={num_samples}, sample_with_replacement={sample_with_replacement}")
+    if seed is not None:
+        random.seed(seed)
+        np.random.seed(seed)
+
+    print(f"Running sampling with strategy={strategy}, num_samples={num_samples}, sample_with_replacement={sample_with_replacement}, seed={seed}")
 
     # Retrieve all the games played by both players
     player1_files = player_files(FOLDER_PLAYER1_DATA, "BT")

@@ -16,9 +16,10 @@ STRATEGIES=(
 
 NUM_SAMPLES=100
 SAMPLE_WITH_REPLACEMENT=False
+SEED=42
 for STRATEGY in "${STRATEGIES[@]}"; do
-    echo "[bash] Running bargaining table analysis for strategy: $STRATEGY, num_samples: $NUM_SAMPLES, sample_with_replacement: $SAMPLE_WITH_REPLACEMENT"
-    python3 bargaining_table.py --strategy "$STRATEGY" --num-samples "$NUM_SAMPLES" --sample-with-replacement "$SAMPLE_WITH_REPLACEMENT"
+    echo "[bash] Running bargaining table analysis for strategy: $STRATEGY, num_samples: $NUM_SAMPLES, sample_with_replacement: $SAMPLE_WITH_REPLACEMENT, seed: $SEED"
+    python3 bargaining_table.py --strategy "$STRATEGY" --num-samples "$NUM_SAMPLES" --sample-with-replacement "$SAMPLE_WITH_REPLACEMENT" --seed "$SEED"
 done
 
 
@@ -61,6 +62,7 @@ done
 STRATEGY="p2_llm"
 NUM_SAMPLES=100
 SAMPLE_WITH_REPLACEMENT=False
+SEED=42
 
 # Create folders for results
 mkdir -p "./data/bargaining_table_llms/${color}/${model}-${reasoning}"
@@ -72,7 +74,7 @@ for color in "${COLORS[@]}"; do
         for reasoning in "${REASONING[@]}"; do
             for file in "${FILES[@]}"; do
             PATH_FILE="./data/bargaining_table_llms/${color}/${model}-${reasoning}/${file}_${color}.jsonl"
-            python3 bargaining_table.py --strategy "$STRATEGY" --num-samples "$NUM_SAMPLES" --sample-with-replacement "$SAMPLE_WITH_REPLACEMENT" --file-player-as-llm "$PATH_FILE"
+            python3 bargaining_table.py --strategy "$STRATEGY" --num-samples "$NUM_SAMPLES" --sample-with-replacement "$SAMPLE_WITH_REPLACEMENT" --seed "$SEED" --file-player-as-llm "$PATH_FILE"
             done
         done
     done
