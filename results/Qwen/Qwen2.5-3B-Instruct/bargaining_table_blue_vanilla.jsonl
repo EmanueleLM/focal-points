@@ -1,0 +1,140 @@
+[
+  {
+    "idx": "game1",
+    "variation-idx": "0",
+    "prompt": "Bargaining Table is a tacit coordination game played on a 9x9 board with two special squares, one representing each player (e.g., a blue square and a yellow square). Several discs are scattered on the board, and each disc has a numeric value. Without communicating and without knowing the other player's choices, each player must decide, for every disc, which of the two player-squares the disc should be assigned to. A disc's value is awarded only if both players assign that disc to the same player: if both assign it to Blue, Blue receives the disc's value (and Yellow receives nothing for that disc), and if both assign it to Yellow, Yellow receives the disc's value (and Blue receives nothing for that disc). If the two players assign the same disc to different players, then both players are penalized by losing 20% of that disc's value. The total score for each player is the sum of outcomes over all discs.\nThe coordinates are written as (row, column) on a 9x9 grid, where row 1 is the top row and column 1 is the leftmost column. You will have to play that game in the following state:\nYou are the Blue player, and your square is located at (5, 2). The other player's square (Yellow) is located at (5, 8). There are five discs on the board: a value-3 disc at (1, 6), a value-1 disc at (1, 7), a value-3 disc at (4, 4), a value-3 disc at (8, 1), and a value-2 disc at (9, 7).\nInside <answer></answer> tags, output only a JSON object where each key is a disc coordinate in the form \"(row,col)\" and each value is either \"blue\" or \"yellow\", indicating which player you assign that disc to. Include every disc exactly once and no extra text. For example: <answer>{\"(row,col)\":\"blue\",\"(row,col)\":\"yellow\"}</answer>. Start the solution below.",
+    "responses": {
+      "<answer>16 blue 17 blue 44 blue 81 blue 97 yellow</answer>": 8,
+      "<answer>16 blue 17 yellow 44 blue 81 blue 97 yellow</answer>": 9,
+      "<answer>\n16blue\n17yellow\n44blue\n81blue\n97yellow\n</answer>": 7,
+      "<answer>\n16blue\n17blue\n44blue\n81blue\n97yellow\n</answer>": 2,
+      "<answer>16 blue 17 yellow 44 blue 81 yellow 97 blue</answer>": 2,
+      "<answer>\n\n  16 blue\n  17 yellow\n  44 blue\n  81 blue\n  97 yellow\n\n</answer>": 1,
+      "<answer>16 blue 17 yellow 44 blue 81 yellow 97 yellow</answer>": 1
+    },
+    "coordination_index": 0.2,
+    "normalised_coordination_index": 0.2
+  },
+  {
+    "idx": "game2",
+    "variation-idx": "0",
+    "prompt": "Bargaining Table is a tacit coordination game played on a 9x9 board with two special squares, one representing each player (e.g., a blue square and a yellow square). Several discs are scattered on the board, and each disc has a numeric value. Without communicating and without knowing the other player's choices, each player must decide, for every disc, which of the two player-squares the disc should be assigned to. A disc's value is awarded only if both players assign that disc to the same player: if both assign it to Blue, Blue receives the disc's value (and Yellow receives nothing for that disc), and if both assign it to Yellow, Yellow receives the disc's value (and Blue receives nothing for that disc). If the two players assign the same disc to different players, then both players are penalized by losing 20% of that disc's value. The total score for each player is the sum of outcomes over all discs.\nThe coordinates are written as (row, column) on a 9x9 grid, where row 1 is the top row and column 1 is the leftmost column. You will have to play that game in the following state:\nYou are the Blue player, and your square is located at (5, 2). The other player's square (Yellow) is located at (5, 8). There are four discs on the board: a value-4 disc at (1, 8), a value-3 disc at (6, 4), a value-3 disc at (7, 2), and a value-2 disc at (7, 6).\nInside <answer></answer> tags, output only a JSON object where each key is a disc coordinate in the form \"(row,col)\" and each value is either \"blue\" or \"yellow\", indicating which player you assign that disc to. Include every disc exactly once and no extra text. For example: <answer>{\"(row,col)\":\"blue\",\"(row,col)\":\"yellow\"}</answer>. Start the solution below.",
+    "responses": {
+      "<answer>18 blue 64 blue 72 blue 76 yellow</answer>": 24,
+      "<answer>18 blue 64 yellow 72 blue 76 yellow</answer>": 6
+    },
+    "coordination_index": 0.6689655172413793,
+    "normalised_coordination_index": 0.6689655172413793
+  },
+  {
+    "idx": "game3",
+    "variation-idx": "0",
+    "prompt": "Bargaining Table is a tacit coordination game played on a 9x9 board with two special squares, one representing each player (e.g., a blue square and a yellow square). Several discs are scattered on the board, and each disc has a numeric value. Without communicating and without knowing the other player's choices, each player must decide, for every disc, which of the two player-squares the disc should be assigned to. A disc's value is awarded only if both players assign that disc to the same player: if both assign it to Blue, Blue receives the disc's value (and Yellow receives nothing for that disc), and if both assign it to Yellow, Yellow receives the disc's value (and Blue receives nothing for that disc). If the two players assign the same disc to different players, then both players are penalized by losing 20% of that disc's value. The total score for each player is the sum of outcomes over all discs.\nThe coordinates are written as (row, column) on a 9x9 grid, where row 1 is the top row and column 1 is the leftmost column. You will have to play that game in the following state:\nYou are the Blue player, and your square is located at (5, 2). The other player's square (Yellow) is located at (5, 8). There are six discs on the board: a value-2 disc at (1, 6), a value-3 disc at (2, 2), a value-2 disc at (2, 3), a value-1 disc at (5, 7), a value-3 disc at (8, 3), and a value-3 disc at (9, 8).\nInside <answer></answer> tags, output only a JSON object where each key is a disc coordinate in the form \"(row,col)\" and each value is either \"blue\" or \"yellow\", indicating which player you assign that disc to. Include every disc exactly once and no extra text. For example: <answer>{\"(row,col)\":\"blue\",\"(row,col)\":\"yellow\"}</answer>. Start the solution below.",
+    "responses": {
+      "<answer>16blue22yellow23yellow57blue83yellow98yellow</answer>": 3,
+      "<answer>16 blue 22 yellow 23 blue 57 blue 83 yellow 98 yellow</answer>": 4,
+      "<answer>16 blue 22 yellow 23 yellow 57 blue 83 yellow 98 yellow</answer>": 17,
+      "<answer>\n\n  16 blue\n  22 yellow\n  23 blue\n  57 yellow\n  83 blue\n  98 yellow\n\n</answer>": 1,
+      "<answer>16 blue 22 yellow 23 blue 57 yellow 83 yellow 98 yellow</answer>": 2,
+      "<answer>\n\n  16 blue\n  22 yellow\n  23 yellow\n  57 blue\n  83 yellow\n  98 yellow\n\n</answer>": 2,
+      "<answer>\n\n    16 blue\n    22 yellow\n    23 yellow\n    57 blue\n    83 yellow\n    98 yellow\n\n</answer>": 1
+    },
+    "coordination_index": 0.33793103448275863,
+    "normalised_coordination_index": 0.33793103448275863
+  },
+  {
+    "idx": "game4",
+    "variation-idx": "0",
+    "prompt": "Bargaining Table is a tacit coordination game played on a 9x9 board with two special squares, one representing each player (e.g., a blue square and a yellow square). Several discs are scattered on the board, and each disc has a numeric value. Without communicating and without knowing the other player's choices, each player must decide, for every disc, which of the two player-squares the disc should be assigned to. A disc's value is awarded only if both players assign that disc to the same player: if both assign it to Blue, Blue receives the disc's value (and Yellow receives nothing for that disc), and if both assign it to Yellow, Yellow receives the disc's value (and Blue receives nothing for that disc). If the two players assign the same disc to different players, then both players are penalized by losing 20% of that disc's value. The total score for each player is the sum of outcomes over all discs.\nThe coordinates are written as (row, column) on a 9x9 grid, where row 1 is the top row and column 1 is the leftmost column. You will have to play that game in the following state:\nYou are the Blue player, and your square is located at (5, 2). The other player's square (Yellow) is located at (5, 8). There are five discs on the board: a value-1 disc at (1, 8), a value-2 disc at (4, 9), a value-2 disc at (6, 4), a value-2 disc at (6, 6), and a value-2 disc at (8, 4).\nInside <answer></answer> tags, output only a JSON object where each key is a disc coordinate in the form \"(row,col)\" and each value is either \"blue\" or \"yellow\", indicating which player you assign that disc to. Include every disc exactly once and no extra text. For example: <answer>{\"(row,col)\":\"blue\",\"(row,col)\":\"yellow\"}</answer>. Start the solution below.",
+    "responses": {
+      "<answer>18 blue 49 yellow 64 blue 66 yellow 84 blue</answer>": 12,
+      "<answer>\n    18 blue\n    49 yellow\n    64 blue\n    66 yellow\n    84 blue\n</answer>": 5,
+      "<answer>\n18 blue\n49 yellow\n64 blue\n66 yellow\n84 blue\n</answer>": 2,
+      "<answer>18 blue 49 yellow 64 blue 66 blue 84 yellow</answer>": 3,
+      "<answer>\n18blue\n49yellow\n64blue\n66blue\n84yellow\n</answer>": 4,
+      "<answer>\n18 blue\n49 yellow\n64 blue\n66 blue\n84 yellow\n</answer>": 1,
+      "<answer>\n  18 blue\n  49 yellow\n  64 blue\n  66 yellow\n  84 blue\n</answer>": 2,
+      "<answer>\n18blue\n49yellow\n64blue\n66yellow\n84blue\n</answer>": 1
+    },
+    "coordination_index": 0.2,
+    "normalised_coordination_index": 0.2
+  },
+  {
+    "idx": "game5",
+    "variation-idx": "0",
+    "prompt": "Bargaining Table is a tacit coordination game played on a 9x9 board with two special squares, one representing each player (e.g., a blue square and a yellow square). Several discs are scattered on the board, and each disc has a numeric value. Without communicating and without knowing the other player's choices, each player must decide, for every disc, which of the two player-squares the disc should be assigned to. A disc's value is awarded only if both players assign that disc to the same player: if both assign it to Blue, Blue receives the disc's value (and Yellow receives nothing for that disc), and if both assign it to Yellow, Yellow receives the disc's value (and Blue receives nothing for that disc). If the two players assign the same disc to different players, then both players are penalized by losing 20% of that disc's value. The total score for each player is the sum of outcomes over all discs.\nThe coordinates are written as (row, column) on a 9x9 grid, where row 1 is the top row and column 1 is the leftmost column. You will have to play that game in the following state:\nYou are the Blue player, and your square is located at (5, 2). The other player's square (Yellow) is located at (5, 8). There are three discs on the board: a value-2 disc at (1, 8), a value-1 disc at (3, 3), and a value-3 disc at (8, 3).\nInside <answer></answer> tags, output only a JSON object where each key is a disc coordinate in the form \"(row,col)\" and each value is either \"blue\" or \"yellow\", indicating which player you assign that disc to. Include every disc exactly once and no extra text. For example: <answer>{\"(row,col)\":\"blue\",\"(row,col)\":\"yellow\"}</answer>. Start the solution below.",
+    "responses": {
+      "<answer>18 blue 33 yellow 83 blue</answer>": 8,
+      "<answer>18 blue 33 blue 83 yellow</answer>": 22
+    },
+    "coordination_index": 0.5954022988505747,
+    "normalised_coordination_index": 0.5954022988505747
+  },
+  {
+    "idx": "game6",
+    "variation-idx": "0",
+    "prompt": "Bargaining Table is a tacit coordination game played on a 9x9 board with two special squares, one representing each player (e.g., a blue square and a yellow square). Several discs are scattered on the board, and each disc has a numeric value. Without communicating and without knowing the other player's choices, each player must decide, for every disc, which of the two player-squares the disc should be assigned to. A disc's value is awarded only if both players assign that disc to the same player: if both assign it to Blue, Blue receives the disc's value (and Yellow receives nothing for that disc), and if both assign it to Yellow, Yellow receives the disc's value (and Blue receives nothing for that disc). If the two players assign the same disc to different players, then both players are penalized by losing 20% of that disc's value. The total score for each player is the sum of outcomes over all discs.\nThe coordinates are written as (row, column) on a 9x9 grid, where row 1 is the top row and column 1 is the leftmost column. You will have to play that game in the following state:\nYou are the Blue player, and your square is located at (5, 2). The other player's square (Yellow) is located at (5, 8). There are three discs on the board: a value-3 disc at (2, 6), a value-4 disc at (6, 2), and a value-4 disc at (7, 8).\nInside <answer></answer> tags, output only a JSON object where each key is a disc coordinate in the form \"(row,col)\" and each value is either \"blue\" or \"yellow\", indicating which player you assign that disc to. Include every disc exactly once and no extra text. For example: <answer>{\"(row,col)\":\"blue\",\"(row,col)\":\"yellow\"}</answer>. Start the solution below.",
+    "responses": {
+      "<answer>26 blue 62 blue 78 yellow</answer>": 30
+    },
+    "coordination_index": 1.0,
+    "normalised_coordination_index": 1.0
+  },
+  {
+    "idx": "game7",
+    "variation-idx": "0",
+    "prompt": "Bargaining Table is a tacit coordination game played on a 9x9 board with two special squares, one representing each player (e.g., a blue square and a yellow square). Several discs are scattered on the board, and each disc has a numeric value. Without communicating and without knowing the other player's choices, each player must decide, for every disc, which of the two player-squares the disc should be assigned to. A disc's value is awarded only if both players assign that disc to the same player: if both assign it to Blue, Blue receives the disc's value (and Yellow receives nothing for that disc), and if both assign it to Yellow, Yellow receives the disc's value (and Blue receives nothing for that disc). If the two players assign the same disc to different players, then both players are penalized by losing 20% of that disc's value. The total score for each player is the sum of outcomes over all discs.\nThe coordinates are written as (row, column) on a 9x9 grid, where row 1 is the top row and column 1 is the leftmost column. You will have to play that game in the following state:\nYou are the Blue player, and your square is located at (5, 2). The other player's square (Yellow) is located at (5, 8). There are four discs on the board: a value-4 disc at (3, 1), a value-2 disc at (4, 9), a value-2 disc at (6, 4), and a value-1 disc at (9, 2).\nInside <answer></answer> tags, output only a JSON object where each key is a disc coordinate in the form \"(row,col)\" and each value is either \"blue\" or \"yellow\", indicating which player you assign that disc to. Include every disc exactly once and no extra text. For example: <answer>{\"(row,col)\":\"blue\",\"(row,col)\":\"yellow\"}</answer>. Start the solution below.",
+    "responses": {
+      "<answer>\n31blue\n49yellow\n64blue\n92yellow\n</answer>": 10,
+      "<answer>31 blue 49 yellow 64 blue 92 yellow</answer>": 19,
+      "<answer>\n31blue\n49yellow\n64blue\n92blue\n</answer>": 1
+    },
+    "coordination_index": 0.496551724137931,
+    "normalised_coordination_index": 0.496551724137931
+  },
+  {
+    "idx": "game8",
+    "variation-idx": "0",
+    "prompt": "Bargaining Table is a tacit coordination game played on a 9x9 board with two special squares, one representing each player (e.g., a blue square and a yellow square). Several discs are scattered on the board, and each disc has a numeric value. Without communicating and without knowing the other player's choices, each player must decide, for every disc, which of the two player-squares the disc should be assigned to. A disc's value is awarded only if both players assign that disc to the same player: if both assign it to Blue, Blue receives the disc's value (and Yellow receives nothing for that disc), and if both assign it to Yellow, Yellow receives the disc's value (and Blue receives nothing for that disc). If the two players assign the same disc to different players, then both players are penalized by losing 20% of that disc's value. The total score for each player is the sum of outcomes over all discs.\nThe coordinates are written as (row, column) on a 9x9 grid, where row 1 is the top row and column 1 is the leftmost column. You will have to play that game in the following state:\nYou are the Blue player, and your square is located at (5, 2). The other player's square (Yellow) is located at (5, 8). There are six discs on the board: a value-3 disc at (2, 6), a value-3 disc at (2, 8), a value-2 disc at (2, 9), a value-1 disc at (3, 1), a value-2 disc at (6, 7), and a value-2 disc at (7, 4).\nInside <answer></answer> tags, output only a JSON object where each key is a disc coordinate in the form \"(row,col)\" and each value is either \"blue\" or \"yellow\", indicating which player you assign that disc to. Include every disc exactly once and no extra text. For example: <answer>{\"(row,col)\":\"blue\",\"(row,col)\":\"yellow\"}</answer>. Start the solution below.",
+    "responses": {
+      "<answer>\n26blue28blue29yellow31blue67blue74yellow\n</answer>": 3,
+      "<answer>26 blue 28 blue 29 yellow 31 blue 67 blue 74 blue</answer>": 11,
+      "<answer>26 blue 28 blue 29 yellow 31 blue 67 blue 74 yellow</answer>": 9,
+      "<answer>\n26blue\n28blue\n29yellow\n31blue\n67blue\n74yellow\n</answer>": 6,
+      "<answer>\n26 blue 28 blue 29 yellow 31 blue 67 blue 74 yellow\n</answer>": 1
+    },
+    "coordination_index": 0.25057471264367814,
+    "normalised_coordination_index": 0.25057471264367814
+  },
+  {
+    "idx": "game9",
+    "variation-idx": "0",
+    "prompt": "Bargaining Table is a tacit coordination game played on a 9x9 board with two special squares, one representing each player (e.g., a blue square and a yellow square). Several discs are scattered on the board, and each disc has a numeric value. Without communicating and without knowing the other player's choices, each player must decide, for every disc, which of the two player-squares the disc should be assigned to. A disc's value is awarded only if both players assign that disc to the same player: if both assign it to Blue, Blue receives the disc's value (and Yellow receives nothing for that disc), and if both assign it to Yellow, Yellow receives the disc's value (and Blue receives nothing for that disc). If the two players assign the same disc to different players, then both players are penalized by losing 20% of that disc's value. The total score for each player is the sum of outcomes over all discs.\nThe coordinates are written as (row, column) on a 9x9 grid, where row 1 is the top row and column 1 is the leftmost column. You will have to play that game in the following state:\nYou are the Blue player, and your square is located at (5, 2). The other player's square (Yellow) is located at (5, 8). There are three discs on the board: a value-1 disc at (2, 6), a value-4 disc at (4, 4), and a value-5 disc at (8, 2).\nInside <answer></answer> tags, output only a JSON object where each key is a disc coordinate in the form \"(row,col)\" and each value is either \"blue\" or \"yellow\", indicating which player you assign that disc to. Include every disc exactly once and no extra text. For example: <answer>{\"(row,col)\":\"blue\",\"(row,col)\":\"yellow\"}</answer>. Start the solution below.",
+    "responses": {
+      "<answer>26 blue 44 yellow 82 blue</answer>": 25,
+      "<answer>26 blue 82 blue 44 yellow</answer>": 3,
+      "<answer>\n26blue\n44yellow\n82blue\n</answer>": 2
+    },
+    "coordination_index": 0.6988505747126437,
+    "normalised_coordination_index": 0.6988505747126437
+  },
+  {
+    "idx": "game10",
+    "variation-idx": "0",
+    "prompt": "Bargaining Table is a tacit coordination game played on a 9x9 board with two special squares, one representing each player (e.g., a blue square and a yellow square). Several discs are scattered on the board, and each disc has a numeric value. Without communicating and without knowing the other player's choices, each player must decide, for every disc, which of the two player-squares the disc should be assigned to. A disc's value is awarded only if both players assign that disc to the same player: if both assign it to Blue, Blue receives the disc's value (and Yellow receives nothing for that disc), and if both assign it to Yellow, Yellow receives the disc's value (and Blue receives nothing for that disc). If the two players assign the same disc to different players, then both players are penalized by losing 20% of that disc's value. The total score for each player is the sum of outcomes over all discs.\nThe coordinates are written as (row, column) on a 9x9 grid, where row 1 is the top row and column 1 is the leftmost column. You will have to play that game in the following state:\nYou are the Blue player, and your square is located at (5, 2). The other player's square (Yellow) is located at (5, 8). There are four discs on the board: a value-1 disc at (3, 2), a value-2 disc at (3, 7), a value-2 disc at (8, 7), and a value-3 disc at (8, 9).\nInside <answer></answer> tags, output only a JSON object where each key is a disc coordinate in the form \"(row,col)\" and each value is either \"blue\" or \"yellow\", indicating which player you assign that disc to. Include every disc exactly once and no extra text. For example: <answer>{\"(row,col)\":\"blue\",\"(row,col)\":\"yellow\"}</answer>. Start the solution below.",
+    "responses": {
+      "<answer>\n  32 blue\n  37 blue\n  87 yellow\n  89 blue\n</answer>": 3,
+      "<answer>32 blue 37 blue 87 yellow 89 blue</answer>": 8,
+      "<answer>\n\n  32 blue\n  37 yellow\n  87 yellow\n  89 blue\n\n</answer>": 1,
+      "<answer>\n\n  32 blue\n  37 blue\n  87 yellow\n  89 yellow\n\n</answer>": 5,
+      "<answer>\n\n  32 blue\n  37 blue\n  87 yellow\n  89 blue\n\n</answer>": 5,
+      "<answer>\n    32 blue\n    37 blue\n    87 yellow\n    89 blue\n</answer>": 3,
+      "<answer>\n  32 blue\n  37 yellow\n  87 yellow\n  89 blue\n</answer>": 2,
+      "<answer>\n    32 blue\n    37 yellow\n    87 blue\n    89 yellow\n</answer>": 1,
+      "<answer>\n  32 blue\n  37 blue\n  87 yellow\n  89 yellow\n</answer>": 1,
+      "<answer>\n\n  32 blue\n  37 yellow\n  87 blue\n  89 yellow\n\n</answer>": 1
+    },
+    "coordination_index": 0.12643678160919541,
+    "normalised_coordination_index": 0.12643678160919541
+  }
+]

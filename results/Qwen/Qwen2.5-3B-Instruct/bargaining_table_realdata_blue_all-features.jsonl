@@ -1,0 +1,173 @@
+[
+  {
+    "idx": "game1",
+    "variation-idx": "0",
+    "prompt": "Bargaining Table is a tacit coordination game played on a 9x9 board with two special squares, one representing each player (e.g., a blue square and a yellow square). Several discs are scattered on the board, and each disc has a numeric value. Without communicating and without knowing the other player's choices, each player must decide, for every disc, which of the two player-squares the disc should be assigned to. A disc's value is awarded only if both players assign that disc to the same player: if both assign it to Blue, Blue receives the disc's value (and Yellow receives nothing for that disc), and if both assign it to Yellow, Yellow receives the disc's value (and Blue receives nothing for that disc). If the two players assign the same disc to different players, then both players are penalized by losing 20% of that disc's value. The total score for each player is the sum of outcomes over all discs.\nThe coordinates are written as (row, column) on a 9x9 grid, where row 1 is the top row and column 1 is the leftmost column. You will have to play that game in the following state:\nYou are the Blue player, and your square is located at (6, 2). The other player's square (Yellow) is located at (6, 9). There are 5 discs on the board: a value-3 disc at (8, 1), a value-3 disc at (4, 4), a value-3 disc at (1, 7), a value-1 disc at (1, 8), and a value-2 disc at (9, 8).\nInside <answer></answer> tags, output only a JSON object where each key is a disc coordinate in the form \"(row,col)\" and each value is either \"blue\" or \"yellow\", indicating which player you assign that disc to. Include every disc exactly once and no extra text. For example: <answer>{\"(row,col)\":\"blue\",\"(row,col)\":\"yellow\"}</answer>. There are four intuitive properties that make a choice desirable:\n - uniqueness: it is the only object with a given prooperty.\n - uniqueness complement: it is the only object *without* a given property.\n - centrality: it is a central point around which a domain is symmetric.\n - extremeness: it is an object that has the largest or the smallest property among all the others.\n Now, you have to prioritise the selection of your discs based on the mentioned properties. Start the solution below.",
+    "responses": {
+      "<answer>\n  17 blue\n  81 blue\n  18 yellow\n  98 yellow\n</answer>": 2,
+      "<answer>\n  81 blue\n  44 blue\n  17 blue\n  98 yellow\n</answer>": 4,
+      "<answer>\n\n  17 blue\n  81 blue\n  18 yellow\n  98 blue\n\n</answer>": 2,
+      "<answer>\n  17 blue\n  18 yellow\n  81 blue\n  44 blue\n  98 yellow\n</answer>": 4,
+      "<answer>\n\n  17blue\n  18blue\n  81blue\n  98yellow\n\n</answer>": 1,
+      "<answer>\n\n    81 blue\n    44 blue\n    17 blue\n    98 yellow\n\n</answer>": 4,
+      "<answer>\n    81 blue\n    44 blue\n    17 blue\n    98 yellow\n</answer>": 3,
+      "<answer>\n\n  17 blue\n  81 blue\n  44 blue\n  18 yellow\n\n</answer>": 1,
+      "<answer>\n\n  17blue\n  81blue\n  18blue\n  98yellow\n\n</answer>": 1,
+      "<answer>\n  81 blue\n  17 blue\n  98 yellow\n</answer>": 1,
+      "<answer>81 blue 44 blue 17 blue 98 yellow</answer>": 2,
+      "<answer>81 blue 17 blue 18 blue 98 blue</answer>": 1,
+      "<answer>\n\n  17 blue\n  81 blue\n  44 yellow\n  98 blue\n\n</answer>": 1,
+      "<answer>\n\n  17 blue\n  18 yellow\n  44 blue\n  81 blue\n  98 yellow\n\n</answer>": 1,
+      "<answer>\n  81 blue\n  17 blue\n  18 yellow\n  98 yellow\n</answer>": 1,
+      "<answer>\n\n  17blue\n  81blue\n  18yellow\n  98blue\n\n</answer>": 1
+    },
+    "coordination_index": 0.05517241379310345,
+    "normalised_coordination_index": 0.05517241379310345
+  },
+  {
+    "idx": "game2",
+    "variation-idx": "0",
+    "prompt": "Bargaining Table is a tacit coordination game played on a 9x9 board with two special squares, one representing each player (e.g., a blue square and a yellow square). Several discs are scattered on the board, and each disc has a numeric value. Without communicating and without knowing the other player's choices, each player must decide, for every disc, which of the two player-squares the disc should be assigned to. A disc's value is awarded only if both players assign that disc to the same player: if both assign it to Blue, Blue receives the disc's value (and Yellow receives nothing for that disc), and if both assign it to Yellow, Yellow receives the disc's value (and Blue receives nothing for that disc). If the two players assign the same disc to different players, then both players are penalized by losing 20% of that disc's value. The total score for each player is the sum of outcomes over all discs.\nThe coordinates are written as (row, column) on a 9x9 grid, where row 1 is the top row and column 1 is the leftmost column. You will have to play that game in the following state:\nYou are the Blue player, and your square is located at (7, 1). The other player's square (Yellow) is located at (7, 9). There are 4 discs on the board: a value-3 disc at (9, 1), a value-3 disc at (8, 3), a value-2 disc at (9, 6), and a value-4 disc at (1, 9).\nInside <answer></answer> tags, output only a JSON object where each key is a disc coordinate in the form \"(row,col)\" and each value is either \"blue\" or \"yellow\", indicating which player you assign that disc to. Include every disc exactly once and no extra text. For example: <answer>{\"(row,col)\":\"blue\",\"(row,col)\":\"yellow\"}</answer>. There are four intuitive properties that make a choice desirable:\n - uniqueness: it is the only object with a given prooperty.\n - uniqueness complement: it is the only object *without* a given property.\n - centrality: it is a central point around which a domain is symmetric.\n - extremeness: it is an object that has the largest or the smallest property among all the others.\n Now, you have to prioritise the selection of your discs based on the mentioned properties. Start the solution below.",
+    "responses": {
+      "<answer>\n91blue\n83blue\n96yellow\n19blue\n</answer>": 12,
+      "<answer>91 blue 96 blue 19 blue 83 yellow</answer>": 16,
+      "<answer>91 blue 83 blue 96 yellow 19 blue</answer>": 2
+    },
+    "coordination_index": 0.4298850574712644,
+    "normalised_coordination_index": 0.4298850574712644
+  },
+  {
+    "idx": "game3",
+    "variation-idx": "0",
+    "prompt": "Bargaining Table is a tacit coordination game played on a 9x9 board with two special squares, one representing each player (e.g., a blue square and a yellow square). Several discs are scattered on the board, and each disc has a numeric value. Without communicating and without knowing the other player's choices, each player must decide, for every disc, which of the two player-squares the disc should be assigned to. A disc's value is awarded only if both players assign that disc to the same player: if both assign it to Blue, Blue receives the disc's value (and Yellow receives nothing for that disc), and if both assign it to Yellow, Yellow receives the disc's value (and Blue receives nothing for that disc). If the two players assign the same disc to different players, then both players are penalized by losing 20% of that disc's value. The total score for each player is the sum of outcomes over all discs.\nThe coordinates are written as (row, column) on a 9x9 grid, where row 1 is the top row and column 1 is the leftmost column. You will have to play that game in the following state:\nYou are the Blue player, and your square is located at (6, 1). The other player's square (Yellow) is located at (6, 9). There are 6 discs on the board: a value-3 disc at (2, 1), a value-2 disc at (2, 2), a value-3 disc at (8, 2), a value-2 disc at (1, 6), a value-1 disc at (5, 8), and a value-3 disc at (9, 9).\nInside <answer></answer> tags, output only a JSON object where each key is a disc coordinate in the form \"(row,col)\" and each value is either \"blue\" or \"yellow\", indicating which player you assign that disc to. Include every disc exactly once and no extra text. For example: <answer>{\"(row,col)\":\"blue\",\"(row,col)\":\"yellow\"}</answer>. There are four intuitive properties that make a choice desirable:\n - uniqueness: it is the only object with a given prooperty.\n - uniqueness complement: it is the only object *without* a given property.\n - centrality: it is a central point around which a domain is symmetric.\n - extremeness: it is an object that has the largest or the smallest property among all the others.\n Now, you have to prioritise the selection of your discs based on the mentioned properties. Start the solution below.",
+    "responses": {
+      "<answer>\n    21 blue\n    22 blue\n    82 yellow\n    16 blue\n    58 yellow\n    99 yellow\n</answer>": 2,
+      "<answer>\n21 blue 22 blue 82 blue 16 yellow 58 blue 99 yellow\n</answer>": 1,
+      "<answer>\n  21 blue\n  22 blue\n  82 yellow\n  16 blue\n  58 yellow\n  99 yellow\n</answer>": 5,
+      "<answer>\n  21 blue\n  22 blue\n  82 blue\n  16 blue\n</answer>": 1,
+      "<answer>\n\n  21 blue\n  22 blue\n  82 blue\n  99 yellow\n\n</answer>": 1,
+      "<answer>\n21blue\n22blue\n82blue\n99yellow\n</answer>": 1,
+      "<answer>\n  21 blue\n  22 blue\n  82 blue\n  16 yellow\n  58 blue\n  99 yellow\n</answer>": 3,
+      "<answer>\n    21 blue\n    22 blue\n    82 blue\n    16 yellow\n    58 blue\n    99 yellow\n</answer>": 2,
+      "<answer>\n\n  21 blue\n  22 yellow\n  82 blue\n  16 yellow\n  58 blue\n  99 yellow\n\n</answer>": 1,
+      "<answer>\n21 blue 22 blue 82 yellow 16 blue 58 yellow 99 yellow\n</answer>": 1,
+      "<answer>\n    21 blue\n    22 blue\n    82 blue\n    16 blue\n</answer>": 1,
+      "<answer>\n\n  21 blue\n  22 blue\n  82 yellow\n  16 blue\n  58 yellow\n  99 yellow\n\n</answer>": 1,
+      "<answer>\n\n  21 blue\n  22 blue\n  82 blue\n  16 yellow\n  58 blue\n  99 yellow\n\n</answer>": 2,
+      "<answer>\n\n  21 blue\n  22 blue\n  82 blue\n  99 blue\n\n</answer>": 1,
+      "<answer>\n\n  21blue\n  22yellow\n  82blue\n  16yellow\n  58blue\n  99yellow\n\n</answer>": 1,
+      "<answer>\n\n  21 blue\n  22 yellow\n  82 blue\n  16 blue\n  58 yellow\n  99 blue\n\n</answer>": 2,
+      "<answer>\n\n  21 blue\n  22 blue\n  82 yellow\n  16 blue\n  58 yellow\n  99 blue\n\n</answer>": 1,
+      "<answer>\n\n  21 blue\n  22 blue\n  82 blue\n  16 blue\n  58 blue\n  99 blue\n\n</answer>": 1,
+      "<answer>\n\n  21blue\n  22blue\n  82blue\n  16blue\n  58blue\n  99blue\n\n</answer>": 1,
+      "<answer>\n21blue\n22blue\n82blue\n99blue\n</answer>": 1
+    },
+    "coordination_index": 0.03908045977011494,
+    "normalised_coordination_index": 0.03908045977011494
+  },
+  {
+    "idx": "game4",
+    "variation-idx": "0",
+    "prompt": "Bargaining Table is a tacit coordination game played on a 9x9 board with two special squares, one representing each player (e.g., a blue square and a yellow square). Several discs are scattered on the board, and each disc has a numeric value. Without communicating and without knowing the other player's choices, each player must decide, for every disc, which of the two player-squares the disc should be assigned to. A disc's value is awarded only if both players assign that disc to the same player: if both assign it to Blue, Blue receives the disc's value (and Yellow receives nothing for that disc), and if both assign it to Yellow, Yellow receives the disc's value (and Blue receives nothing for that disc). If the two players assign the same disc to different players, then both players are penalized by losing 20% of that disc's value. The total score for each player is the sum of outcomes over all discs.\nThe coordinates are written as (row, column) on a 9x9 grid, where row 1 is the top row and column 1 is the leftmost column. You will have to play that game in the following state:\nYou are the Blue player, and your square is located at (6, 1). The other player's square (Yellow) is located at (6, 8). There are 5 discs on the board: a value-2 disc at (7, 3), a value-2 disc at (9, 3), a value-2 disc at (7, 5), a value-1 disc at (1, 8), and a value-2 disc at (4, 9).\nInside <answer></answer> tags, output only a JSON object where each key is a disc coordinate in the form \"(row,col)\" and each value is either \"blue\" or \"yellow\", indicating which player you assign that disc to. Include every disc exactly once and no extra text. For example: <answer>{\"(row,col)\":\"blue\",\"(row,col)\":\"yellow\"}</answer>. There are four intuitive properties that make a choice desirable:\n - uniqueness: it is the only object with a given prooperty.\n - uniqueness complement: it is the only object *without* a given property.\n - centrality: it is a central point around which a domain is symmetric.\n - extremeness: it is an object that has the largest or the smallest property among all the others.\n Now, you have to prioritise the selection of your discs based on the mentioned properties. Start the solution below.",
+    "responses": {
+      "<answer>\n73blue\n93blue\n75blue\n49blue\n</answer>": 5,
+      "<answer>73 blue 93 blue 75 blue 49 blue 18 yellow</answer>": 10,
+      "<answer>\n\n  73 blue\n  93 blue\n  75 blue\n  49 blue\n\n</answer>": 2,
+      "<answer>\n    73 blue\n    93 blue\n    75 blue\n    49 blue\n</answer>": 1,
+      "<answer>\n\n    73 blue\n    93 blue\n    75 blue\n    49 blue\n\n</answer>": 4,
+      "<answer>\n\n    73 blue\n    75 blue\n    49 blue\n    18 yellow\n\n</answer>": 1,
+      "<answer>\n\n  73 blue\n  75 blue\n  49 blue\n  18 yellow\n\n</answer>": 2,
+      "<answer>73 blue 75 blue 49 blue 93 blue 18 blue</answer>": 1,
+      "<answer>\n    73 blue\n    75 blue\n    49 blue\n    93 blue\n</answer>": 1,
+      "<answer>73 blue 75 blue 49 blue 93 blue 18 yellow</answer>": 1,
+      "<answer>\n\n    73 blue\n    75 blue\n    93 blue\n    49 blue\n\n</answer>": 1,
+      "<answer>\n\n  73 blue\n  75 blue\n  93 blue\n  49 blue\n\n</answer>": 1
+    },
+    "coordination_index": 0.14482758620689656,
+    "normalised_coordination_index": 0.14482758620689656
+  },
+  {
+    "idx": "game5",
+    "variation-idx": "0",
+    "prompt": "Bargaining Table is a tacit coordination game played on a 9x9 board with two special squares, one representing each player (e.g., a blue square and a yellow square). Several discs are scattered on the board, and each disc has a numeric value. Without communicating and without knowing the other player's choices, each player must decide, for every disc, which of the two player-squares the disc should be assigned to. A disc's value is awarded only if both players assign that disc to the same player: if both assign it to Blue, Blue receives the disc's value (and Yellow receives nothing for that disc), and if both assign it to Yellow, Yellow receives the disc's value (and Blue receives nothing for that disc). If the two players assign the same disc to different players, then both players are penalized by losing 20% of that disc's value. The total score for each player is the sum of outcomes over all discs.\nThe coordinates are written as (row, column) on a 9x9 grid, where row 1 is the top row and column 1 is the leftmost column. You will have to play that game in the following state:\nYou are the Blue player, and your square is located at (6, 1). The other player's square (Yellow) is located at (6, 9). There are 3 discs on the board: a value-1 disc at (3, 2), a value-3 disc at (9, 2), and a value-2 disc at (1, 9).\nInside <answer></answer> tags, output only a JSON object where each key is a disc coordinate in the form \"(row,col)\" and each value is either \"blue\" or \"yellow\", indicating which player you assign that disc to. Include every disc exactly once and no extra text. For example: <answer>{\"(row,col)\":\"blue\",\"(row,col)\":\"yellow\"}</answer>. There are four intuitive properties that make a choice desirable:\n - uniqueness: it is the only object with a given prooperty.\n - uniqueness complement: it is the only object *without* a given property.\n - centrality: it is a central point around which a domain is symmetric.\n - extremeness: it is an object that has the largest or the smallest property among all the others.\n Now, you have to prioritise the selection of your discs based on the mentioned properties. Start the solution below.",
+    "responses": {
+      "<answer>32 blue 19 blue 92 yellow</answer>": 25,
+      "<answer>\n32blue\n92yellow\n19blue\n</answer>": 5
+    },
+    "coordination_index": 0.7126436781609196,
+    "normalised_coordination_index": 0.7126436781609196
+  },
+  {
+    "idx": "game6",
+    "variation-idx": "0",
+    "prompt": "Bargaining Table is a tacit coordination game played on a 9x9 board with two special squares, one representing each player (e.g., a blue square and a yellow square). Several discs are scattered on the board, and each disc has a numeric value. Without communicating and without knowing the other player's choices, each player must decide, for every disc, which of the two player-squares the disc should be assigned to. A disc's value is awarded only if both players assign that disc to the same player: if both assign it to Blue, Blue receives the disc's value (and Yellow receives nothing for that disc), and if both assign it to Yellow, Yellow receives the disc's value (and Blue receives nothing for that disc). If the two players assign the same disc to different players, then both players are penalized by losing 20% of that disc's value. The total score for each player is the sum of outcomes over all discs.\nThe coordinates are written as (row, column) on a 9x9 grid, where row 1 is the top row and column 1 is the leftmost column. You will have to play that game in the following state:\nYou are the Blue player, and your square is located at (7, 1). The other player's square (Yellow) is located at (7, 9). There are 3 discs on the board: a value-4 disc at (8, 1), a value-3 disc at (1, 6), and a value-4 disc at (9, 9).\nInside <answer></answer> tags, output only a JSON object where each key is a disc coordinate in the form \"(row,col)\" and each value is either \"blue\" or \"yellow\", indicating which player you assign that disc to. Include every disc exactly once and no extra text. For example: <answer>{\"(row,col)\":\"blue\",\"(row,col)\":\"yellow\"}</answer>. There are four intuitive properties that make a choice desirable:\n - uniqueness: it is the only object with a given prooperty.\n - uniqueness complement: it is the only object *without* a given property.\n - centrality: it is a central point around which a domain is symmetric.\n - extremeness: it is an object that has the largest or the smallest property among all the others.\n Now, you have to prioritise the selection of your discs based on the mentioned properties. Start the solution below.",
+    "responses": {
+      "<answer>81 blue 16 blue 99 yellow</answer>": 17,
+      "<answer>81 blue 16 yellow 99 blue</answer>": 13
+    },
+    "coordination_index": 0.49195402298850577,
+    "normalised_coordination_index": 0.49195402298850577
+  },
+  {
+    "idx": "game7",
+    "variation-idx": "0",
+    "prompt": "Bargaining Table is a tacit coordination game played on a 9x9 board with two special squares, one representing each player (e.g., a blue square and a yellow square). Several discs are scattered on the board, and each disc has a numeric value. Without communicating and without knowing the other player's choices, each player must decide, for every disc, which of the two player-squares the disc should be assigned to. A disc's value is awarded only if both players assign that disc to the same player: if both assign it to Blue, Blue receives the disc's value (and Yellow receives nothing for that disc), and if both assign it to Yellow, Yellow receives the disc's value (and Blue receives nothing for that disc). If the two players assign the same disc to different players, then both players are penalized by losing 20% of that disc's value. The total score for each player is the sum of outcomes over all discs.\nThe coordinates are written as (row, column) on a 9x9 grid, where row 1 is the top row and column 1 is the leftmost column. You will have to play that game in the following state:\nYou are the Blue player, and your square is located at (4, 2). The other player's square (Yellow) is located at (4, 9). There are 4 discs on the board: a value-4 disc at (1, 1), a value-1 disc at (9, 2), a value-2 disc at (5, 4), and a value-2 disc at (2, 9).\nInside <answer></answer> tags, output only a JSON object where each key is a disc coordinate in the form \"(row,col)\" and each value is either \"blue\" or \"yellow\", indicating which player you assign that disc to. Include every disc exactly once and no extra text. For example: <answer>{\"(row,col)\":\"blue\",\"(row,col)\":\"yellow\"}</answer>. There are four intuitive properties that make a choice desirable:\n - uniqueness: it is the only object with a given prooperty.\n - uniqueness complement: it is the only object *without* a given property.\n - centrality: it is a central point around which a domain is symmetric.\n - extremeness: it is an object that has the largest or the smallest property among all the others.\n Now, you have to prioritise the selection of your discs based on the mentioned properties. Start the solution below.",
+    "responses": {
+      "<answer>\n11blue\n29blue\n54blue\n92yellow\n</answer>": 4,
+      "<answer>11 blue 29 blue 54 blue 92 yellow</answer>": 19,
+      "<answer>11 blue 29 blue 54 yellow 92 yellow</answer>": 5,
+      "<answer>\n11blue\n29blue\n54yellow\n92yellow\n</answer>": 2
+    },
+    "coordination_index": 0.432183908045977,
+    "normalised_coordination_index": 0.432183908045977
+  },
+  {
+    "idx": "game8",
+    "variation-idx": "0",
+    "prompt": "Bargaining Table is a tacit coordination game played on a 9x9 board with two special squares, one representing each player (e.g., a blue square and a yellow square). Several discs are scattered on the board, and each disc has a numeric value. Without communicating and without knowing the other player's choices, each player must decide, for every disc, which of the two player-squares the disc should be assigned to. A disc's value is awarded only if both players assign that disc to the same player: if both assign it to Blue, Blue receives the disc's value (and Yellow receives nothing for that disc), and if both assign it to Yellow, Yellow receives the disc's value (and Blue receives nothing for that disc). If the two players assign the same disc to different players, then both players are penalized by losing 20% of that disc's value. The total score for each player is the sum of outcomes over all discs.\nThe coordinates are written as (row, column) on a 9x9 grid, where row 1 is the top row and column 1 is the leftmost column. You will have to play that game in the following state:\nYou are the Blue player, and your square is located at (7, 2). The other player's square (Yellow) is located at (7, 9). There are 6 discs on the board: a value-1 disc at (2, 1), a value-2 disc at (9, 4), a value-3 disc at (1, 6), a value-2 disc at (8, 7), a value-3 disc at (1, 8), and a value-2 disc at (1, 9).\nInside <answer></answer> tags, output only a JSON object where each key is a disc coordinate in the form \"(row,col)\" and each value is either \"blue\" or \"yellow\", indicating which player you assign that disc to. Include every disc exactly once and no extra text. For example: <answer>{\"(row,col)\":\"blue\",\"(row,col)\":\"yellow\"}</answer>. There are four intuitive properties that make a choice desirable:\n - uniqueness: it is the only object with a given prooperty.\n - uniqueness complement: it is the only object *without* a given property.\n - centrality: it is a central point around which a domain is symmetric.\n - extremeness: it is an object that has the largest or the smallest property among all the others.\n Now, you have to prioritise the selection of your discs based on the mentioned properties. Start the solution below.",
+    "responses": {
+      "<answer>21 blue 16 blue 87 yellow 18 blue 19 yellow</answer>": 3,
+      "<answer>\n\n  21 blue\n  87 blue\n  16 blue\n  18 blue\n\n</answer>": 4,
+      "<answer>\n\n  21 blue\n  87 blue\n  16 blue\n  18 blue\n  19 yellow\n\n</answer>": 3,
+      "<answer>21 blue 16 blue 18 blue 19 blue 87 yellow 94 yellow</answer>": 1,
+      "<answer>\n21blue\n87blue\n16blue\n18blue\n</answer>": 10,
+      "<answer>\n\n    21 blue\n    94 blue\n    16 blue\n    87 blue\n    18 blue\n    19 blue\n\n</answer>": 1,
+      "<answer>\n\n    21 blue\n    87 blue\n    16 blue\n    18 blue\n    19 yellow\n\n</answer>": 3,
+      "<answer>21 blue 94 yellow 16 blue 87 yellow 18 blue 19 yellow</answer>": 1,
+      "<answer>\n\n  21 blue\n  87 blue\n  16 blue\n  18 blue\n  19 blue\n\n</answer>": 1,
+      "<answer>\n\n    21 blue\n    94 blue\n    16 blue\n    87 yellow\n    18 blue\n    19 yellow\n\n</answer>": 1,
+      "<answer>\n\n    21 blue\n    87 blue\n    16 blue\n    18 blue\n    19 blue\n\n</answer>": 1,
+      "<answer>\n\n  21 blue\n  94 yellow\n  16 blue\n  87 yellow\n  18 blue\n  19 yellow\n\n</answer>": 1
+    },
+    "coordination_index": 0.13793103448275862,
+    "normalised_coordination_index": 0.13793103448275862
+  },
+  {
+    "idx": "game9",
+    "variation-idx": "0",
+    "prompt": "Bargaining Table is a tacit coordination game played on a 9x9 board with two special squares, one representing each player (e.g., a blue square and a yellow square). Several discs are scattered on the board, and each disc has a numeric value. Without communicating and without knowing the other player's choices, each player must decide, for every disc, which of the two player-squares the disc should be assigned to. A disc's value is awarded only if both players assign that disc to the same player: if both assign it to Blue, Blue receives the disc's value (and Yellow receives nothing for that disc), and if both assign it to Yellow, Yellow receives the disc's value (and Blue receives nothing for that disc). If the two players assign the same disc to different players, then both players are penalized by losing 20% of that disc's value. The total score for each player is the sum of outcomes over all discs.\nThe coordinates are written as (row, column) on a 9x9 grid, where row 1 is the top row and column 1 is the leftmost column. You will have to play that game in the following state:\nYou are the Blue player, and your square is located at (6, 1). The other player's square (Yellow) is located at (6, 9). There are 3 discs on the board: a value-5 disc at (9, 1), a value-4 disc at (4, 3), and a value-1 disc at (1, 6).\nInside <answer></answer> tags, output only a JSON object where each key is a disc coordinate in the form \"(row,col)\" and each value is either \"blue\" or \"yellow\", indicating which player you assign that disc to. Include every disc exactly once and no extra text. For example: <answer>{\"(row,col)\":\"blue\",\"(row,col)\":\"yellow\"}</answer>. There are four intuitive properties that make a choice desirable:\n - uniqueness: it is the only object with a given prooperty.\n - uniqueness complement: it is the only object *without* a given property.\n - centrality: it is a central point around which a domain is symmetric.\n - extremeness: it is an object that has the largest or the smallest property among all the others.\n Now, you have to prioritise the selection of your discs based on the mentioned properties. Start the solution below.",
+    "responses": {
+      "<answer>\n91blue\n43blue\n16yellow\n</answer>": 8,
+      "<answer>\n91blue\n43yellow\n16blue\n</answer>": 7,
+      "<answer>91 blue 43 blue 16 yellow</answer>": 10,
+      "<answer>91 blue 43 yellow 16 blue</answer>": 5
+    },
+    "coordination_index": 0.23908045977011494,
+    "normalised_coordination_index": 0.23908045977011494
+  },
+  {
+    "idx": "game10",
+    "variation-idx": "0",
+    "prompt": "Bargaining Table is a tacit coordination game played on a 9x9 board with two special squares, one representing each player (e.g., a blue square and a yellow square). Several discs are scattered on the board, and each disc has a numeric value. Without communicating and without knowing the other player's choices, each player must decide, for every disc, which of the two player-squares the disc should be assigned to. A disc's value is awarded only if both players assign that disc to the same player: if both assign it to Blue, Blue receives the disc's value (and Yellow receives nothing for that disc), and if both assign it to Yellow, Yellow receives the disc's value (and Blue receives nothing for that disc). If the two players assign the same disc to different players, then both players are penalized by losing 20% of that disc's value. The total score for each player is the sum of outcomes over all discs.\nThe coordinates are written as (row, column) on a 9x9 grid, where row 1 is the top row and column 1 is the leftmost column. You will have to play that game in the following state:\nYou are the Blue player, and your square is located at (5, 1). The other player's square (Yellow) is located at (5, 9). There are 4 discs on the board: a value-1 disc at (1, 1), a value-2 disc at (1, 7), a value-2 disc at (9, 7), and a value-3 disc at (9, 9).\nInside <answer></answer> tags, output only a JSON object where each key is a disc coordinate in the form \"(row,col)\" and each value is either \"blue\" or \"yellow\", indicating which player you assign that disc to. Include every disc exactly once and no extra text. For example: <answer>{\"(row,col)\":\"blue\",\"(row,col)\":\"yellow\"}</answer>. There are four intuitive properties that make a choice desirable:\n - uniqueness: it is the only object with a given prooperty.\n - uniqueness complement: it is the only object *without* a given property.\n - centrality: it is a central point around which a domain is symmetric.\n - extremeness: it is an object that has the largest or the smallest property among all the others.\n Now, you have to prioritise the selection of your discs based on the mentioned properties. Start the solution below.",
+    "responses": {
+      "<answer>\n11 blue 17 blue 97 yellow 99 blue\n</answer>": 3,
+      "<answer>11 blue 17 blue 97 yellow 99 blue</answer>": 21,
+      "<answer>\n11blue\n17blue\n97yellow\n99blue\n</answer>": 2,
+      "<answer>\n\n  11 blue\n  17 yellow\n  97 blue\n  99 yellow\n\n</answer>": 1,
+      "<answer>\n11blue\n17blue\n97yellow\n99yellow\n</answer>": 2,
+      "<answer>\n\n  11 blue\n  17 blue\n  97 yellow\n  99 yellow\n\n</answer>": 1
+    },
+    "coordination_index": 0.4942528735632184,
+    "normalised_coordination_index": 0.4942528735632184
+  }
+]
