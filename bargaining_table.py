@@ -192,6 +192,7 @@ def plot_pretty_boxplot(
     save_path: str = "",
     annotate_stats: bool = True,
     stats_decimals: int = 2,
+    variant_label: str | None = None,
 ):
     # --- Font setup ---
     rcParams['font.family'] = 'Times New Roman'
@@ -277,6 +278,24 @@ def plot_pretty_boxplot(
 
     # --- Grid ---
     ax.grid(True, linestyle="--", linewidth=0.6, color="#b0b0b0", alpha=0.7)
+
+    if variant_label:
+        ax.text(
+            0.02,
+            0.98,
+            variant_label,
+            transform=ax.transAxes,
+            ha="left",
+            va="top",
+            fontsize=12,
+            fontweight="bold",
+            bbox=dict(
+                facecolor="white",
+                edgecolor="#000000",
+                boxstyle="round,pad=0.3",
+                alpha=0.8,
+            ),
+        )
 
     # --- X-limits with padding ---
     # all_data = np.concatenate([data1, data2])

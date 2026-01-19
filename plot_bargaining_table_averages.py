@@ -310,6 +310,7 @@ def plot_and_save(
     strategy: str,
     save_path: Path,
     llm_detail: Optional[str],
+    variant_label: Optional[str] = None,
 ) -> None:
     label1, label2 = build_labels(strategy, llm_detail)
     save_path.parent.mkdir(parents=True, exist_ok=True)
@@ -320,6 +321,7 @@ def plot_and_save(
         label2=label2,
         annotate_stats=True,
         save_path=str(save_path),
+        variant_label=variant_label,
     )
 
 
@@ -469,6 +471,7 @@ def run_response_mode(args: argparse.Namespace) -> None:
                     strategy,
                     save_path,
                     llm_detail=f"{group_label} avg",
+                    variant_label=variant,
                 )
 
 
@@ -530,6 +533,7 @@ def main() -> None:
                     strategy,
                     save_path,
                     llm_detail=f"{model} avg reasoning",
+                    variant_label=variant,
                 )
 
     # Average across models for each reasoning level and variant.
@@ -562,6 +566,7 @@ def main() -> None:
                     strategy,
                     save_path,
                     llm_detail=f"avg {models_tag} {reasoning}",
+                    variant_label=variant,
                 )
 
 
