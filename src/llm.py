@@ -290,7 +290,7 @@ def load_model(
 ) -> LLM:
     """Load either an API or locally hosted LLM implementation"""
 
-    API_MODELS = {"gpt-5", "gpt-5.1"}
+    API_MODELS = {"gpt-5", "gpt-5.1", "gpt-5.4"}
 
     LOCAL_MODELS = {
         "deepseek-ai/DeepSeek-R1-Distill-Llama-70B",
