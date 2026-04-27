@@ -1,8 +1,10 @@
 from abc import ABC, abstractmethod
-import os
-import torch
 import gc
+import os
+from google import genai
+from google.genai import types
 from openai import OpenAI
+import torch
 from transformers import (
     AutoModelForCausalLM,
     AutoTokenizer,
@@ -35,6 +37,43 @@ class LLM(ABC):
 
 
 class LocalLLM(LLM):
+    MODELS = {
+        "deepseek-ai/DeepSeek-R1-Distill-Llama-70B",
+        "deepseek-ai/DeepSeek-R1-Distill-Llama-8B",
+        "deepseek-ai/DeepSeek-R1-Distill-Qwen-32B",
+        "deepseek-ai/DeepSeek-R1-Distill-Qwen-14B",
+        "deepseek-ai/DeepSeek-R1-Distill-Qwen-7B",
+        "deepseek-ai/DeepSeek-R1-Distill-Qwen-1.5B",
+        "meta-llama/Llama-3.1-405B-Instruct",
+        "meta-llama/Llama-3.3-70B-Instruct",
+        "meta-llama/Llama-3.1-70B-Instruct",
+        "meta-llama/Meta-Llama-3-70B-Instruct",
+        "meta-llama/Llama-3.1-8B-Instruct",
+        "meta-llama/Meta-Llama-3-8B-Instruct",
+        "meta-llama/Llama-3.2-3B-Instruct",
+        "meta-llama/Llama-3.2-1B-Instruct",
+        "Qwen/Qwen2-72B-Instruct",
+        "Qwen/Qwen2.5-72B-Instruct",
+        "Qwen/Qwen2.5-32B-Instruct",
+        "Qwen/Qwen2.5-14B-Instruct-1M",
+        "Qwen/Qwen2.5-14B-Instruct",
+        "Qwen/Qwen2.5-7B-Instruct-1M",
+        "Qwen/Qwen2.5-7B-Instruct",
+        "Qwen/Qwen2-7B-Instruct",
+        "Qwen/Qwen2.5-3B-Instruct",
+        "Qwen/Qwen2.5-1.5B-Instruct",
+        "Qwen/Qwen2-1.5B-Instruct",
+        "Qwen/Qwen2.5-0.5B-Instruct",
+        "Qwen/Qwen2-0.5B-Instruct",
+        "google/gemma-3-1b-it",
+        "google/gemma-3-4b-it",
+        "google/gemma-3-12b-it",
+        "google/gemma-3-27b-it",
+        "microsoft/Phi-4-mini-instruct",
+        "openai/gpt-oss-120b",
+        "openai/gpt-oss-20b",
+    }
+
     def __init__(
         self,
         model_id: str,
@@ -51,10 +90,12 @@ class LocalLLM(LLM):
         self.max_new_tokens = max_new_tokens
         self.num_return_sequences = num_return_sequences
         self.quantization = quantization
+        self.reasoning = None
 
         if reasoning:
-            if reasoning.lower() in {"low", "medium", "high"}:
-                self.reasoning = reasoning.lower()
+            local_reasoning = reasoning.strip().lower()
+            if local_reasoning in {"low", "medium", "high"}:
+                self.reasoning = local_reasoning
                 print(f"[INFO] Local model reasoning level: {self.reasoning}")
             else:
                 self.reasoning = None
@@ -218,20 +259,81 @@ class LocalLLM(LLM):
         return self.generate_batch([prompt])[0][0]
 
 
-class APILLM(LLM):
+class APIBaseLLM(LLM):
     def __init__(
         self,
         model_id: str,
-        reasoning: dict | None = None,
+        reasoning: object | None = None,
         num_return_sequences: int = 1,
     ) -> None:
         super().__init__(model_id=model_id)
-        self.client = OpenAI(api_key=os.getenv("OPENAI_API_KEY"))
         self.reasoning = reasoning
         self.num_return_sequences = num_return_sequences
 
-        # Add print statement to confirm initialization
-        print(f"[INFO] Initialized APILLM with model_id: {self.model_id}")
+    def _normalize_output(self, text: str) -> str:
+        return "".join(
+            c for c in text.strip().lower() if c.isalnum() or c.isspace() or c in "<>/"
+        )
+
+    @abstractmethod
+    def _generate_raw_text(self, prompt: str) -> str:
+        raise NotImplementedError
+
+    def generate_batch(
+        self, prompts: list[str], num_return_sequences: int | None = None
+    ) -> list[list[str]]:
+        all_outputs: list[list[str]] = []
+        for prompt in prompts:
+            prompt_outputs: list[str] = []
+            sequences_to_generate = (
+                num_return_sequences
+                if num_return_sequences is not None
+                else self.num_return_sequences
+            )
+            for _ in range(sequences_to_generate):
+                prompt_outputs.append(
+                    self._normalize_output(self._generate_raw_text(prompt))
+                )
+            all_outputs.append(prompt_outputs)
+        return all_outputs
+
+    def generate(self, prompt: str) -> str:
+        return self.generate_batch([prompt])[0][0]
+
+
+class OpenAIAPILLM(APIBaseLLM):
+    MODELS = {"gpt-5", "gpt-5.1", "gpt-5.4"}
+    REASONING_LEVELS_BY_MODEL = {
+        "gpt-5": {"minimal", "low", "medium", "high"},
+        "gpt-5.1": {"none", "low", "medium", "high"},
+        "gpt-5.4": {"none", "low", "medium", "high", "xhigh"},
+    }
+
+    def __init__(
+        self,
+        model_id: str,
+        reasoning: str | None = None,
+        num_return_sequences: int = 1,
+    ) -> None:
+        gpt_reasoning = reasoning.strip().lower() if reasoning else None
+        reasoning_payload = None
+        if reasoning:
+            supported_levels = self.REASONING_LEVELS_BY_MODEL[model_id]
+            if gpt_reasoning not in supported_levels:
+                raise ValueError(
+                    f"Invalid GPT reasoning level '{reasoning}' for "
+                    f"{model_id}. Supported levels: {', '.join(sorted(supported_levels))}."
+                )
+            reasoning_payload = {"effort": gpt_reasoning}
+
+        super().__init__(
+            model_id=model_id,
+            reasoning=reasoning_payload,
+            num_return_sequences=num_return_sequences,
+        )
+        self.client = OpenAI(api_key=os.getenv("OPENAI_API_KEY"))
+
+        print(f"[INFO] Initialized OpenAIAPILLM with model_id: {self.model_id}")
         print(f"[INFO] API reasoning parameters: {self.reasoning}")
         print(f"[INFO] API sequences per prompt: {self.num_return_sequences}")
 
@@ -248,35 +350,58 @@ class APILLM(LLM):
             text_chunks.append(response.output_text)
         return "".join(text_chunks).strip()
 
-    def generate_batch(
-        self, prompts: list[str], num_return_sequences: int | None = None
-    ) -> list[list[str]]:
-        all_outputs: list[list[str]] = []
-        for prompt in prompts:
-            prompt_outputs: list[str] = []
-            sequences_to_generate = (
-                num_return_sequences
-                if num_return_sequences is not None
-                else self.num_return_sequences
-            )
-            for _ in range(sequences_to_generate):
-                response = self.client.responses.create(
-                    model=self.model_id,
-                    input=prompt,
-                    reasoning=self.reasoning,
-                )
-                raw_text = self._extract_output_text(response)
-                normalized = "".join(
-                    c
-                    for c in raw_text.strip().lower()
-                    if c.isalnum() or c.isspace() or c in "<>/"
-                )
-                prompt_outputs.append(normalized)
-            all_outputs.append(prompt_outputs)
-        return all_outputs
+    def _generate_raw_text(self, prompt: str) -> str:
+        request_kwargs = {
+            "model": self.model_id,
+            "input": prompt,
+        }
+        if self.reasoning is not None:
+            request_kwargs["reasoning"] = self.reasoning
 
-    def generate(self, prompt: str) -> str:
-        return self.generate_batch([prompt])[0][0]
+        response = self.client.responses.create(**request_kwargs)
+        return self._extract_output_text(response)
+
+
+class GeminiAPILLM(APIBaseLLM):
+    MODELS = {"gemini-3.1-flash-lite-preview"}
+    REASONING_LEVELS = {"minimal", "low", "medium", "high"}
+
+    def __init__(
+        self,
+        model_id: str,
+        reasoning: str | None = None,
+        num_return_sequences: int = 1,
+    ) -> None:
+        gemini_reasoning = reasoning.strip().lower() if reasoning else None
+        if gemini_reasoning not in {None, *self.REASONING_LEVELS}:
+            raise ValueError(
+                f"Invalid Gemini thinking level '{reasoning}'. Supported levels: "
+                f"{', '.join(sorted(self.REASONING_LEVELS))}."
+            )
+
+        super().__init__(
+            model_id=model_id,
+            reasoning=gemini_reasoning,
+            num_return_sequences=num_return_sequences,
+        )
+        self.client = genai.Client()
+
+        print(f"[INFO] Initialized GeminiAPILLM with model_id: {self.model_id}")
+        print(f"[INFO] Gemini thinking level: {self.reasoning}")
+        print(f"[INFO] API sequences per prompt: {self.num_return_sequences}")
+
+    def _generate_raw_text(self, prompt: str) -> str:
+        request_kwargs = {
+            "model": self.model_id,
+            "contents": prompt,
+        }
+        if self.reasoning:
+            request_kwargs["config"] = types.GenerateContentConfig(
+                thinking_config=types.ThinkingConfig(thinking_level=self.reasoning)
+            )
+
+        response = self.client.models.generate_content(**request_kwargs)
+        return response.text or ""
 
 
 def load_model(
@@ -290,56 +415,19 @@ def load_model(
 ) -> LLM:
     """Load either an API or locally hosted LLM implementation"""
 
-    API_MODELS = {"gpt-5", "gpt-5.1", "gpt-5.4"}
-
-    LOCAL_MODELS = {
-        "deepseek-ai/DeepSeek-R1-Distill-Llama-70B",
-        "deepseek-ai/DeepSeek-R1-Distill-Llama-8B",
-        "deepseek-ai/DeepSeek-R1-Distill-Qwen-32B",
-        "deepseek-ai/DeepSeek-R1-Distill-Qwen-14B",
-        "deepseek-ai/DeepSeek-R1-Distill-Qwen-7B",
-        "deepseek-ai/DeepSeek-R1-Distill-Qwen-1.5B",
-        "meta-llama/Llama-3.1-405B-Instruct",
-        "meta-llama/Llama-3.3-70B-Instruct",
-        "meta-llama/Llama-3.1-70B-Instruct",
-        "meta-llama/Meta-Llama-3-70B-Instruct",
-        "meta-llama/Llama-3.1-8B-Instruct",
-        "meta-llama/Meta-Llama-3-8B-Instruct",
-        "meta-llama/Llama-3.2-3B-Instruct",
-        "meta-llama/Llama-3.2-1B-Instruct",
-        "Qwen/Qwen2-72B-Instruct",
-        "Qwen/Qwen2.5-72B-Instruct",
-        "Qwen/Qwen2.5-32B-Instruct",
-        "Qwen/Qwen2.5-14B-Instruct-1M",
-        "Qwen/Qwen2.5-14B-Instruct",
-        "Qwen/Qwen2.5-7B-Instruct-1M",
-        "Qwen/Qwen2.5-7B-Instruct",
-        "Qwen/Qwen2-7B-Instruct",
-        "Qwen/Qwen2.5-3B-Instruct",
-        "Qwen/Qwen2.5-1.5B-Instruct",
-        "Qwen/Qwen2-1.5B-Instruct",
-        "Qwen/Qwen2.5-0.5B-Instruct",
-        "Qwen/Qwen2-0.5B-Instruct",
-        "google/gemma-3-1b-it",
-        "google/gemma-3-4b-it",
-        "google/gemma-3-12b-it",
-        "google/gemma-3-27b-it",
-        "microsoft/Phi-4-mini-instruct",
-        "openai/gpt-oss-120b",
-        "openai/gpt-oss-20b",
-    }
-
-    if model_id in API_MODELS:
-        reasoning_payload = None
-        if reasoning:
-            reasoning_payload = {"effort": reasoning}  # OPENAI style
-
-        return APILLM(
+    if model_id in OpenAIAPILLM.MODELS:
+        return OpenAIAPILLM(
             model_id=model_id,
-            reasoning=reasoning_payload,
+            reasoning=reasoning,
             num_return_sequences=num_return_sequences,
         )
-    elif model_id in LOCAL_MODELS:
+    elif model_id in GeminiAPILLM.MODELS:
+        return GeminiAPILLM(
+            model_id=model_id,
+            reasoning=reasoning,
+            num_return_sequences=num_return_sequences,
+        )
+    elif model_id in LocalLLM.MODELS:
         return LocalLLM(
             model_id=model_id,
             top_p=top_p,
