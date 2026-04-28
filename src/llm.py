@@ -4,6 +4,7 @@ import os
 from google import genai
 from google.genai import types
 from openai import OpenAI
+from tenacity import retry, retry_if_exception, stop_after_attempt, wait_fixed
 import torch
 from transformers import (
     AutoModelForCausalLM,
@@ -14,8 +15,9 @@ from transformers import (
 
 
 class LLM(ABC):
-    def __init__(self, model_id: str) -> None:
+    def __init__(self, model_id: str, is_api_model: bool) -> None:
         self.model_id = model_id
+        self.is_api_model = is_api_model
 
     @abstractmethod
     def generate(self, prompt: str) -> str:
@@ -84,7 +86,7 @@ class LocalLLM(LLM):
         quantization: str | None = None,  # None, "8bit", or "4bit"
         reasoning: str | None = None,
     ):
-        super().__init__(model_id=model_id)
+        super().__init__(model_id=model_id, is_api_model=False)
         self.top_p = top_p
         self.temperature = temperature
         self.max_new_tokens = max_new_tokens
@@ -260,13 +262,49 @@ class LocalLLM(LLM):
 
 
 class APIBaseLLM(LLM):
+    HIGH_DEMAND_CODE = 503
+    API_MAX_RETRY_ATTEMPTS = 60
+    API_RETRY_SLEEP_SECONDS = 60 * 2
+
+    @staticmethod
+    def _get_status_code(error: BaseException) -> int | None:
+        status_code = getattr(error, "status_code", None)
+        if status_code is None:
+            response = getattr(error, "response", None)
+            status_code = getattr(response, "status_code", None)
+        if status_code is None:
+            return None
+        try:
+            return int(status_code)
+        except (TypeError, ValueError):
+            return None
+
+    @staticmethod
+    def _is_high_demand_api_error(error: BaseException) -> bool:
+        if APIBaseLLM._get_status_code(error) == APIBaseLLM.HIGH_DEMAND_CODE:
+            return True
+
+        error_message = str(error).lower()
+        return any(marker in error_message for marker in ("high demand",))
+
+    @staticmethod
+    def _log_api_retry(retry_state) -> None:
+        error = retry_state.outcome.exception()
+        print(
+            "[WARNING] API call failed with a retryable error "
+            f"({type(error).__name__}). Retrying in "
+            f"{APIBaseLLM.API_RETRY_SLEEP_SECONDS}s "
+            f"({retry_state.attempt_number + 1}/"
+            f"{APIBaseLLM.API_MAX_RETRY_ATTEMPTS})."
+        )
+
     def __init__(
         self,
         model_id: str,
         reasoning: object | None = None,
         num_return_sequences: int = 1,
     ) -> None:
-        super().__init__(model_id=model_id)
+        super().__init__(model_id=model_id, is_api_model=True)
         self.reasoning = reasoning
         self.num_return_sequences = num_return_sequences
 
@@ -278,6 +316,16 @@ class APIBaseLLM(LLM):
     @abstractmethod
     def _generate_raw_text(self, prompt: str) -> str:
         raise NotImplementedError
+
+    @retry(
+        stop=stop_after_attempt(API_MAX_RETRY_ATTEMPTS),
+        wait=wait_fixed(API_RETRY_SLEEP_SECONDS),
+        retry=retry_if_exception(_is_high_demand_api_error),
+        before_sleep=_log_api_retry,
+        reraise=True,
+    )
+    def _generate_raw_text_with_retry(self, prompt: str) -> str:
+        return self._generate_raw_text(prompt)
 
     def generate_batch(
         self, prompts: list[str], num_return_sequences: int | None = None
@@ -292,7 +340,7 @@ class APIBaseLLM(LLM):
             )
             for _ in range(sequences_to_generate):
                 prompt_outputs.append(
-                    self._normalize_output(self._generate_raw_text(prompt))
+                    self._normalize_output(self._generate_raw_text_with_retry(prompt))
                 )
             all_outputs.append(prompt_outputs)
         return all_outputs

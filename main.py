@@ -231,6 +231,19 @@ def generate_batch_responses(
             )
             print("[PROMPT]")
             print(entry["prompt"])
+            if model.is_api_model:
+                print("[RESPONSES]")
+                for _ in range(batch_size):
+                    text = model.generate(entry["prompt"])
+                    prompt_responses.append(text)
+                    new_data_generated = True
+                    print(text)
+                    save_jsonl(
+                        log_path,
+                        assemble_log_entries(prompt_plan, responses_by_prompt),
+                    )
+                continue
+
             texts = model.generate_batch(
                 [entry["prompt"]], num_return_sequences=batch_size
             )[0]
