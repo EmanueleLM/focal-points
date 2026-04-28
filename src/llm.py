@@ -263,8 +263,8 @@ class LocalLLM(LLM):
 
 class APIBaseLLM(LLM):
     HIGH_DEMAND_CODE = 503
-    API_MAX_RETRY_ATTEMPTS = 60
-    API_RETRY_SLEEP_SECONDS = 60 * 2
+    API_MAX_RETRY_ATTEMPTS = 240
+    API_RETRY_SLEEP_SECONDS = 30
 
     @staticmethod
     def _get_status_code(error: BaseException) -> int | None:
@@ -411,7 +411,7 @@ class OpenAIAPILLM(APIBaseLLM):
 
 
 class GeminiAPILLM(APIBaseLLM):
-    MODELS = {"gemini-3.1-flash-lite-preview"}
+    MODELS = {"gemini-3.1-flash-lite-preview", "gemini-3.1-pro-preview"}
     REASONING_LEVELS = {"minimal", "low", "medium", "high"}
 
     def __init__(

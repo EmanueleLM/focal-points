@@ -1,7 +1,7 @@
 #!/bin/bash
 #SBATCH --job-name=lefocal
-#SBATCH --output=/private/kraus-lab/idoa/slurm/lefocal//lefocal_%j.out
-#SBATCH --error=/private/kraus-lab/idoa/slurm/lefocal//lefocal_%j.err
+#SBATCH --output=/private/kraus-lab/idoa/slurm/lefocal/lefocal_%j.out
+#SBATCH --error=/private/kraus-lab/idoa/slurm/lefocal/lefocal_%j.err
 #SBATCH --partition=p_b200_kraus
 #SBATCH --account=ug_kraus
 #SBATCH --gres=gpu:1
