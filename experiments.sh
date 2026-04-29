@@ -7,7 +7,7 @@ datasets=()
 num_experiments=30
 quantization="None"
 plot_graphs="true"
-reasoning="None"
+reasoning=""
 max_new_tokens=""
 bargaining_players=("blue" "yellow")
 
@@ -157,11 +157,17 @@ for data in "${datasets[@]}"; do
   esac
 done
 
-echo "Running experiments with model(s): ${models[*]}, datasets: ${datasets[*]}, quantization: $quantization, number of experiments: $num_experiments, reasoning: $reasoning, bargaining players: ${bargaining_players[*]}"
+reasoning_display="${reasoning:-Default}"
+echo "Running experiments with model(s): ${models[*]}, datasets: ${datasets[*]}, quantization: $quantization, number of experiments: $num_experiments, reasoning: $reasoning_display, bargaining players: ${bargaining_players[*]}"
 
 extra_args=()
 if [[ -n "$max_new_tokens" && "$max_new_tokens" != "None" && "$max_new_tokens" != "none" ]]; then
   extra_args=(--max-new-tokens "$max_new_tokens")
+fi
+
+reasoning_args=()
+if [[ -n "$reasoning" ]]; then
+  reasoning_args=(--reasoning "$reasoning")
 fi
 
 for model in "${models[@]}"; do
@@ -169,18 +175,18 @@ for model in "${models[@]}"; do
 
   if ((${#standard_datasets[@]})); then
     echo "Running main.py for standard datasets: ${standard_datasets[*]}"
-    python main.py --model "$model" --dataset "${standard_datasets[@]}" --problem-tag "${standard_problemtags[@]}" --return-sequences "$num_experiments" --quantization "$quantization" --plot-graphs "$plot_graphs" --reasoning "$reasoning" "${extra_args[@]}"
+    python main.py --model "$model" --dataset "${standard_datasets[@]}" --problem-tag "${standard_problemtags[@]}" --return-sequences "$num_experiments" --quantization "$quantization" --plot-graphs "$plot_graphs" "${reasoning_args[@]}" "${extra_args[@]}"
   fi
 
   if ((${#schelling_datasets[@]})); then
     echo "Running main.py for schelling datasets: ${schelling_datasets[*]}"
-    python main.py --model "$model" --dataset "${schelling_datasets[@]}" --problem-tag "${schelling_problemtags[@]}" --return-sequences "$num_experiments" --quantization "$quantization" --plot-graphs "$plot_graphs" --reasoning "$reasoning" "${extra_args[@]}"
+    python main.py --model "$model" --dataset "${schelling_datasets[@]}" --problem-tag "${schelling_problemtags[@]}" --return-sequences "$num_experiments" --quantization "$quantization" --plot-graphs "$plot_graphs" "${reasoning_args[@]}" "${extra_args[@]}"
   fi
 
   if ((${#bargaining_datasets[@]})); then
     for bargaining_player in "${bargaining_players[@]}"; do
       echo "Running main.py for bargaining table datasets: ${bargaining_datasets[*]} (player: $bargaining_player)"
-      python main.py --model "$model" --dataset "${bargaining_datasets[@]}" --problem-tag "${bargaining_problemtags[@]}" --return-sequences "$num_experiments" --quantization "$quantization" --plot-graphs "$plot_graphs" --reasoning "$reasoning" --bargaining-player "$bargaining_player" "${extra_args[@]}"
+      python main.py --model "$model" --dataset "${bargaining_datasets[@]}" --problem-tag "${bargaining_problemtags[@]}" --return-sequences "$num_experiments" --quantization "$quantization" --plot-graphs "$plot_graphs" "${reasoning_args[@]}" --bargaining-player "$bargaining_player" "${extra_args[@]}"
     done
   fi
 done

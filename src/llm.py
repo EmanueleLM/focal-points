@@ -290,22 +290,21 @@ class APIBaseLLM(LLM):
     @staticmethod
     def _log_api_retry(retry_state) -> None:
         error = retry_state.outcome.exception()
-        print(
-            "[WARNING] API call failed with a retryable error "
-            f"({type(error).__name__}). Retrying in "
-            f"{APIBaseLLM.API_RETRY_SLEEP_SECONDS}s "
-            f"({retry_state.attempt_number + 1}/"
-            f"{APIBaseLLM.API_MAX_RETRY_ATTEMPTS})."
-        )
+        status_code = APIBaseLLM._get_status_code(error)
+        status_text = f", status={status_code}" if status_code is not None else ""
+        error_text = str(error).strip() or "<no error message>"
+        print(f"[WARNING] {type(error).__name__}{status_text}: {error_text}", flush=True)
 
     def __init__(
         self,
         model_id: str,
         reasoning: object | None = None,
         num_return_sequences: int = 1,
+        reasoning_display: str = "Default",
     ) -> None:
         super().__init__(model_id=model_id, is_api_model=True)
         self.reasoning = reasoning
+        self.reasoning_display = reasoning_display
         self.num_return_sequences = num_return_sequences
 
     def _normalize_output(self, text: str) -> str:
@@ -350,7 +349,7 @@ class APIBaseLLM(LLM):
 
 
 class OpenAIAPILLM(APIBaseLLM):
-    MODELS = {"gpt-5", "gpt-5.1", "gpt-5.4"}
+    MODELS = {"gpt-4o", "gpt-5", "gpt-5.1", "gpt-5.4"}
     REASONING_LEVELS_BY_MODEL = {
         "gpt-5": {"minimal", "low", "medium", "high"},
         "gpt-5.1": {"none", "low", "medium", "high"},
@@ -363,9 +362,13 @@ class OpenAIAPILLM(APIBaseLLM):
         reasoning: str | None = None,
         num_return_sequences: int = 1,
     ) -> None:
-        gpt_reasoning = reasoning.strip().lower() if reasoning else None
         reasoning_payload = None
-        if reasoning:
+        reasoning_display = "Default"
+        if reasoning is not None:
+            if model_id not in self.REASONING_LEVELS_BY_MODEL:
+                raise ValueError(f"{model_id} does not support GPT reasoning levels.")
+
+            gpt_reasoning = reasoning.strip().lower()
             supported_levels = self.REASONING_LEVELS_BY_MODEL[model_id]
             if gpt_reasoning not in supported_levels:
                 raise ValueError(
@@ -373,16 +376,18 @@ class OpenAIAPILLM(APIBaseLLM):
                     f"{model_id}. Supported levels: {', '.join(sorted(supported_levels))}."
                 )
             reasoning_payload = {"effort": gpt_reasoning}
+            reasoning_display = gpt_reasoning
 
         super().__init__(
             model_id=model_id,
             reasoning=reasoning_payload,
             num_return_sequences=num_return_sequences,
+            reasoning_display=reasoning_display,
         )
         self.client = OpenAI(api_key=os.getenv("OPENAI_API_KEY"))
 
         print(f"[INFO] Initialized OpenAIAPILLM with model_id: {self.model_id}")
-        print(f"[INFO] API reasoning parameters: {self.reasoning}")
+        print(f"[INFO] GPT reasoning level: {self.reasoning_display}")
         print(f"[INFO] API sequences per prompt: {self.num_return_sequences}")
 
     def _extract_output_text(self, response) -> str:
@@ -411,8 +416,12 @@ class OpenAIAPILLM(APIBaseLLM):
 
 
 class GeminiAPILLM(APIBaseLLM):
-    MODELS = {"gemini-3.1-flash-lite-preview", "gemini-3.1-pro-preview"}
-    REASONING_LEVELS = {"minimal", "low", "medium", "high"}
+    MODELS = {
+        "gemini-3-flash-preview",
+        "gemini-3.1-flash-lite-preview",
+        "gemini-3.1-pro-preview",
+    }
+    REASONING_LEVELS = {"none", "minimal", "low", "medium", "high"}
 
     def __init__(
         self,
@@ -420,22 +429,24 @@ class GeminiAPILLM(APIBaseLLM):
         reasoning: str | None = None,
         num_return_sequences: int = 1,
     ) -> None:
-        gemini_reasoning = reasoning.strip().lower() if reasoning else None
+        gemini_reasoning = reasoning.strip().lower() if reasoning is not None else None
         if gemini_reasoning not in {None, *self.REASONING_LEVELS}:
             raise ValueError(
                 f"Invalid Gemini thinking level '{reasoning}'. Supported levels: "
                 f"{', '.join(sorted(self.REASONING_LEVELS))}."
             )
+        reasoning_display = "Default" if gemini_reasoning is None else gemini_reasoning
 
         super().__init__(
             model_id=model_id,
             reasoning=gemini_reasoning,
             num_return_sequences=num_return_sequences,
+            reasoning_display=reasoning_display,
         )
         self.client = genai.Client()
 
         print(f"[INFO] Initialized GeminiAPILLM with model_id: {self.model_id}")
-        print(f"[INFO] Gemini thinking level: {self.reasoning}")
+        print(f"[INFO] Gemini thinking level: {self.reasoning_display}")
         print(f"[INFO] API sequences per prompt: {self.num_return_sequences}")
 
     def _generate_raw_text(self, prompt: str) -> str:
@@ -443,7 +454,11 @@ class GeminiAPILLM(APIBaseLLM):
             "model": self.model_id,
             "contents": prompt,
         }
-        if self.reasoning:
+        if self.reasoning == "none":
+            request_kwargs["config"] = types.GenerateContentConfig(
+                thinking_config=types.ThinkingConfig(thinking_budget=0)
+            )
+        elif self.reasoning:
             request_kwargs["config"] = types.GenerateContentConfig(
                 thinking_config=types.ThinkingConfig(thinking_level=self.reasoning)
             )

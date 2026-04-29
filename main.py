@@ -343,16 +343,12 @@ def run_single_job(
 
         # load model once per model_name and reuse for subsequent jobs
         if model is None:
-            reasoning_arg = args.reasoning
-            if reasoning_arg and reasoning_arg.lower() == "none":
-                reasoning_arg = None
-
             model = load_model(
                 model_id=model_name,
                 num_return_sequences=args.sequences,
                 max_new_tokens=args.max_new_tokens,
                 quantization=args.quantization,
-                reasoning=reasoning_arg,
+                reasoning=args.reasoning,
             )
 
         # generate

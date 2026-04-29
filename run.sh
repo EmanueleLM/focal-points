@@ -14,31 +14,68 @@ set -euo pipefail
 
 # Argument forwarding
 DEFAULT_EXPERIMENT_ARGS=(-m all -q 8bit -x 4096)
-EXPERIMENT_ARGS=("${DEFAULT_EXPERIMENT_ARGS[@]}")
+DEFAULT_OUT_FOLDER_NAME=out_lefocal
+OUT_FOLDER_NAME="$DEFAULT_OUT_FOLDER_NAME"
+EXPERIMENT_ARGS=()
 
-if [[ $# -gt 0 ]]; then
-  if [[ "${1:-}" == "-h" || "${1:-}" == "--help" ]]; then
-    cat <<'EOF'
-Usage: sbatch run.sh [experiments.sh args]
+usage() {
+  cat <<'EOF'
+Usage: sbatch run.sh [run.sh options] [experiments.sh args]
+
+Run options:
+  -O, --out-folder NAME    Folder under /private/kraus-lab/idoa/lefocal for outputs.
+                           Default: out_lefocal
 
 Examples:
+  sbatch run.sh --out-folder out_gpt54 -m gpt-5.4 -r low -q None -d "amsterdam amsterdam-instruct-all-features"
+  sbatch run.sh -O out_full_run -m all -q 8bit -x 4096
   sbatch run.sh -m gpt-5.4 -r low -q None -d "amsterdam amsterdam-instruct-all-features"
-  sbatch run.sh -m all -q 8bit -x 4096
 
 If no args are provided, defaults are used:
   -m all -q 8bit -x 4096
 EOF
-    exit 0
-  fi
+}
 
-  EXPERIMENT_ARGS=("$@")
+while [[ $# -gt 0 ]]; do
+  case "$1" in
+    -h|--help)
+      usage
+      exit 0
+      ;;
+    -O|--out-folder|--output-folder)
+      if [[ $# -lt 2 || -z "${2:-}" ]]; then
+        echo "Error: $1 requires a folder name." >&2
+        exit 1
+      fi
+      OUT_FOLDER_NAME="$2"
+      shift 2
+      ;;
+    --out-folder=*|--output-folder=*)
+      OUT_FOLDER_NAME="${1#*=}"
+      if [[ -z "$OUT_FOLDER_NAME" ]]; then
+        echo "Error: ${1%%=*} requires a folder name." >&2
+        exit 1
+      fi
+      shift
+      ;;
+    *)
+      EXPERIMENT_ARGS+=("$1")
+      shift
+      ;;
+  esac
+done
+
+if ((${#EXPERIMENT_ARGS[@]} == 0)); then
+  EXPERIMENT_ARGS=("${DEFAULT_EXPERIMENT_ARGS[@]}")
+fi
+
+if [[ -z "$OUT_FOLDER_NAME" ]]; then
+  echo "Error: output folder name cannot be empty." >&2
+  exit 1
 fi
 
 # Timestamp for per-run log files (e.g. 2711:1810)
 TS=$(date +"%d%m:%H%M")
-
-# DYNAMIC
-OUT_FOLDER_NAME=out_lefocal
 
 # STATIC
 DockerName=slurm-job-$SLURM_JOB_ID
@@ -50,6 +87,7 @@ HOST_USER_NAME="$(id -un)"
 
 CODE="$WORK/workspace"
 OUT="$WORK/$OUT_FOLDER_NAME"
+echo "Writing outputs to: $OUT"
 
 # GPU log (live nvidia-smi text, always latest snapshot)
 GPU_LOG="$OUT/gpu/gpu_${SLURM_JOB_ID}.txt"
