@@ -4,7 +4,7 @@ Short repo for running experiments and plotting results related to bargaining / 
 
 ## Main components
 - `main.py`: primary entry point for running experiments.
-- `bargaining_table.py` / `bargaining_table.sh`: generate bargaining table results.
+- `src/bargaining_table/bargaining_table.py` / `src/bargaining_table/bargaining_table.sh`: generate bargaining table results.
 - `plot_bardsley.py` / `plot_bardsley.sh`: plot Bardsley-related results.
 - `plot_bargaining_table_averages.py`: plot averages for bargaining tables.
 - `experiments.sh`: run experiment batches.

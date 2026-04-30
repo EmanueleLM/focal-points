@@ -4,8 +4,8 @@ import os
 import time
 from pathlib import Path
 from typing import Dict, List, Tuple
-from src.llm import LLM, load_model
-from src.prompt import Level0
+from src.utils.llm import LLM, load_model
+from src.utils.prompt import Level0
 from src.utils import iterate_data, load_bargaining_table_prompts, plot_block_frequencies
 
 
@@ -308,7 +308,7 @@ def run_single_job(
             ds_path, args.bargaining_player, problem_tag
         )
     else:
-        ds_path = dataset_dir / f"{dataset}.jsonl"
+        ds_path = dataset_dir / "amsterdam_nottingham_schelling" / f"{dataset}.jsonl"
         with open(ds_path) as f:
             raw_data = json.load(f)
         problems, norm_factors = iterate_data(raw_data, problem_tag)

@@ -1,0 +1,32 @@
+[
+  {
+    "model": "gpt-4o",
+    "requests": 55590,
+    "request_file": "data\\batch_requests\\gpt-4o\\gpt-4o.jsonl",
+    "manifest_file": "data\\batch_requests\\gpt-4o\\gpt-4o.manifest.jsonl",
+    "parts": [
+      {
+        "requests": 50000,
+        "request_file": "data\\batch_requests\\gpt-4o\\gpt-4o.part-001.jsonl",
+        "manifest_file": "data\\batch_requests\\gpt-4o\\gpt-4o.part-001.manifest.jsonl"
+      },
+      {
+        "requests": 5590,
+        "request_file": "data\\batch_requests\\gpt-4o\\gpt-4o.part-002.jsonl",
+        "manifest_file": "data\\batch_requests\\gpt-4o\\gpt-4o.part-002.manifest.jsonl"
+      }
+    ]
+  },
+  {
+    "model": "gemini-3-flash-preview",
+    "requests": 56976,
+    "request_file": "data\\batch_requests\\gemini-3-flash-preview\\gemini-3-flash-preview.jsonl",
+    "manifest_file": "data\\batch_requests\\gemini-3-flash-preview\\gemini-3-flash-preview.manifest.jsonl"
+  },
+  {
+    "model": "gemini-3.1-flash-lite-preview",
+    "requests": 53737,
+    "request_file": "data\\batch_requests\\gemini-3.1-flash-lite-preview\\gemini-3.1-flash-lite-preview.jsonl",
+    "manifest_file": "data\\batch_requests\\gemini-3.1-flash-lite-preview\\gemini-3.1-flash-lite-preview.manifest.jsonl"
+  }
+]
