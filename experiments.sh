@@ -114,7 +114,6 @@ all_datasets=(
   "schelling-instruct-all-features"
   "schelling-instruct-saliency"
   # bargaining table
-  "bargaining_table"
   "bargaining_table_realdata"
   )
 

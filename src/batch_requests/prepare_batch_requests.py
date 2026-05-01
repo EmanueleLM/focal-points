@@ -40,7 +40,6 @@ ALL_DATASETS = (
     "schelling",
     "schelling-instruct-all-features",
     "schelling-instruct-saliency",
-    "bargaining_table",
     "bargaining_table_realdata",
 )
 
@@ -67,7 +66,7 @@ def _iter_jobs() -> Iterable[tuple[str, str, str | None]]:
         if dataset in {"schelling", "schelling-instruct-all-features", "schelling-instruct-saliency"}:
             for problem_tag in SCHELLING_PROBLEM_TAGS:
                 yield dataset, problem_tag, None
-        elif dataset in {"bargaining_table", "bargaining_table_realdata"}:
+        elif dataset == "bargaining_table_realdata":
             for problem_tag in BARGAINING_PROBLEM_TAGS:
                 for player in BARGAINING_PLAYERS:
                     yield dataset, problem_tag, player
