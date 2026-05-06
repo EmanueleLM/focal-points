@@ -15,7 +15,7 @@ except ImportError:
 
 
 DEFAULT_IMAGE_EXTENSIONS = (".png", ".jpg", ".jpeg", ".webp")
-DEFAULT_WEIGHTS_DIR = Path("data") / "maps" / "models" / "realesrgan"
+DEFAULT_WEIGHTS_DIR = Path("data") / "SAR_maps" / "models" / "realesrgan"
 INSTALL_HINT = (
     "Install the Python backend dependencies with:\n"
     "  .venv/Scripts/python.exe -m pip install realesrgan opencv-python"
@@ -45,13 +45,13 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument(
         "--input-root",
         type=Path,
-        default=Path("data") / "maps" / "base",
+        default=Path("data") / "SAR_maps" / "base",
         help="Root directory containing source map images.",
     )
     parser.add_argument(
         "--output-root",
         type=Path,
-        default=Path("data") / "maps" / "base_upscale",
+        default=Path("data") / "SAR_maps" / "base_upscale",
         help="Root directory for upscaled images.",
     )
     parser.add_argument(

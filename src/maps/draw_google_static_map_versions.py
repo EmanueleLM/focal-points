@@ -48,14 +48,14 @@ def parse_args() -> argparse.Namespace:
         default=None,
         help=(
             "Metadata CSV created by download_google_static_maps.py. Defaults to "
-            "data/maps/base/<maptype>/image_metadata.csv."
+            "data/SAR_maps/base/<maptype>/image_metadata.csv."
         ),
     )
     parser.add_argument(
         "--v1-dir",
         type=Path,
         default=None,
-        help="Output directory for IPP-only images. Defaults to data/maps/v1/<maptype>.",
+        help="Output directory for IPP-only images. Defaults to data/SAR_maps/v1/<maptype>.",
     )
     parser.add_argument(
         "--v2-dir",
@@ -63,7 +63,7 @@ def parse_args() -> argparse.Namespace:
         default=None,
         help=(
             "Output directory for IPP plus found-location images. "
-            "Defaults to data/maps/v2/<maptype>."
+            "Defaults to data/SAR_maps/v2/<maptype>."
         ),
     )
     parser.add_argument(
@@ -103,19 +103,19 @@ def resolve_paths(args: argparse.Namespace, maptype: str) -> tuple[Path, Path, P
         raise ValueError("--metadata cannot be combined with --maptype all")
 
     if args.metadata is None:
-        metadata = Path("data") / "maps" / "base" / maptype / "image_metadata.csv"
+        metadata = Path("data") / "SAR_maps" / "base" / maptype / "image_metadata.csv"
     else:
         metadata = args.metadata
 
     if args.v1_dir is None:
-        v1_dir = Path("data") / "maps" / "v1" / maptype
+        v1_dir = Path("data") / "SAR_maps" / "v1" / maptype
     elif args.maptype == "all":
         v1_dir = args.v1_dir / maptype
     else:
         v1_dir = args.v1_dir
 
     if args.v2_dir is None:
-        v2_dir = Path("data") / "maps" / "v2" / maptype
+        v2_dir = Path("data") / "SAR_maps" / "v2" / maptype
     elif args.maptype == "all":
         v2_dir = args.v2_dir / maptype
     else:

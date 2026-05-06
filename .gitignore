@@ -190,9 +190,8 @@ tmp_triton
 # SAR map source data
 /SAR Map Data/
 
-# Downloaded model weights/cache for local map upscaling
-/data/maps/models/
-/data/maps/base_upscale/
+# Local SAR map data and generated outputs
+/data/SAR_maps/
 
 # Large raw Gemini batch response; keep the stripped copy instead.
 data/batch_requests_responses/gemini/gemini-3-flash-preview/batches-tstmjkmdo4mtzth76w50e1ug2ga7plteo1ob.jsonl

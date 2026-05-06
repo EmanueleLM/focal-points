@@ -54,7 +54,7 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument(
         "--csv",
         type=Path,
-        default=Path("data") / "maps" / "InitialConditions.csv",
+        default=Path("data") / "SAR_maps" / "InitialConditions.csv",
         help="Initial conditions CSV. A one-line title before the header is allowed.",
     )
     parser.add_argument(
@@ -63,7 +63,7 @@ def parse_args() -> argparse.Namespace:
         default=None,
         help=(
             "Directory for clean base images and metadata. Defaults to "
-            "data/maps/base/<maptype>."
+            "data/SAR_maps/base/<maptype>."
         ),
     )
     parser.add_argument(
@@ -138,7 +138,7 @@ def resolve_output_dir(args: argparse.Namespace, maptype: str) -> Path:
         if args.maptype == "all":
             return args.output_dir / maptype
         return args.output_dir
-    return Path("data") / "maps" / "base" / maptype
+    return Path("data") / "SAR_maps" / "base" / maptype
 
 
 def validate_args(args: argparse.Namespace) -> None:
@@ -416,7 +416,7 @@ def download_maptype(
     print(f"Summary saved to: {summary_path}")
     print(
         "Next: run src/maps/draw_google_static_map_versions.py to create "
-        "data/maps/v1 and data/maps/v2 without another API request."
+        "data/SAR_maps/v1 and data/SAR_maps/v2 without another API request."
     )
 
 
