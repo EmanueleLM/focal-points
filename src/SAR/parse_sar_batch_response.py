@@ -1,5 +1,4 @@
 import argparse
-import base64
 import json
 import re
 from collections import defaultdict
@@ -11,7 +10,7 @@ def parse_args() -> argparse.Namespace:
     parser = argparse.ArgumentParser(
         description=(
             "Parse a raw OpenAI /v1/responses SAR batch output JSONL into a JSON "
-            "summary, saving returned edited map images to disk."
+            "summary with the textual response, reasoning, and chosen coordinate."
         )
     )
     parser.add_argument(
@@ -31,12 +30,6 @@ def parse_args() -> argparse.Namespace:
         type=Path,
         default=None,
         help="Parsed JSON output path. Defaults to <response-file>.parsed.json.",
-    )
-    parser.add_argument(
-        "--image-dir",
-        type=Path,
-        default=None,
-        help="Folder for returned images. Defaults to <output-json stem>_images.",
     )
     return parser.parse_args()
 
@@ -103,14 +96,6 @@ def collect_output_text(body: dict[str, Any]) -> str:
     return "\n".join(texts).strip()
 
 
-def collect_image_results(body: dict[str, Any]) -> list[str]:
-    images: list[str] = []
-    for item in iter_response_output(body):
-        if item.get("type") == "image_generation_call" and item.get("result"):
-            images.append(item["result"])
-    return images
-
-
 def parse_tag(text: str, tag: str) -> str | None:
     match = re.search(rf"<{tag}>\s*(.*?)\s*</{tag}>", text, flags=re.IGNORECASE | re.DOTALL)
     if not match:
@@ -118,44 +103,27 @@ def parse_tag(text: str, tag: str) -> str | None:
     return match.group(1).strip()
 
 
-def parse_distance(text: str) -> float | None:
-    dist_text = parse_tag(text, "dist")
-    if dist_text is None:
+def parse_coordinate(text: str) -> dict[str, float] | None:
+    coord_text = parse_tag(text, "coord")
+    if coord_text is None:
         return None
 
-    cleaned = dist_text.replace(",", "")
-    match = re.search(r"[-+]?\d*\.?\d+", cleaned)
-    if not match:
+    match = re.fullmatch(
+        r"\s*([-+]?\d*\.?\d+)\s*,\s*([-+]?\d*\.?\d+)\s*",
+        coord_text,
+    )
+    if match is None:
+        values = re.findall(r"[-+]?\d*\.?\d+", coord_text)
+        if len(values) < 2:
+            return None
+        x_text, y_text = values[:2]
+    else:
+        x_text, y_text = match.groups()
+
+    try:
+        return {"x": float(x_text), "y": float(y_text)}
+    except ValueError:
         return None
-    return float(match.group(0))
-
-
-def infer_image_extension(image_base64: str) -> str:
-    header = base64.b64decode(image_base64[:64] + "===")
-    if header.startswith(b"\x89PNG\r\n\x1a\n"):
-        return ".png"
-    if header.startswith(b"\xff\xd8\xff"):
-        return ".jpg"
-    if header.startswith(b"RIFF") and b"WEBP" in header[:16]:
-        return ".webp"
-    return ".png"
-
-
-def write_images(
-    *,
-    image_dir: Path,
-    custom_id: str,
-    image_results: list[str],
-) -> list[str]:
-    image_paths: list[str] = []
-    image_dir.mkdir(parents=True, exist_ok=True)
-    for index, image_base64 in enumerate(image_results, start=1):
-        extension = infer_image_extension(image_base64)
-        suffix = "" if len(image_results) == 1 else f"_{index:02d}"
-        image_path = image_dir / f"{custom_id}{suffix}{extension}"
-        image_path.write_bytes(base64.b64decode(image_base64))
-        image_paths.append(str(image_path))
-    return image_paths
 
 
 def prompt_key(meta: dict[str, Any]) -> str:
@@ -166,7 +134,6 @@ def parse_response_rows(
     *,
     response_rows: list[dict[str, Any]],
     manifest: dict[str, dict[str, Any]],
-    image_dir: Path,
 ) -> dict[str, Any]:
     prompts: dict[str, list[dict[str, Any]]] = defaultdict(list)
     failures: list[dict[str, Any]] = []
@@ -196,24 +163,15 @@ def parse_response_rows(
             continue
 
         full_text = collect_output_text(body)
-        image_results = collect_image_results(body)
-        image_paths = write_images(
-            image_dir=image_dir,
-            custom_id=custom_id,
-            image_results=image_results,
-        )
-
         entry = {
             "custom_id": custom_id,
             "incident_index": meta.get("incident_index"),
             "repeat": meta.get("repeat"),
             "prompt_name": meta.get("prompt_name"),
             "prompt_version": meta.get("prompt_version"),
-            "returned_image": image_paths[0] if image_paths else None,
-            "returned_images": image_paths,
             "full_text": full_text,
             "reasoning": parse_tag(full_text, "reasoning"),
-            "distance": parse_distance(full_text),
+            "coordinate": parse_coordinate(full_text),
             "manifest": meta,
         }
         prompts[prompt_key(meta)].append(entry)
@@ -226,11 +184,6 @@ def parse_response_rows(
             "manifest_rows": len(manifest),
             "parsed_rows": sum(len(entries) for entries in prompts.values()),
             "failure_rows": len(failures),
-            "images_saved": sum(
-                len(entry["returned_images"])
-                for entries in prompts.values()
-                for entry in entries
-            ),
         },
     }
 
@@ -241,21 +194,15 @@ def main() -> None:
     if output_json is None:
         output_json = args.response_file.with_suffix(".parsed.json")
 
-    image_dir = args.image_dir
-    if image_dir is None:
-        image_dir = output_json.with_suffix("").parent / f"{output_json.with_suffix('').name}_images"
-
     manifest = load_manifest(args.manifest_file)
     response_rows = read_jsonl(args.response_file)
     parsed = parse_response_rows(
         response_rows=response_rows,
         manifest=manifest,
-        image_dir=image_dir,
     )
     parsed["source"] = {
         "response_file": str(args.response_file),
         "manifest_file": str(args.manifest_file),
-        "image_dir": str(image_dir),
     }
 
     output_json.parent.mkdir(parents=True, exist_ok=True)
@@ -263,7 +210,6 @@ def main() -> None:
         json.dump(parsed, file, indent=2, ensure_ascii=False)
 
     print(f"parsed_json: {output_json}")
-    print(f"image_dir: {image_dir}")
     print(json.dumps(parsed["summary"], indent=2, ensure_ascii=False))
 
 

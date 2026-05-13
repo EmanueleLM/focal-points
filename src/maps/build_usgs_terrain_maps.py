@@ -129,9 +129,11 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument(
         "--indices",
         nargs="+",
-        type=int,
         default=None,
-        help="Optional incident_index values to process.",
+        help=(
+            'Optional incident_index values to process, e.g. "1-5", "7", '
+            'or "1-5, 7, 20-30".'
+        ),
     )
     parser.add_argument(
         "--failed-from-metadata",
@@ -383,6 +385,36 @@ def failed_indices_from_metadata(metadata_path: Path) -> set[int]:
     return failed_indices
 
 
+def parse_positive_index(value: str) -> int:
+    try:
+        index = int(value)
+    except ValueError as exc:
+        raise ValueError(f"Incident index must be a positive integer, got {value!r}") from exc
+
+    if index <= 0:
+        raise ValueError(f"Incident index must be positive, got {value!r}")
+    return index
+
+
+def parse_index_specs(specs: list[str]) -> set[int]:
+    indices: set[int] = set()
+    normalized = " ".join(specs)
+    for chunk in normalized.replace(",", " ").split():
+        if "-" in chunk:
+            start_text, end_text = chunk.split("-", 1)
+            start = parse_positive_index(start_text.strip())
+            end = parse_positive_index(end_text.strip())
+            if end < start:
+                raise ValueError(f"Incident index range must be ascending, got {chunk!r}")
+            indices.update(range(start, end + 1))
+        else:
+            indices.add(parse_positive_index(chunk))
+
+    if not indices:
+        raise ValueError("--indices did not contain any incident ids")
+    return indices
+
+
 def selected_incidents(args: argparse.Namespace) -> list[Incident]:
     incidents = sorted(
         read_initial_conditions(args.csv),
@@ -396,7 +428,7 @@ def selected_incidents(args: argparse.Namespace) -> list[Incident]:
             return []
 
     if args.indices is not None:
-        explicit_indices = set(args.indices)
+        explicit_indices = parse_index_specs(args.indices)
         wanted = explicit_indices if wanted is None else wanted & explicit_indices
 
     if wanted is None:

@@ -23,7 +23,6 @@ DEFAULT_PROMPTS = Path("data/SAR_prompts/sar_prompts.json")
 DEFAULT_MAP_DIR = Path("data/SAR_maps/v1/usgs_terrain")
 DEFAULT_OUTPUT_DIR = Path("data/SAR_prompts/batch_requests")
 DEFAULT_JOB_LOG = Path("data/SAR_prompts/job_ids.jsonl")
-DEFAULT_IMAGE_SIZE = "1536x1024"
 RESPONSES_ENDPOINT = "/v1/responses"
 
 
@@ -138,26 +137,6 @@ def parse_args() -> argparse.Namespace:
         choices=["low", "high", "original", "auto"],
         default="original",
         help="detail value for the input_image block.",
-    )
-    parser.add_argument(
-        "--image-action",
-        choices=["auto", "generate", "edit"],
-        default="edit",
-        help="action value for the image_generation tool.",
-    )
-    parser.add_argument(
-        "--image-quality",
-        choices=["low", "medium", "high", "auto"],
-        default=None,
-        help="Optional quality value for the image_generation tool.",
-    )
-    parser.add_argument(
-        "--image-size",
-        default=DEFAULT_IMAGE_SIZE,
-        help=(
-            "Size value for the image_generation tool. The original map size is not "
-            f"supported by the image tool, so the default is {DEFAULT_IMAGE_SIZE}."
-        ),
     )
     parser.add_argument(
         "--max-output-tokens",
@@ -365,25 +344,12 @@ def upload_vision_files(
     return uploads
 
 
-def build_image_tool(args: argparse.Namespace) -> dict[str, Any]:
-    tool: dict[str, Any] = {
-        "type": "image_generation",
-        "action": args.image_action,
-    }
-    if args.image_quality is not None:
-        tool["quality"] = args.image_quality
-    if args.image_size is not None:
-        tool["size"] = args.image_size
-    return tool
-
-
 def build_request_body(
     *,
     model: str,
     prompt_text: str,
     file_id: str,
     image_detail: str,
-    image_tool: dict[str, Any],
     max_output_tokens: int | None,
 ) -> dict[str, Any]:
     body: dict[str, Any] = {
@@ -404,8 +370,6 @@ def build_request_body(
                 ],
             }
         ],
-        "tools": [image_tool],
-        "tool_choice": {"type": "image_generation"},
     }
 
     if max_output_tokens is not None:
@@ -440,7 +404,6 @@ def build_requests_and_manifest(
 
     requests: list[dict[str, Any]] = []
     manifest: list[dict[str, Any]] = []
-    image_tool = build_image_tool(args)
 
     for condition in conditions:
         upload = uploads[condition.incident_index]
@@ -456,7 +419,6 @@ def build_requests_and_manifest(
                     prompt_text=prompt.text,
                     file_id=upload["file_id"],
                     image_detail=args.image_detail,
-                    image_tool=image_tool,
                     max_output_tokens=args.max_output_tokens,
                 )
                 requests.append(
@@ -483,7 +445,6 @@ def build_requests_and_manifest(
                         "vision_file_id": upload["file_id"],
                         "endpoint": RESPONSES_ENDPOINT,
                         "image_detail": args.image_detail,
-                        "image_tool": image_tool,
                     }
                 )
 
@@ -610,7 +571,6 @@ def build_job_record(
             {"name": prompt.name, "version": prompt.version} for prompt in prompts
         ],
         "image_detail": args.image_detail,
-        "image_tool": build_image_tool(args),
         "vision_uploads": uploads,
         "uploaded_batch_file": object_to_dict(submitted.uploaded_batch_file),
         "batch": object_to_dict(submitted.batch),
