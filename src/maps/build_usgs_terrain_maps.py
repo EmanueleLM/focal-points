@@ -90,6 +90,9 @@ MARKER_LEGEND_ORDER = ("find", "ipp")
 LINE_RENDER_ALPHA = 245
 AREA_RENDER_ALPHA = 205
 ImageFile.LOAD_TRUNCATED_IMAGES = True
+AXIS_LABEL_X = "longitude (x)"
+AXIS_LABEL_Y = "latitude (y)"
+AXIS_LABELS_PER_SIDE = 4
 
 
 def parse_args() -> argparse.Namespace:
@@ -241,14 +244,20 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument(
         "--grid-step-m",
         type=float,
-        default=1000.0,
-        help="Ground spacing for map grid squares. Default is 1 km.",
+        default=500.0,
+        help=(
+            "Base ground increment for axis labels. The actual label spacing "
+            "is a multiple of this value. Default is 500 m."
+        ),
     )
     parser.add_argument(
         "--scale-bar-m",
         type=float,
-        default=1000.0,
-        help="Scale bar length. Default is 1 km.",
+        default=500.0,
+        help=(
+            "Deprecated. The scale bar follows the axis-label spacing so its "
+            "length matches one jump between neighboring axis labels."
+        ),
     )
     parser.add_argument(
         "--decorate-existing",
@@ -432,6 +441,8 @@ def meters_per_cell_for_incident(
         args.min_ground_width_m / 2,
         (max_offset_m + args.point_padding_m) / args.usable_half_width_fraction,
     )
+    axis_snap_m = args.grid_step_m * AXIS_LABELS_PER_SIDE
+    half_width_m = math.ceil(half_width_m / axis_snap_m) * axis_snap_m
     return (2 * half_width_m) / image_size
 
 
@@ -1105,7 +1116,40 @@ def draw_rotated_label(
     )
 
 
-def draw_cell_grid(
+def grid_tick_positions(
+    map_size: int,
+    meters_per_cell: float,
+    args: argparse.Namespace,
+) -> list[tuple[float, float]]:
+    label_step_m = grid_label_step_m(map_size, meters_per_cell, args)
+    step_px = label_step_m / meters_per_cell
+
+    center = map_size / 2
+    return [
+        (center + step * step_px, step * label_step_m)
+        for step in range(-AXIS_LABELS_PER_SIDE, AXIS_LABELS_PER_SIDE + 1)
+    ]
+
+
+def grid_label_step_m(
+    map_size: int,
+    meters_per_cell: float,
+    args: argparse.Namespace,
+) -> float:
+    half_width_m = map_size * meters_per_cell / 2
+    max_step_m = half_width_m / AXIS_LABELS_PER_SIDE
+    step_count = max(1, math.ceil(max_step_m / args.grid_step_m - 1e-9))
+    return step_count * args.grid_step_m
+
+
+def format_grid_number(value_m: float) -> str:
+    rounded = round(value_m)
+    if abs(rounded) == 0:
+        rounded = 0
+    return str(rounded)
+
+
+def draw_grid_numbers(
     canvas: Image.Image,
     map_origin: tuple[int, int],
     map_size: int,
@@ -1116,27 +1160,73 @@ def draw_cell_grid(
     left, top = map_origin
     right = left + map_size
     bottom = top + map_size
-    step_px = args.grid_step_m / meters_per_cell
-    if step_px < 8:
-        return
+    ticks = grid_tick_positions(map_size, meters_per_cell, args)
+    tick_length = max(22, round(map_size * 0.008))
+    font_size = max(46, round(map_size * 0.023))
+    font = load_font(font_size)
+    fill = (20, 20, 20, 255)
+    tick_fill = (35, 35, 35, 255)
 
-    center = map_size / 2
-    positions = [center]
-    offset = step_px
-    while center + offset < map_size:
-        positions.append(center + offset)
-        positions.append(center - offset)
-        offset += step_px
-
-    for position in sorted(positions):
+    for position, value_m in ticks:
+        label = format_grid_number(value_m)
         x = round(left + position)
         y = round(bottom - position)
-        if left < x < right:
-            draw.line((x, top, x, bottom), fill=(35, 35, 35, 74), width=2)
-        if top < y < bottom:
-            draw.line((left, y, right, y), fill=(35, 35, 35, 74), width=2)
+
+        if left <= x <= right:
+            draw.line((x, bottom, x, bottom + tick_length), fill=tick_fill, width=3)
+            draw_centered_text(
+                draw,
+                (x, bottom + tick_length + round(font_size * 0.58)),
+                label,
+                font,
+                fill,
+            )
+
+        if top <= y <= bottom:
+            draw.line((left - tick_length, y, left, y), fill=tick_fill, width=3)
+            label_width, label_height = text_size(draw, label, font)
+            draw.text(
+                (left - tick_length - 8 - label_width, y - label_height / 2),
+                label,
+                font=font,
+                fill=fill,
+            )
 
     draw.rectangle((left, top, right, bottom), outline=(20, 20, 20, 255), width=4)
+
+
+def draw_axis_labels(
+    canvas: Image.Image,
+    map_origin: tuple[int, int],
+    map_size: int,
+    left_margin: int,
+    bottom_margin: int,
+) -> None:
+    draw = ImageDraw.Draw(canvas, "RGBA")
+    font = load_font(max(56, round(map_size * 0.032)))
+    left, top = map_origin
+    bottom = top + map_size
+    fill = (20, 20, 20, 255)
+
+    draw_centered_text(
+        draw,
+        (left + map_size // 2, bottom + round(bottom_margin * 0.58)),
+        AXIS_LABEL_X,
+        font,
+        fill,
+    )
+    draw_rotated_label(
+        canvas,
+        AXIS_LABEL_Y,
+        (round(left_margin * 0.45), top + map_size // 2),
+        font,
+    )
+
+
+def scale_bar_label(length_m: float) -> str:
+    if length_m < 1000:
+        return f"{length_m:g} m"
+    return f"{length_m / 1000:g} km"
 
 
 def draw_legend_sample(
@@ -1205,7 +1295,8 @@ def draw_legend(
     box_padding_y = round(font_size * 0.7)
     sample_width = round(font_size * 1.7)
     gap = round(font_size * 0.65)
-    scale_px = max(1, round(args.scale_bar_m / meters_per_cell))
+    scale_bar_m = grid_label_step_m(map_size, meters_per_cell, args)
+    scale_px = max(1, round(scale_bar_m / meters_per_cell))
 
     max_label_width = max(
         text_size(draw, LAYER_LABELS[item], font)[0] for item in items
@@ -1224,7 +1315,7 @@ def draw_legend(
     bar_x1 = bar_x0 + scale_px
     bar_y = top - round(font_size * 1.05)
     cap = max(12, round(font_size * 0.26))
-    label = f"{args.scale_bar_m / 1000:g} km"
+    label = scale_bar_label(scale_bar_m)
     label_width, label_height = text_size(draw, label, font)
     draw.line((bar_x0, bar_y, bar_x1, bar_y), fill=(20, 20, 20, 255), width=5)
     draw.line(
@@ -1276,9 +1367,9 @@ def decorate_map_frame(
     if map_width != map_height:
         raise ValueError(f"Expected a square map image, got {map_width}x{map_height}")
 
-    left_margin = max(70, round(map_width * 0.025))
+    left_margin = max(260, round(map_width * 0.085))
     top_margin = max(130, round(map_width * 0.045))
-    bottom_margin = max(70, round(map_width * 0.025))
+    bottom_margin = max(220, round(map_width * 0.073))
     right_margin = max(1500, round(map_width * 0.55))
     canvas = Image.new(
         "RGBA",
@@ -1290,7 +1381,8 @@ def decorate_map_frame(
     )
     map_origin = (left_margin, top_margin)
     canvas.alpha_composite(map_image, map_origin)
-    draw_cell_grid(canvas, map_origin, map_width, meters_per_cell, args)
+    draw_grid_numbers(canvas, map_origin, map_width, meters_per_cell, args)
+    draw_axis_labels(canvas, map_origin, map_width, left_margin, bottom_margin)
     draw_legend(
         canvas,
         map_origin,
@@ -1777,7 +1869,11 @@ def main() -> None:
         )
     else:
         print(f"Scale: fixed {args.meters_per_cell:g} m/cell")
-    print(f"Grid squares: {args.grid_step_m / 1000:g} km")
+    print(
+        "Axis labels: "
+        f"{AXIS_LABELS_PER_SIDE} per side, "
+        f"spacing snapped to {scale_bar_label(args.grid_step_m)} multiples"
+    )
     print(
         f"HTTP attempts: {args.max_attempts} "
         f"(initial retry delay={args.retry_delay_s:g}s)"

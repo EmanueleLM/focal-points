@@ -23,6 +23,7 @@ DEFAULT_PROMPTS = Path("data/SAR_prompts/sar_prompts.json")
 DEFAULT_MAP_DIR = Path("data/SAR_maps/v1/usgs_terrain")
 DEFAULT_OUTPUT_DIR = Path("data/SAR_prompts/batch_requests")
 DEFAULT_JOB_LOG = Path("data/SAR_prompts/job_ids.jsonl")
+DEFAULT_IMAGE_SIZE = "1536x1024"
 RESPONSES_ENDPOINT = "/v1/responses"
 
 
@@ -152,8 +153,11 @@ def parse_args() -> argparse.Namespace:
     )
     parser.add_argument(
         "--image-size",
-        default=None,
-        help='Optional size value for the image_generation tool, e.g. "1536x1024".',
+        default=DEFAULT_IMAGE_SIZE,
+        help=(
+            "Size value for the image_generation tool. The original map size is not "
+            f"supported by the image tool, so the default is {DEFAULT_IMAGE_SIZE}."
+        ),
     )
     parser.add_argument(
         "--max-output-tokens",

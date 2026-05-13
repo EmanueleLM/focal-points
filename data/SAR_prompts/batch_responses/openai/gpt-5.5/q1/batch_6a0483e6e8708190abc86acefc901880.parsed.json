@@ -1,0 +1,231 @@
+{
+  "prompts": {
+    "saliency:v1": [
+      {
+        "custom_id": "sar__incident-001__prompt-saliency-v1__repeat-01",
+        "incident_index": 1,
+        "repeat": 1,
+        "prompt_name": "saliency",
+        "prompt_version": "v1",
+        "returned_image": "data\\SAR_prompts\\batch_responses\\openai\\gpt-5.5\\q1\\batch_6a0483e6e8708190abc86acefc901880.parsed_images\\sar__incident-001__prompt-saliency-v1__repeat-01.png",
+        "returned_images": [
+          "data\\SAR_prompts\\batch_responses\\openai\\gpt-5.5\\q1\\batch_6a0483e6e8708190abc86acefc901880.parsed_images\\sar__incident-001__prompt-saliency-v1__repeat-01.png"
+        ],
+        "full_text": "<reasoning>\nI would prioritize the north-northwest continuation from the IPP. From the hiker’s point of view, the black hiking trail leaving the red marker to the north is the most obvious linear feature and appears easier to follow than climbing directly across the dense contour slopes or dropping off-trail. It also runs with/near a drainage, creating a natural movement corridor.\n\nThe selected point is the first significant bend/constriction north of the IPP, where the trail/stream corridor enters tighter terrain and side drainage features. This is a plausible place for disorientation, a missed turn, slipping near the stream, or leaving the trail while trying to follow the drainage. It is far enough from the IPP to reflect continued travel in the initial direction, but still within a high-probability early search zone.\n</reasoning>\n\n<dist>400 meters</dist>",
+        "reasoning": "I would prioritize the north-northwest continuation from the IPP. From the hiker’s point of view, the black hiking trail leaving the red marker to the north is the most obvious linear feature and appears easier to follow than climbing directly across the dense contour slopes or dropping off-trail. It also runs with/near a drainage, creating a natural movement corridor.\n\nThe selected point is the first significant bend/constriction north of the IPP, where the trail/stream corridor enters tighter terrain and side drainage features. This is a plausible place for disorientation, a missed turn, slipping near the stream, or leaving the trail while trying to follow the drainage. It is far enough from the IPP to reflect continued travel in the initial direction, but still within a high-probability early search zone.",
+        "distance": 400.0,
+        "manifest": {
+          "custom_id": "sar__incident-001__prompt-saliency-v1__repeat-01",
+          "model": "gpt-5.5",
+          "incident_index": 1,
+          "ipp_lat": 31.39708335,
+          "ipp_lon": -111.20643,
+          "find_lat": 31.406333,
+          "find_lon": -111.19683,
+          "prompt_name": "saliency",
+          "prompt_version": "v1",
+          "repeat": 1,
+          "map_path": "data\\SAR_maps\\v1\\usgs_terrain\\incident_001.png",
+          "vision_file_id": "file-GnZytXCmP2yRMgHBLJhc5a",
+          "endpoint": "/v1/responses",
+          "image_detail": "original",
+          "image_tool": {
+            "type": "image_generation",
+            "action": "edit",
+            "size": "1536x1024"
+          }
+        }
+      },
+      {
+        "custom_id": "sar__incident-001__prompt-saliency-v1__repeat-02",
+        "incident_index": 1,
+        "repeat": 2,
+        "prompt_name": "saliency",
+        "prompt_version": "v1",
+        "returned_image": "data\\SAR_prompts\\batch_responses\\openai\\gpt-5.5\\q1\\batch_6a0483e6e8708190abc86acefc901880.parsed_images\\sar__incident-001__prompt-saliency-v1__repeat-02.png",
+        "returned_images": [
+          "data\\SAR_prompts\\batch_responses\\openai\\gpt-5.5\\q1\\batch_6a0483e6e8708190abc86acefc901880.parsed_images\\sar__incident-001__prompt-saliency-v1__repeat-02.png"
+        ],
+        "full_text": "<reasoning>\nFrom the IPP, the most natural continuation is north along the black hiking trail that closely follows the blue drainage/stream corridor. That route provides the clearest linear handrail and avoids immediately committing to steeper cross-slope travel. A lost or tired hiker would likely keep following that easy corridor rather than bushwhack or retrace.\n\nThe priority point I marked is where that northbound trail/stream corridor reaches a bend and terrain transition: the drainage/trail alignment becomes less straightforward, the contours tighten, and the stream/trail geometry changes direction. This is a plausible place for the hiker to become confused, leave the intended line, stop, slip into the drainage, or choose the wrong continuation.\n</reasoning>\n\n<dist>700 m</dist>",
+        "reasoning": "From the IPP, the most natural continuation is north along the black hiking trail that closely follows the blue drainage/stream corridor. That route provides the clearest linear handrail and avoids immediately committing to steeper cross-slope travel. A lost or tired hiker would likely keep following that easy corridor rather than bushwhack or retrace.\n\nThe priority point I marked is where that northbound trail/stream corridor reaches a bend and terrain transition: the drainage/trail alignment becomes less straightforward, the contours tighten, and the stream/trail geometry changes direction. This is a plausible place for the hiker to become confused, leave the intended line, stop, slip into the drainage, or choose the wrong continuation.",
+        "distance": 700.0,
+        "manifest": {
+          "custom_id": "sar__incident-001__prompt-saliency-v1__repeat-02",
+          "model": "gpt-5.5",
+          "incident_index": 1,
+          "ipp_lat": 31.39708335,
+          "ipp_lon": -111.20643,
+          "find_lat": 31.406333,
+          "find_lon": -111.19683,
+          "prompt_name": "saliency",
+          "prompt_version": "v1",
+          "repeat": 2,
+          "map_path": "data\\SAR_maps\\v1\\usgs_terrain\\incident_001.png",
+          "vision_file_id": "file-GnZytXCmP2yRMgHBLJhc5a",
+          "endpoint": "/v1/responses",
+          "image_detail": "original",
+          "image_tool": {
+            "type": "image_generation",
+            "action": "edit",
+            "size": "1536x1024"
+          }
+        }
+      },
+      {
+        "custom_id": "sar__incident-001__prompt-saliency-v1__repeat-03",
+        "incident_index": 1,
+        "repeat": 3,
+        "prompt_name": "saliency",
+        "prompt_version": "v1",
+        "returned_image": "data\\SAR_prompts\\batch_responses\\openai\\gpt-5.5\\q1\\batch_6a0483e6e8708190abc86acefc901880.parsed_images\\sar__incident-001__prompt-saliency-v1__repeat-03.png",
+        "returned_images": [
+          "data\\SAR_prompts\\batch_responses\\openai\\gpt-5.5\\q1\\batch_6a0483e6e8708190abc86acefc901880.parsed_images\\sar__incident-001__prompt-saliency-v1__repeat-03.png"
+        ],
+        "full_text": "<reasoning>\nFrom the IPP, the most natural continuation is along the obvious black hiking trail that overlaps or closely parallels the blue stream corridor. This is the easiest linear feature to follow and offers a clear route of travel compared with leaving the trail onto steep contour-dense slopes.\n\nI would prioritize the first significant north-northwest bend/narrowing of that trail-stream corridor. A lost hiker continuing forward could plausibly follow the drainage/trail north, then become confused where the corridor bends, the terrain tightens, and side drainages/steeper slopes begin to appear. This location is far enough from the IPP to match continued movement, but still within the first likely decision-error zone rather than assuming the hiker immediately stopped or turned back.\n</reasoning>\n\n<dist>Approximately 600 m straight-line from the IPP, roughly 700–800 m by trail.</dist>",
+        "reasoning": "From the IPP, the most natural continuation is along the obvious black hiking trail that overlaps or closely parallels the blue stream corridor. This is the easiest linear feature to follow and offers a clear route of travel compared with leaving the trail onto steep contour-dense slopes.\n\nI would prioritize the first significant north-northwest bend/narrowing of that trail-stream corridor. A lost hiker continuing forward could plausibly follow the drainage/trail north, then become confused where the corridor bends, the terrain tightens, and side drainages/steeper slopes begin to appear. This location is far enough from the IPP to match continued movement, but still within the first likely decision-error zone rather than assuming the hiker immediately stopped or turned back.",
+        "distance": 600.0,
+        "manifest": {
+          "custom_id": "sar__incident-001__prompt-saliency-v1__repeat-03",
+          "model": "gpt-5.5",
+          "incident_index": 1,
+          "ipp_lat": 31.39708335,
+          "ipp_lon": -111.20643,
+          "find_lat": 31.406333,
+          "find_lon": -111.19683,
+          "prompt_name": "saliency",
+          "prompt_version": "v1",
+          "repeat": 3,
+          "map_path": "data\\SAR_maps\\v1\\usgs_terrain\\incident_001.png",
+          "vision_file_id": "file-GnZytXCmP2yRMgHBLJhc5a",
+          "endpoint": "/v1/responses",
+          "image_detail": "original",
+          "image_tool": {
+            "type": "image_generation",
+            "action": "edit",
+            "size": "1536x1024"
+          }
+        }
+      }
+    ],
+    "vanilla:v1": [
+      {
+        "custom_id": "sar__incident-001__prompt-vanilla-v1__repeat-01",
+        "incident_index": 1,
+        "repeat": 1,
+        "prompt_name": "vanilla",
+        "prompt_version": "v1",
+        "returned_image": "data\\SAR_prompts\\batch_responses\\openai\\gpt-5.5\\q1\\batch_6a0483e6e8708190abc86acefc901880.parsed_images\\sar__incident-001__prompt-vanilla-v1__repeat-01.png",
+        "returned_images": [
+          "data\\SAR_prompts\\batch_responses\\openai\\gpt-5.5\\q1\\batch_6a0483e6e8708190abc86acefc901880.parsed_images\\sar__incident-001__prompt-vanilla-v1__repeat-01.png"
+        ],
+        "full_text": "<reasoning>I would prioritize the hiking trail/drainage immediately north-northwest of the IPP. From the last-known point, the black hiking trail continues into a narrow gully that also aligns with a stream corridor. Lost hikers commonly continue along the most obvious linear feature—trail, drainage, or stream—especially if terrain is steep and route choices are limited. This spot is close enough to the IPP to be a high-probability early search segment while also being a natural place for injury, disorientation, or travel slowdown due to confined terrain and slope.</reasoning>\n\n<dist>370</dist>",
+        "reasoning": "I would prioritize the hiking trail/drainage immediately north-northwest of the IPP. From the last-known point, the black hiking trail continues into a narrow gully that also aligns with a stream corridor. Lost hikers commonly continue along the most obvious linear feature—trail, drainage, or stream—especially if terrain is steep and route choices are limited. This spot is close enough to the IPP to be a high-probability early search segment while also being a natural place for injury, disorientation, or travel slowdown due to confined terrain and slope.",
+        "distance": 370.0,
+        "manifest": {
+          "custom_id": "sar__incident-001__prompt-vanilla-v1__repeat-01",
+          "model": "gpt-5.5",
+          "incident_index": 1,
+          "ipp_lat": 31.39708335,
+          "ipp_lon": -111.20643,
+          "find_lat": 31.406333,
+          "find_lon": -111.19683,
+          "prompt_name": "vanilla",
+          "prompt_version": "v1",
+          "repeat": 1,
+          "map_path": "data\\SAR_maps\\v1\\usgs_terrain\\incident_001.png",
+          "vision_file_id": "file-GnZytXCmP2yRMgHBLJhc5a",
+          "endpoint": "/v1/responses",
+          "image_detail": "original",
+          "image_tool": {
+            "type": "image_generation",
+            "action": "edit",
+            "size": "1536x1024"
+          }
+        }
+      },
+      {
+        "custom_id": "sar__incident-001__prompt-vanilla-v1__repeat-02",
+        "incident_index": 1,
+        "repeat": 2,
+        "prompt_name": "vanilla",
+        "prompt_version": "v1",
+        "returned_image": "data\\SAR_prompts\\batch_responses\\openai\\gpt-5.5\\q1\\batch_6a0483e6e8708190abc86acefc901880.parsed_images\\sar__incident-001__prompt-vanilla-v1__repeat-02.png",
+        "returned_images": [
+          "data\\SAR_prompts\\batch_responses\\openai\\gpt-5.5\\q1\\batch_6a0483e6e8708190abc86acefc901880.parsed_images\\sar__incident-001__prompt-vanilla-v1__repeat-02.png"
+        ],
+        "full_text": "<reasoning>I would prioritize the hiking trail/stream corridor immediately north of the IPP. A missing hiker last seen on or near a trail is statistically most likely to continue along the path of least resistance rather than travel cross-country through steep contours. The trail also follows a drainage/stream corridor, which is a common “terrain handrail” that a disoriented person may follow. The marked point is close enough to the IPP to be within an early high-probability search segment, while also being at a bend/stream-trail convergence where a hiker could pause, leave the trail, become injured, or be obscured by terrain.</reasoning>\n\n<dist>250</dist>",
+        "reasoning": "I would prioritize the hiking trail/stream corridor immediately north of the IPP. A missing hiker last seen on or near a trail is statistically most likely to continue along the path of least resistance rather than travel cross-country through steep contours. The trail also follows a drainage/stream corridor, which is a common “terrain handrail” that a disoriented person may follow. The marked point is close enough to the IPP to be within an early high-probability search segment, while also being at a bend/stream-trail convergence where a hiker could pause, leave the trail, become injured, or be obscured by terrain.",
+        "distance": 250.0,
+        "manifest": {
+          "custom_id": "sar__incident-001__prompt-vanilla-v1__repeat-02",
+          "model": "gpt-5.5",
+          "incident_index": 1,
+          "ipp_lat": 31.39708335,
+          "ipp_lon": -111.20643,
+          "find_lat": 31.406333,
+          "find_lon": -111.19683,
+          "prompt_name": "vanilla",
+          "prompt_version": "v1",
+          "repeat": 2,
+          "map_path": "data\\SAR_maps\\v1\\usgs_terrain\\incident_001.png",
+          "vision_file_id": "file-GnZytXCmP2yRMgHBLJhc5a",
+          "endpoint": "/v1/responses",
+          "image_detail": "original",
+          "image_tool": {
+            "type": "image_generation",
+            "action": "edit",
+            "size": "1536x1024"
+          }
+        }
+      },
+      {
+        "custom_id": "sar__incident-001__prompt-vanilla-v1__repeat-03",
+        "incident_index": 1,
+        "repeat": 3,
+        "prompt_name": "vanilla",
+        "prompt_version": "v1",
+        "returned_image": "data\\SAR_prompts\\batch_responses\\openai\\gpt-5.5\\q1\\batch_6a0483e6e8708190abc86acefc901880.parsed_images\\sar__incident-001__prompt-vanilla-v1__repeat-03.png",
+        "returned_images": [
+          "data\\SAR_prompts\\batch_responses\\openai\\gpt-5.5\\q1\\batch_6a0483e6e8708190abc86acefc901880.parsed_images\\sar__incident-001__prompt-vanilla-v1__repeat-03.png"
+        ],
+        "full_text": "<reasoning>I would prioritize the trail-and-stream corridor just northwest of the IPP. From the last-seen point, the black hiking trail follows a steep drainage with closely spaced contours, which is a common direction of travel and also a likely place for a hiker to become injured, disoriented, or forced downhill toward water. The yellow star marks a nearby bend/constriction in that drainage-trail system where searchers could quickly check the most probable travel route and terrain trap.</reasoning>\n\n<dist>600</dist>",
+        "reasoning": "I would prioritize the trail-and-stream corridor just northwest of the IPP. From the last-seen point, the black hiking trail follows a steep drainage with closely spaced contours, which is a common direction of travel and also a likely place for a hiker to become injured, disoriented, or forced downhill toward water. The yellow star marks a nearby bend/constriction in that drainage-trail system where searchers could quickly check the most probable travel route and terrain trap.",
+        "distance": 600.0,
+        "manifest": {
+          "custom_id": "sar__incident-001__prompt-vanilla-v1__repeat-03",
+          "model": "gpt-5.5",
+          "incident_index": 1,
+          "ipp_lat": 31.39708335,
+          "ipp_lon": -111.20643,
+          "find_lat": 31.406333,
+          "find_lon": -111.19683,
+          "prompt_name": "vanilla",
+          "prompt_version": "v1",
+          "repeat": 3,
+          "map_path": "data\\SAR_maps\\v1\\usgs_terrain\\incident_001.png",
+          "vision_file_id": "file-GnZytXCmP2yRMgHBLJhc5a",
+          "endpoint": "/v1/responses",
+          "image_detail": "original",
+          "image_tool": {
+            "type": "image_generation",
+            "action": "edit",
+            "size": "1536x1024"
+          }
+        }
+      }
+    ]
+  },
+  "failures": [],
+  "summary": {
+    "response_rows": 6,
+    "manifest_rows": 6,
+    "parsed_rows": 6,
+    "failure_rows": 0,
+    "images_saved": 6
+  },
+  "source": {
+    "response_file": "data\\SAR_prompts\\batch_responses\\openai\\gpt-5.5\\q1\\batch_6a0483e6e8708190abc86acefc901880.jsonl",
+    "manifest_file": "data\\SAR_prompts\\batch_requests\\gpt-5.5\\sar_gpt-5.5_20260513T140001Z.manifest.jsonl",
+    "image_dir": "data\\SAR_prompts\\batch_responses\\openai\\gpt-5.5\\q1\\batch_6a0483e6e8708190abc86acefc901880.parsed_images"
+  }
+}
