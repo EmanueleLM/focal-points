@@ -99,7 +99,7 @@ REQUIRED_FILES_INSTRUCT_CULTURE=(
     "nottingham-instruct-culture_problem-pick.jsonl"
 )
 
-PY_SCRIPT="$ROOT_DIR/src/plot/plot_results.py"
+PY_SCRIPT="$ROOT_DIR/src/plotting/plot_results.py"
 mkdir -p logs
 
 for MODEL in "${MODELS[@]}"; do

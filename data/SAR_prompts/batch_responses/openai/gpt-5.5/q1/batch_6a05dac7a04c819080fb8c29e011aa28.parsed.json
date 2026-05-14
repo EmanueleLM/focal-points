@@ -1,0 +1,193 @@
+{
+  "prompts": {
+    "saliency:v1": [
+      {
+        "custom_id": "sar__incident-001__prompt-saliency-v1__repeat-01",
+        "incident_index": 1,
+        "repeat": 1,
+        "prompt_name": "saliency",
+        "prompt_version": "v1",
+        "full_text": "<coord>950,1050</coord>\n\n<reasoning>\nFrom the IPP, the most natural continuation is north/northeast along the black hiking trail, which is also aligned with a stream corridor. The surrounding slopes near the IPP are steep, so a hiker would likely stay with this linear feature rather than contouring off-trail or immediately turning back.\n\nThe first major place where decision-making could break down is around x≈950, y≈1050: the trail/stream corridor reaches a confluence and a bend, with the official hiking route continuing north into a steeper, narrower drainage while a blue stream corridor continues east/southeast and may look like the easier line to follow. This creates a plausible navigation error point, water-crossing hazard, or rest/injury location after the hiker has continued in the likely initial direction for about 1 km.\n\nI would prioritize searching the trail and stream banks around this junction, especially the immediate confluence area and the first few hundred meters along both the northbound trail and the east-trending stream.\n</reasoning>",
+        "reasoning": "From the IPP, the most natural continuation is north/northeast along the black hiking trail, which is also aligned with a stream corridor. The surrounding slopes near the IPP are steep, so a hiker would likely stay with this linear feature rather than contouring off-trail or immediately turning back.\n\nThe first major place where decision-making could break down is around x≈950, y≈1050: the trail/stream corridor reaches a confluence and a bend, with the official hiking route continuing north into a steeper, narrower drainage while a blue stream corridor continues east/southeast and may look like the easier line to follow. This creates a plausible navigation error point, water-crossing hazard, or rest/injury location after the hiker has continued in the likely initial direction for about 1 km.\n\nI would prioritize searching the trail and stream banks around this junction, especially the immediate confluence area and the first few hundred meters along both the northbound trail and the east-trending stream.",
+        "coordinate": {
+          "x": 950.0,
+          "y": 1050.0
+        },
+        "manifest": {
+          "custom_id": "sar__incident-001__prompt-saliency-v1__repeat-01",
+          "model": "gpt-5.5",
+          "incident_index": 1,
+          "ipp_lat": 31.39708335,
+          "ipp_lon": -111.20643,
+          "find_lat": 31.406333,
+          "find_lon": -111.19683,
+          "prompt_name": "saliency",
+          "prompt_version": "v1",
+          "repeat": 1,
+          "map_path": "data\\SAR_maps\\v1\\usgs_terrain\\incident_001.png",
+          "vision_file_id": "file-TF1YKqwnWUuu5FCy63ATc8",
+          "endpoint": "/v1/responses",
+          "image_detail": "original"
+        }
+      },
+      {
+        "custom_id": "sar__incident-001__prompt-saliency-v1__repeat-02",
+        "incident_index": 1,
+        "repeat": 2,
+        "prompt_name": "saliency",
+        "prompt_version": "v1",
+        "full_text": "<coord>1050,2200</coord>\n\n<reasoning>I would prioritize the north/northeast continuation from the IPP. From the red marker, the easiest “keep going” choice is not to climb randomly over the contour lines but to stay with the black hiking trail/blue drainage corridor that leaves the IPP and bends north. That corridor acts as a strong handrail: trail + stream + valley bottom, with steep contouring on both sides discouraging escape.\n\nA hiker continuing forward could follow the trail/stream past the first bends and be funneled toward the larger drainage around x≈900–1100, y≈1000. From there the most natural-looking continuation is the narrow north-running canyon where the trail and stream remain close together. This would feel like a reasonable route because it is linear, navigable, and appears to lead toward more open terrain/roads farther north.\n\nThe point I would search first is around x≈1050, y≈2200, where that corridor becomes more constricted and steep-sided. The dense contouring, stream/trail proximity, and side gullies make it a likely place for a slip, injury, confusion, or forced stop after the hiker has continued well beyond the last known point rather than turning back.</reasoning>",
+        "reasoning": "I would prioritize the north/northeast continuation from the IPP. From the red marker, the easiest “keep going” choice is not to climb randomly over the contour lines but to stay with the black hiking trail/blue drainage corridor that leaves the IPP and bends north. That corridor acts as a strong handrail: trail + stream + valley bottom, with steep contouring on both sides discouraging escape.\n\nA hiker continuing forward could follow the trail/stream past the first bends and be funneled toward the larger drainage around x≈900–1100, y≈1000. From there the most natural-looking continuation is the narrow north-running canyon where the trail and stream remain close together. This would feel like a reasonable route because it is linear, navigable, and appears to lead toward more open terrain/roads farther north.\n\nThe point I would search first is around x≈1050, y≈2200, where that corridor becomes more constricted and steep-sided. The dense contouring, stream/trail proximity, and side gullies make it a likely place for a slip, injury, confusion, or forced stop after the hiker has continued well beyond the last known point rather than turning back.",
+        "coordinate": {
+          "x": 1050.0,
+          "y": 2200.0
+        },
+        "manifest": {
+          "custom_id": "sar__incident-001__prompt-saliency-v1__repeat-02",
+          "model": "gpt-5.5",
+          "incident_index": 1,
+          "ipp_lat": 31.39708335,
+          "ipp_lon": -111.20643,
+          "find_lat": 31.406333,
+          "find_lon": -111.19683,
+          "prompt_name": "saliency",
+          "prompt_version": "v1",
+          "repeat": 2,
+          "map_path": "data\\SAR_maps\\v1\\usgs_terrain\\incident_001.png",
+          "vision_file_id": "file-TF1YKqwnWUuu5FCy63ATc8",
+          "endpoint": "/v1/responses",
+          "image_detail": "original"
+        }
+      },
+      {
+        "custom_id": "sar__incident-001__prompt-saliency-v1__repeat-03",
+        "incident_index": 1,
+        "repeat": 3,
+        "prompt_name": "saliency",
+        "prompt_version": "v1",
+        "full_text": "<coord>950,1100</coord>\n\n<reasoning>\nFrom the IPP at (0,0), the most likely initial movement is to continue north/northeast on the black hiking trail rather than retrace south. That route is also the most natural corridor: the terrain immediately funnels into a narrow drainage with steep contouring on both sides, making lateral travel unattractive and keeping a hiker aligned with the trail/stream system.\n\nThe key search priority would be where that northbound trail reaches the major stream junction around x≈900–1000, y≈1000–1150. This is a likely decision/disorientation point: the trail and stream bend sharply, several drainage lines meet, and the steep slopes constrain movement. A lost or tired hiker could miss the correct continuation, follow the watercourse, or get injured near the stream crossing/confluence.\n\nSo I would first concentrate SAR effort along the northbound trail from the IPP and especially around the trail/stream confluence near (950,1100).\n</reasoning>",
+        "reasoning": "From the IPP at (0,0), the most likely initial movement is to continue north/northeast on the black hiking trail rather than retrace south. That route is also the most natural corridor: the terrain immediately funnels into a narrow drainage with steep contouring on both sides, making lateral travel unattractive and keeping a hiker aligned with the trail/stream system.\n\nThe key search priority would be where that northbound trail reaches the major stream junction around x≈900–1000, y≈1000–1150. This is a likely decision/disorientation point: the trail and stream bend sharply, several drainage lines meet, and the steep slopes constrain movement. A lost or tired hiker could miss the correct continuation, follow the watercourse, or get injured near the stream crossing/confluence.\n\nSo I would first concentrate SAR effort along the northbound trail from the IPP and especially around the trail/stream confluence near (950,1100).",
+        "coordinate": {
+          "x": 950.0,
+          "y": 1100.0
+        },
+        "manifest": {
+          "custom_id": "sar__incident-001__prompt-saliency-v1__repeat-03",
+          "model": "gpt-5.5",
+          "incident_index": 1,
+          "ipp_lat": 31.39708335,
+          "ipp_lon": -111.20643,
+          "find_lat": 31.406333,
+          "find_lon": -111.19683,
+          "prompt_name": "saliency",
+          "prompt_version": "v1",
+          "repeat": 3,
+          "map_path": "data\\SAR_maps\\v1\\usgs_terrain\\incident_001.png",
+          "vision_file_id": "file-TF1YKqwnWUuu5FCy63ATc8",
+          "endpoint": "/v1/responses",
+          "image_detail": "original"
+        }
+      }
+    ],
+    "vanilla:v1": [
+      {
+        "custom_id": "sar__incident-001__prompt-vanilla-v1__repeat-01",
+        "incident_index": 1,
+        "repeat": 1,
+        "prompt_name": "vanilla",
+        "prompt_version": "v1",
+        "full_text": "<coord>450,850</coord>\n\n<reasoning>I would prioritize the hiking trail corridor north of the IPP, especially where it meets and follows the stream drainage. Missing hikers most often remain on or near trails, and if they leave the trail they commonly move downhill toward water or along drainages. The area around x≈450, y≈850 is about 1 km from the IPP, lies on/near the black hiking trail, close to a blue stream, and is a natural terrain funnel where a hiker could stop, become disoriented, or be injured.</reasoning>",
+        "reasoning": "I would prioritize the hiking trail corridor north of the IPP, especially where it meets and follows the stream drainage. Missing hikers most often remain on or near trails, and if they leave the trail they commonly move downhill toward water or along drainages. The area around x≈450, y≈850 is about 1 km from the IPP, lies on/near the black hiking trail, close to a blue stream, and is a natural terrain funnel where a hiker could stop, become disoriented, or be injured.",
+        "coordinate": {
+          "x": 450.0,
+          "y": 850.0
+        },
+        "manifest": {
+          "custom_id": "sar__incident-001__prompt-vanilla-v1__repeat-01",
+          "model": "gpt-5.5",
+          "incident_index": 1,
+          "ipp_lat": 31.39708335,
+          "ipp_lon": -111.20643,
+          "find_lat": 31.406333,
+          "find_lon": -111.19683,
+          "prompt_name": "vanilla",
+          "prompt_version": "v1",
+          "repeat": 1,
+          "map_path": "data\\SAR_maps\\v1\\usgs_terrain\\incident_001.png",
+          "vision_file_id": "file-TF1YKqwnWUuu5FCy63ATc8",
+          "endpoint": "/v1/responses",
+          "image_detail": "original"
+        }
+      },
+      {
+        "custom_id": "sar__incident-001__prompt-vanilla-v1__repeat-02",
+        "incident_index": 1,
+        "repeat": 2,
+        "prompt_name": "vanilla",
+        "prompt_version": "v1",
+        "full_text": "<coord>350,800</coord>\n\n<reasoning>The highest-priority search area is along the established hiking trail/stream corridor north of the IPP. A missing hiker is most likely to remain on or near the trail, and if disoriented may follow the drainage/stream downhill or along the valley. The terrain north of the marker becomes steeper with tighter contours, increasing the chance of injury or being unable to continue. I would therefore search the trail–stream bend/valley section roughly 800 m north and slightly east of the IPP.</reasoning>",
+        "reasoning": "The highest-priority search area is along the established hiking trail/stream corridor north of the IPP. A missing hiker is most likely to remain on or near the trail, and if disoriented may follow the drainage/stream downhill or along the valley. The terrain north of the marker becomes steeper with tighter contours, increasing the chance of injury or being unable to continue. I would therefore search the trail–stream bend/valley section roughly 800 m north and slightly east of the IPP.",
+        "coordinate": {
+          "x": 350.0,
+          "y": 800.0
+        },
+        "manifest": {
+          "custom_id": "sar__incident-001__prompt-vanilla-v1__repeat-02",
+          "model": "gpt-5.5",
+          "incident_index": 1,
+          "ipp_lat": 31.39708335,
+          "ipp_lon": -111.20643,
+          "find_lat": 31.406333,
+          "find_lon": -111.19683,
+          "prompt_name": "vanilla",
+          "prompt_version": "v1",
+          "repeat": 2,
+          "map_path": "data\\SAR_maps\\v1\\usgs_terrain\\incident_001.png",
+          "vision_file_id": "file-TF1YKqwnWUuu5FCy63ATc8",
+          "endpoint": "/v1/responses",
+          "image_detail": "original"
+        }
+      },
+      {
+        "custom_id": "sar__incident-001__prompt-vanilla-v1__repeat-03",
+        "incident_index": 1,
+        "repeat": 3,
+        "prompt_name": "vanilla",
+        "prompt_version": "v1",
+        "full_text": "<coord>250,650</coord>\n\n<reasoning>I would prioritize a hasty search along the established hiking trail and adjacent drainage leading away from the IPP, since missing hikers commonly remain on trails or follow easy terrain features such as stream valleys. The black trail north/northeast of the IPP follows a narrow drainage with steep surrounding contours, creating a likely place for disorientation, injury, or inability to continue. I would therefore search the trail/stream corridor just north of the IPP first, around x=250, y=650.</reasoning>",
+        "reasoning": "I would prioritize a hasty search along the established hiking trail and adjacent drainage leading away from the IPP, since missing hikers commonly remain on trails or follow easy terrain features such as stream valleys. The black trail north/northeast of the IPP follows a narrow drainage with steep surrounding contours, creating a likely place for disorientation, injury, or inability to continue. I would therefore search the trail/stream corridor just north of the IPP first, around x=250, y=650.",
+        "coordinate": {
+          "x": 250.0,
+          "y": 650.0
+        },
+        "manifest": {
+          "custom_id": "sar__incident-001__prompt-vanilla-v1__repeat-03",
+          "model": "gpt-5.5",
+          "incident_index": 1,
+          "ipp_lat": 31.39708335,
+          "ipp_lon": -111.20643,
+          "find_lat": 31.406333,
+          "find_lon": -111.19683,
+          "prompt_name": "vanilla",
+          "prompt_version": "v1",
+          "repeat": 3,
+          "map_path": "data\\SAR_maps\\v1\\usgs_terrain\\incident_001.png",
+          "vision_file_id": "file-TF1YKqwnWUuu5FCy63ATc8",
+          "endpoint": "/v1/responses",
+          "image_detail": "original"
+        }
+      }
+    ]
+  },
+  "failures": [],
+  "summary": {
+    "response_rows": 6,
+    "manifest_rows": 6,
+    "parsed_rows": 6,
+    "failure_rows": 0
+  },
+  "source": {
+    "response_file": "data\\SAR_prompts\\batch_responses\\openai\\gpt-5.5\\q1\\batch_6a05dac7a04c819080fb8c29e011aa28.jsonl",
+    "manifest_file": "data\\SAR_prompts\\batch_requests\\gpt-5.5\\sar_gpt-5.5_20260514T142254Z.manifest.jsonl"
+  }
+}
