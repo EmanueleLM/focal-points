@@ -19,6 +19,7 @@ METHOD_COLORS = {
     "vanilla_v1": "#2f6fbb",
     "saliency_v1": "#d8891c",
     "saliency_v2": "#2a9d8f",
+    "saliency_v3": "#c44e52",
 }
 
 
