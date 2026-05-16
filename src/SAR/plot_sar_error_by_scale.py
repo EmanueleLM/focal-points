@@ -16,6 +16,9 @@ DEFAULT_METHODS = ("vanilla", "saliency")
 METHOD_COLORS = {
     "vanilla": "#2f6fbb",
     "saliency": "#d8891c",
+    "vanilla_v1": "#2f6fbb",
+    "saliency_v1": "#d8891c",
+    "saliency_v2": "#2a9d8f",
 }
 
 
@@ -135,16 +138,20 @@ def color_for_method(method: str) -> str:
     return METHOD_COLORS.get(method, "#666666")
 
 
-def annotate_bar_values(ax, bars) -> None:
-    for bar in bars:
+def label_for_method(method: str) -> str:
+    return method.replace("_", " ").title()
+
+
+def annotate_bar_values(ax, bars, counts: list[int]) -> None:
+    for bar, count in zip(bars, counts):
         height = bar.get_height()
         ax.text(
             bar.get_x() + bar.get_width() / 2,
             height + 90,
-            f"{height / 1000:.1f} km",
+            f"{height / 1000:.1f} km\nruns={count}",
             ha="center",
             va="bottom",
-            fontsize=8,
+            fontsize=7,
         )
 
 
@@ -155,22 +162,25 @@ def save_scale_plot(
     output_png: Path,
     dpi: int,
 ) -> None:
-    if len(methods) != 2:
-        raise ValueError("This grouped bar plot currently expects exactly two methods")
-
     labels = [f"{int(summary.ground_width_m / 1000)} km" for summary in summaries]
     incident_counts = [summary.incident_count for summary in summaries]
     x_values = list(range(len(summaries)))
-    bar_width = 0.36
-    method_offsets = (-bar_width / 2, bar_width / 2)
+    group_width = 0.78
+    bar_width = min(0.28, group_width / len(methods))
+    method_offsets = [
+        (index - (len(methods) - 1) / 2) * bar_width
+        for index in range(len(methods))
+    ]
 
-    fig, ax = plt.subplots(figsize=(10.5, 6.2))
+    fig_width = max(10.5, 8.0 + 0.7 * len(methods))
+    fig, ax = plt.subplots(figsize=(fig_width, 6.8))
     max_error_top = 0.0
     plotted_bars = []
 
     for method, offset in zip(methods, method_offsets):
         averages = [summary.methods[method].avg_distance_m for summary in summaries]
         stddevs = [summary.methods[method].stddev_distance_m for summary in summaries]
+        counts = [summary.methods[method].prediction_count for summary in summaries]
         positions = [x_value + offset for x_value in x_values]
         max_error_top = max(
             max_error_top,
@@ -182,11 +192,11 @@ def save_scale_plot(
             bar_width,
             yerr=stddevs,
             capsize=5,
-            label=method.title(),
+            label=label_for_method(method),
             color=color_for_method(method),
             alpha=0.9,
         )
-        plotted_bars.append(bars)
+        plotted_bars.append((bars, counts))
 
     for index, summary in enumerate(summaries):
         best_method = min(
@@ -202,7 +212,7 @@ def save_scale_plot(
         ax.text(
             index,
             top + 350,
-            f"{best_method.title()} better",
+            f"{label_for_method(best_method)} better",
             ha="center",
             va="bottom",
             fontsize=9,
@@ -210,8 +220,8 @@ def save_scale_plot(
             fontweight="bold",
         )
 
-    for bars in plotted_bars:
-        annotate_bar_values(ax, bars)
+    for bars, counts in plotted_bars:
+        annotate_bar_values(ax, bars, counts)
 
     ax.set_title("SAR Prediction Error by Map Scale", fontsize=16, pad=14)
     ax.set_xlabel("Map width / scale group", fontsize=12)
@@ -219,7 +229,7 @@ def save_scale_plot(
     ax.set_xticks(x_values)
     ax.set_xticklabels(
         [
-            f"{label}\n(n={incident_count})"
+            f"{label}\nincidents={incident_count}"
             for label, incident_count in zip(labels, incident_counts)
         ]
     )

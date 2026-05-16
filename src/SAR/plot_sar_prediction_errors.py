@@ -8,6 +8,7 @@ import matplotlib
 
 matplotlib.use("Agg")
 import matplotlib.pyplot as plt
+from matplotlib.patches import Rectangle
 
 
 DEFAULT_OUTPUT_DIR = Path("data/SAR_graphs")
@@ -15,6 +16,9 @@ DEFAULT_METHODS = ("vanilla", "saliency")
 METHOD_COLORS = {
     "vanilla": "#2f6fbb",
     "saliency": "#d8891c",
+    "vanilla_v1": "#2f6fbb",
+    "saliency_v1": "#d8891c",
+    "saliency_v2": "#2a9d8f",
 }
 
 
@@ -22,13 +26,7 @@ METHOD_COLORS = {
 class MetricStats:
     count: int
     mean: float | None
-    variance: float | None
-
-    @property
-    def stddev(self) -> float | None:
-        if self.variance is None:
-            return None
-        return math.sqrt(self.variance)
+    stddev: float | None
 
 
 @dataclass
@@ -105,9 +103,7 @@ def read_summary_csv(path: Path, methods: list[str]) -> list[IncidentSummary]:
                 method_stats[method] = MetricStats(
                     count=count,
                     mean=parse_optional_float(row.get(f"{method}_avg_distance_m")),
-                    variance=parse_optional_float(
-                        row.get(f"{method}_variance_distance_m2")
-                    ),
+                    stddev=parse_optional_float(row.get(f"{method}_stddev_distance_m")),
                 )
 
             summaries.append(
@@ -126,18 +122,19 @@ def combine_stats(stats: list[MetricStats]) -> MetricStats:
     stats = [stat for stat in stats if stat.count > 0 and stat.mean is not None]
     total_count = sum(stat.count for stat in stats)
     if total_count == 0:
-        return MetricStats(count=0, mean=None, variance=None)
+        return MetricStats(count=0, mean=None, stddev=None)
 
     combined_mean = sum(stat.count * float(stat.mean) for stat in stats) / total_count
-    variance_sum = 0.0
+    spread_sum = 0.0
     for stat in stats:
-        variance = float(stat.variance or 0.0)
+        spread = float(stat.stddev or 0.0) ** 2
         mean_delta = float(stat.mean) - combined_mean
-        variance_sum += stat.count * (variance + mean_delta**2)
+        spread_sum += stat.count * (spread + mean_delta**2)
+    combined_spread = spread_sum / total_count
     return MetricStats(
         count=total_count,
         mean=combined_mean,
-        variance=variance_sum / total_count,
+        stddev=math.sqrt(combined_spread),
     )
 
 
@@ -218,7 +215,6 @@ def summary_row(
         stats = summary.methods.get(method, MetricStats(0, None, None))
         row[f"{method}_prediction_count"] = str(stats.count)
         row[f"{method}_avg_distance_m"] = fmt(stats.mean)
-        row[f"{method}_variance_distance_m2"] = fmt(stats.variance)
         row[f"{method}_stddev_distance_m"] = fmt(stats.stddev)
     return row
 
@@ -236,7 +232,6 @@ def output_fieldnames(methods: list[str]) -> list[str]:
             [
                 f"{method}_prediction_count",
                 f"{method}_avg_distance_m",
-                f"{method}_variance_distance_m2",
                 f"{method}_stddev_distance_m",
             ]
         )
@@ -264,6 +259,10 @@ def color_for_method(method: str) -> str:
     return METHOD_COLORS.get(method, "#666666")
 
 
+def label_for_method(method: str) -> str:
+    return method.replace("_", " ").title()
+
+
 def save_bar_chart(
     *,
     labels: list[str],
@@ -282,11 +281,15 @@ def save_bar_chart(
         return
 
     chart_labels = [item[0] for item in filtered]
+    display_labels = [label_for_method(label) for label in chart_labels]
     chart_values = [float(item[1]) for item in filtered]
     colors = [color_for_method(label) for label in chart_labels]
 
     fig, ax = plt.subplots(figsize=(7.0, 4.2))
-    ax.bar(chart_labels, chart_values, color=colors)
+    x_values = list(range(len(chart_labels)))
+    ax.bar(x_values, chart_values, color=colors)
+    ax.set_xticks(x_values)
+    ax.set_xticklabels(display_labels)
     ax.set_title(title)
     ax.set_ylabel(ylabel)
     ax.grid(axis="y", alpha=0.28)
@@ -322,8 +325,6 @@ def save_line_chart(
                 values.append(float(stats.count))
             elif metric == "mean":
                 values.append(stats.mean)
-            elif metric == "variance":
-                values.append(stats.variance)
             elif metric == "stddev":
                 values.append(stats.stddev)
             else:
@@ -344,7 +345,7 @@ def save_line_chart(
             marker="o",
             linewidth=2.0,
             color=color_for_method(method),
-            label=method,
+            label=label_for_method(method),
         )
 
     if not plotted:
@@ -402,7 +403,7 @@ def save_ground_truth_plot(
 
 
 def table_rows_for_summary(summary: IncidentSummary, methods: list[str]) -> list[list[str]]:
-    rows = [["metric", *methods]]
+    rows = [["metric", *[label_for_method(method) for method in methods]]]
     rows.append(
         [
             "prediction count",
@@ -423,15 +424,6 @@ def table_rows_for_summary(summary: IncidentSummary, methods: list[str]) -> list
     )
     rows.append(
         [
-            "variance (m^2)",
-            *[
-                fmt(summary.methods.get(method, MetricStats(0, None, None)).variance)
-                for method in methods
-            ],
-        ]
-    )
-    rows.append(
-        [
             "stddev (m)",
             *[
                 fmt(summary.methods.get(method, MetricStats(0, None, None)).stddev)
@@ -440,8 +432,10 @@ def table_rows_for_summary(summary: IncidentSummary, methods: list[str]) -> list
         ]
     )
     if summary.ground_truth_x_m is not None and summary.ground_truth_y_m is not None:
-        rows.append(["ground truth x (m)", fmt(summary.ground_truth_x_m), *[""] * (len(methods) - 1)])
-        rows.append(["ground truth y (m)", fmt(summary.ground_truth_y_m), *[""] * (len(methods) - 1)])
+        ground_truth_x = fmt(summary.ground_truth_x_m)
+        ground_truth_y = fmt(summary.ground_truth_y_m)
+        rows.append(["ground truth x (m)", ground_truth_x, *[""] * (len(methods) - 1)])
+        rows.append(["ground truth y (m)", ground_truth_y, *[""] * (len(methods) - 1)])
     return rows
 
 
@@ -459,7 +453,6 @@ def table_rows_for_incidents(
                 for label in (
                     f"{method} n",
                     f"{method} avg",
-                    f"{method} var",
                     f"{method} std",
                 )
             ],
@@ -477,7 +470,6 @@ def table_rows_for_incidents(
                 [
                     str(stats.count),
                     fmt(stats.mean),
-                    fmt(stats.variance),
                     fmt(stats.stddev),
                 ]
             )
@@ -495,6 +487,10 @@ def latex_escape(value: str) -> str:
     )
 
 
+def is_shared_ground_truth_row(row: list[str]) -> bool:
+    return bool(row) and row[0] in {"ground truth x (m)", "ground truth y (m)"}
+
+
 def save_latex_table(path: Path, rows: list[list[str]], caption: str, label: str) -> None:
     column_spec = "l" + "r" * (len(rows[0]) - 1)
     lines = [
@@ -508,7 +504,14 @@ def save_latex_table(path: Path, rows: list[list[str]], caption: str, label: str
         "\\hline",
     ]
     for row in rows[1:]:
-        lines.append(" & ".join(latex_escape(value) for value in row) + " \\\\")
+        if is_shared_ground_truth_row(row) and len(row) > 2:
+            value_colspan = len(rows[0]) - 1
+            lines.append(
+                f"{latex_escape(row[0])} & "
+                f"\\multicolumn{{{value_colspan}}}{{c}}{{{latex_escape(row[1])}}} \\\\"
+            )
+        else:
+            lines.append(" & ".join(latex_escape(value) for value in row) + " \\\\")
     lines.extend(["\\hline", "\\end{tabular}", "\\end{table}", ""])
     path.write_text("\n".join(lines), encoding="utf-8")
 
@@ -521,20 +524,82 @@ def save_png_table(path: Path, rows: list[list[str]], title: str, dpi: int) -> N
     fig, ax = plt.subplots(figsize=(fig_width, fig_height))
     ax.axis("off")
     ax.set_title(title, fontweight="bold", pad=10)
-    table = ax.table(
-        cellText=rows[1:],
-        colLabels=rows[0],
-        cellLoc="center",
-        loc="center",
-    )
-    table.auto_set_font_size(False)
-    table.set_fontsize(8)
-    table.scale(1, 1.25)
-    for (row, _col), cell in table.get_celld().items():
-        if row == 0:
-            cell.set_text_props(weight="bold")
-            cell.set_facecolor("#f0f2f5")
-        cell.set_edgecolor("#d5d8de")
+
+    col_units = []
+    for col in range(col_count):
+        max_len = max(len(str(row[col])) if col < len(row) else 0 for row in rows)
+        col_units.append(max(1.0, min(3.2, max_len * 0.12)))
+    total_units = sum(col_units)
+    table_left = 0.04
+    table_width = 0.92
+    table_top = 0.86
+    table_height = min(0.78, 0.12 * row_count)
+    row_height = table_height / row_count
+
+    x_positions = [table_left]
+    for unit in col_units:
+        x_positions.append(x_positions[-1] + table_width * unit / total_units)
+
+    def draw_cell(
+        *,
+        row_index: int,
+        start_col: int,
+        end_col: int,
+        text: str,
+        header: bool = False,
+    ) -> None:
+        x = x_positions[start_col]
+        y = table_top - (row_index + 1) * row_height
+        width = x_positions[end_col + 1] - x
+        ax.add_patch(
+            Rectangle(
+                (x, y),
+                width,
+                row_height,
+                transform=ax.transAxes,
+                facecolor="#f0f2f5" if header else "white",
+                edgecolor="#d5d8de",
+                linewidth=1.0,
+            )
+        )
+        ax.text(
+            x + width / 2,
+            y + row_height / 2,
+            text,
+            transform=ax.transAxes,
+            ha="center",
+            va="center",
+            fontsize=8,
+            fontweight="bold" if header else "normal",
+        )
+
+    for col, value in enumerate(rows[0]):
+        draw_cell(row_index=0, start_col=col, end_col=col, text=value, header=True)
+
+    for row_index, row_values in enumerate(rows[1:], start=1):
+        if is_shared_ground_truth_row(row_values) and col_count > 2:
+            draw_cell(
+                row_index=row_index,
+                start_col=0,
+                end_col=0,
+                text=row_values[0],
+            )
+            draw_cell(
+                row_index=row_index,
+                start_col=1,
+                end_col=col_count - 1,
+                text=row_values[1],
+            )
+            continue
+
+        for col in range(col_count):
+            draw_cell(
+                row_index=row_index,
+                start_col=col,
+                end_col=col,
+                text=row_values[col] if col < len(row_values) else "",
+            )
+
     fig.tight_layout()
     fig.savefig(path, dpi=dpi)
     plt.close(fig)
@@ -558,17 +623,6 @@ def write_incident_outputs(
     save_bar_chart(
         labels=labels,
         values=[
-            summary.methods.get(method, MetricStats(0, None, None)).variance
-            for method in methods
-        ],
-        title=f"Incident {summary.incident_index}: distance variance",
-        ylabel="Variance (m^2)",
-        output_path=incident_dir / "variance_distance.png",
-        dpi=dpi,
-    )
-    save_bar_chart(
-        labels=labels,
-        values=[
             summary.methods.get(method, MetricStats(0, None, None)).stddev
             for method in methods
         ],
@@ -577,24 +631,6 @@ def write_incident_outputs(
         output_path=incident_dir / "stddev_distance.png",
         dpi=dpi,
     )
-    save_bar_chart(
-        labels=labels,
-        values=[
-            float(summary.methods.get(method, MetricStats(0, None, None)).count)
-            for method in methods
-        ],
-        title=f"Incident {summary.incident_index}: prediction count",
-        ylabel="Predictions",
-        output_path=incident_dir / "prediction_count.png",
-        dpi=dpi,
-    )
-    save_ground_truth_plot(
-        incident_summaries=[summary],
-        output_path=incident_dir / "ground_truth_location.png",
-        dpi=dpi,
-        title=f"Incident {summary.incident_index}: ground-truth find coordinate",
-    )
-
     table_rows = table_rows_for_summary(summary, methods)
     save_png_table(
         incident_dir / "metrics_table.png",
@@ -638,28 +674,10 @@ def write_shared_outputs(
     save_line_chart(
         incident_summaries=incident_summaries,
         methods=methods,
-        metric="variance",
-        title="Distance variance by incident",
-        ylabel="Variance (m^2)",
-        output_path=shared_dir / "variance_by_incident.png",
-        dpi=dpi,
-    )
-    save_line_chart(
-        incident_summaries=incident_summaries,
-        methods=methods,
         metric="stddev",
         title="Distance standard deviation by incident",
         ylabel="Standard deviation (m)",
         output_path=shared_dir / "stddev_by_incident.png",
-        dpi=dpi,
-    )
-    save_line_chart(
-        incident_summaries=incident_summaries,
-        methods=methods,
-        metric="count",
-        title="Prediction count by incident",
-        ylabel="Predictions",
-        output_path=shared_dir / "prediction_count_by_incident.png",
         dpi=dpi,
     )
     save_ground_truth_plot(
@@ -674,17 +692,6 @@ def write_shared_outputs(
         title="Overall average distance from ground truth",
         ylabel="Average distance (m)",
         output_path=shared_dir / "overall_average_distance.png",
-        dpi=dpi,
-    )
-    save_bar_chart(
-        labels=methods,
-        values=[
-            overall.methods.get(method, MetricStats(0, None, None)).variance
-            for method in methods
-        ],
-        title="Overall distance variance",
-        ylabel="Variance (m^2)",
-        output_path=shared_dir / "overall_variance.png",
         dpi=dpi,
     )
     save_bar_chart(

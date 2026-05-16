@@ -75,6 +75,14 @@ def parse_args() -> argparse.Namespace:
         action="store_true",
         help="Allow duplicate custom_id values across parsed files.",
     )
+    parser.add_argument(
+        "--include-prompt-version",
+        action="store_true",
+        help=(
+            "Group methods by prompt name and version, e.g. vanilla_v1 and "
+            "saliency_v2, instead of only vanilla and saliency."
+        ),
+    )
     return parser.parse_args()
 
 
@@ -136,18 +144,41 @@ def iter_parsed_entries(parsed: dict[str, Any]) -> list[dict[str, Any]]:
     return entries
 
 
-def entry_method(entry: dict[str, Any]) -> str:
-    prompt_name = entry.get("prompt_name")
-    if isinstance(prompt_name, str) and prompt_name:
-        return prompt_name
+def entry_prompt_version(entry: dict[str, Any]) -> str | None:
+    prompt_version = entry.get("prompt_version")
+    if isinstance(prompt_version, str) and prompt_version:
+        return prompt_version
 
     manifest = entry.get("manifest")
     if isinstance(manifest, dict):
-        manifest_prompt_name = manifest.get("prompt_name")
-        if isinstance(manifest_prompt_name, str) and manifest_prompt_name:
-            return manifest_prompt_name
+        manifest_prompt_version = manifest.get("prompt_version")
+        if isinstance(manifest_prompt_version, str) and manifest_prompt_version:
+            return manifest_prompt_version
 
-    return "unknown"
+    return None
+
+
+def entry_method(entry: dict[str, Any], include_prompt_version: bool = False) -> str:
+    prompt_name = entry.get("prompt_name")
+    if isinstance(prompt_name, str) and prompt_name:
+        method = prompt_name
+    else:
+        manifest = entry.get("manifest")
+        if isinstance(manifest, dict):
+            manifest_prompt_name = manifest.get("prompt_name")
+            if isinstance(manifest_prompt_name, str) and manifest_prompt_name:
+                method = manifest_prompt_name
+            else:
+                method = "unknown"
+        else:
+            method = "unknown"
+
+    if include_prompt_version:
+        prompt_version = entry_prompt_version(entry)
+        if prompt_version:
+            return f"{method}_{prompt_version}"
+
+    return method
 
 
 def entry_incident_index(entry: dict[str, Any]) -> int:
@@ -174,6 +205,7 @@ def collect_predictions(
     ground_truth: dict[int, GroundTruth],
     methods: set[str],
     allow_duplicate_custom_ids: bool,
+    include_prompt_version: bool = False,
 ) -> tuple[list[Prediction], list[dict[str, str]]]:
     predictions: list[Prediction] = []
     skipped: list[dict[str, str]] = []
@@ -191,7 +223,10 @@ def collect_predictions(
             if custom_id:
                 seen_custom_ids.add(custom_id)
 
-            method = entry_method(entry)
+            method = entry_method(
+                entry,
+                include_prompt_version=include_prompt_version,
+            )
             if method not in methods:
                 skipped.append(
                     {
@@ -250,11 +285,12 @@ def mean(values: list[float]) -> float | None:
     return sum(values) / len(values)
 
 
-def population_variance(values: list[float]) -> float | None:
+def stddev(values: list[float]) -> float | None:
     if not values:
         return None
     avg = sum(values) / len(values)
-    return sum((value - avg) ** 2 for value in values) / len(values)
+    spread = sum((value - avg) ** 2 for value in values) / len(values)
+    return math.sqrt(spread)
 
 
 def format_float(value: float | None) -> str:
@@ -266,12 +302,10 @@ def format_float(value: float | None) -> str:
 def method_stats(predictions: list[Prediction]) -> dict[str, str]:
     distances = [prediction.distance_m for prediction in predictions]
     avg = mean(distances)
-    variance = population_variance(distances)
     return {
         "prediction_count": str(len(predictions)),
         "avg_distance_m": format_float(avg),
-        "variance_distance_m2": format_float(variance),
-        "stddev_distance_m": format_float(math.sqrt(variance) if variance is not None else None),
+        "stddev_distance_m": format_float(stddev(distances)),
     }
 
 
@@ -334,7 +368,6 @@ def fieldnames_for_methods(methods: list[str]) -> list[str]:
             [
                 f"{method}_prediction_count",
                 f"{method}_avg_distance_m",
-                f"{method}_variance_distance_m2",
                 f"{method}_stddev_distance_m",
             ]
         )
@@ -360,6 +393,7 @@ def main() -> None:
         ground_truth=ground_truth,
         methods=set(methods),
         allow_duplicate_custom_ids=args.allow_duplicate_custom_ids,
+        include_prompt_version=args.include_prompt_version,
     )
 
     if not predictions:

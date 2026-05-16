@@ -77,6 +77,14 @@ def parse_args() -> argparse.Namespace:
         action="store_true",
         help="Allow duplicate custom_id values across parsed files.",
     )
+    parser.add_argument(
+        "--include-prompt-version",
+        action="store_true",
+        help=(
+            "Group methods by prompt name and version, e.g. vanilla_v1 and "
+            "saliency_v2, instead of only vanilla and saliency."
+        ),
+    )
     return parser.parse_args()
 
 
@@ -116,14 +124,14 @@ def format_scale(value: float) -> str:
     return f"{value:.9f}".rstrip("0").rstrip(".")
 
 
-def stats(values: list[float]) -> tuple[str, str, str]:
+def stats(values: list[float]) -> tuple[str, str]:
     if not values:
-        return "", "", ""
+        return "", ""
 
     average = sum(values) / len(values)
-    variance = sum((value - average) ** 2 for value in values) / len(values)
-    stddev = math.sqrt(variance)
-    return format_float(average), format_float(stddev), format_float(variance)
+    squared_spread = sum((value - average) ** 2 for value in values) / len(values)
+    stddev = math.sqrt(squared_spread)
+    return format_float(average), format_float(stddev)
 
 
 def output_fieldnames(methods: list[str]) -> list[str]:
@@ -139,7 +147,6 @@ def output_fieldnames(methods: list[str]) -> list[str]:
                 f"{method}_incident_count",
                 f"{method}_avg_distance_m",
                 f"{method}_stddev_distance_m",
-                f"{method}_variance_distance_m2",
             ]
         )
     return fieldnames
@@ -182,14 +189,13 @@ def build_scale_rows(
         for method in methods:
             method_key = (*scale_key, method)
             values = by_scale_method.get(method_key, [])
-            average, stddev, variance = stats(values)
+            average, stddev = stats(values)
             row[f"{method}_prediction_count"] = str(len(values))
             row[f"{method}_incident_count"] = str(
                 len(method_incidents_by_scale.get(method_key, set()))
             )
             row[f"{method}_avg_distance_m"] = average
             row[f"{method}_stddev_distance_m"] = stddev
-            row[f"{method}_variance_distance_m2"] = variance
         rows.append(row)
 
     return rows
@@ -214,6 +220,7 @@ def main() -> None:
         ground_truth=ground_truth,
         methods=set(methods),
         allow_duplicate_custom_ids=args.allow_duplicate_custom_ids,
+        include_prompt_version=args.include_prompt_version,
     )
 
     if not predictions:
