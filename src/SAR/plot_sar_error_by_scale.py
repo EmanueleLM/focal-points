@@ -8,19 +8,16 @@ import matplotlib
 matplotlib.use("Agg")
 import matplotlib.pyplot as plt
 
+try:
+    from .sar_method_colors import METHOD_COLORS
+except ImportError:
+    from sar_method_colors import METHOD_COLORS
+
 DEFAULT_OUTPUT_PNG = Path(
     "data/SAR_graphs/openai/gpt-5.5/q1_q2-q30_part1/shared/"
     "average_distance_by_map_scale.png"
 )
 DEFAULT_METHODS = ("vanilla", "saliency")
-METHOD_COLORS = {
-    "vanilla": "#2f6fbb",
-    "saliency": "#d8891c",
-    "vanilla_v1": "#2f6fbb",
-    "saliency_v1": "#d8891c",
-    "saliency_v2": "#2a9d8f",
-    "saliency_v3": "#c44e52",
-}
 
 
 @dataclass(frozen=True)
