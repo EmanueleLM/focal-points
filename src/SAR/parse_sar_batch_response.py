@@ -44,7 +44,9 @@ def read_jsonl(path: Path) -> list[dict[str, Any]]:
             try:
                 rows.append(json.loads(line))
             except json.JSONDecodeError as exc:
-                raise ValueError(f"{path}:{line_number} is invalid JSON: {exc}") from exc
+                raise ValueError(
+                    f"{path}:{line_number} is invalid JSON: {exc}"
+                ) from exc
     return rows
 
 
@@ -89,7 +91,9 @@ def collect_output_text(body: dict[str, Any]) -> str:
     for item in iter_response_output(body):
         if item.get("type") == "message":
             for content in item.get("content") or []:
-                if content.get("type") in {"output_text", "text"} and content.get("text"):
+                if content.get("type") in {"output_text", "text"} and content.get(
+                    "text"
+                ):
                     texts.append(content["text"])
         elif item.get("type") in {"output_text", "text"} and item.get("text"):
             texts.append(item["text"])
@@ -97,7 +101,9 @@ def collect_output_text(body: dict[str, Any]) -> str:
 
 
 def parse_tag(text: str, tag: str) -> str | None:
-    match = re.search(rf"<{tag}>\s*(.*?)\s*</{tag}>", text, flags=re.IGNORECASE | re.DOTALL)
+    match = re.search(
+        rf"<{tag}>\s*(.*?)\s*</{tag}>", text, flags=re.IGNORECASE | re.DOTALL
+    )
     if not match:
         return None
     return match.group(1).strip()
@@ -127,7 +133,9 @@ def parse_coordinate(text: str) -> dict[str, float] | None:
 
 
 def prompt_key(meta: dict[str, Any]) -> str:
-    return f"{meta.get('prompt_name', 'unknown')}:{meta.get('prompt_version', 'unknown')}"
+    return (
+        f"{meta.get('prompt_name', 'unknown')}:{meta.get('prompt_version', 'unknown')}"
+    )
 
 
 def parse_response_rows(

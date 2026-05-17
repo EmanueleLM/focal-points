@@ -245,7 +245,9 @@ def entry_incident_index(entry: dict[str, Any]) -> int:
     if incident_index is None and isinstance(entry.get("manifest"), dict):
         incident_index = entry["manifest"].get("incident_index")
     if incident_index is None:
-        raise ValueError(f"Parsed entry is missing incident_index: {entry.get('custom_id')}")
+        raise ValueError(
+            f"Parsed entry is missing incident_index: {entry.get('custom_id')}"
+        )
     return int(incident_index)
 
 
@@ -476,7 +478,9 @@ def render_maps(
     for prediction in predictions:
         by_incident[prediction.incident_index].append(prediction)
 
-    incident_indices = sorted(selected_indices if selected_indices is not None else by_incident)
+    incident_indices = sorted(
+        selected_indices if selected_indices is not None else by_incident
+    )
     metadata_rows: list[dict[str, str]] = []
     output_dir.mkdir(parents=True, exist_ok=True)
 
@@ -487,10 +491,15 @@ def render_maps(
 
         input_path = v2_path_for_incident(info, v2_dir)
         if not input_path.exists():
-            raise FileNotFoundError(f"Missing v2 map for incident {incident_index}: {input_path}")
+            raise FileNotFoundError(
+                f"Missing v2 map for incident {incident_index}: {input_path}"
+            )
 
         incident_predictions = by_incident.get(incident_index, [])
-        methods = sorted({prediction.method for prediction in incident_predictions}, key=method_sort_key)
+        methods = sorted(
+            {prediction.method for prediction in incident_predictions},
+            key=method_sort_key,
+        )
         image = Image.open(input_path).convert("RGBA")
         draw = ImageDraw.Draw(image, "RGBA")
 
@@ -511,7 +520,9 @@ def render_maps(
                 {
                     "incident_index": str(prediction.incident_index),
                     "method": prediction.method,
-                    "repeat": "" if prediction.repeat is None else str(prediction.repeat),
+                    "repeat": (
+                        "" if prediction.repeat is None else str(prediction.repeat)
+                    ),
                     "x_m": f"{prediction.x_m:.3f}",
                     "y_m": f"{prediction.y_m:.3f}",
                     "pixel_x": f"{pixel[0]:.3f}",
@@ -559,7 +570,9 @@ def main() -> None:
     selected_methods = set(args.methods) if args.methods else None
     infos = read_ground_truth(args.ground_truth_csv)
     parsed_paths = expand_parsed_paths(args.parsed_json, args.include_tests)
-    predictions, skipped = collect_predictions(parsed_paths, selected_methods, selected_indices)
+    predictions, skipped = collect_predictions(
+        parsed_paths, selected_methods, selected_indices
+    )
     if not predictions:
         raise ValueError("No parsed predictions matched the requested filters")
 

@@ -7,7 +7,6 @@ from dataclasses import dataclass
 from pathlib import Path
 from typing import Any
 
-
 DEFAULT_GROUND_TRUTH_CSV = Path("data/SAR_prompts/find_location_ground_truth.csv")
 DEFAULT_OUTPUT_CSV = Path("data/SAR_prompts/sar_prediction_error_summary.csv")
 DEFAULT_METHODS = ("vanilla", "saliency")
@@ -114,7 +113,9 @@ def load_ground_truth(path: Path) -> dict[int, GroundTruth]:
         for row in reader:
             incident_index = int(row["incident_index"])
             if incident_index in ground_truth:
-                raise ValueError(f"{path} has duplicate incident_index {incident_index}")
+                raise ValueError(
+                    f"{path} has duplicate incident_index {incident_index}"
+                )
             ground_truth[incident_index] = GroundTruth(
                 incident_index=incident_index,
                 x_m=float(row["find_x_m"]),
@@ -186,7 +187,9 @@ def entry_incident_index(entry: dict[str, Any]) -> int:
     if incident_index is None and isinstance(entry.get("manifest"), dict):
         incident_index = entry["manifest"].get("incident_index")
     if incident_index is None:
-        raise ValueError(f"Parsed entry is missing incident_index: {entry.get('custom_id')}")
+        raise ValueError(
+            f"Parsed entry is missing incident_index: {entry.get('custom_id')}"
+        )
     return int(incident_index)
 
 
@@ -215,7 +218,11 @@ def collect_predictions(
         parsed = load_parsed_json(parsed_path)
         for entry in iter_parsed_entries(parsed):
             custom_id = str(entry.get("custom_id") or "")
-            if custom_id and custom_id in seen_custom_ids and not allow_duplicate_custom_ids:
+            if (
+                custom_id
+                and custom_id in seen_custom_ids
+                and not allow_duplicate_custom_ids
+            ):
                 raise ValueError(
                     f"Duplicate custom_id across parsed files: {custom_id}. "
                     "Pass --allow-duplicate-custom-ids to include duplicates."
@@ -320,7 +327,9 @@ def build_summary_rows(
     incident_indices: set[int] = set()
 
     for prediction in predictions:
-        by_incident_method[(prediction.incident_index, prediction.method)].append(prediction)
+        by_incident_method[(prediction.incident_index, prediction.method)].append(
+            prediction
+        )
         by_method[prediction.method].append(prediction)
         incident_indices.add(prediction.incident_index)
 
@@ -374,7 +383,9 @@ def fieldnames_for_methods(methods: list[str]) -> list[str]:
     return fieldnames
 
 
-def write_summary_csv(path: Path, rows: list[dict[str, str]], methods: list[str]) -> None:
+def write_summary_csv(
+    path: Path, rows: list[dict[str, str]], methods: list[str]
+) -> None:
     path.parent.mkdir(parents=True, exist_ok=True)
     fieldnames = fieldnames_for_methods(methods)
     with path.open("w", newline="", encoding="utf-8") as file:

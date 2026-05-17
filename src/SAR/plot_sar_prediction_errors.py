@@ -165,7 +165,10 @@ def merge_incident_summaries(
                 ground_truth_y_m=next(iter(gt_y_values), None),
                 methods={
                     method: combine_stats(
-                        [row.methods.get(method, MetricStats(0, None, None)) for row in incident_rows]
+                        [
+                            row.methods.get(method, MetricStats(0, None, None))
+                            for row in incident_rows
+                        ]
                     )
                     for method in methods
                 },
@@ -400,7 +403,9 @@ def save_ground_truth_plot(
     plt.close(fig)
 
 
-def table_rows_for_summary(summary: IncidentSummary, methods: list[str]) -> list[list[str]]:
+def table_rows_for_summary(
+    summary: IncidentSummary, methods: list[str]
+) -> list[list[str]]:
     rows = [["metric", *[label_for_method(method) for method in methods]]]
     rows.append(
         [
@@ -489,7 +494,9 @@ def is_shared_ground_truth_row(row: list[str]) -> bool:
     return bool(row) and row[0] in {"ground truth x (m)", "ground truth y (m)"}
 
 
-def save_latex_table(path: Path, rows: list[list[str]], caption: str, label: str) -> None:
+def save_latex_table(
+    path: Path, rows: list[list[str]], caption: str, label: str
+) -> None:
     column_spec = "l" + "r" * (len(rows[0]) - 1)
     lines = [
         "\\begin{table}[ht]",
@@ -612,7 +619,10 @@ def write_incident_outputs(
     labels = methods
     save_bar_chart(
         labels=labels,
-        values=[summary.methods.get(method, MetricStats(0, None, None)).mean for method in methods],
+        values=[
+            summary.methods.get(method, MetricStats(0, None, None)).mean
+            for method in methods
+        ],
         title=f"Incident {summary.incident_index}: average distance from ground truth",
         ylabel="Average distance (m)",
         output_path=incident_dir / "average_distance.png",
@@ -686,7 +696,10 @@ def write_shared_outputs(
     )
     save_bar_chart(
         labels=methods,
-        values=[overall.methods.get(method, MetricStats(0, None, None)).mean for method in methods],
+        values=[
+            overall.methods.get(method, MetricStats(0, None, None)).mean
+            for method in methods
+        ],
         title="Overall average distance from ground truth",
         ylabel="Average distance (m)",
         output_path=shared_dir / "overall_average_distance.png",
@@ -756,7 +769,9 @@ def main() -> None:
 
     for summary in incident_summaries:
         write_incident_outputs(summary, methods, args.output_dir, args.dpi)
-    write_shared_outputs(incident_summaries, overall, methods, args.output_dir, args.dpi)
+    write_shared_outputs(
+        incident_summaries, overall, methods, args.output_dir, args.dpi
+    )
 
     print(f"incidents: {len(incident_summaries)}")
     print(f"output_dir: {args.output_dir}")

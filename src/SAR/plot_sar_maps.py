@@ -102,7 +102,9 @@ def parse_args() -> argparse.Namespace:
     return parser.parse_args()
 
 
-def get_2d_array(mat_data: dict[str, np.ndarray], key: str, mat_path: Path) -> np.ndarray:
+def get_2d_array(
+    mat_data: dict[str, np.ndarray], key: str, mat_path: Path
+) -> np.ndarray:
     if key not in mat_data:
         raise KeyError(f"{mat_path} is missing required object {key!r}")
 
@@ -118,7 +120,10 @@ def load_map_layers(mat_path: Path) -> tuple[np.ndarray, np.ndarray, np.ndarray]
     linear_features = get_2d_array(mat_data, LINEAR_FEATURES_KEY, mat_path) > 0
     inaccessible = get_2d_array(mat_data, INACCESSIBLE_KEY, mat_path) > 0
 
-    if elevation.shape != linear_features.shape or elevation.shape != inaccessible.shape:
+    if (
+        elevation.shape != linear_features.shape
+        or elevation.shape != inaccessible.shape
+    ):
         raise ValueError(
             f"{mat_path} layer shapes do not match: "
             f"{ELEVATION_KEY}={elevation.shape}, "
@@ -165,11 +170,7 @@ def latlon_offset_m(
     reference_lon: float,
 ) -> tuple[float, float]:
     mean_lat_rad = math.radians((lat + reference_lat) / 2)
-    east_m = (
-        math.radians(lon - reference_lon)
-        * EARTH_RADIUS_M
-        * math.cos(mean_lat_rad)
-    )
+    east_m = math.radians(lon - reference_lon) * EARTH_RADIUS_M * math.cos(mean_lat_rad)
     north_m = math.radians(lat - reference_lat) * EARTH_RADIUS_M
     return east_m, north_m
 
@@ -413,9 +414,7 @@ def render_folder(
     mat_files = sorted_mat_files(input_folder)
     if indices is not None:
         mat_files = [
-            mat_file
-            for mat_file in mat_files
-            if extract_map_index(mat_file) in indices
+            mat_file for mat_file in mat_files if extract_map_index(mat_file) in indices
         ]
     if not mat_files:
         raise FileNotFoundError(f"No matching .mat files found in {input_folder}")

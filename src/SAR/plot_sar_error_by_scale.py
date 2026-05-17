@@ -166,8 +166,7 @@ def save_scale_plot(
     group_width = 0.78
     bar_width = min(0.28, group_width / len(methods))
     method_offsets = [
-        (index - (len(methods) - 1) / 2) * bar_width
-        for index in range(len(methods))
+        (index - (len(methods) - 1) / 2) * bar_width for index in range(len(methods))
     ]
 
     fig_width = max(10.5, 8.0 + 0.7 * len(methods))
